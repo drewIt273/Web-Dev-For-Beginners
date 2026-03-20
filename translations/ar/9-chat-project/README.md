@@ -1,12 +1,3 @@
-<!--
-CO_OP_TRANSLATOR_METADATA:
-{
-  "original_hash": "2066c17078e9d18b5e309f31d8e8bc24",
-  "translation_date": "2025-11-03T12:33:53+00:00",
-  "source_file": "9-chat-project/README.md",
-  "language_code": "ar"
-}
--->
 # بناء مساعد دردشة باستخدام الذكاء الاصطناعي
 
 هل تتذكر في مسلسل "ستار تريك" عندما كان الطاقم يتحدث بشكل عادي مع كمبيوتر السفينة، يطرحون عليه أسئلة معقدة ويحصلون على إجابات مدروسة؟ ما كان يبدو كخيال علمي في الستينيات أصبح الآن شيئًا يمكنك بناؤه باستخدام تقنيات الويب التي تعرفها بالفعل.
@@ -61,7 +52,7 @@ print(response.choices[0].message.content)
 
 إليك كيف سيبدو مشروعك النهائي:
 
-![واجهة تطبيق الدردشة تظهر محادثة بين المستخدم ومساعد الذكاء الاصطناعي](../../../translated_images/screenshot.0a1ee0d123df681b4501eb53ffb267519fcc20aa653eabecef1e7561ddfb1cab.ar.png)
+![واجهة تطبيق الدردشة تظهر محادثة بين المستخدم ومساعد الذكاء الاصطناعي](../../../translated_images/ar/screenshot.0a1ee0d123df681b.webp)
 
 ## 🗺️ رحلتك التعليمية عبر تطوير تطبيقات الذكاء الاصطناعي
 
@@ -194,7 +185,7 @@ mindmap
 
 **المبدأ الأساسي**: تطوير تطبيقات الذكاء الاصطناعي يجمع بين مهارات تطوير الويب التقليدية وتكامل خدمات الذكاء الاصطناعي، مما يخلق تطبيقات ذكية تبدو طبيعية وتفاعلية للمستخدمين.
 
-![واجهة GitHub Models AI Playground مع اختيار النموذج ومنطقة الاختبار](../../../translated_images/playground.d2b927122224ff8ff4028fc842176e353c339147d8925455f36c92fb1655c477.ar.png)
+![واجهة GitHub Models AI Playground مع اختيار النموذج ومنطقة الاختبار](../../../translated_images/ar/playground.d2b927122224ff8f.webp)
 
 **ما الذي يجعل الملعب مفيدًا جدًا:**
 - **جرب** نماذج ذكاء اصطناعي مختلفة مثل GPT-4o-mini، Claude، وغيرها (كلها مجانية!)
@@ -204,7 +195,7 @@ mindmap
 
 بمجرد أن تجرب قليلاً، فقط انقر على علامة التبويب "Code" واختر لغتك البرمجية للحصول على كود التنفيذ الذي تحتاجه.
 
-![اختيار الملعب يظهر خيارات توليد الكود للغات البرمجة المختلفة](../../../translated_images/playground-choice.1d23ba7d407f47584c9f446c77f0bcf70cae794cc9c8d7849a3cca4a3693e6c4.ar.png)
+![اختيار الملعب يظهر خيارات توليد الكود للغات البرمجة المختلفة](../../../translated_images/ar/playground-choice.1d23ba7d407f4758.webp)
 
 ## إعداد تكامل الخلفية باستخدام Python
 
@@ -2364,14 +2355,14 @@ mindmap
 - **انتقل** إلى [مستودع Web Dev For Beginners](https://github.com/microsoft/Web-Dev-For-Beginners)  
 - **اضغط** على "Use this template" في الزاوية العلوية اليمنى (تأكد من تسجيل الدخول إلى GitHub)  
 
-![واجهة الإنشاء من القالب تظهر زر "Use this template" الأخضر](../../../translated_images/template.67ad477109d29a2b04599a83c964c87fcde041256d4f04d3589cbb00c696f76c.ar.png)  
+![واجهة الإنشاء من القالب تظهر زر "Use this template" الأخضر](../../../translated_images/ar/template.67ad477109d29a2b.webp)  
 
 **الخطوة 2: تشغيل Codespaces**  
 - **افتح** المستودع الذي أنشأته حديثًا  
 - **اضغط** على الزر الأخضر "Code" واختر "Codespaces"  
 - **اختر** "Create codespace on main" لبدء بيئة التطوير  
 
-![واجهة إنشاء Codespace مع خيارات تشغيل بيئة التطوير السحابية](../../../translated_images/codespace.bcecbdf5d2747d3d17da67a78ad911c8853d68102e34748ec372cde1e9236e1d.ar.png)  
+![واجهة إنشاء Codespace مع خيارات تشغيل بيئة التطوير السحابية](../../../translated_images/ar/codespace.bcecbdf5d2747d3d.webp)  
 
 **الخطوة 3: تكوين البيئة**  
 بمجرد تحميل Codespace، سيكون لديك وصول إلى:  

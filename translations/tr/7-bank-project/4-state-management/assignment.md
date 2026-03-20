@@ -1,12 +1,3 @@
-<!--
-CO_OP_TRANSLATOR_METADATA:
-{
-  "original_hash": "50a7783473b39a2e0f133e271a102231",
-  "translation_date": "2025-10-23T00:00:43+00:00",
-  "source_file": "7-bank-project/4-state-management/assignment.md",
-  "language_code": "tr"
-}
--->
 # "İşlem Ekle" Diyalog Kutusunu Uygulama
 
 ## Genel Bakış
@@ -112,7 +103,7 @@ Diyalogunuzu uygulamak için aşağıdaki iki yaklaşımdan birini seçin:
 **Beklenen Sonuç:**
 Bu görevi tamamladıktan sonra, bankacılık uygulamanız profesyonel bir görünüme ve davranışa sahip, tamamen işlevsel bir "İşlem Ekle" özelliğine sahip olmalıdır:
 
-![Bir örnek "İşlem ekle" diyalog kutusunu gösteren ekran görüntüsü](../../../../translated_images/dialog.93bba104afeb79f12f65ebf8f521c5d64e179c40b791c49c242cf15f7e7fab15.tr.png)
+![Bir örnek "İşlem ekle" diyalog kutusunu gösteren ekran görüntüsü](../../../../translated_images/tr/dialog.93bba104afeb79f1.webp)
 
 ## Uygulamanızı Test Etme
 

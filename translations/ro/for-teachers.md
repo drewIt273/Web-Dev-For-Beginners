@@ -1,12 +1,3 @@
-<!--
-CO_OP_TRANSLATOR_METADATA:
-{
-  "original_hash": "71009af209f81cc01a1f2d324200375f",
-  "translation_date": "2025-10-03T10:42:19+00:00",
-  "source_file": "for-teachers.md",
-  "language_code": "ro"
-}
--->
 ### Pentru educatori
 
 Sunteți bineveniți să utilizați acest curriculum în sala de clasă. Funcționează perfect cu GitHub Classroom și platformele LMS de top și poate fi folosit și ca un depozit independent împreună cu elevii.
@@ -42,10 +33,10 @@ Acest curriculum include pachete importabile pentru fluxuri de lucru comune LMS.
   - Moodle Cloud are suport limitat pentru Common Cartridge. Preferabil să utilizați fișierul Moodle de mai sus, care poate fi încărcat și în Canvas.
   - După import, revizuiți modulele, termenele limită și setările chestionarelor pentru a se potrivi cu programul dvs. de semestru.
 
-![Moodle](../../translated_images/moodle.94eb93d714a50cb2c97435b408017dee224348b61bc86203ffd43a4f4e57b95f.ro.png)
+![Moodle](../../translated_images/ro/moodle.94eb93d714a50cb2.webp)
 > Curriculumul într-o clasă Moodle
 
-![Canvas](../../translated_images/canvas.fbd605ff8e5b8aff567d398528ce113db304446b90b9cad55c654de3fdfcda34.ro.png)
+![Canvas](../../translated_images/ro/canvas.fbd605ff8e5b8aff.webp)
 > Curriculumul în Canvas
 
 ### Utilizare directă a depozitului (fără Classroom)

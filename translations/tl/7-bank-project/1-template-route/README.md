@@ -1,12 +1,3 @@
-<!--
-CO_OP_TRANSLATOR_METADATA:
-{
-  "original_hash": "351678bece18f07d9daa987a881fb062",
-  "translation_date": "2025-11-03T14:00:15+00:00",
-  "source_file": "7-bank-project/1-template-route/README.md",
-  "language_code": "tl"
-}
--->
 # Gumawa ng Banking App Bahagi 1: HTML Templates at Routes sa isang Web App
 
 ```mermaid
@@ -652,7 +643,7 @@ sequenceDiagram
 
 Ang paggamit ng `history.pushState` ay lumilikha ng mga bagong entry sa navigation history ng browser. Maaari mong suriin iyon sa pamamagitan ng pag-hold sa *back button* ng iyong browser, dapat itong magpakita ng ganito:
 
-![Screenshot ng navigation history](../../../../translated_images/history.7fdabbafa521e06455b738d3dafa3ff41d3071deae60ead8c7e0844b9ed987d8.tl.png)
+![Screenshot ng navigation history](../../../../translated_images/tl/history.7fdabbafa521e064.webp)
 
 Kung susubukan mong mag-click sa back button nang ilang beses, makikita mo na nagbabago ang kasalukuyang URL at na-update ang history, ngunit ang parehong template ang patuloy na ipinapakita.
 

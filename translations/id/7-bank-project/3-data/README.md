@@ -1,12 +1,3 @@
-<!--
-CO_OP_TRANSLATOR_METADATA:
-{
-  "original_hash": "86ee5069f27ea3151389d8687c95fac9",
-  "translation_date": "2025-11-06T11:50:49+00:00",
-  "source_file": "7-bank-project/3-data/README.md",
-  "language_code": "id"
-}
--->
 # Membangun Aplikasi Perbankan Bagian 3: Metode Mengambil dan Menggunakan Data
 
 Bayangkan komputer Enterprise di Star Trek - ketika Kapten Picard meminta status kapal, informasi muncul seketika tanpa seluruh antarmuka mati dan dibangun ulang. Aliran informasi yang mulus itulah yang sedang kita bangun di sini dengan pengambilan data yang dinamis.
@@ -160,7 +151,7 @@ sequenceDiagram
     Browser->>User: Displays new page (flash/reload)
 ```
 
-![Alur pembaruan dalam aplikasi multi-halaman](../../../../translated_images/mpa.7f7375a1a2d4aa779d3f928a2aaaf9ad76bcdeb05cfce2dc27ab126024050f51.id.png)
+![Alur pembaruan dalam aplikasi multi-halaman](../../../../translated_images/id/mpa.7f7375a1a2d4aa77.webp)
 
 **Mengapa pendekatan ini terasa kaku:**
 - Setiap klik berarti membangun ulang seluruh halaman dari awal
@@ -187,7 +178,7 @@ sequenceDiagram
     Browser->>User: Shows updated content (no reload)
 ```
 
-![Alur pembaruan dalam aplikasi satu halaman](../../../../translated_images/spa.268ec73b41f992c2a21ef9294235c6ae597b3c37e2c03f0494c2d8857325cc57.id.png)
+![Alur pembaruan dalam aplikasi satu halaman](../../../../translated_images/id/spa.268ec73b41f992c2.webp)
 
 **Mengapa SPA terasa jauh lebih baik:**
 - Hanya bagian yang benar-benar berubah yang diperbarui (cerdas, bukan?)
@@ -523,7 +514,7 @@ if (data.error) {
 
 Sekarang ketika Anda menguji dengan akun yang tidak valid, Anda akan melihat pesan kesalahan yang berguna langsung di halaman!
 
-![Screenshot menunjukkan pesan kesalahan yang ditampilkan saat login](../../../../translated_images/login-error.416fe019b36a63276764c2349df5d99e04ebda54fefe60c715ee87a28d5d4ad0.id.png)
+![Screenshot menunjukkan pesan kesalahan yang ditampilkan saat login](../../../../translated_images/id/login-error.416fe019b36a6327.webp)
 
 #### Langkah 4: Menjadi Inklusif dengan Aksesibilitas
 
@@ -961,7 +952,7 @@ Siap membawa aplikasi perbankan Anda ke tingkat berikutnya? Mari buat aplikasi i
 
 Berikut tampilan dashboard yang sudah dipoles:
 
-![Screenshot dari contoh hasil dashboard setelah styling](../../../../translated_images/screen2.123c82a831a1d14ab2061994be2fa5de9cec1ce651047217d326d4773a6348e4.id.png)
+![Screenshot dari contoh hasil dashboard setelah styling](../../../../translated_images/id/screen2.123c82a831a1d14a.webp)
 
 Jangan merasa harus meniru ini persis - gunakan sebagai inspirasi dan buat versi Anda sendiri!
 

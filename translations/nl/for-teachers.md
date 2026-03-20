@@ -1,12 +1,3 @@
-<!--
-CO_OP_TRANSLATOR_METADATA:
-{
-  "original_hash": "71009af209f81cc01a1f2d324200375f",
-  "translation_date": "2025-10-03T10:06:52+00:00",
-  "source_file": "for-teachers.md",
-  "language_code": "nl"
-}
--->
 ### Voor docenten
 
 U bent van harte welkom om dit lesprogramma in uw klas te gebruiken. Het werkt naadloos met GitHub Classroom en toonaangevende LMS-platforms, en kan ook als een zelfstandige repository met uw studenten worden gebruikt.
@@ -42,10 +33,10 @@ Dit lesprogramma bevat importeerbare pakketten voor gangbare LMS-workflows.
   - Moodle Cloud heeft beperkte ondersteuning voor Common Cartridge. Geef de voorkeur aan het bovenstaande Moodle-bestand, dat ook in Canvas kan worden geüpload.
   - Controleer na import de modules, deadlines en quizinstellingen om aan te sluiten bij uw semesterschema.
 
-![Moodle](../../translated_images/moodle.94eb93d714a50cb2c97435b408017dee224348b61bc86203ffd43a4f4e57b95f.nl.png)
+![Moodle](../../translated_images/nl/moodle.94eb93d714a50cb2.webp)
 > Het lesprogramma in een Moodle-klas
 
-![Canvas](../../translated_images/canvas.fbd605ff8e5b8aff567d398528ce113db304446b90b9cad55c654de3fdfcda34.nl.png)
+![Canvas](../../translated_images/nl/canvas.fbd605ff8e5b8aff.webp)
 > Het lesprogramma in Canvas
 
 ### Gebruik de repository direct (zonder Classroom)

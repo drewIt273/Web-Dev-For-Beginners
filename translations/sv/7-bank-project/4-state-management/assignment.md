@@ -1,12 +1,3 @@
-<!--
-CO_OP_TRANSLATOR_METADATA:
-{
-  "original_hash": "50a7783473b39a2e0f133e271a102231",
-  "translation_date": "2025-10-23T21:41:15+00:00",
-  "source_file": "7-bank-project/4-state-management/assignment.md",
-  "language_code": "sv"
-}
--->
 # Implementera dialogen "Lägg till transaktion"
 
 ## Översikt
@@ -112,7 +103,7 @@ Se [serverns API-dokumentation](../api/README.md) för:
 **Förväntat resultat:**
 Efter att ha slutfört denna uppgift ska din bankapp ha en fullt fungerande funktion för "Lägg till transaktion" som ser professionell ut och fungerar smidigt:
 
-![Skärmdump som visar ett exempel på dialogen "Lägg till transaktion"](../../../../translated_images/dialog.93bba104afeb79f12f65ebf8f521c5d64e179c40b791c49c242cf15f7e7fab15.sv.png)
+![Skärmdump som visar ett exempel på dialogen "Lägg till transaktion"](../../../../translated_images/sv/dialog.93bba104afeb79f1.webp)
 
 ## Testa din implementering
 

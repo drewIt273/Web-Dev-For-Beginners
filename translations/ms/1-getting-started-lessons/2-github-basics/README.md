@@ -1,12 +1,3 @@
-<!--
-CO_OP_TRANSLATOR_METADATA:
-{
-  "original_hash": "5c383cc2cc23bb164b06417d1c107a44",
-  "translation_date": "2025-11-18T18:42:39+00:00",
-  "source_file": "1-getting-started-lessons/2-github-basics/README.md",
-  "language_code": "ms"
-}
--->
 # Pengenalan kepada GitHub
 
 Hai, bakal pembangun! 👋 Bersedia untuk menyertai jutaan pengaturcara di seluruh dunia? Saya sangat teruja untuk memperkenalkan anda kepada GitHub – anggap ia sebagai platform media sosial untuk pengaturcara, tetapi bukannya berkongsi gambar makan tengah hari, kita berkongsi kod dan membina perkara yang luar biasa bersama-sama!
@@ -17,7 +8,7 @@ Saya tahu ini mungkin terasa banyak pada mulanya – malah, saya masih ingat men
 
 Kita akan melalui perjalanan ini bersama-sama, satu langkah pada satu masa. Tiada tergesa-gesa, tiada tekanan – hanya anda, saya, dan beberapa alat yang sangat hebat yang akan menjadi sahabat baru anda!
 
-![Pengenalan kepada GitHub](../../../../translated_images/webdev101-github.8846d7971abef6f947909b4f9d343e2a23778aa716ca6b9d71df7174ee5009ac.ms.png)
+![Pengenalan kepada GitHub](../../../../translated_images/ms/webdev101-github.8846d7971abef6f9.webp)
 > Sketchnote oleh [Tomomi Imura](https://twitter.com/girlie_mac)
 
 ```mermaid
@@ -610,7 +601,7 @@ Pertama, mari kita cari repositori (atau **repo**) di GitHub yang menarik minat 
 
 ✅ Cara yang baik untuk mencari repo 'mesra pemula' adalah dengan [mencari tag 'good-first-issue'](https://github.blog/2020-01-22-browse-good-first-issues-to-start-contributing-to-open-source/).
 
-![Salin repo secara tempatan](../../../../translated_images/clone_repo.5085c48d666ead57664f050d806e325d7f883be6838c821e08bc823ab7c66665.ms.png)
+![Salin repo secara tempatan](../../../../translated_images/ms/clone_repo.5085c48d666ead57.webp)
 
 Terdapat beberapa cara untuk menyalin kod. Salah satu cara adalah dengan "clone" kandungan repositori, menggunakan HTTPS, SSH, atau menggunakan GitHub CLI (Command Line Interface).
 

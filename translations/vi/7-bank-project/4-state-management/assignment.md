@@ -1,12 +1,3 @@
-<!--
-CO_OP_TRANSLATOR_METADATA:
-{
-  "original_hash": "50a7783473b39a2e0f133e271a102231",
-  "translation_date": "2025-10-24T13:43:07+00:00",
-  "source_file": "7-bank-project/4-state-management/assignment.md",
-  "language_code": "vi"
-}
--->
 # Triển khai hộp thoại "Thêm giao dịch"
 
 ## Tổng quan
@@ -112,7 +103,7 @@ Tham khảo [tài liệu API máy chủ](../api/README.md) để biết:
 **Kết quả mong đợi:**
 Sau khi hoàn thành bài tập này, ứng dụng ngân hàng của bạn sẽ có tính năng "Thêm giao dịch" hoạt động đầy đủ, trông chuyên nghiệp và hoạt động mượt mà:
 
-![Ảnh chụp màn hình hiển thị ví dụ về hộp thoại "Thêm giao dịch"](../../../../translated_images/dialog.93bba104afeb79f12f65ebf8f521c5d64e179c40b791c49c242cf15f7e7fab15.vi.png)
+![Ảnh chụp màn hình hiển thị ví dụ về hộp thoại "Thêm giao dịch"](../../../../translated_images/vi/dialog.93bba104afeb79f1.webp)
 
 ## Kiểm tra triển khai của bạn
 

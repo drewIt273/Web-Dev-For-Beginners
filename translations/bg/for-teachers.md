@@ -1,12 +1,3 @@
-<!--
-CO_OP_TRANSLATOR_METADATA:
-{
-  "original_hash": "71009af209f81cc01a1f2d324200375f",
-  "translation_date": "2025-10-03T10:46:15+00:00",
-  "source_file": "for-teachers.md",
-  "language_code": "bg"
-}
--->
 ### За преподаватели
 
 Добре дошли да използвате тази учебна програма във вашата класна стая. Тя работи безпроблемно с GitHub Classroom и водещи платформи за управление на обучението (LMS), а също така може да се използва като самостоятелно хранилище със студентите ви.
@@ -42,10 +33,10 @@ CO_OP_TRANSLATOR_METADATA:
   - Moodle Cloud има ограничена поддръжка за Common Cartridge. Предпочитайте файла за Moodle по-горе, който може да бъде качен и в Canvas.
   - След импортиране прегледайте модулите, крайните срокове и настройките на тестовете, за да съответстват на графика на вашия семестър.
 
-![Moodle](../../translated_images/moodle.94eb93d714a50cb2c97435b408017dee224348b61bc86203ffd43a4f4e57b95f.bg.png)
+![Moodle](../../translated_images/bg/moodle.94eb93d714a50cb2.webp)
 > Учебната програма в класна стая на Moodle
 
-![Canvas](../../translated_images/canvas.fbd605ff8e5b8aff567d398528ce113db304446b90b9cad55c654de3fdfcda34.bg.png)
+![Canvas](../../translated_images/bg/canvas.fbd605ff8e5b8aff.webp)
 > Учебната програма в Canvas
 
 ### Използване на хранилището директно (без Classroom)

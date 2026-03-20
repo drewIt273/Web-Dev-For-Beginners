@@ -1,12 +1,3 @@
-<!--
-CO_OP_TRANSLATOR_METADATA:
-{
-  "original_hash": "effe56ba51c38d7bdfad1ea38288666b",
-  "translation_date": "2025-10-24T21:56:34+00:00",
-  "source_file": "8-code-editor/1-using-a-code-editor/assignment.md",
-  "language_code": "ro"
-}
--->
 # Creează un site de CV folosind VSCode.dev
 
 Transformă-ți perspectivele de carieră construind un site profesional de CV care să îți prezinte abilitățile și experiența într-un format interactiv și modern. În loc să trimiți PDF-uri tradiționale, imaginează-ți că oferi recrutorilor un site web elegant și receptiv care demonstrează atât calificările tale, cât și abilitățile tale de dezvoltare web.
@@ -78,7 +69,7 @@ Deoarece VSCode.dev necesită cel puțin un fișier pentru a deschide un depozit
 4. **Scrie** un mesaj de commit: "Adaugă structura HTML inițială"
 5. **Apasă** "Commit new file" pentru a salva modificările
 
-![Crearea fișierului inițial pe GitHub](../../../../translated_images/new-file-github.com.c886796d800e8056561829a181be1382c5303da9d902d8b2dd82b68a4806e21f.ro.png)
+![Crearea fișierului inițial pe GitHub](../../../../translated_images/ro/new-file-github.com.c886796d800e8056.webp)
 
 **Iată ce realizează această configurare inițială:**
 - **Stabilește** structura corectă a documentului HTML5 cu elemente semantice
@@ -104,7 +95,7 @@ Acum că fundația depozitului tău este stabilită, să trecem la VSCode.dev pe
 
 ✅ **Indicator de succes**: Ar trebui să vezi fișierele proiectului tău în bara laterală Explorer și `index.html` disponibil pentru editare în zona principală a editorului.
 
-![Proiect încărcat în VSCode.dev](../../../../translated_images/project-on-vscode.dev.e79815a9a95ee7feac72ebe5c941c91279716be37c575dbdbf2f43bea2c7d8b6.ro.png)
+![Proiect încărcat în VSCode.dev](../../../../translated_images/ro/project-on-vscode.dev.e79815a9a95ee7fe.webp)
 
 **Ce vei vedea în interfață:**
 - **Bara laterală Explorer**: **Afișează** fișierele și structura folderelor depozitului tău
@@ -448,7 +439,7 @@ Extensiile îmbunătățesc experiența de dezvoltare oferind capabilități de 
 **Rezultate imediate după instalare:**
 Odată ce CodeSwing este instalat, vei vedea o previzualizare live a site-ului tău de CV apărând în editor. Acest lucru îți permite să vezi exact cum arată site-ul tău pe măsură ce faci modificări.
 
-![Extensia CodeSwing afișând previzualizarea live](../../../../translated_images/after-codeswing-extension-pb.0ebddddcf73b550994947a9084e35e2836c713ae13839d49628e3c764c1cfe83.ro.png)
+![Extensia CodeSwing afișând previzualizarea live](../../../../translated_images/ro/after-codeswing-extension-pb.0ebddddcf73b5509.webp)
 
 **Înțelegerea interfeței îmbunătățite:**
 - **Vizualizare divizată**: **Afișează** codul pe o parte și previzualizarea live pe cealaltă

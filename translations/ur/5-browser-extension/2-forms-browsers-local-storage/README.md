@@ -1,12 +1,3 @@
-<!--
-CO_OP_TRANSLATOR_METADATA:
-{
-  "original_hash": "2b6203a48c48d8234e0948353b47d84e",
-  "translation_date": "2025-11-03T13:40:35+00:00",
-  "source_file": "5-browser-extension/2-forms-browsers-local-storage/README.md",
-  "language_code": "ur"
-}
--->
 # براؤزر ایکسٹینشن پروجیکٹ حصہ 2: API کال کریں، لوکل اسٹوریج استعمال کریں
 
 ```mermaid
@@ -268,7 +259,7 @@ stateDiagram-v2
     ClearStorage --> FirstTime: Back to setup
 ```
 
-![لوکل اسٹوریج پین](../../../../translated_images/localstorage.472f8147b6a3f8d141d9551c95a2da610ac9a3c6a73d4a1c224081c98bae09d9.ur.png)
+![لوکل اسٹوریج پین](../../../../translated_images/ur/localstorage.472f8147b6a3f8d1.webp)
 
 > ⚠️ **سیکیورٹی غور و فکر**: پروڈکشن ایپلیکیشنز میں، لوکل اسٹوریج میں API کلیدوں کو محفوظ کرنا سیکیورٹی خطرات پیدا کرتا ہے کیونکہ جاوا اسکرپٹ اس ڈیٹا تک رسائی حاصل کر سکتا ہے۔ سیکھنے کے مقاصد کے لیے، یہ طریقہ ٹھیک کام کرتا ہے، لیکن حقیقی ایپلیکیشنز کو حساس اسناد کے لیے محفوظ سرور سائیڈ اسٹوریج استعمال کرنا چاہیے۔
 

@@ -1,12 +1,3 @@
-<!--
-CO_OP_TRANSLATOR_METADATA:
-{
-  "original_hash": "5c383cc2cc23bb164b06417d1c107a44",
-  "translation_date": "2025-11-18T19:05:45+00:00",
-  "source_file": "1-getting-started-lessons/2-github-basics/README.md",
-  "language_code": "my"
-}
--->
 # GitHub အကြောင်းမိတ်ဆက်
 
 ဟေး၊ အနာဂတ် Developer! 👋 ကမ္ဘာတစ်ဝှမ်းရှိ coder သန်းပေါင်းများစွာနဲ့ ပူးပေါင်းဖို့ အဆင်သင့်ဖြစ်ပြီလား? GitHub ကို မိတ်ဆက်ပေးဖို့ တကယ်ပဲ စိတ်လှုပ်ရှားနေပါတယ် – ဒါကို programmer တွေအတွက် social media platform လို့ ထင်ပါ။ ဒါပေမယ့် lunch ရဲ့ ဓာတ်ပုံတွေ မျှဝေတဲ့အစား code တွေကို မျှဝေပြီး အံ့ဖွယ်ရာတွေကို အတူတူ တည်ဆောက်နေကြတာပါ!
@@ -17,7 +8,7 @@ CO_OP_TRANSLATOR_METADATA:
 
 ဒီခရီးကို အတူတူ လျှောက်ကြမယ်၊ တစ်ဆင့်ချင်းစီနဲ့။ အလျင်မပြေးပါနဲ့၊ ဖိအားမပေးပါနဲ့ – သင်၊ ငါနဲ့ သင့်ရဲ့ အကောင်းဆုံးသူငယ်ချင်းအသစ်ဖြစ်လာမယ့် အလွန်အမင်းအေးချမ်းတဲ့ tools တွေပါ!
 
-![GitHub အကြောင်းမိတ်ဆက်](../../../../translated_images/webdev101-github.8846d7971abef6f947909b4f9d343e2a23778aa716ca6b9d71df7174ee5009ac.my.png)
+![GitHub အကြောင်းမိတ်ဆက်](../../../../translated_images/my/webdev101-github.8846d7971abef6f9.webp)
 > Sketchnote by [Tomomi Imura](https://twitter.com/girlie_mac)
 
 ```mermaid
@@ -441,7 +432,7 @@ flowchart TD
 
 ✅ 'beginner-friendly' repo တွေကို [good-first-issue tag ကို search လုပ်ပြီး](https://github.blog/2020-01-22-browse-good-first-issues-to-start-contributing-to-open-source/) ရှာဖွေပါ။
 
-![Repo ကို ဒေသခံမှာ copy လုပ်ပါ](../../../../translated_images/clone_repo.5085c48d666ead57664f050d806e325d7f883be6838c821e08bc823ab7c66665.my.png)
+![Repo ကို ဒေသခံမှာ copy လုပ်ပါ](../../../../translated_images/my/clone_repo.5085c48d666ead57.webp)
 
 Code ကို copy လုပ်ဖို့ နည်းလမ်းအများကြီးရှိပါတယ်။ Repository ရဲ့ content ကို HTTPS, SSH, GitHub CLI (Command Line Interface) ကို အသုံးပြုပြီး "clone" လုပ်နိုင်ပါတယ်။
 

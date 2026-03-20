@@ -1,12 +1,3 @@
-<!--
-CO_OP_TRANSLATOR_METADATA:
-{
-  "original_hash": "973e48ad87d67bf5bb819746c9f8e302",
-  "translation_date": "2025-11-03T13:13:52+00:00",
-  "source_file": "3-terrarium/3-intro-to-DOM-and-closures/README.md",
-  "language_code": "ur"
-}
--->
 # ٹیریریم پروجیکٹ حصہ 3: DOM مینپولیشن اور جاوا اسکرپٹ کلوزرز
 
 ```mermaid
@@ -26,7 +17,7 @@ journey
       Complete terrarium: 5: Student
 ```
 
-![DOM اور ایک کلوزر](../../../../translated_images/webdev101-js.10280393044d7eaaec7e847574946add7ddae6be2b2194567d848b61d849334a.ur.png)
+![DOM اور ایک کلوزر](../../../../translated_images/ur/webdev101-js.10280393044d7eaa.webp)
 > اسکیچ نوٹ [Tomomi Imura](https://twitter.com/girlie_mac) کی طرف سے
 
 ویب ڈیولپمنٹ کے سب سے دلچسپ پہلو میں خوش آمدید - چیزوں کو انٹرایکٹو بنانا! دستاویز آبجیکٹ ماڈل (DOM) آپ کے HTML اور جاوا اسکرپٹ کے درمیان ایک پل کی طرح ہے، اور آج ہم اسے آپ کے ٹیریریم کو زندہ کرنے کے لیے استعمال کریں گے۔ جب ٹم برنرز لی نے پہلا ویب براؤزر بنایا، تو انہوں نے ایک ایسی ویب کا تصور کیا جہاں دستاویزات متحرک اور انٹرایکٹو ہو سکیں - DOM اس تصور کو ممکن بناتا ہے۔
@@ -105,7 +96,7 @@ flowchart TD
     style Q fill:#ffebee
 ```
 
-![DOM درخت کی نمائندگی](../../../../translated_images/dom-tree.7daf0e763cbbba9273f9a66fe04c98276d7d23932309b195cb273a9cf1819b42.ur.png)
+![DOM درخت کی نمائندگی](../../../../translated_images/ur/dom-tree.7daf0e763cbbba92.webp)
 
 > DOM اور HTML مارک اپ کی نمائندگی جو اس کا حوالہ دیتا ہے۔ [Olfa Nasraoui](https://www.researchgate.net/publication/221417012_Profile-Based_Focused_Crawler_for_Social_Media-Sharing_Websites) کی طرف سے
 
@@ -150,7 +141,7 @@ flowchart LR
 
 > 💡 **کلوزرز کو سمجھنا**: کلوزرز جاوا اسکرپٹ میں ایک اہم موضوع ہیں، اور بہت سے ڈیولپرز انہیں سالوں تک استعمال کرتے ہیں اس سے پہلے کہ وہ تمام نظریاتی پہلوؤں کو مکمل طور پر سمجھ سکیں۔ آج، ہم عملی اطلاق پر توجہ مرکوز کر رہے ہیں - آپ دیکھیں گے کہ کلوزرز قدرتی طور پر ابھرتے ہیں جب ہم اپنی انٹرایکٹو خصوصیات بناتے ہیں۔ سمجھنا اس وقت ترقی کرے گا جب آپ دیکھیں گے کہ وہ حقیقی مسائل کو کیسے حل کرتے ہیں۔
 
-![DOM درخت کی نمائندگی](../../../../translated_images/dom-tree.7daf0e763cbbba9273f9a66fe04c98276d7d23932309b195cb273a9cf1819b42.ur.png)
+![DOM درخت کی نمائندگی](../../../../translated_images/ur/dom-tree.7daf0e763cbbba92.webp)
 
 > DOM اور HTML مارک اپ کی نمائندگی جو اس کا حوالہ دیتا ہے۔ [Olfa Nasraoui](https://www.researchgate.net/publication/221417012_Profile-Based_Focused_Crawler_for_Social_Media-Sharing_Websites) کی طرف سے
 
@@ -554,7 +545,7 @@ function stopElementDrag() {
 - **کراس ڈیوائس سپورٹ**: ڈیسک ٹاپ اور موبائل پر کام کرتا ہے
 - **پرفارمنس کا خیال**: کوئی میموری لیکس یا غیر ضروری حسابات نہیں
 
-![مکمل شدہ ٹیریریم](../../../../translated_images/terrarium-final.0920f16e87c13a84cd2b553a5af9a3ad1cffbd41fbf8ce715d9e9c43809a5e2c.ur.png)
+![مکمل شدہ ٹیریریم](../../../../translated_images/ur/terrarium-final.0920f16e87c13a84.webp)
 
 ---
 

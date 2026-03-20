@@ -1,12 +1,3 @@
-<!--
-CO_OP_TRANSLATOR_METADATA:
-{
-  "original_hash": "71009af209f81cc01a1f2d324200375f",
-  "translation_date": "2025-10-03T08:32:07+00:00",
-  "source_file": "for-teachers.md",
-  "language_code": "ru"
-}
--->
 ### Для преподавателей
 
 Вы можете использовать эту учебную программу в своем классе. Она отлично интегрируется с GitHub Classroom и ведущими платформами LMS, а также может быть использована как самостоятельный репозиторий для работы со студентами.
@@ -42,10 +33,10 @@ CO_OP_TRANSLATOR_METADATA:
   - Moodle Cloud имеет ограниченную поддержку Common Cartridge. Предпочтительно использовать файл Moodle, который также можно загрузить в Canvas.
   - После импорта проверьте модули, сроки выполнения и настройки викторин, чтобы они соответствовали вашему расписанию.
 
-![Moodle](../../translated_images/moodle.94eb93d714a50cb2c97435b408017dee224348b61bc86203ffd43a4f4e57b95f.ru.png)
+![Moodle](../../translated_images/ru/moodle.94eb93d714a50cb2.webp)
 > Учебная программа в классе Moodle
 
-![Canvas](../../translated_images/canvas.fbd605ff8e5b8aff567d398528ce113db304446b90b9cad55c654de3fdfcda34.ru.png)
+![Canvas](../../translated_images/ru/canvas.fbd605ff8e5b8aff.webp)
 > Учебная программа в Canvas
 
 ### Использование репозитория напрямую (без Classroom)

@@ -1,12 +1,3 @@
-<!--
-CO_OP_TRANSLATOR_METADATA:
-{
-  "original_hash": "d45ddcc54eb9232a76d08328b09d792e",
-  "translation_date": "2025-11-04T02:13:56+00:00",
-  "source_file": "1-getting-started-lessons/1-intro-to-programming-languages/README.md",
-  "language_code": "he"
-}
--->
 # מבוא לשפות תכנות וכלי פיתוח מודרניים
 
 היי שם, מפתח עתידי! 👋 אפשר לספר לך משהו שעדיין גורם לי להתרגש כל יום מחדש? אתה עומד לגלות שתכנות זה לא רק מחשבים – זה כמו לקבל כוחות-על שמאפשרים לך להפוך את הרעיונות הכי פרועים שלך למציאות!
@@ -17,7 +8,7 @@ CO_OP_TRANSLATOR_METADATA:
 
 היום, אנחנו הולכים לחקור את הכלים המדהימים שהופכים את פיתוח האינטרנט המודרני לא רק לאפשרי, אלא לממכר ברצינות. אני מדבר על אותם עורכים, דפדפנים ותהליכי עבודה שהמפתחים בנטפליקס, ספוטיפיי, ובסטודיו האפליקציות האהוב עליך משתמשים בהם כל יום. והנה החלק שיגרום לך לרקוד משמחה: רוב הכלים המקצועיים האלה, ברמת תעשייה, הם לגמרי בחינם!
 
-![מבוא לתכנות](../../../../translated_images/webdev101-programming.d6e3f98e61ac4bff0b27dcbf1c3f16c8ed46984866f2d29988929678b0058fde.he.png)
+![מבוא לתכנות](../../../../translated_images/he/webdev101-programming.d6e3f98e61ac4bff.webp)
 > איור מאת [Tomomi Imura](https://twitter.com/girlie_mac)
 
 ```mermaid

@@ -1,12 +1,3 @@
-<!--
-CO_OP_TRANSLATOR_METADATA:
-{
-  "original_hash": "973e48ad87d67bf5bb819746c9f8e302",
-  "translation_date": "2025-11-06T14:33:44+00:00",
-  "source_file": "3-terrarium/3-intro-to-DOM-and-closures/README.md",
-  "language_code": "my"
-}
--->
 # Terrarium Project Part 3: DOM Manipulation and JavaScript Closures
 
 ```mermaid
@@ -26,7 +17,7 @@ journey
       Complete terrarium: 5: Student
 ```
 
-![DOM and a closure](../../../../translated_images/webdev101-js.10280393044d7eaaec7e847574946add7ddae6be2b2194567d848b61d849334a.my.png)
+![DOM and a closure](../../../../translated_images/my/webdev101-js.10280393044d7eaa.webp)
 > Sketchnote by [Tomomi Imura](https://twitter.com/girlie_mac)
 
 ဝင်ရောက်ကြိုဆိုပါတယ်။ ဒီနေ့မှာတော့ ဝက်ဘ်ဒီဇိုင်းကို အပြောင်းအလဲဖြစ်စေတဲ့ အပိုင်းတစ်ခုကို လေ့လာမှာဖြစ်ပါတယ်။ Document Object Model (DOM) ဟာ HTML နဲ့ JavaScript အကြားက တံတားတစ်ခုလိုဖြစ်ပြီး၊ ဒီနေ့မှာတော့ သင့် terrarium ကို အသက်ဝင်အောင်လုပ်ဖို့ အသုံးပြုမှာပါ။ Tim Berners-Lee က ပထမဆုံး ဝက်ဘ်ဘရောက်ဇာကို ဖန်တီးတဲ့အခါ၊ စာရွက်စာတမ်းတွေကို dynamic နဲ့ interactive ဖြစ်စေတဲ့ ဝက်ဘ်ကို ရည်ရွယ်ခဲ့ပါတယ်။ DOM က အဲဒီရည်မှန်းချက်ကို အကောင်အထည်ဖော်ပေးပါတယ်။
@@ -105,7 +96,7 @@ flowchart TD
     style Q fill:#ffebee
 ```
 
-![DOM tree representation](../../../../translated_images/dom-tree.7daf0e763cbbba9273f9a66fe04c98276d7d23932309b195cb273a9cf1819b42.my.png)
+![DOM tree representation](../../../../translated_images/my/dom-tree.7daf0e763cbbba92.webp)
 
 > DOM နဲ့ HTML markup ကို ကိုယ်စားပြုထားတဲ့ပုံ။ [Olfa Nasraoui](https://www.researchgate.net/publication/221417012_Profile-Based_Focused_Crawler_for_Social_Media-Sharing_Websites) မှ
 
@@ -150,7 +141,7 @@ flowchart LR
 
 > 💡 **Closures ကိုနားလည်ခြင်း**: JavaScript မှာ closures ဟာ အရေးကြီးတဲ့အကြောင်းအရာတစ်ခုဖြစ်ပြီး၊ developer အများစုဟာ အနှစ်များစွာ အသုံးပြုပြီးမှသာ အကြောင်းအရာအားလုံးကို အပြည့်အဝ နားလည်နိုင်ပါတယ်။ ဒီနေ့မှာတော့ practical application ကို အဓိကထားပြီး interactive features တွေကို တည်ဆောက်တဲ့အခါ closures တွေကို သဘာဝအတိုင်း တွေ့မြင်ရမှာဖြစ်ပါတယ်။ နားလည်မှုတွေဟာ အကောင်အထည်ဖော်တဲ့နည်းလမ်းတွေကို မြင်ရင်းဖြစ်လာပါလိမ့်မယ်။
 
-![DOM tree representation](../../../../translated_images/dom-tree.7daf0e763cbbba9273f9a66fe04c98276d7d23932309b195cb273a9cf1819b42.my.png)
+![DOM tree representation](../../../../translated_images/my/dom-tree.7daf0e763cbbba92.webp)
 
 > DOM နဲ့ HTML markup ကို ကိုယ်စားပြုထားတဲ့ပုံ။ [Olfa Nasraoui](https://www.researchgate.net/publication/221417012_Profile-Based_Focused_Crawler_for_Social_Media-Sharing_Websites) မှ
 
@@ -531,7 +522,7 @@ Dragging system သည် CSS property key နှစ်ခုကို manipulat
 - **Cross-device support**: Desktop နှင့် mobile တွင်အလုပ်လုပ်သည်
 - **Performance conscious**: Memory leak မရှိဘဲ calculation များကိုထပ်မလုပ်ပါ
 
-![finished terrarium](../../../../translated_images/terrarium-final.0920f16e87c13a84cd2b553a5af9a3ad1cffbd41fbf8ce715d9e9c43809a5e2c.my.png)
+![finished terrarium](../../../../translated_images/my/terrarium-final.0920f16e87c13a84.webp)
 
 ---
 

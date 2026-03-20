@@ -1,12 +1,3 @@
-<!--
-CO_OP_TRANSLATOR_METADATA:
-{
-  "original_hash": "b275fed2c6fc90d2b9b6661a3225faa2",
-  "translation_date": "2025-11-04T01:43:38+00:00",
-  "source_file": "5-browser-extension/3-background-tasks-and-performance/README.md",
-  "language_code": "fi"
-}
--->
 # Selaimen laajennusprojekti Osa 3: Taustatehtävät ja suorituskyky
 
 ```mermaid
@@ -126,7 +117,7 @@ Avaa Edge-selaimen kehitystyökalut klikkaamalla oikeassa yläkulmassa olevia ko
 
 Kokeillaan tätä. Avaa verkkosivusto (Microsoft.com toimii hyvin tähän) ja klikkaa 'Tallenna'-painiketta. Päivitä sivu ja katso, kuinka profiilintyökalu tallentaa kaiken, mitä tapahtuu. Kun lopetat tallennuksen, näet yksityiskohtaisen erittelyn siitä, kuinka selain 'skriptasi', 'renderöi' ja 'maalasi' sivuston. Se muistuttaa minua siitä, kuinka ohjauskeskus seuraa jokaista järjestelmää raketin laukaisun aikana – saat reaaliaikaista dataa siitä, mitä tapahtuu ja milloin.
 
-![Edge profiler](../../../../translated_images/profiler.5a4a62479c5df01cfec9aab74173dba13f91d2c968e1a1ae434c26165792df15.fi.png)
+![Edge profiler](../../../../translated_images/fi/profiler.5a4a62479c5df01c.webp)
 
 ✅ [Microsoftin dokumentaatio](https://docs.microsoft.com/microsoft-edge/devtools-guide/performance/?WT.mc_id=academic-77807-sagibbon) sisältää paljon lisätietoa, jos haluat syventyä aiheeseen.
 
@@ -136,11 +127,11 @@ Valitse profiilin aikajanan osia zoomataksesi tapahtumiin, jotka tapahtuvat sivu
 
 Saat yleiskuvan sivusi suorituskyvystä valitsemalla osan profiilin aikajanasta ja katsomalla yhteenvetopaneelia:
 
-![Edge profiler snapshot](../../../../translated_images/snapshot.97750180ebcad73794a3594b36925eb5c8dbaac9e03fec7f9b974188c9ac63c7.fi.png)
+![Edge profiler snapshot](../../../../translated_images/fi/snapshot.97750180ebcad737.webp)
 
 Tarkista Tapahtumaloki-paneeli nähdäksesi, kestikö jokin tapahtuma yli 15 ms:
 
-![Edge event log](../../../../translated_images/log.804026979f3707e00eebcfa028b2b5a88cec6292f858767bb6703afba65a7d9c.fi.png)
+![Edge event log](../../../../translated_images/fi/log.804026979f3707e0.webp)
 
 ✅ Tutustu profiilityökaluusi! Avaa kehitystyökalut tällä sivustolla ja katso, onko pullonkauloja. Mikä on hitaimmin latautuva resurssi? Nopein?
 

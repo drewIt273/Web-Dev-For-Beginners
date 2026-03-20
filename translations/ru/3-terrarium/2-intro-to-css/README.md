@@ -1,12 +1,3 @@
-<!--
-CO_OP_TRANSLATOR_METADATA:
-{
-  "original_hash": "e39f3a4e3bcccf94639e3af1248f8a4d",
-  "translation_date": "2025-11-03T23:21:57+00:00",
-  "source_file": "3-terrarium/2-intro-to-css/README.md",
-  "language_code": "ru"
-}
--->
 # Проект "Террариум", часть 2: Введение в CSS
 
 ```mermaid
@@ -30,7 +21,7 @@ journey
       Glass reflections: 5: Student
 ```
 
-![Введение в CSS](../../../../translated_images/webdev101-css.3f7af5991bf53a200d79e7257e5e450408d8ea97f5b531d31b2e3976317338ee.ru.png)
+![Введение в CSS](../../../../translated_images/ru/webdev101-css.3f7af5991bf53a20.webp)
 > Скетчноут от [Tomomi Imura](https://twitter.com/girlie_mac)
 
 Помните, как ваш HTML-террариум выглядел довольно просто? С помощью CSS мы преобразуем эту простую структуру в нечто визуально привлекательное.
@@ -205,7 +196,7 @@ body {
 
 Откройте инструменты разработчика вашего браузера (F12), перейдите на вкладку "Элементы" и проверьте ваш элемент `<h1>`. Вы увидите, что он наследует семейство шрифтов от body:
 
-![наследованный шрифт](../../../../translated_images/1.cc07a5cbe114ad1d4728c35134584ac1b87db688eff83cf75985cf31fe0ed95c.ru.png)
+![наследованный шрифт](../../../../translated_images/ru/1.cc07a5cbe114ad1d.webp)
 
 ✅ **Время эксперимента**: Попробуйте установить другие наследуемые свойства для `<body>`, такие как `color`, `line-height` или `text-align`. Что происходит с вашим заголовком и другими элементами?
 
@@ -335,7 +326,7 @@ h1 {
 **Вот структура HTML для каждого растения:**
 ```html
 <div class="plant-holder">
-  <img class="plant" alt="Decorative plant for terrarium" id="plant1" src="../../../../translated_images/plant1.d18b18ffe73da18f8b1ac7aba73b4050af52f4a0c9174aeac464b85123fc2850.ru.png" />
+  <img class="plant" alt="Decorative plant for terrarium" id="plant1" src="../../../../translated_images/ru/plant1.d18b18ffe73da18f8b1ac7aba73b4050af52f4a0c9174aeac464b85123fc2850.png" />
 </div>
 ```
 
@@ -599,7 +590,7 @@ flowchart LR
 
 Вы создадите тонкие блики, которые имитируют отражение света на стеклянных поверхностях. Этот подход похож на то, как художники эпохи Возрождения, такие как Ян ван Эйк, использовали свет и отражение, чтобы сделать изображенное стекло трехмерным. Вот к чему вы стремитесь:
 
-![finished terrarium](../../../../translated_images/terrarium-final.2f07047ffc597d0a06b06cab28a77801a10dd12fdb6c7fc630e9c40665491c53.ru.png)
+![finished terrarium](../../../../translated_images/ru/terrarium-final.2f07047ffc597d0a.webp)
 
 **Ваше задание:**
 - **Создайте** тонкие белые или светлые овальные формы для отражений на стекле

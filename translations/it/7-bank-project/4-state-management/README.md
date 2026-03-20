@@ -1,12 +1,3 @@
-<!--
-CO_OP_TRANSLATOR_METADATA:
-{
-  "original_hash": "b807b09df716dc48a2b750835bf8e933",
-  "translation_date": "2025-11-04T00:30:12+00:00",
-  "source_file": "7-bank-project/4-state-management/README.md",
-  "language_code": "it"
-}
--->
 # Creare un'app bancaria Parte 4: Concetti di gestione dello stato
 
 ## ⚡ Cosa puoi fare nei prossimi 5 minuti
@@ -190,7 +181,7 @@ La [gestione dello stato](https://en.wikipedia.org/wiki/State_management) riguar
 
 Invece di inseguire i nostri errori, creeremo un sistema di **gestione dello stato centralizzato**. Pensalo come avere una persona davvero organizzata incaricata di tutte le cose importanti:
 
-![Schema che mostra i flussi di dati tra HTML, azioni dell'utente e stato](../../../../translated_images/data-flow.fa2354e0908fecc89b488010dedf4871418a992edffa17e73441d257add18da4.it.png)
+![Schema che mostra i flussi di dati tra HTML, azioni dell'utente e stato](../../../../translated_images/it/data-flow.fa2354e0908fecc8.webp)
 
 ```mermaid
 flowchart TD
@@ -804,7 +795,7 @@ Questa sfida ti aiuterà a pensare come uno sviluppatore professionista che cons
 
 Ecco un esempio di risultato dopo aver completato il compito:
 
-![Screenshot che mostra un esempio di finestra di dialogo "Aggiungi transazione"](../../../../translated_images/dialog.93bba104afeb79f12f65ebf8f521c5d64e179c40b791c49c242cf15f7e7fab15.it.png)
+![Screenshot che mostra un esempio di finestra di dialogo "Aggiungi transazione"](../../../../translated_images/it/dialog.93bba104afeb79f1.webp)
 
 ---
 

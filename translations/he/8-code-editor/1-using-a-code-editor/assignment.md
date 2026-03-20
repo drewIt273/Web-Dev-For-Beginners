@@ -1,12 +1,3 @@
-<!--
-CO_OP_TRANSLATOR_METADATA:
-{
-  "original_hash": "effe56ba51c38d7bdfad1ea38288666b",
-  "translation_date": "2025-10-23T01:13:07+00:00",
-  "source_file": "8-code-editor/1-using-a-code-editor/assignment.md",
-  "language_code": "he"
-}
--->
 # צור אתר קורות חיים באמצעות VSCode.dev
 
 שפר את סיכויי הקריירה שלך על ידי בניית אתר קורות חיים מקצועי המציג את הכישורים והניסיון שלך בפורמט אינטראקטיבי ומודרני. במקום לשלוח קובצי PDF מסורתיים, דמיין שאתה מספק למגייסים אתר אינטרנט אלגנטי ורספונסיבי שמדגים גם את הכישורים שלך וגם את יכולות הפיתוח שלך.
@@ -78,7 +69,7 @@ CO_OP_TRANSLATOR_METADATA:
 4. **כתוב** הודעת commit: "Add initial HTML structure"
 5. **לחץ** "Commit new file" כדי לשמור את השינויים שלך
 
-![יצירת קובץ ראשוני ב-GitHub](../../../../translated_images/new-file-github.com.c886796d800e8056561829a181be1382c5303da9d902d8b2dd82b68a4806e21f.he.png)
+![יצירת קובץ ראשוני ב-GitHub](../../../../translated_images/he/new-file-github.com.c886796d800e8056.webp)
 
 **הנה מה שההגדרה הראשונית הזו משיגה:**
 - **מבססת** מבנה מסמך HTML5 נכון עם אלמנטים סמנטיים
@@ -104,7 +95,7 @@ CO_OP_TRANSLATOR_METADATA:
 
 ✅ **אינדיקטור הצלחה**: אתה אמור לראות את קבצי הפרויקט שלך בסרגל הצד של Explorer ואת `index.html` זמין לעריכה באזור העורך הראשי.
 
-![פרויקט נטען ב-VSCode.dev](../../../../translated_images/project-on-vscode.dev.e79815a9a95ee7feac72ebe5c941c91279716be37c575dbdbf2f43bea2c7d8b6.he.png)
+![פרויקט נטען ב-VSCode.dev](../../../../translated_images/he/project-on-vscode.dev.e79815a9a95ee7fe.webp)
 
 **מה שתראה בממשק:**
 - **סרגל הצד של Explorer**: **מציג** את קבצי המאגר שלך ומבנה התיקיות
@@ -448,7 +439,7 @@ li:before {
 **תוצאות מיידיות לאחר ההתקנה:**
 לאחר התקנת CodeSwing, תראה תצוגה מקדימה חיה של אתר הקורות חיים שלך מופיעה בעורך. זה מאפשר לך לראות בדיוק איך האתר שלך נראה בזמן שאתה מבצע שינויים.
 
-![תוסף CodeSwing מציג תצוגה מקדימה חיה](../../../../translated_images/after-codeswing-extension-pb.0ebddddcf73b550994947a9084e35e2836c713ae13839d49628e3c764c1cfe83.he.png)
+![תוסף CodeSwing מציג תצוגה מקדימה חיה](../../../../translated_images/he/after-codeswing-extension-pb.0ebddddcf73b5509.webp)
 
 **הבנת הממשק המשופר:**
 - **תצוגה מפוצלת**: **מציגה** את הקוד שלך בצד אחד ואת התצוגה המקדימה בצד השני

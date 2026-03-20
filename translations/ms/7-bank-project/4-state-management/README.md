@@ -1,12 +1,3 @@
-<!--
-CO_OP_TRANSLATOR_METADATA:
-{
-  "original_hash": "b807b09df716dc48a2b750835bf8e933",
-  "translation_date": "2025-11-06T12:13:18+00:00",
-  "source_file": "7-bank-project/4-state-management/README.md",
-  "language_code": "ms"
-}
--->
 # Bina Aplikasi Perbankan Bahagian 4: Konsep Pengurusan Keadaan
 
 ## ⚡ Apa Yang Boleh Anda Lakukan Dalam 5 Minit Seterusnya
@@ -190,7 +181,7 @@ Seperti reka bentuk berkompartmen Titanic yang kelihatan kukuh sehingga beberapa
 
 Daripada mengejar ekor kita sendiri, kita akan mencipta sistem **pengurusan keadaan berpusat**. Anggaplah ia seperti mempunyai seorang yang sangat teratur yang bertanggungjawab ke atas semua perkara penting:
 
-![Skema menunjukkan aliran data antara HTML, tindakan pengguna dan keadaan](../../../../translated_images/data-flow.fa2354e0908fecc89b488010dedf4871418a992edffa17e73441d257add18da4.ms.png)
+![Skema menunjukkan aliran data antara HTML, tindakan pengguna dan keadaan](../../../../translated_images/ms/data-flow.fa2354e0908fecc8.webp)
 
 ```mermaid
 flowchart TD
@@ -803,7 +794,7 @@ Cabaran ini akan membantu anda berfikir seperti pembangun profesional yang mempe
 
 Berikut adalah contoh hasil selepas menyelesaikan tugasan:
 
-![Tangkapan skrin menunjukkan contoh dialog "Tambah transaksi"](../../../../translated_images/dialog.93bba104afeb79f12f65ebf8f521c5d64e179c40b791c49c242cf15f7e7fab15.ms.png)
+![Tangkapan skrin menunjukkan contoh dialog "Tambah transaksi"](../../../../translated_images/ms/dialog.93bba104afeb79f1.webp)
 
 ---
 

@@ -1,12 +1,3 @@
-<!--
-CO_OP_TRANSLATOR_METADATA:
-{
-  "original_hash": "7994743c5b21fdcceb36307916ef249a",
-  "translation_date": "2025-11-03T15:50:53+00:00",
-  "source_file": "6-space-game/2-drawing-to-canvas/README.md",
-  "language_code": "ne"
-}
--->
 # स्पेस गेम निर्माण भाग २: हिरो र राक्षसलाई क्यानभासमा चित्रण गर्नुहोस्
 
 ```mermaid
@@ -108,7 +99,7 @@ quadrantChart
     UI Elements: [0.9, 0.1]
 ```
 
-![क्यानभासको ग्रिड](../../../../translated_images/canvas_grid.5f209da785ded492a01ece440e3032afe51efa500cc2308e5ea4252487ceaf0b.ne.png)
+![क्यानभासको ग्रिड](../../../../translated_images/ne/canvas_grid.5f209da785ded492.webp)
 > छवि [MDN](https://developer.mozilla.org/docs/Web/API/Canvas_API/Tutorial/Drawing_shapes) बाट
 
 क्यानभास तत्वमा चित्रण गर्न, तपाईंले क्यानभास ग्राफिक्सको आधार बनाउने तीन-चरण प्रक्रिया पछ्याउनुहुनेछ। तपाईंले यो केही पटक गरेपछि, यो स्वाभाविक बन्छ:
@@ -329,11 +320,11 @@ flowchart TD
 
 - हिरो जहाज
 
-   ![हिरो जहाज](../../../../translated_images/player.dd24c1afa8c71e9b82b2958946d4bad13308681392d4b5ddcc61a0e818ef8088.ne.png)
+   ![हिरो जहाज](../../../../translated_images/ne/player.dd24c1afa8c71e9b.webp)
 
 - 5*5 राक्षस
 
-   ![राक्षस जहाज](../../../../translated_images/enemyShip.5df2a822c16650c2fb3c06652e8ec8120cdb9122a6de46b9a1a56d54db22657f.ne.png)
+   ![राक्षस जहाज](../../../../translated_images/ne/enemyShip.5df2a822c16650c2.webp)
 
 ### विकास सुरु गर्न सिफारिस गरिएका चरणहरू
 
@@ -414,7 +405,7 @@ const STOP_X = START_X + FORMATION_WIDTH;
 
 तयार परिणाम यसरी देखिनुपर्छ:
 
-![कालो स्क्रिनमा एक नायक र ५*५ राक्षसहरू](../../../../translated_images/partI-solution.36c53b48c9ffae2a5e15496b23b604ba5393433e4bf91608a7a0a020eb7a2691.ne.png)
+![कालो स्क्रिनमा एक नायक र ५*५ राक्षसहरू](../../../../translated_images/ne/partI-solution.36c53b48c9ffae2a.webp)
 
 ## समाधान
 

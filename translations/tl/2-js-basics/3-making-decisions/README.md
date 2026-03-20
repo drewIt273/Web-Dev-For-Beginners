@@ -1,15 +1,6 @@
-<!--
-CO_OP_TRANSLATOR_METADATA:
-{
-  "original_hash": "c688385d15dd3645e924ea0ffee8967f",
-  "translation_date": "2025-11-03T13:46:09+00:00",
-  "source_file": "2-js-basics/3-making-decisions/README.md",
-  "language_code": "tl"
-}
--->
 # Mga Pangunahing Kaalaman sa JavaScript: Paggawa ng Desisyon
 
-![Mga Pangunahing Kaalaman sa JavaScript - Paggawa ng Desisyon](../../../../translated_images/webdev101-js-decisions.69e1b20f272dd1f0b1cb2f8adaff3ed2a77c4f91db96d8a0594132a353fa189a.tl.png)
+![Mga Pangunahing Kaalaman sa JavaScript - Paggawa ng Desisyon](../../../../translated_images/tl/webdev101-js-decisions.69e1b20f272dd1f0.webp)
 
 > Sketchnote ni [Tomomi Imura](https://twitter.com/girlie_mac)
 

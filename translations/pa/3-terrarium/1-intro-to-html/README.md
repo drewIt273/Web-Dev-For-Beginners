@@ -1,12 +1,3 @@
-<!--
-CO_OP_TRANSLATOR_METADATA:
-{
-  "original_hash": "3fcfa99c4897e051b558b5eaf1e8cc74",
-  "translation_date": "2025-11-03T16:35:03+00:00",
-  "source_file": "3-terrarium/1-intro-to-html/README.md",
-  "language_code": "pa"
-}
--->
 # ਟੈਰੀਰੀਅਮ ਪ੍ਰੋਜੈਕਟ ਭਾਗ 1: HTML ਦਾ ਪਰਿਚਯ
 
 ```mermaid
@@ -26,7 +17,7 @@ journey
       Build terrarium: 5: Student
 ```
 
-![HTML ਦਾ ਪਰਿਚਯ](../../../../translated_images/webdev101-html.4389c2067af68e98280c1bde52b6c6269f399eaae3659b7c846018d8a7b0bbd9.pa.png)
+![HTML ਦਾ ਪਰਿਚਯ](../../../../translated_images/pa/webdev101-html.4389c2067af68e98.webp)
 > ਸਕੈਚਨੋਟ [Tomomi Imura](https://twitter.com/girlie_mac) ਦੁਆਰਾ
 
 HTML, ਜਾਂ HyperText Markup Language, ਹਰ ਵੈਬਸਾਈਟ ਦੀ ਬੁਨਿਆਦ ਹੈ ਜਿਸ ਨੂੰ ਤੁਸੀਂ ਕਦੇ ਵੀ ਵੇਖਿਆ ਹੈ। HTML ਨੂੰ ਵੈਬ ਪੇਜਾਂ ਦੇ ਢਾਂਚੇ ਦੇ ਤੌਰ 'ਤੇ ਸੋਚੋ - ਇਹ ਨਿਰਧਾਰਤ ਕਰਦਾ ਹੈ ਕਿ ਸਮੱਗਰੀ ਕਿੱਥੇ ਜਾਂਦੀ ਹੈ, ਇਹ ਕਿਵੇਂ ਸੰਗਠਿਤ ਹੈ, ਅਤੇ ਹਰ ਹਿੱਸਾ ਕੀ ਦਰਸਾਉਂਦਾ ਹੈ। ਜਦ CSS ਤੁਹਾਡੇ HTML ਨੂੰ ਰੰਗਾਂ ਅਤੇ ਲੇਆਉਟ ਨਾਲ "ਸਜਾਉਣ" ਲਈ ਆਵੇਗਾ, ਅਤੇ JavaScript ਇਸਨੂੰ ਇੰਟਰਐਕਟਿਵਿਟੀ ਨਾਲ ਜ਼ਿੰਦਾ ਕਰੇਗਾ, HTML ਉਹ ਅਹਿਮ ਢਾਂਚਾ ਪ੍ਰਦਾਨ ਕਰਦਾ ਹੈ ਜੋ ਬਾਕੀ ਸਭ ਕੁਝ ਸੰਭਵ ਬਣਾਉਂਦਾ ਹੈ।
@@ -88,7 +79,7 @@ HTML ਕੋਡ ਵਿੱਚ ਡੁੱਬਣ ਤੋਂ ਪਹਿਲਾਂ, ਆਓ
 4. Explorer ਪੈਨ ਵਿੱਚ, "New File" ਆਈਕਨ 'ਤੇ ਕਲਿਕ ਕਰੋ
 5. ਆਪਣੀ ਫਾਈਲ ਨੂੰ `index.html` ਨਾਮ ਦਿਓ
 
-![VS Code Explorer ਨਵੀਂ ਫਾਈਲ ਬਣਾਉਣ ਦਿਖਾਉਂਦਾ ਹੈ](../../../../translated_images/vs-code-index.e2986cf919471eb984a0afef231380c8b132b000635105f2397bd2754d1b689c.pa.png)
+![VS Code Explorer ਨਵੀਂ ਫਾਈਲ ਬਣਾਉਣ ਦਿਖਾਉਂਦਾ ਹੈ](../../../../translated_images/pa/vs-code-index.e2986cf919471eb9.webp)
 
 **ਵਿਕਲਪ 2: ਟਰਮੀਨਲ ਕਮਾਂਡ ਦੀ ਵਰਤੋਂ ਕਰਨਾ**
 ```bash

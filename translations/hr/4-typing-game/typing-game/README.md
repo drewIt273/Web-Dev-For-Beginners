@@ -1,116 +1,106 @@
-<!--
-CO_OP_TRANSLATOR_METADATA:
-{
-  "original_hash": "e6b75e5b8caae906473a8a09d77b7121",
-  "translation_date": "2025-10-25T00:09:32+00:00",
-  "source_file": "4-typing-game/typing-game/README.md",
-  "language_code": "hr"
-}
--->
-# Kreiranje igre pomoću događaja
+# Izrada igre pomoću događaja
 
-Jeste li se ikada pitali kako web stranice znaju kada kliknete na gumb ili upišete tekst u okvir? To je čarolija programiranja vođenog događajima! Koji je bolji način za učenje ove ključne vještine nego izradom nečeg korisnog - igre brzog tipkanja koja reagira na svaki vaš pritisak tipke.
+Jeste li se ikada zapitali kako web stranice znaju kada kliknete na gumb ili upišete nešto u tekstni okvir? To je čarolija programiranja vođenog događajima! Koji je bolji način za naučiti ovu osnovnu vještinu nego izgraditi nešto korisno - igru brzine tipkanja koja reagira na svaki pritisak tipke.
 
-Vidjet ćete iz prve ruke kako web preglednici "komuniciraju" s vašim JavaScript kodom. Svaki put kad kliknete, tipkate ili pomičete miš, preglednik šalje male poruke (zovemo ih događaji) vašem kodu, a vi odlučujete kako ćete reagirati!
+Uvidjet ćete iz prve ruke kako web preglednici "komuniciraju" s vašim JavaScript kodom. Svaki put kada kliknete, tipkate ili pomaknete miša, preglednik šalje male poruke (zovemo ih događaji) vašem kodu i vi odlučujete kako na njih odgovoriti!
 
-Do kraja ovog vodiča, izradit ćete pravu igru tipkanja koja prati vašu brzinu i točnost. Još važnije, razumjet ćete osnovne koncepte koji pokreću svaku interaktivnu web stranicu koju ste ikada koristili. Krenimo!
+Do kraja ovog vodiča izgradit ćete pravu igru tipkanja koja prati vašu brzinu i točnost. Još važnije, razumjet ćete temeljne koncepte koji pokreću svaku interaktivnu web stranicu koju ste ikada koristili. Krenimo!
 
-## Kviz prije predavanja
+## Pred-predavanje kviz
 
-[Pre-lecture quiz](https://ff-quizzes.netlify.app/web/quiz/21)
+[Pred-predavanje kviz](https://ff-quizzes.netlify.app/web/quiz/21)
 
 ## Programiranje vođeno događajima
 
-Razmislite o svojoj omiljenoj aplikaciji ili web stranici - što je čini živom i responzivnom? Sve se svodi na to kako reagira na vaše radnje! Svaki dodir, klik, povlačenje ili pritisak tipke stvara ono što zovemo "događaj", i tu se događa prava čarolija web razvoja.
+Razmislite o svojoj omiljenoj aplikaciji ili web stranici - što je čini živom i responzivnom? Sve se svodi na način na koji reagira na ono što radite! Svaki dodir, klik, klizanje prstom ili pritisak tipke stvara ono što zovemo "događaj", i tu se događa prava čarolija razvoja weba.
 
-Evo što programiranje za web čini tako zanimljivim: nikada ne znamo kada će netko kliknuti taj gumb ili početi tipkati u tekstualni okvir. Možda će kliknuti odmah, čekati pet minuta ili možda nikada neće kliknuti! Ova nepredvidivost znači da moramo razmišljati drugačije o tome kako pišemo svoj kod.
+Ono što programiranje za web čini tako zanimljivim jest to što nikada ne znamo kada će netko kliknuti gumb ili početi tipkati u tekstni okvir. Mogu kliknuti odmah, pričekati pet minuta ili možda nikada ne kliknuti! Ova nepredvidivost znači da moramo drukčije razmišljati o pisanju koda.
 
-Umjesto da pišemo kod koji se izvršava od vrha do dna poput recepta, pišemo kod koji strpljivo čeka da se nešto dogodi. To je slično kao što su telegrafisti u 1800-ima sjedili uz svoje strojeve, spremni odgovoriti čim poruka stigne putem žice.
+Umjesto da pišemo kod koji se izvršava od vrha do dna poput recepta, pišemo kod koji strpljivo čeka da se nešto dogodi. To je slično kao što su telegrafisti u 1800-ima sjedili kraj svojih uređaja, spremni odgovoriti u trenutku kada poruka stigne žicom.
 
-Dakle, što je točno "događaj"? Jednostavno rečeno, to je nešto što se događa! Kada kliknete na gumb - to je događaj. Kada upišete slovo - to je događaj. Kada pomaknete miš - to je još jedan događaj.
+Pa, što je zapravo "događaj"? Jednostavno rečeno, to je nešto što se dogodi! Kada kliknete gumb - to je događaj. Kad upišete slovo - to je događaj. Kada pomaknete miša - to je još jedan događaj.
 
-Programiranje vođeno događajima omogućuje nam da postavimo naš kod da sluša i reagira. Kreiramo posebne funkcije koje se zovu **slušači događaja** i koje strpljivo čekaju da se dogodi nešto specifično, a zatim se aktiviraju kada se to dogodi.
+Programiranje vođeno događajima omogućuje nam da postavimo naš kod da sluša i odgovara. Kreiramo posebne funkcije zvane **slušatelji događaja** koji strpljivo čekaju da se dogode određene stvari, a onda brzo reagiraju.
 
-Zamislite slušatelje događaja kao zvono na vratima za vaš kod. Postavite zvono na vratima (`addEventListener()`), kažete mu koji zvuk treba slušati (poput 'klik' ili 'pritisak tipke'), a zatim odredite što bi se trebalo dogoditi kada netko zazvoni (vaša prilagođena funkcija).
+Slušatelje događaja možete zamisliti kao zvono na vratima za vaš kod. Postavite zvono (`addEventListener()`), kažete mu koji zvuk da sluša (kao 'click' ili 'keypress'), a zatim odredite što treba napraviti kada netko zvoni (vaša prilagođena funkcija).
 
-**Kako funkcioniraju slušatelji događaja:**
-- **Slušaju** specifične radnje korisnika poput klikova, pritisaka tipki ili pomicanja miša
-- **Izvršavaju** vaš prilagođeni kod kada se dogodi određeni događaj
-- **Reagiraju** odmah na interakcije korisnika, stvarajući besprijekorno iskustvo
-- **Rukovode** višestrukim događajima na istom elementu koristeći različite slušatelje
+**Evo kako slušatelji događaja funkcioniraju:**
+- **Slušaju** određene korisničke radnje poput klikova, pritisaka tipki ili pokreta miša
+- **Izvršavaju** vaš prilagođeni kod kada se dogodi navedeni događaj
+- **Odgovaraju** odmah na korisničke interakcije, stvarajući besprijekorno iskustvo
+- **Rukovode** s više događaja na istom elementu koristeći različite slušatelje
 
-> **NOTE:** Vrijedi istaknuti da postoji mnogo načina za kreiranje slušatelja događaja. Možete koristiti anonimne funkcije ili kreirati imenovane. Možete koristiti razne prečace, poput postavljanja svojstva `click`, ili korištenja `addEventListener()`. U našem zadatku fokusirat ćemo se na `addEventListener()` i anonimne funkcije, jer je to vjerojatno najčešća tehnika koju web programeri koriste. Također je najfleksibilnija, jer `addEventListener()` radi za sve događaje, a ime događaja može se pružiti kao parametar.
+> **NAPOMENA:** Vrijedi istaknuti da postoji mnogo načina za kreiranje slušatelja događaja. Možete koristiti anonimne funkcije ili kreirati imenovane. Možete koristiti razne prečace, poput postavljanja svojstva `click`, ili korištenja `addEventListener()`. U našoj vježbi fokusirat ćemo se na `addEventListener()` i anonimne funkcije, jer je to vjerojatno najčešća tehnika koju web programeri koriste. Također je najfleksibilnija, jer `addEventListener()` radi za sve događaje, a ime događaja može se proslijediti kao parametar.
 
 ### Uobičajeni događaji
 
-Iako web preglednici nude desetke različitih događaja koje možete slušati, većina interaktivnih aplikacija oslanja se na samo nekoliko osnovnih događaja. Razumijevanje ovih ključnih događaja pružit će vam temelj za izgradnju sofisticiranih korisničkih interakcija.
+Iako web preglednici nude desetke različitih događaja na koje možete reagirati, većina interaktivnih aplikacija oslanja se samo na nekoliko osnovnih događaja. Razumijevanje ovih osnovnih događaja pružit će vam temelj za izradu složenih korisničkih interakcija.
 
-Postoji [desetak događaja](https://developer.mozilla.org/docs/Web/Events) koje možete slušati prilikom kreiranja aplikacije. U osnovi, sve što korisnik radi na stranici pokreće događaj, što vam daje puno moći da osigurate da dobiju željeno iskustvo. Srećom, obično će vam trebati samo nekoliko osnovnih događaja. Evo nekoliko uobičajenih (uključujući dva koja ćemo koristiti pri kreiranju naše igre):
+Postoji [desetke događaja](https://developer.mozilla.org/docs/Web/Events) na koje možete slušati prilikom izrade aplikacije. U osnovi, sve što korisnik učini na stranici izaziva događaj, što vam daje mnogo moći da osigurate željeno iskustvo. Srećom, obično vam treba samo mali broj događaja. Evo nekoliko uobičajenih (uključujući dva koja ćemo koristiti za izradu naše igre):
 
-| Događaj | Opis | Uobičajeni slučajevi upotrebe |
-|---------|------|-----------------------------|
-| `click` | Korisnik je kliknuo na nešto | Gumbi, poveznice, interaktivni elementi |
-| `contextmenu` | Korisnik je kliknuo desnom tipkom miša | Prilagođeni izbornici desnog klika |
-| `select` | Korisnik je označio neki tekst | Uređivanje teksta, operacije kopiranja |
-| `input` | Korisnik je unio neki tekst | Validacija obrazaca, pretraživanje u stvarnom vremenu |
+| Događaj | Opis | Uobičajeni slučajevi uporabe |
+|---------|-------|------------------------------|
+| `click` | Korisnik je kliknuo nešto | Gumbi, linkovi, interaktivni elementi |
+| `contextmenu` | Korisnik je kliknuo desnom tipkom miša | Prilagođeni desni klik izbornici |
+| `select` | Korisnik je označio neki tekst | Uređivanje teksta, kopiranje |
+| `input` | Korisnik je unio neki tekst | Validacija formi, pretraživanje u stvarnom vremenu |
 
-**Razumijevanje ovih vrsta događaja:**
-- **Pokreću** se kada korisnici interagiraju s određenim elementima na vašoj stranici
-- **Pružaju** detaljne informacije o radnji korisnika putem objekata događaja
-- **Omogućuju** stvaranje responzivnih, interaktivnih web aplikacija
-- **Funkcioniraju** dosljedno na različitim preglednicima i uređajima
+**Razumijevanje ovih tipova događaja:**
+- **Pokreću se** kada se korisnici interakcijom odnose na određene elemente na vašoj stranici
+- **Pružaju** detaljne informacije o korisničkoj radnji putem objekata događaja
+- **Omogućuju** kreiranje responzivnih, interaktivnih web aplikacija
+- **Rade** dosljedno preko različitih preglednika i uređaja
 
-## Kreiranje igre
+## Izrada igre
 
-Sada kada razumijete kako događaji funkcioniraju, primijenimo to znanje u praksi izradom nečeg korisnog. Kreirat ćemo igru brzog tipkanja koja demonstrira rukovanje događajima dok vam pomaže razviti važnu vještinu programiranja.
+Sada kada razumijete kako događaji funkcioniraju, primijenimo to znanje kroz izradu nečeg korisnog. Kreirat ćemo igru brzine tipkanja koja demonstrira upravljanje događajima dok vam pomaže razviti važnu developersku vještinu.
 
-Izradit ćemo igru kako bismo istražili kako događaji funkcioniraju u JavaScriptu. Naša igra testirat će vještinu tipkanja igrača, što je jedna od najpodcjenjenijih vještina koju bi svi programeri trebali imati. Zanimljivost: raspored tipkovnice QWERTY koji danas koristimo zapravo je dizajniran 1870-ih za pisaće strojeve - a dobre vještine tipkanja i dalje su jednako vrijedne za programere danas! Opći tijek igre izgledat će ovako:
+Izradit ćemo igru kako bismo istražili kako događaji rade u JavaScriptu. Naša igra testirat će sposobnost tipkanja igrača, što je jedna od najpotcjenjenijih vještina koje svi developeri trebaju imati. Zanimljivost: raspored tipkovnice QWERTY kojeg danas koristimo zapravo je dizajniran 1870-ih za pisaće strojeve - a dobre vještine tipkanja još su uvijek jednako vrijedne za programere danas! Opći tijek igre bit će ovakav:
 
 ```mermaid
 flowchart TD
-    A[Player clicks Start] --> B[Random quote displays]
-    B --> C[Player types in textbox]
-    C --> D{Word complete?}
-    D -->|Yes| E[Highlight next word]
-    D -->|No| F{Correct so far?}
-    F -->|Yes| G[Keep normal styling]
-    F -->|No| H[Show error styling]
-    E --> I{Quote complete?}
-    I -->|No| C
-    I -->|Yes| J[Show success message with time]
+    A[Igrač klikne Start] --> B[Prikazuje se slučajna izreka]
+    B --> C[Igrač upisuje u tekstualno polje]
+    C --> D{Riječ završena?}
+    D -->|Da| E[Istakni sljedeću riječ]
+    D -->|Ne| F{Ispravno do sada?}
+    F -->|Da| G[Zadrži normalan stil]
+    F -->|Ne| H[Prikaži stil greške]
+    E --> I{Izreka završena?}
+    I -->|Ne| C
+    I -->|Da| J[Prikaži poruku uspjeha s vremenom]
     G --> C
     H --> C
 ```
+**Evo kako će naša igra funkcionirati:**
+- **Počinje** kada igrač klikne gumb za start i prikaže se nasumični citat
+- **Prati** igračev napredak u tipkanju riječ po riječ u stvarnom vremenu
+- **Ističe** trenutnu riječ kako bi usmjerila igračevu pažnju
+- **Pruža** trenutne vizualne povratne informacije za pogreške u tipkanju
+- **Izračunava** i prikazuje ukupno vrijeme po završetku citata
 
-**Kako će naša igra funkcionirati:**
-- **Počinje** kada igrač klikne gumb za početak i prikazuje nasumični citat
-- **Prati** napredak igrača u tipkanju riječ po riječ u stvarnom vremenu
-- **Ističe** trenutnu riječ kako bi usmjerio fokus igrača
-- **Pruža** trenutnu vizualnu povratnu informaciju za greške u tipkanju
-- **Izračunava** i prikazuje ukupno vrijeme kada je citat dovršen
-
-Krenimo s izradom naše igre i učenjem o događajima!
+Izgradimo našu igru i naučimo o događajima!
 
 ### Struktura datoteka
 
-Prije nego što počnemo kodirati, organizirajmo se! Imati čistu strukturu datoteka od početka uštedjet će vam glavobolje kasnije i učiniti vaš projekt profesionalnijim. 😊
+Prije nego što započnemo s kodiranjem, organizirajmo se! Imati čist raspored datoteka od početka uštedjet će vam glavobolje kasnije i učiniti vaš projekt profesionalnijim. 😊
 
-Zadržat ćemo stvari jednostavnima s samo tri datoteke: `index.html` za strukturu stranice, `script.js` za svu logiku igre i `style.css` kako bi sve izgledalo sjajno. Ovo je klasična trojka koja pokreće većinu weba!
+Držat ćemo se jednostavnog pristupa sa samo tri datoteke: `index.html` za strukturu stranice, `script.js` za svu logiku igre i `style.css` da sve izgleda lijepo. Ovo je klasični trio koji pokreće većinu weba!
 
-**Kreirajte novu mapu za svoj rad otvaranjem konzole ili terminala i izdavanjem sljedeće naredbe:**
+**Stvorite novi direktorij za vaš rad otvaranjem konzole ili terminala i izvršavanjem sljedeće naredbe:**
 
 ```bash
-# Linux or macOS
+# Linux ili macOS
 mkdir typing-game && cd typing-game
 
 # Windows
 md typing-game && cd typing-game
 ```
 
-**Što ove naredbe rade:**
-- **Kreiraju** novi direktorij nazvan `typing-game` za vaše projektne datoteke
-- **Navigiraju** automatski u novokreirani direktorij
-- **Postavljaju** čisto radno okruženje za razvoj vaše igre
+**Evo što ove naredbe rade:**
+- **Stvara** novi direktorij nazvan `typing-game` za vaše projektne datoteke
+- **Automatski** ulazi u novo kreirani direktorij
+- **Postavlja** čist radni prostor za razvoj vaše igre
 
 **Otvorite Visual Studio Code:**
 
@@ -119,37 +109,37 @@ code .
 ```
 
 **Ova naredba:**
-- **Pokreće** Visual Studio Code u trenutnom direktoriju
-- **Otvara** vašu projektnu mapu u uređivaču
-- **Omogućuje** pristup svim alatima za razvoj koji su vam potrebni
+- **Pokreće** Visual Studio Code u trenutnoj mapi
+- **Otvara** vašu projekt mapu u uređivaču
+- **Pruža** pristup svim alatima za razvoj koji će vam trebati
 
-**Dodajte tri datoteke u mapu u Visual Studio Code s sljedećim nazivima:**
+**Dodajte tri datoteke u mapu u Visual Studio Code s ovim imenima:**
 - `index.html` - Sadrži strukturu i sadržaj vaše igre
-- `script.js` - Rukuje svom logikom igre i slušateljima događaja
+- `script.js` - Rukuje svojom logikom igre i slušateljima događaja
 - `style.css` - Definira vizualni izgled i stilizaciju
 
-## Kreiranje korisničkog sučelja
+## Kreirajte korisničko sučelje
 
-Sada izgradimo pozornicu na kojoj će se odvijati sva akcija naše igre! Zamislite ovo kao dizajniranje kontrolne ploče za svemirski brod - moramo osigurati da je sve što naši igrači trebaju točno tamo gdje to očekuju.
+Sad izgradimo pozornicu na kojoj će se odvijati cijela akcija igre! Zamislite to kao dizajniranje kontrolne ploče za svemirski brod - moramo osigurati da je sve što igračima treba upravo tamo gdje očekuju.
 
-Razmislimo što naša igra zapravo treba. Da igrate igru tipkanja, što biste željeli vidjeti na ekranu? Evo što ćemo trebati:
+Razmotrimo što naša igra stvarno treba. Kada biste igrali igru tipkanja, što biste željeli vidjeti na ekranu? Evo što ćemo trebati:
 
-| Element sučelja | Svrha | HTML element |
-|------------------|-------|--------------|
-| Prikaz citata | Prikazuje tekst za tipkanje | `<p>` s `id="quote"` |
-| Područje poruka | Prikazuje status i poruke o uspjehu | `<p>` s `id="message"` |
-| Tekstualni unos | Mjesto gdje igrači upisuju citat | `<input>` s `id="typed-value"` |
-| Gumb za početak | Započinje igru | `<button>` s `id="start"` |
+| UI Element | Svrha | HTML Element |
+|------------|--------|--------------|
+| Prikaz citata | Prikazuje tekst koji treba upisati | `<p>` s `id="quote"` |
+| Područje poruke | Prikazuje status i poruke uspjeha | `<p>` s `id="message"` |
+| Tekstni unos | Gdje igrači tipkaju citat | `<input>` s `id="typed-value"` |
+| Gumb za start | Pokreće igru | `<button>` s `id="start"` |
 
-**Razumijevanje strukture sučelja:**
-- **Organizira** sadržaj logično od vrha prema dolje
-- **Dodjeljuje** jedinstvene ID-ove elementima za ciljanje u JavaScriptu
-- **Pruža** jasnu vizualnu hijerarhiju za bolji korisnički doživljaj
-- **Uključuje** semantičke HTML elemente za pristupačnost
+**Razumijevanje strukture UI-ja:**
+- **Organizira** sadržaj logično od vrha prema dnu
+- **Dodjeljuje** jedinstvene ID-eve elementima za ciljanje u JavaScriptu
+- **Pruža** jasnu vizualnu hijerarhiju za bolje korisničko iskustvo
+- **Uključuje** semantičke HTML elemente radi pristupačnosti
 
-Svaki od tih elemenata trebat će ID-ove kako bismo mogli raditi s njima u našem JavaScriptu. Također ćemo dodati reference na CSS i JavaScript datoteke koje ćemo kreirati.
+Svakom od njih trebat će ID kako bismo mogli raditi s njima u našem JavaScriptu. Također ćemo dodati reference na CSS i JavaScript datoteke koje ćemo stvoriti.
 
-Kreirajte novu datoteku pod nazivom `index.html`. Dodajte sljedeći HTML:
+Kreirajte novu datoteku nazvanu `index.html`. Dodajte sljedeći HTML:
 
 ```html
 <!-- inside index.html -->
@@ -172,52 +162,52 @@ Kreirajte novu datoteku pod nazivom `index.html`. Dodajte sljedeći HTML:
 </html>
 ```
 
-**Razlaganje onoga što ova HTML struktura postiže:**
+**Razlaganje što ova HTML struktura omogućuje:**
 - **Povezuje** CSS stilsku datoteku u `<head>` za stilizaciju
-- **Kreira** jasan naslov i upute za korisnike
-- **Postavlja** rezervirane odlomke s određenim ID-ovima za dinamički sadržaj
+- **Stvara** jasan naslov i upute za korisnike
+- **Uspostavlja** prazne paragrafove s određenim ID-evima za dinamički sadržaj
 - **Uključuje** polje za unos s atributima za pristupačnost
-- **Pruža** gumb za početak igre
+- **Pruža** gumb za start kako bi pokrenuo igru
 - **Učitava** JavaScript datoteku na kraju za optimalne performanse
 
 ### Pokretanje aplikacije
 
-Često testiranje vaše aplikacije tijekom razvoja pomaže vam da rano uočite probleme i vidite svoj napredak u stvarnom vremenu. Live Server je neprocjenjiv alat koji automatski osvježava vaš preglednik kad god spremite promjene, čineći razvoj mnogo učinkovitijim.
+Često testiranje vaše aplikacije tijekom razvoja pomaže vam da rano uočite probleme i pratite napredak u stvarnom vremenu. Live Server je neprocjenjiv alat koji automatski osvježava vaš preglednik svaki put kad spremite promjene, čineći razvoj znatno učinkovitijim.
 
-Uvijek je najbolje razvijati iterativno kako biste vidjeli kako stvari izgledaju. Pokrenimo našu aplikaciju. Postoji sjajan dodatak za Visual Studio Code pod nazivom [Live Server](https://marketplace.visualstudio.com/items?itemName=ritwickdey.LiveServer&WT.mc_id=academic-77807-sagibbon) koji će i hostati vašu aplikaciju lokalno i osvježavati preglednik svaki put kad spremite.
+Uvijek je najbolje razvijati iterativno kako biste vidjeli kako stvari izgledaju. Pokrenimo našu aplikaciju. Postoji izvrsni dodatak za Visual Studio Code pod nazivom [Live Server](https://marketplace.visualstudio.com/items?itemName=ritwickdey.LiveServer&WT.mc_id=academic-77807-sagibbon) koji će vam omogućiti lokalno hostanje aplikacije i osvježavanje preglednika svaki put kada spremite.
 
-**Instalirajte [Live Server](https://marketplace.visualstudio.com/items?itemName=ritwickdey.LiveServer&WT.mc_id=academic-77807-sagibbon) slijedeći poveznicu i klikom na Instaliraj:**
+**Instalirajte [Live Server](https://marketplace.visualstudio.com/items?itemName=ritwickdey.LiveServer&WT.mc_id=academic-77807-sagibbon) slijedeći vezu i kliknite na Instaliraj:**
 
-**Što se događa tijekom instalacije:**
-- **Otvara** vaš preglednik za pokretanje Visual Studio Code-a
-- **Vodi** vas kroz proces instalacije dodatka
-- **Može zahtijevati** ponovno pokretanje Visual Studio Code-a za dovršetak postavljanja
+**Evo što se događa tijekom instalacije:**
+- **Pokreće** vaš preglednik i otvara Visual Studio Code
+- **Vodit će** vas kroz proces instalacije dodatka
+- **Moguće je** da će biti potrebna ponovna izrada Visual Studio Codea da bi instalacija bila dovršena
 
-**Nakon instalacije, u Visual Studio Code-u, kliknite Ctrl-Shift-P (ili Cmd-Shift-P) za otvaranje palete naredbi:**
+**Nakon instalacije, u Visual Studio Codeu pritisnite Ctrl-Shift-P (ili Cmd-Shift-P) da otvorite paletu naredbi:**
 
 **Razumijevanje palete naredbi:**
-- **Pruža** brz pristup svim naredbama VS Code-a
+- **Omogućuje** brz pristup svim VS Code naredbama
 - **Pretražuje** naredbe dok tipkate
-- **Nudi** prečace za brži razvoj
+- **Nudi** tipkovne prečace za brži razvoj
 
 **Upišite "Live Server: Open with Live Server":**
 
 **Što Live Server radi:**
 - **Pokreće** lokalni razvojni server za vaš projekt
-- **Automatski** osvježava preglednik kada spremite datoteke
-- **Poslužuje** vaše datoteke s lokalnog URL-a (obično `localhost:5500`)
+- **Automatski** osvježava preglednik kad spremite datoteke
+- **Servira** vaše datoteke s lokalne URL adrese (obično `localhost:5500`)
 
-**Otvorite preglednik i navigirajte na `https://localhost:5500`:**
+**Otvorite preglednik i idite na `https://localhost:5500`:**
 
 Sada biste trebali vidjeti stranicu koju ste kreirali! Dodajmo malo funkcionalnosti.
 
-## Dodavanje CSS-a
+## Dodajte CSS
 
-Sada učinimo da sve izgleda dobro! Vizualna povratna informacija bila je ključna za korisnička sučelja od ranih dana računalstva. Osamdesetih godina istraživači su otkrili da trenutna vizualna povratna informacija dramatično poboljšava performanse korisnika i smanjuje greške. Upravo to ćemo stvoriti.
+Sad učinimo da stvari izgledaju dobro! Vizualna povratna informacija bila je ključna za korisnička sučelja još od ranih dana računarstva. Osamdesetih godina istraživači su otkrili da trenutna vizualna povratna informacija dramatično poboljšava korisničke performanse i smanjuje pogreške. Upravo to ćemo stvoriti.
 
-Naša igra mora biti kristalno jasna o tome što se događa. Igrači bi odmah trebali znati koju riječ trebaju upisati, a ako naprave grešku, trebali bi je odmah vidjeti. Kreirajmo jednostavno, ali učinkovito stiliziranje:
+Naša igra mora biti kristalno jasna u vezi s onim što se događa. Igrači bi trebali odmah znati koju riječ trebaju upisati, a ako naprave pogrešku, trebaju je odmah vidjeti. Napravimo jednostavan, ali učinkovit stil:
 
-Kreirajte novu datoteku pod nazivom `style.css` i dodajte sljedeću sintaksu.
+Kreirajte novu datoteku nazvanu `style.css` i dodajte sljedeći sintaksu.
 
 ```css
 /* inside style.css */
@@ -232,60 +222,59 @@ Kreirajte novu datoteku pod nazivom `style.css` i dodajte sljedeću sintaksu.
 ```
 
 **Razumijevanje ovih CSS klasa:**
-- **Ističe** trenutnu riječ žutom pozadinom za jasnu vizualnu pomoć
-- **Signalizira** greške u tipkanju svijetlom koraljnom bojom pozadine
-- **Pruža** trenutnu povratnu informaciju bez ometanja korisnikovog tipkanja
-- **Koristi** kontrastne boje za pristupačnost i jasnu vizualnu komunikaciju
+- **Ističe** trenutnu riječ žutom pozadinom za jasnu vizualnu usmjerenost
+- **Signalizira** pogreške u tipkanju svijetlocrvenom bojom pozadine
+- **Pruža** trenutne povratne informacije bez ometanja korisnika u tipkanju
+- **Koristi** kontrastne boje radi pristupačnosti i jasne vizualne komunikacije
 
-✅ Kada je riječ o CSS-u, možete oblikovati svoju stranicu kako god želite. Odvojite malo vremena i učinite stranicu privlačnijom:
+✅ Kada je riječ o CSS-u, možete postaviti izgled stranice kako god želite. Odvojite malo vremena i učinite da stranica izgleda privlačnije:
 
-- Odaberite drugačiji font
-- Obojite naslove
-- Promijenite veličinu elemenata
+- Odaberite drugi font
+- Bojite naslove
+- Promijenite veličine elemenata
 
 ## JavaScript
 
-Sada dolazi zanimljiv dio! 🎉 Imamo strukturu HTML-a i stilizaciju CSS-a, ali trenutno naša igra izgleda kao prekrasan automobil bez motora. JavaScript će biti taj motor - on je ono što sve zapravo pokreće i reagira na radnje igrača.
+Evo gdje stvari postaju zanimljive! 🎉 Imamo našu HTML strukturu i CSS stilizaciju, ali trenutno je naša igra kao lijep automobil bez motora. JavaScript će biti taj motor - on čini da sve stvarno funkcionira i reagira na ono što igrači rade.
 
-Ovdje ćete vidjeti kako vaše stvaranje oživljava. Krenut ćemo korak po korak kako ništa ne bi bilo previše zbunjujuće:
+Ovdje ćete vidjeti kako vaš projekt oživljava. Krenut ćemo korak po korak da ništa ne bude previše komplicirano:
 
 | Korak | Svrha | Što ćete naučiti |
 |-------|-------|------------------|
-| [Kreiranje konstanti](../../../../4-typing-game/typing-game) | Postavljanje citata i referenci na DOM | Upravljanje varijablama i odabir DOM-a |
-| [Slušač događaja za početak igre](../../../../4-typing-game/typing-game) | Rukovanje inicijalizacijom igre | Rukovanje događajima i ažuriranje sučelja |
-| [Slušač događaja za tipkanje](../../../../4-typing-game/typing-game) | Obrada korisničkog unosa u stvarnom vremenu | Validacija unosa i dinamična povratna informacija |
+| [Kreirajte konstante](../../../../4-typing-game/typing-game) | Postavite citate i reference na DOM | Upravljanje varijablama i odabir DOM elemenata |
+| [Slušatelj događaja za pokretanje igre](../../../../4-typing-game/typing-game) | Rukuje inicijalizacijom igre | Upravljanje događajima i ažuriranje UI-ja |
+| [Slušatelj događaja za tipkanje](../../../../4-typing-game/typing-game) | Obrada korisničkog unosa u stvarnom vremenu | Validacija unosa i dinamičke povratne informacije |
 
 **Ovaj strukturirani pristup pomaže vam:**
-- **Organizirati** vaš kod u logične, upravljive sekcije
-- **Graditi** funkcionalnost postupno za lakše otklanjanje grešaka
-- **Razumjeti** kako različiti dijelovi vaše aplikacije međusobno djeluju
-- **Kreirati** obrasce koji se mogu ponovno koristiti za buduće projekte
+- **Organizirati** kod u logične i upravljive cjeline
+- **Graditi** funkcionalnosti postupno radi lakšeg uklanjanja pogrešaka
+- **Razumjeti** kako različiti dijelovi aplikacije surađuju
+- **Stvarati** ponovljive obrasce za buduće projekte
 
-Ali prvo, kreirajte novu datoteku pod nazivom `script.js`.
+Ali prvo, stvorite novu datoteku nazvanu `script.js`.
 
-### Dodavanje konstanti
+### Dodajte konstante
 
-Prije nego što krenemo u akciju, prikupimo sve naše resurse! Baš kao što NASA-ina kontrola misije postavlja sve svoje sustave za praćenje prije lansiranja, puno je lakše kada imate sve pripremljeno i spremno. To nas spašava od traženja stvari kasnije i pomaže u sprječavanju tipfelera.
+Prije nego zaronimo u akciju, skupimo sve naše resurse! Baš kao što NASA-in kontrolni centar postavlja sve svoje nadzorne sustave prije lansiranja, puno je lakše kada imate sve pripremljeno i spremno. To nas spašava od traženja stvari kasnije i pomaže izbjeći tipkarske pogreške.
 
-Evo što prvo trebamo postaviti:
+Evo što trebamo najprije postaviti:
 
 | Tip podataka | Svrha | Primjer |
-|--------------|-------|---------|
-| Niz citata | Pohranjuje sve moguće citate za igru | `['Citat 1', 'Citat 2', ...]` |
-| Niz riječi | Razdvaja trenutni citat na pojedinačne riječi | `['Kad', 'imaš', '...', ...]` |
-| Indeks riječi | Prati koju riječ igrač trenutno tipka | `0, 1, 2, 3...` |
-| Vrijeme početka | Izračunava proteklo vrijeme za bodovanje | `Date.now()` |
+| Niz citata | Spremi sve moguće citate za igru | `['Quote 1', 'Quote 2', ...]` |
+| Niz riječi | Razdijeli trenutni citat na pojedinačne riječi | `['When', 'you', 'have', ...]` |
+| Indeks riječi | Prati koju riječ igrač tipka | `0, 1, 2, 3...` |
+| Vrijeme početka | Izračunaj proteklo vrijeme za bodovanje | `Date.now()` |
 
 **Također ćemo trebati reference na naše UI elemente:**
 | Element | ID | Svrha |
-|---------|----|-------|
-| Tekstualni unos | `typed-value` | Mjesto gdje igrači tipkaju |
+|---------|----|---------|
+| Unos teksta | `typed-value` | Gdje igrači tipkaju |
 | Prikaz citata | `quote` | Prikazuje citat za tipkanje |
-| Područje poruka | `message` | Prikazuje obavijesti o statusu |
+| Područje poruka | `message` | Prikazuje statusne poruke |
 
 ```javascript
-// inside script.js
-// all of our quotes
+// unutar script.js
+// svi naši citati
 const quotes = [
     'When you have eliminated the impossible, whatever remains, however improbable, must be the truth.',
     'There is nothing more deceptive than an obvious fact.',
@@ -295,143 +284,143 @@ const quotes = [
     'Nothing clears up a case so much as stating it to another person.',
     'Education never ends, Watson. It is a series of lessons, with the greatest for the last.',
 ];
-// store the list of words and the index of the word the player is currently typing
+// pohrani popis riječi i indeks riječi koju igrač trenutno upisuje
 let words = [];
 let wordIndex = 0;
-// the starting time
+// početno vrijeme
 let startTime = Date.now();
-// page elements
+// elementi stranice
 const quoteElement = document.getElementById('quote');
 const messageElement = document.getElementById('message');
 const typedValueElement = document.getElementById('typed-value');
 ```
 
-**Razlaganje što ovaj kod za postavljanje postiže:**
-- **Pohranjuje** niz citata Sherlocka Holmesa koristeći `const` jer se citati neće mijenjati
+**Razbijanje što ovaj početni kod ostvaruje:**
+- **Spremi** niz citata Sherlocka Holmesa koristeći `const` jer se citati neće mijenjati
 - **Inicijalizira** varijable za praćenje koristeći `let` jer će se te vrijednosti mijenjati tijekom igre
-- **Hvata** reference na DOM elemente koristeći `document.getElementById()` za učinkoviti pristup
-- **Postavlja** temelje za svu funkcionalnost igre s jasnim, opisnim nazivima varijabli
+- **Hvata** reference na DOM elemente koristeći `document.getElementById()` za efikasan pristup
+- **Postavlja** temelje za svu funkcionalnost igre s jasnim, opisnim imenima varijabli
 - **Organizira** povezane podatke i elemente logično radi lakšeg održavanja koda
 
-✅ Slobodno dodajte još citata u svoju igru
+✅ Slobodno dodaj još citata u svoju igru
 
-> 💡 **Savjet**: Možemo dohvatiti elemente kad god želimo u kodu koristeći `document.getElementById()`. Budući da ćemo se često referirati na te elemente, izbjeći ćemo tipografske pogreške s literalima stringova koristeći konstante. Okviri poput [Vue.js](https://vuejs.org/) ili [React](https://reactjs.org/) mogu vam pomoći bolje upravljati centralizacijom vašeg koda.
+> 💡 **Dobri savjet**: Elementi se mogu dohvatiti kad god želimo u kodu koristeći `document.getElementById()`. Zbog činjenice da ćemo se na njih često pozivati, izbjegavamo tipfelere u string literalima korištenjem konstanti. Okviri poput [Vue.js](https://vuejs.org/) ili [React](https://reactjs.org/) mogu ti pomoći bolje upravljati centralizacijom koda.
 >
-**Zašto ovaj pristup tako dobro funkcionira:**
-- **Sprječava** pravopisne pogreške pri višestrukom referiranju na elemente
+**Evo zašto ovaj pristup tako dobro funkcionira:**
+- **Sprječava** pogreške u pisanju prilikom višestrukog korištenja elemenata
 - **Poboljšava** čitljivost koda s opisnim nazivima konstanti
-- **Omogućuje** bolju podršku IDE-a s automatskim dovršavanjem i provjerom pogrešaka
-- **Olakšava** refaktoriranje ako se ID-ovi elemenata kasnije promijene
+- **Omogućuje** bolju podršku IDE-a s automatskim dovršavanjem i provjerom grešaka
+- **Olakšava** refaktoriranje u slučaju kasnije promjene ID-eva elemenata
 
-Odvojite trenutak da pogledate video o korištenju `const`, `let` i `var`
+Uzmite minutu da pogledate video o korištenju `const`, `let` i `var`
 
 [![Vrste varijabli](https://img.youtube.com/vi/JNIXfGiDWM8/0.jpg)](https://youtube.com/watch?v=JNIXfGiDWM8 "Vrste varijabli")
 
-> 🎥 Kliknite na sliku iznad za video o varijablama.
+> 🎥 Klikni sliku iznad za video o varijablama.
 
-### Dodajte logiku za početak
+### Dodaj logiku za početak
 
-Ovdje sve dolazi na svoje mjesto! 🚀 Upravo ćete napisati svoj prvi pravi event listener, a postoji nešto vrlo zadovoljavajuće u tome da vidite kako vaš kod reagira na klik gumba.
+Ovdje sve počinje klikati na mjesto! 🚀 Upravo ćeš napisati svoj prvi stvarni slušatelj događaja, a postoji nešto vrlo zadovoljavajuće u gledanju kako tvoj kod reagira na klik gumba.
 
-Razmislite o tome: negdje vani, igrač će kliknuti gumb "Start", a vaš kod mora biti spreman za njega. Nemamo pojma kada će kliknuti - možda odmah, možda nakon što popije kavu - ali kad to učini, vaša igra oživljava.
+Razmisli: negdje tamo, igrač će kliknuti gumb "Start", a tvoj kod treba biti spreman za to. Ne znamo kada će kliknuti - može odmah, može nakon što popije kavu - ali kad klikne, tvoja igra oživljava.
 
-Kada korisnik klikne `start`, trebamo odabrati citat, postaviti korisničko sučelje i postaviti praćenje za trenutnu riječ i vrijeme. Ispod je JavaScript koji trebate dodati; o njemu ćemo raspravljati odmah nakon bloka skripte.
+Kad korisnik klikne `start`, trebamo odabrati citat, postaviti korisničko sučelje i postaviti praćenje za trenutnu riječ i vrijeme. Ispod je JavaScript koji trebaš dodati; razgovaramo o njemu odmah nakon bloka skripte.
 
 ```javascript
-// at the end of script.js
+// na kraju script.js
 document.getElementById('start').addEventListener('click', () => {
-  // get a quote
+  // dobiti citat
   const quoteIndex = Math.floor(Math.random() * quotes.length);
   const quote = quotes[quoteIndex];
-  // Put the quote into an array of words
+  // Stavite citat u polje riječi
   words = quote.split(' ');
-  // reset the word index for tracking
+  // resetiraj indeks riječi za praćenje
   wordIndex = 0;
 
-  // UI updates
-  // Create an array of span elements so we can set a class
+  // Ažuriranja korisničkog sučelja
+  // Napravi polje span elemenata da možemo postaviti klasu
   const spanWords = words.map(function(word) { return `<span>${word} </span>`});
-  // Convert into string and set as innerHTML on quote display
+  // Pretvori u string i postavi kao innerHTML na prikazu citata
   quoteElement.innerHTML = spanWords.join('');
-  // Highlight the first word
+  // Istakni prvu riječ
   quoteElement.childNodes[0].className = 'highlight';
-  // Clear any prior messages
+  // Očisti sve prethodne poruke
   messageElement.innerText = '';
 
-  // Setup the textbox
-  // Clear the textbox
+  // Postavi tekstni okvir
+  // Očisti tekstni okvir
   typedValueElement.value = '';
-  // set focus
+  // postavi fokus
   typedValueElement.focus();
-  // set the event handler
+  // postavi rukovatelja događaja
 
-  // Start the timer
+  // Pokreni mjerač vremena
   startTime = new Date().getTime();
 });
 ```
 
-**Razlaganje koda na logične dijelove:**
+**Rasčlanimo kod na logične dijelove:**
 
-**📊 Postavljanje praćenja riječi:**
-- **Odabire** nasumični citat koristeći `Math.floor()` i `Math.random()` za raznolikost
+**📊 Podešavanje praćenja riječi:**
+- **Odabire** nasumični citat koristeći `Math.floor()` i `Math.random()` radi raznolikosti
 - **Pretvara** citat u niz pojedinačnih riječi koristeći `split(' ')`
-- **Resetira** `wordIndex` na 0 jer igrači počinju s prvom riječi
-- **Priprema** stanje igre za novi krug
+- **Resetira** `wordIndex` na 0 jer igrači počinju od prve riječi
+- **Priprema** stanje igre za novu rundu
 
-**🎨 Postavljanje i prikaz korisničkog sučelja:**
-- **Stvara** niz `<span>` elemenata, omotavajući svaku riječ za pojedinačno stiliziranje
-- **Spaja** span elemente u jedan string za učinkovito ažuriranje DOM-a
+**🎨 Postavljanje i prikaz UI-a:**
+- **Stvara** niz `<span>` elemenata, umotavajući svaku riječ za pojedinačno stiliziranje
+- **Spaja** span elemente u jedan string radi efikasnog ažuriranja DOM-a
 - **Ističe** prvu riječ dodavanjem CSS klase `highlight`
-- **Briše** sve prethodne poruke igre kako bi osigurao čistu ploču
+- **Briše** sve prethodne poruke igre za čist početak
 
-**⌨️ Priprema tekstualnog polja:**
+**⌨️ Priprema tekstualnog unosa:**
 - **Briše** postojeći tekst u polju za unos
-- **Postavlja fokus** na tekstualno polje kako bi igrači mogli odmah početi tipkati
+- **Postavlja fokus** u textbox da igrači mogu odmah početi tipkati
 - **Priprema** područje unosa za novu sesiju igre
 
-**⏱️ Inicijalizacija mjerača vremena:**
-- **Hvata** trenutni vremenski pečat koristeći `new Date().getTime()`
+**⏱️ Inicijalizacija tajmera:**
+- **Hvata** trenutačni vremenski žig koristeći `new Date().getTime()`
 - **Omogućuje** točan izračun brzine tipkanja i vremena završetka
-- **Započinje** praćenje performansi za sesiju igre
+- **Pokreće** praćenje izvedbe za sesiju igre
 
-### Dodajte logiku za tipkanje
+### Dodaj logiku tipkanja
 
-Ovdje se bavimo srcem naše igre! Ne brinite ako vam se na prvi pogled čini previše - proći ćemo kroz svaki dio, i na kraju ćete vidjeti kako je sve logično.
+Ovdje ćemo se pozabaviti srcem naše igre! Ne brini ako ti se na početku čini puno – proći ćemo kroz svaki dio, a na kraju će ti sve biti vrlo logično.
 
-Ono što ovdje gradimo prilično je sofisticirano: svaki put kad netko upiše slovo, naš kod će provjeriti što je upisano, dati povratnu informaciju i odlučiti što dalje. To je slično načinu na koji su rani procesori teksta poput WordStara iz 1970-ih pružali povratne informacije u stvarnom vremenu za tipkače.
+Ono što gradimo je prilično sofisticirano: svaki put kad netko upiše slovo, naš kod će provjeriti što je napisao, dati povratnu informaciju i odlučiti što dalje. Slično je kao rani procesori teksta poput WordStar u 1970-ima koji su pružali povratne informacije u stvarnom vremenu tipkajućima.
 
 ```javascript
-// at the end of script.js
+// na kraju script.js
 typedValueElement.addEventListener('input', () => {
-  // Get the current word
+  // Dohvati trenutnu riječ
   const currentWord = words[wordIndex];
-  // get the current value
+  // dohvatiti trenutnu vrijednost
   const typedValue = typedValueElement.value;
 
   if (typedValue === currentWord && wordIndex === words.length - 1) {
-    // end of sentence
-    // Display success
+    // kraj rečenice
+    // Prikaži uspjeh
     const elapsedTime = new Date().getTime() - startTime;
     const message = `CONGRATULATIONS! You finished in ${elapsedTime / 1000} seconds.`;
     messageElement.innerText = message;
   } else if (typedValue.endsWith(' ') && typedValue.trim() === currentWord) {
-    // end of word
-    // clear the typedValueElement for the new word
+    // kraj riječi
+    // očisti typedValueElement za novu riječ
     typedValueElement.value = '';
-    // move to the next word
+    // prijeđi na sljedeću riječ
     wordIndex++;
-    // reset the class name for all elements in quote
+    // resetiraj naziv klase za sve elemente u citatu
     for (const wordElement of quoteElement.childNodes) {
       wordElement.className = '';
     }
-    // highlight the new word
+    // istakni novu riječ
     quoteElement.childNodes[wordIndex].className = 'highlight';
   } else if (currentWord.startsWith(typedValue)) {
-    // currently correct
-    // highlight the next word
+    // trenutno ispravno
+    // istakni sljedeću riječ
     typedValueElement.className = '';
   } else {
-    // error state
+    // stanje pogreške
     typedValueElement.className = 'error';
   }
 });
@@ -439,117 +428,176 @@ typedValueElement.addEventListener('input', () => {
 
 **Razumijevanje toka logike tipkanja:**
 
-Ova funkcija koristi pristup "vodopada", provjeravajući uvjete od najkonkretnijih do najopćenitijih. Razmotrimo svaki scenarij:
+Ova funkcija koristi vodopadni pristup, provjeravajući uvjete od najspecifičnijih do najopćenitijih. Razložimo svaki scenarij:
 
 ```mermaid
 flowchart TD
-    A[Player types character] --> B[Get current word and typed value]
-    B --> C{Quote complete?}
-    C -->|Yes| D[Show completion message with time]
-    C -->|No| E{Word complete with space?}
-    E -->|Yes| F[Clear input, move to next word, update highlight]
-    E -->|No| G{Typing correctly so far?}
-    G -->|Yes| H[Remove error styling]
-    G -->|No| I[Show error styling]
+    A[Igrač upisuje znak] --> B[Dohvati trenutnu riječ i upisanu vrijednost]
+    B --> C{Završena navodnica?}
+    C -->|Da| D[Prikaži poruku o dovršetku s vremenom]
+    C -->|Ne| E{Riječ završena razmakom?}
+    E -->|Da| F[Očisti unos, prijeđi na sljedeću riječ, ažuriraj označavanje]
+    E -->|Ne| G{Jesmo li do sada pravilno tipkali?}
+    G -->|Da| H[Ukloni stil pogreške]
+    G -->|Ne| I[Prikaži stil pogreške]
 ```
-
-**🏁 Završetak citata (Scenarij 1):**
-- **Provjerava** odgovara li upisana vrijednost trenutnoj riječi I jesmo li na posljednjoj riječi
-- **Izračunava** proteklo vrijeme oduzimanjem vremena početka od trenutnog vremena
+**🏁 Citat završen (Scenarij 1):**
+- **Provjerava** je li unesena vrijednost jednaka trenutnoj riječi I je li to posljednja riječ
+- **Izračunava** proteklo vrijeme oduzimanjem vremena početka od trenutačnog vremena
 - **Pretvara** milisekunde u sekunde dijeljenjem s 1.000
 - **Prikazuje** čestitku s vremenom završetka
 
-**✅ Završetak riječi (Scenarij 2):**
-- **Otkriva** završetak riječi kada unos završi razmakom
-- **Provjerava** da li obrezani unos točno odgovara trenutnoj riječi
-- **Briše** polje za unos za sljedeću riječ
-- **Prelazi** na sljedeću riječ povećanjem `wordIndex`
+**✅ Riječ završena (Scenarij 2):**
+- **Detektira** završetak riječi kada unos završava razmakom
+- **Provjerava** da li trimmirani unos točno odgovara trenutnoj riječi
+- **Briše** unos za sljedeću riječ
+- **Napreduje** na sljedeću riječ povećanjem `wordIndex`
 - **Ažurira** vizualno isticanje uklanjanjem svih klasa i isticanjem nove riječi
 
 **📝 Tipkanje u tijeku (Scenarij 3):**
-- **Provjerava** počinje li trenutna riječ s onim što je dosad upisano
-- **Uklanja** sve stiliziranje grešaka kako bi pokazao da je unos točan
-- **Omogućuje** nastavak tipkanja bez prekida
+- **Provjerava** je li trenutna riječ započeta unesenim tekstom dosad
+- **Uklanja** bilo kakvo stiliziranje greške da pokaže da je unos točan
+- **Dozvoljava** nastavak tipkanja bez prekida
 
 **❌ Stanje greške (Scenarij 4):**
-- **Pokreće** se kada upisani tekst ne odgovara očekivanom početku riječi
-- **Primjenjuje** CSS klasu greške za trenutnu vizualnu povratnu informaciju
-- **Pomaže** igračima brzo identificirati i ispraviti pogreške
+- **Aktivira** se kada uneseni tekst ne odgovara očekivanom početku riječi
+- **Dodaje** CSS klasu greške za trenutnu vizualnu povratnu informaciju
+- **Pomaže** igračima da brzo identificiraju i isprave pogreške
 
-## Testirajte svoju aplikaciju
+## Testiraj svoju aplikaciju
 
-Pogledajte što ste postigli! 🎉 Upravo ste izgradili pravu, funkcionalnu igru tipkanja od nule koristeći programiranje temeljeno na događajima. Odvojite trenutak da to cijenite - ovo nije mali podvig!
+Pogledaj što si postigao! 🎉 Upravo si napravio pravu, funkcionalnu igru tipkanja iz temelja koristeći programiranje vođeno događajima. Uzmi trenutak da to cijenis - nije mala stvar!
 
-Sada dolazi faza testiranja! Hoće li raditi kako je očekivano? Jesmo li nešto propustili? Evo stvari: ako nešto ne radi savršeno odmah, to je potpuno normalno. Čak i iskusni programeri redovito pronalaze greške u svom kodu. To je sve dio procesa razvoja!
+Sada dolazi faza testiranja! Hoće li raditi kako treba? Jesmo li nešto propustili? Evo što: ako nešto ne radi savršeno odmah, to je potpuno normalno. Čak i iskusni programeri redovito pronalaze greške u svom kodu. To je dio procesa razvoja!
 
-Kliknite na `start` i počnite tipkati! Trebalo bi izgledati otprilike kao animacija koju smo vidjeli prije.
+Klikni na `start` i počni tipkati! Trebalo bi izgledati malo kao animacija koju smo vidjeli prije.
 
 ![Animacija igre u akciji](../../../../4-typing-game/images/demo.gif)
 
-**Što testirati u vašoj aplikaciji:**
-- **Provjerava** da klik na Start prikazuje nasumični citat
+**Što testirati u svojoj aplikaciji:**
+- **Provjerava** da klik na Start pokaže nasumični citat
 - **Potvrđuje** da tipkanje ispravno ističe trenutnu riječ
-- **Provjerava** da se stiliziranje grešaka pojavljuje za netočno tipkanje
-- **Osigurava** da završavanje riječi ispravno pomiče isticanje
+- **Provjerava** da se prikazuje stil greške za netočno tipkanje
+- **Osigurava** da završetak riječi ispravno pomiče isticanje
 - **Testira** da završetak citata prikazuje poruku o završetku s vremenom
 
-**Uobičajeni savjeti za otklanjanje grešaka:**
-- **Provjerite** konzolu preglednika (F12) za JavaScript pogreške
-- **Provjerite** da svi nazivi datoteka točno odgovaraju (osjetljivo na velika i mala slova)
-- **Osigurajte** da Live Server radi i pravilno se osvježava
-- **Testirajte** različite citate kako biste provjerili radi li nasumični odabir
+**Uobičajeni savjeti za otklanjanje pogrešaka:**
+- **Provjeri** konzolu preglednika (F12) za JavaScript greške
+- **Potvrdi** točnost svih naziva datoteka (pažljivo na velika i mala slova)
+- **Provjeri** da je Live Server pokrenut i ispravno osvježava
+- **Testiraj** različite citate radi provjere nasumičnog odabira
 
 ---
 
-## GitHub Copilot Agent Challenge 🎮
+## Izazov GitHub Copilot Agenta 🎮
 
-Koristite Agent način rada za dovršavanje sljedećeg izazova:
+Iskoristi Agent način rada za dovršetak sljedećeg izazova:
 
-**Opis:** Proširite igru tipkanja implementacijom sustava težine koji se prilagođava na temelju performansi igrača. Ovaj izazov pomoći će vam da vježbate napredno rukovanje događajima, analizu podataka i dinamičko ažuriranje korisničkog sučelja.
+**Opis:** Proširi igru tipkanja implementirajući sustav težine koji prilagođava igru prema performansama igrača. Ovaj izazov pomoći će ti uvježbati napredno rukovanje događajima, analizu podataka i dinamičke ažuriranja UI-a.
 
-**Zadatak:** Kreirajte sustav prilagodbe težine za igru tipkanja koji:
-1. Prati brzinu tipkanja igrača (riječi po minuti) i postotak točnosti
-2. Automatski se prilagođava na tri razine težine: Lako (jednostavni citati), Srednje (trenutni citati), Teško (složeni citati s interpunkcijom)
+**Zadatak:** Kreiraj sustav prilagodbe težine za igru tipkanja koji:
+1. Prati brzinu tipkanja igrača (riječi u minuti) i postotak točnosti
+2. Automatski prilagođava na tri razine težine: Lako (jednostavni citati), Srednje (trenutni citati), Teško (kompleksni citati s interpunkcijom)
 3. Prikazuje trenutnu razinu težine i statistiku igrača na korisničkom sučelju
-4. Implementira brojač serija koji povećava težinu nakon 3 uzastopne dobre izvedbe
-5. Dodaje vizualne povratne informacije (boje, animacije) za označavanje promjena težine
+4. Implementira brojač serija koji povećava težinu nakon 3 uzastopna dobra rezultata
+5. Dodaje vizualnu povratnu informaciju (boje, animacije) za označavanje promjena težine
 
-Dodajte potrebne HTML elemente, CSS stilove i JavaScript funkcije za implementaciju ove značajke. Uključite odgovarajuće rukovanje pogreškama i osigurajte da igra ostane pristupačna s odgovarajućim ARIA oznakama.
+Dodaj potrebne HTML elemente, CSS stilove i JavaScript funkcije za implementaciju ove značajke. Uključi pravilno rukovanje greškama i osiguraj pristupačnost igre s odgovarajućim ARIA oznakama.
 
-Saznajte više o [agent modu](https://code.visualstudio.com/blogs/2025/02/24/introducing-copilot-agent-mode) ovdje.
+Više o [agent načinu rada](https://code.visualstudio.com/blogs/2025/02/24/introducing-copilot-agent-mode) možeš saznati ovdje.
 
 ## 🚀 Izazov
 
-Spremni za podizanje vaše igre tipkanja na višu razinu? Pokušajte implementirati ove napredne značajke kako biste produbili svoje razumijevanje rukovanja događajima i manipulacije DOM-om:
+Spreman za podizanje svoje igre tipkanja na višu razinu? Pokušaj implementirati ove napredne značajke kako bi produbio razumijevanje rukovanja događajima i manipulacije DOM-om:
 
-**Dodajte više funkcionalnosti:**
+**Dodaj više funkcionalnosti:**
 
-| Značajka | Opis | Vještine koje ćete vježbati |
-|----------|------|----------------------------|
-| **Kontrola unosa** | Onemogućite `input` event listener nakon završetka i ponovno ga omogućite kada se klikne gumb | Upravljanje događajima i kontrola stanja |
-| **Upravljanje stanjem UI-a** | Onemogućite tekstualno polje kada igrač završi citat | Manipulacija svojstvima DOM-a |
-| **Modalni dijalog** | Prikazivanje modalnog dijaloškog okvira s porukom o uspjehu | Napredni UI obrasci i pristupačnost |
-| **Sustav najboljih rezultata** | Pohranite najbolje rezultate koristeći `localStorage` | API-ji za pohranu u pregledniku i trajnost podataka |
+| Značajka | Opis | Vještine koje ćeš uvježbati |
+|---------|-------------|------------------------|
+| **Kontrola unosa** | Onemogući slušatelja događaja `input` na završetku i ponovno ga omogući kad se klikne gumb | Upravljanje događajima i kontrola stanja |
+| **Upravljanje stanjem UI-a** | Onemogući textbox kada igrač završi citat | Manipulacija DOM svojstvima |
+| **Modalni dijalog** | Prikaži modalni dijalog s porukom o uspjehu | Napredni UI obrasci i pristupačnost |
+| **Sustav rekorda** | Spremi najbolje rezultate koristeći `localStorage` | API-je za pohranu u pregledniku i trajnost podataka |
 
 **Savjeti za implementaciju:**
-- **Istražite** `localStorage.setItem()` i `localStorage.getItem()` za trajnu pohranu
-- **Vježbajte** dodavanje i uklanjanje event listenera dinamički
-- **Istražite** HTML dijaloške elemente ili CSS modalne obrasce
-- **Razmotrite** pristupačnost pri onemogućavanju i omogućavanju kontrola obrasca
+- **Istraži** `localStorage.setItem()` i `localStorage.getItem()` za trajnu pohranu
+- **Vježbaj** dinamičko dodavanje i uklanjanje slušatelja događaja
+- **Istraži** HTML dijaloge ili CSS modalne obrasce
+- **Razmišljaj** o pristupačnosti prilikom onemogućavanja i omogućavanja kontrola forme
 
 ## Kviz nakon predavanja
 
 [Kviz nakon predavanja](https://ff-quizzes.netlify.app/web/quiz/22)
 
-## Pregled i samostalno učenje
+---
 
-Pročitajte o [svim dostupnim događajima](https://developer.mozilla.org/docs/Web/Events) za programere putem web preglednika i razmotrite scenarije u kojima biste koristili svaki od njih.
+## 🚀 Tvoj vremenski plan usavršavanja igre tipkanja
 
-## Zadatak
+### ⚡ **Što možeš napraviti u sljedećih 5 minuta**
+- [ ] Testiraj svoju igru tipkanja s različitim citatima da se uvjeriš da sve radi glatko
+- [ ] Eksperimentiraj sa CSS stilovima - pokušaj promijeniti boju isticanja i greške
+- [ ] Otvori DevTools preglednika (F12) i prati Konzolu dok igraš
+- [ ] Izazovi se da završiš citat što brže možeš
 
-[Kreirajte novu igru tipkanja](assignment.md)
+### ⏰ **Što možeš postići u ovom satu**
+- [ ] Dodaj više citata u niz (možda iz omiljenih knjiga ili filmova)
+- [ ] Implementiraj sustav visokih rezultata koristeći `localStorage` iz izazova
+- [ ] Kreiraj kalkulator riječi po minuti koji se prikazuje nakon igre
+- [ ] Dodaj zvučne efekte za točno tipkanje, greške i završetak
+
+### 📅 **Tvoja tjedna avantura**
+- [ ] Napravi multiplayer verziju gdje prijatelji mogu natjecati jedan pored drugog
+- [ ] Kreiraj različite razine težine s različitom složenošću citata
+- [ ] Dodaj traku napretka koja pokazuje koliko je citat dovršen
+- [ ] Implementiraj korisničke račune s praćenjem osobnih statistika
+- [ ] Dizajniraj prilagođene teme i dopusti korisnicima da biraju željeni izgled
+
+### 🗓️ **Tvoja mjesečna transformacija**
+- [ ] Kreiraj tečaj tipkanja s lekcijama koje postupno uče pravilno postavljanje prstiju
+- [ ] Razvij analitiku koja pokazuje koje slova ili riječi uzrokuju najviše pogrešaka
+- [ ] Dodaj podršku za različite jezike i rasporede tipkovnica
+- [ ] Integriraj edukativne API-je za dohvat citata iz književnih baza podataka
+- [ ] Objavi svoj unaprijeđeni tipkarski projekt za druge da koriste i uživaju
+
+### 🎯 **Završni pregled i razmišljanje**
+
+**Prije nego što nastaviš, odvoji trenutak i proslavi:**
+- Koji ti je bio najzadovoljavajući trenutak dok si gradio ovu igru?
+- Kako sada gledaš na programiranje vođeno događajima u usporedbi s početkom?
+- Koju značajku jedva čekaš dodati da igru učiniš jedinstvenom?
+- Kako bi mogao primijeniti koncepte upravljanja događajima u drugim projektima?
+
+```mermaid
+journey
+    title Vaše putovanje samopouzdanja u programiranju događaja
+    section Danas
+      Razumijevanje događaja: 3: You
+      Izgradnja korisničkog sučelja: 4: You
+      Pisanje slušatelja događaja: 5: You
+    section Ovaj tjedan
+      Dodavanje značajki: 4: You
+      Otklanjanje pogrešaka: 5: You
+      Poboljšanje korisničkog iskustva: 4: You
+    section Sljedeći mjesec
+      Izrada složenih aplikacija: 5: You
+      Poučavanje drugih: 5: You
+      Kreiranje okvira: 5: You
+```
+> 🌟 **Zapamti**: Upravo si savladao jedan od osnovnih koncepata koji pokreću svaku interaktivnu web stranicu i aplikaciju. Programiranje vođeno događajima je ono što web čini živim i responzivnim. Svaki put kad vidiš padajući meni, formu koja se validira dok tipkaš ili igru koja reagira na klikove, sada razumiješ magiju iza toga. Ne učiš samo programirati - učiš stvarati doživljaje koji su intuitivni i zanimljivi! 🎉
 
 ---
 
+## Pregled i samostalno učenje
+
+Pročitaj o [svim dostupnim događajima](https://developer.mozilla.org/docs/Web/Events) koje web preglednik pruža programerima i razmotri scenarije u kojima bi koristio svaki od njih.
+
+## Zadatak
+
+[Napravi novu tipkovničku igru](assignment.md)
+
+---
+
+<!-- CO-OP TRANSLATOR DISCLAIMER START -->
 **Odricanje od odgovornosti**:  
-Ovaj dokument je preveden pomoću AI usluge za prevođenje [Co-op Translator](https://github.com/Azure/co-op-translator). Iako nastojimo osigurati točnost, imajte na umu da automatski prijevodi mogu sadržavati pogreške ili netočnosti. Izvorni dokument na izvornom jeziku treba smatrati autoritativnim izvorom. Za ključne informacije preporučuje se profesionalni prijevod od strane čovjeka. Ne preuzimamo odgovornost za nesporazume ili pogrešna tumačenja koja proizlaze iz korištenja ovog prijevoda.
+Ovaj dokument je preveden pomoću AI prijevodne usluge [Co-op Translator](https://github.com/Azure/co-op-translator). Iako nastojimo osigurati točnost, imajte na umu da automatski prijevodi mogu sadržavati pogreške ili netočnosti. Izvorni dokument na izvornom jeziku treba smatrati službenim izvorom. Za važne informacije preporučuje se profesionalni ljudski prijevod. Nismo odgovorni za bilo kakve nesporazume ili pogrešna tumačenja koja proizlaze iz korištenja ovog prijevoda.
+<!-- CO-OP TRANSLATOR DISCLAIMER END -->

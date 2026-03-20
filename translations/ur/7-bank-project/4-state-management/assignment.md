@@ -1,12 +1,3 @@
-<!--
-CO_OP_TRANSLATOR_METADATA:
-{
-  "original_hash": "50a7783473b39a2e0f133e271a102231",
-  "translation_date": "2025-10-22T14:58:15+00:00",
-  "source_file": "7-bank-project/4-state-management/assignment.md",
-  "language_code": "ur"
-}
--->
 # "ٹرانزیکشن شامل کریں" ڈائیلاگ نافذ کریں
 
 ## جائزہ
@@ -112,7 +103,7 @@ CO_OP_TRANSLATOR_METADATA:
 **متوقع نتیجہ:**
 اس اسائنمنٹ کو مکمل کرنے کے بعد، آپ کی بینکنگ ایپ میں ایک مکمل طور پر فعال "ٹرانزیکشن شامل کریں" فیچر ہونا چاہیے جو پیشہ ورانہ نظر آئے اور کام کرے:
 
-![ایک مثال "ٹرانزیکشن شامل کریں" ڈائیلاگ دکھانے والا اسکرین شاٹ](../../../../translated_images/dialog.93bba104afeb79f12f65ebf8f521c5d64e179c40b791c49c242cf15f7e7fab15.ur.png)
+![ایک مثال "ٹرانزیکشن شامل کریں" ڈائیلاگ دکھانے والا اسکرین شاٹ](../../../../translated_images/ur/dialog.93bba104afeb79f1.webp)
 
 ## اپنی نافذ کردہ چیز کی جانچ
 

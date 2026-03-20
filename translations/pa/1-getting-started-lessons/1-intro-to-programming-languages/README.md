@@ -1,12 +1,3 @@
-<!--
-CO_OP_TRANSLATOR_METADATA:
-{
-  "original_hash": "d45ddcc54eb9232a76d08328b09d792e",
-  "translation_date": "2025-11-03T16:13:57+00:00",
-  "source_file": "1-getting-started-lessons/1-intro-to-programming-languages/README.md",
-  "language_code": "pa"
-}
--->
 # ਪ੍ਰੋਗ੍ਰਾਮਿੰਗ ਭਾਸ਼ਾਵਾਂ ਅਤੇ ਆਧੁਨਿਕ ਡਿਵੈਲਪਰ ਟੂਲਜ਼ ਦਾ ਪਰਿਚਯ
 
 ਹੈਲੋ, ਭਵਿੱਖ ਦੇ ਡਿਵੈਲਪਰ! 👋 ਕੀ ਮੈਂ ਤੁਹਾਨੂੰ ਕੁਝ ਦੱਸ ਸਕਦਾ ਹਾਂ ਜੋ ਹਰ ਰੋਜ਼ ਮੈਨੂੰ ਰੋਮਾਂਚਿਤ ਕਰਦਾ ਹੈ? ਤੁਸੀਂ ਜਲਦੀ ਹੀ ਪਤਾ ਲਗਾਉਣ ਵਾਲੇ ਹੋ ਕਿ ਪ੍ਰੋਗ੍ਰਾਮਿੰਗ ਸਿਰਫ ਕੰਪਿਊਟਰਾਂ ਬਾਰੇ ਨਹੀਂ ਹੈ - ਇਹ ਤੁਹਾਡੇ ਸਭ ਤੋਂ ਜੰਗਲੀ ਵਿਚਾਰਾਂ ਨੂੰ ਹਕੀਕਤ ਵਿੱਚ ਬਦਲਣ ਲਈ ਅਸਲ ਤਾਕਤਾਂ ਬਾਰੇ ਹੈ!
@@ -17,7 +8,7 @@ CO_OP_TRANSLATOR_METADATA:
 
 ਅੱਜ, ਅਸੀਂ ਉਹ ਸ਼ਾਨਦਾਰ ਟੂਲਜ਼ ਦੀ ਖੋਜ ਕਰਨ ਜਾ ਰਹੇ ਹਾਂ ਜੋ ਆਧੁਨਿਕ ਵੈੱਬ ਡਿਵੈਲਪਮੈਂਟ ਨੂੰ ਸਿਰਫ ਸੰਭਵ ਹੀ ਨਹੀਂ ਬਲਕਿ ਗੰਭੀਰ ਤੌਰ 'ਤੇ ਆਕਰਸ਼ਕ ਬਣਾਉਂਦੇ ਹਨ। ਮੈਂ ਉਹੀ ਸੰਪਾਦਕਾਂ, ਬ੍ਰਾਊਜ਼ਰਾਂ ਅਤੇ ਵਰਕਫਲੋਜ਼ ਬਾਰੇ ਗੱਲ ਕਰ ਰਿਹਾ ਹਾਂ ਜੋ Netflix, Spotify, ਅਤੇ ਤੁਹਾਡੇ ਮਨਪਸੰਦ ਇੰਡੀ ਐਪ ਸਟੂਡੀਓ ਦੇ ਡਿਵੈਲਪਰ ਹਰ ਰੋਜ਼ ਵਰਤਦੇ ਹਨ। ਅਤੇ ਇਹ ਹੈ ਉਹ ਹਿੱਸਾ ਜੋ ਤੁਹਾਨੂੰ ਖੁਸ਼ੀ ਨਾਲ ਨੱਚਣ ਲਈ ਮਜਬੂਰ ਕਰੇਗਾ: ਇਹਨਾਂ ਵਿੱਚੋਂ ਜ਼ਿਆਦਾਤਰ ਪੇਸ਼ੇਵਰ-ਗਰੇਡ, ਉਦਯੋਗ-ਮਿਆਰੀ ਟੂਲਜ਼ ਪੂਰੀ ਤਰ੍ਹਾਂ ਮੁਫ਼ਤ ਹਨ!
 
-![Intro Programming](../../../../translated_images/webdev101-programming.d6e3f98e61ac4bff0b27dcbf1c3f16c8ed46984866f2d29988929678b0058fde.pa.png)
+![Intro Programming](../../../../translated_images/pa/webdev101-programming.d6e3f98e61ac4bff.webp)
 > ਸਕੈਚਨੋਟ [Tomomi Imura](https://twitter.com/girlie_mac) ਦੁਆਰਾ
 
 ```mermaid

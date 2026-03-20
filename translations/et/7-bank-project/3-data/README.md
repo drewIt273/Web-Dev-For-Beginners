@@ -1,67 +1,234 @@
-<!--
-CO_OP_TRANSLATOR_METADATA:
-{
-  "original_hash": "89d0df9854ed020f155e94882ae88d4c",
-  "translation_date": "2025-10-11T12:04:09+00:00",
-  "source_file": "7-bank-project/3-data/README.md",
-  "language_code": "et"
-}
--->
-# Pangaäpi loomine, 3. osa: Andmete hankimise ja kasutamise meetodid
+# Pangaäpi loomine 3. osa: andmete toomise ja kasutamise meetodid
+
+Mõtle Star Treki Enterprise'i arvutile – kui kapten Picard küsib laeva olekut, ilmub info koheselt ilma kogu liidese sulgemise ja uuesti ülesehitamiseta. See sujuv infovoog ongi täpselt see, mida me siin dünaamilise andmete toomisega ehitame.
+
+Praegu on su pangarakendus nagu trükitud ajaleht – informatiivne, aga staatiline. Muudame selle midagi NASA missioonikontrolli taolisele, kus andmed voolavad pidevalt ja uuenevad reaalajas, katkestamata kasutaja tööd.
+
+Õpid suhtlema serveritega asünkroonselt, käsitlema andmeid, mis saabuvad erinevatel aegadel, ning muutma toored andmed millekski tähenduslikuks oma kasutajatele. See on vahe demo ja tootmiseks valmis tarkvara vahel.
+
+## ⚡ Mida saad teha järgmise 5 minutiga
+
+**Kiire algus hõivatud arendajatele**
+
+```mermaid
+flowchart LR
+    A[⚡ 5 minutit] --> B[Seadista API server]
+    B --> C[Testi päringut curliga]
+    C --> D[Loo sisselogimise funktsioon]
+    D --> E[Näe andmeid tegevuses]
+```
+- **Minut 1-2**: Käivita oma API server (`cd api && npm start`) ja testi ühendus
+- **Minut 3**: Loo lihtne `getAccount()` funktsioon kasutades fetchi
+- **Minut 4**: Seosta sisselogimisvorm `action="javascript:login()"` atribuudiga
+- **Minut 5**: Testi sisselogimist ja jälgi kontode andmete ilmumist konsoolis
+
+**Kiired testikäsklused**:
+```bash
+# Kontrolli, kas API töötab
+curl http://localhost:5000/api
+
+# Testkontoga andmete toomine
+curl http://localhost:5000/api/accounts/test
+```
+
+**Miks see oluline on**: 5 minutiga näed asünkroonse andmete toomise maagiat, mis töötab iga kaasaegse veebirakenduse aluseks. See on vundament, mis paneb äppide tunduma kiire ja elusana.
+
+## 🗺️ Sinu õpiteek andmepõhistesse veebirakendustesse
+
+```mermaid
+journey
+    title Staatilistest lehtedest dünaamiliste rakendusteni
+    section Arengu mõistmine
+      Tavapärased lehe laadimised: 3: You
+      AJAX/SPA eeliste avastamine: 5: You
+      Fetch API mustrite valdamine: 7: You
+    section Autentimise loomine
+      Sisselogimisfunktsioonide loomine: 4: You
+      Asünkroonsete toimingute käsitlemine: 6: You
+      Kasutajasessioonide haldamine: 8: You
+    section Dünaamilised UI uuendused
+      DOM manipuleerimise õppimine: 5: You
+      Tehingute kuvade ehitamine: 7: You
+      Reageerivate juhtpaneelide loomine: 9: You
+    section Professionaalsed mustrid
+      Mallipõhine renderdamine: 6: You
+      Veahaldusstrateegiad: 7: You
+      Tõhususe optimeerimine: 8: You
+```
+**Õpiteekonnal sihtpunkt**: Selle loengu lõpuks saad aru, kuidas kaasaegsed veebirakendused toovad, töötlevad ja kuvavad andmeid dünaamiliselt, luues professionaalseid kasutajakogemusi, mida me ootame.
 
 ## Eelloengu viktoriin
 
 [Eelloengu viktoriin](https://ff-quizzes.netlify.app/web/quiz/45)
 
-### Sissejuhatus
+### Eeldused
 
-Iga veebirakenduse keskmes on *andmed*. Andmed võivad olla mitmesugusel kujul, kuid nende peamine eesmärk on alati kuvada kasutajale teavet. Kuna veebirakendused muutuvad üha interaktiivsemaks ja keerukamaks, on see, kuidas kasutaja teabele juurde pääseb ja sellega suhtleb, nüüd veebiarenduse oluline osa.
+Enne andmete toomise algust veendu, et sul on valmis järgmised komponendid:
 
-Selles õppetükis vaatame, kuidas hankida andmeid serverist asünkroonselt ja kasutada neid andmeid teabe kuvamiseks veebilehel ilma HTML-i uuesti laadimata.
+- **Eelmine õppetükk**: Lõpeta [Sisselogimis- ja registreerimisvorm](../2-forms/README.md) – ehitame selle peale
+- **Kohalik server**: Paigalda [Node.js](https://nodejs.org) ja käivita [serveri API](../api/README.md), et pakkuda kontode andmeid
+- **API ühendus**: Testi oma serveri ühendust selle käsuga:
 
-### Eeltingimused
-
-Selle õppetüki jaoks peate olema loonud veebirakenduse [sisselogimise ja registreerimise vormi](../2-forms/README.md) osa. Samuti peate installima [Node.js](https://nodejs.org) ja [käivitama serveri API](../api/README.md) lokaalselt, et saada kontoteavet.
-
-Saate testida, kas server töötab korralikult, käivitades terminalis järgmise käsu:
-
-```sh
+```bash
 curl http://localhost:5000/api
-# -> should return "Bank API v1.0.0" as a result
+# Oodatud vastus: "Panga API v1.0.0"
 ```
+
+See kiire test tagab, et kõik komponendid suhtlevad korrektselt:
+- Kontrollib, et Node.js töötab su süsteemis õigesti
+- Kinnitub, et API server on aktiivne ja vastab
+- Veendub, et sinu äpp saab serveriga ühendust (nagu raadioside kontroll enne missiooni)
+
+## 🧠 Andmehaldussüsteemi ülevaade
+
+```mermaid
+mindmap
+  root((Andmete Haldamine))
+    Authentication Flow
+      Login Process
+        Vormi Kontrollimine
+        Tunnuste Kinnitus
+        Seansi Halduse
+      User State
+        Globaalne Konto Objekt
+        Navigatsiooni Kaitse
+        Veahaldus
+    API Communication
+      Fetch Patterns
+        GET Päringud
+        POST Päringud
+        Veavastused
+      Data Formats
+        JSON Töötlemine
+        URL Kodeerimine
+        Vastuse Parseerimine
+    Dynamic UI Updates
+      DOM Manipulation
+        Turvalised Teksti Uuendused
+        Elemendi Loomine
+        Malli Kloonimine
+      User Experience
+        Reaalaja Uuendused
+        Veateated
+        Laadimise Oleku
+    Security Considerations
+      XSS Prevention
+        textContent Kasutus
+        Sisendi Sanitiseerimine
+        Turvalise HTML Loomine
+      CORS Handling
+        Rist-päritolu Päringud
+        Päise Konfiguratsioon
+        Arenduse Seadistamine
+```
+**Põhiprintsiip**: Kaasaegsed veebirakendused on andmete orkestreerimissüsteemid – nad koordineerivad kasutajaliideseid, serveri API-sid ja brauseri turvemudeleid, et luua sujuvaid ja reageerivaid kogemusi.
 
 ---
 
-## AJAX ja andmete hankimine
+## Arusaamine andmete toomisest kaasaegsetes veebirakendustes
 
-Traditsioonilised veebilehed uuendavad kuvatavat sisu, kui kasutaja valib lingi või esitab vormi kaudu andmeid, laadides HTML-lehe täielikult uuesti. Iga kord, kui on vaja laadida uusi andmeid, tagastab veebiserver täiesti uue HTML-lehe, mida brauser peab töötlema, katkestades praeguse kasutaja tegevuse ja piirates interaktsioone laadimise ajal. Seda töövoogu nimetatakse ka *mitmelehe rakenduseks* ehk *MPA*-ks.
+Veebirakenduste viis andmeid käsitleda on viimase kahekümne aastaga oluliselt arenenud. Selle arenguga arusaamine aitab mõista, miks tänapäevased tehnikad nagu AJAX ja Fetch API on nii võimsad ja miks need on saanud veebiarendajate jaoks asendamatuks tööriistaks.
 
-![Mitmelehe rakenduse uuendamise töövoog](../../../../translated_images/mpa.7f7375a1a2d4aa779d3f928a2aaaf9ad76bcdeb05cfce2dc27ab126024050f51.et.png)
+Uurime, kuidas traditsioonilised veebilehed töötasid võrreldes dünaamiliste reageerivate rakendustega, mida täna ehitame.
 
-Kui veebirakendused hakkasid muutuma keerukamaks ja interaktiivsemaks, tekkis uus tehnika nimega [AJAX (Asynchronous JavaScript and XML)](https://en.wikipedia.org/wiki/Ajax_(programming)). See tehnika võimaldab veebirakendustel saata ja hankida andmeid serverist asünkroonselt JavaScripti abil, ilma HTML-lehte uuesti laadimata, mis tagab kiiremad uuendused ja sujuvamad kasutajainteraktsioonid. Kui serverist saadakse uusi andmeid, saab praegust HTML-lehte JavaScripti abil uuendada, kasutades [DOM](https://developer.mozilla.org/docs/Web/API/Document_Object_Model) API-d. Aja jooksul on see lähenemine arenenud ja seda nimetatakse nüüd [*ühelehe rakenduseks* ehk *SPA*-ks](https://en.wikipedia.org/wiki/Single-page_application).
+### Traditsioonilised mitmelehelised rakendused (MPA)
 
-![Ühelehe rakenduse uuendamise töövoog](../../../../translated_images/spa.268ec73b41f992c2a21ef9294235c6ae597b3c37e2c03f0494c2d8857325cc57.et.png)
+Veebi algusaegadel oli iga klikkimine nagu telekanalite vahetamine vanas teleris – ekraan läks mustaks ja tihkus aeglaselt uue sisuga täituma. Selline oli varajaste veebirakenduste reaalsus, kus iga tegevus tähendas terve lehe nullist uuesti ülesehitamist.
 
-Kui AJAX esmakordselt kasutusele võeti, oli ainus API, mis võimaldas andmeid asünkroonselt hankida, [`XMLHttpRequest`](https://developer.mozilla.org/docs/Web/API/XMLHttpRequest/Using_XMLHttpRequest). Kuid tänapäeva brauserid rakendavad nüüd ka mugavamat ja võimsamat [`Fetch` API-d](https://developer.mozilla.org/docs/Web/API/Fetch_API), mis kasutab lubadusi (promises) ja sobib paremini JSON-andmete manipuleerimiseks.
+```mermaid
+sequenceDiagram
+    participant User
+    participant Browser
+    participant Server
+    
+    User->>Browser: Klikib linki või esitab vormi
+    Browser->>Server: Nõuab uut HTML lehte
+    Note over Browser: Leht muutub tühjaks
+    Server->>Browser: Tagastab täieliku HTML lehe
+    Browser->>User: Kuvab uue lehe (vilgub/laeb uuesti)
+```
+![Mitmelehelise rakenduse uuendustöövoog](../../../../translated_images/et/mpa.7f7375a1a2d4aa77.webp)
 
-> Kuigi kõik kaasaegsed brauserid toetavad `Fetch API-d`, on alati hea mõte kontrollida [ühilduvustabelit caniuse.com-is](https://caniuse.com/fetch), kui soovite, et teie veebirakendus töötaks vanemates brauserites.
+**Miks see tundus kohmakas:**
+- Iga klikiga tuli terve leht nullist ehitada
+- Kasutajate mõtlemine katkestati nende tüütute lehevilkumistega
+- Su internetiühendus töötas ülekoormatud, laadides ikka ja jälle sama päist ja jalust
+- Rakendused tundusid pigem kausta sirvimisena kui tarkvara kasutamisena
 
-### Ülesanne
+### Kaasaegsed ühelehelised rakendused (SPA)
 
-[Eelmises õppetükis](../2-forms/README.md) rakendasime registreerimisvormi konto loomiseks. Nüüd lisame koodi, et saaks olemasoleva kontoga sisse logida ja selle andmeid hankida. Avage `app.js` fail ja lisage uus `login` funktsioon:
+AJAX (asünkroonne JavaScript ja XML) muutis selle paradigma täielikult. Nagu Rahvusvahelise Kosmosejaama modulaarne ehitus, kus astronaudid saavad vahetada üksikuid komponente ilma kogu struktuuri uuesti ehitmata, võimaldab AJAX meil uuendada veebilehe kindlaid osi ilma kogu lehte uuesti laadimata. Kuigi nimetus sisaldab XML-i, kasutame enamasti JSON-i, aga põhimõte on sama: uuendame ainult seda, mis vajab muutmist.
 
-```js
+```mermaid
+sequenceDiagram
+    participant User
+    participant Browser
+    participant JavaScript
+    participant Server
+    
+    User->>Browser: Suhelda lehega
+    Browser->>JavaScript: Käivitab sündmusekäsitleja
+    JavaScript->>Server: Hangib ainult vajalikke andmeid
+    Server->>JavaScript: Tagastab JSON-andmed
+    JavaScript->>Browser: Uuendab kindlaid lehe elemente
+    Browser->>User: Kuvab uuendatud sisu (ilma taaskäivitamiseta)
+```
+![Ühelehelise rakenduse uuendustöövoog](../../../../translated_images/et/spa.268ec73b41f992c2.webp)
+
+**Miks SPA-d tunduvad nii palju sujuvamad:**
+- Uuendatakse ainult neid osi, mis tegelikult muutusid (nutikas, eks?)
+- Pole enam ebameeldivaid katkestusi – kasutajad jäävad oma voogu
+- Vähem andmeid liigub üle võrgu, seepärast laadimine on kiirem
+- Kõik tundub kiirem ja reageerivam, nagu telefoniäpid
+
+### Areng kaasaegse Fetch API-sse
+
+Kaasaegsed brauserid pakuvad [`Fetch` API-d](https://developer.mozilla.org/docs/Web/API/Fetch_API), mis asendab vanema [`XMLHttpRequest`](https://developer.mozilla.org/docs/Web/API/XMLHttpRequest/Using_XMLHttpRequest). Nagu mürale kirjutamise ja e-kirja saatmise vahe – Fetch API kasutab lubadusi (promises) puhtama asünkroonse koodi jaoks ning töötab loomulikult JSON-iga.
+
+| Omadus | XMLHttpRequest | Fetch API |
+|---------|----------------|----------|
+| **Süntaks** | Komplitseeritud tagasikutsumisega | Puhtalt lubadustel põhinev |
+| **JSON käsitlemine** | Vajab käsitsi parsimist | Sisseehitatud `.json()` meetod |
+| **Veahaldus** | Piiratud veateave | Ulatuslikud veateated |
+| **Kaasaegne tugi** | Pärandkompatibliilsus | ES6+ lubadused ja async/await |
+
+> 💡 **Brauseri ühildumine**: Hea uudis – Fetch API töötab kõigis kaasaegsetes brauserites! Kui huvitab konkreetne versioon, on täielik ühilduvusloetelu [caniuse.com](https://caniuse.com/fetch).
+> 
+**Põhitõde:**
+- Töötab suurepäraselt Chrome, Firefox, Safari ja Edge brauserites (läbi keerulisuse kõikjal, kus su kasutajad on)
+- Ainult Internet Explorer vajab lisaabi (ja ausalt öeldes on aeg IE-st loobuda)
+- Valmistab sind hästi ette sujuvaks async/await mustrite kasutamiseks, mida hiljem kasutame
+
+### Kasutaja sisselogimise ja andmete pärimise rakendamine
+
+Rakendame nüüd sisselogimissüsteemi, mis muudab su pangarakenduse staatilisest kuvarist funktsionaalseks äpiks. Nagu turvameetmed sõjaväebaaside autentimisel, kontrollime kasutaja volitusi ja seejärel võimaldame ligipääsu nende andmetele.
+
+Ehitame selle sammhaaval, alustades põhilisest autentimisest ja seejärel lisades andmete toomise.
+
+#### Samm 1: Loo sisselogimisfunktsiooni alus
+
+Ava oma `app.js` fail ja lisa uus `login` funktsioon, mis haldab kasutaja autentimist:
+
+```javascript
 async function login() {
-  const loginForm = document.getElementById('loginForm')
+  const loginForm = document.getElementById('loginForm');
   const user = loginForm.user.value;
 }
 ```
 
-Siin alustame vormielemendi hankimisega `getElementById()` abil ja seejärel saame kasutajanime sisendist `loginForm.user.value`. Iga vormikontrolli saab HTML-is `name` atribuudi abil määratud nime järgi vormi omadusena kasutada.
+**Läheme selle läbi:**
+- See `async` märksõna? See ütleb JavaScriptile: "see funktsioon võib vajada ootamist"
+- Saame oma vormi lehelt (midagi erilist, leiame selle lihtsalt ID kaudu)
+- Seejärel võtame välja, mida kasutaja kasutajanime lahtrisse kirjutas
+- Nüüd üks nipp: igale vormi sisendile pääseb ligi selle `name` atribuudi kaudu – pole vaja keerulist getElementById kutsumist!
 
-Sarnaselt sellele, mida tegime registreerimise puhul, loome teise funktsiooni serveripäringu tegemiseks, kuid seekord kontoandmete hankimiseks:
+> 💡 **Vormile ligipääsu muster**: Iga vormikontrolli saab kätte tema nime järgi (HTML-is määratud `name` atribuudi kaudu) kui vormi omaduse – see annab puhta ja loetava võimaluse vormiandmete saamiseks.
 
-```js
+#### Samm 2: Loo kontoandmete toomise funktsioon
+
+Edasi loome pühendatud funktsiooni, mis toob serverist kontoandmeid. See järgib sama mustrit nagu su registreerimisfunktsioon, aga keskendub andmete pärimisele:
+
+```javascript
 async function getAccount(user) {
   try {
     const response = await fetch('//localhost:5000/api/accounts/' + encodeURIComponent(user));
@@ -72,15 +239,58 @@ async function getAccount(user) {
 }
 ```
 
-Kasutame `fetch` API-d, et küsida andmeid serverist asünkroonselt, kuid seekord ei vaja me mingeid lisaparameetreid peale URL-i, kuna küsime ainult andmeid. Vaikimisi loob `fetch` [`GET`](https://developer.mozilla.org/docs/Web/HTTP/Methods/GET) HTTP-päringu, mis on just see, mida me siin vajame.
+**See kood teeb järgmist:**
+- **Kasutab** kaasaegset `fetch` API-d asünkroonseks andmete pärimiseks
+- **Ehitatakse** GET päringu URL koos kasutajanime parameetriga
+- **Rakendab** `encodeURIComponent()` funktsiooni, et turvaliselt töödelda erisümboleid URL-is
+- **Muutab** vastuse JSON-formaati, et hõlpsalt andmeid töödelda
+- **Haldab** vigu graatsiliselt, tagastades vea objekti, mitte äpi kokkujooksmise
 
-✅ `encodeURIComponent()` on funktsioon, mis kodeerib erimärgid URL-i jaoks. Milliseid probleeme võiksime kogeda, kui me ei kutsu seda funktsiooni ja kasutame otse `user` väärtust URL-is?
+> ⚠️ **Turvapähekanne**: `encodeURIComponent()` tagab, et erisümbolid URL-ides ei muutu valeks - nagu sõjalaevade sidekodeeringud, tagab see sõnumi õige kohalejõudmise ja väldib näiteks "#" või "&" vale mõistmist.
+> 
+**Miks see oluline on:**
+- Väldib erisümbolitega URL-i rikkeid
+- Kaitseb URL manipuleerimise rünnakute eest
+- Tagab, et server saab õige päringu
+- Järgib turvalise kodeerimise tavasid
 
-Nüüd uuendame oma `login` funktsiooni, et kasutada `getAccount`:
+#### HTTP GET päringute mõistmine
 
-```js
+Siin on üllatav fakt: kui kasutad `fetch` ilma lisavalikuteta, teeb ta automaatselt [`GET`](https://developer.mozilla.org/docs/Web/HTTP/Methods/GET) päringu. See sobib meie eesmärgiks – küsida serverilt "palun näita selle kasutaja kontoandmeid".
+
+GET päring on nagu viisakas raamatukogust raamatu laenamine – sa palud midagi vaadata, mis juba olemas on. POST päringud (mida kasutasime registreerimisel) on pigem nagu uue raamatu esitlemine kogusse.
+
+| GET päring | POST päring |
+|-------------|-------------|
+| **Eesmärk** | Oleva andme vaatamine | Uue andme saatmine serverisse |
+| **Parameetrid** | URL teel/küsimustestringis | Päringu kehas |
+| **Vahemällu salvestus** | Brauserid võivad vahemällu salvestada | Tavaliselt ei salvestata |
+| **Turvalisus** | Nähtav URL-is ja logides | Peidetud päringu kehas |
+
+```mermaid
+sequenceDiagram
+    participant B as Brauser
+    participant S as Server
+    
+    Note over B,S: GET-päring (andmete päring)
+    B->>S: GET /api/accounts/test
+    S-->>B: 200 OK + kontoandmed
+    
+    Note over B,S: POST-päring (andmete saatmine)
+    B->>S: POST /api/accounts + uued kontoandmed
+    S-->>B: 201 Created + kinnitus
+    
+    Note over B,S: Vea käsitlemine
+    B->>S: GET /api/accounts/nonexistent
+    S-->>B: 404 Not Found + veateade
+```
+#### Samm 3: Kõike kokku toomine
+
+Selleks rahuldustpakkuvaks osaks ühenda oma kontoandmete pärimise funktsioon sisselogimise protsessiga. Siin kõik omavahel klapib:
+
+```javascript
 async function login() {
-  const loginForm = document.getElementById('loginForm')
+  const loginForm = document.getElementById('loginForm');
   const user = loginForm.user.value;
   const data = await getAccount(user);
 
@@ -93,94 +303,272 @@ async function login() {
 }
 ```
 
-Esiteks, kuna `getAccount` on asünkroonne funktsioon, peame selle sobitama `await` märksõnaga, et oodata serveri tulemust. Nagu iga serveripäringu puhul, peame tegelema ka veajuhtumitega. Praegu lisame ainult logisõnumi vea kuvamiseks ja tuleme hiljem selle juurde tagasi.
+See funktsioon järgib selget järjestust:
+- Võtab kasutajanime vormi sisendist
+- Pärib kasutaja kontoandmed serverist
+- Haldab tekkivaid vigu
+- Salvestab kontoandmed ja liigub edukal sisselogimisel armatuurlauale
 
-Seejärel peame andmed kuskile salvestama, et saaksime neid hiljem kasutada armatuurlaua teabe kuvamiseks. Kuna `account` muutujat veel ei eksisteeri, loome selle jaoks globaalse muutuja faili ülaosas:
+> 🎯 **Async/Await muster**: Kuna `getAccount` on asünkroonne, kasutame `await` märksõna, et peatada kood serveri vastuseni ootama. See hoiab ära koodi jooksu määratlemata andmetega.
 
-```js
+#### Samm 4: Andmete hoidla loomine
+
+Su äpil peab olema koht, kuhu kontoandmeid pärast laadimist salvestada – kujutle seda kui äpi lühimälu, kus hoitakse käesoleva kasutaja andmeid. Lisa see rida oma `app.js` faili ülaossa:
+
+```javascript
+// See hoiab käesoleva kasutaja kontoandmeid
 let account = null;
 ```
 
-Pärast kasutajaandmete salvestamist muutujasse saame liikuda *sisselogimise* lehelt *armatuurlauale* kasutades funktsiooni `navigate()`, mis meil juba olemas on.
+**Miks seda vaja on:**
+- Hoiab kontoandmed kättesaadavana igast rakenduse osast
+- Algväärtus `null` tähendab "keegi pole veel sisse logitud"
+- Uuendub, kui keegi edukalt sisse logib või registreerub
+- Toimib tõe ühtse allikana – pole segadust, kes on sisse logitud
 
-Lõpuks peame kutsuma oma `login` funktsiooni, kui sisselogimisvorm esitatakse, muutes HTML-i:
+#### Samm 5: Vormiga ühenduse loomine
+
+Ühenda oma äsja loodud sisselogimisfunktsioon HTML vormiga. Uuenda oma vormi sildi nii:
 
 ```html
 <form id="loginForm" action="javascript:login()">
+  <!-- Your existing form inputs -->
+</form>
 ```
 
-Testige, kas kõik töötab korralikult, registreerides uue konto ja proovides sama kontoga sisse logida.
+**Milleks see väike muudatus:**
+- Takistab vormil oma vaikekäitumist, mis oleks kogu lehe uuesti laadimine
+- Kutsutakse selle asemel sinu loodud JavaScripti funktsioon
+- Tagab sujuva ühelehelise rakenduse kogemuse
+- Annab täieliku kontrolli selle üle, mis juhtub, kui kasutaja klikib "Login"
 
-Enne järgmise osa juurde liikumist saame ka `register` funktsiooni täiendada, lisades selle funktsiooni lõppu:
+#### Samm 6: Paranda registreerimisfunktsiooni
 
-```js
+Ühtlustamiseks uuenda ka oma `register` funktsiooni nii, et salvestatakse kontodata ja liigutakse armatuurlauale:
+
+```javascript
+// Lisage need read oma registreerimisfunktsiooni lõppu
 account = result;
 navigate('/dashboard');
 ```
 
-✅ Kas teadsite, et vaikimisi saate serveri API-sid kutsuda ainult *samalt domeenilt ja pordilt*, kust vaatate veebilehte? See on brauserite poolt kehtestatud turvamehhanism. Aga oodake, meie veebirakendus töötab `localhost:3000`, samas kui serveri API töötab `localhost:5000`. Miks see töötab? Kasutades tehnikat nimega [Cross-Origin Resource Sharing (CORS)](https://developer.mozilla.org/docs/Web/HTTP/CORS), on võimalik teha ristdomeeni HTTP-päringuid, kui server lisab vastusele spetsiaalsed päised, lubades erandeid konkreetsetele domeenidele.
+**See täiendus annab:**
+- **Sujuva** ülemineku registreerimisest armatuurlauale
+- **Ühtse** kasutajakogemuse nii sisselogimise kui registreerimise protsessides
+- **Vahetu** ligipääsu kontoandmetele edukal registreerimisel
 
-> Lisateavet API-de kohta saate, kui võtate selle [õppetüki](https://docs.microsoft.com/learn/modules/use-apis-discover-museum-art/?WT.mc_id=academic-77807-sagibbon).
+#### Oma koodi testimine
 
-## HTML-i uuendamine andmete kuvamiseks
+```mermaid
+flowchart TD
+    A[Kasutaja sisestab mandaadid] --> B[Sisselogimisfunktsioon kutsutud]
+    B --> C[Kontode andmete pärimine serverist]
+    C --> D{Andmed edukalt kätte saadud?}
+    D -->|Jah| E[Kontode andmete globaalne salvestamine]
+    D -->|Ei| F[Vea teate kuvamine]
+    E --> G[Liigu juhtpaneelile]
+    F --> H[Kasutaja jääb sisselogimislehele]
+```
+**Nüüd aeg proovida:**
+1. Loo uus konto, et veenduda, et kõik töötab
+2. Proovi nendega sisse logida
+3. Kui midagi tundub paigast, vaata brauseri konsooli (F12)
+4. Veendu, et pärast edukat sisselogimist jõuad armatuurlauale
 
-Nüüd, kui meil on kasutajaandmed, peame olemasolevat HTML-i uuendama, et neid kuvada. Me juba teame, kuidas DOM-ist elementi hankida, näiteks `document.getElementById()` abil. Kui teil on baas-element, siis siin on mõned API-d, mida saate kasutada selle muutmiseks või lapselementide lisamiseks:
+Kui midagi ei tööta, ära paanitse! Enamik probleeme on lihtsad vead, nagu trükivead või API serveri mittetöölepanemine.
 
-- Kasutades [`textContent`](https://developer.mozilla.org/docs/Web/API/Node/textContent) omadust, saate muuta elemendi teksti. Pange tähele, et selle väärtuse muutmine eemaldab kõik elemendi lapsed (kui neid on) ja asendab need antud tekstiga. Seega on see ka tõhus meetod, et eemaldada kõik antud elemendi lapsed, määrates sellele tühja stringi `''`.
+#### Kiire märkuse arengutevahelise nõidusest (Cross-Origin)
 
-- Kasutades [`document.createElement()`](https://developer.mozilla.org/docs/Web/API/Document/createElement) koos [`append()`](https://developer.mozilla.org/docs/Web/API/ParentNode/append) meetodiga, saate luua ja lisada ühe või mitu uut lapselementi.
+Võib-olla küsid: "Kuidas mu veebirakendus suhtleb API serveriga, kui nad töötavad erinevatel portidel?" Väga hea küsimus! See puudutab midagi, millega iga veebiarendaja kunagi kokku puutub.
 
-✅ Kasutades elemendi [`innerHTML`](https://developer.mozilla.org/docs/Web/API/Element/innerHTML) omadust, on samuti võimalik muuta selle HTML-sisu, kuid seda tuleks vältida, kuna see on haavatav [ristveebiskriptimise (XSS)](https://developer.mozilla.org/docs/Glossary/Cross-site_scripting) rünnakute suhtes.
+> 🔒 **Cross-Origin turvalisus**: Brauserid rakendavad "same-origin policy" ehk samu-juurte reeglit, et takistada volitamata side loomist erinevate domeenide vahel. Nagu Pentagoni turvafilter, kontrollitakse sideõigust enne andmete edastamist.
+> 
+**Meie konfiguratsioonis:**
+- Sinu veebirakendus jookseb `localhost:3000` (arendusserver)
+- Sinu API server töötab `localhost:5000` (tagaruumiserver)
+- API server lisab [CORS pealkirjad](https://developer.mozilla.org/docs/Web/HTTP/CORS), mis lubavad su veebirakendusel temaga suhelda
 
-### Ülesanne
+See peegeldab reaalse maailma arendust, kus frontend- ja backend-rakendused tavaliselt jooksevad eraldiseisvatel serveritel.
 
-Enne armatuurlaua ekraanile liikumist on sisselogimise lehel veel üks asi, mida peaksime tegema. Praegu, kui proovite sisse logida kasutajanimega, mida ei eksisteeri, kuvatakse sõnum konsoolis, kuid tavalise kasutaja jaoks ei muutu midagi ja te ei tea, mis toimub.
+> 📚 **Lisaks lugemiseks**: Süvene API-de ja andmete toomise teemadesse selle põhjaliku [Microsoft Learn mooduli kaudu](https://docs.microsoft.com/learn/modules/use-apis-discover-museum-art/?WT.mc_id=academic-77807-sagibbon).
 
-Lisame sisselogimisvormi kohatäitelemendi, kuhu vajadusel saame kuvada veateate. Hea koht oleks just enne sisselogimise `<button>` elementi:
+## Andmete elustamine HTML-is
 
-```html
-...
-<div id="loginError"></div>
-<button>Login</button>
-...
+Nüüd teeme toodu andmed kasutajatele nähtavaks DOM-i manipuleerimisega. Nagu fotode ilmutamine pimedas ruumis, muudame nähtamatud andmed millekski, mida kasutajad näevad ja millega saavad suhelda.
+DOM-manipulatsioon on tehnika, mis muudab staatilisi veebilehti dünaamilisteks rakendusteks, mis uuendavad oma sisu kasutaja interaktsioonide ja serveri vastuste põhjal.
+
+### Õige tööriista valimine
+
+Kui on vaja HTML-i JavaScripti abil uuendada, on sul mitu võimalust. Mõtle neile kui erinevatele tööriistadele tööriistakastis – igaüks sobib kindlateks töödeks:
+
+| Meetod | Milleks see hea on | Millal kasutada | Turvalisuse tase |
+|--------|---------------------|----------------|--------------|
+| `textContent` | Kasutaja andmete turvaline kuvamine | Igal ajal, kui näitad teksti | ✅ Kindel |
+| `createElement()` + `append()` | Komplekssed paigutused | Uute sektsioonide/loendite loomine | ✅ Tõestatud |
+| `innerHTML` | HTML sisu määramine | ⚠️ Väldi seda võimalust | ❌ Riskantne |
+
+#### Turvaline tekstikuvamise viis: textContent
+
+[`textContent`](https://developer.mozilla.org/docs/Web/API/Node/textContent) omadus on parim sõber kasutajaandmete kuvamisel. See on nagu turvatöötaja sinu veebilehel – midagi kahjulikku läbi ei saa:
+
+```javascript
+// Turvaline ja usaldusväärne viis teksti uuendamiseks
+const balanceElement = document.getElementById('balance');
+balanceElement.textContent = account.balance;
 ```
 
-See `<div>` element on tühi, mis tähendab, et ekraanil ei kuvata midagi, kuni me sellele sisu lisame. Samuti anname sellele `id`, et saaksime selle JavaScriptiga hõlpsasti kätte.
+**textContent eelised:**
+- Töötleb kõike kui tavalist teksti (takistab skriptide täitmist)
+- Eemaldab automaatselt olemasoleva sisu
+- Efektiivne lihtsate tekstiuuenduste jaoks
+- Pakub sisse ehitatud turvalisust pahatahtliku sisu vastu
 
-Minge tagasi `app.js` faili ja looge uus abifunktsioon `updateElement`:
+#### Dünaamiliste HTML-elementide loomine
 
-```js
+Rohkem keerukama sisu jaoks kombineeri [`document.createElement()`](https://developer.mozilla.org/docs/Web/API/Document/createElement) meetodit koos [`append()`](https://developer.mozilla.org/docs/Web/API/ParentNode/append) funktsiooniga:
+
+```javascript
+// Ohutu viis uute elementide loomiseks
+const transactionItem = document.createElement('div');
+transactionItem.className = 'transaction-item';
+transactionItem.textContent = `${transaction.date}: ${transaction.description}`;
+container.append(transactionItem);
+```
+
+**Selle lähenemise mõistmine:**
+- **Loob** DOM-elemente programmiliselt
+- **Hoiab** täielikku kontrolli elementide atribuutide ja sisu üle
+- **Võimaldab** keerukaid, pesastatud elementide struktuure
+- **Säilitab** turvalisuse, eraldades struktuuri sisust
+
+> ⚠️ **Turvaküsimus**: Kuigi [`innerHTML`](https://developer.mozilla.org/docs/Web/API/Element/innerHTML) on paljudes juhendites, võib see täita leitud skripte. Nagu CERN-i turvaprotokollid keelavad volitamata koodide käivitamise, pakuvad `textContent` ja `createElement` turvalisemaid alternatiive.
+> 
+**innerHTML riskid:**
+- Täidab kasutajaandmetes olevad `<script>` märgistused
+- On haavatav koodi süstimise rünnakutele
+- Loob potentsiaalseid turvaauke
+- Turvalised alternatiivid pakuvad sama funktsionaalsust
+
+### Veateadete kasutajasõbralikumaks muutmine
+
+Praegu kuvatakse sisselogimise vead ainult brauseri konsoolis, mis kasutajale nähtamatu on. Nagu piloodi sise diagnostika ja reisija info süsteemi erinevus, peame saadetama olulist infot õiges kanalil.
+
+Veateadete nähtavaks muutmine annab kasutajale kohe tagasisidet, mis läks valesti ja kuidas edasi tegutseda.
+
+#### Samm 1: Lisa koht veateadete kuvamiseks
+
+Alustuseks loo oma HTML-is koht veateadetele. Lisa see otse enne sisselogimisnuppu, nii et kasutajad näevad seda loomulikult:
+
+```html
+<!-- This is where error messages will appear -->
+<div id="loginError" role="alert"></div>
+<button>Login</button>
+```
+
+**Mis siin toimub:**
+- Loome tühja konteineri, mis jääb nähtamatuks seni kuni seda vajatakse
+- Asetub sinna, kuhu kasutajad loomulikult vaatavad pärast "Logi sisse" vajutamist
+- `role="alert"` on hea lisand ekraanilogejatele – ütleb abi tehnoloogiale "tõsi, see on oluline!"
+- Unikaalne `id` annab JavaScriptile lihtsa sihtmärgi
+
+#### Samm 2: Loo abistav funktsioon
+
+Teeme väikese abifunktsiooni, mis uuendab mis tahes elemendi teksti. See on üks neist "kirjuta üks kord, kasuta kõikjal" funktsioonidest, mis säästab aega:
+
+```javascript
 function updateElement(id, text) {
   const element = document.getElementById(id);
   element.textContent = text;
 }
 ```
 
-See on üsna lihtne: antud elemendi *id* ja *tekst* abil uuendab see DOM-i elemendi tekstisisu, millel on vastav `id`. Kasutame seda meetodit eelmise veateate asemel `login` funktsioonis:
+**Funktsiooni eelised:**
+- Lihtne liides, mis vajab ainult elemendi ID-d ja teksti
+- Turvaliselt leiab ja uuendab DOM-elemente
+- Taaskasutatav, vähendab koodi dubleerimist
+- Säilitab rakenduses järjekindla uuenduskäitumise
 
-```js
+#### Samm 3: Näita veateateid nähtavalt
+
+Asendame varjatud konsoolisõnumi millegagi, mida kasutaja näeb. Uuenda oma sisselogimise funktsiooni:
+
+```javascript
+// Selle asemel, et lihtsalt konsooli logida, näita kasutajale, mis on valesti
 if (data.error) {
   return updateElement('loginError', data.error);
 }
 ```
 
-Nüüd, kui proovite sisse logida kehtetu kontoga, peaksite nägema midagi sellist:
+**See väike muudatus teeb suure vahe:**
+- Veateated ilmuvad kohe sinna, kuhu kasutaja vaatab
+- Pole enam salapäraseid vaikivaid ebaõnnestumisi
+- Kasutajad saavad kohese ja käegakatsutava tagasiside
+- Sinu rakendus hakkab tunduma professionaalsem ja läbimõeldum
 
-![Ekraanipilt, mis näitab veateadet sisselogimise ajal](../../../../translated_images/login-error.416fe019b36a63276764c2349df5d99e04ebda54fefe60c715ee87a28d5d4ad0.et.png)
+Nüüd, kui testid valede andmetega, näed abistavat veateadet otse lehel!
 
-Nüüd on meil visuaalselt kuvatav veatekst, kuid kui proovite seda ekraanilugejaga, märkate, et midagi ei teatata. Selleks, et ekraanilugejad teataksid dünaamiliselt lehele lisatud teksti, peab see kasutama midagi, mida nimetatakse [Live Region](https://developer.mozilla.org/docs/Web/Accessibility/ARIA/ARIA_Live_Regions). Siin kasutame konkreetset tüüpi live region'i, mida nimetatakse alert'iks:
+![Screenshot showing the error message displayed during login](../../../../translated_images/et/login-error.416fe019b36a6327.webp)
+
+#### Samm 4: Kaasa arvutustel puudega kasutajad
+
+Selle `role="alert"` omaduse juures on midagi ägedat – see pole lihtsalt dekoratsioon! See atribuut loob [Live Region'i](https://developer.mozilla.org/docs/Web/Accessibility/ARIA/ARIA_Live_Regions), mis teatab muudatustest ekraanilugejatele koheselt:
 
 ```html
 <div id="loginError" role="alert"></div>
 ```
 
-Rakendage sama käitumine `register` funktsiooni vigade jaoks (ärge unustage HTML-i uuendada).
+**Miks see oluline on:**
+- Ekraanilugeja kasutajad kuulevad veateadet kohe, kui see ilmub
+- Kõik saavad sama olulise info sõltumata navigeerimisviisist
+- Lihtne viis muuta rakendus ligipääsetavamaks rohkematele inimestele
+- Näitab, et hoolid kaasavatest kogemustest
 
-## Teabe kuvamine armatuurlaual
+Sellised väiksed nüansid eristavad häid arendajaid suurepärastest!
 
-Kasutades samu tehnikaid, mida just nägime, hoolitseme ka kontoandmete kuvamise eest armatuurlaua lehel.
+### 🎯 Pedagoogiline peatükk: autentimise mustrid
 
-Selline näeb välja serverist saadud konto objekt:
+**Peatu ja mõtle:** Sa just rakendasid täieliku autentimiskäigu. See on veebiarenduse fundamentaalse mustri näide.
+
+**Kiire ise-hindamine:**
+- Kas suudad seletada, miks kasutame API kõnede puhul async/await?
+- Mis juhtuks, kui unustaksime `encodeURIComponent()` funktsiooni?
+- Kuidas parandab meie veahaldus kasutajakogemust?
+
+**Tegeliku maailma seos:** Mustreid, mida õppisid (asünkroonne andmete pärimine, veahaldus, kasutajate tagasiside), kasutatakse igas suuremas veebirakenduses alates sotsiaalmeediast kuni e-kaubanduseni. Sa ehitad tööstustasemel oskusi!
+
+**Väljakutse küsimus:** Kuidas muuta autentimissüsteemi, et hallata mitut kasutajate rolli (klient, admin, teller)? Mõtle andmestruktuurile ja kasutajaliidese muutustele.
+
+#### Samm 5: Rakenda sama mustrit registreerimisel
+
+Järjepidevuse huvides rakenda identsed veahaldusmeetodid oma registreerimisvormis:
+
+1. **Lisa** veateate kuvamise element oma registreerimise HTML-i:
+```html
+<div id="registerError" role="alert"></div>
+```
+
+2. **Uuenda** oma registreerimisfunktsiooni sama veateate näitamise mustri järgi:
+```javascript
+if (data.error) {
+  return updateElement('registerError', data.error);
+}
+```
+
+**Järjepideva veahalduse eelised:**
+- **Tagab** ühtlase kasutajakogemuse kõikides vormides
+- **Vähendab** kognitiivset koormust tuntud mustrite kasutamisega
+- **Lihtsustab** hooldust taaskasutatava koodiga
+- **Tagab** juurdepääsetavuse standardite järgimise rakenduses
+
+## Dünaamilise juhtpaneeli loomine
+
+Nüüd muudame sinu staatilise juhtpaneeli dünaamiliseks liideseks, mis kuvab reaalajas kontode andmeid. Nagu vahe trükitud lennugraafiku ja lennujaama reaalajas väljumistöötahvlite vahel – nihkuda staatilisest info kuvamisest otseajaga reageerivale kuvamisele.
+
+Kasutades DOM-manipulatsiooni tehnikaid, mida oled õppinud, loome juhtpaneeli, mis uuendab automaatselt jooksvaid kontoandmeid.
+
+### Tutvu oma andmetega
+
+Enne ehitama asumist piilume, millist tüüpi andmed su server tagastab. Kui keegi edukalt sisse logib, saad kasutada järgmist informatsiooni:
 
 ```json
 {
@@ -192,15 +580,49 @@ Selline näeb välja serverist saadud konto objekt:
     { "id": "1", "date": "2020-10-01", "object": "Pocket money", "amount": 50 },
     { "id": "2", "date": "2020-10-03", "object": "Book", "amount": -10 },
     { "id": "3", "date": "2020-10-04", "object": "Sandwich", "amount": -5 }
-  ],
+  ]
 }
 ```
 
-> Märkus: et teie elu lihtsamaks teha, saate kasutada eelnevalt olemasolevat `test` kontot, mis on juba andmetega täidetud.
+**See andmestruktuur annab:**
+- **`user`**: sobib isikupärastamiseks ("Tere tulemast tagasi, Sarah!")
+- **`currency`**: tagab rahasummade õige kuvamise
+- **`description`**: sõbralik konto nimi
+- **`balance`**: oluline jooksva saldona
+- **`transactions`**: kogu tehingute ajalugu koos detailidega
 
-### Ülesanne
+Kõik, mida vajad professionaalse pangajuhtepaneeli loomiseks!
 
-Alustame HTML-i "Saldo" sektsiooni asendamisest, lisades kohatäiteelemendid:
+```mermaid
+flowchart TD
+    A[Kasutaja sisselogimine] --> B[Kontoteabe toomine]
+    B --> C{Andmed kehtivad?}
+    C -->|Jah| D[Salvesta globaalsesse muutujasse]
+    C -->|Ei| E[Näita veateadet]
+    D --> F[Liigu armatuurlauale]
+    F --> G[Uuenda kasutajaliidese elemente]
+    G --> H[Kuva saldo]
+    G --> I[Näita kirjeldust]
+    G --> J[Renderda tehingud]
+    J --> K[Loo tabeli read]
+    K --> L[Formateeri valuuta]
+    L --> M[Kasutaja näeb reaalajas andmeid]
+```
+> 💡 **Nipp:** Soovid oma juhtpaneeli kohe näha? Kasuta sisselogimisel kasutajanime `test` – see on eelnevalt täidetud näidisandmetega, et saaksid ilma tehinguid loomata näha kõike toimimas.
+> 
+**Testkonto eelis:**
+- Tuleb realistlike näidisandmetega
+- Hea näha, kuidas tehingud kuvatakse
+- Väga sobilik juhtpaneeli funktsioonide testimiseks
+- Säästab sind kasutu andme loomise tegemisest käsitsi
+
+### Juhtpaneeli kuvamise elementide loomine
+
+Ehita juhmelemendid samm-sammult, alustades konto kokkuvõtte infoga ja seejärel keerulisemate funktsioonide nagu tehingute loendid juurde liikumisega.
+
+#### Samm 1: Uuenda oma HTML struktuuri
+
+Asenda staatiline "Saldo" sektsioon dünaamiliste kohatäiteks, mida saab JavaScript täita:
 
 ```html
 <section>
@@ -208,17 +630,25 @@ Alustame HTML-i "Saldo" sektsiooni asendamisest, lisades kohatäiteelemendid:
 </section>
 ```
 
-Lisame ka uue sektsiooni otse selle alla, et kuvada konto kirjeldust:
+Seejärel lisa sektsioon konto kirjelduse jaoks. Kuna see toimib juhtelemendi tiitli funktsioonina, kasuta semantilist HTML-i:
 
 ```html
 <h2 id="description"></h2>
 ```
 
-✅ Kuna konto kirjeldus toimib sisule allpool pealkirjana, on see semantiliselt märgitud pealkirjana. Lisateavet selle kohta, kui oluline on [pealkirjade struktuur](https://www.nomensa.com/blog/2017/how-structure-headings-web-accessibility) juurdepääsetavuse jaoks, ja vaadake kriitiliselt lehte, et määrata, mis veel võiks olla pealkiri.
+**HTML struktuuri mõistmine:**
+- **Kasuta** eraldi `<span>` elemente saldole ja valuutale, et neid eraldi kontrollida
+- **Lisa** igale elemendile unikaalne ID JavaScripti sihtimiseks
+- **Kasuta** semantilist märgistust `<h2>` konto kirjelduse jaoks
+- **Loo** loogiline hierarhia ekraanilugejate ja SEO jaoks
 
-Järgmisena loome `app.js` faili uue funktsiooni, et täita kohatäited:
+> ✅ **Juurdepääsetavuse märkus:** Konto kirjeldus töötab juhtelemendi tiitli funktsioonina, seega on see semantiliselt päisega märgistatud. Loe rohkem selle kohta, kuidas [pealkirjastruktuur](https://www.nomensa.com/blog/2017/how-structure-headings-web-accessibility) mõjutab juurdepääsetavust. Kas suudad leida teisi elemente oma lehel, mis võiksid kasu saada päise märgistusest?
 
-```js
+#### Samm 2: Loo juhtpaneeli uuendamise funktsioon
+
+Kirjuta funktsioon, mis täidab juhtpaneeli reaalse kontoandmetega:
+
+```javascript
 function updateDashboard() {
   if (!account) {
     return navigate('/login');
@@ -230,40 +660,87 @@ function updateDashboard() {
 }
 ```
 
-Esiteks kontrollime, et meil oleks vajalikud kontoandmed, enne kui edasi läheme. Seejärel kasutame varem loodud `updateElement()` funktsiooni HTML-i uuendamiseks.
+**Samm-sammult, mida see funktsioon teeb:**
+- **Kontrollib**, kas konto andmed on olemas
+- **Suunab** sisselogimata kasutajad tagasi sisselogimislehele
+- **Uuendab** konto kirjelduse kasutades taaskasutatavat `updateElement` funktsiooni
+- **Formaat** saldole, et näidata alati 2 koma järel kohta
+- **Kuvab** sobiva valuutamärgi
 
-> Et saldo kuvamine oleks ilusam, kasutame meetodit [`toFixed(2)`](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Number/toFixed), et sundida väärtust kuvama 2 komakohaga.
+> 💰 **Raha vormindamine:** See [`toFixed(2)`](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Number/toFixed) meetod on päästja! See tagab, et saldo näeb alati välja nagu päris raha – "75.00" mitte lihtsalt "75". Kasutajad hindavad tuttavat valuutavormingut.
 
-Nüüd peame kutsuma oma `updateDashboard()` funktsiooni iga kord, kui armatuurlaua leht laaditakse. Kui olete juba lõpetanud [õppetüki 1 ülesande](../1-template-route/assignment.md), peaks see olema lihtne, vastasel juhul saate kasutada järgmist rakendust.
+#### Samm 3: Veendu, et juhtpaneel uuenduks
 
-Lisage see kood `updateRoute()` funktsiooni lõppu:
+Selleks, et juhtpaneel laeks uuesti iga kord, kui kasutaja sinna satub, peame lisama selle oma navigeerimissüsteemi. Kui tegid [1. tunni ülesande](../1-template-route/assignment.md), siis peaks see olema tuttav. Kui mitte, siis siin on, mida vajad:
 
-```js
+Lisa oma `updateRoute()` funktsiooni lõppu:
+
+```javascript
 if (typeof route.init === 'function') {
   route.init();
 }
 ```
 
-Ja uuendage marsruutide määratlust:
+Seejärel muuda oma marsruute, et lisada juhtpaneeli initsialiseerimine:
 
-```js
+```javascript
 const routes = {
   '/login': { templateId: 'login' },
   '/dashboard': { templateId: 'dashboard', init: updateDashboard }
 };
 ```
 
-Selle muudatusega kutsutakse iga kord, kui armatuurlaua leht kuvatakse, funktsioon `updateDashboard()`. Pärast sisselogimist peaksite nägema konto saldot, valuutat ja kirjeldust.
+**Mis see nutikas seadistus teeb:**
+- Kontrollib, kas marsruudil on spetsiaalne initsialiseerimiskood
+- Käivitab selle koodi automaatselt, kui marsruut laaditakse
+- Tagab, et juhtpaneel kuvab alati värskeid andmeid
+- Hoiab sinu marsruutimise loogika puhtana ja organiseerituna
 
-## Tabeliridade dünaamiline loomine HTML-mallidega
+#### Juhtpaneeli testimine
 
-[Esimeses õppetükis](../1-template-route/README.md) kasutasime HTML-malle koos [`appendChild()`](https://developer.mozilla.org/docs/Web/API/Node/appendChild) meetodiga, et rakenduses navigeerimist rakendada. Mallid võivad olla ka väiksemad ja neid saab kasutada lehe korduvate osade dünaamiliseks täitmiseks.
+Kui oled need muudatused teinud, testi juhtpaneeli:
 
-Kasutame sarnast lähenemist, et kuvada tehingute loend HTML-tabelis.
+1. **Logi sisse** testkontoga
+2. **Veendu**, et suunatakse juhtpaneelile
+3. **Kontrolli**, et konto kirjeldus, saldo ja valuuta kuvatakse korrektselt
+4. **Proovi välja logida ja uuesti sisse logida**, et veenduda andmete värskendamises
 
-### Ülesanne
+Sinu juhtpaneel peaks nüüd kuvama dünaamiliselt uuenevat kontoinfot, mis põhineb sisselogitud kasutaja andmetel!
 
-Lisage HTML `<body>`-sse uus mall:
+## Tarkade tehingunimekirjade loomine mallide abil
+
+Selle asemel, et iga tehingu HTML-i käsitsi luua, kasutame malle, mis genereerivad järjepideva vormingu automaatselt. Nagu kosmoselaeva tootmisel kasutatavad standardkomponendid, tagavad mallid iga tehingurida järjepideva struktuuri ja välimuse.
+
+See tehnika skaleerub tõhusalt mõnest tehingust tuhandeteni, säilitades järjepideva jõudluse ja esitluse.
+
+```mermaid
+graph LR
+    A[HTML mall] --> B[JavaScript kloon]
+    B --> C[Andmetega täitmine]
+    C --> D[Lisa fragmenti]
+    D --> E[Massiline lisamine DOM-i]
+    
+    subgraph "Jõudluse eelised"
+        F[Üksik DOM uuendus]
+        G[Järjekindel vormindus]
+        H[Taaskasutatav muster]
+    end
+    
+    E --> F
+    E --> G
+    E --> H
+```
+```mermaid
+flowchart LR
+    A[Tehinguandmed] --> B[HTML-mall]
+    B --> C[Malli kloonimine]
+    C --> D[Andmetega täitmine]
+    D --> E[DOM-i lisamine]
+    E --> F[Korda iga tehingu korral]
+```
+### Samm 1: Loo tehingu mall
+
+Alustuseks lisa oma HTML kehasse taaskasutatav mall tehinguridade jaoks:
 
 ```html
 <template id="transaction">
@@ -275,17 +752,30 @@ Lisage HTML `<body>`-sse uus mall:
 </template>
 ```
 
-See mall esindab ühte tabelirida, millel on 3 veergu, mida soovime täita: tehingu *kuupäev*, *objekt* ja *summa*.
+**HTML mallide mõistmine:**
+- **Määratleb** ühe tabelirea struktuuri
+- **Jääb** nähtamatuks kuni kloonitakse ja JavaScriptiga täidetakse
+- **Sisaldab** kolme lahtrit kuupäeva, kirjelduse ja summa jaoks
+- **Pakku** taaskasutatavat mustrit järjepideva vormingu saavutamiseks
 
-Seejärel lisage tabeli `<tbody>` elemendile armatuurlaua mallis see `id` atribuut, et seda JavaScriptiga lihtsam leida:
+### Samm 2: Valmista oma tabel dünaamiliseks sisuks ette
+
+Lisa tabeli keha elemendile `id`, et JavaScript saaks seda hõlpsalt sihtida:
 
 ```html
 <tbody id="transactions"></tbody>
 ```
 
-Meie HTML on valmis, liigume JavaScripti koodi juurde ja loome uue funktsiooni `createTransactionRow`:
+**Mida see saavutab:**
+- **Loomine** selgelt määratletud sihtmärgiks tehinguridade lisamiseks
+- **Eraldab** tabeli staatilise struktuuri dünaamilisest sisust
+- **Võimaldab** hõlpsat tehingute tühjendamist ja uuesti täitmist
 
-```js
+### Samm 3: Kirjuta tehinguridade tehasefunktsioon
+
+Loo funktsioon, mis teisendab tehinguandmed HTML-elementideks:
+
+```javascript
 function createTransactionRow(transaction) {
   const template = document.getElementById('transaction');
   const transactionRow = template.content.cloneNode(true);
@@ -297,9 +787,19 @@ function createTransactionRow(transaction) {
 }
 ```
 
-See funktsioon teeb täpselt seda, mida selle nimi viitab: kasutades varem loodud malli, loob see uue tabelirea ja täidab selle sisu tehinguandmetega. Kasutame seda oma `updateDashboard()` funktsioonis tabeli täitmiseks:
+**Selle tehasefunktsiooni lahtimurdmine:**
+- **Leiab** malli elemendi ID alusel
+- **Kloonib** malli sisu turvaliseks manipuleerimiseks
+- **Valib** kloonitud sisu seest tabelirea
+- **Täidab** iga lahtri tehinguandmetega
+- **Formaat** arve, et näidata korrektseid komakohti
+- **Tagastab** lõppläbi valmis rea lisamiseks
 
-```js
+### Samm 4: Genereeri mitu tehingurida tõhusalt
+
+Lisa see kood oma `updateDashboard()` funktsiooni, et kuvada kõik tehingud:
+
+```javascript
 const transactionsRows = document.createDocumentFragment();
 for (const transaction of account.transactions) {
   const transactionRow = createTransactionRow(transaction);
@@ -308,41 +808,154 @@ for (const transaction of account.transactions) {
 updateElement('transactions', transactionsRows);
 ```
 
-Siin kasutame meetodit [`document.createDocumentFragment()`](https://developer.mozilla.org/docs/Web/API/Document/createDocumentFragment), mis loob uue DOM-fragmendi, millega saame töötada, enne kui lõpuks selle HTML-tabelisse lisame.
+**Selles tõhusas lähenemises:**
+- **Loomine** dokumendifragmendi abil rühmitatud DOM-operatsioonid
+- **Iga** tehingu läbimine konto andmetes
+- **Moodustab** rea iga tehingu jaoks tehasefunktsiooni abil
+- **Kogub** kõik read fragmendisse enne DOM-i lisamist
+- **Teeb** ühe DOM uuenduse mitme eraldi asemel
+> ⚡ **Jõudluse optimeerimine**: [`document.createDocumentFragment()`](https://developer.mozilla.org/docs/Web/API/Document/createDocumentFragment) töötab nagu Boeing'i kokkupaneku protsess – komponendid valmistatakse põhijoonest eemal ette ja seejärel paigaldatakse tervikuna. See partiina töötamise meetod vähendab DOM-i ümberjoonistamisi, tehes ühe sisestuse mitme üksiku toimingu asemel.
 
-On veel üks asi, mida peame tegema, enne kui see kood töötab, kuna meie `updateElement()` funktsioon toetab praegu ainult tekstisisu. Muudame selle koodi veidi:
+### Samm 5: Täienda uuendamisfunktsiooni mitmesisuga sisu jaoks
 
-```js
+Sinu `updateElement()` funktsioon käsitleb hetkel ainult tekstisisu. Täienda seda nii, et see töötaks nii teksti kui ka DOM-sõlmedega:
+
+```javascript
 function updateElement(id, textOrNode) {
   const element = document.getElementById(id);
-  element.textContent = ''; // Removes all children
+  element.textContent = ''; // Eemaldab kõik lapsed
   element.append(textOrNode);
 }
 ```
 
-Me kasutame [`append()`](https://developer.mozilla.org/docs/Web/API/ParentNode/append) meetodit, kuna see võimaldab lisada vanemelemendile kas teksti või [DOM Node'id](https://developer.mozilla.org/docs/Web/API/Node), mis sobib ideaalselt kõigi meie kasutusjuhtude jaoks.
+**Peamised parandused selles uuenduses:**
+- **Kustutab** olemasoleva sisu enne uue lisamist
+- **Võtab vastu** kas tekstistringe või DOM-sõlmi parameetritena
+- **Kasutab** [`append()`](https://developer.mozilla.org/docs/Web/API/ParentNode/append) meetodit paindlikkuse tagamiseks
+- **Hoidab** tagurpidi ühilduvust olemasoleva tekstipõhise kasutusega
 
-Kui proovite `test` kontoga sisse logida, peaksite nüüd nägema armatuurlaual tehingute nimekirja 🎉.
+### Sinu juhtpaneeli testimine
+
+Tuleb tõehetk! Vaatame, kuidas sinu dünaamiline juhtpaneel töötab:
+
+1. Logi sisse kasutades `test` kontot (seal on valmis proovandmed)
+2. Liigu oma juhtpaneelile
+3. Kontrolli, et tehinguridade kuvamine toimib ja on korralikult vormindatud
+4. Veendu, et kuupäevad, kirjelduse ja summad on korrektsed
+
+Kui kõik töötab, näed oma juhtpaneelil täielikult funktsioneerivat tehingute nimekirja! 🎉
+
+**Mida sa saavutasid:**
+- Ehitasid juhtpaneeli, mis skaleerub ükskõik kui palju andmeid käsitledes
+- Loodud taaskasutatavad mallid järjepidevaks vormindamiseks
+- Rakendasid tõhusaid DOM-manipulatsiooni tehnikaid
+- Arendasid funktsionaalsust, mis on võrreldav tootmispangandusrakendustega
+
+Sa muutsid edukalt staatilise veebilehe dünaamiliseks veebirakenduseks.
+
+### 🎯 Pedagoogiline kontrollpunkt: dünaamiline sisu genereerimine
+
+**Arhitektuuri mõistmine**: Sa oled rakendanud keeruka andmetest UI-sse voogude süsteemi, mis peegeldab raamistikusid nagu React, Vue ja Angular kasutatavaid mustreid.
+
+**Peamised omandatud kontseptsioonid:**
+- **Mallipõhine renderdamine**: taaskasutatavate UI komponentide loomine
+- **Dokumendifragmendid**: DOM-i jõudluse optimeerimine
+- **Turvaline DOM-manipulatsioon**: turvahaavatavuste vältimine
+- **Andmete teisendamine**: serveri andmete muutmine kasutajaliideseks
+
+**Tööstuse seos**: Need tehnikad on kaasaegsete esipaneeliraamistike aluseks. Reacti virtuaalne DOM, Vue mallisüsteem ja Angulari komponendiarhitektuur põhinevad kõigil nende põhikontseptsioonide peal.
+
+**Mõtiskluse küsimus**: Kuidas laiendaksid seda süsteemi reaalajas uuenduste käsitlemiseks (nt uued tehingud ilmuvad automaatselt)? Mõtle WebSocketite või serveripoolse sündmuste edastuse peale.
 
 ---
+
+## 📈 Sinu andmehalduse meistriklassi ajakava
+
+```mermaid
+timeline
+    title Andmepõhine Arendusreis
+    
+    section Vundamendi Loomine
+        API Seadistus & Testimine
+            : Mõista kliendi- ja serveri vahelise suhtluse toimimist
+            : Valdada HTTP päringu/vastuse tsüklit
+            : Õppida silumisvõtteid
+    
+    section Autentimise Valdamine
+        Asünkroonsed Funktsioonimustrid
+            : Kirjutada puhast async/await koodi
+            : Töötada lubadustega tõhusalt
+            : Rakendada veapiiranguid
+        Kasutaja Seansi Halduse
+            : Luuakse globaalsed olekumulustrid
+            : Ehita navigeerimise kaitsjad
+            : Kujunda kasutajate tagasiside süsteemid
+    
+    section Dünaamiline Kasutajaliidese Arendus
+        Turvaline DOM Manipulatsioon
+            : Ennetada XSS haavatavusi
+            : Kasuta textContent-i innerHTML asemel
+            : Loo ligipääsetavuse sõbralikud liidesed
+        Mallisüsteemid
+            : Ehita taaskasutatavaid UI komponente
+            : Optimeeri jõudlust fragmentidega
+            : Skaala suurte andmekogumite käsitlemiseks
+    
+    section Professionaalsed Mustrid
+        Tootmisvalmis Kood
+            : Rakendada kõikehõlmavat veahaldust
+            : Järgida turvalisuse parimaid tavasid
+            : Luua hooldatavaid arhitektuure
+        Moodne Veebi Standardid
+            : Valdada Fetch API mustreid
+            : Mõista CORS konfiguratsioone
+            : Ehita reageerivaid, ligipääsetavaid kasutajaliideseid
+```
+**🎓 Lõputunnistus**: Sa oled edukalt loonud täieliku andmepõhise veebirakenduse, kasutades kaasaegseid JavaScripti mustreid. Need oskused kantakse üle otse Reacti, Vue või Angulari raamistikuga töötamiseks.
+
+**🔄 Järgmise taseme võimed:**
+- Valmis uurima esipaneeliraamistikke, mis neid kontseptsioone kasutavad
+- Valmis rakendama reaalajas funktsioone WebSocketitega
+- Võimeline looma progressiivseid veebirakendusi, mis töötavad ka võrguühenduseta
+- Alus edasijõudnud olekuhalduse mustrite õppimiseks on olemas
+
+## GitHub Copilot Agendi väljakutse 🚀
+
+Kasuta Agent režiimi, et lõpetada järgmine ülesanne:
+
+**Kirjeldus:** Täienda pangarakendust, lisades tehingute otsingu ja filtreerimise funktsiooni, mis võimaldab kasutajatel leida tehinguid kuupäevavahemiku, summa või kirjelduse alusel.
+
+**Juhis:** Loo pangarakendusele otsingufunktsionaalsus, mis sisaldab: 1) otsinguvormi sisendväljadega kuupäevavahemiku (alates/kuni), minimaal- ja maksimaal summa ning tehingu kirjelduse märksõnade jaoks, 2) `filterTransactions()` funktsioon, mis filtreerib account.transactions massiivi otsingukriteeriumide põhjal, 3) Uuenda `updateDashboard()` funktsiooni, et näidata filtreeritud tulemusi ja 4) Lisa "Tühjenda filtrid" nupp vaate lähtestamiseks. Kasuta kaasaegseid JavaScripti massiivimeetodeid nagu `filter()` ning käsitle otsingukriteeriumide tühjuse erandeid.
+
+Õpi rohkem [agent režiimi](https://code.visualstudio.com/blogs/2025/02/24/introducing-copilot-agent-mode) kohta siit.
 
 ## 🚀 Väljakutse
 
-Töötage koos, et muuta armatuurlaua leht tõelise pangarakenduse sarnaseks. Kui olete juba oma rakenduse kujundanud, proovige kasutada [meedia päringuid](https://developer.mozilla.org/docs/Web/CSS/Media_Queries), et luua [responsiivne disain](https://developer.mozilla.org/docs/Web/Progressive_web_apps/Responsive/responsive_design_building_blocks), mis töötab hästi nii lauaarvutites kui ka mobiilseadmetes.
+Valmis viima oma pangarakenduse järgmisele tasemele? Muudame selle väljanägemise ja kasutajakogemuse nii heaks, et soovid seda päriselt kasutadagi. Siin on mõned ideed loomingulisuse süütamiseks:
 
-Siin on näide kujundatud armatuurlaua lehe tulemusest:
+**Muuda ilusaks**: Lisa CSS stiilid, et muuta sinu funktsionaalne juhtpaneel visuaalselt atraktiivseks. Mõtle puhastele joontele, heale vahele ja võib-olla ka peenetele animatsioonidele.
 
-![Näide armatuurlaua lehe kujunduse tulemusest](../../../../translated_images/screen2.123c82a831a1d14ab2061994be2fa5de9cec1ce651047217d326d4773a6348e4.et.png)
+**Tee responsiivseks**: Proovi kasutades [meedia päringuid](https://developer.mozilla.org/docs/Web/CSS/Media_Queries) luua [responsiivne disain](https://developer.mozilla.org/docs/Web/Progressive_web_apps/Responsive/responsive_design_building_blocks), mis töötab suurepäraselt telefonidel, tahvelarvutitel ja lauaarvutitel. Sinu kasutajad tänavad sind!
 
-## Loengu järgne viktoriin
+**Lisa natuke sära**: Mõtle tehingute värvikoodimisele (roheline sissetuleku jaoks, punane kulude jaoks), ikoonide lisamisele või sellele, et liikumisel hiirega tekiksid efekti, mis muudavad liidese interaktiivseks.
 
-[Loengu järgne viktoriin](https://ff-quizzes.netlify.app/web/quiz/46)
+Siin on, kuidas võib välja näha lihvitud juhtpaneel:
 
-## Ülesanne
+![Screenshot of an example result of the dashboard after styling](../../../../translated_images/et/screen2.123c82a831a1d14a.webp)
 
-[Refaktoreeri ja kommenteeri oma kood](assignment.md)
+Sa ei pea seda täpselt kopeerima – kasuta seda inspiratsioonina ja loo oma stiil!
+
+## Lõpuloengu viktoriin
+
+[Lõpuloengu viktoriin](https://ff-quizzes.netlify.app/web/quiz/46)
+
+## Kodutöö
+
+[Kodeeri ümber ja kommenteeri oma kood](assignment.md)
 
 ---
 
-**Lahtiütlus**:  
-See dokument on tõlgitud AI tõlketeenuse [Co-op Translator](https://github.com/Azure/co-op-translator) abil. Kuigi püüame tagada täpsust, palume arvestada, et automaatsed tõlked võivad sisaldada vigu või ebatäpsusi. Algne dokument selle algses keeles tuleks pidada autoriteetseks allikaks. Olulise teabe puhul soovitame kasutada professionaalset inimtõlget. Me ei vastuta selle tõlke kasutamisest tulenevate arusaamatuste või valesti tõlgenduste eest.
+<!-- CO-OP TRANSLATOR DISCLAIMER START -->
+**Vastutusest loobumine**:  
+See dokument on tõlgitud kasutades tehisintellekti tõlketeenust [Co-op Translator](https://github.com/Azure/co-op-translator). Kuigi me pingutame täpsuse nimel, palun arvestage, et automatiseeritud tõlked võivad sisaldada vigu või ebatäpsusi. Originaaldokument selle algkeeles on tunnustatud ja usaldusväärne allikas. Oluline info puhul soovitatakse kasutada professionaalset inimtõlget. Me ei vastuta ühegi arusaamatuse või valesti mõistmise eest, mis võib tuleneda selle tõlke kasutamisest.
+<!-- CO-OP TRANSLATOR DISCLAIMER END -->

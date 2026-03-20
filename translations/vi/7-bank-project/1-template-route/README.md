@@ -1,12 +1,3 @@
-<!--
-CO_OP_TRANSLATOR_METADATA:
-{
-  "original_hash": "351678bece18f07d9daa987a881fb062",
-  "translation_date": "2025-11-06T11:27:50+00:00",
-  "source_file": "7-bank-project/1-template-route/README.md",
-  "language_code": "vi"
-}
--->
 # Xây dựng ứng dụng ngân hàng Phần 1: Mẫu HTML và định tuyến trong ứng dụng web
 
 ```mermaid
@@ -652,7 +643,7 @@ sequenceDiagram
 
 Sử dụng `history.pushState` tạo các mục mới trong lịch sử điều hướng của trình duyệt. Bạn có thể kiểm tra điều đó bằng cách giữ *nút quay lại* của trình duyệt, nó sẽ hiển thị như sau:
 
-![Ảnh chụp màn hình lịch sử điều hướng](../../../../translated_images/history.7fdabbafa521e06455b738d3dafa3ff41d3071deae60ead8c7e0844b9ed987d8.vi.png)
+![Ảnh chụp màn hình lịch sử điều hướng](../../../../translated_images/vi/history.7fdabbafa521e064.webp)
 
 Nếu bạn thử nhấp vào nút quay lại vài lần, bạn sẽ thấy rằng URL hiện tại thay đổi và lịch sử được cập nhật, nhưng cùng một mẫu vẫn được hiển thị.
 

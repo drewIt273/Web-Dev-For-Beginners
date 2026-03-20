@@ -1,12 +1,3 @@
-<!--
-CO_OP_TRANSLATOR_METADATA:
-{
-  "original_hash": "351678bece18f07d9daa987a881fb062",
-  "translation_date": "2025-11-06T14:46:56+00:00",
-  "source_file": "7-bank-project/1-template-route/README.md",
-  "language_code": "my"
-}
--->
 # ဘဏ်အက်ပ်တည်ဆောက်ခြင်း အပိုင်း ၁: HTML အခြေခံပုံစံများနှင့် Web App တွင် လမ်းကြောင်းများ
 
 ```mermaid
@@ -541,7 +532,7 @@ sequenceDiagram
 
 `history.pushState` ကို အသုံးပြုကာ browser ရဲ့ navigation history မှာ entry အသစ်တွေကို ဖန်တီးနိုင်ပါတယ်။ Browser ရဲ့ *back button* ကို နှိပ်ထားပြီး စစ်ဆေးကြည့်ပါ၊ navigation history က ဒီလိုပုံစံတစ်ခုကို ပြသသင့်ပါတယ်:
 
-![Navigation history ရဲ့ screenshot](../../../../translated_images/history.7fdabbafa521e06455b738d3dafa3ff41d3071deae60ead8c7e0844b9ed987d8.my.png)
+![Navigation history ရဲ့ screenshot](../../../../translated_images/my/history.7fdabbafa521e064.webp)
 
 Back button ကို အကြိမ်အများကြိမ် click လုပ်ကြည့်ပါ၊ လက်ရှိ URL က ပြောင်းလဲပြီး history က update လုပ်သွားမယ်၊ ဒါပေမယ့် အတူတူ template ကိုပဲ ပြသနေပါမယ်။
 

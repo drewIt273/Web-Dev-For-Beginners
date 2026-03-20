@@ -1,15 +1,6 @@
-<!--
-CO_OP_TRANSLATOR_METADATA:
-{
-  "original_hash": "672b0bb6e8b431075f3bdb7130590d2d",
-  "translation_date": "2025-11-04T02:10:14+00:00",
-  "source_file": "2-js-basics/1-data-types/README.md",
-  "language_code": "he"
-}
--->
 # יסודות JavaScript: סוגי נתונים
 
-![JavaScript Basics - Data types](../../../../translated_images/webdev101-js-datatypes.4cc470179730702c756480d3ffa46507f746e5975ebf80f99fdaaf1cff09a7f4.he.png)
+![JavaScript Basics - Data types](../../../../translated_images/he/webdev101-js-datatypes.4cc470179730702c.webp)
 > סקיצה מאת [Tomomi Imura](https://twitter.com/girlie_mac)
 
 ```mermaid

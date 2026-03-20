@@ -1,15 +1,6 @@
-<!--
-CO_OP_TRANSLATOR_METADATA:
-{
-  "original_hash": "c688385d15dd3645e924ea0ffee8967f",
-  "translation_date": "2025-11-03T23:13:01+00:00",
-  "source_file": "2-js-basics/3-making-decisions/README.md",
-  "language_code": "ru"
-}
--->
 # Основы JavaScript: принятие решений
 
-![Основы JavaScript - Принятие решений](../../../../translated_images/webdev101-js-decisions.69e1b20f272dd1f0b1cb2f8adaff3ed2a77c4f91db96d8a0594132a353fa189a.ru.png)
+![Основы JavaScript - Принятие решений](../../../../translated_images/ru/webdev101-js-decisions.69e1b20f272dd1f0.webp)
 
 > Скетчноут от [Tomomi Imura](https://twitter.com/girlie_mac)
 

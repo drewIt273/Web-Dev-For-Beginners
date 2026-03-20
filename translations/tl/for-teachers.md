@@ -1,12 +1,3 @@
-<!--
-CO_OP_TRANSLATOR_METADATA:
-{
-  "original_hash": "71009af209f81cc01a1f2d324200375f",
-  "translation_date": "2025-10-03T10:22:09+00:00",
-  "source_file": "for-teachers.md",
-  "language_code": "tl"
-}
--->
 ### Para sa mga Guro
 
 Malugod kayong inaanyayahan na gamitin ang kurikulum na ito sa inyong klase. Madali itong gamitin kasama ang GitHub Classroom at mga nangungunang LMS platform, at maaari rin itong gamitin bilang isang standalone na repositoryo para sa inyong mga estudyante.
@@ -42,10 +33,10 @@ Kasama sa kurikulum na ito ang mga importable na package para sa karaniwang mga 
   - Limitado ang suporta ng Moodle Cloud para sa Common Cartridge. Mas mainam gamitin ang Moodle file sa itaas, na maaari ring i-upload sa Canvas.
   - Pagkatapos ng import, suriin ang mga module, petsa ng due, at mga setting ng pagsusulit upang tumugma sa iskedyul ng inyong term.
 
-![Moodle](../../translated_images/moodle.94eb93d714a50cb2c97435b408017dee224348b61bc86203ffd43a4f4e57b95f.tl.png)
+![Moodle](../../translated_images/tl/moodle.94eb93d714a50cb2.webp)
 > Ang kurikulum sa isang Moodle classroom
 
-![Canvas](../../translated_images/canvas.fbd605ff8e5b8aff567d398528ce113db304446b90b9cad55c654de3fdfcda34.tl.png)
+![Canvas](../../translated_images/tl/canvas.fbd605ff8e5b8aff.webp)
 > Ang kurikulum sa Canvas
 
 ### Direktang paggamit ng repositoryo (walang Classroom)

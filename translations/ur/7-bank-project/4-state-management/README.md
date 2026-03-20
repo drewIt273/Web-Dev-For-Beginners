@@ -1,12 +1,3 @@
-<!--
-CO_OP_TRANSLATOR_METADATA:
-{
-  "original_hash": "b807b09df716dc48a2b750835bf8e933",
-  "translation_date": "2025-11-03T13:18:39+00:00",
-  "source_file": "7-bank-project/4-state-management/README.md",
-  "language_code": "ur"
-}
--->
 # بینکنگ ایپ بنائیں حصہ 4: اسٹیٹ مینجمنٹ کے تصورات
 
 ## ⚡ اگلے 5 منٹ میں آپ کیا کر سکتے ہیں؟
@@ -190,7 +181,7 @@ mindmap
 
 اپنے دماغ کو الجھانے کے بجائے، ہم ایک **مرکزی اسٹیٹ مینجمنٹ** سسٹم بنائیں گے۔ اسے ایسے سمجھیں جیسے ایک بہت ہی منظم شخص تمام اہم چیزوں کا انچارج ہو:
 
-![HTML، صارف کے اعمال اور اسٹیٹ کے درمیان ڈیٹا کے بہاؤ کو ظاہر کرنے والی اسکیمہ](../../../../translated_images/data-flow.fa2354e0908fecc89b488010dedf4871418a992edffa17e73441d257add18da4.ur.png)
+![HTML، صارف کے اعمال اور اسٹیٹ کے درمیان ڈیٹا کے بہاؤ کو ظاہر کرنے والی اسکیمہ](../../../../translated_images/ur/data-flow.fa2354e0908fecc8.webp)
 
 ```mermaid
 flowchart TD

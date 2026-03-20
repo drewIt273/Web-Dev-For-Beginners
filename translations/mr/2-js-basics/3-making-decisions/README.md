@@ -1,15 +1,6 @@
-<!--
-CO_OP_TRANSLATOR_METADATA:
-{
-  "original_hash": "c688385d15dd3645e924ea0ffee8967f",
-  "translation_date": "2025-11-03T14:15:17+00:00",
-  "source_file": "2-js-basics/3-making-decisions/README.md",
-  "language_code": "mr"
-}
--->
 # JavaScript मूलभूत गोष्टी: निर्णय घेणे
 
-![JavaScript Basics - Making decisions](../../../../translated_images/webdev101-js-decisions.69e1b20f272dd1f0b1cb2f8adaff3ed2a77c4f91db96d8a0594132a353fa189a.mr.png)
+![JavaScript Basics - Making decisions](../../../../translated_images/mr/webdev101-js-decisions.69e1b20f272dd1f0.webp)
 
 > स्केच नोट [Tomomi Imura](https://twitter.com/girlie_mac) यांच्याकडून
 

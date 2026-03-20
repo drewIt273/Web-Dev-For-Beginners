@@ -1,12 +1,3 @@
-<!--
-CO_OP_TRANSLATOR_METADATA:
-{
-  "original_hash": "5c383cc2cc23bb164b06417d1c107a44",
-  "translation_date": "2025-11-25T12:04:18+00:00",
-  "source_file": "1-getting-started-lessons/2-github-basics/README.md",
-  "language_code": "mr"
-}
--->
 # GitHub परिचय
 
 नमस्कार, भविष्यातील विकसक! 👋 जगभरातील लाखो कोडर्समध्ये सामील होण्यासाठी तयार आहात का? तुम्हाला GitHub ची ओळख करून देताना मला खूप आनंद होत आहे – हे प्रोग्रामर्ससाठी सोशल मीडिया प्लॅटफॉर्मसारखे आहे, फक्त दुपारच्या जेवणाचे फोटो शेअर करण्याऐवजी, आम्ही कोड शेअर करत आहोत आणि एकत्रितपणे अद्भुत गोष्टी तयार करत आहोत!
@@ -17,7 +8,7 @@ CO_OP_TRANSLATOR_METADATA:
 
 आपण एकत्रितपणे हा प्रवास करू, एक पाऊल एकावेळी. घाई नाही, दबाव नाही – फक्त तुम्ही, मी आणि काही खरोखर छान साधने जी तुमचे नवीन सर्वोत्तम मित्र बनणार आहेत!
 
-![GitHub परिचय](../../../../translated_images/webdev101-github.8846d7971abef6f947909b4f9d343e2a23778aa716ca6b9d71df7174ee5009ac.mr.png)
+![GitHub परिचय](../../../../translated_images/mr/webdev101-github.8846d7971abef6f9.webp)
 > स्केच नोट [Tomomi Imura](https://twitter.com/girlie_mac) यांच्याकडून
 
 ```mermaid
@@ -562,7 +553,7 @@ flowchart TD
 
 ✅ 'नवशिक्यांसाठी अनुकूल' रेपॉजिटरी शोधण्याचा चांगला मार्ग म्हणजे [टॅग 'good-first-issue' द्वारे शोधा](https://github.blog/2020-01-22-browse-good-first-issues-to-start-contributing-to-open-source/).
 
-![रेपो स्थानिक स्तरावर कॉपी करा](../../../../translated_images/clone_repo.5085c48d666ead57664f050d806e325d7f883be6838c821e08bc823ab7c66665.mr.png)
+![रेपो स्थानिक स्तरावर कॉपी करा](../../../../translated_images/mr/clone_repo.5085c48d666ead57.webp)
 
 कोड कॉपी करण्याचे अनेक मार्ग आहेत. एक मार्ग म्हणजे रेपॉजिटरीची सामग्री "क्लोन" करणे, HTTPS, SSH किंवा GitHub CLI (कमांड लाइन इंटरफेस) वापरून.
 

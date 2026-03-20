@@ -1,12 +1,3 @@
-<!--
-CO_OP_TRANSLATOR_METADATA:
-{
-  "original_hash": "71009af209f81cc01a1f2d324200375f",
-  "translation_date": "2025-10-03T09:01:05+00:00",
-  "source_file": "for-teachers.md",
-  "language_code": "ja"
-}
--->
 ### 教育者向け
 
 このカリキュラムは、教室で自由に使用できます。GitHub Classroomや主要なLMSプラットフォームとスムーズに連携し、または単独のリポジトリとして学生と一緒に使用することも可能です。
@@ -42,10 +33,10 @@ CO_OP_TRANSLATOR_METADATA:
   - Moodle CloudはCommon Cartridgeのサポートが限定的です。上記のMoodleファイルを使用することを推奨します。このファイルはCanvasにもアップロード可能です。
   - インポート後、モジュール、締切日、クイズ設定を学期スケジュールに合わせて確認してください。
 
-![Moodle](../../translated_images/moodle.94eb93d714a50cb2c97435b408017dee224348b61bc86203ffd43a4f4e57b95f.ja.png)
+![Moodle](../../translated_images/ja/moodle.94eb93d714a50cb2.webp)
 > Moodle教室でのカリキュラム
 
-![Canvas](../../translated_images/canvas.fbd605ff8e5b8aff567d398528ce113db304446b90b9cad55c654de3fdfcda34.ja.png)
+![Canvas](../../translated_images/ja/canvas.fbd605ff8e5b8aff.webp)
 > Canvasでのカリキュラム
 
 ### リポジトリを直接使用する場合（Classroomを使用しない場合）

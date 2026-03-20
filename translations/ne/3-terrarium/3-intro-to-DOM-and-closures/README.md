@@ -1,12 +1,3 @@
-<!--
-CO_OP_TRANSLATOR_METADATA:
-{
-  "original_hash": "973e48ad87d67bf5bb819746c9f8e302",
-  "translation_date": "2025-11-03T15:33:04+00:00",
-  "source_file": "3-terrarium/3-intro-to-DOM-and-closures/README.md",
-  "language_code": "ne"
-}
--->
 # टेरारियम परियोजना भाग ३: DOM म्यानिपुलेसन र जाभास्क्रिप्ट क्लोजर
 
 ```mermaid
@@ -26,7 +17,7 @@ journey
       Complete terrarium: 5: Student
 ```
 
-![DOM र क्लोजर](../../../../translated_images/webdev101-js.10280393044d7eaaec7e847574946add7ddae6be2b2194567d848b61d849334a.ne.png)
+![DOM र क्लोजर](../../../../translated_images/ne/webdev101-js.10280393044d7eaa.webp)
 > स्केच नोट [टोमोमी इमुरा](https://twitter.com/girlie_mac) द्वारा
 
 वेब विकासको सबैभन्दा रोचक पक्षमा स्वागत छ - चीजहरूलाई अन्तरक्रियात्मक बनाउने! डकुमेन्ट अब्जेक्ट मोडेल (DOM) तपाईंको HTML र जाभास्क्रिप्ट बीचको पुल जस्तै हो, र आज हामी यसलाई तपाईंको टेरारियमलाई जीवन्त बनाउन प्रयोग गर्नेछौं। जब टिम बर्नर्स-लीले पहिलो वेब ब्राउजर बनाएका थिए, उनले वेबलाई गतिशील र अन्तरक्रियात्मक बनाउन सक्ने दस्तावेजहरूको कल्पना गरेका थिए - DOM ले त्यो दृष्टिकोणलाई सम्भव बनाउँछ।
@@ -105,7 +96,7 @@ flowchart TD
     style Q fill:#ffebee
 ```
 
-![DOM ट्री प्रतिनिधित्व](../../../../translated_images/dom-tree.7daf0e763cbbba9273f9a66fe04c98276d7d23932309b195cb273a9cf1819b42.ne.png)
+![DOM ट्री प्रतिनिधित्व](../../../../translated_images/ne/dom-tree.7daf0e763cbbba92.webp)
 
 > DOM र HTML मार्कअपको प्रतिनिधित्व जसले यसलाई सन्दर्भित गर्छ। [ओल्फा नासराओई](https://www.researchgate.net/publication/221417012_Profile-Based_Focused_Crawler_for_Social_Media-Sharing_Websites) बाट
 
@@ -150,7 +141,7 @@ flowchart LR
 
 > 💡 **क्लोजर बुझ्दै**: क्लोजरहरू जाभास्क्रिप्टमा महत्त्वपूर्ण विषय हुन्, र धेरै विकासकर्ताहरूले तिनीहरूलाई पूर्ण रूपमा सैद्धान्तिक पक्षहरू बुझ्नुअघि वर्षौंसम्म प्रयोग गर्छन्। आज, हामी व्यावहारिक अनुप्रयोगमा केन्द्रित छौं - तपाईंले अन्तरक्रियात्मक सुविधाहरू निर्माण गर्दा क्लोजरहरू स्वाभाविक रूपमा देखा पर्ने देख्नुहुनेछ। बुझाइ वास्तविक समस्याहरू समाधान गर्ने तरिकामा देखेर विकास हुनेछ।
 
-![DOM ट्री प्रतिनिधित्व](../../../../translated_images/dom-tree.7daf0e763cbbba9273f9a66fe04c98276d7d23932309b195cb273a9cf1819b42.ne.png)
+![DOM ट्री प्रतिनिधित्व](../../../../translated_images/ne/dom-tree.7daf0e763cbbba92.webp)
 
 > DOM र HTML मार्कअपको प्रतिनिधित्व जसले यसलाई सन्दर्भित गर्छ। [ओल्फा नासराओई](https://www.researchgate.net/publication/221417012_Profile-Based_Focused_Crawler_for_Social_Media-Sharing_Websites) बाट
 
@@ -556,7 +547,7 @@ function stopElementDrag() {
 - **क्रस-डिभाइस समर्थन**: डेस्कटप र मोबाइलमा काम गर्छ
 - **प्रदर्शन सचेत**: कुनै मेमोरी लीक वा अनावश्यक गणनाहरू छैनन्
 
-![समाप्त टेरारियम](../../../../translated_images/terrarium-final.0920f16e87c13a84cd2b553a5af9a3ad1cffbd41fbf8ce715d9e9c43809a5e2c.ne.png)
+![समाप्त टेरारियम](../../../../translated_images/ne/terrarium-final.0920f16e87c13a84.webp)
 
 ---
 

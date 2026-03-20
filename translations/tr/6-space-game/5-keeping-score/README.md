@@ -1,12 +1,3 @@
-<!--
-CO_OP_TRANSLATOR_METADATA:
-{
-  "original_hash": "2ed9145a16cf576faa2a973dff84d099",
-  "translation_date": "2025-11-04T01:06:09+00:00",
-  "source_file": "6-space-game/5-keeping-score/README.md",
-  "language_code": "tr"
-}
--->
 # Uzay Oyunu Yapımı Bölüm 5: Puanlama ve Canlar
 
 ```mermaid
@@ -160,7 +151,7 @@ sequenceDiagram
 ```
 
 - **Puanlama sistemi**: Yok edilen her düşman gemisi 100 puan kazandırır (yuvarlak sayılar oyuncuların zihinsel olarak hesaplamasını kolaylaştırır). Puan, sol alt köşede gösterilir.
-- **Can sayacı**: Kahramanınız üç canla başlar - erken dönem arcade oyunlarının zorluk ile oynanabilirlik arasında denge kurmak için belirlediği bir standart. Düşmanla her çarpışma bir cana mal olur. Kalan canları sağ altta gemi ikonlarıyla göstereceğiz ![can görseli](../../../../translated_images/life.6fb9f50d53ee0413cd91aa411f7c296e10a1a6de5c4a4197c718b49bf7d63ebf.tr.png).
+- **Can sayacı**: Kahramanınız üç canla başlar - erken dönem arcade oyunlarının zorluk ile oynanabilirlik arasında denge kurmak için belirlediği bir standart. Düşmanla her çarpışma bir cana mal olur. Kalan canları sağ altta gemi ikonlarıyla göstereceğiz ![can görseli](../../../../translated_images/tr/life.6fb9f50d53ee0413.webp).
 
 ## Hadi İnşa Edelim!
 

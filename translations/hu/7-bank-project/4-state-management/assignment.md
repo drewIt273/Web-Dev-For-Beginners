@@ -1,12 +1,3 @@
-<!--
-CO_OP_TRANSLATOR_METADATA:
-{
-  "original_hash": "50a7783473b39a2e0f133e271a102231",
-  "translation_date": "2025-10-24T20:19:29+00:00",
-  "source_file": "7-bank-project/4-state-management/assignment.md",
-  "language_code": "hu"
-}
--->
 # "Tranzakció hozzáadása" párbeszédablak megvalósítása
 
 ## Áttekintés
@@ -112,7 +103,7 @@ Tekintsd meg a [szerver API dokumentációját](../api/README.md) az alábbiakho
 **Várható eredmény:**
 A feladat elvégzése után a banki alkalmazásodnak teljesen működőképes "Tranzakció hozzáadása" funkcióval kell rendelkeznie, amely professzionálisan néz ki és működik:
 
-![Példa "Tranzakció hozzáadása" párbeszédablakot bemutató képernyőkép](../../../../translated_images/dialog.93bba104afeb79f12f65ebf8f521c5d64e179c40b791c49c242cf15f7e7fab15.hu.png)
+![Példa "Tranzakció hozzáadása" párbeszédablakot bemutató képernyőkép](../../../../translated_images/hu/dialog.93bba104afeb79f1.webp)
 
 ## Az implementáció tesztelése
 

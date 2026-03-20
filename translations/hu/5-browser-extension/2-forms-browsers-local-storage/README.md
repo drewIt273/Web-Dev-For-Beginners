@@ -1,43 +1,105 @@
-<!--
-CO_OP_TRANSLATOR_METADATA:
-{
-  "original_hash": "8c8cd4af6086cc1d47e1d43aa4983d20",
-  "translation_date": "2025-10-24T20:37:40+00:00",
-  "source_file": "5-browser-extension/2-forms-browsers-local-storage/README.md",
-  "language_code": "hu"
-}
--->
-# Böngészőbővítmény projekt 2. rész: API hívása, helyi tárolás használata
+# Böngészőbővítmény Projekt 2. rész: API hívás, helyi tárolás használata
 
+```mermaid
+journey
+    title Az API integrációs és tárolási utad
+    section Alapok
+      Állítsd be a DOM hivatkozásokat: 3: Student
+      Adj hozzá eseményfigyelőket: 4: Student
+      Kezeld az űrlap beküldését: 4: Student
+    section Adatkezelés
+      Valósítsd meg a helyi tárolást: 4: Student
+      Építs API hívásokat: 5: Student
+      Kezeld az aszinkron műveleteket: 5: Student
+    section Felhasználói élmény
+      Adj hozzá hiba kezelést: 5: Student
+      Hozz létre betöltési állapotokat: 4: Student
+      Csiszold az interakciókat: 5: Student
+```
 ## Előadás előtti kvíz
 
 [Előadás előtti kvíz](https://ff-quizzes.netlify.app/web/quiz/25)
 
 ## Bevezetés
 
-Emlékszel arra a böngészőbővítményre, amit elkezdtél építeni? Jelenleg van egy szép megjelenésű űrlapod, de lényegében statikus. Ma életre keltjük, valódi adatokkal kapcsoljuk össze, és memóriát adunk neki.
+Emlékszel arra a böngészőbővítményre, amit elkezdtél építeni? Jelenleg egy szép kinézetű űrlapod van, de alapvetően statikus. Ma életre keltjük azzal, hogy összekapcsoljuk valós adatokkal és memóriát adunk neki.
 
-Gondolj az Apollo küldetésirányító számítógépeire - nem csak rögzített információkat jelenítettek meg. Folyamatosan kommunikáltak az űrhajóval, frissítették a telemetriai adatokat, és megjegyezték a kritikus küldetésparamétereket. Ilyen dinamikus viselkedést építünk ma. A bővítményed eléri az internetet, valódi környezeti adatokat szerez, és megjegyzi a beállításaidat legközelebbre.
+Gondolj az Apollo küldetés irányító számítógépeire – nemcsak rögzített információkat jelenítettek meg. Folyamatosan kommunikáltak az űrhajóval, frissítették a telemetriai adatokat, és megjegyezték a kritikus küldetésparamétereket. Ez a fajta dinamikus viselkedés lesz a mi célunk ma. A kiegészítőd eléri az internetet, valós környezeti adatokat szerez be, és megjegyzi a beállításaidat a következő alkalomra.
 
-Az API integráció bonyolultnak tűnhet, de valójában csak arról szól, hogy megtanítjuk a kódot más szolgáltatásokkal kommunikálni. Legyen szó időjárási adatok lekéréséről, közösségi média hírcsatornákról vagy szénlábnyom információkról, mint amit ma fogunk csinálni, mindez a digitális kapcsolatok létrehozásáról szól. Emellett megvizsgáljuk, hogyan tudnak a böngészők információkat megőrizni - hasonlóan ahhoz, ahogy a könyvtárak kártyakatalógusokat használnak a könyvek helyének megjegyzésére.
+Az API integráció bonyolultnak hangozhat, de igazából csak azt tanítja meg a kódodnak, hogy kommunikáljon más szolgáltatásokkal. Akár időjárási adatokat, közösségi média híreket, vagy szénlábnyom-információkat kérsz le, mint mi ma, mindez a digitális kapcsolatok létrehozásáról szól. Megvizsgáljuk azt is, hogyan őrizhetik meg a böngészők az információkat – hasonlóan ahhoz, ahogy a könyvtárak használják a kartotékokat, hogy emlékezzenek, hová tartoznak a könyvek.
 
-Az óra végére lesz egy böngészőbővítményed, amely valódi adatokat kér le, tárolja a felhasználói preferenciákat, és zökkenőmentes élményt nyújt. Kezdjük!
+A lecke végére egy olyan böngészőbővítményed lesz, amely valós adatokat szerez be, tárolja a felhasználói beállításokat, és gördülékeny élményt nyújt. Kezdjük!
 
-✅ Kövesd a számozott szegmenseket a megfelelő fájlokban, hogy tudd, hova kell elhelyezni a kódot.
+```mermaid
+mindmap
+  root((Dinamikus Kiterjesztések))
+    DOM Manipuláció
+      Elem Kiválasztás
+      Esemény Kezelés
+      Állapot Kezelés
+      Felhasználói Felület Frissítések
+    Helyi Tárolás
+      Adat Tartósság
+      Kulcs-Érték Párok
+      Munkamenet Kezelés
+      Felhasználói Beállítások
+    API Integráció
+      HTTP Kérések
+      Hitelesítés
+      Adat Elemzés
+      Hibakezelés
+    Aszinkron Programozás
+      Ígéretek
+      Async/Await
+      Hibák Elfogása
+      Nem Blokkoló Kód
+    Felhasználói Élmény
+      Betöltési Állapotok
+      Hiba Üzenetek
+      Sima Átmenetek
+      Adat Érvényesítés
+```
+✅ Kövesd a megfelelő fájlokban található sorszámozott szegmenseket, hogy tudd, hová helyezd a kódodat
 
-## Állítsd be a manipulálni kívánt elemeket a bővítményben
+## Az elemek beállítása a bővítményben való manipulációhoz
 
-Mielőtt a JavaScript manipulálni tudná a felületet, szüksége van hivatkozásokra konkrét HTML elemekre. Gondolj rá úgy, mint egy teleszkóp, amelyet bizonyos csillagokra kell irányítani - mielőtt Galileo tanulmányozhatta volna Jupiter holdjait, először meg kellett találnia és fókuszálnia Jupiterre.
+Mielőtt a JavaScripted manipulálhatná a felületet, szüksége van hivatkozásokra bizonyos HTML elemekre. Gondolj rá úgy, mint egy távcsőre, amelyet bizonyos csillagokra kell irányítani – mielőtt Galileo tanulmányozhatta volna a Jupiter holdjait, először meg kellett találnia és fókuszálnia kellett magára a Jupiterre.
 
-Az `index.js` fájlban létrehozunk `const` változókat, amelyek rögzítik a hivatkozásokat minden fontos űrlapelemre. Ez hasonló ahhoz, ahogy a tudósok címkézik a felszerelésüket - ahelyett, hogy minden alkalommal átkutatnák az egész laboratóriumot, közvetlenül hozzáférhetnek ahhoz, amire szükségük van.
+Az `index.js` fájlodban `const` változókat hozunk létre, amelyek megőrzik a fontos űrlapelemek referenciáit. Ez hasonló ahhoz, ahogy a tudósok megjelölik a felszerelésüket – ahelyett, hogy minden alkalommal át kellene kutatniuk a laboratóriumot, közvetlenül elérhetik, amire szükségük van.
 
+```mermaid
+flowchart LR
+    A[JavaScript Kód] --> B[document.querySelector]
+    B --> C[CSS Szelektorok]
+    C --> D[HTML Elemei]
+    
+    D --> E[".form-data"]
+    D --> F[".region-name"]
+    D --> G[".api-key"]
+    D --> H[".loading"]
+    D --> I[".errors"]
+    D --> J[".result-container"]
+    
+    E --> K[Űrlap Elem]
+    F --> L[Bemeneti Mező]
+    G --> M[Bemeneti Mező]
+    H --> N[Felhasználói Felület Elem]
+    I --> O[Felhasználói Felület Elem]
+    J --> P[Felhasználói Felület Elem]
+    
+    style A fill:#e1f5fe
+    style D fill:#e8f5e8
+    style K fill:#fff3e0
+    style L fill:#fff3e0
+    style M fill:#fff3e0
+```
 ```javascript
-// form fields
+// űrlapmezők
 const form = document.querySelector('.form-data');
 const region = document.querySelector('.region-name');
 const apiKey = document.querySelector('.api-key');
 
-// results
+// eredmények
 const errors = document.querySelector('.errors');
 const loading = document.querySelector('.loading');
 const results = document.querySelector('.result-container');
@@ -48,16 +110,38 @@ const clearBtn = document.querySelector('.clear-btn');
 ```
 
 **Ez a kód a következőket teszi:**
-- **Rögzíti** az űrlapelemeket a `document.querySelector()` segítségével CSS osztályszelektorokkal
-- **Létrehozza** a régió nevének és az API kulcsnak az input mezőire vonatkozó hivatkozásokat
-- **Kapcsolatot létesít** a szénfelhasználási adatok eredménymegjelenítő elemeivel
-- **Hozzáférést biztosít** a felhasználói felület elemeihez, mint például a betöltési jelzők és hibaüzenetek
-- **Tárolja** az egyes elemhivatkozásokat egy `const` változóban, hogy könnyen újra felhasználható legyen a kódodban
+- **Megfogja** az űrlapelemeket `document.querySelector()` használatával CSS osztályválasztókkal
+- **Létrehoz** hivatkozásokat a régió név és API kulcs input mezőkhöz
+- **Csatlakozik** az eredmény megjelenítő elemekhez a szén-dioxid használati adatok számára
+- **Beállítja** a hozzáférést olyan UI elemekhez, mint a betöltési jelzők és hibák üzenetei
+- **Tárolja** az egyes elemek referenciait `const` változókban az egyszerű újrafelhasználásért a kódod egészében
 
 ## Eseményfigyelők hozzáadása
 
-Most elérjük, hogy a bővítményed reagáljon a felhasználói műveletekre. Az eseményfigyelők a kódod módja arra, hogy figyelje a felhasználói interakciókat. Gondolj rájuk úgy, mint a korai telefonközpontok kezelőire - hallgatták a bejövő hívásokat, és összekapcsolták a megfelelő áramköröket, amikor valaki kapcsolatot akart létesíteni.
+Most megadjuk a bővítményednek, hogy reagáljon a felhasználói műveletekre. Az eseményfigyelők a kódod módjai arra, hogy figyelje a felhasználói interakciókat. Gondolj rájuk úgy, mint a korai telefonközpontok kezelőire – ők hallgatták a bejövő hívásokat, és összekapcsolták a megfelelő áramköröket, amikor valaki kapcsolatot akart létesíteni.
 
+```mermaid
+sequenceDiagram
+    participant User
+    participant Form
+    participant JavaScript
+    participant API
+    participant Storage
+    
+    User->>Form: Kitölti a régió/API kulcsot
+    User->>Form: Rákattint a küldésre
+    Form->>JavaScript: Elküldi a submit eseményt
+    JavaScript->>JavaScript: handleSubmit(e)
+    JavaScript->>Storage: Felhasználói beállítások mentése
+    JavaScript->>API: Karbon adatok lekérése
+    API->>JavaScript: Adatok visszaadása
+    JavaScript->>Form: UI frissítése az eredményekkel
+    
+    User->>Form: Rákattint a törlés gombra
+    Form->>JavaScript: Elküldi a kattintás eseményt
+    JavaScript->>Storage: Mentett adatok törlése
+    JavaScript->>Form: Visszaállítás kezdeti állapotra
+```
 ```javascript
 form.addEventListener('submit', (e) => handleSubmit(e));
 clearBtn.addEventListener('click', (e) => reset(e));
@@ -65,37 +149,47 @@ init();
 ```
 
 **Ezeknek a fogalmaknak a megértése:**
-- **Hozzáad** egy beküldési figyelőt az űrlaphoz, amely akkor aktiválódik, amikor a felhasználók Entert nyomnak vagy a beküldés gombra kattintanak
-- **Kapcsolatot létesít** egy kattintási figyelőt a törlés gombhoz az űrlap visszaállításához
-- **Átadja** az eseményobjektumot `(e)` a kezelőfüggvényeknek további vezérlés érdekében
-- **Azonnal meghívja** az `init()` függvényt, hogy beállítsa a bővítmény kezdeti állapotát
+- **Csatol** egy beküldés figyelőt az űrlaphoz, amely akkor aktiválódik, amikor a felhasználók Entert nyomnak vagy beküldik az űrlapot
+- **Kapcsol** kattintás figyelőt a törlés gombhoz az űrlap visszaállítására
+- **Átadja** az esemény objektumot `(e)` a kezelő funkcióknak további vezérlésért
+- **Azonnal meghívja** az `init()` függvényt a bővítmény kezdeti állapotának beállításához
 
-✅ Figyeld meg a rövidített nyílfüggvény szintaxist, amelyet itt használnak. Ez a modern JavaScript megközelítés tisztább, mint a hagyományos függvénykifejezések, de mindkettő egyformán jól működik!
+✅ Észre fogod venni a rövidített nyílfüggvény-szintaxist (arrow function), amit itt használnak. Ez a modern JavaScript megközelítés tisztább, mint a hagyományos függvény kifejezések, de mindkettő jól működik!
 
-## Az inicializálási és visszaállítási függvények létrehozása
+### 🔄 **Pedagógiai ellenőrzés**
+**Eseménykezelés megértése**: Mielőtt az inicializációra lépnénk, győződj meg róla, hogy képes vagy:
+- ✅ Elmagyarázni, hogyan köti össze az `addEventListener` a felhasználói műveleteket JavaScript függvényekkel
+- ✅ Megérteni, miért adjuk át az esemény objektumot `(e)` a kezelő függvényeknek
+- ✅ Felismerni a különbséget a `submit` és a `click` események között
+- ✅ Leírni, mikor fut az `init()` függvény és miért
 
-Hozzuk létre a bővítményed inicializálási logikáját. Az `init()` függvény olyan, mint egy hajó navigációs rendszere, amely ellenőrzi a műszereit - meghatározza az aktuális állapotot, és ennek megfelelően állítja be a felületet. Ellenőrzi, hogy valaki használta-e már a bővítményedet, és betölti a korábbi beállításait.
+**Gyors önellenőrzés**: Mi történik, ha elfelejted az `e.preventDefault()` -et egy űrlap beküldésénél?
+*Válasz: Az oldal újratöltődik, elvesznek a JavaScript állapotok és megszakad a felhasználói élmény*
 
-A `reset()` függvény lehetőséget ad a felhasználóknak egy tiszta kezdésre - hasonlóan ahhoz, ahogy a tudósok visszaállítják a műszereiket a kísérletek között, hogy biztosítsák a tiszta adatokat.
+## Az inicializáló és visszaállító függvények létrehozása
+
+Hozzuk létre a bővítmény inicializáló logikáját. Az `init()` függvény olyan, mint egy hajó navigációs rendszere, ami ellenőrzi a műszereit – meghatározza a jelenlegi állapotot és ennek megfelelően állítja be a felületet. Ellenőrzi, hogy valaki használta-e már a bővítményedet, és betölti az előző beállításokat.
+
+A `reset()` függvény friss kezdést ad a felhasználóknak – hasonlóan, ahogy a tudósok visszaállítják a műszereiket kísérletek között, hogy tiszta adatokat kapjanak.
 
 ```javascript
 function init() {
-	// Check if user has previously saved API credentials
+	// Ellenőrizze, hogy a felhasználó korábban elmentette-e az API hitelesítő adatokat
 	const storedApiKey = localStorage.getItem('apiKey');
 	const storedRegion = localStorage.getItem('regionName');
 
-	// Set extension icon to generic green (placeholder for future lesson)
-	// TODO: Implement icon update in next lesson
+	// Állítsa be a bővítmény ikonját általános zöldre (helyőrző a következő lecke számára)
+	// TODO: Az ikon frissítésének megvalósítása a következő leckében
 
 	if (storedApiKey === null || storedRegion === null) {
-		// First-time user: show the setup form
+		// Első alkalommal használó: jelenítse meg a beállító űrlapot
 		form.style.display = 'block';
 		results.style.display = 'none';
 		loading.style.display = 'none';
 		clearBtn.style.display = 'none';
 		errors.textContent = '';
 	} else {
-		// Returning user: load their saved data automatically
+		// Visszatérő felhasználó: automatikusan töltse be az elmentett adatokat
 		displayCarbonUsage(storedApiKey, storedRegion);
 		results.style.display = 'none';
 		form.style.display = 'none';
@@ -105,49 +199,72 @@ function init() {
 
 function reset(e) {
 	e.preventDefault();
-	// Clear stored region to allow user to choose a new location
+	// Törölje a tárolt régiót, hogy a felhasználó új helyszínt választhasson
 	localStorage.removeItem('regionName');
-	// Restart the initialization process
+	// Indítsa újra az inicializációs folyamatot
 	init();
 }
 ```
 
-**Ami itt történik:**
-- **Lekéri** a böngésző helyi tárolójából az elmentett API kulcsot és régiót
-- **Ellenőrzi**, hogy ez egy első alkalommal használó felhasználó-e (nincsenek elmentett hitelesítő adatok) vagy visszatérő felhasználó
-- **Megjeleníti** a beállítási űrlapot új felhasználók számára, és elrejti a többi felületelemet
-- **Automatikusan betölti** az elmentett adatokat visszatérő felhasználók számára, és megjeleníti a visszaállítási opciót
+**Mit csinálunk itt lépésről lépésre:**
+- **Lekéri** a tárolt API kulcsot és régiót a böngésző helyi tárolójából
+- **Ellenőrzi**, hogy ez-e az első használat (nincsenek mentett adatok) vagy visszatérő felhasználó
+- **Megjeleníti** a beállító űrlapot az új felhasználók számára, és elrejti a többi felületelemet
+- **Betölti** automatikusan a korábban mentett adatokat a visszatérő felhasználók számára, és megjeleníti a visszaállítási lehetőséget
 - **Kezeli** a felhasználói felület állapotát az elérhető adatok alapján
 
-**Fontos fogalmak a helyi tárolásról:**
-- **Megőrzi** az adatokat a böngésző munkamenetei között (ellentétben a munkamenet tárolással)
-- **Tárolja** az adatokat kulcs-érték párok formájában a `getItem()` és `setItem()` segítségével
-- **`null` értéket ad vissza**, ha egy adott kulcshoz nem létezik adat
-- **Egyszerű módot biztosít** a felhasználói preferenciák és beállítások megjegyzésére
+**A helyi tárolás (Local Storage) kulcsfogalmai:**
+- **Megőrzi** az adatokat a böngésző munkamenetek között (ellentétben a munkamenet-tárolással)
+- **Tárol** adatokat kulcs-érték párokként a `getItem()` és `setItem()` segítségével
+- **Visszaad** `null` értéket, ha nincs adat a megadott kulcshoz
+- **Egyszerű módot nyújt** a felhasználói beállítások és preferenciák megőrzésére
 
-> 💡 **A böngésző tárolásának megértése**: A [LocalStorage](https://developer.mozilla.org/docs/Web/API/Window/localStorage) olyan, mintha a bővítményednek tartós memóriát adnál. Gondolj arra, hogyan tárolta az ókori Alexandriai Könyvtár a tekercseket - az információ elérhető maradt, még akkor is, amikor a tudósok elmentek és visszatértek.
+> 💡 **Böngésző tárolás megértése**: A [LocalStorage](https://developer.mozilla.org/docs/Web/API/Window/localStorage) olyan, mintha a bővítményednek tartós memóriát adnál. Gondolj az ókori Alexandriai Könyvtárra, amely tekercseket tárolt – az információ még akkor is elérhető maradt, amikor a tudósok elmentek és visszatértek.
 >
-> **Fő jellemzők:**
+> **Fontos jellemzők:**
 > - **Megőrzi** az adatokat még akkor is, ha bezárod a böngészőt
-> - **Túléli** a számítógép újraindítását és a böngésző összeomlását
-> - **Jelentős tárolóhelyet biztosít** a felhasználói preferenciák számára
-> - **Azonnali hozzáférést biztosít** hálózati késések nélkül
+> - **Túléli** a számítógép újraindítását és böngésző összeomlásokat
+> - **Nagy tárolókapacitást** biztosít a felhasználói beállításoknak
+> - **Azonnali hozzáférést** kínál hálózati késedelem nélkül
 
-> **Fontos megjegyzés**: A böngészőbővítményednek saját, elkülönített helyi tárolása van, amely különáll a szokásos weboldalaktól. Ez biztonságot nyújt, és megakadályozza az ütközéseket más weboldalakkal.
+> **Fontos megjegyzés**: A böngészőbővítményed saját elkülönített helyi tárolót használ, amely különválik a weboldalakétól. Ez biztonságot nyújt és megakadályozza az ütközéseket más webhelyekkel.
 
-A tárolt adataidat megtekintheted, ha megnyitod a böngésző Fejlesztői Eszközeit (F12), navigálsz az **Application** fülre, és kibővíted a **Local Storage** szekciót.
+Megtekintheted a tárolt adataidat, ha megnyitod a böngésző Fejlesztői Eszközeit (F12), az **Alkalmazás** (Application) fülre navigálsz és kibontod a **Local Storage** szekciót.
 
-![Helyi tárolás panel](../../../../translated_images/localstorage.472f8147b6a3f8d141d9551c95a2da610ac9a3c6a73d4a1c224081c98bae09d9.hu.png)
+```mermaid
+stateDiagram-v2
+    [*] --> CheckStorage: A kiterjesztés elindul
+    CheckStorage --> FirstTime: Nincs tárolt adat
+    CheckStorage --> Returning: Talált adat
+    
+    FirstTime --> ShowForm: Beállítási űrlap megjelenítése
+    ShowForm --> UserInput: A felhasználó adatot ad meg
+    UserInput --> SaveData: Tárolás a localStorage-ben
+    SaveData --> FetchAPI: Szénadat lekérése
+    
+    Returning --> LoadData: Beolvasás a localStorage-ből
+    LoadData --> FetchAPI: Szénadat lekérése
+    
+    FetchAPI --> ShowResults: Adatok megjelenítése
+    ShowResults --> UserAction: A felhasználó interakciója
+    
+    UserAction --> Reset: Törlés gomb megnyomva
+    UserAction --> ShowResults: Adatok megtekintése
+    
+    Reset --> ClearStorage: Mentett adatok törlése
+    ClearStorage --> FirstTime: Vissza a beállításhoz
+```
+![Local storage panel](../../../../translated_images/hu/localstorage.472f8147b6a3f8d1.webp)
 
-> ⚠️ **Biztonsági megfontolás**: Éles alkalmazásokban az API kulcsok helyi tárolásban történő tárolása biztonsági kockázatokat jelent, mivel a JavaScript hozzáférhet ezekhez az adatokhoz. Tanulási célokra ez a megközelítés megfelelő, de valódi alkalmazásoknak biztonságos szerveroldali tárolást kell használniuk az érzékeny hitelesítő adatokhoz.
+> ⚠️ **Biztonsági megfontolás**: Termelési alkalmazásokban az API kulcsok LocalStorage-ben történő tárolása biztonsági kockázatokat rejt, mivel JavaScript hozzáférhet ezekhez az adatokhoz. Tanulási céllal ez az eljárás elfogadható, de éles alkalmazások esetén biztonságos szerveroldali tárolás javasolt.
 
-## Az űrlap beküldésének kezelése
+## Űrlap beküldésének kezelése
 
-Most kezeljük, mi történik, amikor valaki beküldi az űrlapodat. Alapértelmezés szerint a böngészők újratöltik az oldalt, amikor az űrlapokat beküldik, de ezt a viselkedést megakadályozzuk, hogy zökkenőmentes élményt hozzunk létre.
+Most kezeljük, mi történik, amikor valaki beküldi az űrlapot. Alapértelmezés szerint a böngészők újratöltik az oldalt űrlap beküldésekor, de ezt a viselkedést megakasztjuk, hogy gördülékenyebb legyen az élmény.
 
-Ez a megközelítés tükrözi, hogyan kezeli a küldetésirányítás az űrhajó kommunikációját - ahelyett, hogy minden egyes átvitelhez újraindítanák az egész rendszert, folyamatos működést tartanak fenn, miközben feldolgozzák az új információkat.
+Ez a megközelítés hasonló ahhoz, ahogy az irányítóközpont kezeli az űrhajóval való kommunikációt – ahelyett, hogy minden átvitelnél nullázna az egész rendszert, folyamatos működést tart fenn miközben feldolgozza az új információkat.
 
-Hozz létre egy függvényt, amely rögzíti az űrlap beküldési eseményét, és kinyeri a felhasználó bemeneti adatait:
+Hozz létre egy függvényt, amely elfogja az űrlap beküldési eseményét és kivonja a felhasználó adatát:
 
 ```javascript
 function handleSubmit(e) {
@@ -156,93 +273,148 @@ function handleSubmit(e) {
 }
 ```
 
-**A fentiekben:**
-- **Megakadályozza** az alapértelmezett űrlap beküldési viselkedést, amely frissítené az oldalt
-- **Kinyeri** a felhasználói bemeneti értékeket az API kulcs és régió mezőkből
-- **Átadja** az űrlap adatokat a `setUpUser()` függvénynek feldolgozásra
+**Ebben a kódrészletben:**
+- **Megakadályozza** az alapértelmezett űrlapbeküldési viselkedést, mely az oldal frissítését eredményezné
+- **Kinyeri** a felhasználói adatokat az API kulcs és régió mezőkből
+- **Átadja** az űrlapadatokat a `setUpUser()` függvénynek feldolgozásra
 - **Fenntartja** az egyoldalas alkalmazás viselkedést az oldal újratöltése nélkül
 
-✅ Ne feledd, hogy az HTML űrlap mezőid tartalmazzák a `required` attribútumot, így a böngésző automatikusan ellenőrzi, hogy a felhasználók megadják-e az API kulcsot és a régiót, mielőtt ez a függvény futna.
+✅ Emlékezz, hogy az űrlap HTML mezői tartalmazzák a `required` attribútumot, így a böngésző automatikusan ellenőrzi, hogy mind az API kulcs, mind a régió megadásra került mielőtt ez a függvény lefutna.
 
-## Felhasználói preferenciák beállítása
+## Felhasználói beállítások konfigurálása
 
-A `setUpUser` függvény felelős a felhasználó hitelesítő adatainak mentéséért és az első API hívás kezdeményezéséért. Ez zökkenőmentes átmenetet teremt a beállítás és az eredmények megjelenítése között.
+A `setUpUser` függvény felelős a felhasználói hitelesítés mentéséért és az első API hívás elindításáért. Ez egy zökkenőmentes átmenetet teremt a beállítás és az eredmények megjelenítése között.
 
 ```javascript
 function setUpUser(apiKey, regionName) {
-	// Save user credentials for future sessions
+	// Mentse el a felhasználói hitelesítő adatokat a jövőbeni munkamenetekhez
 	localStorage.setItem('apiKey', apiKey);
 	localStorage.setItem('regionName', regionName);
 	
-	// Update UI to show loading state
+	// Frissítse a felhasználói felületet a betöltési állapot megjelenítéséhez
 	loading.style.display = 'block';
 	errors.textContent = '';
 	clearBtn.style.display = 'block';
 	
-	// Fetch carbon usage data with user's credentials
+	// Szerezze be a szén-dioxid-kibocsátási adatokat a felhasználó hitelesítő adataival
 	displayCarbonUsage(apiKey, regionName);
 }
 ```
 
-**Lépésről lépésre, itt mi történik:**
-- **Elmenti** az API kulcsot és a régió nevét a helyi tárolásba későbbi használatra
-- **Megjelenít** egy betöltési jelzőt, hogy tájékoztassa a felhasználókat, hogy az adatok lekérése folyamatban van
-- **Törli** az előző hibaüzeneteket a kijelzőről
-- **Láthatóvá teszi** a törlés gombot, hogy a felhasználók később visszaállíthassák a beállításaikat
-- **Kezdeményezi** az API hívást, hogy valódi szénfelhasználási adatokat kérjen le
+**Lépésenként ez történik:**
+- **Mentésre kerül** az API kulcs és a régió neve a helyi tárolóban a későbbi használathoz
+- **Mutat** egy betöltési jelet, jelezve, hogy az adatok lekérése folyamatban van
+- **Törli** az előző hibák üzeneteit a megjelenítésről
+- **Megjeleníti** a tisztító gombot, hogy a felhasználók később visszaállíthassák a beállításaikat
+- **Elindítja** az API hívást a valós szén-dioxid használati adatok lekéréséhez
 
-Ez a függvény zökkenőmentes felhasználói élményt teremt azáltal, hogy egyszerre kezeli az adatok megőrzését és a felhasználói felület frissítését.
+Ez a függvény zökkenőmentes felhasználói élményt nyújt az adatmegtartás és a felületfrissítések együttes kezelésével.
 
-## Szénfelhasználási adatok megjelenítése
+## Szén-dioxid fogyasztási adatok megjelenítése
 
-Most összekapcsoljuk a bővítményedet külső adatforrásokkal az API-kon keresztül. Ez átalakítja a bővítményedet egy önálló eszközből valami olyanná, amely valós idejű információkhoz fér hozzá az interneten keresztül.
+Most összekapcsoljuk a kiegészítődet külső adatforrásokkal API-kon keresztül. Ez a bővítményt egy önálló eszközből olyan eszközzé alakítja, amely valós idejű információkat kérhet le az internetről.
 
-**Az API-k megértése**
+**API-k megértése**
 
-Az [API-k](https://www.webopedia.com/TERM/A/API.html) lehetővé teszik, hogy különböző alkalmazások kommunikáljanak egymással. Gondolj rájuk úgy, mint a távíró rendszerre, amely a 19. században összekötötte a távoli városokat - a kezelők kéréseket küldtek távoli állomásokra, és válaszokat kaptak a kért információkkal. Minden alkalommal, amikor közösségi médiát nézel, kérdést teszel fel egy hangasszisztensnek, vagy egy szállítási alkalmazást használsz, az API-k segítik ezeket az adatcseréket.
+Az [API-k](https://www.webopedia.com/TERM/A/API.html) teszik lehetővé az alkalmazások közötti kommunikációt. Gondolj rájuk úgy, mint a 19. századi távíró rendszerre, amely összekötötte a távoli városokat – az üzemeltetők kéréseket küldtek távoli állomásokra, és választ kaptak a kért információval. Amikor közösségi médiát nézel, hangasszisztenshez beszélsz, vagy futár appot használsz, mindig API-k segítik az adatcserét.
 
-**Fontos fogalmak a REST API-król:**
-- **REST** jelentése: 'Representational State Transfer'
-- **Használja** a szabványos HTTP metódusokat (GET, POST, PUT, DELETE) az adatokkal való interakcióhoz
-- **Adatokat ad vissza** előre meghatározott formátumokban, általában JSON-ban
-- **Konzisztens, URL-alapú végpontokat biztosít** különböző típusú kérésekhez
+```mermaid
+flowchart TD
+    A[A bővítményed] --> B[HTTP kérés]
+    B --> C[CO2 Signal API]
+    C --> D{Érvényes kérés?}
+    D -->|Igen| E[Adatbázis lekérdezése]
+    D -->|Nem| F[Hiba visszaadása]
+    E --> G[Szén-dioxid adatok]
+    G --> H[JSON válasz]
+    H --> I[A bővítményed]
+    F --> I
+    I --> J[Felhasználói felület frissítése]
+    
+    subgraph "API kérés"
+        K[Fejlécek: auth-token]
+        L[Paraméterek: countryCode]
+        M[Módszer: GET]
+    end
+    
+    subgraph "API válasz"
+        N[Szén-intenzitás]
+        O[Fosszilis üzemanyag %]
+        P[Időbélyeg]
+    end
+    
+    style C fill:#e8f5e8
+    style G fill:#fff3e0
+    style I fill:#e1f5fe
+```
+**Kulcsfontosságú fogalmak a REST API-król:**
+- **REST** az angol 'Representational State Transfer' (Állapotábrázolás-alapú Átvitel) kifejezés rövidítése
+- **Használ** szabványos HTTP módszereket (GET, POST, PUT, DELETE) az adatokkal való interakcióhoz
+- **Ad vissza** adatokat előre látható formátumban, általában JSON-ben
+- **Biztosít** konzisztens, URL-alapú végpontokat különféle lekérdezésekhez
 
-✅ A [CO2 Signal API](https://www.co2signal.com/), amelyet használni fogunk, valós idejű szénintenzitási adatokat biztosít a világ elektromos hálózataiból. Ez segít a felhasználóknak megérteni az elektromos energiafogyasztásuk környezeti hatását!
+✅ A [CO2 Signal API](https://www.co2signal.com/) valós idejű szén-dioxid intenzitási adatokat szolgáltat villamos hálózatokról világszerte. Segít a felhasználóknak megérteni, milyen környezeti hatással jár az áramfogyasztásuk!
 
-> 💡 **Az aszinkron JavaScript megértése**: Az [`async` kulcsszó](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Statements/async_function) lehetővé teszi, hogy a kódod egyszerre több műveletet kezeljen. Amikor adatokat kérsz egy szervertől, nem szeretnéd, hogy az egész bővítmény lefagyjon - ez olyan lenne, mintha a légi irányítás leállítaná az összes műveletet, miközben egy repülő válaszára vár.
+> 💡 **Az aszinkron JavaScript megértése**: Az [`async` kulcsszó](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Statements/async_function) lehetővé teszi, hogy a kód megfelelően kezelje a párhuzamos műveleteket. Amikor adatot kérsz egy szervertől, nem akarod, hogy a bővítményed teljesen megfagyjon – olyan lenne, mintha a légiforgalmi irányítás minden műveletet leállítana, amíg egy gép nem válaszol.
 >
-> **Fő előnyök:**
-> - **Fenntartja** a bővítmény válaszkészségét, miközben az adatok betöltődnek
-> - **Lehetővé teszi**, hogy más kód tovább fusson a hálózati kérések közben
-> - **Javítja** a kód olvashatóságát a hagyományos visszahívási mintákhoz képest
-> - **Lehetővé teszi** a hálózati problémák elegáns hibakezelését
+> **Főbb előnyök:**
+> - **Fenntartja** a bővítmény válaszkészségét az adatok betöltése közben
+> - **Lehetővé teszi**, hogy más kód futjon a hálózati kérés alatt
+> - **Javítja** a kód olvashatóságát a hagyományos callback-ekhez képest
+> - **Lehetővé teszi** a hálózati hibák szép kezelését
 
-Itt egy gyors videó az `async`-ról:
+Nézd meg ezt a rövid videót az `async`-ról:
 
-[![Async és Await a promisek kezeléséhez](https://img.youtube.com/vi/YwmlRkrxvkk/0.jpg)](https://youtube.com/watch?v=YwmlRkrxvkk "Async és Await a promisek kezeléséhez")
+[![Async és Await a Promise-ok kezeléséhez](https://img.youtube.com/vi/YwmlRkrxvkk/0.jpg)](https://youtube.com/watch?v=YwmlRkrxvkk "Async és Await a Promise-ok kezeléséhez")
 
-> 🎥 Kattints a fenti képre az async/await-ról szóló videóért.
+> 🎥 Kattints a fenti képre egy videóért az async/await témában.
 
-Hozd létre a függvényt a szénfelhasználási adatok lekéréséhez és megjelenítéséhez:
+### 🔄 **Pedagógiai ellenőrzés**
+**Aszinkron programozás megértése**: Mielőtt az API függvényre ugrunk, győződj meg róla, hogy érted:
+- ✅ Miért használjuk az `async/await`-et a bővítmény blokkosítása helyett
+- ✅ Hogyan kezelik a `try/catch` blokkok a hálózati hibákat elegánsan
+- ✅ Mi a különbség a szinkron és aszinkron műveletek között
+- ✅ Miért hibázhat egy API hívás, és hogyan kezeljük ezeket a hibákat
+
+**Valós példák az aszinkron működésre:**
+- **Ételrendelés**: Nem vársz a konyhánál – kapsz egy bizonylatot és közben mást csinálsz
+- **E-mailek küldése**: Az e-mail alkalmazásod nem fagy le küldés közben – további leveleket írhatsz
+- **Weboldalak betöltése**: Képek fokozatosan töltődnek be, miközben már olvashatod a szöveget
+
+**API hitelesítési folyamat:**
+```mermaid
+sequenceDiagram
+    participant Ext as Extension
+    participant API as CO2 Signal API
+    participant DB as Adatbázis
+    
+    Ext->>API: Kérés auth-token-nal
+    API->>API: Token érvényesítése
+    API->>DB: Szén-dioxid adatok lekérdezése
+    DB->>API: Adatok visszaadása
+    API->>Ext: JSON válasz
+    Ext->>Ext: Felhasználói felület frissítése
+```
+Hozd létre a függvényt, amely lekéri és megjeleníti a szén-dioxid fogyasztási adatokat:
 
 ```javascript
-// Modern fetch API approach (no external dependencies needed)
+// Modern fetch API megközelítés (nem szükséges külső függőség)
 async function displayCarbonUsage(apiKey, region) {
 	try {
-		// Fetch carbon intensity data from CO2 Signal API
+		// Szén-dioxid intenzitási adatok lekérése a CO2 Signal API-ról
 		const response = await fetch('https://api.co2signal.com/v1/latest', {
 			method: 'GET',
 			headers: {
 				'auth-token': apiKey,
 				'Content-Type': 'application/json'
 			},
-			// Add query parameters for the specific region
+			// Adjon hozzá lekérdezési paramétereket a konkrét régióhoz
 			...new URLSearchParams({ countryCode: region }) && {
 				url: `https://api.co2signal.com/v1/latest?countryCode=${region}`
 			}
 		});
 
-		// Check if the API request was successful
+		// Ellenőrizze, hogy az API kérés sikeres volt-e
 		if (!response.ok) {
 			throw new Error(`API request failed: ${response.status}`);
 		}
@@ -250,10 +422,10 @@ async function displayCarbonUsage(apiKey, region) {
 		const data = await response.json();
 		const carbonData = data.data;
 
-		// Calculate rounded carbon intensity value
+		// Számolja ki a kerekített szén-dioxid intenzitási értéket
 		const carbonIntensity = Math.round(carbonData.carbonIntensity);
 
-		// Update the user interface with fetched data
+		// Frissítse a felhasználói felületet a lekért adatokkal
 		loading.style.display = 'none';
 		form.style.display = 'none';
 		myregion.textContent = region.toUpperCase();
@@ -261,12 +433,12 @@ async function displayCarbonUsage(apiKey, region) {
 		fossilfuel.textContent = `${carbonData.fossilFuelPercentage.toFixed(2)}% (percentage of fossil fuels used to generate electricity)`;
 		results.style.display = 'block';
 
-		// TODO: calculateColor(carbonIntensity) - implement in next lesson
+		// TODO: calculateColor(carbonIntensity) - valósítsa meg a következő leckében
 
 	} catch (error) {
 		console.error('Error fetching carbon data:', error);
 		
-		// Show user-friendly error message
+		// Mutasson felhasználóbarát hibaüzenetet
 		loading.style.display = 'none';
 		results.style.display = 'none';
 		errors.textContent = 'Sorry, we couldn\'t fetch data for that region. Please check your API key and region code.';
@@ -274,20 +446,209 @@ async function displayCarbonUsage(apiKey, region) {
 }
 ```
 
-**Ami itt történik:**
-- **Használja** a modern `fetch()` API-t külső könyvtárak, például Axios helyett, tisztább, függőségmentes kód érdekében
-- **Megvalósítja** a megfelelő hibakezelést a `response.ok` segítségével, hogy korán észlelje az API hibáit
-- **Kezeli** az aszinkron műveleteket az `async/await` segítségével az olvashatóbb kódfolyam érdekében
-- **Hitelesíti** a CO2 Signal API-t az `auth-token` fejléc használatával
-- **Elemzi** a JSON válaszadatokat, és kinyeri a szénintenzitási információkat
-- **Frissíti** a felhasználói felület több elemét formázott kör
-Ebben a leckében megismerkedtél a LocalStorage és az API-k használatával, amelyek mindkettő nagyon hasznosak a professzionális webfejlesztők számára. El tudod képzelni, hogyan működhet ez a két dolog együtt? Gondolj arra, hogyan terveznél meg egy weboldalt, amely elemeket tárolna, hogy azokat egy API használhassa.
+**Lépések részletesen:**
+- **Használja** a modern `fetch()` API-t, külső könyvtárak (pl. Axios) helyett, hogy tiszta, függőségmentes kódot kapjunk
+- **Megvalósítja** a helyes hibakezelést a `response.ok` ellenőrzéssel, hogy korán észlelje az API hibákat
+- **Kezeli** az aszinkron műveleteket `async/await` segítségével az olvashatóbb kódért
+- **Hitelesíti** magát a CO2 Signal API-val az `auth-token` fejléccel
+- **Feldolgozza** a JSON válaszadatot és kinyeri a szén-intenzitási információkat
+- **Frissíti** több UI elemet formázott környezeti adatokkal
+- **Nyújt** felhasználóbarát hibajelzéseket API hibák esetén
 
-## Feladat
+**Fontos modern JavaScript fogalmak:**
+- **Sablon literálok** `${}` szintaxissal a tiszta string formázáshoz
+- **Hibakezelés** try/catch blokkokkal a robosztus alkalmazáshoz
+- **Async/await** minta a hálózati kérések elegáns kezeléséhez
+- **Objektum destrukturálás** az API válaszok adatainak kivonásához
+- **Metódus láncolás** több DOM művelethez
 
-[Használj egy API-t](assignment.md)
+✅ Ez a függvény számos fontos webfejlesztési koncepciót mutat be – külső szerverekkel kommunikál, hitelesít, feldolgoz adatokat, frissíti a felületet, és hiba esetén szépen kezeli a helyzetet. Ezek alapvető készségek a profi fejlesztők számára.
+
+```mermaid
+flowchart TD
+    A[API hívás indítása] --> B[Kérés lekérése]
+    B --> C{Hálózat sikeres?}
+    C -->|Nem| D[Hálózati hiba]
+    C -->|Igen| E{Válasz rendben?}
+    E -->|Nem| F[API hiba]
+    E -->|Igen| G[JSON feldolgozása]
+    G --> H{Érvényes adatok?}
+    H -->|Nem| I[Adathiba]
+    H -->|Igen| J[Felület frissítése]
+    
+    D --> K[Hibás üzenet megjelenítése]
+    F --> K
+    I --> K
+    J --> L[Betöltés elrejtése]
+    K --> L
+    
+    style A fill:#e1f5fe
+    style J fill:#e8f5e8
+    style K fill:#ffebee
+    style L fill:#f3e5f5
+```
+### 🔄 **Pedagógiai ellenőrzés**
+**Teljes rendszer áttekintése**: Győződj meg a folyamat mesteri ismeretéről:
+- ✅ Hogyan teszik lehetővé a DOM referenciák a JavaScript számára a felület vezérlését
+- ✅ Miért teremt a helyi tárolás állandóságot a böngésző munkamenetek között
+- ✅ Hogyan biztosítja az async/await, hogy az API hívások ne fagyasszák le a bővítményt
+- ✅ Mi történik API hibák esetén és hogyan kezeljük a hibákat
+- ✅ Miért része a felhasználói élménynek a betöltési állapot és a hibaüzenetek mutatása
+
+🎉 **Amit elértél:** Készítettél egy böngészőbővítményt, amely:
+- **Csatlakozik** az internethez és valós környezeti adatokat szerez be
+- **Megőrzi** a felhasználói beállításokat munkamenetek között
+- **Kezeli** a hibákat szépen, nem omlik össze
+- **Zökkenőmentes, professzionális** felhasználói élményt biztosít
+
+Teszteld le a munkádat az `npm run build` futtatásával, majd frissítsd a bővítményt a böngésződben. Most már egy működő szénlábnyom-követőd van. A következő lecke dinamikus ikon funkciókat fog hozzáadni, hogy teljes legyen a bővítmény.
 
 ---
 
-**Felelősség kizárása**:  
-Ez a dokumentum az [Co-op Translator](https://github.com/Azure/co-op-translator) AI fordítási szolgáltatás segítségével lett lefordítva. Bár törekszünk a pontosságra, kérjük, vegye figyelembe, hogy az automatikus fordítások hibákat vagy pontatlanságokat tartalmazhatnak. Az eredeti dokumentum az eredeti nyelvén tekintendő hiteles forrásnak. Kritikus információk esetén javasolt professzionális emberi fordítást igénybe venni. Nem vállalunk felelősséget semmilyen félreértésért vagy téves értelmezésért, amely a fordítás használatából eredhet.
+## GitHub Copilot Agent kihívás 🚀
+
+Használd az Agent módot a következő kihívás teljesítéséhez:
+**Leírás:** Fejleszd tovább a böngészőbővítményt hibakezelési fejlesztésekkel és felhasználói élményt javító funkciókkal. Ez a kihívás segít az API-k, a helyi tároló és a DOM manipuláció gyakorlásában modern JavaScript minták használatával.
+
+**Feladat:** Hozz létre egy továbbfejlesztett változatot a displayCarbonUsage függvényből, amely tartalmazza: 1) egy újrapróbálkozási mechanizmust sikertelen API hívásokra exponenciális visszalépéssel, 2) bemeneti érvényesítést a régiókódra az API hívás előtt, 3) betöltési animációt előrehaladási jelzőkkel, 4) az API válaszok tárolását localStorage-ban lejárati időbélyeggel (30 percig cache-elve), valamint 5) egy funkciót a korábbi API hívások történeti adatainak megjelenítésére. Emellett adj megfelelő TypeScript-stílusú JSDoc kommenteket az összes függvényparaméter és visszatérési típus dokumentálásához.
+
+További információ az [agent mode](https://code.visualstudio.com/blogs/2025/02/24/introducing-copilot-agent-mode) funkcióról.
+
+## 🚀 Kihívás
+
+Bővítsd az API-kkal kapcsolatos ismereteidet azzal, hogy felfedezed a böngésző-alapú API-k gazdagságát a webfejlesztéshez. Válassz az alábbi böngésző API-k közül, és készíts egy kis bemutatót:
+
+- [Geolocation API](https://developer.mozilla.org/docs/Web/API/Geolocation_API) - Szerezd meg a felhasználó aktuális helyzetét
+- [Notification API](https://developer.mozilla.org/docs/Web/API/Notifications_API) - Küldj asztali értesítéseket
+- [HTML Drag and Drop API](https://developer.mozilla.org/docs/Web/API/HTML_Drag_and_Drop_API) - Hozz létre interaktív drag felületeket
+- [Web Storage API](https://developer.mozilla.org/docs/Web/API/Web_Storage_API) - Haladó helyi tárolási technikák
+- [Fetch API](https://developer.mozilla.org/docs/Web/API/Fetch_API) - Modern alternatíva az XMLHttpRequest helyett
+
+**Kutatási kérdések, amiket érdemes átgondolni:**
+- Milyen valós problémákat old meg ez az API?
+- Hogyan kezeli az API a hibákat és szélsőséges eseteket?
+- Milyen biztonsági megfontolások vannak az API használatakor?
+- Mennyire támogatott ez az API különböző böngészőkben?
+
+Kutatásod után határozd meg, milyen jellemzők tesznek egy API-t fejlesztőbaráttá és megbízhatóvá.
+
+## Előadás Utáni Kvíz
+
+[Előadás utáni kvíz](https://ff-quizzes.netlify.app/web/quiz/26)
+
+## Áttekintés & Önálló Tanulás
+
+Ebben a leckében megismerted a LocalStorage és az API-k működését, amelyek mind nagyon hasznosak a profi webfejlesztők számára. Gondolkodj el, hogyan működnek ezek ketten együtt! Gondold végig, hogyan terveznél meg egy weboldalt, amely elemeket tárol az API használatához.
+
+### ⚡ **Mit Tehetsz a Következő 5 Percben**
+- [ ] Nyisd meg a DevTools Alkalmazás fület és fedezd fel a localStorage-t bármely weboldalon
+- [ ] Készíts egy egyszerű HTML űrlapot és teszteld az űrlap érvényesítést a böngészőben
+- [ ] Próbálj meg adatokat tárolni és lekérni a localStorage segítségével a böngésző konzoljában
+- [ ] Vizsgáld meg az elküldött űrlapadatokat a Hálózat fülön keresztül
+
+### 🎯 **Mit Érhetsz El Most Órán Belül**
+- [ ] Fejezd be az előadás utáni kvízt és értsd meg az űrlapkezelés koncepcióit
+- [ ] Építs egy böngészőbővítményt, amely űrlap segítségével menti a felhasználói beállításokat
+- [ ] Valósíts meg kliensoldali űrlapévvényesítést hasznos hibajelzésekkel
+- [ ] Gyakorold a chrome.storage API használatát a bővítmény adatainak megőrzéséhez
+- [ ] Készíts felhasználói felületet, amely reagál a mentett felhasználói beállításokra
+
+### 📅 **Hétköznapi Bővítményfejlesztés**
+- [ ] Készíts egy teljes funkcionalitású böngészőbővítményt űrlapfunkcióval
+- [ ] Sajátítsd el a különféle tárolási opciókat: helyi, szinkronizált és munkamenet tárolás
+- [ ] Valósíts meg haladó űrlapfunkciókat, mint az automatikus kiegészítés és érvényesítés
+- [ ] Adj hozzá import/export funkciókat a felhasználói adatokhoz
+- [ ] Teszteld bővítményedet különböző böngészőkön alaposan
+- [ ] Finomhangold a felhasználói élményt és hibakezelést
+
+### 🌟 **Hónapok Alatti Web API Mesterség**
+- [ ] Készíts bonyolult alkalmazásokat különféle böngésző-tároló API-k felhasználásával
+- [ ] Tanuld meg az offline-first fejlesztési mintákat
+- [ ] Vegyél részt nyílt forráskódú projektekben adatmegőrzés témakörben
+- [ ] Válj szakértővé az adatvédelmi fejlesztésben és a GDPR betartásában
+- [ ] Készíts újrahasznosítható könyvtárakat űrlapkezeléshez és adatmenedzsmenthez
+- [ ] Oszd meg tudásod a web API-k és bővítményfejlesztés területén
+
+## 🎯 A Te Bővítményfejlesztési Mesterré Válás Idővonala
+
+```mermaid
+timeline
+    title API Integráció & Tárolási Tanulási Folyamat
+    
+    section DOM Alapok (15 perc)
+        Elem Referenciák: querySelector elsajátítása
+                          : Eseményfigyelő beállítása
+                          : Állapotkezelés alapjai
+        
+    section Helyi Tároló (20 perc)
+        Adatmegőrzés: Kulcs-érték tárolás
+                        : Munkamenet kezelés
+                        : Felhasználói preferencia kezelése
+                        : Tároló ellenőrző eszközök
+        
+    section Űrlap Kezelés (25 perc)
+        Felhasználói Bevitel: Űrlap ellenőrzés
+                  : Esemény megelőzés
+                  : Adatkinyerés
+                  : Felhasználói felület állapotváltások
+        
+    section API Integráció (35 perc)
+        Külső Kommunikáció: HTTP kérések
+                              : Hitelesítési minták
+                              : JSON adat elemzés
+                              : Válasz kezelése
+        
+    section Aszinkron Programozás (40 perc)
+        Modern JavaScript: Promise kezelés
+                         : Async/await minták
+                         : Hibakezelés
+                         : Nem blokkoló műveletek
+        
+    section Hibakezelés (30 perc)
+        Robusztus Alkalmazások: Try/catch blokkok
+                           : Felhasználóbarát üzenetek
+                           : Zseniális leépítés
+                           : Hibakeresési technikák
+        
+    section Haladó Minták (1 hét)
+        Szakmai Fejlődés: Gyorsítótár stratégiák
+                                : Korlátozás szabályozás
+                                : Újrapróbálkozási mechanizmusok
+                                : Teljesítmény optimalizálás
+        
+    section Termelési Készségek (1 hónap)
+        Vállalati Funkciók: Biztonsági legjobb gyakorlatok
+                           : API verziózás
+                           : Megfigyelés és naplózás
+                           : Skálázható architektúra
+```
+### 🛠️ A Teljes Stack Fejlesztői Eszköztárad Összefoglalója
+
+A lecke elvégzése után most már rendelkezel a következőkkel:
+- **DOM Mesterség**: Pontos elemkiválasztás és manipuláció
+- **Tárolási Szakértelem**: Tartós adatkezelés localStorage segítségével
+- **API Integráció**: Valós idejű adatlekérés és hitelesítés
+- **Aszinkron Programozás**: Nem blokkoló műveletek modern JavaScript-tel
+- **Hibakezelés**: Robosztus alkalmazások, amelyek szépen kezelik a hibákat
+- **Felhasználói Élmény**: Betöltési állapotok, érvényesítés, gördülékeny interakciók
+- **Modern Minták**: fetch API, async/await és ES6+ funkciók
+
+**Szakmai Készségek:** Olyan mintákat valósítottál meg, amiket használnak:
+- **Webalkalmazásokban**: Egylapos appok külső adatforrásokkal
+- **Mobilfejlesztésben**: API-alapú appok offline képességekkel
+- **Asztali szoftverekben**: Electron appok tartós tárolással
+- **Vállalati rendszerekben**: Hitelesítés, cache-elés és hibakezelés
+- **Modern keretrendszerekben**: React/Vue/Angular adatkezelési minták
+
+**Következő szint:** Készen állsz fejlettebb témák felfedezésére, mint cache stratégiák, valós idejű WebSocket kapcsolat vagy összetett állapotkezelés!
+
+## Feladat
+
+[API átvétele](assignment.md)
+
+---
+
+<!-- CO-OP TRANSLATOR DISCLAIMER START -->
+**Felelősségkizárás**:  
+Ezt a dokumentumot az AI fordítási szolgáltatás, a [Co-op Translator](https://github.com/Azure/co-op-translator) segítségével fordítottuk le. Bár pontos fordításra törekszünk, kérjük, vegye figyelembe, hogy az automatikus fordítások hibákat vagy pontatlanságokat tartalmazhatnak. Az eredeti, anyanyelvi dokumentum tekintendő hiteles forrásnak. Fontos információk esetén javasolt szakember által végzett emberi fordítás igénybevétele. Nem vállalunk felelősséget a fordítás használatából eredő félreértésekért vagy téves értelmezésekért.
+<!-- CO-OP TRANSLATOR DISCLAIMER END -->

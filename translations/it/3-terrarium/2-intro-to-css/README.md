@@ -1,12 +1,3 @@
-<!--
-CO_OP_TRANSLATOR_METADATA:
-{
-  "original_hash": "e39f3a4e3bcccf94639e3af1248f8a4d",
-  "translation_date": "2025-11-04T00:28:53+00:00",
-  "source_file": "3-terrarium/2-intro-to-css/README.md",
-  "language_code": "it"
-}
--->
 # Progetto Terrarium Parte 2: Introduzione al CSS
 
 ```mermaid
@@ -30,7 +21,7 @@ journey
       Glass reflections: 5: Student
 ```
 
-![Introduzione al CSS](../../../../translated_images/webdev101-css.3f7af5991bf53a200d79e7257e5e450408d8ea97f5b531d31b2e3976317338ee.it.png)
+![Introduzione al CSS](../../../../translated_images/it/webdev101-css.3f7af5991bf53a20.webp)
 > Sketchnote di [Tomomi Imura](https://twitter.com/girlie_mac)
 
 Ricordi com'era il tuo terrarium HTML, piuttosto semplice? Con il CSS possiamo trasformare quella struttura essenziale in qualcosa di visivamente accattivante.
@@ -205,7 +196,7 @@ body {
 
 Apri gli strumenti per sviluppatori del tuo browser (F12), vai alla scheda Elementi e ispeziona il tuo elemento `<h1>`. Vedrai che eredita la famiglia di font dal body:
 
-![font ereditato](../../../../translated_images/1.cc07a5cbe114ad1d4728c35134584ac1b87db688eff83cf75985cf31fe0ed95c.it.png)
+![font ereditato](../../../../translated_images/it/1.cc07a5cbe114ad1d.webp)
 
 ✅ **Tempo di Esperimento**: Prova a impostare altre proprietà ereditabili sul `<body>` come `color`, `line-height` o `text-align`. Cosa succede al tuo titolo e agli altri elementi?
 
@@ -335,7 +326,7 @@ Nel nostro terrarium, ogni pianta necessita di uno stile simile ma anche di un p
 **Ecco la struttura HTML per ogni pianta:**
 ```html
 <div class="plant-holder">
-  <img class="plant" alt="Decorative plant for terrarium" id="plant1" src="../../../../translated_images/plant1.d18b18ffe73da18f8b1ac7aba73b4050af52f4a0c9174aeac464b85123fc2850.it.png" />
+  <img class="plant" alt="Decorative plant for terrarium" id="plant1" src="../../../../translated_images/it/plant1.d18b18ffe73da18f8b1ac7aba73b4050af52f4a0c9174aeac464b85123fc2850.png" />
 </div>
 ```
 
@@ -599,7 +590,7 @@ Pronto a migliorare il tuo terrario con riflessi realistici sul vetro? Questa te
 
 Creerai sottili riflessi che simulano come la luce si riflette sulle superfici di vetro. Questo approccio è simile a come i pittori rinascimentali come Jan van Eyck utilizzavano luce e riflessi per far apparire il vetro dipinto tridimensionale. Ecco cosa stai cercando di ottenere:
 
-![terrario finito](../../../../translated_images/terrarium-final.2f07047ffc597d0a06b06cab28a77801a10dd12fdb6c7fc630e9c40665491c53.it.png)
+![terrario finito](../../../../translated_images/it/terrarium-final.2f07047ffc597d0a.webp)
 
 **La tua sfida:**
 - **Crea** forme ovali sottili bianche o di colore chiaro per i riflessi sul vetro

@@ -1,12 +1,3 @@
-<!--
-CO_OP_TRANSLATOR_METADATA:
-{
-  "original_hash": "50a7783473b39a2e0f133e271a102231",
-  "translation_date": "2025-10-24T22:10:28+00:00",
-  "source_file": "7-bank-project/4-state-management/assignment.md",
-  "language_code": "ro"
-}
--->
 # Implementarea dialogului "Adaugă tranzacție"
 
 ## Prezentare generală
@@ -112,7 +103,7 @@ Consultă [documentația API-ului serverului](../api/README.md) pentru:
 **Rezultat așteptat:**
 După finalizarea acestei teme, aplicația ta bancară ar trebui să aibă o funcționalitate completă "Adaugă tranzacție" care să arate și să funcționeze profesional:
 
-![Captură de ecran care arată un exemplu de dialog "Adaugă tranzacție"](../../../../translated_images/dialog.93bba104afeb79f12f65ebf8f521c5d64e179c40b791c49c242cf15f7e7fab15.ro.png)
+![Captură de ecran care arată un exemplu de dialog "Adaugă tranzacție"](../../../../translated_images/ro/dialog.93bba104afeb79f1.webp)
 
 ## Testarea implementării
 

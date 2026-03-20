@@ -1,12 +1,3 @@
-<!--
-CO_OP_TRANSLATOR_METADATA:
-{
-  "original_hash": "7994743c5b21fdcceb36307916ef249a",
-  "translation_date": "2025-11-06T12:19:29+00:00",
-  "source_file": "6-space-game/2-drawing-to-canvas/README.md",
-  "language_code": "ms"
-}
--->
 # Bina Permainan Angkasa Bahagian 2: Lukis Hero dan Raksasa pada Kanvas
 
 ```mermaid
@@ -108,7 +99,7 @@ quadrantChart
     UI Elements: [0.9, 0.1]
 ```
 
-![grid kanvas](../../../../translated_images/canvas_grid.5f209da785ded492a01ece440e3032afe51efa500cc2308e5ea4252487ceaf0b.ms.png)
+![grid kanvas](../../../../translated_images/ms/canvas_grid.5f209da785ded492.webp)
 > Imej dari [MDN](https://developer.mozilla.org/docs/Web/API/Canvas_API/Tutorial/Drawing_shapes)
 
 Untuk melukis pada elemen kanvas, anda akan mengikuti proses tiga langkah yang sama yang membentuk asas semua grafik kanvas. Setelah anda melakukannya beberapa kali, ia menjadi kebiasaan:
@@ -329,11 +320,11 @@ Anda akan membina halaman web dengan elemen Kanvas. Ia harus memaparkan skrin hi
 
 - Kapal hero
 
-   ![Kapal hero](../../../../translated_images/player.dd24c1afa8c71e9b82b2958946d4bad13308681392d4b5ddcc61a0e818ef8088.ms.png)
+   ![Kapal hero](../../../../translated_images/ms/player.dd24c1afa8c71e9b.webp)
 
 - 5*5 raksasa
 
-   ![Kapal raksasa](../../../../translated_images/enemyShip.5df2a822c16650c2fb3c06652e8ec8120cdb9122a6de46b9a1a56d54db22657f.ms.png)
+   ![Kapal raksasa](../../../../translated_images/ms/enemyShip.5df2a822c16650c2.webp)
 
 ### Langkah yang Disyorkan untuk Memulakan Pembangunan
 
@@ -470,7 +461,7 @@ for (let x = START_X; x < STOP_X; x += ENEMY_SPACING) {
 
 Hasil akhir sepatutnya kelihatan seperti ini:
 
-![Skrin hitam dengan seorang hero dan 5*5 raksasa](../../../../translated_images/partI-solution.36c53b48c9ffae2a5e15496b23b604ba5393433e4bf91608a7a0a020eb7a2691.ms.png)
+![Skrin hitam dengan seorang hero dan 5*5 raksasa](../../../../translated_images/ms/partI-solution.36c53b48c9ffae2a.webp)
 
 ## Penyelesaian
 

@@ -1,12 +1,3 @@
-<!--
-CO_OP_TRANSLATOR_METADATA:
-{
-  "original_hash": "973e48ad87d67bf5bb819746c9f8e302",
-  "translation_date": "2025-11-06T12:45:24+00:00",
-  "source_file": "3-terrarium/3-intro-to-DOM-and-closures/README.md",
-  "language_code": "ja"
-}
--->
 # テラリウムプロジェクト パート3: DOM操作とJavaScriptクロージャ
 
 ```mermaid
@@ -26,7 +17,7 @@ journey
       Complete terrarium: 5: Student
 ```
 
-![DOMとクロージャ](../../../../translated_images/webdev101-js.10280393044d7eaaec7e847574946add7ddae6be2b2194567d848b61d849334a.ja.png)
+![DOMとクロージャ](../../../../translated_images/ja/webdev101-js.10280393044d7eaa.webp)
 > スケッチノート: [Tomomi Imura](https://twitter.com/girlie_mac)
 
 ウェブ開発の最も魅力的な側面の一つへようこそ！インタラクティブな要素を作ることです。Document Object Model (DOM) は、HTMLとJavaScriptをつなぐ橋のようなもので、今日はこれを使ってテラリウムを動かします。ティム・バーナーズ＝リーが最初のウェブブラウザを作ったとき、彼は動的でインタラクティブなドキュメントを想像していました。そのビジョンを可能にするのがDOMです。
@@ -105,7 +96,7 @@ flowchart TD
     style Q fill:#ffebee
 ```
 
-![DOMツリーの表現](../../../../translated_images/dom-tree.7daf0e763cbbba9273f9a66fe04c98276d7d23932309b195cb273a9cf1819b42.ja.png)
+![DOMツリーの表現](../../../../translated_images/ja/dom-tree.7daf0e763cbbba92.webp)
 
 > DOMとそれを参照するHTMLマークアップの表現。出典: [Olfa Nasraoui](https://www.researchgate.net/publication/221417012_Profile-Based_Focused_Crawler_for_Social_Media-Sharing_Websites)
 
@@ -150,7 +141,7 @@ flowchart LR
 
 > 💡 **クロージャの理解**: クロージャはJavaScriptの重要なトピックであり、多くの開発者が理論的な側面を完全に理解する前に何年も使用します。今日は実践的な応用に焦点を当てます。インタラクティブな機能を構築する中で、自然にその仕組みが見えてくるでしょう。理解は実際の問題を解決する方法を見ることで深まります。
 
-![DOMツリーの表現](../../../../translated_images/dom-tree.7daf0e763cbbba9273f9a66fe04c98276d7d23932309b195cb273a9cf1819b42.ja.png)
+![DOMツリーの表現](../../../../translated_images/ja/dom-tree.7daf0e763cbbba92.webp)
 
 > DOMとそれを参照するHTMLマークアップの表現。出典: [Olfa Nasraoui](https://www.researchgate.net/publication/221417012_Profile-Based_Focused_Crawler_for_Social_Media-Sharing_Websites)
 
@@ -589,7 +580,7 @@ function stopElementDrag() {
 - **デバイス間の互換性**: デスクトップとモバイルで動作
 - **パフォーマンス意識**: メモリリークや冗長な計算なし
 
-![完成したテラリウム](../../../../translated_images/terrarium-final.0920f16e87c13a84cd2b553a5af9a3ad1cffbd41fbf8ce715d9e9c43809a5e2c.ja.png)
+![完成したテラリウム](../../../../translated_images/ja/terrarium-final.0920f16e87c13a84.webp)
 
 ---
 

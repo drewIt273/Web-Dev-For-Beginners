@@ -1,12 +1,3 @@
-<!--
-CO_OP_TRANSLATOR_METADATA:
-{
-  "original_hash": "d45ddcc54eb9232a76d08328b09d792e",
-  "translation_date": "2025-11-06T11:14:44+00:00",
-  "source_file": "1-getting-started-lessons/1-intro-to-programming-languages/README.md",
-  "language_code": "vi"
-}
--->
 # Giới thiệu về Ngôn ngữ Lập trình và Công cụ Phát triển Hiện đại
 
 Chào bạn, nhà phát triển tương lai! 👋 Tôi có thể nói với bạn điều gì đó khiến tôi vẫn còn nổi da gà mỗi ngày không? Bạn sắp khám phá ra rằng lập trình không chỉ là về máy tính – mà còn là siêu năng lực thực sự để biến những ý tưởng táo bạo nhất của bạn thành hiện thực!
@@ -17,7 +8,7 @@ Nghe này, tôi hoàn toàn hiểu nếu lập trình có vẻ đáng sợ ngay 
 
 Hôm nay, chúng ta sẽ khám phá những công cụ tuyệt vời làm cho phát triển web hiện đại không chỉ khả thi mà còn thực sự gây nghiện. Tôi đang nói về chính những trình soạn thảo, trình duyệt và quy trình làm việc mà các nhà phát triển tại Netflix, Spotify, và studio ứng dụng indie yêu thích của bạn sử dụng mỗi ngày. Và đây là phần sẽ khiến bạn nhảy múa vui vẻ: hầu hết các công cụ chuyên nghiệp, tiêu chuẩn ngành này đều hoàn toàn miễn phí!
 
-![Giới thiệu Lập trình](../../../../translated_images/webdev101-programming.d6e3f98e61ac4bff0b27dcbf1c3f16c8ed46984866f2d29988929678b0058fde.vi.png)
+![Giới thiệu Lập trình](../../../../translated_images/vi/webdev101-programming.d6e3f98e61ac4bff.webp)
 > Sketchnote bởi [Tomomi Imura](https://twitter.com/girlie_mac)
 
 ```mermaid

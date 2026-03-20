@@ -1,12 +1,3 @@
-<!--
-CO_OP_TRANSLATOR_METADATA:
-{
-  "original_hash": "973e48ad87d67bf5bb819746c9f8e302",
-  "translation_date": "2025-11-03T16:30:51+00:00",
-  "source_file": "3-terrarium/3-intro-to-DOM-and-closures/README.md",
-  "language_code": "pa"
-}
--->
 # ਟੈਰੀਅਰੀਅਮ ਪ੍ਰੋਜੈਕਟ ਭਾਗ 3: DOM ਮੈਨਿਪੂਲੇਸ਼ਨ ਅਤੇ ਜਾਵਾਸਕ੍ਰਿਪਟ ਕਲੋਜ਼ਰਜ਼
 
 ```mermaid
@@ -26,7 +17,7 @@ journey
       Complete terrarium: 5: Student
 ```
 
-![DOM ਅਤੇ ਇੱਕ ਕਲੋਜ਼ਰ](../../../../translated_images/webdev101-js.10280393044d7eaaec7e847574946add7ddae6be2b2194567d848b61d849334a.pa.png)
+![DOM ਅਤੇ ਇੱਕ ਕਲੋਜ਼ਰ](../../../../translated_images/pa/webdev101-js.10280393044d7eaa.webp)
 > ਸਕੈਚਨੋਟ [ਟੋਮੋਮੀ ਇਮੁਰਾ](https://twitter.com/girlie_mac) ਦੁਆਰਾ
 
 ਵੈੱਬ ਡਿਵੈਲਪਮੈਂਟ ਦੇ ਸਭ ਤੋਂ ਰੁਚਿਕਰ ਪਹਲੂਆਂ ਵਿੱਚ ਤੁਹਾਡਾ ਸਵਾਗਤ ਹੈ - ਚੀਜ਼ਾਂ ਨੂੰ ਇੰਟਰਐਕਟਿਵ ਬਣਾਉਣਾ! ਡੌਕਯੂਮੈਂਟ ਓਬਜੈਕਟ ਮਾਡਲ (DOM) ਤੁਹਾਡੇ HTML ਅਤੇ ਜਾਵਾਸਕ੍ਰਿਪਟ ਦੇ ਵਿਚਕਾਰ ਇੱਕ ਪੁਲ ਵਾਂਗ ਹੈ, ਅਤੇ ਅੱਜ ਅਸੀਂ ਇਸਨੂੰ ਤੁਹਾਡੇ ਟੈਰੀਅਰੀਅਮ ਨੂੰ ਜ਼ਿੰਦਾ ਕਰਨ ਲਈ ਵਰਤਾਂਗੇ। ਜਦੋਂ ਟਿਮ ਬਰਨਰਜ਼-ਲੀ ਨੇ ਪਹਿਲਾ ਵੈੱਬ ਬ੍ਰਾਊਜ਼ਰ ਬਣਾਇਆ, ਉਸਨੇ ਇੱਕ ਵੈੱਬ ਦੀ ਕਲਪਨਾ ਕੀਤੀ ਸੀ ਜਿੱਥੇ ਡੌਕਯੂਮੈਂਟ ਡਾਇਨਾਮਿਕ ਅਤੇ ਇੰਟਰਐਕਟਿਵ ਹੋ ਸਕਦੇ ਹਨ - DOM ਉਸ ਦ੍ਰਿਸ਼ਟੀਕੋਣ ਨੂੰ ਸੰਭਵ ਬਣਾਉਂਦਾ ਹੈ।
@@ -105,7 +96,7 @@ flowchart TD
     style Q fill:#ffebee
 ```
 
-![DOM ਦਰਖਤ ਦੀ ਪ੍ਰਤੀਨਿਧੀ](../../../../translated_images/dom-tree.7daf0e763cbbba9273f9a66fe04c98276d7d23932309b195cb273a9cf1819b42.pa.png)
+![DOM ਦਰਖਤ ਦੀ ਪ੍ਰਤੀਨਿਧੀ](../../../../translated_images/pa/dom-tree.7daf0e763cbbba92.webp)
 
 > DOM ਅਤੇ HTML ਮਾਰਕਅੱਪ ਦੀ ਪ੍ਰਤੀਨਿਧੀ ਜੋ ਇਸਨੂੰ ਦਰਸਾਉਂਦੀ ਹੈ। [ਓਲਫਾ ਨਸਰਾਊਈ](https://www.researchgate.net/publication/221417012_Profile-Based_Focused_Crawler_for_Social_Media-Sharing_Websites) ਤੋਂ
 
@@ -150,7 +141,7 @@ flowchart LR
 
 > 💡 **ਕਲੋਜ਼ਰਜ਼ ਨੂੰ ਸਮਝਣਾ**: ਕਲੋਜ਼ਰਜ਼ ਜਾਵਾਸਕ੍ਰਿਪਟ ਵਿੱਚ ਇੱਕ ਮਹੱਤਵਪੂਰਨ ਵਿਸ਼ਾ ਹਨ, ਅਤੇ ਕਈ ਡਿਵੈਲਪਰ ਇਸਨੂੰ ਸਾਲਾਂ ਤੱਕ ਵਰਤਦੇ ਹਨ ਬਿਨਾਂ ਇਸਦੇ ਸਾਰੇ ਸਿਧਾਂਤਕ ਪਹਲੂਆਂ ਨੂੰ ਪੂਰੀ ਤਰ੍ਹਾਂ ਸਮਝਣ ਦੇ। ਅੱਜ, ਅਸੀਂ ਵਿਵਹਾਰਕ ਅਰਜ਼ੀ 'ਤੇ ਧਿਆਨ ਦੇ ਰਹੇ ਹਾਂ - ਤੁਸੀਂ ਦੇਖੋਗੇ ਕਿ ਕਲੋਜ਼ਰਜ਼ ਕੁਦਰਤੀ ਤੌਰ 'ਤੇ ਉਭਰਦੇ ਹਨ ਜਦੋਂ ਅਸੀਂ ਆਪਣੀਆਂ ਇੰਟਰਐਕਟਿਵ ਵਿਸ਼ੇਸ਼ਤਾਵਾਂ ਬਣਾਉਂਦੇ ਹਾਂ। ਸਮਝਣਾ ਵਿਕਸਿਤ ਹੋਵੇਗਾ ਜਦੋਂ ਤੁਸੀਂ ਦੇਖੋਗੇ ਕਿ ਇਹ ਅਸਲ ਸਮੱਸਿਆਵਾਂ ਨੂੰ ਕਿਵੇਂ ਹੱਲ ਕਰਦੇ ਹਨ।
 
-![DOM ਦਰਖਤ ਦੀ ਪ੍ਰਤੀਨਿਧੀ](../../../../translated_images/dom-tree.7daf0e763cbbba9273f9a66fe04c98276d7d23932309b195cb273a9cf1819b42.pa.png)
+![DOM ਦਰਖਤ ਦੀ ਪ੍ਰਤੀਨਿਧੀ](../../../../translated_images/pa/dom-tree.7daf0e763cbbba92.webp)
 
 > DOM ਅਤੇ HTML ਮਾਰਕਅੱਪ ਦੀ ਪ੍ਰਤੀਨਿਧੀ ਜੋ ਇਸਨੂੰ ਦਰਸਾਉਂਦੀ ਹੈ। [ਓਲਫਾ ਨਸਰਾਊਈ](https://www.researchgate.net/publication/221417012_Profile-Based_Focused_Crawler_for_Social_Media-Sharing_Websites) ਤੋਂ
 
@@ -423,7 +414,7 @@ function stopElementDrag() {
 - **ਕਰਾਸ-ਡਿਵਾਈਸ ਸਪੋਰਟ**: ਡੈਸਕਟਾਪ ਅਤੇ ਮੋਬਾਈਲ 'ਤੇ ਕੰਮ ਕਰਦਾ ਹੈ
 - **ਪਰਫਾਰਮੈਂਸ ਸਚੇਤਤਾ**: ਕੋਈ ਮੈਮੋਰੀ ਲੀਕ ਜਾਂ ਬੇਕਾਰ ਗਣਨਾਵਾਂ ਨਹੀਂ
 
-![ਫਿਨਿਸ਼ਡ ਟੈਰੀਰੀਅਮ](../../../../translated_images/terrarium-final.0920f16e87c13a84cd2b553a5af9a3ad1cffbd41fbf8ce715d9e9c43809a5e2c.pa.png)
+![ਫਿਨਿਸ਼ਡ ਟੈਰੀਰੀਅਮ](../../../../translated_images/pa/terrarium-final.0920f16e87c13a84.webp)
 
 ---
 

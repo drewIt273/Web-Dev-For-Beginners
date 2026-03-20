@@ -1,12 +1,3 @@
-<!--
-CO_OP_TRANSLATOR_METADATA:
-{
-  "original_hash": "b807b09df716dc48a2b750835bf8e933",
-  "translation_date": "2025-11-04T00:56:44+00:00",
-  "source_file": "7-bank-project/4-state-management/README.md",
-  "language_code": "tr"
-}
--->
 # Bankacılık Uygulaması Yapımı Bölüm 4: Durum Yönetimi Kavramları
 
 ## ⚡ Sonraki 5 Dakikada Yapabilecekleriniz
@@ -190,7 +181,7 @@ Titanik'in bölümlere ayrılmış tasarımı gibi, bu sorunları tek tek çözm
 
 Kendi etrafımızda dönmek yerine, **merkezi bir durum yönetim sistemi** oluşturacağız. Bunu, tüm önemli şeylerin sorumluluğunu üstlenen gerçekten organize bir kişi gibi düşünün:
 
-![HTML, kullanıcı eylemleri ve durum arasındaki veri akışını gösteren şema](../../../../translated_images/data-flow.fa2354e0908fecc89b488010dedf4871418a992edffa17e73441d257add18da4.tr.png)
+![HTML, kullanıcı eylemleri ve durum arasındaki veri akışını gösteren şema](../../../../translated_images/tr/data-flow.fa2354e0908fecc8.webp)
 
 ```mermaid
 flowchart TD
@@ -804,7 +795,7 @@ Bu meydan okuma, hem kullanıcı deneyimini hem de uygulama verimliliğini düş
 
 İşte ödevi tamamladıktan sonra ortaya çıkan bir örnek:
 
-![Bir örnek "İşlem ekleme" diyalog kutusunu gösteren ekran görüntüsü](../../../../translated_images/dialog.93bba104afeb79f12f65ebf8f521c5d64e179c40b791c49c242cf15f7e7fab15.tr.png)
+![Bir örnek "İşlem ekleme" diyalog kutusunu gösteren ekran görüntüsü](../../../../translated_images/tr/dialog.93bba104afeb79f1.webp)
 
 ---
 

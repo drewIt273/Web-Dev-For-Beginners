@@ -1,12 +1,3 @@
-<!--
-CO_OP_TRANSLATOR_METADATA:
-{
-  "original_hash": "351678bece18f07d9daa987a881fb062",
-  "translation_date": "2025-11-03T22:52:35+00:00",
-  "source_file": "7-bank-project/1-template-route/README.md",
-  "language_code": "bn"
-}
--->
 # ব্যাংকিং অ্যাপ তৈরি পর্ব ১: ওয়েব অ্যাপে HTML টেমপ্লেট এবং রুট
 
 ```mermaid
@@ -575,7 +566,7 @@ sequenceDiagram
 
 `history.pushState` ব্যবহার করে ব্রাউজারের নেভিগেশন ইতিহাসে নতুন এন্ট্রি তৈরি করা হয়। আপনি যদি ব্রাউজারের *ব্যাক বাটন* ধরে রাখেন, এটি কিছুটা এরকম দেখাবে:
 
-![নেভিগেশন ইতিহাসের স্ক্রিনশট](../../../../translated_images/history.7fdabbafa521e06455b738d3dafa3ff41d3071deae60ead8c7e0844b9ed987d8.bn.png)
+![নেভিগেশন ইতিহাসের স্ক্রিনশট](../../../../translated_images/bn/history.7fdabbafa521e064.webp)
 
 আপনি যদি কয়েকবার ব্যাক বাটনে ক্লিক করেন, আপনি দেখবেন যে বর্তমান URL পরিবর্তন হচ্ছে এবং ইতিহাস আপডেট হচ্ছে, কিন্তু একই টেমপ্লেট প্রদর্শিত হচ্ছে।
 

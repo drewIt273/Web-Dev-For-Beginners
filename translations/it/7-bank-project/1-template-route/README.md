@@ -1,12 +1,3 @@
-<!--
-CO_OP_TRANSLATOR_METADATA:
-{
-  "original_hash": "351678bece18f07d9daa987a881fb062",
-  "translation_date": "2025-11-04T00:32:03+00:00",
-  "source_file": "7-bank-project/1-template-route/README.md",
-  "language_code": "it"
-}
--->
 # Costruire un'app bancaria Parte 1: Modelli HTML e rotte in un'app web
 
 ```mermaid
@@ -652,7 +643,7 @@ sequenceDiagram
 
 Utilizzando `history.pushState` si creano nuove voci nella cronologia di navigazione del browser. Puoi verificarlo tenendo premuto il *pulsante indietro* del tuo browser, dovrebbe mostrare qualcosa del genere:
 
-![Screenshot della cronologia di navigazione](../../../../translated_images/history.7fdabbafa521e06455b738d3dafa3ff41d3071deae60ead8c7e0844b9ed987d8.it.png)
+![Screenshot della cronologia di navigazione](../../../../translated_images/it/history.7fdabbafa521e064.webp)
 
 Se provi a cliccare sul pulsante indietro alcune volte, vedrai che l'URL corrente cambia e la cronologia viene aggiornata, ma lo stesso template continua a essere visualizzato.
 

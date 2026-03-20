@@ -1,85 +1,130 @@
-<!--
-CO_OP_TRANSLATOR_METADATA:
-{
-  "original_hash": "92c4431eac70670b0450b02c1d11279a",
-  "translation_date": "2025-10-24T22:08:01+00:00",
-  "source_file": "3-terrarium/2-intro-to-css/README.md",
-  "language_code": "ro"
-}
--->
 # Proiectul Terrarium Partea 2: Introducere în CSS
 
-![Introducere în CSS](../../../../translated_images/webdev101-css.3f7af5991bf53a200d79e7257e5e450408d8ea97f5b531d31b2e3976317338ee.ro.png)
-> Sketchnote de [Tomomi Imura](https://twitter.com/girlie_mac)
+```mermaid
+journey
+    title Călătoria ta în stilizarea CSS
+    section Fundament
+      Link CSS fișier: 3: Student
+      Înțelege cascada: 4: Student
+      Învață moștenirea: 4: Student
+    section Selectori
+      Țintirea elementelor: 4: Student
+      Modele de clasă: 5: Student
+      Specificitatea ID-ului: 5: Student
+    section Layout
+      Poziționează elementele: 4: Student
+      Creează containere: 5: Student
+      Construiește terariu: 5: Student
+    section Poloneză
+      Adaugă efecte vizuale: 5: Student
+      Design responsiv: 5: Student
+      Reflexii pe sticlă: 5: Student
+```
+![Introducere în CSS](../../../../translated_images/ro/webdev101-css.3f7af5991bf53a20.webp)
+> Sketchnote realizat de [Tomomi Imura](https://twitter.com/girlie_mac)
 
-Îți amintești cum arăta terrarium-ul tău HTML destul de simplu? CSS este ceea ce transformă acea structură simplă într-un design vizual atrăgător.
+Îți amintești cum arăta terrariul tău HTML destul de simplu? CSS este locul unde transformăm acea structură simplă într-un ceva atrăgător vizual.
 
-Dacă HTML-ul este ca și cum ai construi scheletul unei case, atunci CSS este tot ceea ce o face să se simtă ca acasă - culorile pereților, aranjamentul mobilierului, iluminarea și modul în care camerele se îmbină. Gândește-te cum Palatul Versailles a început ca o simplă cabană de vânătoare, dar atenția meticuloasă la decor și design l-a transformat într-una dintre cele mai magnifice clădiri din lume.
+Dacă HTML este ca și construcția structurii unei case, atunci CSS este tot ceea ce o face să se simtă ca acasă - culorile vopselei, aranjamentul mobilei, iluminatul și cum se îmbină încăperile între ele. Gândește-te cum Palatul de la Versailles a început ca o cabană simplă de vânătoare, dar atenția atentă asupra decorului și a aranjamentului l-a transformat într-una dintre cele mai magnifice clădiri din lume.
 
-Astăzi, vom transforma terrarium-ul tău din funcțional în elegant. Vei învăța cum să poziționezi elementele cu precizie, să creezi layout-uri care se adaptează la diferite dimensiuni ale ecranului și să adaugi un aspect vizual care face ca site-urile web să fie captivante.
+Astăzi, vom transforma terrariul tău din funcțional în finisat. Vei învăța cum să poziționezi elementele precis, să faci ca layout-urile să răspundă la diferite dimensiuni ale ecranului și să creezi un farmec vizual care face site-urile captivante.
 
-Până la sfârșitul acestei lecții, vei vedea cum stilizarea strategică cu CSS poate îmbunătăți dramatic proiectul tău. Hai să adăugăm puțin stil terrarium-ului tău.
+La finalul acestei lecții, vei vedea cum stilizarea strategică CSS poate îmbunătăți dramatic proiectul tău. Hai să adăugăm puțin stil terrariului tău.
 
-## Test înainte de lecție
+```mermaid
+mindmap
+  root((Fundamente CSS))
+    Cascade
+      Reguli de Specificitate
+      Moștenire
+      Ordinea Priorității
+      Rezolvarea Conflictului
+    Selectori
+      Etichete de Element
+      Clase (.class)
+      ID-uri (#id)
+      Combinatori
+    Model de Cutie
+      Margine
+      Bordură
+      Spațiere Interioară
+      Conținut
+    Aspect
+      Poziționare
+      Tipuri de Afișare
+      Flexbox
+      Grilă
+    Efecte Vizuale
+      Culori
+      Umbre
+      Tranziții
+      Animații
+    Design Responsiv
+      Interogări Media
+      Unități Flexibile
+      Meta Viewport
+      Mobile First
+```
+## Test Preliminar înainte de Lecție
 
-[Test înainte de lecție](https://ff-quizzes.netlify.app/web/quiz/17)
+[Test pre-lectură](https://ff-quizzes.netlify.app/web/quiz/17)
 
-## Începem cu CSS
+## Începând cu CSS
 
-CSS este adesea considerat doar ca un mod de a "face lucrurile frumoase", dar are un scop mult mai larg. CSS este ca un regizor de film - controlezi nu doar cum arată totul, ci și cum se mișcă, cum răspunde la interacțiuni și cum se adaptează la diferite situații.
+CSS este adesea considerat doar „a face lucrurile frumoase,” dar servește unui scop mult mai larg. CSS este ca și cum ai fi regizorul unui film - controlezi nu doar cum arată totul, ci și cum se mișcă, răspunde la interacțiuni și se adaptează la diferite situații.
 
-CSS-ul modern este remarcabil de capabil. Poți scrie cod care ajustează automat layout-urile pentru telefoane, tablete și computere desktop. Poți crea animații fluide care ghidează atenția utilizatorilor acolo unde este nevoie. Rezultatele pot fi destul de impresionante atunci când totul funcționează împreună.
+CSS-ul modern este remarcabil de capabil. Poți scrie cod care ajustează automat layout-urile pentru telefoane, tablete și computere desktop. Poți crea animații fluide care ghidează atenția utilizatorilor acolo unde este nevoie. Rezultatele pot fi foarte impresionante când totul funcționează împreună.
 
-> 💡 **Sfat util**: CSS evoluează constant cu funcții și capabilități noi. Verifică întotdeauna [CanIUse.com](https://caniuse.com) pentru a verifica suportul browserului pentru funcțiile CSS mai noi înainte de a le folosi în proiectele de producție.
+> 💡 **Sfat Pro**: CSS evoluează constant cu funcționalități și capacități noi. Verifică întotdeauna [CanIUse.com](https://caniuse.com) pentru a verifica suportul browserelor pentru caracteristicile CSS mai noi înainte de a le folosi în proiecte de producție.
 
 **Iată ce vom realiza în această lecție:**
-- **Creăm** un design vizual complet pentru terrarium-ul tău folosind tehnici moderne CSS
-- **Explorăm** concepte fundamentale precum cascada, moștenirea și selectorii CSS
-- **Implementăm** strategii de poziționare și layout responsive
-- **Construim** containerul terrarium-ului folosind forme și stilizare CSS
+- **Creăm** un design vizual complet pentru terrariul tău folosind tehnici CSS moderne
+- **Explorăm** concepte fundamentale precum cascadele, moștenirea și selectoarele CSS
+- **Implementăm** poziționare și strategii de layout responsive
+- **Construim** containerul terrariului folosind forme și stilizare CSS
 
-### Prerechizite
+### Prerechizită
 
-Ar trebui să fi finalizat structura HTML pentru terrarium-ul tău din lecția anterioară și să fie pregătită pentru stilizare.
+Ar trebui să fi finalizat structura HTML pentru terrariul tău din lecția anterioară și să o ai gata pentru stilizare.
 
-> 📺 **Resursă video**: Consultă acest tutorial video util
->
+> 📺 **Resursă Video**: Urmărește acest tutorial video util  
+>  
 > [![Tutorial de bază CSS](https://img.youtube.com/vi/6yIdOIV9p1I/0.jpg)](https://www.youtube.com/watch?v=6yIdOIV9p1I)
 
-### Configurarea fișierului CSS
+### Configurarea Fișierului tău CSS
 
-Înainte să începem stilizarea, trebuie să conectăm CSS la HTML-ul nostru. Această conexiune spune browserului unde să găsească instrucțiunile de stilizare pentru terrarium-ul nostru.
+Înainte să începem să stilizăm, trebuie să conectăm CSS la HTML-ul nostru. Această conexiune spune browserului unde să găsească instrucțiunile de stilizare pentru terrariul nostru.
 
-În folderul terrarium, creează un fișier nou numit `style.css`, apoi conectează-l în secțiunea `<head>` a documentului HTML:
+În folderul terrariului, creează un fișier nou numit `style.css`, apoi leagă-l în secțiunea `<head>` a documentului tău HTML:
 
 ```html
 <link rel="stylesheet" href="./style.css" />
 ```
 
 **Ce face acest cod:**
-- **Creează** o conexiune între fișierele HTML și CSS
+- **Creează** o conexiune între fișierele tale HTML și CSS
 - **Spune** browserului să încarce și să aplice stilurile din `style.css`
 - **Folosește** atributul `rel="stylesheet"` pentru a specifica că este un fișier CSS
 - **Face referire** la calea fișierului cu `href="./style.css"`
 
-## Înțelegerea cascadei CSS
+## Înțelegerea Cascadei CSS
 
-Te-ai întrebat vreodată de ce CSS se numește "Foi de stil în cascadă"? Stilurile se propagă ca o cascadă și, uneori, intră în conflict unele cu altele.
+Te-ai întrebat vreodată de ce CSS se numește „foi de stil cascade”? Stilurile se cascadesc ca o cascadă, și uneori intră în conflict unele cu altele.
 
-Gândește-te cum funcționează structurile de comandă militară - un ordin general ar putea spune "toți soldații să poarte verde", dar un ordin specific pentru unitatea ta ar putea spune "purtați uniforma de ceremonie albastră". Instrucțiunea mai specifică are prioritate. CSS urmează o logică similară, iar înțelegerea acestei ierarhii face debugging-ul mult mai ușor.
+Gândește-te la cum funcționează structurile militare de comanda - o ordine generală poate spune „toți soldații să poarte verde,” dar o ordine specifică unității tale poate spune „purtați uniforma albastră pentru ceremonie.” Instrucțiunea mai specifică are prioritate. CSS urmează o logică similară, iar înțelegerea acestei ierarhii face debugging-ul mult mai ușor.
 
-### Experimentarea cu prioritatea cascadei
+### Experimentând Prioritatea Cascadei
 
-Să vedem cascada în acțiune creând un conflict de stil. Mai întâi, adaugă un stil inline la tag-ul `<h1>`:
+Hai să vedem cascada în acțiune prin crearea unui conflict de stiluri. Mai întâi, adaugă un stil inline la tag-ul tău `<h1>`:
 
 ```html
 <h1 style="color: red">My Terrarium</h1>
 ```
 
 **Ce face acest cod:**
-- **Aplică** o culoare roșie direct elementului `<h1>` folosind stilizare inline
-- **Folosește** atributul `style` pentru a încorpora CSS direct în HTML
-- **Creează** regula de stil cu cea mai mare prioritate pentru acest element specific
+- **Aplică** culoarea roșie direct elementului `<h1>` folosind stilare inline 
+- **Folosește** atributul `style` pentru a introduce CSS direct în HTML
+- **Creează** regula de stil cu cea mai înaltă prioritate pentru acest element specific
 
 Apoi, adaugă această regulă în fișierul `style.css`:
 
@@ -89,29 +134,50 @@ h1 {
 }
 ```
 
-**În cele de mai sus, am:**
+**În exemplul de mai sus, am:**
 - **Definit** o regulă CSS care vizează toate elementele `<h1>`
-- **Setat** culoarea textului la albastru folosind un stylesheet extern
-- **Creat** o regulă cu prioritate mai mică comparativ cu stilurile inline
+- **Setat** culoarea textului pe albastru folosind o foaie de stil externă
+- **Creat** o regulă cu prioritate mai mică față de stilurile inline
 
-✅ **Verificare cunoștințe**: Ce culoare apare în aplicația ta web? De ce câștigă acea culoare? Poți gândi scenarii în care ai dori să suprascrii stilurile?
+✅ **Verificare Cunoștințe**: Ce culoare se afișează în aplicația ta web? De ce câștigă acea culoare? Poți să te gândești la scenarii în care ai dori să suprascrii stiluri?
 
-> 💡 **Ordinea priorității CSS (de la cea mai mare la cea mai mică):**
-> 1. **Stiluri inline** (atributul style)
-> 2. **ID-uri** (#myId)
-> 3. **Clase** (.myClass) și atribute
-> 4. **Selectori de elemente** (h1, div, p)
-> 5. **Setări implicite ale browserului**
+```mermaid
+flowchart TD
+    A["Browser întâlnește elementul h1"] --> B{"Verifică stilurile inline"}
+    B -->|Găsit| C["style='color: red'"] 
+    B -->|Niciunul| D{"Verifică regulile pentru ID"}
+    C --> E["Aplică culoarea roșie (1000 puncte)"]
+    D -->|Găsit| F["#heading { color: green }"]
+    D -->|Niciunul| G{"Verifică regulile pentru clasă"}
+    F --> H["Aplică culoarea verde (100 puncte)"]
+    G -->|Găsit| I[".title { color: blue }"]
+    G -->|Niciunul| J{"Verifică regulile pentru element"}
+    I --> K["Aplică culoarea albastră (10 puncte)"]
+    J -->|Găsit| L["h1 { color: purple }"]
+    J -->|Niciunul| M["Folosește valorile implicite ale browserului"]
+    L --> N["Aplică culoarea mov (1 punct)"]
+    
+    style C fill:#ff6b6b
+    style F fill:#51cf66
+    style I fill:#339af0
+    style L fill:#9775fa
+```
+> 💡 **Ordinea Priorității CSS (de la cea mai înaltă la cea mai joasă):**
+> 1. **Stilurile inline** (atributul style)
+> 2. **ID-urile** (#myId)
+> 3. **Clasele** (.myClass) și atributele
+> 4. **Selectorii de elemente** (h1, div, p)
+> 5. **Valorile implicite ale browserului**
 
-## Moștenirea CSS în acțiune
+## Moștenirea CSS în Acțiune
 
-Moștenirea CSS funcționează ca genetica - elementele moștenesc anumite proprietăți de la elementele părinte. Dacă setezi familia de fonturi pe elementul body, tot textul din interior va folosi automat același font. Este similar cu modul în care linia distinctivă a maxilarului familiei Habsburg a apărut de-a lungul generațiilor fără a fi specificată pentru fiecare individ.
+Moștenirea CSS funcționează ca genetica - elementele moștenesc anumite proprietăți de la elementele părinte. Dacă setezi familia fontului pe elementul body, tot textul din interior folosește automat acel font. Este similar cu modul în care linia maxilarului distinctivă a familiei Habsburg a apărut peste generații fără a fi specificată pentru fiecare individ.
 
-Totuși, nu totul este moștenit. Stilurile textului, cum ar fi fonturile și culorile, se moștenesc, dar proprietățile de layout, cum ar fi marginile și bordurile, nu. La fel cum copiii pot moșteni trăsături fizice, dar nu alegerile vestimentare ale părinților.
+Totuși, nu totul este moștenit. Stilurile textului precum fonturile și culorile se moștenesc, dar proprietățile de layout precum marginile și bordurile nu. Asemenea copiilor care moștenesc trăsături fizice, dar nu alegerile vestimentare ale părinților.
 
-### Observarea moștenirii fontului
+### Observarea Moștenirii Fontului
 
-Să vedem moștenirea în acțiune setând o familie de fonturi pe elementul `<body>`:
+Hai să vedem moștenirea în acțiune setând o familie de fonturi pe elementul `<body>`:
 
 ```css
 body {
@@ -120,30 +186,45 @@ body {
 ```
 
 **Ce se întâmplă aici:**
-- **Setează** familia de fonturi pentru întreaga pagină vizând elementul `<body>`
-- **Folosește** un set de fonturi cu opțiuni de rezervă pentru o mai bună compatibilitate cu browserul
-- **Aplică** fonturi moderne de sistem care arată bine pe diferite sisteme de operare
-- **Asigură** că toate elementele copil moștenesc acest font, cu excepția cazului în care este suprascris în mod specific
+- **Setează** familia fontului pentru întreaga pagină prin targetarea elementului `<body>`
+- **Folosește** un șir de fonturi cu opțiuni de fallback pentru o compatibilitate mai bună a browserului
+- **Aplică** fonturile moderne de sistem care arată bine pe diferite sisteme de operare
+- **Asigură** că toate elementele copil moștenesc acest font, cu excepția cazului în care este suprascris special
 
-Deschide instrumentele de dezvoltare ale browserului (F12), navighează la fila Elements și inspectează elementul `<h1>`. Vei vedea că moștenește familia de fonturi de la body:
+Deschide unelte pentru dezvoltatori în browserul tău (F12), navighează la fila Elements, și inspectează elementul `<h1>`. Vei vedea că acesta moștenește familia fontului de la body:
 
-![font moștenit](../../../../translated_images/1.cc07a5cbe114ad1d4728c35134584ac1b87db688eff83cf75985cf31fe0ed95c.ro.png)
+![font moștenit](../../../../translated_images/ro/1.cc07a5cbe114ad1d.webp)
 
-✅ **Timp de experimentare**: Încearcă să setezi alte proprietăți moștenibile pe `<body>` cum ar fi `color`, `line-height` sau `text-align`. Ce se întâmplă cu titlul și celelalte elemente?
+✅ **Experiment**: Încearcă să setezi alte proprietăți moștenitoare pe `<body>` precum `color`, `line-height` sau `text-align`. Ce se întâmplă cu titlul și celelalte elemente?
 
-> 📝 **Proprietăți moștenibile includ**: `color`, `font-family`, `font-size`, `line-height`, `text-align`, `visibility`
->
-> **Proprietăți non-moștenibile includ**: `margin`, `padding`, `border`, `width`, `height`, `position`
+> 📝 **Proprietăți Moștenibile includ**: `color`, `font-family`, `font-size`, `line-height`, `text-align`, `visibility`  
+>  
+> **Proprietăți NEMOȘTENIBILE includ**: `margin`, `padding`, `border`, `width`, `height`, `position`
 
-## Stăpânirea selectorilor CSS
+### 🔄 **Verificare Pedagogică**  
+**Înțelegerea Bazelor CSS**: Înainte să treci la selectori, asigură-te că poți:  
+- ✅ Explica diferența dintre cascade și moștenire  
+- ✅ Prezice care stil va câștiga într-un conflict de specificitate  
+- ✅ Identifica proprietățile ce se moștenesc de la elementele părinte  
+- ✅ Conecta corect fișierele CSS cu HTML
 
-Selectorii CSS sunt modul tău de a viza elemente specifice pentru stilizare. Funcționează ca și cum ai da indicații precise - în loc să spui "casa", ai putea spune "casa albastră cu ușa roșie de pe strada Maple".
+**Test rapid**: Dacă ai aceste stiluri, ce culoare va avea un `<h1>` într-un `<div class="special">`?  
+```css
+div { color: blue; }
+.special { color: green; }
+h1 { color: red; }
+```
+*Răspuns: Roșu (selectorul de element țintește direct h1)*
 
-CSS oferă diferite moduri de a fi specific, iar alegerea selectorului potrivit este ca alegerea instrumentului adecvat pentru sarcină. Uneori trebuie să stilizezi fiecare ușă din cartier, iar alteori doar o ușă specifică.
+## Stăpânirea Selectoarelor CSS
 
-### Selectori de elemente (Tag-uri)
+Selectoarele CSS sunt modul tău de a viza elemente specifice pentru stilizare. Funcționează ca și cum ai da indicații precise - în loc să spui „casa,” ai putea spune „casa albastră cu ușa roșie de pe strada Maple.”
 
-Selectorii de elemente vizează elementele HTML după numele tag-ului. Sunt perfecți pentru setarea stilurilor de bază care se aplică pe scară largă pe pagină:
+CSS oferă diferite moduri de a fi specific, iar alegerea selectorului potrivit este ca alegerea uneltei potrivite pentru sarcină. Uneori trebuie să stilizezi toate ușile din cartier, alteori doar o ușă specifică.
+
+### Selectori de Elemente (Tag-uri)
+
+Selectorii de elemente vizează elementele HTML după numele tag-ului lor. Sunt perfecți pentru a seta stiluri de bază care se aplică pe scară largă pe pagina ta:
 
 ```css
 body {
@@ -162,17 +243,17 @@ h1 {
 
 **Înțelegerea acestor stiluri:**
 - **Setează** o tipografie consistentă pe întreaga pagină cu selectorul `body`
-- **Elimină** marginile și padding-ul implicite ale browserului pentru un control mai bun
+- **Înlătură** marginile implicite și padding-ul browserului pentru un control mai bun
 - **Stilizează** toate elementele de titlu cu culoare, aliniere și spațiere
-- **Folosește** unități `rem` pentru dimensiuni scalabile și accesibile ale fontului
+- **Folosește** unități `rem` pentru redimensionarea scalabilă și accesibilă a fontului
 
-Deși selectorii de elemente funcționează bine pentru stilizarea generală, vei avea nevoie de selectori mai specifici pentru a stiliza componente individuale, cum ar fi plantele din terrarium-ul tău.
+Deși selectorii de elemente sunt buni pentru stilizarea generală, vei avea nevoie de selectori mai specifici pentru a stiliza componente individuale precum plantele din terrariul tău.
 
-### Selectori ID pentru elemente unice
+### Selectori ID pentru Elemente Unice
 
-Selectorii ID folosesc simbolul `#` și vizează elementele cu atribute `id` specifice. Deoarece ID-urile trebuie să fie unice pe o pagină, sunt perfecți pentru stilizarea elementelor individuale, speciale, cum ar fi containerele laterale ale plantelor din terrarium-ul nostru.
+Selectorii ID folosesc simbolul `#` și țintesc elemente cu atribute `id` specifice. Deoarece ID-urile trebuie să fie unice pe o pagină, sunt perfecți pentru stilizarea elementelor individuale, speciale, cum ar fi containerele laterale stânga și dreapta pentru plantele noastre.
 
-Să creăm stilizarea pentru containerele laterale ale terrarium-ului, unde vor fi plasate plantele:
+Hai să creăm stilul pentru containerele laterale ale terrariului unde vor locui plantele:
 
 ```css
 #left-container {
@@ -199,20 +280,20 @@ Să creăm stilizarea pentru containerele laterale ale terrarium-ului, unde vor 
 ```
 
 **Ce realizează acest cod:**
-- **Poziționează** containerele la marginile extreme stânga și dreapta folosind poziționare `absolute`
-- **Folosește** unități `vh` (înălțimea ferestrei) pentru o înălțime adaptabilă la dimensiunea ecranului
-- **Aplică** `box-sizing: border-box` astfel încât padding-ul să fie inclus în lățimea totală
-- **Elimină** unitățile `px` inutile din valorile zero pentru un cod mai curat
-- **Setează** o culoare de fundal subtilă, mai ușor de privit decât griul intens
+- **Poziționează** containerele la marginea foarte stângă și cea dreaptă folosind poziționarea `absolute`
+- **Folosește** unități `vh` (înălțimea viewport-ului) pentru înălțime responsive care se adaptează la dimensiunea ecranului
+- **Aplică** `box-sizing: border-box` astfel încât padding-ul este inclus în lățimea totală
+- **Elimină** unitățile `px` inutile de la valorile zero pentru un cod mai curat
+- **Setează** o culoare de fundal subtilă mai prietenoasă cu ochii în comparație cu griul aprins
 
-✅ **Provocare de calitate a codului**: Observă cum acest CSS încalcă principiul DRY (Don't Repeat Yourself). Poți să-l refaci folosind atât un ID, cât și o clasă?
+✅ **Provocare Calitate Cod**: Observă cum acest CSS încalcă principiul DRY (Don't Repeat Yourself). Poți să îl refaci folosind atât un ID cât și o clasă?
 
-**Abordare îmbunătățită:**
+**Abordare îmbunătățită:**  
 ```html
 <div id="left-container" class="container"></div>
 <div id="right-container" class="container"></div>
 ```
-
+  
 ```css
 .container {
   background-color: #f5f5f5;
@@ -232,27 +313,27 @@ Să creăm stilizarea pentru containerele laterale ale terrarium-ului, unde vor 
   right: 0;
 }
 ```
+  
+### Selectori Clase pentru Stiluri Reutilizabile
 
-### Selectori de clasă pentru stiluri reutilizabile
+Selectorii de clase folosesc simbolul `.` și sunt perfecți când vrei să aplici aceleași stiluri la mai multe elemente. Spre deosebire de ID-uri, clasele pot fi refolosite în tot HTML-ul, făcându-le ideale pentru modele consistente de stilizare.
 
-Selectorii de clasă folosesc simbolul `.` și sunt perfecți atunci când vrei să aplici aceleași stiluri la mai multe elemente. Spre deosebire de ID-uri, clasele pot fi reutilizate în întregul HTML, ceea ce le face ideale pentru modele de stilizare consistente.
+În terrariul nostru, fiecare plantă necesită stiluri similare dar și poziționare individuală. Vom folosi o combinație de clase pentru stiluri comune și ID-uri pentru poziționare unică.
 
-În terrarium-ul nostru, fiecare plantă are nevoie de stiluri similare, dar și de poziționare individuală. Vom folosi o combinație de clase pentru stiluri comune și ID-uri pentru poziționare unică.
-
-**Iată structura HTML pentru fiecare plantă:**
+**Iată structura HTML pentru fiecare plantă:**  
 ```html
 <div class="plant-holder">
-  <img class="plant" alt="Decorative plant for terrarium" id="plant1" src="../../../../translated_images/plant1.d18b18ffe73da18f8b1ac7aba73b4050af52f4a0c9174aeac464b85123fc2850.ro.png" />
+  <img class="plant" alt="Decorative plant for terrarium" id="plant1" src="../../../../translated_images/ro/plant1.d18b18ffe73da18f.png" />
 </div>
 ```
+  
+**Elementele-cheie explicate:**  
+- **Folosește** `class="plant-holder"` pentru un stil container consistent pentru toate plantele  
+- **Aplică** `class="plant"` pentru stilizarea și comportamentul imaginii comune  
+- **Include** `id="plant1"` unic pentru poziționare individuală și interacțiune JavaScript  
+- **Oferă** text alternativ descriptiv pentru accesibilitatea cititorilor de ecran  
 
-**Elemente cheie explicate:**
-- **Folosește** `class="plant-holder"` pentru stilizarea consistentă a containerului pentru toate plantele
-- **Aplică** `class="plant"` pentru stilizarea și comportamentul comun al imaginilor
-- **Include** un `id="plant1"` unic pentru poziționare individuală și interacțiune JavaScript
-- **Oferă** text descriptiv alt pentru accesibilitate utilizatorilor de cititoare de ecran
-
-Acum adaugă aceste stiluri în fișierul tău `style.css`:
+Acum adaugă aceste stiluri în fișierul tău `style.css`:  
 
 ```css
 .plant-holder {
@@ -273,38 +354,54 @@ Acum adaugă aceste stiluri în fișierul tău `style.css`:
   transform: scale(1.05);
 }
 ```
+  
+**Ce fac aceste stiluri:**  
+- **Creează** poziționare relativă pentru containerul plantelor pentru a stabili un context de poziționare  
+- **Setează** fiecare container al plantei la 13% înălțime, asigurând că toate plantele încape vertical fără scroll  
+- **Deplasează** containerele ușor spre stânga pentru a centra mai bine plantele în interior  
+- **Permite** plantelor să se scaleze responsive cu proprietățile `max-width` și `max-height`  
+- **Folosește** `z-index` pentru a suprapune plantele peste alte elemente din terrariu  
+- **Adaugă** un efect subtil la hover cu tranziții CSS pentru o interacțiune mai plăcută  
 
-**Analiza acestor stiluri:**
-- **Creează** poziționare relativă pentru containerul plantei pentru a stabili un context de poziționare
-- **Setează** fiecare container de plante la o înălțime de 13%, asigurându-se că toate plantele se potrivesc vertical fără derulare
-- **Deplasează** containerele ușor spre stânga pentru a centra mai bine plantele în interiorul lor
-- **Permite** plantelor să se scaleze adaptiv cu proprietățile `max-width` și `max-height`
-- **Folosește** `z-index` pentru a suprapune plantele peste alte elemente din terrarium
-- **Adaugă** un efect subtil de hover cu tranziții CSS pentru o interacțiune mai bună cu utilizatorul
+✅ **Gândire Critică**: De ce avem nevoie atât de selectorii `.plant-holder`, cât și de `.plant`? Ce s-ar întâmpla dacă am folosi doar unul singur?
 
-✅ **Gândire critică**: De ce avem nevoie de ambii selectori `.plant-holder` și `.plant`? Ce s-ar întâmpla dacă am încerca să folosim doar unul?
+> 💡 **Model de Design**: Containerul (`.plant-holder`) controlează layout-ul și poziționarea, în timp ce conținutul (`.plant`) controlează aspectul și scalarea. Această separare face codul mai întreținut și flexibil.
 
-> 💡 **Model de design**: Containerul (`.plant-holder`) controlează layout-ul și poziționarea, în timp ce conținutul (`.plant`) controlează aspectul și scalarea. Această separare face codul mai ușor de întreținut și mai flexibil.
+## Înțelegerea Poziționării CSS
 
-## Înțelegerea poziționării CSS
+Poziționarea CSS este ca un regizor de scenă pentru o piesă de teatru - indici unde stă fiecare actor și cum se mișcă pe scenă. Unii actori urmează formația standard, în timp ce alții necesită poziționare specifică pentru efect dramatic.
 
-Poziționarea CSS este ca și cum ai fi regizorul unei piese de teatru - tu decizi unde stă fiecare actor și cum se mișcă pe scenă. Unii actori urmează formația standard, în timp ce alții au nevoie de poziționare specifică pentru efect dramatic.
+Odată ce înțelegi poziționarea, multe provocări de layout devin gestionabile. Ai nevoie de o bară de navigare care să rămână în partea de sus în timp ce utilizatorii derulează? Poziționarea se ocupă de asta. Vrei un tooltip care apare într-un loc anume? Asta este tot poziționarea.
 
-Odată ce înțelegi poziționarea, multe provocări de layout devin gestionabile. Ai nevoie de o bară de navigare care să rămână în partea de sus în timp ce utilizatorii derulează? Poziționarea se ocupă de asta. Vrei un tooltip care apare într-o locație specifică? Tot poziționarea se ocupă de asta.
+### Cele Cinci Valori de Poziționare
 
-### Cele cinci valori de poziționare
+```mermaid
+quadrantChart
+    title Strategia de poziționare CSS
+    x-axis Fluxul documentului --> Eliminat din flux
+    y-axis Poziție statică --> Control precis
+    quadrant-1 Absolut
+    quadrant-2 Fix
+    quadrant-3 Static
+    quadrant-4 Lipicios
+    
+    Static: [0.2, 0.2]
+    Relative: [0.3, 0.6]
+    Absolute: [0.8, 0.8]
+    Fixed: [0.9, 0.7]
+    Sticky: [0.5, 0.9]
+```
+| Valoare Poziționare | Comportament | Caz de utilizare |
+|---------------------|--------------|------------------|
+| `static` | Fluxul implicit, ignoră top/left/right/bottom | Layout normal al documentului |
+| `relative` | Poziționat relativ față de poziția sa normală | Ajustări mici, crearea contextului de poziționare |
+| `absolute` | Poziționat relativ față de cel mai apropiat strămoș poziționat | Poziționare precisă, suprapuneri |
+| `fixed` | Poziționat relativ față de fereastra de vizualizare (viewport) | Bare de navigare, elemente plutitoare |
+| `sticky` | Comută între relative și fixed în funcție de derulare | Headere care rămân fixe la derulare |
 
-| Valoare poziționare | Comportament | Caz de utilizare |
-|---------------------|-------------|------------------|
-| `static` | Flux implicit, ignoră top/left/right/bottom | Layout normal al documentului |
-| `relative` | Poziționat relativ la poziția sa normală | Ajustări mici, crearea unui context de poziționare |
-| `absolute` | Poziționat relativ la cel mai apropiat strămoș poziționat | Plasare precisă, suprapuneri |
-| `fixed` | Poziționat relativ la fereastra de vizualizare | Bare de navigare, elemente plutitoare |
-| `sticky` | Comută între relative și fixed în funcție de derulare | Anteturi care rămân fixate la derulare |
+### Poziționarea în Terrariul Nostru
 
-### Poziționarea în terrarium-ul nostru
-
-Terrarium-ul nostru folosește o combinație strategică de tipuri de poziționare pentru a crea layout-ul dorit:
+Terrariul nostru folosește o combinație strategică de tipuri de poziționare pentru a crea layout-ul dorit:
 
 ```css
 /* Container positioning */
@@ -326,25 +423,61 @@ Terrarium-ul nostru folosește o combinație strategică de tipuri de poziționa
 }
 ```
 
-**Înțelegerea strategiei de poziționare:**
-- **Containere absolute** sunt scoase din fluxul normal al documentului și fixate la marginile ecranului
-- **Containere relative** creează un context de poziționare în timp ce rămân în fluxul documentului
-- **Plante absolute** pot fi poziționate precis în interiorul containerelor lor relative
-- **Această combinație** permite plantelor să se așeze vertical în timp ce sunt poziționabile individual
+**Înțelegerea strategiei de poziționare:**  
+- **Containere absolute** sunt eliminate din fluxul normal al documentului și lipite de marginile ecranului  
+- **Containerele relative pentru plante** creează un context de poziționare, rămânând totuși în fluxul documentului  
+- **Plantele absolute** pot fi poziționate precis în interiorul containerelor relative  
+- **Această combinație** permite plantelor să se suprapună vertical și să fie poziționate individual
 
-> 🎯 **De ce contează acest lucru**: Elementele `plant` au nevoie de poziționare absolută pentru a deveni manipulabile în lecția următoare. Poziționarea absolută le scoate din fluxul normal al layout-ului, făcând interacțiunile drag-and-drop posibile.
+> 🎯 **De ce contează asta**: Elementele `plant` au nevoie de poziționare absolută pentru a deveni dragabile în lecția următoare. Poziționarea absolută le scoate din fluxul normal, făcând posibile interacțiunile drag-and-drop.
 
-✅ **Timp de experimentare**: Încearcă să schimbi valorile de poziționare și observă rezultatele:
-- Ce se întâmplă dacă schimbi `.container` de la `absolute` la `relative`?
-- Cum se schimbă layout-ul dacă `.plant-holder` folosește `absolute` în loc de `relative`?
-- Ce se întâmplă când schimbi `.plant` la poziționare `relative`?
+✅ **Timp pentru experiment**: Încearcă să schimbi valorile poziționării și observă rezultatele:  
+- Ce se întâmplă dacă schimbi `.container` din `absolute` în `relative`?
+- Cum se modifică aspectul dacă `.plant-holder` folosește `absolute` în loc de `relative`?
+- Ce se întâmplă când schimbi poziționarea `.plant` la `relative`?
 
-## Construirea terrarium-ului cu CSS
+### 🔄 **Verificare Pedagogică**
+**Stăpânirea poziționării CSS**: Oprește-te să verifici înțelegerea ta:
+- ✅ Poți explica de ce plantele au nevoie de poziționare absolută pentru drag-and-drop?
+- ✅ Înțelegi cum containerele relative creează un context de poziționare?
+- ✅ De ce folosesc containerele laterale poziționare absolută?
+- ✅ Ce s-ar întâmpla dacă ai elimina complet declarațiile de poziționare?
 
-Acum vom construi un borcan de sticlă folosind doar CSS - fără imagini sau software grafic necesar.
+**Conexiune cu lumea reală**: Gândește-te cum poziționarea CSS reflectă aspectele din lumea reală:
+- **Static**: Cărți pe un raft (ordinea naturală)
+- **Relative**: Mutând ușor o carte, dar păstrând locul ei
+- **Absolute**: Punând un semn de carte la o pagină exactă
+- **Fixed**: O notă lipicioasă care rămâne vizibilă când răsfoiești paginile
 
-Crearea unor efecte realiste de sticlă, umbre și adâncime folosind poziționare și transparență demonstrează capabilitățile vizuale ale CSS. Această tehn
-Să construim borcanul terrarium pas cu pas. Fiecare parte folosește poziționare absolută și dimensiuni bazate pe procente pentru un design receptiv:
+## Construirea Terrariului cu CSS
+
+Acum vom construi un borcan de sticlă folosind doar CSS - fără imagini sau software grafic.
+
+Crearea unui efect realist de sticlă, umbre și adâncime folosind poziționarea și transparența demonstrează capacitățile vizuale ale CSS. Această tehnică reflectă modul în care arhitecții din mișcarea Bauhaus foloseau forme geometrice simple pentru a crea structuri complexe și frumoase. Odată ce înțelegi aceste principii, vei recunoaște tehnicile CSS din multe designuri web.
+
+```mermaid
+flowchart LR
+    A[Capac Borcan] --> E[Terrariu Complet]
+    B[Pereți Borcan] --> E
+    C[Strat de Pământ] --> E
+    D[Fund Borcan] --> E
+    F[Efecte de Sticlă] --> E
+    
+    A1["50% lățime<br/>5% înălțime<br/>Poziție sus"] --> A
+    B1["60% lățime<br/>80% înălțime<br/>Colțuri rotunjite<br/>Opacitate 0.5"] --> B
+    C1["60% lățime<br/>5% înălțime<br/>Maro închis<br/>Strat inferior"] --> C
+    D1["50% lățime<br/>1% înălțime<br/>Poziție jos"] --> D
+    F1["Umbre subtile<br/>Transparență<br/>Stratificare Z-index"] --> F
+    
+    style E fill:#d1e1df,stroke:#3a241d
+    style A fill:#e8f5e8
+    style B fill:#e8f5e8
+    style C fill:#8B4513
+    style D fill:#e8f5e8
+```
+### Crearea componentelor borcanului de sticlă
+
+Să construim borcanul terrariului bucățică cu bucățică. Fiecare parte folosește poziționare absolută și dimensiuni procentuale pentru design responsive:
 
 ```css
 .jar-walls {
@@ -396,89 +529,198 @@ Să construim borcanul terrarium pas cu pas. Fiecare parte folosește poziționa
 }
 ```
 
-**Înțelegerea construcției terrariumului:**
-- **Folosește** dimensiuni bazate pe procente pentru scalare receptivă pe toate dimensiunile ecranului
-- **Poziționează** elementele absolut pentru a le stivui și alinia cu precizie
-- **Aplică** valori diferite de opacitate pentru a crea efectul de transparență al sticlei
-- **Implementează** stratificarea `z-index` astfel încât plantele să apară în interiorul borcanului
-- **Adaugă** umbre subtile și un contur rotunjit rafinat pentru un aspect mai realist
+**Înțelegerea construcției terrariului:**
+- **Folosește** dimensiuni procentuale pentru scalarea responsive pe toate dimensiunile de ecran
+- **Poziționează** elementele absolut pentru a le suprapune și alinia precis
+- **Aplică** valori diferite de opacitate pentru a crea efectul de transparență a sticlei
+- **Implementează** stratificarea cu `z-index` astfel încât plantele să apară în interiorul borcanului
+- **Adaugă** umbre subtile și raze de colț rafinate pentru un aspect mai realist
 
-### Design Receptiv cu Procente
+### Design Responsive cu procente
 
-Observați cum toate dimensiunile folosesc procente în loc de valori fixe în pixeli:
+Observă cum toate dimensiunile folosesc procente în loc de valori fixe în pixeli:
 
 **De ce este important:**
-- **Asigură** că terrariumul se scalează proporțional pe orice dimensiune de ecran
-- **Menține** relațiile vizuale între componentele borcanului
-- **Oferă** o experiență consistentă de la telefoane mobile la monitoare desktop mari
+- **Asigură** că terrariul se scalează proporțional pe orice dimensiune de ecran
+- **Menține** relațiile vizuale dintre componentele borcanului
+- **Oferă** o experiență consecventă de la telefoane mobile până la monitoare desktop mari
 - **Permite** designului să se adapteze fără a rupe aspectul vizual
 
-### Unități CSS în Acțiune
+### Unități CSS în acțiune
 
-Folosim unități `rem` pentru conturul rotunjit, care se scalează relativ la dimensiunea fontului de bază. Acest lucru creează designuri mai accesibile care respectă preferințele utilizatorului în privința fonturilor. Aflați mai multe despre [unitățile relative CSS](https://www.w3.org/TR/css-values-3/#font-relative-lengths) în specificația oficială.
+Folosim unități `rem` pentru border-radius, care se scalează în funcție de dimensiunea fontului rădăcină. Acest lucru creează designuri accesibile care respectă preferințele utilizatorului privind fonturile. Află mai multe despre [unitățile relative CSS](https://www.w3.org/TR/css-values-3/#font-relative-lengths) în specificația oficială.
 
-✅ **Experiment vizual**: Încercați să modificați aceste valori și observați efectele:
-- Schimbați opacitatea borcanului de la 0.5 la 0.8 – cum afectează acest lucru aspectul sticlei?
-- Ajustați culoarea pământului de la `#3a241d` la `#8B4513` – ce impact vizual are aceasta?
-- Modificați `z-index` al pământului la 2 – ce se întâmplă cu stratificarea?
+✅ **Experimentare Vizuală**: Încearcă să modifici aceste valori și observă efectele:
+- Schimbă opacitatea borcanului de la 0.5 la 0.8 – cum afectează acest lucru aspectul sticlei?
+- Ajustează culoarea pământului de la `#3a241d` la `#8B4513` – ce impact vizual are?
+- Modifică `z-index` al pământului la 2 – ce se întâmplă cu stratificarea?
+
+### 🔄 **Verificare Pedagogică**
+**Înțelegerea designului vizual CSS**: Confirmă-ți înțelegerea designului CSS vizual:
+- ✅ Cum creează dimensiunile procentuale un design responsive?
+- ✅ De ce creează opacitatea efectul de transparență a sticlei?
+- ✅ Ce rol are z-index în stratificarea elementelor?
+- ✅ Cum creează valorile border-radius forma borcanului?
+
+**Principiul Designului**: Observă cum construim imagini complexe din forme simple:
+1. **Dreptunghiuri** → **Dreptunghiuri rotunjite** → **Componente borcan**
+2. **Culori plate** → **Opacitate** → **Efect de sticlă**
+3. **Elemente individuale** → **Compoziție stratificată** → **Aspect 3D**
 
 ---
 
 ## Provocarea Agentului GitHub Copilot 🚀
 
-Folosiți modul Agent pentru a finaliza următoarea provocare:
+Folosește modul Agent pentru a realiza următoarea provocare:
 
-**Descriere:** Creați o animație CSS care face ca plantele din terrarium să se legene ușor înainte și înapoi, simulând efectul unei brize naturale. Acest lucru vă va ajuta să exersați animațiile CSS, transformările și cadrele cheie, îmbunătățind în același timp atractivitatea vizuală a terrariumului.
+**Descriere:** Creează o animație CSS care face ca plantele din terrariu să se legene ușor dintr-o parte în alta, simulând un efect natural de adiere. Aceasta te va ajuta să practici animațiile CSS, transformările și keyframe-urile, în timp ce îmbunătățești aspectul vizual al terrariului.
 
-**Indicație:** Adăugați animații cu cadre cheie CSS pentru a face plantele din terrarium să se legene ușor dintr-o parte în alta. Creați o animație de legănare care rotește fiecare plantă ușor (2-3 grade) la stânga și la dreapta cu o durată de 3-4 secunde și aplicați-o clasei `.plant`. Asigurați-vă că animația se repetă la infinit și are o funcție de easing pentru o mișcare naturală.
+**Prompt:** Adaugă animații CSS keyframe pentru a face plantele din terrariu să se leagene ușor dintr-o parte în alta. Creează o animație de legănare care rotește fiecare plantă ușor (2-3 grade) la stânga și dreapta, cu o durată de 3-4 secunde, și aplic-o clasei `.plant`. Asigură-te că animația se repetă infinit și are o funcție easing pentru un mișcare naturală.
 
-Aflați mai multe despre [modul agent](https://code.visualstudio.com/blogs/2025/02/24/introducing-copilot-agent-mode) aici.
+Află mai multe despre [modul agent](https://code.visualstudio.com/blogs/2025/02/24/introducing-copilot-agent-mode) aici.
 
-## 🚀 Provocare: Adăugarea Reflexiilor Sticlei
+## 🚀 Provocare: Adăugarea reflexiilor de sticlă
 
-Pregătiți-vă să îmbunătățiți terrariumul cu reflexii realiste ale sticlei. Această tehnică va adăuga profunzime și realism designului.
+Ești gata să îmbunătățești terrariul cu reflecții realiste de sticlă? Această tehnică va adăuga adâncime și realism designului.
 
-Veți crea evidențieri subtile care simulează modul în care lumina se reflectă pe suprafețele de sticlă. Această abordare este similară cu modul în care pictorii renascentiști, precum Jan van Eyck, foloseau lumina și reflexia pentru a face sticla pictată să pară tridimensională. Iată ce urmăriți:
+Vei crea accente subtile care simulează modul în care lumina se reflectă pe suprafețele de sticlă. Această abordare este similară cu modul în care pictorii Renașterii, precum Jan van Eyck, foloseau lumina și reflectarea pentru a face sticla pictată să pară tridimensională. Iată ce vizezi:
 
-![finished terrarium](../../../../translated_images/terrarium-final.2f07047ffc597d0a06b06cab28a77801a10dd12fdb6c7fc630e9c40665491c53.ro.png)
+![finished terrarium](../../../../translated_images/ro/terrarium-final.2f07047ffc597d0a.webp)
 
 **Provocarea ta:**
-- **Creați** forme ovale subtile, albe sau de culoare deschisă, pentru reflexiile sticlei
-- **Poziționați**-le strategic pe partea stângă a borcanului
-- **Aplicați** efecte adecvate de opacitate și blur pentru o reflexie realistă a luminii
-- **Folosiți** `border-radius` pentru a crea forme organice, asemănătoare bulelor
-- **Experimentați** cu gradienturi sau umbre pentru un realism sporit
+- **Creează** forme ovale albe sau deschise la culoare pentru reflexiile sticlei
+- **Poziționează-le** strategic pe partea stângă a borcanului
+- **Aplică** opacitate și efecte de blur adecvate pentru un reflectare realistă a luminii
+- **Folosește** `border-radius` pentru a crea forme organice, asemănătoare bulelor
+- **Experimentează** cu degradeuri sau umbre pentru un realism sporit
 
-## Test de Evaluare Post-Lecție
+## Test post-lectură
 
-[Test de evaluare post-lecție](https://ff-quizzes.netlify.app/web/quiz/18)
+[Test post-lectură](https://ff-quizzes.netlify.app/web/quiz/18)
 
-## Extindeți-vă Cunoștințele CSS
+## Extinde-ți cunoștințele CSS
 
 CSS poate părea complex la început, dar înțelegerea acestor concepte de bază oferă o fundație solidă pentru tehnici mai avansate.
 
-**Următoarele domenii de învățare CSS:**
-- **Flexbox** - simplifică alinierea și distribuirea elementelor
-- **CSS Grid** - oferă instrumente puternice pentru crearea de layout-uri complexe
-- **Variabile CSS** - reduce repetarea și îmbunătățește mentenabilitatea
-- **Design receptiv** - asigură funcționarea site-urilor pe diferite dimensiuni de ecran
+**Următoarele domenii CSS de învățat:**
+- **Flexbox** - simplifică alinierea și distribuția elementelor
+- **CSS Grid** - oferă unelte puternice pentru crearea layout-urilor complexe
+- **Variabile CSS** - reduc repetiția și îmbunătățesc mentenabilitatea
+- **Design responsive** - asigură funcționarea site-urilor pe diverse dimensiuni de ecran
 
-### Resurse Interactive de Învățare
+### Resurse interactive de învățare
 
-Exersați aceste concepte cu aceste jocuri captivante și interactive:
-- 🐸 [Flexbox Froggy](https://flexboxfroggy.com/) - Stăpâniți Flexbox prin provocări distractive
-- 🌱 [Grid Garden](https://codepip.com/games/grid-garden/) - Învățați CSS Grid cultivând morcovi virtuali
-- 🎯 [CSS Battle](https://cssbattle.dev/) - Testați-vă abilitățile CSS cu provocări de codare
+Exersează aceste concepte cu jocuri interactive și captivante:
+- 🐸 [Flexbox Froggy](https://flexboxfroggy.com/) - Stăpânește Flexbox prin provocări distractive
+- 🌱 [Grid Garden](https://codepip.com/games/grid-garden/) - Învață CSS Grid crescând morcovi virtuali
+- 🎯 [CSS Battle](https://cssbattle.dev/) - Testează-ți abilitățile CSS cu provocări de codare
 
-### Învățare Suplimentară
+### Învățare suplimentară
 
-Pentru o înțelegere cuprinzătoare a fundamentelor CSS, finalizați acest modul Microsoft Learn: [Style your HTML app with CSS](https://docs.microsoft.com/learn/modules/build-simple-website/4-css-basics/?WT.mc_id=academic-77807-sagibbon)
+Pentru fundamente CSS complete, finalizează acest modul Microsoft Learn: [Style your HTML app with CSS](https://docs.microsoft.com/learn/modules/build-simple-website/4-css-basics/?WT.mc_id=academic-77807-sagibbon)
 
-## Temă
+### ⚡ **Ce poți face în următoarele 5 minute**
+- [ ] Deschide DevTools și inspectează stilurile CSS pe orice site folosind panoul Elements
+- [ ] Creează un fișier CSS simplu și leagă-l de o pagină HTML
+- [ ] Încearcă să schimbi culorile folosind metode diferite: hex, RGB și nume de culori
+- [ ] Exersează modelul box prin adăugarea de padding și margină unui div
 
-[Refactorizare CSS](assignment.md)
+### 🎯 **Ce poți realiza în această oră**
+- [ ] Finalizează testul post-lectură și revizuiește fundamentele CSS
+- [ ] Stilizează pagina ta HTML cu fonturi, culori și spațieri
+- [ ] Creează un layout simplu folosind flexbox sau grid
+- [ ] Experimentează cu tranzițiile CSS pentru efecte fluide
+- [ ] Exersează designul responsive cu media queries
+
+### 📅 **Aventura ta CSS pe o săptămână**
+- [ ] Finalizează tema stilizării terrariului cu creativitate
+- [ ] Stăpânește CSS Grid construind un layout pentru galerie foto
+- [ ] Învață animațiile CSS pentru a aduce viață designurilor tale
+- [ ] Explorează preprocessori CSS precum Sass sau Less
+- [ ] Studiază principii de design și aplică-le în CSS
+- [ ] Analizează și recreează designuri interesante găsite online
+
+### 🌟 **Maestria ta în design pe o lună**
+- [ ] Construiește un sistem complet de design responsive pentru website
+- [ ] Învață CSS-in-JS sau framework-uri utility-first precum Tailwind
+- [ ] Contribuie la proiecte open source cu îmbunătățiri CSS
+- [ ] Stăpânește concepte avansate CSS ca proprietăți personalizate și containment
+- [ ] Creează biblioteci reutilizabile de componente cu CSS modular
+- [ ] Mentorizează alți învățăcei CSS și împărtășește-ți cunoștințele de design
+
+## 🎯 Cronologia ta pentru Maestria CSS
+
+```mermaid
+timeline
+    title Progresul Învățării CSS
+    
+    section Bază (10 minute)
+        Conectarea Fișierului: Leagă CSS de HTML
+                             : Înțelege regulile cascadei
+                             : Învață bazele moștenirii
+        
+    section Selectori (15 minute)
+        Țintirea Elementelor: Selectori de elemente
+                            : Modele de clase
+                            : Specificitatea ID-ului
+                            : Combinatori
+        
+    section Modelul de Cutie (20 minute)
+        Fundamente Layout: Margină și padding
+                         : Proprietăți de bordură
+                         : Dimensionarea conținutului
+                         : Comportamentul box-sizing
+        
+    section Poziționare (25 minute)
+        Plasarea Elementelor: Static vs relativ
+                            : Poziționare absolută
+                            : Stratificarea Z-index
+                            : Unități responsive
+        
+    section Design Vizual (30 minute)
+        Măiestria Stilizării: Culori și opacitate
+                           : Umbre și efecte
+                           : Tranziții
+                           : Proprietăți transform
+        
+    section Design Responsive (45 minute)
+        Suport Multi-Dispozitiv: Interogări media
+                              : Layout-uri flexibile
+                              : Abordare mobile-first
+                              : Optimizarea viewport-ului
+        
+    section Tehnici Avansate (1 săptămână)
+        CSS Modern: Layout-uri Flexbox
+                  : Sisteme CSS Grid
+                  : Proprietăți personalizate
+                  : Keyframes de animație
+        
+    section Abilități Profesionale (1 lună)
+        Arhitectura CSS: Modele de componente
+                        : Cod ușor de întreținut
+                        : Optimizarea performanței
+                        : Compatibilitate cross-browser
+```
+### 🛠️ Rezumatul trusei tale CSS
+
+După ce ai terminat această lecție, ai acum:
+- **Înțelegerea cascadei**: Cum stilurile se moștenesc și suprascriu reciproc
+- **Stăpânirea selectorilor**: Țintire precisă cu elemente, clase și ID-uri
+- **Abilități de poziționare**: Plasarea și stratificarea strategică a elementelor
+- **Design vizual**: Crearea efectelor de sticlă, umbre și transparență
+- **Tehnici responsive**: Layout-uri procentuale care se adaptează la orice ecran
+- **Organizarea codului**: Structură CSS curată și ușor de întreținut
+- **Practici moderne**: Folosirea unităților relative și modele de design accesibile
+
+**Pașii următori**: Terrariul tău are acum structură (HTML) și stil (CSS). Lecția finală va adăuga interactivitate cu JavaScript!
+
+## Tema
+
+[Refactorizarea CSS](assignment.md)
 
 ---
 
-**Declinare de responsabilitate**:  
-Acest document a fost tradus folosind serviciul de traducere AI [Co-op Translator](https://github.com/Azure/co-op-translator). Deși ne străduim să asigurăm acuratețea, vă rugăm să fiți conștienți că traducerile automate pot conține erori sau inexactități. Documentul original în limba sa natală ar trebui considerat sursa autoritară. Pentru informații critice, se recomandă traducerea profesională realizată de un specialist uman. Nu ne asumăm responsabilitatea pentru eventualele neînțelegeri sau interpretări greșite care pot apărea din utilizarea acestei traduceri.
+<!-- CO-OP TRANSLATOR DISCLAIMER START -->
+**Disclaimer**:  
+Acest document a fost tradus folosind serviciul de traducere AI [Co-op Translator](https://github.com/Azure/co-op-translator). Deși ne străduim pentru acuratețe, vă rugăm să rețineți că traducerile automate pot conține erori sau inexactități. Documentul original, în limba sa nativă, trebuie considerat sursa autorizată. Pentru informații critice, se recomandă traducerea profesională realizată de un specialist uman. Nu ne asumăm responsabilitatea pentru eventuale neînțelegeri sau interpretări greșite rezultate din utilizarea acestei traduceri.
+<!-- CO-OP TRANSLATOR DISCLAIMER END -->

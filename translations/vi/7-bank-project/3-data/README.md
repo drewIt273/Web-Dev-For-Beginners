@@ -1,12 +1,3 @@
-<!--
-CO_OP_TRANSLATOR_METADATA:
-{
-  "original_hash": "86ee5069f27ea3151389d8687c95fac9",
-  "translation_date": "2025-11-06T11:26:30+00:00",
-  "source_file": "7-bank-project/3-data/README.md",
-  "language_code": "vi"
-}
--->
 # Xây dựng ứng dụng ngân hàng Phần 3: Các phương pháp lấy và sử dụng dữ liệu
 
 Hãy nghĩ về máy tính của Enterprise trong Star Trek - khi Captain Picard yêu cầu trạng thái của tàu, thông tin xuất hiện ngay lập tức mà không làm giao diện bị gián đoạn hay phải xây dựng lại toàn bộ. Dòng chảy thông tin mượt mà đó chính là điều chúng ta đang xây dựng ở đây với việc lấy dữ liệu động.
@@ -160,7 +151,7 @@ sequenceDiagram
     Browser->>User: Displays new page (flash/reload)
 ```
 
-![Quy trình cập nhật trong ứng dụng nhiều trang](../../../../translated_images/mpa.7f7375a1a2d4aa779d3f928a2aaaf9ad76bcdeb05cfce2dc27ab126024050f51.vi.png)
+![Quy trình cập nhật trong ứng dụng nhiều trang](../../../../translated_images/vi/mpa.7f7375a1a2d4aa77.webp)
 
 **Tại sao cách tiếp cận này cảm thấy cồng kềnh:**
 - Mỗi lần nhấp chuột đều yêu cầu xây dựng lại toàn bộ trang từ đầu
@@ -187,7 +178,7 @@ sequenceDiagram
     Browser->>User: Shows updated content (no reload)
 ```
 
-![Quy trình cập nhật trong ứng dụng một trang](../../../../translated_images/spa.268ec73b41f992c2a21ef9294235c6ae597b3c37e2c03f0494c2d8857325cc57.vi.png)
+![Quy trình cập nhật trong ứng dụng một trang](../../../../translated_images/vi/spa.268ec73b41f992c2.webp)
 
 **Tại sao SPA cảm thấy tốt hơn:**
 - Chỉ những phần thực sự thay đổi mới được cập nhật (thông minh, đúng không?)
@@ -523,7 +514,7 @@ if (data.error) {
 
 Bây giờ khi bạn thử với tài khoản không hợp lệ, bạn sẽ thấy một thông báo lỗi hữu ích ngay trên trang!
 
-![Ảnh chụp màn hình hiển thị thông báo lỗi trong quá trình đăng nhập](../../../../translated_images/login-error.416fe019b36a63276764c2349df5d99e04ebda54fefe60c715ee87a28d5d4ad0.vi.png)
+![Ảnh chụp màn hình hiển thị thông báo lỗi trong quá trình đăng nhập](../../../../translated_images/vi/login-error.416fe019b36a6327.webp)
 
 #### Bước 4: Tạo Sự Bao Gồm Với Khả Năng Tiếp Cận
 
@@ -958,7 +949,7 @@ Sẵn sàng nâng cấp ứng dụng ngân hàng của bạn lên một tầm ca
 
 Dưới đây là hình ảnh bảng điều khiển được chỉnh sửa:
 
-![Ảnh chụp màn hình ví dụ về kết quả bảng điều khiển sau khi thêm kiểu dáng](../../../../translated_images/screen2.123c82a831a1d14ab2061994be2fa5de9cec1ce651047217d326d4773a6348e4.vi.png)
+![Ảnh chụp màn hình ví dụ về kết quả bảng điều khiển sau khi thêm kiểu dáng](../../../../translated_images/vi/screen2.123c82a831a1d14a.webp)
 
 Đừng cảm thấy rằng bạn phải làm giống hệt như vậy - hãy sử dụng nó làm nguồn cảm hứng và tạo dấu ấn riêng của bạn!
 

@@ -1,12 +1,3 @@
-<!--
-CO_OP_TRANSLATOR_METADATA:
-{
-  "original_hash": "2ed9145a16cf576faa2a973dff84d099",
-  "translation_date": "2025-11-04T01:43:07+00:00",
-  "source_file": "6-space-game/5-keeping-score/README.md",
-  "language_code": "fi"
-}
--->
 # Rakenna avaruuspeli osa 5: Pisteet ja elämät
 
 ```mermaid
@@ -160,7 +151,7 @@ sequenceDiagram
 ```
 
 - **Pistejärjestelmä**: Jokainen tuhottu vihollisalus antaa 100 pistettä (pyöreät numerot ovat helpompia pelaajien laskea mielessään). Pisteet näytetään vasemmassa alakulmassa.
-- **Elämälaskuri**: Sankarisi aloittaa kolmella elämällä – standardi, jonka varhaiset arcade-pelit asettivat tasapainottamaan haastetta ja pelattavuutta. Jokainen törmäys viholliseen maksaa yhden elämän. Näytämme jäljellä olevat elämät oikeassa alakulmassa aluksen ikoneilla ![elämäkuva](../../../../translated_images/life.6fb9f50d53ee0413cd91aa411f7c296e10a1a6de5c4a4197c718b49bf7d63ebf.fi.png).
+- **Elämälaskuri**: Sankarisi aloittaa kolmella elämällä – standardi, jonka varhaiset arcade-pelit asettivat tasapainottamaan haastetta ja pelattavuutta. Jokainen törmäys viholliseen maksaa yhden elämän. Näytämme jäljellä olevat elämät oikeassa alakulmassa aluksen ikoneilla ![elämäkuva](../../../../translated_images/fi/life.6fb9f50d53ee0413.webp).
 
 ## Aloitetaan rakentaminen!
 

@@ -1,12 +1,3 @@
-<!--
-CO_OP_TRANSLATOR_METADATA:
-{
-  "original_hash": "2ed9145a16cf576faa2a973dff84d099",
-  "translation_date": "2025-11-06T11:58:01+00:00",
-  "source_file": "6-space-game/5-keeping-score/README.md",
-  "language_code": "id"
-}
--->
 # Membangun Game Luar Angkasa Bagian 5: Skor dan Nyawa
 
 ```mermaid
@@ -160,7 +151,7 @@ sequenceDiagram
 ```
 
 - **Sistem skor**: Setiap kapal musuh yang dihancurkan memberikan 100 poin (angka bulat lebih mudah dihitung secara mental oleh pemain). Skor ditampilkan di sudut kiri bawah.
-- **Penghitung nyawa**: Pahlawan Anda memulai dengan tiga nyawa - standar yang ditetapkan oleh game arcade awal untuk menyeimbangkan tantangan dengan kemampuan bermain. Setiap tabrakan dengan musuh mengurangi satu nyawa. Kita akan menampilkan nyawa yang tersisa di sudut kanan bawah menggunakan ikon kapal ![gambar nyawa](../../../../translated_images/life.6fb9f50d53ee0413cd91aa411f7c296e10a1a6de5c4a4197c718b49bf7d63ebf.id.png).
+- **Penghitung nyawa**: Pahlawan Anda memulai dengan tiga nyawa - standar yang ditetapkan oleh game arcade awal untuk menyeimbangkan tantangan dengan kemampuan bermain. Setiap tabrakan dengan musuh mengurangi satu nyawa. Kita akan menampilkan nyawa yang tersisa di sudut kanan bawah menggunakan ikon kapal ![gambar nyawa](../../../../translated_images/id/life.6fb9f50d53ee0413.webp).
 
 ## Mari Mulai Membangun!
 

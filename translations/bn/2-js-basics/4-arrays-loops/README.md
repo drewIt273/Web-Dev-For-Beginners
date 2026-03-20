@@ -1,15 +1,6 @@
-<!--
-CO_OP_TRANSLATOR_METADATA:
-{
-  "original_hash": "1710a50a519a6e4a1b40a5638783018d",
-  "translation_date": "2025-11-03T22:23:17+00:00",
-  "source_file": "2-js-basics/4-arrays-loops/README.md",
-  "language_code": "bn"
-}
--->
 # জাভাস্ক্রিপ্টের বেসিক: অ্যারে এবং লুপ
 
-![জাভাস্ক্রিপ্ট বেসিক - অ্যারে](../../../../translated_images/webdev101-js-arrays.439d7528b8a294558d0e4302e448d193f8ad7495cc407539cc81f1afe904b470.bn.png)
+![জাভাস্ক্রিপ্ট বেসিক - অ্যারে](../../../../translated_images/bn/webdev101-js-arrays.439d7528b8a29455.webp)
 > স্কেচনোট করেছেন [Tomomi Imura](https://twitter.com/girlie_mac)
 
 ```mermaid

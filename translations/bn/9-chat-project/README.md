@@ -1,12 +1,3 @@
-<!--
-CO_OP_TRANSLATOR_METADATA:
-{
-  "original_hash": "2066c17078e9d18b5e309f31d8e8bc24",
-  "translation_date": "2025-11-03T22:40:21+00:00",
-  "source_file": "9-chat-project/README.md",
-  "language_code": "bn"
-}
--->
 # এআই ব্যবহার করে একটি চ্যাট সহকারী তৈরি করুন
 
 স্টার ট্রেকের কথা মনে আছে, যখন ক্রু সদস্যরা সহজভাবে জাহাজের কম্পিউটারের সাথে কথা বলত, জটিল প্রশ্ন করত এবং চিন্তাশীল উত্তর পেত? ১৯৬০-এর দশকে যা সম্পূর্ণ বিজ্ঞান কল্পকাহিনী মনে হত, এখন তা আপনি আপনার পরিচিত ওয়েব প্রযুক্তি ব্যবহার করে তৈরি করতে পারেন।
@@ -61,7 +52,7 @@ print(response.choices[0].message.content)
 
 আপনার সমাপ্ত প্রকল্পটি দেখতে এমন হবে:
 
-![চ্যাট অ্যাপ ইন্টারফেস যেখানে ব্যবহারকারী এবং এআই সহকারীর মধ্যে কথোপকথন দেখানো হচ্ছে](../../../translated_images/screenshot.0a1ee0d123df681b4501eb53ffb267519fcc20aa653eabecef1e7561ddfb1cab.bn.png)
+![চ্যাট অ্যাপ ইন্টারফেস যেখানে ব্যবহারকারী এবং এআই সহকারীর মধ্যে কথোপকথন দেখানো হচ্ছে](../../../translated_images/bn/screenshot.0a1ee0d123df681b.webp)
 
 ## 🗺️ এআই অ্যাপ্লিকেশন ডেভেলপমেন্টের মাধ্যমে আপনার শেখার যাত্রা
 
@@ -1703,14 +1694,14 @@ mindmap
 - **[Web Dev For Beginners repository](https://github.com/microsoft/Web-Dev-For-Beginners) এ যান**  
 - **উপরের ডানদিকে "Use this template" ক্লিক করুন** (নিশ্চিত করুন আপনি GitHub-এ লগইন করেছেন)  
 
-![টেমপ্লেট ইন্টারফেস যেখানে সবুজ "Use this template" বোতাম দেখানো হয়েছে](../../../translated_images/template.67ad477109d29a2b04599a83c964c87fcde041256d4f04d3589cbb00c696f76c.bn.png)  
+![টেমপ্লেট ইন্টারফেস যেখানে সবুজ "Use this template" বোতাম দেখানো হয়েছে](../../../translated_images/bn/template.67ad477109d29a2b.webp)  
 
 **ধাপ ২: Codespaces চালু করুন**  
 - **আপনার নতুন তৈরি করা রিপোজিটরি খুলুন**  
 - **সবুজ "Code" বোতাম ক্লিক করুন এবং "Codespaces" নির্বাচন করুন**  
 - **"Create codespace on main" নির্বাচন করুন** আপনার ডেভেলপমেন্ট পরিবেশ শুরু করতে  
 
-![Codespace ইন্টারফেস যেখানে ক্লাউড ডেভেলপমেন্ট পরিবেশ চালু করার অপশন দেখানো হয়েছে](../../../translated_images/codespace.bcecbdf5d2747d3d17da67a78ad911c8853d68102e34748ec372cde1e9236e1d.bn.png)  
+![Codespace ইন্টারফেস যেখানে ক্লাউড ডেভেলপমেন্ট পরিবেশ চালু করার অপশন দেখানো হয়েছে](../../../translated_images/bn/codespace.bcecbdf5d2747d3d.webp)  
 
 **ধাপ ৩: পরিবেশ কনফিগারেশন**  
 আপনার Codespace লোড হওয়ার পর, আপনি পাবেন:  

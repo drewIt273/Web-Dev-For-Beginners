@@ -1,12 +1,3 @@
-<!--
-CO_OP_TRANSLATOR_METADATA:
-{
-  "original_hash": "50a7783473b39a2e0f133e271a102231",
-  "translation_date": "2025-10-24T21:38:58+00:00",
-  "source_file": "7-bank-project/4-state-management/assignment.md",
-  "language_code": "sk"
-}
--->
 # Implementácia dialógu "Pridať transakciu"
 
 ## Prehľad
@@ -112,7 +103,7 @@ Pozrite si [dokumentáciu serverového API](../api/README.md) pre:
 **Očakávaný výsledok:**
 Po dokončení tejto úlohy by vaša banková aplikácia mala mať plne funkčnú funkciu "Pridať transakciu", ktorá vyzerá a správa sa profesionálne:
 
-![Screenshot zobrazujúci príklad dialógu "Pridať transakciu"](../../../../translated_images/dialog.93bba104afeb79f12f65ebf8f521c5d64e179c40b791c49c242cf15f7e7fab15.sk.png)
+![Screenshot zobrazujúci príklad dialógu "Pridať transakciu"](../../../../translated_images/sk/dialog.93bba104afeb79f1.webp)
 
 ## Testovanie vašej implementácie
 

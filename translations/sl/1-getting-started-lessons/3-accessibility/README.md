@@ -1,45 +1,76 @@
-<!--
-CO_OP_TRANSLATOR_METADATA:
-{
-  "original_hash": "90b19cde5b79b29e91babd3138cd8035",
-  "translation_date": "2025-10-25T00:24:29+00:00",
-  "source_file": "1-getting-started-lessons/3-accessibility/README.md",
-  "language_code": "sl"
-}
--->
 # Ustvarjanje dostopnih spletnih strani
 
-![Vse o dostopnosti](../../../../translated_images/webdev101-a11y.8ef3025c858d897a403a1a42c0897c76e11b724d9a8a0c0578dd4316f7507622.sl.png)
-> Sketchnote avtorja [Tomomi Imura](https://twitter.com/girlie_mac)
+![Vse o dostopnosti](../../../../translated_images/sl/webdev101-a11y.8ef3025c858d897a.webp)
+> Sketchnote avtorice [Tomomi Imura](https://twitter.com/girlie_mac)
 
-## Predhodni kviz
-[Predhodni kviz](https://ff-quizzes.netlify.app/web/)
+```mermaid
+journey
+    title Vaša učna pustolovščina o dostopnosti
+    section Osnove
+      Razumevanje uporabnikov: 5: Vi
+      Orodja za testiranje: 4: Vi
+      PRINCIPI POUR: 5: Vi
+    section Gradnja veščin
+      Semantični HTML: 4: Vi
+      Vizualna zasnova: 5: Vi
+      ARIA tehnike: 4: Vi
+    section Mojstrska praksa
+      Navigacija s tipkovnico: 5: Vi
+      Dostopnost obrazcev: 4: Vi
+      Testiranje v resničnem svetu: 5: Vi
+```
+## Predpredavanje Kviza
+[Predpredavanje kviza](https://ff-quizzes.netlify.app/web/)
 
-> Moč spleta je v njegovi univerzalnosti. Dostop za vse, ne glede na invalidnost, je bistven vidik.
+> Moč spleta je v njegovi univerzalnosti. Dostopnost za vse, ne glede na invalidnost, je bistven vidik.
 >
 > \- Sir Timothy Berners-Lee, direktor W3C in izumitelj svetovnega spleta
 
-Tukaj je nekaj, kar vas morda preseneti: ko gradite dostopne spletne strani, ne pomagate le ljudem z invalidnostmi – dejansko izboljšujete splet za vse!
+Tu je nekaj, kar vas morda preseneti: ko ustvarjate dostopne spletne strani, ne pomagate le osebam z invalidnostmi — pravzaprav izboljšujete splet za vse!
 
-Ste kdaj opazili tiste klančine na vogalih ulic? Prvotno so bile zasnovane za invalidske vozičke, zdaj pa pomagajo ljudem z vozički za otroke, dostavljavcem s transportnimi vozički, popotnikom s kovčki na kolesih in tudi kolesarjem. Točno tako deluje dostopno oblikovanje spletnih strani – rešitve, ki pomagajo eni skupini, pogosto koristijo vsem. Kul, kajne?
+Ste že kdaj opazili tiste stične pragove na vogalih ulic? Sprva so bili zasnovani za invalidske vozičke, zdaj pa pomagajo tudi ljudem z vozički za dojenčke, dostavnikom z vozički, potnikom z valjnimi kovčki in tudi kolesarjem. Tako deluje zasnova dostopnega spleta — rešitve, ki pomagajo eni skupini, pogosto koristijo vsem. Prav kul, kajne?
 
-V tej lekciji bomo raziskali, kako ustvariti spletne strani, ki resnično delujejo za vse, ne glede na način brskanja po spletu. Odkrijte praktične tehnike, ki so že vgrajene v spletne standarde, preizkusite orodja za testiranje in spoznajte, kako dostopnost naredi vaše strani bolj uporabne za vse uporabnike.
+V tej lekciji bomo raziskali, kako ustvariti spletne strani, ki zares delujejo za vse, ne glede na to, kako brskajo po spletu. Spoznali boste praktične tehnike, že vključene v spletne standarde, preizkusili orodja za testiranje in videli, kako dostopnost naredi vaše strani bolj uporabne za vse uporabnike.
 
-Do konca te lekcije boste pridobili samozavest, da dostopnost postane naravni del vašega razvojnega procesa. Ste pripravljeni raziskati, kako premišljene oblikovalske odločitve lahko odprejo splet milijardam uporabnikov? Potopimo se!
+Na koncu lekcije boste samozavestni, da bo dostopnost naravni del vašega razvojnega delovnega procesa. Ste pripravljeni raziskati, kako premišljene oblikovalske odločitve lahko odprejo splet milijardam uporabnikov? Gremo v akcijo!
 
-> To lekcijo lahko opravite na [Microsoft Learn](https://docs.microsoft.com/learn/modules/web-development-101/accessibility/?WT.mc_id=academic-77807-sagibbon)!
+```mermaid
+mindmap
+  root((Dostopnost spletnih strani))
+    Users
+      Bralniki zaslona
+      Navigacija s tipkovnico
+      Glasovno upravljanje
+      Povečava
+    Technologies
+      Semantika HTML
+      Atributi ARIA
+      Indikatorji fokusa CSS
+      Dogodki tipkovnice
+    Benefits
+      Širša publika
+      Boljši SEO
+      Pravna skladnost
+      Univerzalna zasnova
+    Testing
+      Avtomatizirana orodja
+      Ročno testiranje
+      Povratne informacije uporabnikov
+      Prava asistivna tehnologija
+```
+> To lekcijo si lahko ogledate na [Microsoft Learn](https://docs.microsoft.com/learn/modules/web-development-101/accessibility/?WT.mc_id=academic-77807-sagibbon)!
 
-## Razumevanje pomožnih tehnologij
+## Razumevanje pomožne tehnologije
 
-Preden se lotimo kodiranja, si vzemimo trenutek za razumevanje, kako ljudje z različnimi sposobnostmi dejansko doživljajo splet. To ni le teorija – razumevanje teh vzorcev navigacije v resničnem svetu vas bo naredilo veliko boljšega razvijalca!
+Preden se lotimo kodiranja, si vzemimo trenutek za razumevanje, kako ljudje z različnimi sposobnostmi dejansko doživljajo splet. To ni le teorija — razumevanje teh resničnih vzorcev navigacije vas bo naredilo veliko boljšo razvijalca!
 
-Pomožne tehnologije so neverjetna orodja, ki ljudem z invalidnostmi omogočajo interakcijo s spletnimi stranmi na načine, ki vas lahko presenetijo. Ko enkrat razumete, kako te tehnologije delujejo, postane ustvarjanje dostopnih spletnih izkušenj veliko bolj intuitivno. To je kot da bi se naučili videti svojo kodo skozi oči nekoga drugega.
+Pomožne tehnologije so precej neverjetna orodja, ki pomagajo osebam z invalidnostmi uporabljati spletne strani na načine, ki vas lahko presenetijo. Ko enkrat razumete, kako ta orodja delujejo, postane ustvarjanje dostopnih spletnih izkušenj veliko bolj intuitivno. To je kot učiti se gledati vašo kodo skozi oči nekoga drugega.
 
 ### Bralniki zaslona
 
-[Bralniki zaslona](https://en.wikipedia.org/wiki/Screen_reader) so precej napredna tehnologija, ki digitalno besedilo pretvori v govor ali izhod v brajici. Čeprav jih primarno uporabljajo ljudje z motnjami vida, so zelo koristni tudi za uporabnike z učnimi težavami, kot je disleksija.
+[Bralniki zaslona](https://en.wikipedia.org/wiki/Screen_reader) so zelo sofisticirane tehnološke naprave, ki pretvarjajo digitalno besedilo v govor ali brajico. Uporabljajo jih predvsem osebe z okvaro vida, a so zelo koristni tudi za uporabnike z učnimi motnjami, kot je disleksija.
 
-Rad si predstavljam bralnik zaslona kot zelo pametnega pripovedovalca, ki vam bere knjigo. Vsebino bere na glas v logičnem vrstnem redu, napoveduje interaktivne elemente, kot so "gumb" ali "povezava", in ponuja bližnjice na tipkovnici za premikanje po strani. Ampak tukaj je stvar – bralniki zaslona lahko delujejo le, če gradimo spletne strani s pravilno strukturo in smiselno vsebino. Tukaj nastopite vi kot razvijalec!
+Rad si predstavljam bralnik zaslona kot zelo pametnega pripovedovalca, ki vam bere knjigo. Naglas bere vsebino v logičnem zaporedju, napoveduje interaktivne elemente kot na primer "gumb" ali "povezava" in omogoča bližnjice na tipkovnici za hitro premikanje po strani. Toda ključ je v tem — bralniki zaslona lahko delujejo le, če spletne strani zgradimo s pravo strukturo in smiselno vsebino. In tukaj vi nastopite kot razvijalec!
 
 **Priljubljeni bralniki zaslona na različnih platformah:**
 - **Windows**: [NVDA](https://www.nvaccess.org/about-nvda/) (brezplačen in najbolj priljubljen), [JAWS](https://webaim.org/articles/jaws/), [Narrator](https://support.microsoft.com/windows/complete-guide-to-narrator-e4397a0d-ef4f-b386-d8ae-c172f109bdb1/?WT.mc_id=academic-77807-sagibbon) (vgrajen)
@@ -47,165 +78,240 @@ Rad si predstavljam bralnik zaslona kot zelo pametnega pripovedovalca, ki vam be
 - **Android**: [TalkBack](https://support.google.com/accessibility/android/answer/6283677) (vgrajen)
 - **Linux**: [Orca](https://wiki.gnome.org/Projects/Orca) (brezplačen in odprtokoden)
 
-**Kako bralniki zaslona navigirajo po spletni vsebini:**
+**Kako bralniki zaslona navigirajo po spletnem vsebini:**
 
-Bralniki zaslona ponujajo več metod navigacije, ki omogočajo učinkovito brskanje za izkušene uporabnike:
-- **Sekvenčno branje**: Bere vsebino od zgoraj navzdol, kot bi sledili knjigi
-- **Navigacija po mejnikih**: Premikanje med odseki strani (glava, navigacija, glavni del, noga)
-- **Navigacija po naslovih**: Preskakovanje med naslovi za razumevanje strukture strani
-- **Seznami povezav**: Ustvarjanje seznama vseh povezav za hiter dostop
-- **Kontrole obrazcev**: Neposredna navigacija med vnosnimi polji in gumbi
+Bralniki zaslona omogočajo več načinov navigacije, ki omogočajo učinkovito brskanje izkušenim uporabnikom:
+- **Zaporedno branje**: bere vsebino od zgoraj navzdol, kot bi bral knjigo
+- **Navigacija po oznakah**: preskakovanje med deli strani (glava, navigacija, glavni del, noga)
+- **Navigacija po naslovih**: preskok med naslovi za razumevanje strukture strani
+- **Seznami povezav**: generira seznam vseh povezav za hiter dostop
+- **Kontrole obrazcev**: neposredna navigacija med vnosnimi polji in gumbi
 
-> 💡 **Tukaj je nekaj, kar me je presenetilo**: 68 % uporabnikov bralnikov zaslona navigira primarno po naslovih ([WebAIM Survey](https://webaim.org/projects/screenreadersurvey9/#finding)). To pomeni, da je vaša struktura naslovov kot zemljevid za uporabnike – ko jo pravilno nastavite, dobesedno pomagate ljudem hitreje najti pot po vaši vsebini!
+> 💡 **Nekaj, kar me je osupnilo**: 68 % uporabnikov bralnikov zaslona uporablja predvsem navigacijo po naslovih ([WebAIM Survey](https://webaim.org/projects/screenreadersurvey9/#finding)). To pomeni, da je vaša struktura naslovov kot zemljevid za uporabnike—ko jo naredite prav, jim dejansko pomagate hitreje najti pot skozi vašo vsebino!
 
-### Gradnja vašega testnega delovnega procesa
+### Gradnja vašega testnega poteka dela
 
-Tukaj je dobra novica – učinkovito testiranje dostopnosti ni nujno preobsežno! Želite kombinirati avtomatizirana orodja (odlična so za odkrivanje očitnih težav) z nekaj ročnega testiranja. Tukaj je sistematičen pristop, ki po mojem mnenju ujame največ težav, ne da bi vam vzel ves dan:
+Dobra novica je, da učinkovito testiranje dostopnosti ne mora biti preobremenjujoče! Želeli boste združiti avtomatizirana orodja (ta so odlična za odkrivanje očitnih težav) s praktičnim ročnim testiranjem. Tu je sistematičen pristop, ki po mojih izkušnjah zazna največ težav brez porabe celega dneva:
 
-**Osnovni ročni testni delovni proces:**
+**Nujni postopki ročnega testiranja:**
 
 ```mermaid
-graph TD
-    A[Start Testing] --> B{Keyboard Navigation}
-    B --> C[Tab through all interactive elements]
-    C --> D{Screen Reader Testing}
-    D --> E[Test with NVDA/VoiceOver]
-    E --> F{Zoom Testing}
-    F --> G[Zoom to 200% and test functionality]
-    G --> H{Color/Contrast Check}
-    H --> I[Verify all text meets contrast ratios]
-    I --> J{Focus Management}
-    J --> K[Ensure focus indicators are visible]
-    K --> L[Testing Complete]
+flowchart TD
+    A[🚀 Začni testiranje] --> B{⌨️ Navigacija s tipkovnico}
+    B --> C[Tabuliraj skozi vse interaktivne elemente]
+    C --> D{🎧 Testiranje bralnika zaslona}
+    D --> E[Preizkusi z NVDA/VoiceOver]
+    E --> F{🔍 Testiranje povečave}
+    F --> G[Povečaj na 200 % in preizkusi funkcionalnost]
+    G --> H{🎨 Preverjanje barv/kontrasta}
+    H --> I[Preveri, ali je besedilo skladno s kontrastnimi razmerji]
+    I --> J{👁️ Upravljanje fokusa}
+    J --> K[Poskrbi, da so indikatorji fokusa vidni]
+    K --> L[✅ Testiranje zaključeno]
+    
+    style A fill:#e3f2fd
+    style L fill:#e8f5e8
+    style B fill:#fff3e0
+    style D fill:#f3e5f5
+    style F fill:#e0f2f1
+    style H fill:#fce4ec
+    style J fill:#e8eaf6
 ```
+**Korak za korakom kontrolni seznam testiranja:**
+1. **Navigacija s tipkovnico**: uporabljajte samo Tab, Shift+Tab, Enter, Space in puščične tipke
+2. **Testiranje z bralnikom zaslona**: vklopite NVDA, VoiceOver ali Narrator in navigirajte z zaprtimi očmi
+3. **Testiranje povečave**: testirajte na 200 % in 400 % povečavi
+4. **Preverjanje kontrasta barv**: preglejte vse besedilo in uporabniški vmesnik
+5. **Testiranje indikatorja fokusa**: zagotovite, da imajo vsi interaktivni elementi vidne fokalne stanje
 
-**Kontrolni seznam korakov testiranja:**
-1. **Navigacija s tipkovnico**: Uporabljajte le Tab, Shift+Tab, Enter, Space in puščične tipke
-2. **Testiranje z bralnikom zaslona**: Omogočite NVDA, VoiceOver ali Narrator in navigirajte z zaprtimi očmi
-3. **Testiranje povečave**: Testirajte pri 200 % in 400 % povečavi
-4. **Preverjanje barvnega kontrasta**: Preverite ves tekst in UI komponente
-5. **Testiranje indikatorja fokusa**: Prepričajte se, da imajo vsi interaktivni elementi vidne fokusne stanja
+✅ **Začnite z Lighthouse**: Odprite orodja za razvijalce v brskalniku, poženite dostopnostni pregled Lighthouse, nato rezultate uporabite za usmerjanje ročnega testiranja.
 
-✅ **Začnite z Lighthouse**: Odprite orodja za razvijalce v brskalniku, izvedite Lighthouse dostopnostni pregled in nato uporabite rezultate za usmerjanje vašega ročnega testiranja.
+### Orodja za povečavo in zoom
 
-### Orodja za povečavo in povečevanje
+Ste kdaj na telefonu zaščepli zaslon, da povečate besedilo, kadar je premajhno, ali pa vidite zaslon prenosnika na svetlem soncu z zamegljenim pogledom? Veliko uporabnikov vsak dan uporablja povečavo, da je vsebina berljiva. To vključuje osebe z nizkim vidom, starejše odrasle in kogar koli, ki je kdajkoli poskušal brati spletno stran na prostem.
 
-Ste že kdaj na telefonu povečali besedilo, ker je bilo premajhno, ali pa ste se trudili prebrati zaslon prenosnika na močni sončni svetlobi? Mnogi uporabniki se vsak dan zanašajo na orodja za povečevanje, da bi lahko prebrali vsebino. Sem spadajo ljudje s slabim vidom, starejši in vsakdo, ki je kdaj poskušal prebrati spletno stran na prostem.
+Sodobne tehnologije zooma so se razvile onstran zgolj povečevanja velikosti. Razumevanje, kako ta orodja delujejo, vam bo pomagalo ustvariti odzivne zasnove, ki ostanejo funkcionalne in privlačne pri kateri koli stopnji povečave.
 
-Sodobne tehnologije za povečavo so se razvile onkraj zgolj povečevanja. Razumevanje, kako ta orodja delujejo, vam bo pomagalo ustvariti odzivne dizajne, ki ostanejo funkcionalni in privlačni na vseh ravneh povečave.
+**Zmožnosti zooma v sodobnih brskalnikih:**
+- **Povečava strani**: vsebina se proporcionalno poveča (besedilo, slike, postavitev) - to je priporočena metoda
+- **Povečava samo besedila**: poveča velikost pisave, pri tem pa ohranja izvorno postavitev
+- **Povečanje s stiskanjem prstov**: podpora za mobilne geste za začasno povečavo
+- **Podpora brskalnika**: vsi sodobni brskalniki podpirajo zoom do 500 % brez izgube funkcionalnosti
 
-**Sodobne zmogljivosti povečave v brskalnikih:**
-- **Povečava strani**: Sorazmerno poveča vso vsebino (besedilo, slike, postavitev) – to je prednostna metoda
-- **Povečava samo besedila**: Poveča velikost pisave, medtem ko ohranja prvotno postavitev
-- **Povečava s ščipanjem**: Podpora za mobilne geste za začasno povečavo
-- **Podpora brskalnikov**: Vsi sodobni brskalniki podpirajo povečavo do 500 % brez motenj funkcionalnosti
-
-**Specializirana programska oprema za povečevanje:**
-- **Windows**: [Magnifier](https://support.microsoft.com/windows/use-magnifier-to-make-things-on-the-screen-easier-to-see-414948ba-8b1c-d3bd-8615-0e5e32204198) (vgrajen), [ZoomText](https://www.freedomscientific.com/training/zoomtext/getting-started/)
+**Specializirana programska oprema za povečavo:**
+- **Windows**: [Povečevalnik](https://support.microsoft.com/windows/use-magnifier-to-make-things-on-the-screen-easier-to-see-414948ba-8b1c-d3bd-8615-0e5e32204198) (vgrajen), [ZoomText](https://www.freedomscientific.com/training/zoomtext/getting-started/)
 - **macOS/iOS**: [Zoom](https://www.apple.com/accessibility/mac/vision/) (vgrajen z naprednimi funkcijami)
 
-> ⚠️ **Oblikovalski premislek**: WCAG zahteva, da vsebina ostane funkcionalna, ko je povečana na 200 %. Na tej ravni naj bo horizontalno pomikanje minimalno, vsi interaktivni elementi pa naj ostanejo dostopni.
+> ⚠️ **Oblikovalski premislek**: WCAG zahteva, da vsebina ostane funkcionalna pri 200 % povečavi. Pri tej stopnji bi bilo vodoravno pomikanje minimalno, vsi interaktivni elementi pa dostopni.
 
-✅ **Testirajte svoj odzivni dizajn**: Povečajte brskalnik na 200 % in 400 %. Ali se vaša postavitev elegantno prilagaja? Ali lahko še vedno dostopate do vseh funkcij brez pretiranega pomikanja?
+✅ **Testirajte svojo odzivno zasnovo**: povečajte brskalnik na 200 % in 400 %. Ali se vaša postavitev lepo prilagaja? Ali imate še vedno dostop do vseh funkcionalnosti brez pretiranega pomikanja?
 
 ## Sodobna orodja za testiranje dostopnosti
 
-Zdaj, ko razumete, kako ljudje navigirajo po spletu s pomožnimi tehnologijami, raziščimo orodja, ki vam pomagajo graditi in testirati dostopne spletne strani.
+Zdaj, ko razumete, kako ljudje uporabljajo splet s pomožnimi tehnologijami, si oglejmo orodja, ki vam pomagajo graditi in testirati dostopne spletne strani.
 
-Pomislite na to tako: avtomatizirana orodja so odlična za odkrivanje očitnih težav (kot je manjkajoče besedilo alt), medtem ko vam ročno testiranje pomaga zagotoviti, da je vaša stran prijetna za uporabo v resničnem svetu. Skupaj vam dajejo zaupanje, da vaše strani delujejo za vse.
+Razmišljajte tako: avtomatizirana orodja so odlična za odkrivanje očitnih težav (kot so manjkajoči alt opisi), medtem ko ročno testiranje zagotovi, da je stran prijetna za uporabo v resničnem svetu. Skupaj vam nudijo samozavest, da strani delujejo za vsakogar.
 
 ### Testiranje barvnega kontrasta
 
-Tukaj je dobra novica: barvni kontrast je ena najpogostejših težav pri dostopnosti, vendar je tudi ena najlažjih za odpravo. Dober kontrast koristi vsem – od uporabnikov z motnjami vida do ljudi, ki poskušajo brati svoje telefone na plaži.
+Dobra novica je, da je barvni kontrast ena najpogostejših težav z dostopnostjo, a tudi ena najlažjih za odpravo. Dober kontrast koristi vsem — od uporabnikov z okvaro vida do ljudi, ki poskušajo na plaži brati svoje telefone.
 
-**Zahteve WCAG za kontrast:**
+**WCAG zahteve glede kontrasta:**
 
-| Tip besedila | WCAG AA (Minimalno) | WCAG AAA (Izboljšano) |
-|--------------|---------------------|-----------------------|
-| **Navadno besedilo** (manj kot 18pt) | Razmerje kontrasta 4,5:1 | Razmerje kontrasta 7:1 |
-| **Veliko besedilo** (18pt+ ali 14pt+ krepko) | Razmerje kontrasta 3:1 | Razmerje kontrasta 4,5:1 |
-| **UI komponente** (gumbi, obrobe obrazcev) | Razmerje kontrasta 3:1 | Razmerje kontrasta 3:1 |
+| Vrsta besedila | WCAG AA (minimalno) | WCAG AAA (izboljšano) |
+|-----------|-------------------|---------------------|
+| **Navadno besedilo** (pod 18 pt) | kontrast 4,5 : 1 | kontrast 7 : 1 |
+| **Veliko besedilo** (18 pt+ ali 14 pt+ krepko) | kontrast 3 : 1 | kontrast 4,5 : 1 |
+| **UI komponenta** (gumbi, robovi obrazcev) | kontrast 3 : 1 | kontrast 3 : 1 |
 
-**Osnovna orodja za testiranje:**
-- [Colour Contrast Analyser](https://www.tpgi.com/color-contrast-checker/) - Namizna aplikacija z izbiro barv
-- [WebAIM Contrast Checker](https://webaim.org/resources/contrastchecker/) - Spletno orodje s takojšnjim povratnim informacijami
-- [Stark](https://www.getstark.co/) - Vtičnik za oblikovalska orodja, kot so Figma, Sketch, Adobe XD
-- [Accessible Colors](https://accessible-colors.com/) - Poiščite dostopne barvne palete
+**Nujna testna orodja:**
+- [Colour Contrast Analyser](https://www.tpgi.com/color-contrast-checker/) - namizna aplikacija z barvnim pipetnikom
+- [WebAIM Contrast Checker](https://webaim.org/resources/contrastchecker/) - spletno orodje s takojšnjim povratnim informacijam
+- [Stark](https://www.getstark.co/) - dodatki za oblikovalska orodja Figma, Sketch, Adobe XD
+- [Accessible Colors](https://accessible-colors.com/) - poiščite dostopne barvne palete
 
-✅ **Ustvarite boljše barvne palete**: Začnite z barvami vaše blagovne znamke in uporabite preverjevalnike kontrasta za ustvarjanje dostopnih različic. Dokumentirajte te barve kot dostopne barvne oznake vašega oblikovalskega sistema.
+✅ **Ustvarite boljše barvne palete**: Začnite z barvami svoje blagovne znamke in uporabite kontrolnike kontrasta za oblikovanje dostopnih različic. Dokumentirajte jih kot dostopne barvne nyanse v vašem oblikovalskem sistemu.
 
-### Celovito preverjanje dostopnosti
+### Celovito testiranje dostopnosti
 
-Najbolj učinkovito testiranje dostopnosti združuje več pristopov. Nobeno orodje ne ujame vsega, zato gradnja testne rutine z različnimi metodami zagotavlja temeljito pokritost.
+Najbolj učinkovito testiranje dostopnosti združuje več pristopov. Nobeno orodje ne ujame vseh težav, zato je dobro razviti rutino z različnimi metodami, da zagotovite temeljito pokritost.
 
 **Testiranje v brskalniku (vgrajeno v orodja za razvijalce):**
-- **Chrome/Edge**: Lighthouse dostopnostni pregled + panel za dostopnost
-- **Firefox**: Inšpektor dostopnosti s podrobnim pogledom na drevo
-- **Safari**: Zavihek za pregled v Web Inspectorju s simulacijo VoiceOver
+- **Chrome/Edge**: Lighthouse hitrostni pregled + Accessibility panel
+- **Firefox**: Accessibility Inspector z natančnim drevesnim prikazom
+- **Safari**: Zavihek z auditom v Web Inspectorju z VoiceOver simulacijo
 
-**Profesionalni testni razširitve:**
-- [axe DevTools](https://www.deque.com/axe/devtools/) - Industrijski standard za avtomatizirano testiranje
-- [WAVE](https://wave.webaim.org/extension/) - Vizualne povratne informacije z označevanjem napak
-- [Accessibility Insights](https://accessibilityinsights.io/) - Microsoftov celovit testni paket
+**Profesionalni razširitveni dodatki:**
+- [axe DevTools](https://www.deque.com/axe/devtools/) - standardna avtomatizirana orodja za testiranje
+- [WAVE](https://wave.webaim.org/extension/) - vizualna povratna informacija s poudarjanjem napak
+- [Accessibility Insights](https://accessibilityinsights.io/) - Microsoftova celovita testna zbirka
 
 **Ukazna vrstica in integracija CI/CD:**
 - [axe-core](https://github.com/dequelabs/axe-core) - JavaScript knjižnica za avtomatizirano testiranje
-- [Pa11y](https://pa11y.org/) - Orodje za testiranje dostopnosti prek ukazne vrstice
-- [Lighthouse CI](https://github.com/GoogleChrome/lighthouse-ci) - Avtomatizirano ocenjevanje dostopnosti
+- [Pa11y](https://pa11y.org/) - orodje za testiranje dostopnosti preko ukazne vrstice
+- [Lighthouse CI](https://github.com/GoogleChrome/lighthouse-ci) - avtomatizirano merjenje dostopnosti
 
-> 🎯 **Cilj testiranja**: Ciljajte na dostopnostno oceno Lighthouse 95+ kot osnovo. Ne pozabite, da avtomatizirana orodja ujamejo le približno 30–40 % težav z dostopnostjo – ročno testiranje je še vedno nujno!
+> 🎯 **Cilj testiranja**: prizadevajte si za rezultat dostopnosti v Lighthouse nad 95 %. Upoštevajte, da avtomatizirana orodja zaznajo le približno 30-40 % težav — ročno testiranje je še vedno ključnega pomena!
 
-## Gradnja dostopnosti od začetka
+### 🧠 **Preverjanje veščin testiranja: Ste pripravljeni najti težave?**
 
-Ključ do uspeha pri dostopnosti je, da jo vključite v temelje že od prvega dne. Vem, da je morda mamljivo razmišljati "dostopnost bom dodal kasneje", vendar je to kot poskušati dodati klančino hiši, ko je že zgrajena. Možno? Da. Enostavno? Ne ravno.
+**Poglejmo, kako se počutite glede testiranja dostopnosti:**
+- Kateri način testiranja se vam zdi trenutno najbolj dostopen?
+- Se vidite, da bi cel dan uporabljali samo tipkovnico za navigacijo?
+- Kakšno dostopnostno oviro ste osebno izkusili na spletu?
 
-Pomislite na dostopnost kot na načrtovanje hiše – veliko lažje je vključiti dostopnost za invalidske vozičke v začetne arhitekturne načrte, kot pa vse prilagoditi kasneje.
+```mermaid
+pie title "Težave z dostopnostjo, odkrite z različnimi metodami"
+    "Avtomatizirana orodja" : 35
+    "Ročno testiranje" : 40
+    "Povratne informacije uporabnikov" : 25
+```
+> **Povečanje samozavesti**: Profesionalni testirci dostopnosti uporabljajo to prav to kombinacijo metod. Učite se industrijsko preverjene prakse!
 
-### Načela POUR: Temelj vaše dostopnosti
+## Gradnja dostopnosti od temeljev naprej
 
-Smernice za dostopnost spletnih vsebin (WCAG) temeljijo na štirih osnovnih načelih, ki jih označuje kratica POUR. Ne skrbite – to niso suhoparni akademski koncepti! Pravzaprav so praktične smernice za ustvarjanje vsebine, ki deluje za vse.
+Ključ do uspešne dostopnosti je, da jo vključite v temelje že od prvega dne. Vem, da je mamljivo reči »dostopnost bom dodal pozneje«, a to je kot poskušati dodati rampo hiši, ko je že zgrajena. Možno? Da. Enostavno? Ne ravno.
 
-Ko enkrat razumete načela POUR, postane sprejemanje odločitev glede dostopnosti veliko bolj intuitivno. To je kot imeti mentalni kontrolni seznam, ki vodi vaše oblikovalske odločitve. Poglejmo podrobnosti:
+Dostopnost lahko primerjate z načrtovanjem hiše — veliko lažje je vključiti dostopnost za invalidske vozičke v arhitekturni načrt kot naknadno preurejati stvari.
 
-**🔍 Zaznavno**: Informacije morajo biti predstavljene na način, ki ga uporabniki lahko zaznajo s svojimi razpoložljivimi čuti
+### PRINCIPI POUR: Osnova vaše dostopnosti
 
-- Zagotovite besedilne alternative za vsebino brez besedila (slike, videi, zvok)
-- Poskrbite za zadosten barvni kontrast za ves tekst in UI komponente
-- Ponudite podnapise in prepise za multimedijsko vsebino
-- Oblikujte vsebino, ki ostane funkcionalna, ko je povečana do 200 %
-- Uporabljajte več senzoričnih značilnosti (ne le barve) za prenos informacij
+Smernice za dostopnost spletne vsebine (WCAG) temeljijo na štirih osnovnih načelih, ki tvorijo akronim POUR. Brez skrbi — to niso nekakšni akademski pojmi! So praktična vodila za ustvarjanje vsebin, ki delujejo za vse.
 
-**🎮 Operativno**: Vse komponente vmesnika morajo biti operativne prek razpoložljivih vhodnih metod
+Ko enkrat osvojite POUR, sprejemanje odločitev o dostopnosti postane veliko bolj intuitivno. Je kot imeti mentalni kontrolni seznam, ki usmerja vaše oblikovalske izbire. Poglejmo si jih malo bolj podrobno:
 
-- Poskrbite, da je vsa funkcionalnost dostopna prek navigacije s tipkovnico
-- Uporabnikom omogočite dovolj časa za branje in interakcijo z vsebino
-- Izogibajte se vsebini, ki povzroča epileptične napade ali vestibularne motnje
-- Pomagajte uporabnikom učinkovito navigirati z jasno strukturo in mejniki
-- Poskrbite, da imajo interaktivni elementi ustrezne ciljne velikosti (najmanj 44px)
+```mermaid
+flowchart LR
+    A[🔍 DOSEGLJIVO<br/>Ali ga uporabniki zaznajo?] --> B[🎮 UPORABLJIVO<br/>Ali ga uporabniki lahko uporabljajo?]
+    B --> C[📖 RAZUMLJIVO<br/>Ali ga uporabniki razumejo?]
+    C --> D[💪 ODPORNO<br/>Ali deluje povsod?]
+    
+    A1[Alternativno besedilo<br/>Napisi<br/>Kontrast] --> A
+    B1[Dostop do tipkovnice<br/>Brez napadov<br/>Časovne omejitve] --> B
+    C1[Jasen jezik<br/>Predvidljivo<br/>Pomoč pri napakah] --> C
+    D1[Veljavna koda<br/>Združljivo<br/>Pripravljeno na prihodnost] --> D
+    
+    style A fill:#e1f5fe
+    style B fill:#e8f5e8
+    style C fill:#fff3e0
+    style D fill:#f3e5f5
+```
+**🔍 Perceivable (Zaznavno)**: Informacije morajo biti predstavljene na načine, ki jih uporabniki lahko zaznavajo s svojimi razpoložljivimi čutili
 
-**📖 Razumljivo**: Informacije in delovanje UI morajo biti jasni in razumljivi
+- Zagotovite besedilne alternative za nebesedilno vsebino (slike, videoposnetke, avdio)
+- Poskrbite za dovolj dober barvni kontrast za vse besedilo in uporabniški vmesnik
+- Ponudite podnapise in transkripte za multimedijske vsebine
+- Oblikujte vsebino, ki ostane funkcionalna ob povečavi do 200 %
+- Uporabite več senzoričnih značilnosti (ne samo barve) za prenašanje informacij
 
-- Uporabljajte jasno, preprosto jezikovno izražanje, primerno za vašo ciljno skupino
-- Poskrbite, da se vsebina pojavi in deluje na predvidljiv, dosleden način
-- Zagotovite jasna navodila in sporočila o napakah za uporabniški vnos
+**🎮 Operable (Uporabno)**: Vsi elementi vmesnika morajo biti uporabni z razpoložljivimi načini vnosa
+
+- Naredite vso funkcionalnost dostopno tudi z navigacijo samo prek tipkovnice
+- Uporabnikom zagotovite dovolj časa za branje in interakcijo
+- Izogibajte se vsebini, ki povzroča napade ali vestibularne motnje
+- Pomagajte uporabnikom učinkovito navigirati z jasno strukturo in ozemljitvami
+- Zagotovite, da imajo interaktivni elementi dovolj veliko ciljno območje (najmanj 44 px)
+
+**📖 Understandable (Razumljivo)**: Informacije in delovanje uporabniškega vmesnika morajo biti jasni in razumljivi
+
+- Uporabljajte jasen, preprost jezik, primeren za vaše občinstvo
+- Poskrbite, da se vsebina pojavlja in deluje na predvidljive in dosledne načine
+- Ponudite jasna navodila in sporočila o napakah pri uporabniškem vnosu
 - Pomagajte uporabnikom razumeti in popraviti napake v obrazcih
 - Organizirajte vsebino z logičnim vrstnim redom branja in hierarhijo informacij
 
-**💪 Robustno**: Vsebina mora zanesljivo delovati na različnih tehnologijah in pomožnih napravah
+**💪 Robust (Robustno)**: Vsebina mora zanesljivo delovati na različnih tehnologijah in pomožnih napravah
 
-- Uporabljajte veljaven, semantičen HTML kot osnovo
-- Poskrbite za združljivost s trenutnimi in prihodnjimi pomožnimi tehnologijami
-- Sled
-Barva je močno komunikacijsko orodje, vendar nikoli ne sme biti edini način za prenos pomembnih informacij. Oblikovanje, ki presega barvo, ustvarja bolj robustne in vključujoče izkušnje, ki delujejo v različnih situacijah.
+- **Uporabljajte veljaven, semantičen HTML kot svojo osnovo**
+- **Zagotovite združljivost z obstoječimi in prihodnjimi pomožnimi tehnologijami**
+- **Sledite spletnim standardom in najboljšim praksa za označevanje**
+- **Testirajte v različnih brskalnikih, napravah in z asistivnimi orodji**
+- **Strukturirajte vsebino tako, da se degradira elegantno, kadar napredne funkcije niso podprte**
+
+### 🎯 **Preverjanje načel POUR: Naj ostanejo v spominu**
+
+**Hitro razmišljanje o temeljih:**
+- Se lahko spomnite funkcije spletne strani, ki krši katero od načel POUR?
+- Katero načelo vam kot razvijalcu najbolj naravno ustreza?
+- Kako bi ta načela izboljšala oblikovanje za vse, ne le za uporabnike z invalidnostmi?
+
+```mermaid
+quadrantChart
+    title MATRICA VPLIVA PRINCIPOV POUR
+    x-axis Nizek napor --> Visok napor
+    y-axis Nizek vpliv --> Visok vpliv
+    quadrant-1 Hitre zmage
+    quadrant-2 Glavni projekti
+    quadrant-3 Premisli kasneje
+    quadrant-4 Strateški fokus
+    
+    Alt Text: [0.2, 0.9]
+    Color Contrast: [0.3, 0.8]
+    Semantic HTML: [0.4, 0.9]
+    Keyboard Nav: [0.6, 0.8]
+    ARIA Complex: [0.8, 0.7]
+    Screen Reader Testing: [0.7, 0.6]
+```
+> **Zapomnite si**: Začnite z izboljšavami z velikim učinkom in malo truda. Semantični HTML in alt besedilo vam dajeta največji izboljšavi dostopnosti z najmanj truda!
+
+## Ustvarjanje dostopnega vizualnega oblikovanja
+
+Dobro vizualno oblikovanje in dostopnost gresta z roko v roki. Ko oblikujete z mislijo na dostopnost, pogosto odkrijete, da ti omejitvi vodita do bolj čistih, elegantnih rešitev, ki koristijo vsem uporabnikom.
+
+Raziščimo, kako ustvariti vizualno privlačne zasnove, ki delujejo za vse, ne glede na njihove vidne sposobnosti ali pogoje, v katerih si ogledajo vašo vsebino.
+
+### Strategije za barvo in vizualno dostopnost
+
+Barva je močno komunikacijsko orodje, a nikoli ne sme biti edini način, s katerim posredujete pomembne informacije. Oblikovanje, ki presega barvo, ustvarja bolj robustne, vključujoče izkušnje, ki delujejo v več situacijah.
 
 **Oblikovanje za razlike v barvnem vidu:**
 
-Približno 8 % moških in 0,5 % žensk ima neko obliko razlike v barvnem vidu (pogosto imenovano "barvna slepota"). Najpogostejše vrste so:
-- **Deuteranopija**: Težave pri razlikovanju med rdečo in zeleno
-- **Protanopija**: Rdeča barva se zdi bolj zatemnjena
+Približno 8 % moških in 0,5 % žensk ima nekakšno obliko barvne slepote (pogosto imenovano "barvna slepota"). Najpogostejše vrste so:
+- **Deuteranopija**: Težave z razlikovanjem rdeče in zelene
+- **Protanopija**: Rdeča se zdi bolj temna
 - **Tritanopija**: Težave z modro in rumeno (redko)
 
-**Strategije za vključujočo uporabo barv:**
+**Vključujoče barvne strategije:**
 
 ```css
 /* ❌ Bad: Using only color to indicate status */
@@ -232,19 +338,19 @@ Približno 8 % moških in 0,5 % žensk ima neko obliko razlike v barvnem vidu (p
 }
 ```
 
-**Preseganje osnovnih zahtev glede kontrasta:**
-- Preverite svoje izbire barv z simulatorji barvne slepote
-- Uporabite vzorce, teksture ali oblike poleg barvnega kodiranja
-- Poskrbite, da bodo interaktivna stanja prepoznavna tudi brez barve
-- Upoštevajte, kako vaš dizajn izgleda v načinu visokega kontrasta
+**Onkraj osnovnih zahtev glede kontrasta:**
+- Testirajte svoje barvne izbire s simulatorji barvne slepote
+- Uporabljajte vzorce, teksture ali oblike poleg barvnih oznak
+- Poskrbite, da bodo interaktivna stanja ostala ločljiva tudi brez barve
+- Razmislite, kako vaša zasnova izgleda v načinu visoke kontrastnosti
 
-✅ **Preverite dostopnost barv**: Uporabite orodja, kot je [Coblis](https://www.color-blindness.com/coblis-color-blindness-simulator/), da vidite, kako vaša stran izgleda uporabnikom z različnimi vrstami barvnega vida.
+✅ **Preizkusite dostopnost barv**: Uporabite orodja, kot je [Coblis](https://www.color-blindness.com/coblis-color-blindness-simulator/), da vidite, kako vaša stran izgleda uporabnikom z različnimi vrstami barvnega vida.
 
-### Indikatorji fokusa in interakcijsko oblikovanje
+### Indikatorji fokusa in oblikovanje interakcije
 
-Indikatorji fokusa so digitalni ekvivalent kazalca – kažejo uporabnikom tipkovnice, kje na strani se nahajajo. Dobro oblikovani indikatorji fokusa izboljšajo izkušnjo za vse, saj naredijo interakcije jasne in predvidljive.
+Indikatorji fokusa so digitalni ekvivalent kazalca – kažejo uporabnikom tipkovnice, kje se nahajajo na strani. Dobro oblikovani indikatorji fokusa izboljšajo izkušnjo za vse z jasnimi in predvidljivimi interakcijami.
 
-**Sodobne najboljše prakse za indikatorje fokusa:**
+**Sodobne dobre prakse indikatorjev fokusa:**
 
 ```css
 /* Enhanced focus styles that work across browsers */
@@ -273,22 +379,43 @@ button:focus:not(:focus-visible) {
 }
 ```
 
-**Zahteve za indikatorje fokusa:**
-- **Vidnost**: Mora imeti vsaj razmerje kontrasta 3:1 z okoliškimi elementi
-- **Širina**: Najmanj 2px debeline okoli celotnega elementa
-- **Vztrajnost**: Naj ostane viden, dokler se fokus ne premakne drugam
-- **Razlikovanje**: Mora biti vizualno drugačen od drugih stanj uporabniškega vmesnika
+**Zahteve za indikator fokusa:**
+- **Vidnost**: Mora imeti najmanj razmerje kontrasta 3:1 z okoliškimi elementi
+- **Širina**: Minimalna debelina 2px okoli celotnega elementa
+- **Vztrajnost**: Mora ostati viden, dokler fokus ne premaknete drugam
+- **Razločnost**: Mora se vizualno razlikovati od drugih stanj UI
 
-> 💡 **Nasvet za oblikovanje**: Odlični indikatorji fokusa pogosto uporabljajo kombinacijo obrobe, senčenja in sprememb barve, da zagotovijo vidnost na različnih ozadjih in v različnih kontekstih.
+> 💡 **Nasvet za oblikovanje**: Odlični indikatorji fokusa pogosto uporabljajo kombinacijo obrobe, senc na okvirju in spremembe barve, da zagotovijo vidnost na različnih ozadjih in v različnih kontekstih.
 
-✅ **Preverite indikatorje fokusa**: Premikajte se po svoji spletni strani s pomočjo tipke Tab in opazujte, kateri elementi imajo jasne indikatorje fokusa. Ali so kateri težko vidni ali popolnoma manjkajo?
+✅ **Preglejte indikatorje fokusa**: Premikajte se s tipko Tab po vaši spletni strani in zabeležite elemente z jasnimi indikatorji fokusa. Ali je kateri težko videti ali popolnoma manjka?
 
 ### Semantični HTML: Temelj dostopnosti
 
-Semantični HTML je kot GPS sistem za asistivno tehnologijo na vaši spletni strani. Ko uporabljate prave HTML elemente za njihov namen, v bistvu zagotavljate bralnikom zaslona, tipkovnicam in drugim orodjem podroben zemljevid, ki pomaga uporabnikom učinkovito navigirati.
+Semantični HTML je kot da asistivnim tehnologijam daste navigacijski sistem za vašo spletno stran. Ko uporabite prave HTML elemente za njihov namen, v bistvu ekran čitalcem, tipkovnicam in drugim orodjem zagotovite podroben zemljevid, ki uporabnikom pomaga učinkovito krmariti.
 
-Tukaj je analogija, ki mi je resnično pomagala razumeti: semantični HTML je razlika med dobro organizirano knjižnico z jasnimi kategorijami in koristnimi oznakami ter skladiščem, kjer so knjige razmetane naključno. Obe mesti imata iste knjige, vendar v katerem bi raje iskali nekaj? Točno tako!
+Tu je primerjava, ki mi je res všeč: semantični HTML je razlika med dobro organizirano knjižnico s jasnimi kategorijami in koristnimi oznakami ter skladiščem, kjer so knjige razmetane naokoli. Oba kraja imata iste knjige, a v katerem bi raje iskali nekaj? Točno tako!
 
+```mermaid
+flowchart TD
+    A[🏠 HTML Dokument] --> B[📰 glava]
+    A --> C[🧭 navigacija]
+    A --> D[📄 glavni del]
+    A --> E[📋 noga]
+    
+    B --> B1[h1: Ime spletnega mesta<br/>Logotip in blagovna znamka]
+    C --> C1[ul: Navigacija<br/>Primarne povezave]
+    D --> D1[članek: Vsebina<br/>oddelek: Pododdelki]
+    D --> D2[ob strani: Bočna vrstica<br/>Povezana vsebina]
+    E --> E1[navigacija: Povezave v nogi<br/>Informacije o avtorskih pravicah]
+    
+    D1 --> D1a[h1: Naslov strani<br/>h2: Glavni odseki<br/>h3: Pododdelki]
+    
+    style A fill:#e3f2fd
+    style B fill:#e8f5e8
+    style C fill:#fff3e0
+    style D fill:#f3e5f5
+    style E fill:#e0f2f1
+```
 **Gradniki dostopne strukture strani:**
 
 ```html
@@ -344,34 +471,60 @@ Tukaj je analogija, ki mi je resnično pomagala razumeti: semantični HTML je ra
 </footer>
 ```
 
-**Zakaj semantični HTML izboljšuje dostopnost:**
+**Zakaj semantični HTML preobraža dostopnost:**
 
-| Semantični element | Namen | Koristi za bralnik zaslona |
-|--------------------|-------|---------------------------|
-| `<header>` | Glava strani ali odseka | "Banner landmark" - hitra navigacija na vrh |
-| `<nav>` | Navigacijske povezave | "Navigation landmark" - seznam navigacijskih odsekov |
-| `<main>` | Glavna vsebina strani | "Main landmark" - neposreden skok na vsebino |
+| Semantični element | Namen | Korist za ekran čitalce |
+|--------------------|-------|-------------------------|
+| `<header>` | Glava strani ali razdelka | "Oznaka pasice" - hitra navigacija na vrh |
+| `<nav>` | Navigacijske povezave | "Oznaka navigacije" - seznam navigacijskih razdelkov |
+| `<main>` | Glavna vsebina strani | "Glavna oznaka" - preskok neposredno na vsebino |
 | `<article>` | Samostojna vsebina | Oznanja meje članka |
-| `<section>` | Tematske skupine vsebine | Zagotavlja strukturo vsebine |
-| `<aside>` | Povezana vsebina stranskega stolpca | "Complementary landmark" |
-| `<footer>` | Glava ali odsek strani | "Contentinfo landmark" |
+| `<section>` | Vsebinski tematski sklopi | Nudi vsebinsko strukturo |
+| `<aside>` | Sorodna vsebina na stranski vrstici | "Dopolnilna oznaka" |
+| `<footer>` | Noga strani ali razdelka | "Oznaka vsebinskih informacij" |
 
-**Supermoči bralnikov zaslona s semantičnim HTML-jem:**
-- **Navigacija po mejnikih**: Takojšnji skok med glavnimi odseki strani
-- **Orisi naslovov**: Ustvarjanje kazala iz strukture naslovov
-- **Seznami elementov**: Ustvarjanje seznamov vseh povezav, gumbov ali kontrolnih elementov obrazcev
-- **Zavedanje konteksta**: Razumevanje odnosov med odseki vsebine
+**Supermoč ekran čitalcev s semantičnim HTML:**
+- **Navigacija z oznakami**: Takojšnje preskakovanje med glavnimi deli strani
+- **Oris naslovov**: Ustvari kazalo vsebine iz strukture naslovov
+- **Seznami elementov**: Ustvari sezname vseh povezav, gumbov ali kontrol obrazcev
+- **Zavedanje konteksta**: Razumevanje odnosov med vsebinskimi razdelki
 
-> 🎯 **Hitri test**: Poskusite navigirati po svoji strani z bralnikom zaslona z uporabo bližnjic za mejnike (D za mejnik, H za naslov, K za povezavo v NVDA/JAWS). Ali navigacija smiselno deluje?
+> 🎯 **Hitri preizkus**: Poskusite krmariti po strani z ekran čitalcem z uporabo bližnjic za oznake (D za oznako, H za naslov, K za povezavo v NVDA/JAWS). Ali navigacija ima smisel?
 
-✅ **Preverite svojo semantično strukturo**: Uporabite panel Dostopnosti v orodjih za razvijalce vašega brskalnika, da si ogledate drevo dostopnosti in preverite, ali vaša oznaka ustvarja logično strukturo.
+### 🏗️ **Preverjanje mojstrstva semantičnega HTML: Gradnja močnih temeljev**
 
-### Hierarhija naslovov: Ustvarjanje logičnega orisa vsebine
+**Ocenimo vaše razumevanje semantike:**
+- Ali lahko prepoznate oznake na spletni strani samo s pogledom na HTML?
+- Kako bi prijatelju razložili razliko med `<section>` in `<div>`?
+- Kaj bi kot prvo preverili, če uporabnik ekran čitalca prijavi težave z navigacijo?
 
-Naslovi so izjemno pomembni za dostopno vsebino – so kot hrbtenica, ki vse drži skupaj. Uporabniki bralnikov zaslona se močno zanašajo na naslove, da razumejo in navigirajo po vaši vsebini. Pomislite na to kot na zagotavljanje kazala za vašo stran.
+```mermaid
+stateDiagram-v2
+    [*] --> UnsementicHTML: div juha
+    UnsementicHTML --> SemanticHTML: Dodaj znamenja
+    SemanticHTML --> AccessibleHTML: Testiraj z AT
+    AccessibleHTML --> [*]: Uspeh uporabnika!
+    
+    note right of UnsementicHTML
+        Branilci zaslona zmedeni
+        Navigacija s tipkovnico ne deluje
+    end note
+    
+    note right of AccessibleHTML
+        Jasna navigacija
+        Učinkovito brskanje
+    end note
+```
+> **Strokovni nasvet**: Dober semantični HTML samodejno reši približno 70 % težav z dostopnostjo. Osvojite ta temelj in ste na dobri poti!
 
-**Zlato pravilo za naslove:**
-Nikoli ne preskakujte ravni. Vedno napredujte logično od `<h1>` do `<h2>` do `<h3>` in tako naprej. Se spomnite, kako ste v šoli delali osnutke? To je popolnoma enako načelo – ne bi preskočili iz "I. Glavna točka" neposredno na "C. Pod-podtočka" brez "A. Podtočke" vmes, kajne?
+✅ **Preglejte svojo semantično strukturo**: Uporabite ploščo Dostopnosti v orodjih za razvijalce vašega brskalnika, da si ogledate drevo dostopnosti in zagotovite, da vaš označevalnik ustvarja logično strukturo.
+
+### Hierarhija naslovov: Ustvarjanje logične vsebinske strukture
+
+Naslovi so izjemno pomembni za dostopno vsebino – so kot hrbtenica, ki vse drži skupaj. Uporabniki ekran čitalcev se močno zanašajo na naslove, da razumejo in krmarijo po vaši vsebini. Pomislite na to kot na kazalo vsebine vaše strani.
+
+**Tu je zlato pravilo za naslove:**
+Nikoli ne preskakujte stopenj. Vedno se logično premikajte od `<h1>` do `<h2>` do `<h3>` in tako dalje. Se spomnite izdelovanja orisov v šoli? Točno ista načela – ne bi preskočili iz "I. Glavna točka" neposredno na "C. Pod-podtočka" brez "A. Podtočke" vmes, kajne?
 
 **Primer popolne strukture naslovov:**
 
@@ -413,31 +566,31 @@ Nikoli ne preskakujte ravni. Vedno napredujte logično od `<h1>` do `<h2>` do `<
 ```
 
 **Najboljše prakse za naslove:**
-- **En `<h1>` na stran**: Običajno vaš glavni naslov strani ali naslov primarne vsebine
-- **Logičen napredek**: Nikoli ne preskakujte ravni (h1 → h2 → h3, ne h1 → h3)
-- **Opisna vsebina**: Poskrbite, da so naslovi smiselni, tudi če jih beremo izven konteksta
-- **Vizualno oblikovanje s CSS**: Uporabite CSS za videz, ravni HTML pa za strukturo
+- **En `<h1>` na stran**: Običajno vaš glavni naslov strani ali glavni naslov vsebine
+- **Logičen napredek**: Nikoli ne preskakujte stopenj (h1 → h2 → h3, ne h1 → h3)
+- **Opisna vsebina**: Naredite naslove smiselne, tudi ko se berejo izven konteksta
+- **Vizualno oblikovanje s CSS**: Uporabite CSS za videz, HTML nivoje za strukturo
 
-**Statistika navigacije bralnikov zaslona po naslovih:**
-- 68 % uporabnikov bralnikov zaslona navigira po naslovih ([WebAIM Survey](https://webaim.org/projects/screenreadersurvey9/#finding))
-- Uporabniki pričakujejo logičen oris naslovov
-- Naslovi omogočajo najhitrejše razumevanje strukture strani
+**Statistika navigacije z ekran čitalcem:**
+- 68 % uporabnikov ekran čitalcev krmari po straneh z naslovi ([WebAIM Survey](https://webaim.org/projects/screenreadersurvey9/#finding))
+- Uporabniki pričakujejo najti logičen oris naslovov
+- Naslovi nudijo najhitrejši način za razumevanje strukture strani
 
-> 💡 **Profesionalni nasvet**: Uporabite razširitve brskalnika, kot je "HeadingsMap", da vizualizirate strukturo svojih naslovov. Morala bi izgledati kot dobro organizirano kazalo.
+> 💡 **Strokovni nasvet**: Uporabite razširitve brskalnika, kot je "HeadingsMap", da vizualizirate vašo strukturo naslovov. Mora se brati kot dobro organizirano kazalo vsebine.
 
-✅ **Preverite strukturo svojih naslovov**: Uporabite navigacijo po naslovih bralnika zaslona (tipka H v NVDA) za skok med naslovi. Ali napredek logično pripoveduje zgodbo vaše vsebine?
+✅ **Preizkusite strukturo naslovov**: Uporabite navigacijo po naslovih ekran čitalca (tipka H v NVDA), da skočite med naslovi. Ali logično povedo zgodbo vaše vsebine?
 
 ### Napredne tehnike vizualne dostopnosti
 
-Poleg osnov kontrasta in barv obstajajo sofisticirane tehnike, ki pomagajo ustvariti resnično vključujoče vizualne izkušnje. Te metode zagotavljajo, da vaša vsebina deluje v različnih pogojih gledanja in z asistivnimi tehnologijami.
+Onkraj osnov kontrasta in barve obstajajo zapletene tehnike, ki pomagajo ustvariti zares vključujoče vizualne izkušnje. Ti načini zagotavljajo, da vaša vsebina deluje v različnih pogojih gledanja in z asistivnimi tehnologijami.
 
-**Osnovne strategije vizualne komunikacije:**
+**Ključne strategije vizualne komunikacije:**
 
-- **Večmodalna povratna informacija**: Združite vizualne, besedilne in včasih zvočne namige
-- **Postopno razkrivanje**: Predstavite informacije v prebavljivih delih
-- **Dosledni vzorci interakcij**: Uporabite znane konvencije uporabniškega vmesnika
-- **Odgovorna tipografija**: Prilagodite velikost besedila glede na napravo
-- **Stanja nalaganja in napak**: Zagotovite jasno povratno informacijo za vse uporabniške akcije
+- **Večmodalna povratna informacija**: Združite vizualne, tekstovne in včasih zvočne namige
+- **Postopno razkritje**: Prikazujte informacije v prebavljivih delih
+- **Konsistentni vzorci interakcije**: Uporabljajte znane UI konvencije
+- **Odziven tipografija**: Prilagodite velikost besedila glede na naprave
+- **Stanja nalaganja in napak**: Navedite jasno povratno informacijo za vse uporabniške akcije
 
 **CSS pripomočki za izboljšano dostopnost:**
 
@@ -495,43 +648,43 @@ Poleg osnov kontrasta in barv obstajajo sofisticirane tehnike, ki pomagajo ustva
 }
 ```
 
-> 🎯 **Vzorec dostopnosti**: "Preskoči povezavo" je bistvena za uporabnike tipkovnice. Biti mora prvi fokusni element na vaši strani in skočiti neposredno na glavno vsebino.
+> 🎯 **Vzorčen element dostopnosti**: "Preskoči povezavo" je nujna za uporabnike tipkovnice. Mora biti prvi element, ki ga je mogoče fokusirati na strani in neposredno skočiti na glavno vsebino.
 
-✅ **Implementirajte preskok navigacije**: Dodajte preskočne povezave na svoje strani in jih preizkusite s pritiskom na Tab takoj, ko se stran naloži. Pojaviti se morajo in omogočiti skok na glavno vsebino.
+✅ **Implementirajte preskočni menij**: Dodajte preskočne povezave na svoje strani in jih preizkusite s pritiskom na Tab takoj, ko se stran naloži. Pojaviti se morajo in omogočiti skok na glavno vsebino.
 
-## Oblikovanje smiselnega besedila povezav
+## Ustvarjanje pomenljivega besedila povezav
 
-Povezave so v bistvu avtoceste spleta, vendar slabo napisano besedilo povezav je kot imeti prometne znake, ki samo pravijo "Kraj" namesto "Središče Chicaga". Ni ravno koristno, kajne?
+Povezave so v bistvu avtoceste spleta, a slabo napisano besedilo povezav je kot cestni znaki z napisom "Kraj" namesto "Center Chicaga". Ni kaj prida pomagalo, kajne?
 
-Tukaj je nekaj, kar me je res presenetilo, ko sem prvič izvedel: bralniki zaslona lahko izločijo vse povezave s strani in jih prikažejo kot en velik seznam. Predstavljajte si, da vam nekdo izroči imenik vseh povezav na vaši strani. Ali bi vsaka imela smisel sama po sebi? To je test, ki ga mora prestati vaše besedilo povezav!
+Nekaj, kar me je presenetilo, ko sem to prvič izvedel: ekran čitalci lahko izvlečejo vse povezave s strani in jih prikažejo kot en velik seznam. Predstavljajte si, da vam nekdo izroči imenik vseh povezav na vaši strani. Ali bi vsaka smiselno pomenila sama zase? To je test, ki ga mora vaše besedilo povezave prestati!
 
 ### Razumevanje vzorcev navigacije po povezavah
 
-Bralniki zaslona ponujajo zmogljive funkcije za navigacijo po povezavah, ki se zanašajo na dobro napisano besedilo povezav:
+Ekran čitalci ponujajo zmogljive funkcije navigacije po povezavah, ki se zanašajo na dobro napisano besedilo povezave:
 
 **Metode navigacije po povezavah:**
-- **Sekvenčno branje**: Povezave se berejo v kontekstu kot del toka vsebine
-- **Generiranje seznama povezav**: Vse povezave na strani so zbrane v iskalnem imeniku
-- **Hitra navigacija**: Skok med povezavami z uporabo bližnjic na tipkovnici (K v NVDA)
-- **Funkcija iskanja**: Iskanje specifičnih povezav z vnosom delnega besedila
+- **Zaporedno branje**: Povezave se berejo v kontekstu kot del toka vsebine
+- **Generiranje seznama povezav**: Vse povezave strani so sestavljene v iskalni imenik
+- **Hitro krmarjenje**: Preskakujte med povezavami z bližnjicami na tipkovnici (K v NVDA)
+- **Iskalna funkcija**: Poiščite določene povezave z vnosom delnega besedila
 
 **Zakaj je kontekst pomemben:**
-Ko uporabniki bralnikov zaslona ustvarijo seznam povezav, vidijo nekaj takega:
+Ko uporabniki ekran čitalcev ustvarijo seznam povezav, vidijo nekaj takega:
 - "Prenesi poročilo"
 - "Izvedi več"
 - "Klikni tukaj"
 - "Politika zasebnosti"
 - "Klikni tukaj"
 
-Samo dve od teh povezav nudita koristne informacije, če jih beremo izven konteksta!
+Samo dve od teh povezav nudita uporabne informacije, če se preberejo brez konteksta!
 
-> 📊 **Vpliv na uporabnika**: Uporabniki bralnikov zaslona pregledujejo sezname povezav, da hitro razumejo vsebino strani. Splošno besedilo povezav jih prisili, da se vrnejo k vsakemu kontekstu povezave, kar znatno upočasni njihovo izkušnjo brskanja.
+> 📊 **Vpliv na uporabnika**: Uporabniki ekran čitalcev pregledujejo sezname povezav, da hitro razumejo vsebino strani. Generično besedilo povezav jih prisili, da se vračajo v kontekst vsake povezave, kar znatno upočasni njihovo brskanje.
 
-### Pogoste napake pri besedilu povezav, ki se jim je treba izogniti
+### Pogoste napake v besedilu povezav, ki se jim izognite
 
-Razumevanje, kaj ne deluje, pomaga prepoznati in odpraviti težave z dostopnostjo v obstoječi vsebini.
+Razumevanje, kaj ne deluje, vam pomaga prepoznati in odpraviti težave z dostopnostjo v obstoječi vsebini.
 
-**❌ Splošno besedilo povezav, ki ne nudi konteksta:**
+**❌ Generično besedilo povezav brez konteksta:**
 
 ```html
 <!-- Meaningless when read from a link list -->
@@ -557,15 +710,15 @@ Razumevanje, kaj ne deluje, pomaga prepoznati in odpraviti težave z dostopnostj
 <a href="/contact">Go</a> | <a href="/about">See</a> | <a href="/help">View</a>
 ```
 
-**Zakaj ti vzorci ne delujejo:**
-- **"Klikni tukaj"** uporabnikom ne pove ničesar o cilju
-- **"Preberi več"** večkrat ponovljeno povzroča zmedo
-- **Surovi URL-ji** so težko razumljivi za bralnike zaslona
-- **Enobesedne povezave** kot "Pojdi" ali "Glej" nimajo opisnega konteksta
+**Zakaj ti vzorci ne uspejo:**
+- **"Klikni tukaj"** ne pove uporabnikom ničesar o cilju
+- **"Preberi več"** večkrat ponovljen povzroča zmedo
+- **Surove URL povezave** so težke za pravilno izgovorjavo ekran čitalcev
+- **Enojne besede** kot "Pojdi" ali "Oglej si" nimajo opisnega konteksta
 
 ### Pisanje odličnega besedila povezav
 
-Opisno besedilo povezav koristi vsem – vidni uporabniki lahko hitro preberejo povezave, uporabniki bralnikov zaslona pa takoj razumejo cilje.
+Opisno besedilo povezave koristi vsem – vidnim uporabnikom omogoča hitro pregledovanje povezav, uporabniki ekran čitalcev pa takoj razumejo cilje.
 
 **✅ Primeri jasnega, opisnega besedila povezav:**
 
@@ -595,15 +748,15 @@ Opisno besedilo povezav koristi vsem – vidni uporabniki lahko hitro preberejo 
 ```
 
 **Najboljše prakse za besedilo povezav:**
-- **Bodite specifični**: "Prenesi četrtletno finančno poročilo" namesto "Prenesi"
-- **Vključite vrsto datoteke in velikost**: "(PDF, 1,2 MB)" za datoteke za prenos
-- **Omenite, če se povezave odprejo zunaj**: "(odpre se v novem oknu)" kadar je primerno
-- **Uporabite aktivni jezik**: "Kontaktirajte nas" namesto "Kontaktna stran"
-- **Naj bo jedrnato**: Ciljajte na 2-8 besed, kadar je to mogoče
+- **Bodite specifični**: "Prenesite četrtletno finančno poročilo" namesto "Prenesi"
+- **Vključite tip in velikost datoteke**: "(PDF, 1,2 MB)" za prenosljive datoteke
+- **Omenite, če se povezava odpre zunaj**: "(se odpre v novem oknu)", kadar je primerno
+- **Uporabite dejaven jezik**: "Kontaktirajte nas" namesto "Kontaktna stran"
+- **Bodite jedrnati**: Ciljajte na 2–8 besed, kadar je mogoče
 
 ### Napredni vzorci dostopnosti povezav
 
-Včasih vizualne omejitve oblikovanja ali tehnične zahteve potrebujejo posebne rešitve. Tukaj so sofisticirane tehnike za pogoste izzive:
+Včasih vam oblikovalske omejitve ali tehnične zahteve zahtevajo posebne rešitve. Tukaj so izpopolnjene tehnike za pogoste zahtevne primere:
 
 **Uporaba ARIA za izboljšan kontekst:**
 
@@ -625,7 +778,7 @@ Včasih vizualne omejitve oblikovanja ali tehnične zahteve potrebujejo posebne 
 <p id="sustainability-summary">Detailed breakdown of our 2024 environmental goals and achievements</p>
 ```
 
-**Označevanje vrst datotek in zunanjih ciljev:**
+**Nakazovanje tipov datotek in zunanjih destinacij:**
 
 ```html
 <!-- Method 1: Include information in visible link text -->
@@ -674,98 +827,225 @@ Včasih vizualne omejitve oblikovanja ali tehnične zahteve potrebujejo posebne 
 }
 ```
 
-> ⚠️ **Pomembno**: Pri uporabi `target="_blank"` vedno obvestite uporabnike, da se povezava odpre v novem oknu ali zavihku. Nepričakovane spremembe navigacije lahko povzročijo zmedo.
+> ⚠️ **Pomembno**: Ko uporabljate `target="_blank"`, vedno obvestite uporabnike, da se povezava odpre v novem oknu ali zavihku. Nepričakovane spremembe navigacije lahko zmedejo.
 
-✅ **Preverite kontekst svojih povezav**: Uporabite orodja za razvijalce v brskalniku, da ustvarite seznam vseh povezav na svoji strani. Ali lahko razumete namen vsake povezave brez okoliškega konteksta?
+✅ **Preizkusite kontekst svojega besedila povezav**: Uporabite orodja za razvijalce brskalnika, da ustvarite seznam vseh povezav na vaši strani. Ali razumete namen vsake povezave brez kakršnegakoli konteksta?
 
-## ARIA: Supermoč za dostopnost HTML-ja
+## ARIA: Poživitev dostopnosti HTML
 
-[Accessible Rich Internet Applications (ARIA)](https://developer.mozilla.org/docs/Web/Accessibility/ARIA) je kot univerzalni prevajalnik med vašimi kompleksnimi spletnimi aplikacijami in asistivnimi tehnologijami. Ko sam HTML ne more izraziti vsega, kar počnejo vaši interaktivni elementi, ARIA zapolni te vrzeli.
+[Accessible Rich Internet Applications (ARIA)](https://developer.mozilla.org/docs/Web/Accessibility/ARIA) je kot univerzalni prevajalec med vašimi zapletenimi spletnimi aplikacijami in asistivnimi tehnologijami. Ko HTML sam ne zmore izraziti vsega, kar počnejo vaši interaktivni komponenti, ARIA zapolni te vrzeli.
 
-ARIA si predstavljam kot dodajanje koristnih opomb k vašemu HTML-ju – nekaj podobnega kot režijske opombe v scenariju, ki igralcem pomagajo razumeti njihove vloge in odnose.
+Rad razmišljam o ARIA kot o dodajanju koristnih oznak vašemu HTML-ju – nekako kot režijske smernice v dramskem scenariju, ki igralcem pomagajo razumeti svoje vloge in odnose.
 
-**Najpomembnejše pravilo o ARIA**: Vedno najprej uporabite semantični HTML, nato pa dodajte ARIA za izboljšanje. ARIA naj bo kot začimba, ne glavni obrok. Najprej pravilno postavite temelje!
+**Tukaj je najpomembnejše pravilo o ARIA:** Vedno najprej uporabite semantični HTML, nato dodajte ARIA za izboljšavo. Razmišljajte o ARIA kot začimbi, ne glavnem obroku. Mora pojasniti in izboljšati vašo HTML strukturo, nikoli je ne nadomestiti. Najprej dobro postavite temelje!
 
 ### Strateška implementacija ARIA
 
-ARIA je močna, vendar z močjo prihaja odgovornost. Napačna uporaba ARIA lahko dostopnost poslabša bolj kot njena odsotnost. Tukaj je, kdaj in kako jo učinkovito uporabiti:
+ARIA je močna, a moč prinaša tudi odgovornost. Napačna uporaba ARIA lahko dostopnost poslabša namesto izboljša. Tukaj je, kdaj in kako jo uporabljati učinkovito:
 
-**✅ Uporabite ARIA, ko:**
-- Ustvarjate prilagojene interaktivne pripomočke (akordeone, zavihke, karusele)
-- Gradite dinamično vsebino, ki se spreminja brez ponovnega nalaganja strani
-- Zagotavljate dodatni kontekst za kompleksne odnose uporabniškega vmesnika
-- Označujete stanja nalaganja ali posodobitve vsebine v živo
-- Ustvarjate aplikacije s prilagojenimi kontrolami
+**✅ Uporabite ARIA, kadar:**
+- Gradite lastne interaktivne pripomočke (akordeoni, zavihki, karusel)
+- Ustvarjate dinamično vsebino, ki se spreminja brez ponovnega nalaganja strani
+- Ponujate dodatni kontekst za zapletene UI odnose
+- Kažete stanja nalaganja ali posodobitve vsebine v živo
+- Gradite aplikacijske vmesnike z lastnimi kontrolami
 
-**❌ Izogibajte se ARIA, ko:**
-- Standardni HTML elementi že zagotavljajo potrebne semantike
+**❌ Izogibajte se ARIA, kadar:**
+- Standardni HTML elementi že nudijo potrebne semantike
 - Niste prepričani, kako jo pravilno implementirati
-- Podvaja informacije, ki jih že zagotavlja semantični HTML
+- Podvaja informacije, že podane s semantičnim HTML-jem
 - Niste testirali z dejansko asistivno tehnologijo
 
-> 🎯 **Zlato pravilo ARIA**: "Ne spreminjajte semantike, razen če je to nujno potrebno, vedno zagotovite dostopnost s tipkovnico in testirajte z resnično asistivno tehnologijo."
-
+> 🎯 **Zlato pravilo za ARIA**: "Ne spreminjajte semantike, razen če je nujno, vedno zagotovite dostopnost s tipkovnico in testirajte z resnično asistivno tehnologijo."
 **Pet kategorij ARIA:**
 
 1. **Vloge**: Kaj je ta element? (`button`, `tab`, `dialog`)
 2. **Lastnosti**: Kakšne so njegove značilnosti? (`aria-required`, `aria-haspopup`)
 3. **Stanja**: Kakšno je njegovo trenutno stanje? (`aria-expanded`, `aria-checked`)
-4. **Mejniki**: Kje je v strukturi strani? (`banner`, `navigation`, `main`)
-5. **Regije v živo**: Kako naj se spremembe oznanjajo? (`aria-live`, `aria-atomic`)
+4. **Značilni odseki (Landmarks)**: Kje se nahaja v strukturi strani? (`banner`, `navigation`, `main`)
+5. **Žive regije**: Kako naj bodo spremembe sporočene? (`aria-live`, `aria-atomic`)
 
-### Osnovni vzorci ARIA za sodobne spletne aplikacije
+### Ključni vzorci ARIA za sodobne spletne aplikacije
 
 Ti vzorci rešujejo najpogostejše izzive dostopnosti v interaktivnih spletnih aplikacijah:
 
-**Poimenovanje in opisovanje
-5. **Začnite preprosto**: Zapletene ARIA implementacije pogosteje vsebujejo napake
+**Poimenovanje in opisovanje elementov:**
+
+```html
+<!-- aria-label: Provides accessible name when visible text isn't sufficient -->
+<button aria-label="Close newsletter subscription dialog">×</button>
+
+<!-- aria-labelledby: References existing text as the accessible name -->
+<section aria-labelledby="news-heading">
+  <h2 id="news-heading">Latest News</h2>
+  <!-- news content -->
+</section>
+
+<!-- aria-describedby: Links to additional descriptive text -->
+<input type="password" 
+       aria-describedby="pwd-requirements pwd-strength"
+       required>
+<div id="pwd-requirements">
+  Password must contain at least 8 characters, including uppercase, lowercase, and numbers.
+</div>
+<div id="pwd-strength" aria-live="polite">
+  <!-- Dynamic password strength indicator -->
+</div>
+```
+
+**Žive regije za dinamično vsebino:**
+
+```html
+<!-- Polite announcements (don't interrupt current speech) -->
+<div aria-live="polite" id="status-updates">
+  <!-- Status messages appear here -->
+</div>
+
+<!-- Assertive announcements (interrupt and announce immediately) -->
+<div aria-live="assertive" id="urgent-alerts">
+  <!-- Error messages and critical alerts -->
+</div>
+
+<!-- Loading states with live regions -->
+<button id="submit-btn" aria-describedby="loading-status">
+  Submit Application
+</button>
+<div id="loading-status" aria-live="polite" aria-atomic="true">
+  <!-- "Processing your application..." appears here -->
+</div>
+```
+
+**Primer interaktivnega vtičnika (harmonika):**
+
+```html
+<div class="accordion">
+  <h3>
+    <button aria-expanded="false" 
+            aria-controls="panel-1" 
+            id="accordion-trigger-1"
+            class="accordion-trigger">
+      Accessibility Guidelines
+    </button>
+  </h3>
+  <div id="panel-1" 
+       role="region"
+       aria-labelledby="accordion-trigger-1" 
+       hidden>
+    <p>WCAG 2.1 provides comprehensive guidelines...</p>
+  </div>
+</div>
+```
+
+```javascript
+// JavaScript za upravljanje stanja harmonike
+function toggleAccordion(trigger) {
+  const panel = document.getElementById(trigger.getAttribute('aria-controls'));
+  const isExpanded = trigger.getAttribute('aria-expanded') === 'true';
+  
+  // Preklopi stanja
+  trigger.setAttribute('aria-expanded', !isExpanded);
+  panel.hidden = isExpanded;
+  
+  // Sporoči spremembo bralnikom zaslona
+  const status = document.getElementById('status-updates');
+  status.textContent = isExpanded ? 'Section collapsed' : 'Section expanded';
+}
+```
+
+### Najboljše prakse implementacije ARIA
+
+ARIA je zmogljiv, vendar zahteva skrbno implementacijo. Sledenje tem smernicam zagotavlja, da vaša ARIA izboljšuje in ne ovira dostopnosti:
+
+**🛡️ Osnovna načela:**
+
+```mermaid
+flowchart TD
+    A[🚀 Začni s semantičnim HTML-jem] --> B{Ali HTML zagotavlja potrebne semantike?}
+    B -->|Da| C[✅ Uporabi samo HTML]
+    B -->|Ne| D[Razmisli o ARIA izboljšavah]
+    D --> E{Ali lahko dosežeš to z enostavnejšimi sredstvi?}
+    E -->|Da| F[🔄 Poenostavi pristop]
+    E -->|Ne| G[📝 Previdno uveljavi ARIA]
+    G --> H[🧪 Testiraj z resničnim AT]
+    H --> I{Deluje kot pričakovano?}
+    I -->|Ne| J[🔧 Odpravi napake in popravi]
+    I -->|Da| K[✅ Uspeh!]
+    J --> H
+    F --> C
+    
+    style A fill:#e3f2fd
+    style C fill:#e8f5e8
+    style K fill:#e8f5e8
+    style G fill:#fff3e0
+    style H fill:#f3e5f5
+```
+1. **Prednost naj ima semantični HTML**: Vedno raje uporabite `<button>` kot `<div role="button">`
+2. **Ne kršite semantike**: Nikoli ne prekoračite obstoječega pomena HTML (izogibajte se `<h1 role="button">`)
+3. **Ohranjajte dostopnost na tipkovnici**: Vsi interaktivni elementi z ARIA morajo biti popolnoma dostopni z tipkovnico
+4. **Testirajte z resničnimi uporabniki**: Podpora ARIA se močno razlikuje med pomožnimi tehnologijami
+5. **Začnite enostavno**: Kompleksne ARIA implementacije imajo več možnosti napak
 
 **🔍 Postopek testiranja:**
 
 ```mermaid
 graph TD
-    A[Write ARIA code] --> B[Validate HTML]
-    B --> C[Test with keyboard only]
-    C --> D[Test with screen reader]
-    D --> E[Test across browsers]
-    E --> F{Issues found?}
-    F -->|Yes| G[Fix and re-test]
-    F -->|No| H[Implementation complete]
+    A[Napiši ARIA kodo] --> B[Preveri HTML]
+    B --> C[Preizkusi samo s tipkovnico]
+    C --> D[Preizkusi z bralnikom zaslona]
+    D --> E[Preizkusi v različnih brskalnikih]
+    E --> F{So bile najdene težave?}
+    F -->|Da| G[Popravi in ponovno preizkusi]
+    F -->|Ne| H[Implementacija končana]
     G --> B
 ```
+**🚫 Pogoste napake pri ARIA, ki se jim je treba izogniti:**
 
-**🚫 Pogoste napake pri uporabi ARIA, ki se jim je treba izogniti:**
+- **Konfliktne informacije**: Ne nasprotujte semantiki HTML
+- **Preveliko označevanje**: Preveč ARIA informacij uporabnike zmede
+- **Statična ARIA**: Pozabljanje posodobitve ARIA stanj ob spremembah vsebine
+- **Netestirane implementacije**: ARIA, ki v teoriji deluje, v praksi ne
+- **Pomanjkanje podpore za tipkovnico**: ARIA vloge brez ustreznih interakcij na tipkovnici
 
-- **Nasprotujoče informacije**: Ne nasprotujte semantiki HTML
-- **Prekomerno označevanje**: Preveč informacij ARIA lahko zmede uporabnike
-- **Statična ARIA**: Pozabljanje na posodabljanje stanj ARIA, ko se vsebina spremeni
-- **Nepreverjene implementacije**: ARIA, ki deluje v teoriji, a ne v praksi
-- **Manjkajoča podpora za tipkovnico**: ARIA vloge brez ustreznih interakcij s tipkovnico
+> 💡 **Viri za testiranje**: Uporabite orodja, kot je [accessibility-checker](https://www.npmjs.com/package/accessibility-checker) za avtomatizirano preverjanje ARIA, vendar vedno preizkušajte z resničnimi bralniki zaslona za popolno izkušnjo.
 
-> 💡 **Viri za testiranje**: Uporabite orodja, kot je [accessibility-checker](https://www.npmjs.com/package/accessibility-checker) za avtomatizirano validacijo ARIA, vendar vedno testirajte z resničnimi bralniki zaslona za popolno izkušnjo.
+### 🎭 **Preverjanje ARIA veščin: Ste pripravljeni na kompleksne interakcije?**
 
-✅ **Učite se od strokovnjakov**: Preučite [ARIA Authoring Practices Guide](https://w3c.github.io/aria-practices/) za preverjene vzorce in implementacije zapletenih interaktivnih pripomočkov.
+**Ocenite svojo samozavest pri ARIA:**
+- Kdaj bi izbrali ARIA pred semantičnim HTML? (Namig: skoraj nikoli!)
+- Ali lahko pojasnite, zakaj je `<div role="button">` običajno slabše kot `<button>`?
+- Kaj je najpomembnejša stvar, ki jo je treba zapomniti pri testiranju ARIA?
+
+```mermaid
+pie title "Pogoste uporabe ARIA vzorcev"
+    "Oznake in opisi" : 40
+    "Živa območja" : 25
+    "Stanja pripomočkov" : 20
+    "Zapleteni kontrolniki" : 15
+```
+> **Ključna ugotovitev**: Večina uporabe ARIA je za označevanje in opisovanje elementov. Kompleksni vzorci vtičnikov so veliko manj pogosti, kot si morda mislite!
+
+✅ **Učite se od strokovnjakov**: Preučite [ARIA Authoring Practices Guide](https://w3c.github.io/aria-practices/) za preizkušene vzorce in implementacije kompleksnih interaktivnih vtičnikov.
 
 ## Dostopnost slik in medijev
 
-Vizualna in zvočna vsebina sta bistvena dela sodobnih spletnih izkušenj, vendar lahko ustvarjata ovire, če nista premišljeno implementirana. Cilj je zagotoviti, da informacije in čustveni učinek vaših medijev dosežejo vsakega uporabnika. Ko se tega navadite, postane to nekaj povsem naravnega.
+Vizualne in avdio vsebine so bistveni deli sodobnih spletnih izkušenj, vendar lahko povzročijo ovire, če niso premislečeno implementirane. Cilj je zagotoviti, da informacije in čustveni vpliv vaših medijev dosežejo vsakega uporabnika. Ko se navadite, to postane druga narava.
 
-Različne vrste medijev zahtevajo različne pristope k dostopnosti. To je kot kuhanje—ne bi obravnavali nežne ribe enako kot močno zrezek. Razumevanje teh razlik vam pomaga izbrati pravo rešitev za vsako situacijo.
+Različne vrste medijev potrebujejo različne pristope k dostopnosti. To je kot kuhanje — nežno ribo ne bi obravnavali enako kot bogat zrezek. Razumevanje teh razlik vam pomaga izbrati pravo rešitev za vsako situacijo.
 
 ### Strateška dostopnost slik
 
-Vsaka slika na vaši spletni strani ima svoj namen. Razumevanje tega namena vam pomaga napisati boljše alternativno besedilo in ustvariti bolj vključujoče izkušnje.
+Vsaka slika na vaši spletni strani služi namenu. Razumevanje tega namena vam pomaga napisati boljši alternativen tekst in ustvariti bolj vključujoče izkušnje.
 
-**Štiri vrste slik in njihove strategije za alternativno besedilo:**
+**Štiri vrste slik in njihove strategije alt besedila:**
 
-**Informativne slike** - prenašajo pomembne informacije:
+**Informativne slike** - posredujejo pomembne informacije:
 ```html
-<img src="../../../../translated_images/chart.31c7eb0eb5c4450deba10b6f236732dfee8e8a11f6c0d8f31d2c2efb9d4c00ef.sl.png" alt="Sales increased 25% from Q1 to Q2 2024">
+<img src="../../../../translated_images/sl/chart.31c7eb0eb5c4450d.png" alt="Sales increased 25% from Q1 to Q2 2024">
 ```
 
-**Dekorativne slike** - zgolj vizualne brez informacijske vrednosti:
+**Dekorativne slike** - samo vizualne, brez informativne vrednosti:
 ```html
-<img src="../../../../translated_images/decorative-border.b2f3c4d6634fb79d57fb6357835906c16938df3d5651c1314c196c3b1c52df98.sl.png" alt="" role="presentation">
+<img src="../../../../translated_images/sl/decorative-border.b2f3c4d6634fb79d.png" alt="" role="presentation">
 ```
 
 **Funkcionalne slike** - služijo kot gumbi ali kontrolniki:
@@ -777,18 +1057,18 @@ Vsaka slika na vaši spletni strani ima svoj namen. Razumevanje tega namena vam 
 
 **Kompleksne slike** - grafikoni, diagrami, infografike:
 ```html
-<img src="../../../../translated_images/complex-chart.c831f461a363b446a688be5ccacde20d011221758c902cb082cfd4293534ef17.sl.png" alt="Quarterly sales data" aria-describedby="chart-description">
+<img src="../../../../translated_images/sl/complex-chart.c831f461a363b446.png" alt="Quarterly sales data" aria-describedby="chart-description">
 <div id="chart-description">
   <p>Detailed description: Sales data shows a steady increase across all quarters...</p>
 </div>
 ```
 
-### Dostopnost videa in zvoka
+### Dostopnost videoposnetkov in avdia
 
 **Zahteve za video:**
-- **Podnapisi**: Besedilna različica govorjene vsebine in zvočnih učinkov
-- **Zvočni opisi**: Naracija vizualnih elementov za slepe uporabnike
-- **Transkripti**: Celotna besedilna različica vse zvočne in vizualne vsebine
+- **Podnapisi**: Besedilna različica govorne vsebine in zvočnih učinkov
+- **Avdio opisi**: Pripoved vizualnih elementov za slepe uporabnike
+- **Prepis**: Polna besedilna različica vse avdio in vizualne vsebine
 
 ```html
 <video controls>
@@ -798,11 +1078,11 @@ Vsaka slika na vaši spletni strani ima svoj namen. Razumevanje tega namena vam 
 </video>
 ```
 
-**Zahteve za zvok:**
-- **Transkripti**: Besedilna različica vse govorjene vsebine
-- **Vizualni indikatorji**: Za vsebino, ki je samo zvočna, zagotovite vizualne namige
+**Zahteve za avdio:**
+- **Prepis**: Besedilna različica vse govorne vsebine
+- **Vizualni indikatorji**: Za avdio vsebino samo z zvokom zagotovite vizualne namige
 
-### Sodobne tehnike za slike
+### Sodobne slikovne tehnike
 
 **Uporaba CSS za dekorativne slike:**
 ```css
@@ -812,30 +1092,48 @@ Vsaka slika na vaši spletni strani ima svoj namen. Razumevanje tega namena vam 
 }
 ```
 
-**Odgovorne slike z dostopnostjo:**
+**Prilagodljive slike z dostopnostjo:**
 ```html
 <picture>
   <source media="(min-width: 800px)" srcset="large-chart.png">
   <source media="(min-width: 400px)" srcset="medium-chart.png">
-  <img src="../../../../translated_images/small-chart.c50c7b1bbcce43d8d24fbfbab8f691fe47d8f25fb7c70857c9eae21d5f22862e.sl.png" alt="Website traffic increased 40% after accessibility improvements">
+  <img src="../../../../translated_images/sl/small-chart.c50c7b1bbcce43d8.png" alt="Website traffic increased 40% after accessibility improvements">
 </picture>
 ```
 
-✅ **Testirajte dostopnost slik**: Uporabite bralnik zaslona za navigacijo po strani s slikami. Ali dobite dovolj informacij za razumevanje vsebine?
+✅ **Preizkusite dostopnost slik**: Uporabite bralnik zaslona za navigacijo po strani s slikami. Ali dobite dovolj informacij za razumevanje vsebine?
 
-## Navigacija s tipkovnico in upravljanje fokusa
+## Tipkovniška navigacija in upravljanje fokusa
 
-Veliko uporabnikov brska po spletu izključno s tipkovnicami. To vključuje ljudi z motoričnimi ovirami, napredne uporabnike, ki se jim zdi tipkovnica hitrejša od miške, in vse, ki jim miška ne deluje. Zagotoviti, da vaša stran dobro deluje z vnosom preko tipkovnice, je bistveno in pogosto naredi vašo stran bolj učinkovito za vse.
+Veliko uporabnikov brska po spletu izključno s tipkovnico. To vključuje ljudi z motoričnimi omejitvami, izkušene uporabnike, ki tipkovnice uporabljajo hitreje kot miške, in vsakogar, katerega miška ne deluje. Zagotavljanje dobrega delovanja vaše strani s tipkovniškim vnosom je ključnega pomena in pogosto naredi splet bolj učinkovit za vse.
 
-### Osnovni vzorci navigacije s tipkovnico
+```mermaid
+flowchart LR
+    A[⌨️ Navigacija s tipkovnico] --> B[Zaporedje zavihkov]
+    A --> C[Indikatorji fokusa]
+    A --> D[Preskoči povezave]
+    A --> E[Bližnjice na tipkovnici]
+    
+    B --> B1[Logično zaporedje<br/>Vsi interaktivni elementi<br/>Brez ujetnikov zavihkov]
+    C --> C1[Videl konture<br/>Visok kontrast<br/>Jasne meje]
+    D --> D1[Preskoči na glavno<br/>Preskoči na navigacijo<br/>Obide ponavljajoče]
+    E --> E1[Esc za zapiranje<br/>Enter za aktivacijo<br/>Puščice v skupinah]
+    
+    style A fill:#e3f2fd
+    style B fill:#e8f5e8
+    style C fill:#fff3e0
+    style D fill:#f3e5f5
+    style E fill:#e0f2f1
+```
+### Ključni vzorci tipkovniške navigacije
 
 **Standardne interakcije s tipkovnico:**
-- **Tab**: Premik fokusa naprej skozi interaktivne elemente
+- **Tab**: Premik fokusa naprej med interaktivnimi elementi
 - **Shift + Tab**: Premik fokusa nazaj
 - **Enter**: Aktivacija gumbov in povezav
-- **Space**: Aktivacija gumbov, označevanje polj
-- **Puščične tipke**: Navigacija znotraj skupin komponent (radio gumbi, meniji)
-- **Escape**: Zapiranje modalov, spustnih menijev ali preklic operacij
+- **Space**: Aktivacija gumbov, označevanje potrditvenih polj
+- **Puščice**: Navigacija znotraj skupin komponent (radio gumbi, meniji)
+- **Escape**: Zapiranje modalov, spustnih seznamov ali preklic operacij
 
 ### Najboljše prakse upravljanja fokusa
 
@@ -853,7 +1151,7 @@ button:focus-visible {
 }
 ```
 
-**Povezave za preskok za učinkovito navigacijo:**
+**Preskakovalne povezave za učinkovito navigacijo:**
 ```html
 <a href="#main-content" class="skip-link">Skip to main content</a>
 <a href="#navigation" class="skip-link">Skip to navigation</a>
@@ -866,7 +1164,7 @@ button:focus-visible {
 </main>
 ```
 
-**Pravilni vrstni red tabulatorja:**
+**Pravilen red tabulacije:**
 ```html
 <!-- Use semantic HTML for natural tab order -->
 <form>
@@ -880,12 +1178,12 @@ button:focus-visible {
 </form>
 ```
 
-### Ujetje fokusa v modalih
+### Zajem fokusa v modalih
 
-Ob odprtju modalnih dialogov mora biti fokus ujet znotraj modala:
+Ob odpiranju modalnih dialogov je fokus treba omejiti znotraj modala:
 
 ```javascript
-// Modern focus trap implementation
+// Sodobna implementacija fokusne pasti
 function trapFocus(element) {
   const focusableElements = element.querySelectorAll(
     'button, [href], input, select, textarea, [tabindex]:not([tabindex="-1"])'
@@ -910,20 +1208,20 @@ function trapFocus(element) {
     }
   });
   
-  // Focus first element when modal opens
+  // Osredotoči prvo element, ko se odpre modal
   firstElement.focus();
 }
 ```
 
-✅ **Testirajte navigacijo s tipkovnico**: Poskusite navigirati po vaši spletni strani samo s tipko Tab. Ali lahko dosežete vse interaktivne elemente? Ali je vrstni red fokusa logičen? Ali so indikatorji fokusa jasno vidni?
+✅ **Preizkusite tipkovniško navigacijo**: Poskusite brskati po spletni strani samo s tipko Tab. Ali dosežete vse interaktivne elemente? Ali je vrstni red fokusa logičen? Ali so indikatorji fokusa jasno vidni?
 
 ## Dostopnost obrazcev
 
-Obrazci so ključni za interakcijo uporabnikov in zahtevajo posebno pozornost glede dostopnosti.
+Obrazci so ključni za interakcijo uporabnika in zahtevajo posebno pozornost glede dostopnosti.
 
-### Povezava med oznakami in kontrolami obrazca
+### Povezava oznak in kontrol obrazca
 
-**Vsaka kontrola obrazca potrebuje oznako:**
+**Vsak kontrolni element obrazca potrebuje oznako:**
 ```html
 <!-- Explicit labeling (preferred) -->
 <label for="username">Username:</label>
@@ -939,7 +1237,7 @@ Obrazci so ključni za interakcijo uporabnikov in zahtevajo posebno pozornost gl
 <input type="search" aria-label="Search products" placeholder="Search...">
 ```
 
-### Obdelava napak in validacija
+### Ravnanje z napakami in validacija
 
 **Dostopna sporočila o napakah:**
 ```html
@@ -953,14 +1251,14 @@ Obrazci so ključni za interakcijo uporabnikov in zahtevajo posebno pozornost gl
 ```
 
 **Najboljše prakse validacije obrazcev:**
-- Uporabite `aria-invalid` za označevanje neveljavnih polj
+- Uporabite `aria-invalid` za označitev neveljavnih polj
 - Zagotovite jasna, specifična sporočila o napakah
-- Uporabite `role="alert"` za pomembna obvestila o napakah
+- Uporabite `role="alert"` za pomembna sporočila o napakah
 - Prikazujte napake takoj in ob oddaji obrazca
 
 ### Polja in združevanje
 
-**Združite povezane kontrole obrazca:**
+**Združite sorodne kontrolnike obrazca:**
 ```html
 <fieldset>
   <legend>Shipping Address</legend>
@@ -981,73 +1279,72 @@ Obrazci so ključni za interakcijo uporabnikov in zahtevajo posebno pozornost gl
 </fieldset>
 ```
 
-## Vaša pot do dostopnosti: Ključne točke
+## Vaša pot do dostopnosti: Ključni poudarki
 
-Čestitke! Pravkar ste pridobili osnovno znanje za ustvarjanje resnično vključujočih spletnih izkušenj. To je precej vznemirljivo! Spletna dostopnost ni le preverjanje skladnosti—gre za prepoznavanje raznolikih načinov, kako ljudje interagirajo z digitalno vsebino, in oblikovanje za to neverjetno kompleksnost.
+Čestitke! Pravkar ste pridobili temeljno znanje za ustvarjanje resnično vključujočih spletnih izkušenj. To je zelo navdušujoče! Spletna dostopnost ni le preverjanje skladnosti — gre za prepoznavanje različnih načinov, kako ljudje interagirajo z digitalno vsebino, in načrtovanje za to osupljivo kompleksnost.
 
-Zdaj ste del rastoče skupnosti razvijalcev, ki razumejo, da odlično oblikovanje deluje za vse. Dobrodošli v klubu!
+Sedaj ste del rastoče skupnosti razvijalcev, ki razumejo, da odličen dizajn deluje za vsakogar. Dobrodošli v klubu!
 
-**🎯 Vaš dostopnostni komplet zdaj vključuje:**
+**🎯 Vaš komplet orodij za dostopnost zdaj vključuje:**
 
-| Osnovno načelo | Implementacija | Vpliv |
-|----------------|----------------|---------|
-| **Temelj semantičnega HTML** | Uporaba ustreznih HTML elementov za njihov namen | Bralniki zaslona lahko učinkovito navigirajo, tipkovnice delujejo samodejno |
-| **Vključujoče vizualno oblikovanje** | Zadosten kontrast, smiselna uporaba barv, vidni indikatorji fokusa | Jasno za vse v vseh svetlobnih pogojih |
-| **Opisna vsebina** | Smiselno besedilo povezav, alternativno besedilo, naslovi | Uporabniki razumejo vsebino brez vizualnega konteksta |
-| **Dostopnost tipkovnice** | Vrstni red tabulatorja, bližnjice na tipkovnici, upravljanje fokusa | Motorična dostopnost in učinkovitost za napredne uporabnike |
-| **Izboljšanje z ARIA** | Strateška uporaba za zapolnitev semantičnih vrzeli | Zapletene aplikacije delujejo z asistivnimi tehnologijami |
-| **Celovito testiranje** | Avtomatizirana orodja + ročna preverjanja + testiranje z resničnimi uporabniki | Odkrivanje težav pred vplivom na uporabnike |
+| Osnovno načelo             | Implementacija                                   | Vpliv                                                |
+|---------------------------|-------------------------------------------------|-----------------------------------------------------|
+| **Temelj semantičnega HTML**   | Uporaba pravih HTML elementov za njihov namen     | Bralniki zaslona lahko učinkovito navigirajo, tipkovnice delujejo samodejno |
+| **Vključen vizualni dizajn**   | Zadosten kontrast, smiselna uporaba barv, vidni indikatorji fokusa | Jasno za vsakogar v kateri koli svetlobni razmerah |
+| **Opisna vsebina**             | Smiselno besedilo povezav, alt besedilo, naslovi  | Uporabniki razumejo vsebino brez vizualnega konteksta |
+| **Dostopnost z tipkovnico**    | Red tabulacije, bližnjice na tipkovnici, upravljanje fokusa | Dostopnost za osebe z motoričnimi omejitvami in učinkovita uporaba za izkušene uporabnike |
+| **Izboljšanje z ARIA**         | Strateška uporaba za zapolnitev semantičnih vrzeli | Kompleksne aplikacije delujejo s pomožnimi tehnologijami |
+| **Obsežno testiranje**         | Avtomatizirana orodja + ročna preverjanja + testiranje z resničnimi uporabniki | Zaznavanje težav pred njihovo uporabo pri uporabnikih |
 
 **🚀 Vaši naslednji koraki:**
 
-1. **Vključite dostopnost v vaš delovni proces**: Naredite testiranje naravni del vašega razvojnega procesa
-2. **Učite se od resničnih uporabnikov**: Poiščite povratne informacije od ljudi, ki uporabljajo asistivne tehnologije
+1. **Vgradite dostopnost v svoj razvojni proces**: Testiranje naredite za naravni del razvoja
+2. **Učite se od resničnih uporabnikov**: Poiščite povratne informacije uporabnikov pomožnih tehnologij
 3. **Ostanite na tekočem**: Tehnike dostopnosti se razvijajo z novimi tehnologijami in standardi
-4. **Zagovarjajte vključevanje**: Delite svoje znanje in naredite dostopnost prednostno nalogo ekipe
+4. **Zagovarjajte vključevanje**: Delite svoje znanje in naredite dostopnost ekipo prednostno nalogo
 
-> 💡 **Zapomnite si**: Omejitve dostopnosti pogosto vodijo do inovativnih, elegantnih rešitev, ki koristijo vsem. Klanci, podnapisi in glasovni nadzor so se začeli kot funkcije dostopnosti in postali splošne izboljšave.
+> 💡 **Zapomnite si**: Omejitve dostopnosti pogosto vodijo do inovativnih, elegantnih rešitev, ki koristijo vsem. Rampe za invalide, podnapisi in glasovni nadzor so začeli kot dostopnostni dodatki in postali običajne izboljšave.
 
-**Poslovni razlog je kristalno jasen**: Dostopne spletne strani dosežejo več uporabnikov, se bolje uvrščajo v iskalnikih, imajo nižje stroške vzdrževanja in se izognejo pravnim tveganjem. Ampak iskreno? Pravi razlog za skrb za dostopnost gre veliko globlje. Dostopne spletne strani utelešajo najboljše vrednote spleta—odprtost, vključevanje in idejo, da si vsak zasluži enak dostop do informacij.
+**Poslovni razlog je kristalno jasen**: Dostopne spletne strani dosežejo več uporabnikov, se bolje uvrščajo v iskalnikih, imajo nižje stroške vzdrževanja in zmanjšujejo pravne tveganja. A iskreno? Pravi razlog za skrb za dostopnost je veliko globlji. Dostopne spletne strani utelešajo najboljše vrednote spleta — odprtost, vključevanje in zamisel, da si vsakdo zasluži enak dostop do informacij.
 
-Zdaj ste opremljeni za gradnjo vključujočega spleta prihodnosti. Vsaka dostopna stran, ki jo ustvarite, naredi internet bolj prijazen prostor za vse. To je precej neverjetno, če pomislite!
+Sedaj ste opremljeni za gradnjo vključujočega spleta prihodnosti. Vsaka dostopna stran, ki jo ustvarite, naredi internet bolj prijazen kraj za vse. Res neverjetno, če pomislite!
 
 ## Dodatni viri
 
-Nadaljujte svojo pot učenja dostopnosti s temi ključnimi viri:
+Nadaljujte svojo pot učenja o dostopnosti s temi ključnimi viri:
 
 **📚 Uradni standardi in smernice:**
-- [WCAG 2.1 Guidelines](https://www.w3.org/WAI/WCAG21/quickref/) - Uradni standard dostopnosti s hitrim referenčnim vodičem
-- [ARIA Authoring Practices Guide](https://w3c.github.io/aria-practices/) - Celoviti vzorci za interaktivne pripomočke
-- [WebAIM Guidelines](https://webaim.org/) - Praktične, začetnikom prijazne smernice za dostopnost
+- [WCAG 2.1 smernice](https://www.w3.org/WAI/WCAG21/quickref/) - Uradni standard za dostopnost s hitrim pregledom
+- [ARIA Authoring Practices Guide](https://w3c.github.io/aria-practices/) - Celostni vzorci za interaktivne vtičnike
+- [WebAIM smernice](https://webaim.org/) - Praktične, primerne za začetnike smernice za dostopnost
 
 **🛠️ Orodja in viri za testiranje:**
 - [axe DevTools](https://www.deque.com/axe/devtools/) - Industrijski standard za testiranje dostopnosti
-- [A11y Project Checklist](https://www.a11yproject.com/checklist/) - Korak za korakom preverjanje dostopnosti
-- [Accessibility Insights](https://accessibilityinsights.io/) - Microsoftov celovit testni paket
+- [A11y Project Checklist](https://www.a11yproject.com/checklist/) - Preverjanje dostopnosti korak za korakom
+- [Accessibility Insights](https://accessibilityinsights.io/) - Microsoftov celosten testni paket
 - [Color Oracle](https://colororacle.org/) - Simulator barvne slepote za testiranje oblikovanja
 
 **🎓 Učenje in skupnost:**
-- [WebAIM Screen Reader Survey](https://webaim.org/projects/screenreadersurvey9/) - Resnične preference in vedenje uporabnikov
+- [WebAIM Screen Reader Survey](https://webaim.org/projects/screenreadersurvey9/) - Resnične preference in vedenja uporabnikov
 - [Inclusive Components](https://inclusive-components.design/) - Sodobni vzorci dostopnih komponent
 - [A11y Coffee](https://a11y.coffee/) - Hitri nasveti in vpogledi o dostopnosti
-- [Web Accessibility Initiative (WAI)](https://www.w3.org/WAI/) - Celoviti viri za dostopnost W3C
+- [Web Accessibility Initiative (WAI)](https://www.w3.org/WAI/) - W3C-jevi celostni viri o dostopnosti
 
 **🎥 Praktično učenje:**
-- [Accessibility Developer Guide](https://www.accessibility-developer-guide.com/) - Praktični vodič za implementacijo
-- [Deque University](https://dequeuniversity.com/) - Profesionalni tečaji dostopnosti
+- [Accessibility Developer Guide](https://www.accessibility-developer-guide.com/) - Praktične smernice za implementacijo
+- [Deque University](https://dequeuniversity.com/) - Profesionalni tečaji o dostopnosti
 
-## GitHub Copilot Agent Challenge 🚀
+## Izziv GitHub Copilot Agent 🚀
 
 Uporabite način Agent za dokončanje naslednjega izziva:
 
-**Opis:** Ustvarite dostopen modalni dialog komponento, ki demonstrira pravilno upravljanje fokusa, ARIA atribute in vzorce navigacije s tipkovnico.
+**Opis:** Ustvarite dostopen modalni dialog, ki prikazuje pravilno upravljanje fokusa, ARIA atribute in vzorce tipkovniške navigacije.
 
-**Navodilo:** Zgradite popolno modalno dialog komponento z HTML, CSS in JavaScript, ki vključuje: pravilno ujetje fokusa, tipko ESC za zapiranje, klik zunaj za zapiranje, ARIA atribute za bralnike zaslona in vidne indikatorje fokusa. Modal naj vsebuje obrazec z ustreznimi oznakami in obdelavo napak. Zagotovite, da komponenta ustreza standardom WCAG 2.1 AA.
-
+**Navodilo:** Zgradite popoln modalni dialog z HTML, CSS in JavaScript, ki vključuje: pravilno zajem fokusa, tipka ESC za zapiranje, klik zunaj za zapiranje, ARIA atribute za bralnike zaslona in vidne indikatorje fokusa. Modal naj vsebuje obrazec s pravimi oznakami ter obravnavo napak. Zagotovite skladnost s standardi WCAG 2.1 AA.
 
 ## 🚀 Izziv
 
-Vzemite ta HTML in ga prepišite tako, da bo čim bolj dostopen, glede na strategije, ki ste se jih naučili.
+Vzemite ta HTML in ga prepišite tako, da bo čim bolj dostopen glede na naučene strategije.
 
 ```html
 <!DOCTYPE html>
@@ -1106,28 +1403,89 @@ Vzemite ta HTML in ga prepišite tako, da bo čim bolj dostopen, glede na strate
 ```
 
 **Ključne izboljšave:**
-- Dodana ustrezna semantična struktura HTML
-- Popravljena hierarhija naslovov (en sam h1, logično zaporedje)
-- Dodano smiselno besedilo povezav namesto "kliknite tukaj"
-- Vključeni ustrezni ARIA oznake za navigacijo
+- Dodana pravilna semantična HTML struktura
+- Popravljena hierarhija naslovov (en sam h1, logičen potek)
+- Dodano smiselno besedilo povezav namesto "klikni tukaj"
+- Vključene pravilne ARIA oznake za navigacijo
 - Dodan atribut lang in ustrezne meta oznake
-- Uporaba elementa button za interaktivne elemente
-- Struktura vsebine v nogi z ustreznimi oznakami
+- Uporabljen element button za interaktivne elemente
+- Natančno strukturirana vsebina noge s pravimi značilnimi odseki
 
-## Kviz po predavanju
-[Kviz po predavanju](https://ff-quizzes.netlify.app/web/en/)
+## Kvizek po predavanju
+[Kvizek po predavanju](https://ff-quizzes.netlify.app/web/en/)
 
 ## Pregled in samostojno učenje
 
-Mnoge države imajo zakone glede zahtev za dostopnost. Preberite o zakonih o dostopnosti v vaši domači državi. Kaj je zajeto in kaj ni? Primer je [ta vladna spletna stran](https://accessibility.blog.gov.uk/).
+Mnogo vlad ima zakone o zahtevah za dostopnost. Preberite si zakone o dostopnosti v vaši domači državi. Kaj je zajeto in kaj ne? Primer je [ta vladna spletna stran](https://accessibility.blog.gov.uk/).
 
 ## Naloga
- 
+
 [Analizirajte nedostopno spletno stran](assignment.md)
 
-Zasluge: [Turtle Ipsum](https://github.com/Instrument/semantic-html-sample) by Instrument
+Zasluge: [Turtle Ipsum](https://github.com/Instrument/semantic-html-sample) avtor Instrument
 
 ---
 
-**Omejitev odgovornosti**:  
-Ta dokument je bil preveden z uporabo storitve za prevajanje z umetno inteligenco [Co-op Translator](https://github.com/Azure/co-op-translator). Čeprav si prizadevamo za natančnost, vas prosimo, da upoštevate, da lahko avtomatizirani prevodi vsebujejo napake ali netočnosti. Izvirni dokument v njegovem maternem jeziku naj se šteje za avtoritativni vir. Za ključne informacije priporočamo profesionalni človeški prevod. Ne odgovarjamo za morebitna nesporazumevanja ali napačne razlage, ki izhajajo iz uporabe tega prevoda.
+## 🚀 Vaš časovni načrt za mojstrstvo v dostopnosti
+
+### ⚡ **Kaj lahko storite v naslednjih 5 minutah**
+- [ ] Namestite razširitev axe DevTools v vaš brskalnik
+- [ ] Zaženite Lighthouse dostopnostni pregled na vaši najljubši spletni strani
+- [ ] Poskusite navigirati katerokoli spletno stran samo s tipko Tab
+- [ ] Preizkusite vgrajen bralnik zaslona v vašem brskalniku (Narrator/VoiceOver)
+
+### 🎯 **Kaj lahko dosežete v naslednji uri**
+- [ ] Dokončajte kviz po lekciji in razmislite o spoznanjih o dostopnosti
+- [ ] Vadite pisanje smiselnog alt besedila za 10 različnih slik
+- [ ] Preglejte strukturo naslovov spletne strani z razširitvijo HeadingsMap
+- [ ] Popravite težave z dostopnostjo najdene v izzivu HTML
+- [ ] Preverite barvni kontrast v vašem trenutnem projektu z orodjem WebAIM
+
+### 📅 **Vaša tedenska pot do dostopnosti**
+- [ ] Dokončajte nalogo analize nedostopne spletne strani
+- [ ] Nastavite razvojno okolje z orodji za testiranje dostopnosti
+- [ ] Vadite navigacijo s tipkovnico na 5 različnih zahtevanih spletnih mestih
+- [ ] Ustvarite preprost obrazec z ustreznimi oznakami, obravnavo napak in ARIA
+- [ ] Pridružite se skupnosti za dostopnost (A11y Slack, forum WebAIM)
+- [ ] Oglejte si resnične uporabnike z invalidnostmi, ki navigirajo po spletnih mestih (YouTube ima odlične primere)
+
+### 🌟 **Vaša mesečna preobrazba**
+- [ ] Vključite testiranje dostopnosti v svoj razvojni potek
+- [ ] Prispevajte k odprtokodnemu projektu z odpravo težav z dostopnostjo
+- [ ] Izvedite testiranje uporabnosti z nekom, ki uporablja pomožno tehnologijo
+- [ ] Ustvarite knjižnico dostopnih komponent za svojo ekipo
+- [ ] Zastopajte dostopnost na delovnem mestu ali v skupnosti
+- [ ] Mentorirajte nekoga novega pri konceptih dostopnosti
+
+### 🏆 **Zaključno preverjanje prvaka dostopnosti**
+
+**Praznujte svojo pot do dostopnosti:**
+- Kaj je najbolj presenetljivo, kar ste se naučili o tem, kako ljudje uporabljajo splet?
+- Kateri princip dostopnosti vam najbolj ustreza v vašem razvojnem slogu?
+- Kako vam je učenje o dostopnosti spremenilo pogled na oblikovanje?
+- Katero prvo izboljšavo dostopnosti želite uresničiti na resničnem projektu?
+
+```mermaid
+journey
+    title Vaša Evulucija Zaupanja v Dostopnost
+    section Danes
+      Preobremenjen: 3: You
+      Radoveden: 4: You
+      Motiviran: 5: You
+    section Ta Teden
+      Vaja: 4: You
+      Testiranje: 5: You
+      Razumevanje: 5: You
+    section Naslednji Mesec
+      Zagovornik: 5: You
+      Vodja: 5: You
+      Privzeto Vključujoče: 5: You
+```
+> 🌍 **Zdaj ste prvak dostopnosti!** Razumete, da odlične spletne izkušnje delujejo za vsakogar, ne glede na to, kako dostopajo do spleta. Vsaka dostopna funkcija, ki jo ustvarite, naredi internet bolj vključujoč. Splet potrebuje razvijalce, kot ste vi, ki dostopnosti ne vidijo kot omejitev, ampak kot priložnost za ustvarjanje boljših izkušenj za vse uporabnike. Dobrodošli v gibanje! 🎉
+
+---
+
+<!-- CO-OP TRANSLATOR DISCLAIMER START -->
+**Omejitev odgovornosti**:
+Ta dokument je bil preveden z uporabo storitve za avtomatski prevod [Co-op Translator](https://github.com/Azure/co-op-translator). Čeprav si prizadevamo za natančnost, upoštevajte, da lahko avtomatizirani prevodi vsebujejo napake ali netočnosti. Izvirni dokument v njegovem maternem jeziku velja za zavezni vir. Za ključne informacije priporočamo strokovni človeški prevod. Za morebitna nesporazume ali napačne interpretacije, ki izhajajo iz uporabe tega prevoda, ne odgovarjamo.
+<!-- CO-OP TRANSLATOR DISCLAIMER END -->

@@ -1,12 +1,3 @@
-<!--
-CO_OP_TRANSLATOR_METADATA:
-{
-  "original_hash": "86ee5069f27ea3151389d8687c95fac9",
-  "translation_date": "2025-11-04T00:57:40+00:00",
-  "source_file": "7-bank-project/3-data/README.md",
-  "language_code": "tr"
-}
--->
 # Bankacılık Uygulaması Geliştirme Bölüm 3: Verileri Alma ve Kullanma Yöntemleri
 
 Star Trek'teki Enterprise'ın bilgisayarını düşünün - Kaptan Picard geminin durumunu sorduğunda, bilgi anında görünür ve tüm arayüz kapanıp yeniden inşa edilmez. İşte burada, dinamik veri alma ile bu kesintisiz bilgi akışını oluşturuyoruz.
@@ -160,7 +151,7 @@ sequenceDiagram
     Browser->>User: Displays new page (flash/reload)
 ```
 
-![Çoklu sayfa uygulamasında güncelleme iş akışı](../../../../translated_images/mpa.7f7375a1a2d4aa779d3f928a2aaaf9ad76bcdeb05cfce2dc27ab126024050f51.tr.png)
+![Çoklu sayfa uygulamasında güncelleme iş akışı](../../../../translated_images/tr/mpa.7f7375a1a2d4aa77.webp)
 
 **Bu yaklaşım neden hantal hissettiriyordu:**
 - Her tıklama tüm sayfanın baştan sona yeniden inşa edilmesi anlamına geliyordu
@@ -187,7 +178,7 @@ sequenceDiagram
     Browser->>User: Shows updated content (no reload)
 ```
 
-![Tek sayfa uygulamasında güncelleme iş akışı](../../../../translated_images/spa.268ec73b41f992c2a21ef9294235c6ae597b3c37e2c03f0494c2d8857325cc57.tr.png)
+![Tek sayfa uygulamasında güncelleme iş akışı](../../../../translated_images/tr/spa.268ec73b41f992c2.webp)
 
 **SPA'lar neden daha iyi hissettiriyor:**
 - Sadece gerçekten değişen bölümler güncellenir (akıllıca, değil mi?)
@@ -523,7 +514,7 @@ if (data.error) {
 
 Şimdi geçersiz bir hesapla test ettiğinizde, sayfada yardımcı bir hata mesajı göreceksiniz!
 
-![Giriş sırasında hata mesajını gösteren ekran görüntüsü](../../../../translated_images/login-error.416fe019b36a63276764c2349df5d99e04ebda54fefe60c715ee87a28d5d4ad0.tr.png)
+![Giriş sırasında hata mesajını gösteren ekran görüntüsü](../../../../translated_images/tr/login-error.416fe019b36a6327.webp)
 
 #### Adım 4: Erişilebilirlik ile Kapsayıcı Olmak
 
@@ -961,7 +952,7 @@ Bankacılık uygulamanızı bir üst seviyeye taşımaya hazır mısınız? İş
 
 İşte cilalanmış bir pano böyle görünebilir:
 
-![Panonun stil eklenmiş örnek sonucu ekran görüntüsü](../../../../translated_images/screen2.123c82a831a1d14ab2061994be2fa5de9cec1ce651047217d326d4773a6348e4.tr.png)
+![Panonun stil eklenmiş örnek sonucu ekran görüntüsü](../../../../translated_images/tr/screen2.123c82a831a1d14a.webp)
 
 Bunu tam olarak eşleştirmek zorunda hissetmeyin - ilham kaynağı olarak kullanın ve kendi tarzınızı yaratın!
 

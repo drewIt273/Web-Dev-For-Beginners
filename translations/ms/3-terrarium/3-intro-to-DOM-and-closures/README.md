@@ -1,12 +1,3 @@
-<!--
-CO_OP_TRANSLATOR_METADATA:
-{
-  "original_hash": "973e48ad87d67bf5bb819746c9f8e302",
-  "translation_date": "2025-11-06T12:10:48+00:00",
-  "source_file": "3-terrarium/3-intro-to-DOM-and-closures/README.md",
-  "language_code": "ms"
-}
--->
 # Projek Terrarium Bahagian 3: Manipulasi DOM dan Penutupan JavaScript
 
 ```mermaid
@@ -26,7 +17,7 @@ journey
       Complete terrarium: 5: Student
 ```
 
-![DOM dan penutupan](../../../../translated_images/webdev101-js.10280393044d7eaaec7e847574946add7ddae6be2b2194567d848b61d849334a.ms.png)
+![DOM dan penutupan](../../../../translated_images/ms/webdev101-js.10280393044d7eaa.webp)
 > Sketchnote oleh [Tomomi Imura](https://twitter.com/girlie_mac)
 
 Selamat datang ke salah satu aspek paling menarik dalam pembangunan web - menjadikan sesuatu interaktif! Document Object Model (DOM) adalah seperti jambatan antara HTML dan JavaScript anda, dan hari ini kita akan menggunakannya untuk menghidupkan terrarium anda. Apabila Tim Berners-Lee mencipta pelayar web pertama, beliau membayangkan web di mana dokumen boleh menjadi dinamik dan interaktif - DOM menjadikan visi itu mungkin.
@@ -105,7 +96,7 @@ flowchart TD
     style Q fill:#ffebee
 ```
 
-![Representasi pokok DOM](../../../../translated_images/dom-tree.7daf0e763cbbba9273f9a66fe04c98276d7d23932309b195cb273a9cf1819b42.ms.png)
+![Representasi pokok DOM](../../../../translated_images/ms/dom-tree.7daf0e763cbbba92.webp)
 
 > Representasi DOM dan markup HTML yang merujuknya. Daripada [Olfa Nasraoui](https://www.researchgate.net/publication/221417012_Profile-Based_Focused_Crawler_for_Social_Media-Sharing_Websites)
 
@@ -150,7 +141,7 @@ flowchart LR
 
 > 💡 **Memahami Penutupan**: Penutupan adalah topik penting dalam JavaScript, dan ramai pembangun menggunakannya selama bertahun-tahun sebelum memahami sepenuhnya semua aspek teori. Hari ini, kita fokus pada aplikasi praktikal - anda akan melihat penutupan muncul secara semula jadi semasa kita membina ciri interaktif kita. Pemahaman akan berkembang apabila anda melihat bagaimana ia menyelesaikan masalah sebenar.
 
-![Representasi pokok DOM](../../../../translated_images/dom-tree.7daf0e763cbbba9273f9a66fe04c98276d7d23932309b195cb273a9cf1819b42.ms.png)
+![Representasi pokok DOM](../../../../translated_images/ms/dom-tree.7daf0e763cbbba92.webp)
 
 > Representasi DOM dan markup HTML yang merujuknya. Daripada [Olfa Nasraoui](https://www.researchgate.net/publication/221417012_Profile-Based_Focused_Crawler_for_Social_Media-Sharing_Websites)
 
@@ -598,7 +589,7 @@ Sekarang uji terrarium interaktif anda! Buka fail `index.html` anda dalam pelaya
 - **Sokongan merentas peranti**: Berfungsi pada desktop dan mudah alih
 - **Sedarkan prestasi**: Tiada kebocoran memori atau pengiraan berlebihan
 
-![terrarium siap](../../../../translated_images/terrarium-final.0920f16e87c13a84cd2b553a5af9a3ad1cffbd41fbf8ce715d9e9c43809a5e2c.ms.png)
+![terrarium siap](../../../../translated_images/ms/terrarium-final.0920f16e87c13a84.webp)
 
 ---
 

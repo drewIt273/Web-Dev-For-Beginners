@@ -1,12 +1,3 @@
-<!--
-CO_OP_TRANSLATOR_METADATA:
-{
-  "original_hash": "2ed9145a16cf576faa2a973dff84d099",
-  "translation_date": "2025-11-03T14:07:23+00:00",
-  "source_file": "6-space-game/5-keeping-score/README.md",
-  "language_code": "tl"
-}
--->
 # Gumawa ng Space Game Bahagi 5: Puntos at Buhay
 
 ```mermaid
@@ -160,7 +151,7 @@ sequenceDiagram
 ```
 
 - **Sistema ng puntos**: Ang bawat nasirang barko ng kalaban ay nagbibigay ng 100 puntos (mas madaling kalkulahin ng mga manlalaro ang mga bilog na numero). Ang score ay makikita sa ibabang kaliwang sulok.
-- **Counter ng buhay**: Ang iyong hero ay magsisimula sa tatlong buhay - isang pamantayan na itinatag ng mga unang arcade games para balansehin ang hamon at kasiyahan sa paglalaro. Ang bawat banggaan sa kalaban ay magbabawas ng isang buhay. Ipapakita natin ang natitirang buhay sa ibabang kanan gamit ang mga icon ng barko ![life image](../../../../translated_images/life.6fb9f50d53ee0413cd91aa411f7c296e10a1a6de5c4a4197c718b49bf7d63ebf.tl.png).
+- **Counter ng buhay**: Ang iyong hero ay magsisimula sa tatlong buhay - isang pamantayan na itinatag ng mga unang arcade games para balansehin ang hamon at kasiyahan sa paglalaro. Ang bawat banggaan sa kalaban ay magbabawas ng isang buhay. Ipapakita natin ang natitirang buhay sa ibabang kanan gamit ang mga icon ng barko ![life image](../../../../translated_images/tl/life.6fb9f50d53ee0413.webp).
 
 ## Simulan na Natin ang Paggawa!
 

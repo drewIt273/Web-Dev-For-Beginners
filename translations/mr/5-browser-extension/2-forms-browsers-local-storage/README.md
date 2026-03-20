@@ -1,12 +1,3 @@
-<!--
-CO_OP_TRANSLATOR_METADATA:
-{
-  "original_hash": "2b6203a48c48d8234e0948353b47d84e",
-  "translation_date": "2025-11-03T15:06:41+00:00",
-  "source_file": "5-browser-extension/2-forms-browsers-local-storage/README.md",
-  "language_code": "mr"
-}
--->
 # ब्राउझर एक्स्टेंशन प्रोजेक्ट भाग 2: API कॉल करा, लोकल स्टोरेज वापरा
 
 ```mermaid
@@ -268,7 +259,7 @@ stateDiagram-v2
     ClearStorage --> FirstTime: Back to setup
 ```
 
-![लोकल स्टोरेज पॅन](../../../../translated_images/localstorage.472f8147b6a3f8d141d9551c95a2da610ac9a3c6a73d4a1c224081c98bae09d9.mr.png)
+![लोकल स्टोरेज पॅन](../../../../translated_images/mr/localstorage.472f8147b6a3f8d1.webp)
 
 > ⚠️ **सुरक्षा विचार**: उत्पादन ऍप्लिकेशन्समध्ये, लोकल स्टोरेजमध्ये API की साठवणे सुरक्षा जोखीम निर्माण करते कारण जावास्क्रिप्टला हा डेटा प्रवेश करता येतो. शिकण्यासाठी, हा दृष्टिकोन ठीक आहे, परंतु वास्तविक ऍप्लिकेशन्स संवेदनशील क्रेडेन्शियल्ससाठी सुरक्षित सर्व्हर-साइड स्टोरेज वापरतात.
 

@@ -1,12 +1,3 @@
-<!--
-CO_OP_TRANSLATOR_METADATA:
-{
-  "original_hash": "2b6203a48c48d8234e0948353b47d84e",
-  "translation_date": "2025-11-04T01:45:13+00:00",
-  "source_file": "5-browser-extension/2-forms-browsers-local-storage/README.md",
-  "language_code": "fi"
-}
--->
 # Selaimen laajennusprojekti Osa 2: API-kutsut ja paikallinen tallennus
 
 ```mermaid
@@ -266,7 +257,7 @@ stateDiagram-v2
     ClearStorage --> FirstTime: Back to setup
 ```
 
-![Paikallisen tallennuksen näkymä](../../../../translated_images/localstorage.472f8147b6a3f8d141d9551c95a2da610ac9a3c6a73d4a1c224081c98bae09d9.fi.png)
+![Paikallisen tallennuksen näkymä](../../../../translated_images/fi/localstorage.472f8147b6a3f8d1.webp)
 
 > ⚠️ **Tietoturvahuomio**: Tuotantosovelluksissa API-avainten tallentaminen LocalStorageen aiheuttaa tietoturvariskejä, koska JavaScript voi käyttää näitä tietoja. Oppimiskäyttöön tämä lähestymistapa toimii hyvin, mutta oikeissa sovelluksissa tulisi käyttää turvallista palvelinpuolen tallennusta arkaluontoisille tunnuksille.
 

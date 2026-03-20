@@ -1,15 +1,6 @@
-<!--
-CO_OP_TRANSLATOR_METADATA:
-{
-  "original_hash": "672b0bb6e8b431075f3bdb7130590d2d",
-  "translation_date": "2025-11-04T00:41:18+00:00",
-  "source_file": "2-js-basics/1-data-types/README.md",
-  "language_code": "tr"
-}
--->
 # JavaScript Temelleri: Veri Türleri
 
-![JavaScript Temelleri - Veri Türleri](../../../../translated_images/webdev101-js-datatypes.4cc470179730702c756480d3ffa46507f746e5975ebf80f99fdaaf1cff09a7f4.tr.png)
+![JavaScript Temelleri - Veri Türleri](../../../../translated_images/tr/webdev101-js-datatypes.4cc470179730702c.webp)
 > Sketchnote: [Tomomi Imura](https://twitter.com/girlie_mac)
 
 ```mermaid

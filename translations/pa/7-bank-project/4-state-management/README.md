@@ -1,12 +1,3 @@
-<!--
-CO_OP_TRANSLATOR_METADATA:
-{
-  "original_hash": "b807b09df716dc48a2b750835bf8e933",
-  "translation_date": "2025-11-03T16:36:53+00:00",
-  "source_file": "7-bank-project/4-state-management/README.md",
-  "language_code": "pa"
-}
--->
 # ਬੈਂਕਿੰਗ ਐਪ ਬਣਾਓ ਭਾਗ 4: ਸਟੇਟ ਮੈਨੇਜਮੈਂਟ ਦੇ ਅਸੂਲ
 
 ## ⚡ ਅਗਲੇ 5 ਮਿੰਟਾਂ ਵਿੱਚ ਤੁਸੀਂ ਕੀ ਕਰ ਸਕਦੇ ਹੋ
@@ -190,7 +181,7 @@ mindmap
 
 ਅਸੀਂ ਆਪਣੀ ਪੂਛ-ਪੂਛ ਕਰਨ ਦੀ ਬਜਾਏ ਇੱਕ **ਕੇਂਦਰੀਕ੍ਰਿਤ ਸਟੇਟ ਮੈਨੇਜਮੈਂਟ** ਸਿਸਟਮ ਬਣਾਉਣ ਜਾ ਰਹੇ ਹਾਂ। ਇਸਨੂੰ ਇੱਕ ਬਹੁਤ ਹੀ ਸੁਧਰੇ ਹੋਏ ਵਿਅਕਤੀ ਵਾਂਗ ਸੋਚੋ ਜੋ ਸਾਰੇ ਮਹੱਤਵਪੂਰਨ ਚੀਜ਼ਾਂ ਦਾ ਇੰਚਾਰਜ ਹੈ:
 
-![HTML, ਯੂਜ਼ਰ ਕਾਰਵਾਈਆਂ ਅਤੇ ਸਟੇਟ ਦੇ ਵਿਚਕਾਰ ਡਾਟਾ ਫਲੋਜ਼ ਦਿਖਾਉਣ ਵਾਲੀ ਸਕੀਮਾ](../../../../translated_images/data-flow.fa2354e0908fecc89b488010dedf4871418a992edffa17e73441d257add18da4.pa.png)
+![HTML, ਯੂਜ਼ਰ ਕਾਰਵਾਈਆਂ ਅਤੇ ਸਟੇਟ ਦੇ ਵਿਚਕਾਰ ਡਾਟਾ ਫਲੋਜ਼ ਦਿਖਾਉਣ ਵਾਲੀ ਸਕੀਮਾ](../../../../translated_images/pa/data-flow.fa2354e0908fecc8.webp)
 
 ```mermaid
 flowchart TD

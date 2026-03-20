@@ -1,12 +1,3 @@
-<!--
-CO_OP_TRANSLATOR_METADATA:
-{
-  "original_hash": "3fcfa99c4897e051b558b5eaf1e8cc74",
-  "translation_date": "2025-11-03T14:40:47+00:00",
-  "source_file": "3-terrarium/1-intro-to-html/README.md",
-  "language_code": "mr"
-}
--->
 # टेरॅरियम प्रकल्प भाग 1: HTML ची ओळख
 
 ```mermaid
@@ -26,7 +17,7 @@ journey
       Build terrarium: 5: Student
 ```
 
-![HTML ची ओळख](../../../../translated_images/webdev101-html.4389c2067af68e98280c1bde52b6c6269f399eaae3659b7c846018d8a7b0bbd9.mr.png)
+![HTML ची ओळख](../../../../translated_images/mr/webdev101-html.4389c2067af68e98.webp)
 > स्केच नोट [Tomomi Imura](https://twitter.com/girlie_mac) यांच्याकडून
 
 HTML, म्हणजेच हायपरटेक्स्ट मार्कअप भाषा, ही तुम्ही कधीही भेट दिलेल्या प्रत्येक वेबसाइटची पायाभूत रचना आहे. HTML ला वेब पृष्ठांचे सांगाडा म्हणून विचार करा – ते सामग्री कुठे जाते, ती कशी आयोजित केली जाते आणि प्रत्येक भाग काय दर्शवतो हे परिभाषित करते. CSS नंतर तुमच्या HTML ला रंग आणि लेआउटसह "सजवेल", आणि JavaScript त्याला परस्परसंवादी बनवेल, HTML ही मूलभूत रचना प्रदान करते ज्यामुळे बाकी सर्व शक्य होते.
@@ -88,7 +79,7 @@ HTML कोडमध्ये जाण्यापूर्वी, तुमच
 4. Explorer पॅनमध्ये, "New File" आयकॉनवर क्लिक करा
 5. तुमच्या फाइलचे नाव `index.html` ठेवा
 
-![VS कोड एक्सप्लोरर नवीन फाइल तयार करणे दर्शवित आहे](../../../../translated_images/vs-code-index.e2986cf919471eb984a0afef231380c8b132b000635105f2397bd2754d1b689c.mr.png)
+![VS कोड एक्सप्लोरर नवीन फाइल तयार करणे दर्शवित आहे](../../../../translated_images/mr/vs-code-index.e2986cf919471eb9.webp)
 
 **पर्याय 2: टर्मिनल कमांड्स वापरणे**
 ```bash
@@ -239,48 +230,48 @@ HTML मध्ये प्रतिमा विशेष आहेत का�
 <div id="page">
 	<div id="left-container" class="container">
 		<div class="plant-holder">
-			<img class="plant" alt="plant" id="plant1" src="../../../../translated_images/plant1.d87946a2ca70cc4316bda6e6c3af7210fbe9ada5539a7885141a9ce0efaf7be3.mr.png" />
+			<img class="plant" alt="plant" id="plant1" src="../../../../translated_images/mr/plant1.d87946a2ca70cc4316bda6e6c3af7210fbe9ada5539a7885141a9ce0efaf7be3.png" />
 		</div>
 		<div class="plant-holder">
-			<img class="plant" alt="plant" id="plant2" src="../../../../translated_images/plant2.8daa1606c9c1ad896bb171212c7d1d882e504b76b8ec3a2d1c337d775cf50dc3.mr.png" />
+			<img class="plant" alt="plant" id="plant2" src="../../../../translated_images/mr/plant2.8daa1606c9c1ad896bb171212c7d1d882e504b76b8ec3a2d1c337d775cf50dc3.png" />
 		</div>
 		<div class="plant-holder">
-			<img class="plant" alt="plant" id="plant3" src="../../../../translated_images/plant3.8b0d484381a2a2a77c5c06ad97ab6ae5b7023da8c6c7678b0183bc0e46ea17a7.mr.png" />
+			<img class="plant" alt="plant" id="plant3" src="../../../../translated_images/mr/plant3.8b0d484381a2a2a77c5c06ad97ab6ae5b7023da8c6c7678b0183bc0e46ea17a7.png" />
 		</div>
 		<div class="plant-holder">
-			<img class="plant" alt="plant" id="plant4" src="../../../../translated_images/plant4.656e16ae1df37be2af5f4e7b5ab6c5decc432c3d3ec2eb98b904ddbecad49db0.mr.png" />
+			<img class="plant" alt="plant" id="plant4" src="../../../../translated_images/mr/plant4.656e16ae1df37be2af5f4e7b5ab6c5decc432c3d3ec2eb98b904ddbecad49db0.png" />
 		</div>
 		<div class="plant-holder">
-			<img class="plant" alt="plant" id="plant5" src="../../../../translated_images/plant5.2b41b9355f11ebccd62d327f5f14e56531ecda9c6f970bc89e386ee9f0273bb0.mr.png" />
+			<img class="plant" alt="plant" id="plant5" src="../../../../translated_images/mr/plant5.2b41b9355f11ebccd62d327f5f14e56531ecda9c6f970bc89e386ee9f0273bb0.png" />
 		</div>
 		<div class="plant-holder">
-			<img class="plant" alt="plant" id="plant6" src="../../../../translated_images/plant6.3d1827d03b6569946be13ae5da1f32947ae56732638a43757a7c616a6adccc5d.mr.png" />
+			<img class="plant" alt="plant" id="plant6" src="../../../../translated_images/mr/plant6.3d1827d03b6569946be13ae5da1f32947ae56732638a43757a7c616a6adccc5d.png" />
 		</div>
 		<div class="plant-holder">
-			<img class="plant" alt="plant" id="plant7" src="../../../../translated_images/plant7.8152c302ac97f621a6c595bdf3939103568f9efc7d3b06a0f02a1ea66f479de0.mr.png" />
+			<img class="plant" alt="plant" id="plant7" src="../../../../translated_images/mr/plant7.8152c302ac97f621a6c595bdf3939103568f9efc7d3b06a0f02a1ea66f479de0.png" />
 		</div>
 	</div>
 	<div id="right-container" class="container">
 		<div class="plant-holder">
-			<img class="plant" alt="plant" id="plant8" src="../../../../translated_images/plant8.38d6428174ffa850a47cd1b81d528fa528adda7d23f3ae0bb42f4a27356ca5e6.mr.png" />
+			<img class="plant" alt="plant" id="plant8" src="../../../../translated_images/mr/plant8.38d6428174ffa850a47cd1b81d528fa528adda7d23f3ae0bb42f4a27356ca5e6.png" />
 		</div>
 		<div class="plant-holder">
-			<img class="plant" alt="plant" id="plant9" src="../../../../translated_images/plant9.f0e38d3327c37fc29cd2734d48d20c2cf69300898ece6d46708829e02ce540e3.mr.png" />
+			<img class="plant" alt="plant" id="plant9" src="../../../../translated_images/mr/plant9.f0e38d3327c37fc29cd2734d48d20c2cf69300898ece6d46708829e02ce540e3.png" />
 		</div>
 		<div class="plant-holder">
-			<img class="plant" alt="plant" id="plant10" src="../../../../translated_images/plant10.b159d6d6e985595f56d86b4b38061b8e7b4c9969c210c199fe967269cf935e7f.mr.png" />
+			<img class="plant" alt="plant" id="plant10" src="../../../../translated_images/mr/plant10.b159d6d6e985595f56d86b4b38061b8e7b4c9969c210c199fe967269cf935e7f.png" />
 		</div>
 		<div class="plant-holder">
-			<img class="plant" alt="plant" id="plant11" src="../../../../translated_images/plant11.2a03a1c2ec8ea84ef3a80c06cc6883f3960fbb669f2c0b0bd824ba33d7eb7d32.mr.png" />
+			<img class="plant" alt="plant" id="plant11" src="../../../../translated_images/mr/plant11.2a03a1c2ec8ea84ef3a80c06cc6883f3960fbb669f2c0b0bd824ba33d7eb7d32.png" />
 		</div>
 		<div class="plant-holder">
-			<img class="plant" alt="plant" id="plant12" src="../../../../translated_images/plant12.60e9b53e538fbaf3e5797ebf800acb483baf5639e6cf378292ac2321ab8a5ea9.mr.png" />
+			<img class="plant" alt="plant" id="plant12" src="../../../../translated_images/mr/plant12.60e9b53e538fbaf3e5797ebf800acb483baf5639e6cf378292ac2321ab8a5ea9.png" />
 		</div>
 		<div class="plant-holder">
-			<img class="plant" alt="plant" id="plant13" src="../../../../translated_images/plant13.07a51543c820bcf57f67a9a6c0acbd6211ff795e2e67a42a9718224534e95fab.mr.png" />
+			<img class="plant" alt="plant" id="plant13" src="../../../../translated_images/mr/plant13.07a51543c820bcf57f67a9a6c0acbd6211ff795e2e67a42a9718224534e95fab.png" />
 		</div>
 		<div class="plant-holder">
-			<img class="plant" alt="plant" id="plant14" src="../../../../translated_images/plant14.6e486371ba7d36ba3520d9828887993cb4c3edad8bdd8ff9b1b315717ff8cb63.mr.png" />
+			<img class="plant" alt="plant" id="plant14" src="../../../../translated_images/mr/plant14.6e486371ba7d36ba3520d9828887993cb4c3edad8bdd8ff9b1b315717ff8cb63.png" />
 		</div>
 	</div>
 </div>

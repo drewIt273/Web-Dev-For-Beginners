@@ -1,12 +1,3 @@
-<!--
-CO_OP_TRANSLATOR_METADATA:
-{
-  "original_hash": "71009af209f81cc01a1f2d324200375f",
-  "translation_date": "2025-10-03T10:25:17+00:00",
-  "source_file": "for-teachers.md",
-  "language_code": "sw"
-}
--->
 ### Kwa Walimu
 
 Unakaribishwa kutumia mtaala huu darasani kwako. Unafanya kazi vizuri na GitHub Classroom na majukwaa maarufu ya LMS, na pia unaweza kutumika kama hifadhi ya pekee na wanafunzi wako.
@@ -42,10 +33,10 @@ Mtaala huu unajumuisha pakiti zinazoweza kuingizwa kwa kazi za kawaida za LMS.
   - Moodle Cloud ina msaada mdogo wa Common Cartridge. Pendekeza faili ya Moodle hapo juu, ambayo pia inaweza kupakiwa kwenye Canvas.
   - Baada ya kuingiza, hakiki moduli, tarehe za mwisho, na mipangilio ya majaribio ili kuendana na ratiba ya muhula wako.
 
-![Moodle](../../translated_images/moodle.94eb93d714a50cb2c97435b408017dee224348b61bc86203ffd43a4f4e57b95f.sw.png)
+![Moodle](../../translated_images/sw/moodle.94eb93d714a50cb2.webp)
 > Mtaala katika darasa la Moodle
 
-![Canvas](../../translated_images/canvas.fbd605ff8e5b8aff567d398528ce113db304446b90b9cad55c654de3fdfcda34.sw.png)
+![Canvas](../../translated_images/sw/canvas.fbd605ff8e5b8aff.webp)
 > Mtaala katika Canvas
 
 ### Kutumia hifadhi moja kwa moja (bila Classroom)

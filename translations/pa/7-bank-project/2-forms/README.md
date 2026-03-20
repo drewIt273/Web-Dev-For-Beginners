@@ -1,12 +1,3 @@
-<!--
-CO_OP_TRANSLATOR_METADATA:
-{
-  "original_hash": "7cbdbd132d39a2bb493e85bc2a9387cc",
-  "translation_date": "2025-11-03T16:44:15+00:00",
-  "source_file": "7-bank-project/2-forms/README.md",
-  "language_code": "pa"
-}
--->
 # ਬੈਂਕਿੰਗ ਐਪ ਬਣਾਓ ਭਾਗ 2: ਲੌਗਇਨ ਅਤੇ ਰਜਿਸਟ੍ਰੇਸ਼ਨ ਫਾਰਮ ਬਣਾਓ
 
 ```mermaid
@@ -434,7 +425,7 @@ async function register() {
 3. **ਕਲਿੱਕ ਕਰੋ** "ਅਕਾਊਂਟ ਬਣਾਓ"
 4. **ਨਿਰੀਖਣ ਕਰੋ** ਕਨਸੋਲ ਸੁਨੇਹੇ ਅਤੇ ਯੂਜ਼ਰ ਫੀਡਬੈਕ
 
-![ਬ੍ਰਾਊਜ਼ਰ ਕਨਸੋਲ ਵਿੱਚ ਲਾਗ ਸੁਨੇਹਾ ਦਿਖਾਉਂਦਾ ਸਕ੍ਰੀਨਸ਼ਾਟ](../../../../translated_images/browser-console.efaf0b51aaaf67782a29e1a0bb32cc063f189b18e894eb5926e02f1abe864ec2.pa.png)
+![ਬ੍ਰਾਊਜ਼ਰ ਕਨਸੋਲ ਵਿੱਚ ਲਾਗ ਸੁਨੇਹਾ ਦਿਖਾਉਂਦਾ ਸਕ੍ਰੀਨਸ਼ਾਟ](../../../../translated_images/pa/browser-console.efaf0b51aaaf6778.webp)
 
 **ਤੁਹਾਨੂੰ ਕੀ ਦੇਖਣਾ ਚਾਹੀਦਾ ਹੈ:**
 - **ਲੋਡਿੰਗ ਸਥਿਤੀ** ਸਬਮਿਟ ਬਟਨ 'ਤੇ ਦਿਖਾਈ ਦਿੰਦੀ ਹੈ
@@ -620,7 +611,7 @@ input:focus:invalid {
 
 ਇਹ ਹੈ ਇੱਕ ਉਦਾਹਰਨ ਕਿ CSS ਸਟਾਈਲਿੰਗ ਦੇ ਬਾਅਦ ਅੰਤਮ ਲੌਗਇਨ ਪੇਜ ਕਿਵੇਂ ਲੱਗ ਸਕਦਾ ਹੈ:
 
-![CSS ਸਟਾਈਲਾਂ ਜੋੜਨ ਦੇ ਬਾਅਦ ਲੌਗਇਨ ਪੇਜ ਦਾ ਸਕ੍ਰੀਨਸ਼ਾਟ](../../../../translated_images/result.96ef01f607bf856aa9789078633e94a4f7664d912f235efce2657299becca483.pa.png)
+![CSS ਸਟਾਈਲਾਂ ਜੋੜਨ ਦੇ ਬਾਅਦ ਲੌਗਇਨ ਪੇਜ ਦਾ ਸਕ੍ਰੀਨਸ਼ਾਟ](../../../../translated_images/pa/result.96ef01f607bf856a.webp)
 
 ## ਲੈਕਚਰ ਬਾਅਦ ਕਵਿਜ਼
 

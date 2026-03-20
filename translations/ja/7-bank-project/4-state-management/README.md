@@ -1,12 +1,3 @@
-<!--
-CO_OP_TRANSLATOR_METADATA:
-{
-  "original_hash": "b807b09df716dc48a2b750835bf8e933",
-  "translation_date": "2025-11-06T12:50:08+00:00",
-  "source_file": "7-bank-project/4-state-management/README.md",
-  "language_code": "ja"
-}
--->
 # 銀行アプリを作成する 第4部: 状態管理の概念
 
 ## ⚡ 次の5分間でできること
@@ -190,7 +181,7 @@ mindmap
 
 無駄な努力をする代わりに、**集中型状態管理**システムを作成します。これは、すべての重要なものを整理する1人の非常に組織的な人がいるようなものです:
 
-![HTML、ユーザーアクション、状態間のデータフローを示すスキーマ](../../../../translated_images/data-flow.fa2354e0908fecc89b488010dedf4871418a992edffa17e73441d257add18da4.ja.png)
+![HTML、ユーザーアクション、状態間のデータフローを示すスキーマ](../../../../translated_images/ja/data-flow.fa2354e0908fecc8.webp)
 
 ```mermaid
 flowchart TD

@@ -1,12 +1,3 @@
-<!--
-CO_OP_TRANSLATOR_METADATA:
-{
-  "original_hash": "973e48ad87d67bf5bb819746c9f8e302",
-  "translation_date": "2025-11-03T12:35:54+00:00",
-  "source_file": "3-terrarium/3-intro-to-DOM-and-closures/README.md",
-  "language_code": "ar"
-}
--->
 # مشروع التيراريوم الجزء الثالث: التلاعب بـ DOM والإغلاق في JavaScript
 
 ```mermaid
@@ -26,7 +17,7 @@ journey
       Complete terrarium: 5: Student
 ```
 
-![DOM والإغلاق](../../../../translated_images/webdev101-js.10280393044d7eaaec7e847574946add7ddae6be2b2194567d848b61d849334a.ar.png)
+![DOM والإغلاق](../../../../translated_images/ar/webdev101-js.10280393044d7eaa.webp)
 > رسم توضيحي بواسطة [Tomomi Imura](https://twitter.com/girlie_mac)
 
 مرحبًا بكم في أحد أكثر جوانب تطوير الويب إثارة - جعل الأشياء تفاعلية! نموذج كائن المستند (DOM) هو بمثابة جسر بين HTML و JavaScript، واليوم سنستخدمه لإضفاء الحياة على التيراريوم الخاص بك. عندما أنشأ Tim Berners-Lee أول متصفح ويب، كان يتصور شبكة يمكن أن تكون ديناميكية وتفاعلية - و DOM يجعل هذا التصور ممكنًا.
@@ -105,7 +96,7 @@ flowchart TD
     style Q fill:#ffebee
 ```
 
-![تمثيل شجرة DOM](../../../../translated_images/dom-tree.7daf0e763cbbba9273f9a66fe04c98276d7d23932309b195cb273a9cf1819b42.ar.png)
+![تمثيل شجرة DOM](../../../../translated_images/ar/dom-tree.7daf0e763cbbba92.webp)
 
 > تمثيل لـ DOM وعلامات HTML التي تشير إليه. من [Olfa Nasraoui](https://www.researchgate.net/publication/221417012_Profile-Based_Focused_Crawler_for_Social_Media-Sharing_Websites)
 
@@ -150,7 +141,7 @@ flowchart LR
 
 > 💡 **فهم الإغلاق**: الإغلاق موضوع مهم في JavaScript، ويستخدمه العديد من المطورين لسنوات قبل أن يفهموا جميع الجوانب النظرية بالكامل. اليوم، نركز على التطبيق العملي - سترى الإغلاق يظهر بشكل طبيعي أثناء بناء ميزاتنا التفاعلية. الفهم سيتطور عندما ترى كيف يحل مشاكل حقيقية.
 
-![تمثيل شجرة DOM](../../../../translated_images/dom-tree.7daf0e763cbbba9273f9a66fe04c98276d7d23932309b195cb273a9cf1819b42.ar.png)
+![تمثيل شجرة DOM](../../../../translated_images/ar/dom-tree.7daf0e763cbbba92.webp)
 
 > تمثيل لـ DOM وعلامات HTML التي تشير إليه. من [Olfa Nasraoui](https://www.researchgate.net/publication/221417012_Profile-Based_Focused_Crawler_for_Social_Media-Sharing_Websites)
 
@@ -598,7 +589,7 @@ function stopElementDrag() {
 - **دعم عبر الأجهزة**: يعمل على أجهزة الكمبيوتر المكتبية والجوال
 - **وعي بالأداء**: لا يوجد تسرب للذاكرة أو حسابات زائدة
 
-![التيراريوم النهائي](../../../../translated_images/terrarium-final.0920f16e87c13a84cd2b553a5af9a3ad1cffbd41fbf8ce715d9e9c43809a5e2c.ar.png)
+![التيراريوم النهائي](../../../../translated_images/ar/terrarium-final.0920f16e87c13a84.webp)
 
 ---
 

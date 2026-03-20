@@ -1,12 +1,3 @@
-<!--
-CO_OP_TRANSLATOR_METADATA:
-{
-  "original_hash": "e39f3a4e3bcccf94639e3af1248f8a4d",
-  "translation_date": "2025-11-03T13:56:26+00:00",
-  "source_file": "3-terrarium/2-intro-to-css/README.md",
-  "language_code": "tl"
-}
--->
 # Terrarium Project Part 2: Panimula sa CSS
 
 ```mermaid
@@ -30,7 +21,7 @@ journey
       Glass reflections: 5: Student
 ```
 
-![Panimula sa CSS](../../../../translated_images/webdev101-css.3f7af5991bf53a200d79e7257e5e450408d8ea97f5b531d31b2e3976317338ee.tl.png)
+![Panimula sa CSS](../../../../translated_images/tl/webdev101-css.3f7af5991bf53a20.webp)
 > Sketchnote ni [Tomomi Imura](https://twitter.com/girlie_mac)
 
 Naalala mo ba kung gaano kasimple ang hitsura ng iyong HTML terrarium? Sa CSS, binabago natin ang simpleng istruktura na iyon upang maging mas kaakit-akit sa paningin.
@@ -205,7 +196,7 @@ body {
 
 Buksan ang developer tools ng iyong browser (F12), pumunta sa Elements tab, at i-inspect ang iyong `<h1>` element. Makikita mo na namamana nito ang font family mula sa body:
 
-![namana na font](../../../../translated_images/1.cc07a5cbe114ad1d4728c35134584ac1b87db688eff83cf75985cf31fe0ed95c.tl.png)
+![namana na font](../../../../translated_images/tl/1.cc07a5cbe114ad1d.webp)
 
 ✅ **Experiment Time**: Subukang mag-set ng iba pang inheritable properties sa `<body>` tulad ng `color`, `line-height`, o `text-align`. Ano ang nangyayari sa iyong heading at iba pang elemento?
 
@@ -335,7 +326,7 @@ Sa ating terrarium, bawat halaman ay nangangailangan ng parehong styling ngunit 
 **Narito ang HTML structure para sa bawat halaman:**
 ```html
 <div class="plant-holder">
-  <img class="plant" alt="Decorative plant for terrarium" id="plant1" src="../../../../translated_images/plant1.d18b18ffe73da18f8b1ac7aba73b4050af52f4a0c9174aeac464b85123fc2850.tl.png" />
+  <img class="plant" alt="Decorative plant for terrarium" id="plant1" src="../../../../translated_images/tl/plant1.d18b18ffe73da18f8b1ac7aba73b4050af52f4a0c9174aeac464b85123fc2850.png" />
 </div>
 ```
 
@@ -599,7 +590,7 @@ Handa ka na bang pagandahin ang iyong terrarium gamit ang realistic glass reflec
 
 Gagawa ka ng subtle highlights na ginagaya kung paano nagre-reflect ang ilaw sa glass surfaces. Ang approach na ito ay kahalintulad ng paraan ng mga pintor noong Renaissance tulad ni Jan van Eyck na gumamit ng ilaw at reflection upang gawing three-dimensional ang painted glass. Narito ang layunin mo:
 
-![finished terrarium](../../../../translated_images/terrarium-final.2f07047ffc597d0a06b06cab28a77801a10dd12fdb6c7fc630e9c40665491c53.tl.png)
+![finished terrarium](../../../../translated_images/tl/terrarium-final.2f07047ffc597d0a.webp)
 
 **Ang iyong hamon:**
 - **Gumawa** ng subtle white o light-colored oval shapes para sa glass reflections

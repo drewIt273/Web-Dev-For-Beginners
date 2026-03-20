@@ -1,12 +1,3 @@
-<!--
-CO_OP_TRANSLATOR_METADATA:
-{
-  "original_hash": "b807b09df716dc48a2b750835bf8e933",
-  "translation_date": "2025-11-04T02:27:07+00:00",
-  "source_file": "7-bank-project/4-state-management/README.md",
-  "language_code": "he"
-}
--->
 # בניית אפליקציית בנקאות חלק 4: מושגים בניהול מצב
 
 ## ⚡ מה אפשר לעשות ב-5 הדקות הקרובות
@@ -190,7 +181,7 @@ mindmap
 
 במקום לרדוף אחרי הזנב שלנו, אנחנו הולכים ליצור מערכת **ניהול מצב מרכזית**. תחשוב על זה כמו שיש אדם אחד מאוד מאורגן שאחראי על כל הדברים החשובים:
 
-![סכימה שמראה את זרימת הנתונים בין ה-HTML, פעולות המשתמש והמצב](../../../../translated_images/data-flow.fa2354e0908fecc89b488010dedf4871418a992edffa17e73441d257add18da4.he.png)
+![סכימה שמראה את זרימת הנתונים בין ה-HTML, פעולות המשתמש והמצב](../../../../translated_images/he/data-flow.fa2354e0908fecc8.webp)
 
 ```mermaid
 flowchart TD
@@ -804,7 +795,7 @@ timeline
 
 הנה דוגמה לתוצאה לאחר השלמת המשימה:
 
-![צילום מסך המציג דוגמה לדיאלוג "הוסף עסקה"](../../../../translated_images/dialog.93bba104afeb79f12f65ebf8f521c5d64e179c40b791c49c242cf15f7e7fab15.he.png)
+![צילום מסך המציג דוגמה לדיאלוג "הוסף עסקה"](../../../../translated_images/he/dialog.93bba104afeb79f1.webp)
 
 ---
 

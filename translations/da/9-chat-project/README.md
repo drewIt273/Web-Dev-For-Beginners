@@ -1,102 +1,204 @@
-<!--
-CO_OP_TRANSLATOR_METADATA:
-{
-  "original_hash": "46d665af66e51524598af34a42b9b663",
-  "translation_date": "2025-10-23T22:00:32+00:00",
-  "source_file": "9-chat-project/README.md",
-  "language_code": "da"
-}
--->
 # Byg en Chat-assistent med AI
 
-Kan du huske i Star Trek, når besætningen afslappet talte med skibets computer, stillede komplekse spørgsmål og fik gennemtænkte svar? Det, der virkede som ren science fiction i 1960'erne, er nu noget, du kan bygge ved hjælp af webteknologier, du allerede kender.
+Kan du huske i Star Trek, da besætningen afslappet talte med skibets computer, stillede den komplekse spørgsmål og fik gennemførte svar? Hvad der virkede som ren science fiction i 1960’erne, er nu noget, du kan bygge ved hjælp af webteknologier, du allerede kender.
 
-I denne lektion vil vi skabe en AI-chatassistent ved hjælp af HTML, CSS, JavaScript og noget backend-integration. Du vil opdage, hvordan de samme færdigheder, du har lært, kan forbindes til kraftfulde AI-tjenester, der kan forstå kontekst og generere meningsfulde svar.
+I denne lektion skaber vi en AI-chatassistent ved hjælp af HTML, CSS, JavaScript og en backend-integration. Du vil opdage, hvordan de samme færdigheder, du har lært, kan forbinde til kraftfulde AI-tjenester, som kan forstå kontekst og generere meningsfulde svar.
 
-Tænk på AI som at have adgang til et enormt bibliotek, der ikke kun kan finde information, men også syntetisere det til sammenhængende svar skræddersyet til dine specifikke spørgsmål. I stedet for at søge gennem tusindvis af sider får du direkte, kontekstuelle svar.
+Tænk på AI som adgang til et enormt bibliotek, der ikke blot kan finde information, men også syntetisere det til sammenhængende svar, der er skræddersyet til dine specifikke spørgsmål. I stedet for at gennemgå tusindvis af sider får du direkte, kontekstuelle svar.
 
-Integrationen sker gennem velkendte webteknologier, der arbejder sammen. HTML skaber chatgrænsefladen, CSS håndterer det visuelle design, JavaScript styrer brugerinteraktioner, og en backend-API forbinder det hele til AI-tjenesterne. Det er lidt som hvordan forskellige sektioner af et orkester arbejder sammen for at skabe en symfoni.
+Integrationen sker gennem velkendte webteknologier, der arbejder sammen. HTML skaber chatgrænsefladen, CSS håndterer det visuelle design, JavaScript styrer brugerinteraktioner, og en backend-API forbinder det hele til AI-tjenester. Det ligner, hvordan forskellige sektioner i et orkester samarbejder for at skabe en symfoni.
 
-Vi bygger i bund og grund en bro mellem naturlig menneskelig kommunikation og maskinbearbejdning. Du vil lære både den tekniske implementering af AI-tjenesteintegration og de designmønstre, der gør interaktioner intuitive.
+Vi bygger i bund og grund en bro mellem naturlig menneskelig kommunikation og maskinbehandling. Du lærer både den tekniske implementering af AI-tjenesteintegration og designmønstrene, der gør interaktioner intuitive.
 
-Ved slutningen af denne lektion vil AI-integration føles mindre som en mystisk proces og mere som en anden API, du kan arbejde med. Du vil forstå de grundlæggende mønstre, der driver applikationer som ChatGPT og Claude, ved hjælp af de samme webudviklingsprincipper, du har lært.
+Ved slutningen af denne lektion vil AI-integration føles mindre som en mystisk proces og mere som en hvilken som helst anden API, du kan arbejde med. Du vil forstå de grundlæggende mønstre, der driver applikationer som ChatGPT og Claude, ved at bruge de samme webudviklingsprincipper, du allerede har lært.
 
-Her er, hvordan dit færdige projekt vil se ud:
+## ⚡ Hvad Du Kan Nå på de Næste 5 Minutter
 
-![Chat-app-grænseflade, der viser en samtale mellem bruger og AI-assistent](../../../translated_images/screenshot.0a1ee0d123df681b4501eb53ffb267519fcc20aa653eabecef1e7561ddfb1cab.da.png)
-
-## Forstå AI: Fra mystik til mestring
-
-Før vi dykker ned i koden, lad os forstå, hvad vi arbejder med. Hvis du har brugt API'er før, kender du det grundlæggende mønster: send en forespørgsel, modtag et svar.
-
-AI-API'er følger en lignende struktur, men i stedet for at hente forudlagret data fra en database genererer de nye svar baseret på mønstre, der er lært fra enorme mængder tekst. Tænk på det som forskellen mellem et bibliotekskatalogsystem og en vidende bibliotekar, der kan syntetisere information fra flere kilder.
-
-### Hvad er "Generativ AI" egentlig?
-
-Tænk på, hvordan Rosetta-stenen gjorde det muligt for forskere at forstå egyptiske hieroglyffer ved at finde mønstre mellem kendte og ukendte sprog. AI-modeller fungerer på samme måde – de finder mønstre i enorme mængder tekst for at forstå, hvordan sprog fungerer, og bruger derefter disse mønstre til at generere passende svar på nye spørgsmål.
-
-**Lad mig forklare det med en simpel sammenligning:**
-- **Traditionel database**: Som at bede om din fødselsattest – du får det samme dokument hver gang.
-- **Søgemaskine**: Som at bede en bibliotekar om at finde bøger om katte – de viser dig, hvad der er tilgængeligt.
-- **Generativ AI**: Som at spørge en vidende ven om katte – de fortæller dig interessante ting med deres egne ord, skræddersyet til det, du vil vide.
+**Hurtig Startvej for Travle Udviklere**
 
 ```mermaid
-graph LR
-    A[Your Question] --> B[AI Model]
-    B --> C[Pattern Recognition]
-    C --> D[Content Generation]
-    D --> E[Contextual Response]
-    
-    F[Training Data<br/>Books, Articles, Web] --> B
+flowchart LR
+    A[⚡ 5 minutter] --> B[Få GitHub-token]
+    B --> C[Test AI legeplads]
+    C --> D[Kopiér Python-kode]
+    D --> E[Se AI-svar]
+```
+- **Minut 1**: Besøg [GitHub Models Playground](https://github.com/marketplace/models/azure-openai/gpt-4o-mini/playground) og opret en personlig adgangstoken
+- **Minut 2**: Test AI-interaktioner direkte i playground-grænsefladen
+- **Minut 3**: Klik på fanen "Code" og kopier Python-koden
+- **Minut 4**: Kør koden lokalt med din token: `GITHUB_TOKEN=your_token python test.py`
+- **Minut 5**: Se dit første AI-svar genereres fra din egen kode
+
+**Hurtig Testkode**:
+```python
+import os
+from openai import OpenAI
+
+client = OpenAI(
+    base_url="https://models.github.ai/inference",
+    api_key="your_token_here"
+)
+
+response = client.chat.completions.create(
+    messages=[{"role": "user", "content": "Hello AI!"}],
+    model="openai/gpt-4o-mini"
+)
+
+print(response.choices[0].message.content)
 ```
 
-### Hvordan AI-modeller lærer (den enkle version)
+**Hvorfor det betyder noget**: På 5 minutter vil du opleve magien ved programmeret AI-interaktion. Dette repræsenterer grundstenen, der driver alle AI-applikationer, du bruger.
 
-AI-modeller lærer gennem eksponering for enorme datasæt, der indeholder tekst fra bøger, artikler og samtaler. Gennem denne proces identificerer de mønstre i:
-- Hvordan tanker er struktureret i skriftlig kommunikation
-- Hvilke ord der ofte optræder sammen
-- Hvordan samtaler typisk forløber
-- Kontekstuelle forskelle mellem formel og uformel kommunikation
+Sådan vil dit færdige projekt se ud:
 
-**Det er lidt som hvordan arkæologer afkoder gamle sprog**: De analyserer tusindvis af eksempler for at forstå grammatik, ordforråd og kulturel kontekst og bliver til sidst i stand til at tolke nye tekster ved hjælp af de lærte mønstre.
+![Chat app interface showing conversation between user and AI assistant](../../../translated_images/da/screenshot.0a1ee0d123df681b.webp)
 
-### Hvorfor GitHub-modeller?
+## 🗺️ Din Læringsrejse Gennem AI-applikationsudvikling
 
-Vi bruger GitHub-modeller af en ret praktisk grund – det giver os adgang til AI på virksomhedsniveau uden at skulle opsætte vores egen AI-infrastruktur (hvilket, tro mig, du ikke har lyst til lige nu!). Tænk på det som at bruge en vejr-API i stedet for at forsøge at forudsige vejret selv ved at opsætte vejrstationer overalt.
+```mermaid
+journey
+    title Fra Webudvikling til AI-Integration
+    section Forståelse af AI-Grundlag
+      Opdag generative AI-koncepter: 4: You
+      Udforsk GitHub Models platform: 6: You
+      Mestre AI-parametre og prompts: 8: You
+    section Backend Integration
+      Byg Python API-server: 5: You
+      Implementer AI-funktionskald: 7: You
+      Håndter asynkrone operationer: 8: You
+    section Frontend Udvikling
+      Skab moderne chatgrænseflade: 6: You
+      Mestre realtidsinteraktioner: 8: You
+      Byg responsiv brugeroplevelse: 9: You
+    section Professionel Anvendelse
+      Udrul komplet AI-system: 7: You
+      Optimer ydelsesmønstre: 8: You
+      Skab produktionsklar app: 9: You
+```
+**Dit Mål for Rejsen**: Ved lektionens afslutning har du bygget en komplet AI-drevet applikation med de samme teknologier og mønstre, der driver moderne AI-assistenter som ChatGPT, Claude og Google Bard.
 
-Det er i bund og grund "AI-som-en-tjeneste", og det bedste? Det er gratis at komme i gang, så du kan eksperimentere uden at bekymre dig om at få en stor regning.
+## Forstå AI: Fra Mystik til Mestring
+
+Før vi dykker ned i koden, lad os forstå, hvad vi arbejder med. Hvis du har brugt API’er før, kender du det grundlæggende mønster: sende en anmodning, modtage et svar.
+
+AI-API’er følger en lignende struktur, men i stedet for at hente forudlagrede data fra en database genererer de nye svar baseret på mønstre lært fra enorme mængder tekst. Tænk på det som forskellen mellem et bibliotekskatalog og en kyndig bibliotekar, der kan syntetisere information fra flere kilder.
+
+### Hvad er "Generativ AI" Egentlig?
+
+Tænk på, hvordan Rosetta-stenen gjorde det muligt for forskere at forstå egyptiske hieroglyffer ved at finde mønstre mellem kendte og ukendte sprog. AI-modeller arbejder på samme måde – de finder mønstre i enorme tekstmængder for at forstå, hvordan sprog fungerer, og bruger derefter disse mønstre til at generere passende svar på nye spørgsmål.
+
+**Lad mig forklare det med en simpel sammenligning:**
+- **Traditionel database**: Som at bede om din fødselsattest – du får det samme dokument hver gang
+- **Søgemaskine**: Som at bede en bibliotekar finde bøger om katte – de viser dig, hvad der er tilgængeligt
+- **Generativ AI**: Som at spørge en vidende ven om katte – de fortæller dig interessante ting med deres egne ord, tilpasset det, du vil vide
 
 ```mermaid
 graph LR
-    A[Frontend Chat UI] --> B[Your Backend API]
+    A[Dit Spørgsmål] --> B[AI Model]
+    B --> C[Mønster Genkendelse]
+    C --> D[Indholds Generering]
+    D --> E[Kontekstuel Respons]
+    
+    F[Træningsdata<br/>Bøger, Artikler, Web] --> B
+```
+### Hvordan AI-modeller Lærer (Den Enkle Version)
+
+AI-modeller lærer gennem eksponering for enorme datasæt indeholdende tekst fra bøger, artikler og samtaler. Gennem denne proces identificerer de mønstre i:
+- Hvordan tanker struktureres i skriftlig kommunikation
+- Hvilke ord der ofte optræder sammen
+- Hvordan samtaler typisk flyder
+- Kontekstuelle forskelle mellem formel og uformel kommunikation
+
+**Det svarer til, hvordan arkæologer afkoder gamle sprog**: de analyserer tusinder af eksempler for at forstå grammatik, ordforråd og kulturel kontekst, og bliver til sidst i stand til at tolke nye tekster ved hjælp af disse lærte mønstre.
+
+### Hvorfor GitHub Models?
+
+Vi bruger GitHub Models af en praktisk årsag – det giver os adgang til AI på virksomhedsniveau uden at skulle opsætte vores egen AI-infrastruktur (hvilket du for resten ikke har lyst til lige nu!). Tænk på det som at bruge en vejr-API i stedet for selv at oprette vejrstationer overalt.
+
+Det er i bund og grund "AI-som-en-Service", og det bedste? Det er gratis at komme i gang med, så du kan eksperimentere uden bekymring om store regninger.
+
+```mermaid
+graph LR
+    A[Frontend Chat UI] --> B[Din Backend API]
     B --> C[GitHub Models API]
-    C --> D[AI Model Processing]
+    C --> D[AI Modelbehandling]
     D --> C
     C --> B
     B --> A
 ```
+Vi bruger GitHub Models til vores backend-integration, som giver adgang til professionelle AI-kapaciteter gennem en udviklervenlig grænseflade. [GitHub Models Playground](https://github.com/marketplace/models/azure-openai/gpt-4o-mini/playground) fungerer som et testmiljø, hvor du kan prøve forskellige AI-modeller og forstå deres egenskaber, før du implementerer dem i kode.
 
-Vi bruger GitHub-modeller til vores backend-integration, som giver adgang til professionelle AI-funktioner gennem en udviklervenlig grænseflade. [GitHub Models Playground](https://github.com/marketplace/models/azure-openai/gpt-4o-mini/playground) fungerer som et testmiljø, hvor du kan eksperimentere med forskellige AI-modeller og forstå deres kapaciteter, før du implementerer dem i kode.
+## 🧠 AI-applikationsudviklingsøkosystem
 
-![GitHub Models AI Playground-grænseflade med modelvalg og testområde](../../../translated_images/playground.d2b927122224ff8ff4028fc842176e353c339147d8925455f36c92fb1655c477.da.png)
+```mermaid
+mindmap
+  root((AI Udvikling))
+    Forståelse af AI
+      Generative Modeller
+        Mønster Genkendelse
+        Indhold Generering
+        Kontekst Forståelse
+        Svar Syntese
+      AI Parametre
+        Temperatur Kontrol
+        Token Grænser
+        Top-p Filtrering
+        System Prompter
+    Backend Arkitektur
+      API Integration
+        GitHub Modeller
+        Autentificering
+        Forespørgsels Håndtering
+        Fejl Håndtering
+      Python Infrastruktur
+        FastAPI Framework
+        Async Operationer
+        Miljø Sikkerhed
+        CORS Konfiguration
+    Frontend Oplevelse
+      Chat Interface
+        Real-time Opdateringer
+        Besked Historik
+        Bruger Feedback
+        Indlæsnings Tilstande
+      Moderne Web Teknologi
+        ES6 Klasser
+        Async/Await
+        DOM Manipulation
+        Event Håndtering
+    Professionelle Mønstre
+      Sikkerheds Bedste Praksis
+        Token Håndtering
+        Input Validering
+        XSS Forebyggelse
+        Fejlgrænser
+      Produktionsberedskab
+        Ydelsesoptimering
+        Responsivt Design
+        Tilgængelighed
+        Test Strategier
+```
+**Kerneprincip**: AI-applikationsudvikling kombinerer traditionelle webudviklingsfærdigheder med AI-tjenesteintegration for at skabe intelligente applikationer, der føles naturlige og responsive for brugerne.
 
-**Her er, hvad der gør playground så nyttig:**
+![GitHub Models AI Playground interface with model selection and testing area](../../../translated_images/da/playground.d2b927122224ff8f.webp)
+
+**Det der gør playground så nyttig:**
 - **Prøv** forskellige AI-modeller som GPT-4o-mini, Claude og andre (alle gratis!)
-- **Test** dine ideer og prompts, før du skriver nogen kode
+- **Test** dine idéer og prompts inden du skriver kode
 - **Få** klar-til-brug kodeeksempler i dit foretrukne programmeringssprog
-- **Tilpas** indstillinger som kreativitet og svarlængde for at se, hvordan de påvirker output
+- **Juster** indstillinger som kreativitet og svarlængde for at se, hvordan de påvirker output
 
-Når du har leget lidt, skal du bare klikke på fanen "Code" og vælge dit programmeringssprog for at få den implementeringskode, du har brug for.
+Når du har prøvet lidt, klik bare på fanen "Code" og vælg dit programmersprog for at få den nødvendige implementeringskode.
 
-![Playground-valg, der viser kodegenereringsmuligheder for forskellige programmeringssprog](../../../translated_images/playground-choice.1d23ba7d407f47584c9f446c77f0bcf70cae794cc9c8d7849a3cca4a3693e6c4.da.png)
+![Playground choice showing code generation options for different programming languages](../../../translated_images/da/playground-choice.1d23ba7d407f4758.webp)
 
-## Opsætning af Python-backend-integration
+## Opsætning af Python Backend Integration
 
-Nu skal vi implementere AI-integrationen ved hjælp af Python. Python er fremragende til AI-applikationer på grund af sin enkle syntaks og kraftfulde biblioteker. Vi starter med koden fra GitHub Models Playground og refaktorerer den derefter til en genanvendelig, produktionsklar funktion.
+Lad os nu implementere AI-integrationen med Python. Python er fremragende til AI-applikationer pga. sin simple syntaks og kraftfulde biblioteker. Vi starter med koden fra GitHub Models playground og refaktorerer den derefter til en genanvendelig, produktionsklar funktion.
 
-### Forståelse af basisimplementeringen
+### Forstå den Grundlæggende Implementering
 
-Når du henter Python-koden fra playground, får du noget, der ser sådan ud. Bare rolig, hvis det virker som meget i starten – lad os gennemgå det stykke for stykke:
+Når du henter Python-koden fra playground, får du noget, der ligner dette. Bare rolig, hvis det virker meget til at starte med – lad os gennemgå det stykke for stykke:
 
 ```python
 """Run this model in Python
@@ -106,14 +208,13 @@ Når du henter Python-koden fra playground, får du noget, der ser sådan ud. Ba
 import os
 from openai import OpenAI
 
-# To authenticate with the model you will need to generate a personal access token (PAT) in your GitHub settings. 
-# Create your PAT token by following instructions here: https://docs.github.com/en/authentication/keeping-your-account-and-data-secure/managing-your-personal-access-tokens
+# For at godkende med modellen skal du generere et personligt adgangstoken (PAT) i dine GitHub-indstillinger.
+# Opret dit PAT-token ved at følge instruktionerne her: https://docs.github.com/en/authentication/keeping-your-account-and-data-secure/managing-your-personal-access-tokens
 client = OpenAI(
     base_url="https://models.github.ai/inference",
     api_key=os.environ["GITHUB_TOKEN"],
 )
 
-```python
 response = client.chat.completions.create(
     messages=[
         {
@@ -134,15 +235,15 @@ response = client.chat.completions.create(
 print(response.choices[0].message.content)
 ```
 
-**Her er, hvad der sker i denne kode:**
-- **Vi importerer** de værktøjer, vi har brug for: `os` til at læse miljøvariabler og `OpenAI` til at kommunikere med AI
-- **Vi opsætter** OpenAI-klienten til at pege på GitHubs AI-servere i stedet for OpenAI direkte
-- **Vi autentificerer** med en speciel GitHub-token (mere om det om lidt!)
+**Det der sker i denne kode:**
+- **Vi importerer** de nødvendige værktøjer: `os` til at læse miljøvariabler og `OpenAI` til at kommunikere med AI
+- **Vi opsætter** OpenAI-klienten til at pege på GitHubs AI-servere i stedet for direkte OpenAI
+- **Vi autentificerer** med en særlig GitHub-token (mere om det om lidt!)
 - **Vi strukturerer** vores samtale med forskellige "roller" – tænk på det som at sætte scenen for et skuespil
-- **Vi sender** vores forespørgsel til AI med nogle finjusteringsparametre
-- **Vi udtrækker** den faktiske svartekst fra alle de data, der kommer tilbage
+- **Vi sender** vores anmodning til AI med nogle finjusteringsparametre
+- **Vi udtrækker** det faktiske svartekst fra al den data, der kommer tilbage
 
-### Forståelse af beskedroller: AI-samtalens rammeværk
+### Forståelse af Beskedsroller: AI-samtalens Rammeværk
 
 AI-samtaler bruger en specifik struktur med forskellige "roller", der tjener forskellige formål:
 
@@ -160,96 +261,96 @@ messages=[
 ```
 
 **Tænk på det som at instruere et skuespil:**
-- **Systemrolle**: Som sceneanvisninger for en skuespiller – det fortæller AI, hvordan den skal opføre sig, hvilken personlighed den skal have, og hvordan den skal svare
-- **Brugerrolle**: Det faktiske spørgsmål eller besked fra personen, der bruger din applikation
-- **Assistentrolle**: AI's svar (du sender ikke dette, men det vises i samtalehistorikken)
+- **System-rollen**: Som scenemanuskript for en skuespiller – den fortæller AI, hvordan den skal opføre sig, hvilken personlighed den skal have og hvordan den skal svare
+- **Bruger-rollen**: Det egentlige spørgsmål eller besked fra den, der bruger din applikation
+- **Assistent-rollen**: AIs svar (det sender du ikke, men det vises i samtalehistorikken)
 
-**Virkelighedsanalog**: Forestil dig, at du introducerer en ven til nogen til en fest:
-- **Systembesked**: "Dette er min ven Sarah, hun er læge og er fantastisk til at forklare medicinske begreber på en enkel måde"
-- **Brugerbesked**: "Kan du forklare, hvordan vacciner fungerer?"
-- **Assistentens svar**: Sarah svarer som en venlig læge, ikke som en advokat eller kok
+**Virkelighedsfaglig analogi**: Forestil dig, at du præsenterer en ven for en anden til en fest:
+- **Systembesked**: "Det her er min ven Sarah, hun er læge og er rigtig god til at forklare medicinske begreber i enkle termer"
+- **Brugerbesked**: "Kan du forklare, hvordan vacciner virker?"
+- **Assistentbesked**: Sarah svarer som en venlig læge, ikke som advokat eller kok
 
-### Forståelse af AI-parametre: Finjustering af svaradfærd
+### Forstå AI-parametre: Finjustering af Svaradfærd
 
-De numeriske parametre i AI-API-kald styrer, hvordan modellen genererer svar. Disse indstillinger giver dig mulighed for at justere AI's adfærd til forskellige anvendelser:
+De numeriske parametre i AI-API-kald kontrollerer, hvordan modellen genererer svar. Disse indstillinger giver dig mulighed for at justere AIs adfærd til forskellige formål:
 
-#### Temperatur (0.0 til 2.0): Kreativitetsknappen
+#### Temperatur (0,0 til 2,0): Kreativitetsdrejeknappen
 
-**Hvad det gør**: Styrer, hvor kreativ eller forudsigelig AI's svar vil være.
+**Hvad den gør**: Styrer, hvor kreativ eller forudsigelig AIs svar bliver.
 
 **Tænk på det som en jazzmusikers improvisationsniveau:**
-- **Temperatur = 0.1**: Spiller den samme melodi hver gang (meget forudsigelig)
-- **Temperatur = 0.7**: Tilføjer nogle smagfulde variationer, mens den forbliver genkendelig (balanceret kreativitet)
-- **Temperatur = 1.5**: Fuld eksperimentel jazz med uventede drejninger (meget uforudsigelig)
+- **Temperatur = 0,1**: Spiller den nøjagtige samme melodi hver gang (meget forudsigelig)
+- **Temperatur = 0,7**: Tilføjer nogle smagfulde variationer, mens det stadig er genkendeligt (balanceret kreativitet)
+- **Temperatur = 1,5**: Fuld eksperimentel jazz med uventede drejninger (meget uforudsigeligt)
 
 ```python
-# Very predictable responses (good for factual questions)
+# Meget forudsigelige svar (godt til faktuelle spørgsmål)
 response = client.chat.completions.create(
     messages=[{"role": "user", "content": "What is 2+2?"}],
-    temperature=0.1  # Will almost always say "4"
+    temperature=0.1  # Vil næsten altid sige "4"
 )
 
-# Creative responses (good for brainstorming)
+# Kreative svar (godt til brainstorm)
 response = client.chat.completions.create(
     messages=[{"role": "user", "content": "Write a creative story opening"}],
-    temperature=1.2  # Will generate unique, unexpected stories
+    temperature=1.2  # Vil generere unikke, uventede historier
 )
 ```
 
-#### Max Tokens (1 til 4096+): Kontrol af svarlængde
+#### Max Tokens (1 til 4096+): Kontrol af Svarets Længde
 
-**Hvad det gør**: Sætter en grænse for, hvor langt AI's svar kan være.
+**Hvad den gør**: Sætter en grænse for, hvor langt AIs svar kan være.
 
-**Tænk på tokens som nogenlunde svarende til ord** (ca. 1 token = 0.75 ord på engelsk):
-- **max_tokens=50**: Kort og præcist (som en tekstbesked)
+**Tænk på tokens som omtrent svarende til ord** (ca. 1 token = 0,75 ord på engelsk):
+- **max_tokens=50**: Kort og godt (som en sms)
 - **max_tokens=500**: Et pænt afsnit eller to
 - **max_tokens=2000**: En detaljeret forklaring med eksempler
 
 ```python
-# Short, concise answers
+# Korte, præcise svar
 response = client.chat.completions.create(
     messages=[{"role": "user", "content": "Explain JavaScript"}],
-    max_tokens=100  # Forces a brief explanation
+    max_tokens=100  # Tvinger en kort forklaring
 )
 
-# Detailed, comprehensive answers  
+# Detaljerede, omfattende svar
 response = client.chat.completions.create(
     messages=[{"role": "user", "content": "Explain JavaScript"}],
-    max_tokens=1500  # Allows for detailed explanations with examples
+    max_tokens=1500  # Muliggør detaljerede forklaringer med eksempler
 )
 ```
 
-#### Top_p (0.0 til 1.0): Fokusparameteren
+#### Top_p (0,0 til 1,0): Fokusparameteren
 
-**Hvad det gør**: Styrer, hvor fokuseret AI forbliver på de mest sandsynlige svar.
+**Hvad den gør**: Kontrollerer, hvor fokuseret AI er på de mest sandsynlige svar.
 
-**Forestil dig, at AI har et enormt ordforråd, rangeret efter hvor sandsynligt hvert ord er:**
-- **top_p=0.1**: Overvejer kun de 10% mest sandsynlige ord (meget fokuseret)
-- **top_p=0.9**: Overvejer 90% af mulige ord (mere kreativ)
-- **top_p=1.0**: Overvejer alt (maksimal variation)
+**Forestil dig at AI har et kæmpe ordforråd, rangeret efter sandsynlighed:**
+- **top_p=0,1**: Overvejer kun de 10 % mest sandsynlige ord (meget fokuseret)
+- **top_p=0,9**: Overvejer 90 % af mulige ord (mere kreativ)
+- **top_p=1,0**: Overvejer alt (maksimal variation)
 
-**For eksempel**: Hvis du spørger "Himlen er normalt..."
-- **Lav top_p**: Siger næsten helt sikkert "blå"
-- **Høj top_p**: Kan sige "blå", "overskyet", "vidstrakt", "foranderlig", "smuk" osv.
+**For eksempel**: Hvis du spørger "Himmelen er normalt..."
+- **Lav top_p**: Siger næsten altid "blå"
+- **Høj top_p**: Kan sige "blå", "skyet", "uendelig", "foranderlig", "smuk" osv.
 
-### Sammenkobling af det hele: Parameterkombinationer til forskellige anvendelser
+### Sætte Det Hele Sammen: Parameterkombinationer til Forskellige Brug
 
 ```python
-# For factual, consistent answers (like a documentation bot)
+# For faktuelle, konsistente svar (som en dokumentationsbot)
 factual_params = {
     "temperature": 0.2,
     "max_tokens": 300,
     "top_p": 0.3
 }
 
-# For creative writing assistance
+# Til kreativ skrivehjælp
 creative_params = {
     "temperature": 1.1,
     "max_tokens": 1000,
     "top_p": 0.9
 }
 
-# For conversational, helpful responses (balanced)
+# Til samtaleorienterede, hjælpsomme svar (afbalanceret)
 conversational_params = {
     "temperature": 0.7,
     "max_tokens": 500,
@@ -257,7 +358,24 @@ conversational_params = {
 }
 ```
 
-**Forståelse af, hvorfor disse parametre betyder noget**: Forskellige applikationer har brug for forskellige typer svar. En kundeservicebot bør være konsekvent og faktuel (lav temperatur), mens en kreativ skriveassistent bør være fantasifuld og varieret (høj temperatur). Forståelse af disse parametre giver dig kontrol over din AI's personlighed og svarstil.
+```mermaid
+quadrantChart
+    title AI Parameteroptimeringsmatrix
+    x-axis Lav Kreativitet --> Høj Kreativitet
+    y-axis Kort Respons --> Lang Respons
+    
+    quadrant-1 Kreativt Indhold
+    quadrant-2 Detaljeret Analyse
+    quadrant-3 Hurtige Fakta
+    quadrant-4 Samtale-AI
+    
+    Documentation Bot: [0.2, 0.3]
+    Customer Service: [0.4, 0.4]
+    General Assistant: [0.7, 0.5]
+    Creative Writer: [0.9, 0.9]
+    Brainstorming Tool: [0.8, 0.8]
+```
+**Hvorfor disse parametre er vigtige**: Forskellige applikationer har brug for forskellige typer svar. En kundeservicebot bør være konsekvent og faktuel (lav temperatur), mens en kreativ skriveassistent skal være fantasifuld og varieret (høj temperatur). At forstå disse parametre giver dig kontrol over din AIs personlighed og svarstil.
 ```
 
 **Here's what's happening in this code:**
@@ -323,26 +441,27 @@ def call_llm(prompt: str, system_message: str = "You are a helpful assistant."):
     return asyncio.run(call_llm_async(prompt, system_message))
 ```
 
-**Forståelse af denne forbedrede funktion:**
+**Forstå denne forbedrede funktion:**
 - **Accepterer** to parametre: brugerens prompt og en valgfri systembesked
 - **Tilbyder** en standard systembesked for generel assistentadfærd
-- **Bruger** korrekte Python-type hints for bedre kodedokumentation
-- **Returnerer** kun svarindholdet, hvilket gør det nemt at bruge i vores web-API
-- **Bevarer** de samme modelparametre for konsekvent AI-adfærd
+- **Bruger** korrekte Python typeangivelser til bedre kodetekst
+- **Inkluderer** en detaljeret docstring, der forklarer funktionens formål og parametre
+- **Returnerer** kun svarindholdet, så det er nemt at bruge i vores web-API
+- **Vedligeholder** de samme modelparametre for konsistent AI-adfærd
 
-### Magien ved systemprompter: Programmering af AI's personlighed
+### Magien ved Systemprompter: Programmering af AI-personlighed
 
-Hvis parametre styrer, hvordan AI tænker, styrer systemprompter, hvem AI tror, den er. Dette er ærligt talt en af de mest fascinerende dele ved at arbejde med AI – du giver i bund og grund AI en komplet personlighed, ekspertiseniveau og kommunikationsstil.
+Hvis parametre styrer, hvordan AI tænker, styrer systemprompter, hvem AI tror, den er. Dette er ærligt talt en af de fedeste dele ved at arbejde med AI – du giver AI en komplet personlighed, fagligt niveau og kommunikationsstil.
 
-**Tænk på systemprompter som at caste forskellige skuespillere til forskellige roller**: I stedet for at have én generisk assistent kan du skabe specialiserede eksperter til forskellige situationer. Har du brug for en tålmodig lærer? En kreativ sparringspartner? En no-nonsense forretningsrådgiver? Bare ændr systemprompten!
+**Tænk på systemprompter som at caste forskellige skuespillere til forskellige roller**: I stedet for én generisk assistent kan du skabe specialiserede eksperter til forskellige situationer. Brug for en tålmodig lærer? En kreativ brainstormingpartner? En seriøs forretningsrådgiver? Bare skift systemprompten!
 
-#### Hvorfor systemprompter er så kraftfulde
+#### Hvorfor Systemprompter Er Så Kraftfulde
 
-Her er det fascinerende: AI-modeller er blevet trænet på utallige samtaler, hvor folk indtager forskellige roller og ekspertiseniveauer. Når du giver AI en specifik rolle, er det som at aktivere alle de lærte mønstre.
+Her er det fascinerende: AI-modeller er trænet på utallige samtaler, hvor folk påtager sig forskellige roller og ekspertiseniveauer. Når du giver AI en specifik rolle, er det som at trykke på en kontakt, der aktiverer alle de lærte mønstre.
 
-**Det er som metode-skuespil for AI**: Fortæl en skuespiller "du er en klog gammel professor" og se, hvordan de automatisk justerer deres holdning, ordforråd og manerer. AI gør noget bemærkelsesværdigt lignende med sprogmønstre.
+**Det svarer til metode-skuespil for AI**: Sig til en skuespiller "du er en klog, gammel professor" og se, hvordan de automatisk tilpasser kropsholdning, ordvalg og manerer. AI gør noget bemærkelsesværdigt lignende med sprog.
 
-#### Udformning af effektive systemprompter: Kunst og videnskab
+#### Skabelse af Effektive Systemprompter: Kunsten og Videnskaben
 
 **Anatomien af en god systemprompt:**
 1. **Rolle/Identitet**: Hvem er AI?
@@ -351,19 +470,19 @@ Her er det fascinerende: AI-modeller er blevet trænet på utallige samtaler, hv
 4. **Specifikke instruktioner**: Hvad skal den fokusere på?
 
 ```python
-# ❌ Vague system prompt
+# ❌ Uklar systemprompt
 "You are helpful."
 
-# ✅ Detailed, effective system prompt
+# ✅ Detaljeret, effektiv systemprompt
 "You are Dr. Sarah Chen, a senior software engineer with 15 years of experience at major tech companies. You explain programming concepts using real-world analogies and always provide practical examples. You're patient with beginners and enthusiastic about helping them understand complex topics."
 ```
 
-#### Eksempler på systemprompter med kontekst
+#### Systemprompt-eksempler med kontekst
 
 Lad os se, hvordan forskellige systemprompter skaber helt forskellige AI-personligheder:
 
 ```python
-# Example 1: The Patient Teacher
+# Eksempel 1: Den tålmodige lærer
 teacher_prompt = """
 You are an experienced programming instructor who has taught thousands of students. 
 You break down complex concepts into simple steps, use analogies from everyday life, 
@@ -371,7 +490,7 @@ and always check if the student understands before moving on. You're encouraging
 and never make students feel bad for not knowing something.
 """
 
-# Example 2: The Creative Collaborator  
+# Eksempel 2: Den kreative samarbejdspartner
 creative_prompt = """
 You are a creative writing partner who loves brainstorming wild ideas. You're 
 enthusiastic, imaginative, and always build on the user's ideas rather than 
@@ -379,7 +498,7 @@ replacing them. You ask thought-provoking questions to spark creativity and
 offer unexpected perspectives that make stories more interesting.
 """
 
-# Example 3: The Strategic Business Advisor
+# Eksempel 3: Den strategiske forretningsrådgiver
 business_prompt = """
 You are a strategic business consultant with an MBA and 20 years of experience 
 helping startups scale. You think in frameworks, provide structured advice, 
@@ -388,34 +507,34 @@ probing questions to understand the full business context before giving advice.
 """
 ```
 
-#### Se systemprompter i aktion
+#### Se Systemprompter i Aktion
 
 Lad os teste det samme spørgsmål med forskellige systemprompter for at se de dramatiske forskelle:
 
 **Spørgsmål**: "Hvordan håndterer jeg brugerautentifikation i min webapp?"
 
 ```python
-# With teacher prompt:
+# Med lærer-prompt:
 teacher_response = call_llm(
     "How do I handle user authentication in my web app?",
     teacher_prompt
 )
-# Typical response: "Great question! Let's break authentication down into simple steps. 
-# Think of it like a nightclub bouncer checking IDs..."
+# Typisk svar: "Godt spørgsmål! Lad os opdele autentificering i simple trin.
+# Tænk på det som en natklub dørmand, der tjekker ID'er..."
 
-# With business prompt:
+# Med forretningsprompt:
 business_response = call_llm(
     "How do I handle user authentication in my web app?", 
     business_prompt
 )
-# Typical response: "From a strategic perspective, authentication is crucial for user 
-# trust and regulatory compliance. Let me outline a framework considering security, 
-# user experience, and scalability..."
+# Typisk svar: "Set fra et strategisk perspektiv er autentificering afgørende for bruger
+# tillid og overholdelse af regler. Lad mig skitsere en ramme, der tager højde for sikkerhed,
+# brugeroplevelse og skalerbarhed..."
 ```
 
-#### Avancerede teknikker til systemprompter
+#### Avancerede Systemprompt-teknikker
 
-**1. Kontekstopsætning**: Giv AI baggrundsinformation
+**1. Kontekstopsætning**: Giv AI baggrundsinformation  
 ```python
 system_prompt = """
 You are helping a junior developer who just started their first job at a startup. 
@@ -424,7 +543,7 @@ Be encouraging and explain things step-by-step without being condescending.
 """
 ```
 
-**2. Outputformatering**: Fortæl AI, hvordan den skal strukturere svar
+**2. Outputformatering**: Fortæl AI'en, hvordan svar skal struktureres  
 ```python
 system_prompt = """
 You are a technical mentor. Always structure your responses as:
@@ -435,8 +554,8 @@ You are a technical mentor. Always structure your responses as:
 5. Next Steps for Learning
 """
 ```
-
-**3. Begrænsningsopsætning**: Definer, hvad AI ikke skal gøre
+  
+**3. Begrænsningsindstilling**: Definer, hvad AI'en IKKE skal gøre  
 ```python
 system_prompt = """
 You are a coding tutor focused on teaching best practices. Never write complete 
@@ -444,77 +563,90 @@ solutions for the user - instead, guide them with hints and questions so they
 learn by doing. Always explain the 'why' behind coding decisions.
 """
 ```
+  
+#### Hvorfor dette er vigtigt for din chatassistent
 
-#### Hvorfor dette er vigtigt for din chat-assistent
-
-Forståelse af systemprompter giver dig utrolig magt til at skabe specialiserede AI-assistenter:
-- **Kundeservicebot**: Hjælpsom, tålmodig, politikbevidst
-- **Læringsvejleder**: Opmuntrende, trin-for-trin, tjekker forståelse
-- **Kreativ partner**: Fantasifuld, bygger videre på ideer, spørger "hvad nu hvis?"
+Forståelse af systemprompter giver dig utrolig magt til at skabe specialiserede AI-assistenter:  
+- **Kundeservicebot**: Hjælpsom, tålmodig, politik-kyndig  
+- **Læringsvejleder**: Opmuntrende, trin-for-trin, tjekker forståelse  
+- **Kreativ partner**: Fantasifuld, bygger videre på ideer, spørger "hvad nu hvis?"  
 - **Teknisk ekspert**: Præcis, detaljeret, sikkerhedsbevidst
 
-**Den vigtigste indsigt**: Du kalder ikke bare en AI-API – du skaber en skræddersyet AI-personlighed, der tjener din specifikke anvendelse. Det er det, der gør moderne AI-applikationer føles skræddersyede og nyttige frem for generiske.
+**Den centrale indsigt**: Du kalder ikke bare en AI API – du skaber en brugerdefineret AI-personlighed, der tjener dit specifikke brugsscenarie. Det er det, der gør moderne AI-applikationer skræddersyede og nyttige i stedet for generiske.
 
-## Bygning af web-API med FastAPI: Din højtydende AI-kommunikationshub
+### 🎯 Pædagogisk tjek-in: AI-personlighedsprogrammering
 
-Nu skal vi bygge den backend, der forbinder din frontend med AI-tjenesterne. Vi bruger FastAPI, et moderne Python-framework, der er fremragende til at bygge API'er til AI-applikationer.
+**Pause og reflekter**: Du har netop lært at programmere AI-personligheder via systemprompter. Dette er en grundlæggende færdighed i moderne AI-applikationsudvikling.
 
-FastAPI tilbyder flere fordele for denne type projekt: indbygget async-support til håndtering af samtidige forespørgsler, automatisk API-dokumentationsgenerering og fremragende ydeevne. Din FastAPI-server fungerer som en mellemmand, der modtager forespørgsler fra frontend, kommunikerer med AI-tjenester og returnerer formaterede svar.
+**Hurtig selvvurdering**:  
+- Kan du forklare, hvordan systemprompter adskiller sig fra almindelige brugermeddelelser?  
+- Hvad er forskellen på temperatur- og top_p-parametre?  
+- Hvordan ville du skabe en systemprompt for et specifikt brugsscenarie (f.eks. en kodevejleder)?
+
+**Virkelighedsnær forbindelse**: De systemprompt-teknikker, du har lært, bruges i alle større AI-applikationer – fra GitHub Copilots kodeassistance til ChatGPT's samtalegrænseflade. Du mestrer de samme mønstre, som AI-produktteams bruger hos store tech-virksomheder.
+
+**Udfordrende spørgsmål**: Hvordan kunne du designe forskellige AI-personligheder til forskellige brugertyper (begynder vs ekspert)? Overvej, hvordan det samme underliggende AI-model kunne betjene forskellige målgrupper via prompt-engineering.
+
+## Byg Web API'en med FastAPI: Dit Højtydende AI-kommunikationsknudepunkt
+
+Lad os nu bygge backend'en, der forbinder din frontend med AI-tjenester. Vi vil bruge FastAPI, et moderne Python-framework, som er fremragende til at bygge API’er til AI-applikationer.
+
+FastAPI tilbyder flere fordele for denne type projekt: indbygget asynkron støtte til håndtering af samtidige forespørgsler, automatisk API-dokumentationsgenerering og fremragende ydeevne. Din FastAPI-server fungerer som en mellemliggende del, der modtager forespørgsler fra frontend, kommunikerer med AI-tjenesterne og returnerer formaterede svar.
 
 ### Hvorfor FastAPI til AI-applikationer?
 
-Du tænker måske: "Kan jeg ikke bare kalde AI direkte fra min frontend JavaScript?" eller "Hvorfor FastAPI i stedet for Flask eller Django?" Gode spørgsmål! 
-**Her er hvorfor FastAPI er perfekt til det, vi bygger:**
-- **Async som standard**: Kan håndtere flere AI-anmodninger på én gang uden at gå i stå
-- **Automatisk dokumentation**: Besøg `/docs` og få en flot, interaktiv API-dokumentationsside gratis
-- **Indbygget validering**: Fanger fejl, før de skaber problemer
-- **Lynhurtig**: En af de hurtigste Python-frameworks der findes
-- **Moderne Python**: Udnytter de nyeste og bedste Python-funktioner
+Du tænker måske: "Kan jeg ikke bare kalde AI direkte fra min frontend JavaScript?" eller "Hvorfor FastAPI frem for Flask eller Django?" Gode spørgsmål!
+
+**Her er hvorfor FastAPI er perfekt til det, vi bygger:**  
+- **Async som standard**: Kan jonglere flere AI-forespørgsler samtidig uden at hænge fast  
+- **Automatisk dokumentation**: Besøg `/docs` og få en flot, interaktiv API-dokumentationsside gratis  
+- **Indbygget validering**: Fanger fejl, før de skaber problemer  
+- **Lynhurtig**: Et af de hurtigste Python-frameworks overhovedet  
+- **Moderne Python**: Bruger alle de nyeste og bedste Python-funktioner
 
 **Og her er hvorfor vi overhovedet har brug for en backend:**
 
-**Sikkerhed**: Din AI API-nøgle er som en adgangskode – hvis du placerer den i frontend JavaScript, kan enhver, der ser din hjemmesides kildekode, stjæle den og bruge dine AI-kreditter. Backenden holder følsomme legitimationsoplysninger sikre.
+**Sikkerhed**: Dit AI API-nøgle er som en adgangskode – hvis du lægger den i frontend JavaScript, kan alle, der ser din hjemmesides kildekode, stjæle den og bruge dine AI-kreditter. Backend'en holder følsomme legitimationsoplysninger sikre.
 
-**Ratebegrænsning & kontrol**: Backenden giver dig mulighed for at kontrollere, hvor ofte brugere kan sende anmodninger, implementere brugerautentifikation og tilføje logning for at spore brugen.
+**Ratebegrænsning & kontrol**: Backend'en lader dig styre, hvor ofte brugere kan sende forespørgsler, implementere brugerautentifikation og tilføje logning for at spore brug.
 
-**Databehandling**: Du vil måske gemme samtaler, filtrere upassende indhold eller kombinere flere AI-tjenester. Backenden er stedet, hvor denne logik lever.
+**Databehandling**: Du vil måske gemme samtaler, filtrere upassende indhold eller kombinere flere AI-tjenester. Backend'en er stedet, hvor denne logik hører hjemme.
 
-**Arkitekturen ligner en klient-server-model:**
-- **Frontend**: Brugergrænsefladelag til interaktion
-- **Backend API**: Anmodningsbehandlings- og routingslag
-- **AI-tjeneste**: Ekstern beregning og responsgenerering
-- **Miljøvariabler**: Sikker konfiguration og opbevaring af legitimationsoplysninger
+**Arkitekturen minder om en klient-server-model:**  
+- **Frontend**: Brugergrænsefladelag til interaktion  
+- **Backend API**: Forespørgselsbehandling og routering  
+- **AI-tjeneste**: Ekstern udregning og svargenerering  
+- **Miljøvariabler**: Sikker konfigurations- og legitimationslagring
 
-### Forståelse af anmodnings-respons flow
+### Forståelse af forespørgsels- og svarflowet
 
-Lad os spore, hvad der sker, når en bruger sender en besked:
+Lad os følge, hvad der sker, når en bruger sender en besked:
 
 ```mermaid
 sequenceDiagram
-    participant User as 👤 User
+    participant User as 👤 Bruger
     participant Frontend as 🌐 Frontend
     participant API as 🔧 FastAPI Server
     participant AI as 🤖 AI Service
     
-    User->>Frontend: Types "Hello AI!"
-    Frontend->>API: POST /hello {"message": "Hello AI!"}
-    Note over API: Validates request<br/>Adds system prompt
-    API->>AI: Sends formatted request
-    AI->>API: Returns AI response
-    Note over API: Processes response<br/>Logs conversation
-    API->>Frontend: {"response": "Hello! How can I help?"}
-    Frontend->>User: Displays AI message
-```
+    User->>Frontend: Taster "Hej AI!"
+    Frontend->>API: POST /hello {"message": "Hej AI!"}
+    Note over API: Validerer forespørgsel<br/>Tilføjer systemprompt
+    API->>AI: Sender formateret forespørgsel
+    AI->>API: Returnerer AI svar
+    Note over API: Behandler svar<br/>Logger samtale
+    API->>Frontend: {"response": "Hej! Hvordan kan jeg hjælpe?"}
+    Frontend->>User: Viser AI besked
+```  
+**Forstå hvert trin:**  
+1. **Brugerinteraktion**: Personen skriver i chatgrænsefladen  
+2. **Frontend-behandling**: JavaScript fanger input og formaterer det som JSON  
+3. **API-validering**: FastAPI validerer automatisk forespørgslen vha. Pydantic-modeller  
+4. **AI-integration**: Backend tilføjer kontekst (systemprompt) og kalder AI-tjenesten  
+5. **Svarhåndtering**: API modtager AI-svar og kan ændre det efter behov  
+6. **Frontend-visning**: JavaScript viser svaret i chatgrænsefladen
 
-**Forståelse af hvert trin:**
-1. **Brugerinteraktion**: Personen skriver i chatgrænsefladen
-2. **Frontend-behandling**: JavaScript fanger input og formaterer det som JSON
-3. **API-validering**: FastAPI validerer automatisk anmodningen ved hjælp af Pydantic-modeller
-4. **AI-integration**: Backend tilføjer kontekst (systemprompt) og kalder AI-tjenesten
-5. **Responshåndtering**: API modtager AI-responsen og kan ændre den, hvis nødvendigt
-6. **Frontend-visning**: JavaScript viser responsen i chatgrænsefladen
-
-### Forståelse af API-arkitektur
+### Forståelse af API-arkitekturen
 
 ```mermaid
 sequenceDiagram
@@ -523,17 +655,38 @@ sequenceDiagram
     participant AI Function
     participant GitHub Models
     
-    Frontend->>FastAPI: POST /hello {"message": "Hello AI!"}
+    Frontend->>FastAPI: POST /hello {"message": "Hej AI!"}
     FastAPI->>AI Function: call_llm(message, system_prompt)
-    AI Function->>GitHub Models: API request
-    GitHub Models->>AI Function: AI response
-    AI Function->>FastAPI: response text
-    FastAPI->>Frontend: {"response": "Hello! How can I help?"}
-```
-
+    AI Function->>GitHub Models: API forespørgsel
+    GitHub Models->>AI Function: AI svar
+    AI Function->>FastAPI: svar tekst
+    FastAPI->>Frontend: {"response": "Hej! Hvordan kan jeg hjælpe?"}
+```  
+```mermaid
+flowchart TD
+    A[Brugerinput] --> B[Frontend Validering]
+    B --> C[HTTP POST Anmodning]
+    C --> D[FastAPI Router]
+    D --> E[Pydantic Validering]
+    E --> F[AI Funktionskald]
+    F --> G[GitHub Models API]
+    G --> H[Svarbehandling]
+    H --> I[JSON Svar]
+    I --> J[Frontend Opdatering]
+    
+    subgraph "Sikkerhedslag"
+        K[CORS Middleware]
+        L[Miljøvariabler]
+        M[Fejlhåndtering]
+    end
+    
+    D --> K
+    F --> L
+    H --> M
+```  
 ### Oprettelse af FastAPI-applikationen
 
-Lad os bygge vores API trin for trin. Opret en fil kaldet `api.py` med følgende FastAPI-kode:
+Lad os bygge vores API trin for trin. Opret en fil med navnet `api.py` med følgende FastAPI-kode:
 
 ```python
 # api.py
@@ -543,27 +696,27 @@ from pydantic import BaseModel
 from llm import call_llm
 import logging
 
-# Configure logging
+# Konfigurer logning
 logging.basicConfig(level=logging.INFO)
 logger = logging.getLogger(__name__)
 
-# Create FastAPI application
+# Opret FastAPI-applikation
 app = FastAPI(
     title="AI Chat API",
     description="A high-performance API for AI-powered chat applications",
     version="1.0.0"
 )
 
-# Configure CORS
+# Konfigurer CORS
 app.add_middleware(
     CORSMiddleware,
-    allow_origins=["*"],  # Configure appropriately for production
+    allow_origins=["*"],  # Konfigurer passende til produktion
     allow_credentials=True,
     allow_methods=["*"],
     allow_headers=["*"],
 )
 
-# Pydantic models for request/response validation
+# Pydantic-modeller til anmodnings-/responsvalidering
 class ChatMessage(BaseModel):
     message: str
 
@@ -588,14 +741,14 @@ async def health_check():
 async def chat_endpoint(chat_message: ChatMessage):
     """Main chat endpoint that processes messages and returns AI responses."""
     try:
-        # Extract and validate message
+        # Udtræk og valider besked
         message = chat_message.message.strip()
         if not message:
             raise HTTPException(status_code=400, detail="Message cannot be empty")
         
         logger.info(f"Processing message: {message[:50]}...")
         
-        # Call AI service (note: call_llm should be made async for better performance)
+        # Kald AI-service (bemærk: call_llm bør laves asynkron for bedre ydeevne)
         ai_response = await call_llm_async(message, "You are a helpful and friendly assistant.")
         
         logger.info("AI response generated successfully")
@@ -611,169 +764,169 @@ if __name__ == "__main__":
     import uvicorn
     uvicorn.run(app, host="0.0.0.0", port=5000, reload=True)
 ```
+  
+**Forståelse af FastAPI-implementeringen:**  
+- **Importer** FastAPI for moderne webframework-funktionalitet og Pydantic for datavalidering  
+- **Opretter** automatisk API-dokumentation (tilgængelig på `/docs`, når serveren kører)  
+- **Aktiverer** CORS-middleware for at tillade frontend-forespørgsler fra forskellige oprindelser  
+- **Definerer** Pydantic-modeller til automatisk validering af forespørgsler/svar og dokumentation  
+- **Bruger** asynkrone endpoints for bedre ydeevne ved samtidige forespørgsler  
+- **Implementerer** korrekte HTTP-statuskoder og fejlhåndtering med HTTPException  
+- **Inkluderer** struktureret logning til overvågning og fejlfinding  
+- **Tilbyder** et health check-endpoint til overvågning af servicestatus
 
-**Forståelse af FastAPI-implementeringen:**
-- **Importer** FastAPI for moderne webframework-funktionalitet og Pydantic for datavalidering
-- **Opretter** automatisk API-dokumentation (tilgængelig på `/docs`, når serveren kører)
-- **Aktiverer** CORS-middleware for at tillade frontend-anmodninger fra forskellige oprindelser
-- **Definerer** Pydantic-modeller for automatisk validering og dokumentation af anmodninger/responser
-- **Bruger** asynkrone endpoints for bedre ydeevne med samtidige anmodninger
-- **Implementerer** korrekte HTTP-statuskoder og fejlhåndtering med HTTPException
-- **Inkluderer** struktureret logning til overvågning og fejlfinding
-- **Tilbyder** en sundhedstjek-endpoint til overvågning af tjenestens status
+**Nøglefordele ved FastAPI over traditionelle frameworks:**  
+- **Automatisk validering**: Pydantic-modeller sikrer data-integritet før behandling  
+- **Interaktive docs**: Besøg `/docs` for automatisk genereret, testbar API-dokumentation  
+- **Typsikkerhed**: Python type hints forebygger runtime-fejl og forbedrer kodekvalitet  
+- **Async support**: Håndter flere AI-forespørgsler samtidigt uden blokering  
+- **Ydeevne**: Markant hurtigere forespørgselsbehandling til realtidsapplikationer
 
-**Vigtige fordele ved FastAPI frem for traditionelle frameworks:**
-- **Automatisk validering**: Pydantic-modeller sikrer dataintegritet før behandling
-- **Interaktiv dokumentation**: Besøg `/docs` for auto-genereret, testbar API-dokumentation
-- **Type-sikkerhed**: Python type hints forhindrer runtime-fejl og forbedrer kodekvaliteten
-- **Async support**: Håndter flere AI-anmodninger samtidigt uden blokering
-- **Ydeevne**: Markant hurtigere anmodningsbehandling til realtidsapplikationer
+### Forståelse af CORS: Webens sikkerhedsvagt
 
-### Forståelse af CORS: Webs sikkerhedsvagt
+CORS (Cross-Origin Resource Sharing) er som en sikkerhedsvagt ved en bygning, der tjekker, om besøgende må komme ind. Lad os forstå, hvorfor det betyder noget, og hvordan det påvirker din applikation.
 
-CORS (Cross-Origin Resource Sharing) er som en sikkerhedsvagt ved en bygning, der tjekker, om besøgende har tilladelse til at komme ind. Lad os forstå, hvorfor dette er vigtigt, og hvordan det påvirker din applikation.
+#### Hvad er CORS, og hvorfor findes det?
 
-#### Hvad er CORS, og hvorfor eksisterer det?
+**Problemet**: Forestil dig, at enhver hjemmeside kunne sende forespørgsler til din banks hjemmeside på dine vegne uden din tilladelse. Det ville være et sikkerhedsmareridt! Browsere forhindrer dette som standard gennem "Same-Origin Policy."
 
-**Problemet**: Forestil dig, hvis enhver hjemmeside kunne sende anmodninger til din banks hjemmeside på dine vegne uden din tilladelse. Det ville være en sikkerhedskatastrofe! Browsere forhindrer dette som standard gennem "Same-Origin Policy."
+**Same-Origin Policy**: Browsere tillader kun, at websider sender forespørgsler til samme domæne, port og protokol, som de blev indlæst fra.
 
-**Same-Origin Policy**: Browsere tillader kun websider at sende anmodninger til det samme domæne, port og protokol, som de blev indlæst fra.
-
-**Virkelighedens analogi**: Det er som sikkerheden i en lejlighedsbygning – kun beboere (samme oprindelse) kan få adgang til bygningen som standard. Hvis du vil lade en ven (anden oprindelse) besøge, skal du eksplicit fortælle sikkerheden, at det er okay.
+**Virkelighedslignelse**: Det er som sikkerheden i en lejlighedsbygning – kun beboere (samme oprindelse) kan som standard komme ind. Vil du lade en ven (anden oprindelse) besøge, skal du eksplicit fortælle sikkerhedsvagten, at det er i orden.
 
 #### CORS i dit udviklingsmiljø
 
-Under udvikling kører din frontend og backend på forskellige porte:
-- Frontend: `http://localhost:3000` (eller file:// hvis du åbner HTML direkte)
+Under udvikling kører din frontend og backend på forskellige porte:  
+- Frontend: `http://localhost:3000` (eller file:// hvis HTML åbnes direkte)  
 - Backend: `http://localhost:5000`
 
-Disse betragtes som "forskellige oprindelser", selvom de er på den samme computer!
+Disse betragtes som "forskellige oprindelser," selvom de kører på samme computer!
 
 ```python
 from fastapi.middleware.cors import CORSMiddleware
 
 app = FastAPI(__name__)
-CORS(app)   # This tells browsers: "It's okay for other origins to make requests to this API"
+CORS(app)   # Dette fortæller browsere: "Det er i orden, at andre oprindelser foretager forespørgsler til dette API"
 ```
-
-**Hvad CORS-konfiguration gør i praksis:**
-- **Tilføjer** specielle HTTP-headers til API-responser, der fortæller browsere "denne cross-origin anmodning er tilladt"
-- **Håndterer** "preflight"-anmodninger (browsere tjekker nogle gange tilladelser, før de sender den faktiske anmodning)
-- **Forhindrer** den frygtede "blokeret af CORS-politik"-fejl i din browserkonsol
+  
+**Hvad CORS-konfiguration gør i praksis:**  
+- **Tilføjer** særlige HTTP-headere til API-svar, der fortæller browsere "denne cross-origin-forespørgsel er tilladt"  
+- **Håndterer** "preflight" forespørgsler (browsere tjekker nogle gange tilladelser, før den egentlige forespørgsel sendes)  
+- **Forhindrer** den frygtede fejlkode "blokeret af CORS-politik" i din browserkonsol
 
 #### CORS-sikkerhed: Udvikling vs produktion
 
 ```python
-# 🚨 Development: Allows ALL origins (convenient but insecure)
+# 🚨 Udvikling: Tillader ALLE oprindelser (praktisk men usikkert)
 CORS(app)
 
-# ✅ Production: Only allow your specific frontend domain
+# ✅ Produktion: Tillad kun dit specifikke frontend-domæne
 CORS(app, origins=["https://yourdomain.com", "https://www.yourdomain.com"])
 
-# 🔒 Advanced: Different origins for different environments
-if app.debug:  # Development mode
+# 🔒 Avanceret: Forskellige oprindelser for forskellige miljøer
+if app.debug:  # Udviklingstilstand
     CORS(app, origins=["http://localhost:3000", "http://127.0.0.1:3000"])
-else:  # Production mode
+else:  # Produktionstilstand
     CORS(app, origins=["https://yourdomain.com"])
 ```
-
-**Hvorfor dette er vigtigt**: Under udvikling er `CORS(app)` som at lade din hoveddør stå ulåst – praktisk, men ikke sikkert. I produktion vil du specificere præcis, hvilke hjemmesider der kan kommunikere med din API.
+  
+**Hvorfor det betyder noget**: I udvikling er `CORS(app)` som at lade din hoveddør stå ulåst – bekvemt, men ikke sikkert. I produktion vil du specificere præcis hvilke hjemmesider, der må tale med din API.
 
 #### Almindelige CORS-scenarier og løsninger
 
-| Scenario | Problem | Løsning |
-|----------|---------|---------|
-| **Lokal udvikling** | Frontend kan ikke nå backend | Tilføj CORSMiddleware til FastAPI |
-| **GitHub Pages + Heroku** | Udrullet frontend kan ikke nå API | Tilføj din GitHub Pages URL til CORS oprindelser |
-| **Eget domæne** | CORS-fejl i produktion | Opdater CORS oprindelser til at matche dit domæne |
-| **Mobilapp** | App kan ikke nå web-API | Tilføj din apps domæne eller brug `*` med forsigtighed |
+| Scenario | Problem | Løsning |  
+|----------|---------|----------|  
+| **Lokal udvikling** | Frontend kan ikke nå backend | Tilføj CORSMiddleware til FastAPI |  
+| **GitHub Pages + Heroku** | Udrullet frontend kan ikke nå API | Tilføj din GitHub Pages URL til CORS oprindelser |  
+| **Custom domæne** | CORS-fejl i produktion | Opdater CORS oprindelser til at matche dit domæne |  
+| **Mobilapp** | App kan ikke nå web-API | Tilføj dit apps domæne eller brug `*` med omhu |
 
-**Tip**: Du kan tjekke CORS-headers i din browsers Developer Tools under fanen Network. Kig efter headers som `Access-Control-Allow-Origin` i responsen.
+**Pro tip**: Du kan tjekke CORS-headere i browserens udviklerværktøjer under fanen Netværk. Kig efter headere som `Access-Control-Allow-Origin` i svaret.
 
 ### Fejlhåndtering og validering
 
 Bemærk, hvordan vores API inkluderer korrekt fejlhåndtering:
 
 ```python
-# Validate that we received a message
+# Bekræft, at vi har modtaget en besked
 if not message:
     return jsonify({"error": "Message field is required"}), 400
 ```
-
-**Vigtige valideringsprincipper:**
-- **Tjekker** for påkrævede felter før behandling af anmodninger
-- **Returnerer** meningsfulde fejlmeddelelser i JSON-format
-- **Bruger** passende HTTP-statuskoder (400 for dårlige anmodninger)
-- **Giver** klar feedback for at hjælpe frontend-udviklere med at fejlfinde problemer
+  
+**Nøgleprincipper for validering:**  
+- **Tjekker** for påkrævede felter før behandling af forespørgsler  
+- **Returnerer** meningsfulde fejlbeskeder i JSON-format  
+- **Bruger** passende HTTP-statuskoder (400 for dårlige forespørgsler)  
+- **Giver** klar feedback, der hjælper frontend-udviklere med at debugge problemer
 
 ## Opsætning og kørsel af din backend
 
-Nu hvor vi har vores AI-integration og FastAPI-server klar, lad os få det hele i gang. Opsætningsprocessen involverer installation af Python-afhængigheder, konfiguration af miljøvariabler og start af din udviklingsserver.
+Nu hvor vi har AI-integration og FastAPI-server klar, lad os få det hele til at køre. Opsætningsprocessen involverer installation af Python-afhængigheder, konfiguration af miljøvariabler og start af din udviklingsserver.
 
 ### Python-miljøopsætning
 
-Lad os opsætte dit Python-udviklingsmiljø. Virtuelle miljøer er som Manhattan-projektets compartmentaliserede tilgang – hvert projekt får sit eget isolerede rum med specifikke værktøjer og afhængigheder, hvilket forhindrer konflikter mellem forskellige projekter.
+Lad os opsætte dit Python-udviklingsmiljø. Virtuelle miljøer er som Manhattan-projektets afdelte tilgang – hvert projekt får sin egen isolerede plads med specifikke værktøjer og afhængigheder, som forhindrer konflikter mellem projekter.
 
 ```bash
-# Navigate to your backend directory
+# Gå til din backend-mappe
 cd backend
 
-# Create a virtual environment (like creating a clean room for your project)
+# Opret et virtuelt miljø (som at oprette et rengøringsrum til dit projekt)
 python -m venv venv
 
-# Activate it (Linux/Mac)
+# Aktivér det (Linux/Mac)
 source ./venv/bin/activate
 
-# On Windows, use:
+# På Windows, brug:
 # venv\Scripts\activate
 
-# Install the good stuff
+# Installer det gode stuff
 pip install openai fastapi uvicorn python-dotenv
 ```
+  
+**Hvad vi lige gjorde:**  
+- **Oprettede** vores egen lille Python-boble, hvor vi kan installere pakker uden at påvirke andet  
+- **Aktiverede** den, så terminalen ved at bruge dette specifikke miljø  
+- **Installerede** det væsentlige: OpenAI til AI-magi, FastAPI til vores web-API, Uvicorn til faktisk at køre den, og python-dotenv til sikker håndtering af hemmeligheder
 
-**Hvad vi lige gjorde:**
-- **Oprettede** vores egen lille Python-boble, hvor vi kan installere pakker uden at påvirke noget andet
-- **Aktiverede** det, så vores terminal ved at bruge dette specifikke miljø
-- **Installerede** det nødvendige: OpenAI til AI-magi, FastAPI til vores web-API, Uvicorn til faktisk at køre det, og python-dotenv til sikker håndtering af hemmeligheder
-
-**Vigtige afhængigheder forklaret:**
-- **FastAPI**: Moderne, hurtigt webframework med automatisk API-dokumentation
-- **Uvicorn**: Lynhurtig ASGI-server, der kører FastAPI-applikationer
-- **OpenAI**: Officiel bibliotek til GitHub-modeller og OpenAI API-integration
+**Nøgletillæg forklaret:**  
+- **FastAPI**: Moderne, hurtigt web-framework med automatisk API-dokumentation  
+- **Uvicorn**: Lynhurtig ASGI-server, der kører FastAPI-applikationer  
+- **OpenAI**: Officiel bibliotek til GitHub Models og OpenAI API-integration  
 - **python-dotenv**: Sikker indlæsning af miljøvariabler fra .env-filer
 
 ### Miljøkonfiguration: Hold hemmeligheder sikre
 
-Før vi starter vores API, skal vi tale om en af de vigtigste lektioner i webudvikling: hvordan man holder sine hemmeligheder faktisk hemmelige. Miljøvariabler er som en sikker boks, som kun din applikation kan få adgang til.
+Før vi starter API'en, skal vi tale om en af de vigtigste lektioner i webudvikling: hvordan man faktisk holder sine hemmeligheder hemmelige. Miljøvariabler er som et sikkert pengeskab, som kun din applikation har adgang til.
 
 #### Hvad er miljøvariabler?
 
-**Tænk på miljøvariabler som en sikkerhedsboks** – du lægger dine værdigenstande derind, og kun du (og din app) har nøglen til at få dem ud. I stedet for at skrive følsomme oplysninger direkte i din kode (hvor bogstaveligt talt alle kan se dem), gemmer du dem sikkert i miljøet.
+**Tænk på miljøvariabler som en sikkerhedsboks** – du lægger dine værdifulde ting deri, og kun du (og din app) har nøglen til at få dem ud. I stedet for at skrive følsomme oplysninger direkte i koden (hvor bogstaveligt talt alle kan se dem), opbevarer du dem sikkert i miljøet.
 
-**Her er forskellen:**
-- **Den forkerte måde**: Skrive din adgangskode på en post-it og sætte den på din skærm
-- **Den rigtige måde**: Opbevare din adgangskode i en sikker adgangskode-manager, som kun du kan få adgang til
+**Her er forskellen:**  
+- **Den forkerte måde**: Skrive din adgangskode på en seddel og sætte den på din skærm  
+- **Den rigtige måde**: Holde din adgangskode i en sikker adgangskodehåndtering, som kun du kan tilgå
 
-#### Hvorfor miljøvariabler er vigtige
+#### Hvorfor miljøvariabler betyder noget
 
 ```python
-# 🚨 NEVER DO THIS - API key visible to everyone
+# 🚨 GØR ALDRIG DETTE - API-nøgle synlig for alle
 client = OpenAI(
-    api_key="ghp_1234567890abcdef...",  # Anyone can steal this!
+    api_key="ghp_1234567890abcdef...",  # Alle kan stjæle denne!
     base_url="https://models.github.ai/inference"
 )
 
-# ✅ DO THIS - API key stored securely
+# ✅ GØR DETTE - API-nøgle gemt sikkert
 client = OpenAI(
-    api_key=os.environ["GITHUB_TOKEN"],  # Only your app can access this
+    api_key=os.environ["GITHUB_TOKEN"],  # Kun din app kan få adgang til denne
     base_url="https://models.github.ai/inference"
 )
 ```
-
-**Hvad der sker, når du hardcoder hemmeligheder:**
-1. **Eksponering i versionskontrol**: Alle med adgang til dit Git-repository kan se din API-nøgle
-2. **Offentlige repositories**: Hvis du uploader til GitHub, er din nøgle synlig for hele internettet
-3. **Deling med teamet**: Andre udviklere, der arbejder på dit projekt, får adgang til din personlige API-nøgle
+  
+**Hvad der sker, når du hardcoder hemmeligheder:**  
+1. **Versionskontrol-eksponering**: Alle med adgang til dit Git-repository ser din API-nøgle  
+2. **Offentlige repositories**: Hvis du pusher til GitHub, er din nøgle synlig for hele internettet  
+3. **Teamdeling**: Andre udviklere på projektet får adgang til din personlige API-nøgle  
 4. **Sikkerhedsbrud**: Hvis nogen stjæler din API-nøgle, kan de bruge dine AI-kreditter
 
 #### Opsætning af din miljøfil
@@ -781,45 +934,45 @@ client = OpenAI(
 Opret en `.env`-fil i din backend-mappe. Denne fil gemmer dine hemmeligheder lokalt:
 
 ```bash
-# .env file - This should NEVER be committed to Git
+# .env fil - Denne bør ALDRIG committes til Git
 GITHUB_TOKEN=your_github_personal_access_token_here
 FASTAPI_DEBUG=True
 ENVIRONMENT=development
 ```
-
-**Forståelse af .env-filen:**
-- **Én hemmelighed per linje** i `KEY=value`-format
-- **Ingen mellemrum** omkring lighedstegnet
-- **Ingen anførselstegn** nødvendige omkring værdier (normalt)
+  
+**Forståelse af .env-filen:**  
+- **Én hemmelighed per linje** i formatet `KEY=value`  
+- **Ingen mellemrum** omkring lighedstegnet  
+- **Ingen citationstegn** nødvendigt omkring værdier (som regel)  
 - **Kommentarer** starter med `#`
 
-#### Oprettelse af din GitHub Personal Access Token
+#### Oprettelse af dit GitHub Personlige Adgangstoken
 
-Din GitHub-token er som en speciel adgangskode, der giver din applikation tilladelse til at bruge GitHubs AI-tjenester:
+Dit GitHub-token er som en særlig adgangskode, der giver din applikation tilladelse til at bruge GitHubs AI-tjenester:
 
-**Trin-for-trin token-oprettelse:**
-1. **Gå til GitHub-indstillinger** → Udviklerindstillinger → Personlige adgangstokens → Tokens (klassisk)
-2. **Klik på "Generer nyt token (klassisk)"**
-3. **Indstil udløb** (30 dage til test, længere til produktion)
-4. **Vælg scopes**: Marker "repo" og andre nødvendige tilladelser
-5. **Generer token** og kopier det med det samme (du kan ikke se det igen!)
-6. **Indsæt det i din .env-fil**
+**Trin-for-trin tokenoprettelse:**  
+1. **Gå til GitHub Settings** → Developer settings → Personal access tokens → Tokens (classic)  
+2. **Klik på "Generate new token (classic)"**  
+3. **Sæt udløbsdato** (30 dage til test, længere til produktion)  
+4. **Vælg scopes**: Marker "repo" og eventuelle andre nødvendige tilladelser  
+5. **Generer token** og kopier det med det samme (det kan ikke ses igen!)  
+6. **Indsæt i din .env-fil**
 
 ```bash
-# Example of what your token looks like (this is fake!)
+# Eksempel på hvordan dit token ser ud (dette er falsk!)
 GITHUB_TOKEN=ghp_1A2B3C4D5E6F7G8H9I0J1K2L3M4N5O6P7Q8R
 ```
-
+  
 #### Indlæsning af miljøvariabler i Python
 
 ```python
 import os
 from dotenv import load_dotenv
 
-# Load environment variables from .env file
+# Indlæs miljøvariabler fra .env-fil
 load_dotenv()
 
-# Now you can access them securely
+# Nu kan du få adgang til dem sikkert
 api_key = os.environ.get("GITHUB_TOKEN")
 if not api_key:
     raise ValueError("GITHUB_TOKEN not found in environment variables!")
@@ -829,19 +982,19 @@ client = OpenAI(
     base_url="https://models.github.ai/inference"
 )
 ```
-
-**Hvad denne kode gør:**
-- **Indlæser** din .env-fil og gør variabler tilgængelige for Python
-- **Tjekker** om den nødvendige token eksisterer (god fejlhåndtering!)
-- **Rejser** en klar fejl, hvis token mangler
+  
+**Hvad denne kode gør:**  
+- **Indlæser** din .env-fil og gør variabler tilgængelige i Python  
+- **Tjekker** om det nødvendige token findes (god fejlhåndtering!)  
+- **Kaster** en klar fejl, hvis token mangler  
 - **Bruger** token sikkert uden at eksponere det i koden
 
 #### Git-sikkerhed: .gitignore-filen
 
-Din `.gitignore`-fil fortæller Git, hvilke filer der aldrig skal spores eller uploades:
+Din `.gitignore`-fil fortæller Git, hvilke filer der aldrig skal trackes eller uploades:
 
 ```bash
-# .gitignore - Add these lines
+# .gitignore - Tilføj disse linjer
 .env
 *.env
 .env.local
@@ -850,55 +1003,55 @@ __pycache__/
 venv/
 .vscode/
 ```
-
-**Hvorfor dette er afgørende**: Når du tilføjer `.env` til `.gitignore`, vil Git ignorere din miljøfil, hvilket forhindrer dig i utilsigtet at uploade dine hemmeligheder til GitHub.
+  
+**Hvorfor det er afgørende**: Når du tilføjer `.env` til `.gitignore`, ignorerer Git din miljøfil og forhindrer, at du utilsigtet uploader dine hemmeligheder til GitHub.
 
 #### Forskellige miljøer, forskellige hemmeligheder
 
 Professionelle applikationer bruger forskellige API-nøgler til forskellige miljøer:
 
 ```bash
-# .env.development
+# .env.udvikling
 GITHUB_TOKEN=your_development_token
 DEBUG=True
 
-# .env.production  
+# .env.produktion
 GITHUB_TOKEN=your_production_token
 DEBUG=False
 ```
+  
+**Hvorfor det betyder noget**: Du vil undgå, at dine udviklingseksperimenter påvirker din produktions AI-brugsgrænse, og du ønsker forskellige sikkerhedsniveauer for forskellige miljøer.
 
-**Hvorfor dette er vigtigt**: Du vil ikke have, at dine udviklingseksperimenter påvirker din produktions-AI-brugskvote, og du ønsker forskellige sikkerhedsniveauer for forskellige miljøer.
+### Start af din udviklingsserver: Giv liv til din FastAPI  
 
-### Start af din udviklingsserver: Bring din FastAPI til live
-
-Nu kommer det spændende øjeblik – start din FastAPI-udviklingsserver og se din AI-integration komme til live! FastAPI bruger Uvicorn, en lynhurtig ASGI-server, der er specielt designet til asynkrone Python-applikationer.
+Nu kommer det spændende øjeblik – at starte din FastAPI-udviklingsserver og se din AI-integration blive levende! FastAPI bruger Uvicorn, en lynhurtig ASGI-server, der er specielt designet til asynkrone Python-applikationer.
 
 #### Forståelse af FastAPI-serverens opstartsproces
 
 ```bash
-# Method 1: Direct Python execution (includes auto-reload)
+# Metode 1: Direkte Python-udførelse (inkluderer automatisk genindlæsning)
 python api.py
 
-# Method 2: Using Uvicorn directly (more control)
+# Metode 2: Brug af Uvicorn direkte (mere kontrol)
 uvicorn api:app --host 0.0.0.0 --port 5000 --reload
 ```
 
 Når du kører denne kommando, sker følgende bag kulisserne:
 
-**1. Python indlæser din FastAPI-applikation**:
+**1. Python loader din FastAPI-applikation**:
 - Importerer alle nødvendige biblioteker (FastAPI, Pydantic, OpenAI osv.)
-- Indlæser miljøvariabler fra din `.env`-fil
+- Loader miljøvariabler fra din `.env`-fil
 - Opretter FastAPI-applikationsinstansen med automatisk dokumentation
 
 **2. Uvicorn konfigurerer ASGI-serveren**:
 - Binder til port 5000 med asynkron anmodningshåndtering
-- Opsætter anmodningsrouting med automatisk validering
+- Sætter anmodningsrouting op med automatisk validering
 - Aktiverer hot reload til udvikling (genstarter ved filændringer)
 - Genererer interaktiv API-dokumentation
 
 **3. Serveren begynder at lytte**:
 - Din terminal viser: `INFO: Uvicorn running on http://0.0.0.0:5000`
-- Serveren kan håndtere flere samtidige AI-anmodninger
+- Serveren kan håndtere flere samtidige AI-forespørgsler
 - Din API er klar med automatisk dokumentation på `http://localhost:5000/docs`
 
 #### Hvad du bør se, når alt fungerer
@@ -913,46 +1066,46 @@ INFO:     Waiting for application startup.
 INFO:     Application startup complete.
 ```
 
-**Forståelse af FastAPI-output:**
+**Forståelse af FastAPI-uddata:**
 - **Vil overvåge ændringer**: Auto-reload aktiveret til udvikling
 - **Uvicorn kører**: Højtydende ASGI-server er aktiv
-- **Genstarter proces**: Filovervågning til automatiske genstarter
-- **Applikationsopstart fuldført**: FastAPI-app initialiseret med succes
-- **Interaktiv dokumentation tilgængelig**: Besøg `/docs` for automatisk API-dokumentation
+- **Starter genloader-processen**: Filovervågning til automatisk genstart
+- **Applikationsstart fuldført**: FastAPI-app initialiseret med succes
+- **Interaktive docs tilgængelige**: Besøg `/docs` for automatisk API-dokumentation
 
-#### Test af din FastAPI: Flere kraftfulde metoder
+#### Test af din FastAPI: Flere kraftfulde tilgange
 
-FastAPI tilbyder flere praktiske måder at teste din API på, inklusive automatisk interaktiv dokumentation:
+FastAPI tilbyder flere praktiske måder at teste din API på, inklusiv automatisk interaktiv dokumentation:
 
-**Metode 1: Interaktiv API-dokumentation (anbefales)**
+**Metode 1: Interaktiv API-dokumentation (Anbefalet)**
 1. Åbn din browser og gå til `http://localhost:5000/docs`
 2. Du vil se Swagger UI med alle dine endpoints dokumenteret
-3. Klik på `/hello` → "Prøv det" → Indtast en testbesked → "Udfør"
-4. Se responsen direkte i browseren med korrekt formatering
+3. Klik på `/hello` → "Try it out" → Indtast en testbesked → "Execute"
+4. Se svaret direkte i browseren med korrekt formatering
 
 **Metode 2: Grundlæggende browser-test**
-1. Gå til `http://localhost:5000` for root-endpointet
-2. Gå til `http://localhost:5000/health` for at tjekke serverens sundhed
+1. Gå til `http://localhost:5000` for roden af endpoint
+2. Gå til `http://localhost:5000/health` for at tjekke serverens helbred
 3. Dette bekræfter, at din FastAPI-server kører korrekt
 
-**Metode 2: Kommandolinjetest (avanceret)**
+**Metode 2: Kommandolinjetest (Avanceret)**
 ```bash
-# Test with curl (if available)
+# Test med curl (hvis tilgængelig)
 curl -X POST http://localhost:5000/hello \
   -H "Content-Type: application/json" \
   -d '{"message": "Hello AI!"}'
 
-# Expected response:
-# {"response": "Hello! I'm your AI assistant. How can I help you today?"}
+# Forventet svar:
+# {"response": "Hej! Jeg er din AI-assistent. Hvordan kan jeg hjælpe dig i dag?"}
 ```
 
-**Metode 3: Python-testscript**
+**Metode 3: Python-testscripts**
 ```python
-# test_api.py - Create this file to test your API
+# test_api.py - Opret denne fil for at teste din API
 import requests
 import json
 
-# Test the API endpoint
+# Test API-endpointet
 url = "http://localhost:5000/hello"
 data = {"message": "Tell me a joke about programming"}
 
@@ -966,32 +1119,32 @@ else:
 
 #### Fejlfinding af almindelige opstartsproblemer
 
-| Fejlmeddelelse | Hvad det betyder | Sådan løser du det |
-|----------------|------------------|--------------------|
-| `ModuleNotFoundError: No module named 'fastapi'` | FastAPI er ikke installeret | Kør `pip install fastapi uvicorn` i din virtuelle miljø |
-| `ModuleNotFoundError: No module named 'uvicorn'` | ASGI-serveren er ikke installeret | Kør `pip install uvicorn` i din virtuelle miljø |
-| `KeyError: 'GITHUB_TOKEN'` | Miljøvariabel ikke fundet | Tjek din `.env`-fil og `load_dotenv()`-kald |
-| `Address already in use` | Port 5000 er optaget | Luk andre processer, der bruger port 5000, eller skift porten |
-| `ValidationError` | Forespørgselsdata matcher ikke Pydantic-modellen | Tjek, om din forespørgselsformat matcher det forventede skema |
-| `HTTPException 422` | Ubehandlingsbar enhed | Forespørgselsvalidering mislykkedes, tjek `/docs` for korrekt format |
-| `OpenAI API error` | AI-tjenesteautentificering mislykkedes | Bekræft, at din GitHub-token er korrekt og har de nødvendige tilladelser |
+| Fejlmeddelelse | Hvad det betyder | Hvordan du løser det |
+|---------------|------------------|---------------------|
+| `ModuleNotFoundError: No module named 'fastapi'` | FastAPI ikke installeret | Kør `pip install fastapi uvicorn` i dit virtuelle miljø |
+| `ModuleNotFoundError: No module named 'uvicorn'` | ASGI-server ikke installeret | Kør `pip install uvicorn` i dit virtuelle miljø |
+| `KeyError: 'GITHUB_TOKEN'` | Miljøvariabel ikke fundet | Tjek din `.env`-fil og `load_dotenv()`-opkald |
+| `Address already in use` | Port 5000 er optaget | Stop andre processer, der bruger port 5000, eller skift port |
+| `ValidationError` | Anmodningsdata matcher ikke Pydantic-modellen | Tjek at din anmodning matcher den forventede skema |
+| `HTTPException 422` | Ubehandlingsbar enhed | Anmodningsvalidering fejlede, tjek `/docs` for korrekt format |
+| `OpenAI API error` | AI-serviceens autentificering fejlede | Bekræft at din GitHub-token er korrekt og har rette tilladelser |
 
-#### Bedste praksis for udvikling
+#### Udviklingsbest practices
 
-**Automatisk genindlæsning**: FastAPI med Uvicorn tilbyder automatisk genindlæsning, når du gemmer ændringer i dine Python-filer. Det betyder, at du kan ændre din kode og teste med det samme uden at genstarte manuelt.
+**Hot Reloading**: FastAPI med Uvicorn tilbyder automatisk genindlæsning, når du gemmer ændringer i dine Python-filer. Det betyder, at du kan ændre din kode og teste med det samme uden manuelt at genstarte.
 
 ```python
-# Enable hot reloading explicitly
+# Aktivér hot reloading eksplicit
 if __name__ == "__main__":
-    app.run(host="0.0.0.0", port=5000, debug=True)  # debug=True enables hot reload
+    app.run(host="0.0.0.0", port=5000, debug=True)  # debug=True aktiverer hot reload
 ```
 
-**Logning til udvikling**: Tilføj logning for at forstå, hvad der sker:
+**Logging til udvikling**: Tilføj logging for at forstå, hvad der sker:
 
 ```python
 import logging
 
-# Set up logging
+# Opsæt logning
 logging.basicConfig(level=logging.INFO)
 logger = logging.getLogger(__name__)
 
@@ -1015,19 +1168,19 @@ def hello():
         return jsonify({"error": "AI service temporarily unavailable"}), 500
 ```
 
-**Hvorfor logning hjælper**: Under udvikling kan du se præcis, hvilke forespørgsler der kommer ind, hvad AI'en svarer med, og hvor fejl opstår. Det gør fejlfinding meget hurtigere.
+**Hvorfor logging hjælper**: Under udvikling kan du se præcis hvilke forespørgsler, der kommer ind, hvad AI’en svarer med, og hvor fejl opstår. Det gør fejlfinding meget hurtigere.
 
-### Konfiguration til GitHub Codespaces: Cloud-udvikling gjort nemt
+### Konfiguration til GitHub Codespaces: Skyudvikling gjort nemt
 
-GitHub Codespaces er som at have en kraftfuld udviklingscomputer i skyen, som du kan tilgå fra enhver browser. Hvis du arbejder i Codespaces, er der nogle ekstra trin for at gøre din backend tilgængelig for din frontend.
+GitHub Codespaces er som en kraftfuld udviklingscomputer i skyen, som du kan tilgå fra enhver browser. Hvis du arbejder i Codespaces, er der et par ekstra trin for at gøre din backend tilgængelig for dit frontend.
 
-#### Forstå Codespaces-netværk
+#### Forståelse af netværket i Codespaces
 
-I et lokalt udviklingsmiljø kører alt på den samme computer:
+I et lokalt udviklingsmiljø kører alt på samme computer:
 - Backend: `http://localhost:5000`
 - Frontend: `http://localhost:3000` (eller file://)
 
-I Codespaces kører dit udviklingsmiljø på GitHubs servere, så "localhost" har en anden betydning. GitHub opretter automatisk offentlige URL'er til dine tjenester, men du skal konfigurere dem korrekt.
+I Codespaces kører dit udviklingsmiljø på GitHubs servere, så "localhost" har en anden betydning. GitHub opretter automatisk offentlige URL’er til dine tjenester, men du skal konfigurere dem korrekt.
 
 #### Trin-for-trin Codespaces-konfiguration
 
@@ -1037,15 +1190,15 @@ cd backend
 python api.py
 ```
 
-Du vil se den velkendte FastAPI/Uvicorn-opstartsbesked, men bemærk, at den kører inde i Codespace-miljøet.
+Du vil se den velkendte FastAPI/Uvicorn opstartsmeddelelse, men bemærk, at den kører inde i Codespace-miljøet.
 
-**2. Konfigurer portens synlighed**:
-- Kig efter fanen "Ports" i den nederste panel i VS Code
+**2. Konfigurer port-synlighed**:
+- Kig efter fanen "Ports" i nederste panel i VS Code
 - Find port 5000 på listen
 - Højreklik på port 5000
 - Vælg "Port Visibility" → "Public"
 
-**Hvorfor gøre den offentlig?** Som standard er Codespace-porte private (kun tilgængelige for dig). Ved at gøre den offentlig kan din frontend (som kører i browseren) kommunikere med din backend.
+**Hvorfor gøre den offentlig?** Som standard er Codespace-porte private (kun tilgængelige for dig). At gøre den offentlig tillader, at dit frontend (som kører i browseren) kan kommunikere med din backend.
 
 **3. Få din offentlige URL**:
 Efter at have gjort porten offentlig, vil du se en URL som:
@@ -1055,33 +1208,33 @@ https://your-codespace-name-5000.app.github.dev
 
 **4. Opdater din frontend-konfiguration**:
 ```javascript
-// In your frontend app.js, update the BASE_URL:
+// I din frontend app.js, opdater BASE_URL:
 this.BASE_URL = "https://your-codespace-name-5000.app.github.dev";
 ```
 
-#### Forstå Codespace-URL'er
+#### Forståelse af Codespace-URL’er
 
-Codespace-URL'er følger et forudsigeligt mønster:
+Codespace-URL’er følger et forudsigeligt mønster:
 ```
 https://[codespace-name]-[port].app.github.dev
 ```
 
-**Forklaring**:
-- `codespace-name`: En unik identifikator for din Codespace (inkluderer normalt dit brugernavn)
-- `port`: Portnummeret din tjeneste kører på (5000 for vores FastAPI-app)
+**Nedbrudt i dele:**
+- `codespace-name`: En unik identifikator for din Codespace (ofte inkluderer dit brugernavn)
+- `port`: Portnummer, som din service kører på (5000 for vores FastAPI-app)
 - `app.github.dev`: GitHubs domæne for Codespace-applikationer
 
-#### Test din Codespace-opsætning
+#### Test af din Codespace-opsætning
 
-**1. Test backend direkte**:
-Åbn din offentlige URL i en ny browserfane. Du bør se:
+**1. Test backenden direkte**:
+Åbn din offentlige URL i en ny browsertab. Du bør se:
 ```
 Welcome to the AI Chat API. Send POST requests to /hello with JSON payload containing 'message' field.
 ```
 
 **2. Test med browserens udviklerværktøjer**:
 ```javascript
-// Open browser console and test your API
+// Åbn browserkonsollen og test din API
 fetch('https://your-codespace-name-5000.app.github.dev/hello', {
   method: 'POST',
   headers: {'Content-Type': 'application/json'},
@@ -1091,99 +1244,121 @@ fetch('https://your-codespace-name-5000.app.github.dev/hello', {
 .then(data => console.log(data));
 ```
 
-#### Codespaces vs Lokal Udvikling
+#### Codespaces vs Lokal udvikling
 
-| Aspekt | Lokal Udvikling | GitHub Codespaces |
+| Aspekt | Lokal udvikling | GitHub Codespaces |
 |--------|-----------------|-------------------|
-| **Opsætningstid** | Længere (installér Python, afhængigheder) | Øjeblikkelig (forudkonfigureret miljø) |
+| **Opsætningstid** | Længere (installer Python, afhængigheder) | Øjeblikkelig (forudkonfigureret miljø) |
 | **URL-adgang** | `http://localhost:5000` | `https://xyz-5000.app.github.dev` |
 | **Portkonfiguration** | Automatisk | Manuel (gør porte offentlige) |
-| **Filpersistens** | Lokal maskine | GitHub-repository |
-| **Samarbejde** | Svært at dele miljø | Nem at dele Codespace-link |
-| **Internetafhængighed** | Kun for AI API-kald | Nødvendigt for alt |
+| **Filpersistens** | Lokal maskine | GitHub repository |
+| **Samarbejde** | Vanskeligt at dele miljø | Let at dele Codespace-link |
+| **Internetafhængighed** | Kun til AI API-kald | Krævet til alt |
 
-#### Tips til udvikling i Codespaces
+#### Tips til udvikling i Codespace
 
 **Miljøvariabler i Codespaces**:
-Din `.env`-fil fungerer på samme måde i Codespaces, men du kan også indstille miljøvariabler direkte i Codespace:
+Din `.env`-fil fungerer på samme måde i Codespaces, men du kan også sætte miljøvariabler direkte i Codespace:
 
 ```bash
-# Set environment variable for the current session
+# Indstil miljøvariabel for den aktuelle session
 export GITHUB_TOKEN="your_token_here"
 
-# Or add to your .bashrc for persistence
+# Eller tilføj til din .bashrc for vedvarende effekt
 echo 'export GITHUB_TOKEN="your_token_here"' >> ~/.bashrc
 ```
 
-**Porthåndtering**:
+**Portstyring**:
 - Codespaces registrerer automatisk, når din applikation begynder at lytte på en port
 - Du kan videresende flere porte samtidigt (nyttigt, hvis du senere tilføjer en database)
 - Porte forbliver tilgængelige, så længe din Codespace kører
 
 **Udviklingsworkflow**:
-1. Lav kodeændringer i VS Code
-2. FastAPI genindlæser automatisk (takket være Uvicorns genindlæsningsfunktion)
-3. Test ændringer med det samme via den offentlige URL
+1. Foretag kodeændringer i VS Code
+2. FastAPI genindlæses automatisk (takket være Uvicorns reload-tilstand)
+3. Test ændringer øjeblikkeligt via den offentlige URL
 4. Commit og push, når du er klar
 
-> 💡 **Pro Tip**: Bogmærk din Codespace backend-URL under udvikling. Da Codespace-navne er stabile, ændrer URL'en sig ikke, så længe du bruger den samme Codespace.
+> 💡 **Pro tip**: Bogmærk din Codespace backend-URL under udvikling. Da Codespace-navne er stabile, vil URL’en ikke ændre sig, så længe du bruger samme Codespace.
 
-## Oprettelse af frontend-chatgrænsefladen: Hvor mennesker møder AI
+## Opret frontend chat-interface: Hvor mennesker møder AI
 
-Nu skal vi bygge brugergrænsefladen – den del, der bestemmer, hvordan folk interagerer med din AI-assistent. Ligesom designet af den originale iPhone-grænseflade fokuserer vi på at gøre kompleks teknologi intuitiv og nem at bruge.
+Nu bygger vi brugergrænsefladen – den del, der bestemmer, hvordan folk interagerer med din AI-assistent. Ligesom designet af den oprindelige iPhone-grænseflade fokuserer vi på at gøre kompleks teknologi intuitiv og naturlig at bruge.
 
-### Forstå moderne frontend-arkitektur
+### Forståelse af moderne frontend-arkitektur
 
-Vores chatgrænseflade vil være det, vi kalder en "Single Page Application" eller SPA. I stedet for den gammeldags tilgang, hvor hvert klik indlæser en ny side, opdaterer vores app glat og øjeblikkeligt:
+Vores chat-interface bliver det, vi kalder en “Single Page Application” eller SPA. I stedet for den gammeldags tilgang, hvor hvert klik indlæser en ny side, opdaterer vores app glat og øjeblikkeligt:
 
-**Gamle hjemmesider**: Som at læse en fysisk bog – du bladrer til helt nye sider
-**Vores chat-app**: Som at bruge din telefon – alt flyder og opdateres problemfrit
+**Gamle hjemmesider**: Som at læse en fysisk bog – du bladre til helt nye sider  
+**Vores chat-app**: Som at bruge din telefon – alt flyder og opdateres gnidningsfrit
 
 ```mermaid
 graph TD
-    A[User Types Message] --> B[JavaScript Captures Input]
-    B --> C[Validate & Format Data]
-    C --> D[Send to Backend API]
-    D --> E[Display Loading State]
-    E --> F[Receive AI Response]
-    F --> G[Update Chat Interface]
-    G --> H[Ready for Next Message]
+    A[Bruger skriver besked] --> B[JavaScript fanger input]
+    B --> C[Valider og formater data]
+    C --> D[Send til backend API]
+    D --> E[Vis indlæsningsstatus]
+    E --> F[Modtag AI-svar]
+    F --> G[Opdater chatgrænseflade]
+    G --> H[Klar til næste besked]
 ```
-
+```mermaid
+classDiagram
+    class ChatApp {
+        +beskeder: HTMLElement
+        +formular: HTMLElement
+        +input: HTMLElement
+        +sendKnap: HTMLElement
+        +BASE_URL: string
+        +API_ENDPOINT: string
+        
+        +constructor()
+        +initialiserEventLyttere()
+        +håndterIndsendelse(event)
+        +kaldAPI(besked)
+        +tilføjBesked(tekst, rolle)
+        +escapeHtml(tekst)
+        +rulTilBund()
+        +sætIndlæsning(erIndlæser)
+    }
+    
+    ChatApp --> DOM : manipulerer
+    ChatApp --> FastAPI : sender forespørgsler
+```
 ### De tre søjler i frontend-udvikling
 
-Hver frontend-applikation – fra simple hjemmesider til komplekse apps som Discord eller Slack – er bygget på tre kerne-teknologier. Tænk på dem som fundamentet for alt, hvad du ser og interagerer med på nettet:
+Enhver frontend-applikation – fra simple websites til komplekse apps som Discord eller Slack – er bygget på tre kerne-teknologier. Tænk på dem som fundamentet for alt, du ser og interagerer med på webben:
 
 **HTML (Struktur)**: Dette er dit fundament
-- Bestemmer, hvilke elementer der findes (knapper, tekstfelter, containere)
-- Giver mening til indhold (dette er en overskrift, dette er en formular osv.)
+- Bestemmer, hvilke elementer der findes (knapper, tekstområder, containere)
+- Giver mening til indholdet (dette er en overskrift, dette er en formular osv.)
 - Skaber den grundlæggende struktur, som alt andet bygger på
 
 **CSS (Præsentation)**: Dette er din indretningsarkitekt
-- Får alt til at se smukt ud (farver, skrifttyper, layouts)
-- Håndterer forskellige skærmstørrelser (telefon vs laptop vs tablet)
-- Skaber glatte animationer og visuel feedback
+- Får alt til at se smukt ud (farver, skrifttyper, layout)
+- Håndterer forskellige skærmstørrelser (mobil, laptop, tablet)
+- Skaber bløde animationer og visuel feedback
 
 **JavaScript (Adfærd)**: Dette er din hjerne
-- Reagerer på, hvad brugerne gør (klik, indtastning, scrolling)
+- Reagerer på brugerhandlinger (klik, skrivning, scroll)
 - Kommunikerer med din backend og opdaterer siden
-- Gør alt interaktivt og dynamisk
+- Gør alting interaktivt og dynamisk
 
 **Tænk på det som arkitektonisk design:**
-- **HTML**: Den strukturelle plan (definerer rum og relationer)
-- **CSS**: Den æstetiske og miljømæssige design (visuel stil og brugeroplevelse)
+- **HTML**: Det strukturelle blueprint (definerer rum og forhold)
+- **CSS**: Det æstetiske og miljømæssige design (visuel stil og brugeroplevelse)
 - **JavaScript**: De mekaniske systemer (funktionalitet og interaktivitet)
 
-### Hvorfor moderne JavaScript-arkitektur er vigtig
+### Hvorfor moderne JavaScript-arkitektur er vigtigt
 
-Vores chatapplikation vil bruge moderne JavaScript-mønstre, som du vil se i professionelle applikationer. At forstå disse koncepter vil hjælpe dig med at vokse som udvikler:
+Vores chat-applikation vil bruge moderne JavaScript-mønstre, som du vil se i professionelle applikationer. At forstå disse koncepter hjælper dig som udvikler:
 
-**Klassebaseret arkitektur**: Vi organiserer vores kode i klasser, som er som at skabe blåtryk for objekter
-**Async/Await**: Moderne måde at håndtere operationer, der tager tid (som API-kald)
-**Event-drevet programmering**: Vores app reagerer på brugerhandlinger (klik, tastetryk) i stedet for at køre i en løkke
-**DOM-manipulation**: Dynamisk opdatering af websideindhold baseret på brugerinteraktioner og API-svar
+**Klasselignende arkitektur**: Vi organiserer vores kode i klasser, som at lave blueprints til objekter  
+**Async/Await**: Moderne måde at håndtere operationer, der tager tid (f.eks. API-kald)  
+**Event-drevet programmering**: Vores app reagerer på brugerhandlinger (klik, tastetryk) fremfor at køre i en løkke  
+**DOM-manipulation**: Dynamisk opdatering af websides indhold baseret på brugerinteraktioner og API-respons
 
-### Projektstruktur-opsætning
+### Projektstrukturopsætning
 
 Opret en frontend-mappe med denne organiserede struktur:
 
@@ -1196,16 +1371,16 @@ frontend/
 
 **Forstå arkitekturen:**
 - **Adskiller** bekymringer mellem struktur (HTML), adfærd (JavaScript) og præsentation (CSS)
-- **Bevarer** en simpel filstruktur, der er nem at navigere og ændre
-- **Følger** bedste praksis for webudvikling med hensyn til organisation og vedligeholdelse
+- **Bevarer** en enkel filstruktur, som er let at navigere og ændre
+- **Følger** bedste webudviklingspraksis for organisering og vedligeholdelse
 
-### Byg HTML-fundamentet: Semantisk struktur for tilgængelighed
+### Opbygning af HTML-fundamentet: Semantisk struktur for tilgængelighed
 
-Lad os starte med HTML-strukturen. Moderne webudvikling lægger vægt på "semantisk HTML" – brug af HTML-elementer, der tydeligt beskriver deres formål, ikke kun deres udseende. Dette gør din applikation tilgængelig for skærmlæsere, søgemaskiner og andre værktøjer.
+Lad os starte med HTML-strukturen. Moderne webudvikling fremhæver “semantisk HTML” – brugen af HTML-elementer, der klart beskriver deres formål, ikke kun deres udseende. Det gør din applikation tilgængelig for skærmlæsere, søgemaskiner og andre værktøjer.
 
-**Hvorfor semantisk HTML er vigtigt**: Forestil dig at beskrive din chat-app til nogen over telefonen. Du ville sige "der er en header med titlen, et hovedområde, hvor samtaler vises, og en formular nederst til at skrive beskeder." Semantisk HTML bruger elementer, der matcher denne naturlige beskrivelse.
+**Hvorfor semantisk HTML er vigtigt**: Forestil dig, at du skulle beskrive din chat-app til en person over telefonen. Du ville sige “der er en header med titlen, et hovedområde hvor samtaler vises, og en formular nederst til at skrive beskeder.” Semantisk HTML bruger elementer, der matcher denne naturlige beskrivelse.
 
-Opret `index.html` med denne gennemtænkte struktur:
+Opret `index.html` med denne gennemtænkte markup:
 
 ```html
 <!DOCTYPE html>
@@ -1247,77 +1422,76 @@ Opret `index.html` med denne gennemtænkte struktur:
 </html>
 ```
 
-**Forstå hvert HTML-element og dets formål:**
+**Forståelse af hvert HTML-element og dets formål:**
 
 #### Dokumentstruktur
 - **`<!DOCTYPE html>`**: Fortæller browseren, at dette er moderne HTML5
 - **`<html lang="en">`**: Angiver sidens sprog for skærmlæsere og oversættelsesværktøjer
-- **`<meta charset="UTF-8">`**: Sikrer korrekt tegnkodning for international tekst
-- **`<meta name="viewport"...>`**: Gør siden mobilresponsiv ved at kontrollere zoom og skala
+- **`<meta charset="UTF-8">`**: Sikrer korrekt tegnkodning til international tekst
+- **`<meta name="viewport"...>`**: Gør siden mobilresponsiv ved at styre zoom og skala
 
 #### Semantiske elementer
-- **`<header>`**: Identificerer tydeligt den øverste sektion med titel og beskrivelse
-- **`<main>`**: Angiver det primære indholdsområde (hvor samtaler foregår)
-- **`<form>`**: Semantisk korrekt til brugerinput, muliggør korrekt tastaturnavigation
+- **`<header>`**: Klart definerer topsektionen med titel og beskrivelse
+- **`<main>`**: Angiver hovedindholdsområdet (hvor samtaler foregår)
+- **`<form>`**: Semantisk korrekt til brugerinput, muliggør ordentlig tastaturnavigation
 
 #### Tilgængelighedsfunktioner
-- **`role="log"`**: Fortæller skærmlæsere, at dette område indeholder en kronologisk log af beskeder
+- **`role="log"`**: Fortæller skærmlæsere at dette område indeholder en kronologisk log af beskeder
 - **`aria-live="polite"`**: Annoncerer nye beskeder til skærmlæsere uden at afbryde
-- **`aria-label`**: Giver beskrivende etiketter til formularkontroller
-- **`required`**: Browseren validerer, at brugerne indtaster en besked, før de sender
+- **`aria-label`**: Giver beskrivende labels til formularstyringer
+- **`required`**: Browser validerer, at brugerne indtaster en besked før afsendelse
 
-#### CSS og JavaScript-integration
-- **`class`-attributter**: Giver styling-hooks til CSS (f.eks. `chat-container`, `input-group`)
-- **`id`-attributter**: Tillader JavaScript at finde og manipulere specifikke elementer
-- **Scriptplacering**: JavaScript-fil indlæses til sidst, så HTML indlæses først
+#### CSS- og JavaScript-integration
+- **`class`-attributter**: Tilbyder styling-kroge til CSS (f.eks. `chat-container`, `input-group`)
+- **`id`-attributter**: Gør det muligt for JavaScript at finde og manipulere specifikke elementer
+- **Script-placering**: JavaScript-fil indlæses til sidst, så HTML først kan loades
 
-**Hvorfor denne struktur fungerer:**
-- **Logisk flow**: Header → Hovedindhold → Inputformular matcher naturlig læserækkefølge
-- **Tastaturtilgængelig**: Brugere kan navigere gennem alle interaktive elementer med tabulator
-- **Skærmlæservenlig**: Klare landemærker og beskrivelser for synshandicappede brugere
+**Hvorfor denne struktur virker:**
+- **Logisk flow**: Header → Hovedindhold → Indtastningsformular matcher naturlig læseretning
+- **Tastaturnavigerbar**: Brugere kan tabbe igennem alle interaktive elementer
+- **Skærmlæservenlig**: Klare pejlemærker og beskrivelser til brugere med synshandicap
 - **Mobilresponsiv**: Viewport-meta-tag muliggør responsivt design
-- **Progressiv forbedring**: Fungerer selv hvis CSS eller JavaScript ikke indlæses
+- **Progressiv forbedring**: Fungerer selvom CSS eller JavaScript ikke loader
 
 ### Tilføj interaktiv JavaScript: Moderne webapplikationslogik
+Nu bygger vi JavaScript, som bringer vores chatgrænseflade til live. Vi vil bruge moderne JavaScript-mønstre, som du vil møde i professionel webudvikling, inklusive ES6-klasser, async/await og event-drevet programmering.
 
-Nu skal vi bygge JavaScript, der bringer vores chatgrænseflade til live. Vi bruger moderne JavaScript-mønstre, som du vil støde på i professionel webudvikling, herunder ES6-klasser, async/await og event-drevet programmering.
+#### Forståelse af Moderne JavaScript-arkitektur
 
-#### Forstå moderne JavaScript-arkitektur
-
-I stedet for at skrive procedurekode (en række funktioner, der kører i rækkefølge), opretter vi en **klassebaseret arkitektur**. Tænk på en klasse som en blåtryk til at skabe objekter – ligesom en arkitekts blåtryk kan bruges til at bygge flere huse.
+I stedet for at skrive procedurekode (en række funktioner, der kører i rækkefølge), vil vi skabe en **klassebaseret arkitektur**. Tænk på en klasse som en blåkopi til at skabe objekter – ligesom en arkitekts plantegning kan bruges til at bygge flere huse.
 
 **Hvorfor bruge klasser til webapplikationer?**
 - **Organisation**: Al relateret funktionalitet er samlet
-- **Genanvendelighed**: Du kunne oprette flere chatinstanser på samme side
-- **Vedligeholdelse**: Nem at fejlfinde og ændre specifikke funktioner
+- **Genanvendelighed**: Du kan oprette flere chatinstanser på samme side
+- **Vedligeholdelse**: Nemmere at debugge og ændre specifikke funktioner
 - **Professionel standard**: Dette mønster bruges i frameworks som React, Vue og Angular
 
-Opret `app.js` med denne moderne, velstrukturerede JavaScript:
+Opret `app.js` med dette moderne, velstrukturerede JavaScript:
 
 ```javascript
-// app.js - Modern chat application logic
+// app.js - Moderne chatapplikationslogik
 
 class ChatApp {
     constructor() {
-        // Get references to DOM elements we'll need to manipulate
+        // Få referencer til DOM-elementer, vi skal manipulere med
         this.messages = document.getElementById("messages");
         this.form = document.getElementById("chatForm");
         this.input = document.getElementById("messageInput");
         this.sendButton = document.getElementById("sendBtn");
         
-        // Configure your backend URL here
-        this.BASE_URL = "http://localhost:5000"; // Update this for your environment
+        // Konfigurer din backend-URL her
+        this.BASE_URL = "http://localhost:5000"; // Opdater dette til dit miljø
         this.API_ENDPOINT = `${this.BASE_URL}/hello`;
         
-        // Set up event listeners when the chat app is created
+        // Opsæt event-lyttere, når chat-appen oprettes
         this.initializeEventListeners();
     }
     
     initializeEventListeners() {
-        // Listen for form submission (when user clicks Send or presses Enter)
+        // Lyt efter formularindsendelse (når brugeren klikker Send eller trykker Enter)
         this.form.addEventListener("submit", (e) => this.handleSubmit(e));
         
-        // Also listen for Enter key in the input field (better UX)
+        // Lyt også efter Enter-tasten i inputfeltet (bedre brugeroplevelse)
         this.input.addEventListener("keypress", (e) => {
             if (e.key === "Enter" && !e.shiftKey) {
                 e.preventDefault();
@@ -1327,31 +1501,31 @@ class ChatApp {
     }
     
     async handleSubmit(event) {
-        event.preventDefault(); // Prevent form from refreshing the page
+        event.preventDefault(); // Forhindre at formularen opdaterer siden
         
         const messageText = this.input.value.trim();
-        if (!messageText) return; // Don't send empty messages
+        if (!messageText) return; // Send ikke tomme beskeder
         
-        // Provide user feedback that something is happening
+        // Giv brugeren feedback om, at noget sker
         this.setLoading(true);
         
-        // Add user message to chat immediately (optimistic UI)
+        // Tilføj brugerbesked til chatten med det samme (optimistisk UI)
         this.appendMessage(messageText, "user");
         
-        // Clear input field so user can type next message
+        // Ryd inputfeltet, så brugeren kan skrive næste besked
         this.input.value = '';
         
         try {
-            // Call the AI API and wait for response
+            // Kald AI API'et og vent på svar
             const reply = await this.callAPI(messageText);
             
-            // Add AI response to chat
+            // Tilføj AI-svar til chatten
             this.appendMessage(reply, "assistant");
         } catch (error) {
             console.error('API Error:', error);
             this.appendMessage("Sorry, I'm having trouble connecting right now. Please try again.", "error");
         } finally {
-            // Re-enable the interface regardless of success or failure
+            // Aktivér interfacet igen uanset succes eller fejl
             this.setLoading(false);
         }
     }
@@ -1404,38 +1578,38 @@ class ChatApp {
     }
 }
 
-// Initialize the chat application when the page loads
+// Initialiser chatapplikationen, når siden indlæses
 document.addEventListener("DOMContentLoaded", () => {
     new ChatApp();
 });
 ```
 
-#### Forstå hver JavaScript-koncept
+#### Forståelse af hvert JavaScript-koncept
 
-**ES6-klasse-struktur**:
+**ES6 Klasse Struktur**:
 ```javascript
 class ChatApp {
     constructor() {
-        // This runs when you create a new ChatApp instance
-        // It's like the "setup" function for your chat
+        // Dette kører, når du opretter en ny ChatApp instans
+        // Det er som "setup" funktionen for din chat
     }
     
     methodName() {
-        // Methods are functions that belong to the class
-        // They can access class properties using "this"
+        // Metoder er funktioner, der tilhører klassen
+        // De kan få adgang til klasseegenskaber ved hjælp af "this"
     }
 }
 ```
 
-**Async/Await-mønster**:
+**Async/Await Mønster**:
 ```javascript
-// Old way (callback hell):
+// Gammel måde (callback-helvede):
 fetch(url)
   .then(response => response.json())
   .then(data => console.log(data))
   .catch(error => console.error(error));
 
-// Modern way (async/await):
+// Moderne måde (async/await):
 try {
     const response = await fetch(url);
     const data = await response.json();
@@ -1445,41 +1619,41 @@ try {
 }
 ```
 
-**Event-drevet programmering**:
-I stedet for konstant at tjekke, om noget er sket, "lytter" vi efter begivenheder:
+**Event-drevet Programmering**:
+I stedet for konstant at tjekke om noget skete, "lytter" vi efter events:
 ```javascript
-// When form is submitted, run handleSubmit
+// Når formularen indsendes, kør handleSubmit
 this.form.addEventListener("submit", (e) => this.handleSubmit(e));
 
-// When Enter key is pressed, also run handleSubmit
+// Når Enter-tasten trykkes, kør også handleSubmit
 this.input.addEventListener("keypress", (e) => { /* ... */ });
 ```
 
 **DOM-manipulation**:
 ```javascript
-// Create new elements
+// Opret nye elementer
 const messageElement = document.createElement("div");
 
-// Modify their properties
+// Ændr deres egenskaber
 messageElement.className = "message user";
 messageElement.innerHTML = "Hello world!";
 
-// Add to the page
+// Tilføj til siden
 this.messages.appendChild(messageElement);
 ```
 
-#### Sikkerhed og bedste praksis
+#### Sikkerhed og Bedste Praksis
 
-**Forebyggelse af XSS**:
+**XSS Forebyggelse**:
 ```javascript
 escapeHtml(text) {
     const div = document.createElement('div');
-    div.textContent = text;  // This automatically escapes HTML
+    div.textContent = text;  // Dette undslipper automatisk HTML
     return div.innerHTML;
 }
 ```
 
-**Hvorfor dette er vigtigt**: Hvis en bruger skriver `<script>alert('hack')</script>`, sikrer denne funktion, at det vises som tekst i stedet for at blive udført som kode.
+**Hvorfor det er vigtigt**: Hvis en bruger skriver `<script>alert('hack')</script>`, sikrer denne funktion, at det vises som tekst og ikke kører som kode.
 
 **Fejlhåndtering**:
 ```javascript
@@ -1487,31 +1661,46 @@ try {
     const reply = await this.callAPI(messageText);
     this.appendMessage(reply, "assistant");
 } catch (error) {
-    // Show user-friendly error instead of breaking the app
+    // Vis en brugervenlig fejl i stedet for at få appen til at gå ned
     this.appendMessage("Sorry, I'm having trouble...", "error");
 }
 ```
 
-**Overvejelser om brugeroplevelse**:
-- **Optimistisk UI**: Tilføj brugerbesked med det samme, vent ikke på serverens svar
-- **Indlæsningsstatus**: Deaktiver knapper og vis "Sender..." mens du venter
+**Brugeroplevelses-Overvejelser**:
+- **Optimistisk UI**: Tilføj brugerbesked med det samme, vent ikke på serversvar
+- **Indlæsningsstatus**: Deaktiver knapper og vis "Sender..." mens der ventes
 - **Auto-scroll**: Hold de nyeste beskeder synlige
 - **Inputvalidering**: Send ikke tomme beskeder
-- **Tastaturgenveje**: Enter-tasten sender beskeder (som rigtige chat-apps)
+- **Genvejstaster**: Enter-tast sender beskeder (som i rigtige chat-apps)
 
-#### Forstå applikationsflowet
+#### Forståelse af Applikationsflowet
 
-1. **Siden indlæses** → `DOMContentLoaded`-begivenhed udløses → `new ChatApp()` oprettes
-2. **Konstruktør kører** → Får DOM-elementreferencer → Opsætter begivenhedslyttere
+1. **Siden loader** → `DOMContentLoaded` event affyres → `new ChatApp()` oprettes
+2. **Konstruktør kører** → Henter DOM-elementreferencer → Sætter event-lyttere op
 3. **Bruger skriver besked** → Trykker Enter eller klikker Send → `handleSubmit` kører
 4. **handleSubmit** → Validerer input → Viser indlæsningsstatus → Kalder API
-5. **API svarer** → Tilføjer AI-besked til chat → Genaktiverer grænsefladen
+5. **API svarer** → Tilføjer AI-besked til chat → Genaktiverer interface
 6. **Klar til næste besked** → Brugeren kan fortsætte med at chatte
-Denne arkitektur er skalerbar – du kan nemt tilføje funktioner som redigering af beskeder, filuploads eller flere samtaletråde uden at skulle omskrive den grundlæggende struktur.
 
-### Styling din chatgrænseflade
+Denne arkitektur er skalerbar – du kan nemt tilføje funktioner som beskedredigering, filuploads eller flere samtaletråde uden at omskrive kerne-strukturen.
 
-Lad os nu skabe en moderne og visuelt tiltalende chatgrænseflade med CSS. God styling får din applikation til at føles professionel og forbedrer den samlede brugeroplevelse. Vi vil bruge moderne CSS-funktioner som Flexbox, CSS Grid og brugerdefinerede egenskaber for et responsivt og tilgængeligt design.
+### 🎯 Pædagogisk Tjek-ind: Moderne Frontend Arkitektur
+
+**Forståelse af Arkitekturen**: Du har implementeret en komplet single-page applikation med moderne JavaScript-mønstre. Dette repræsenterer professionelt frontend-udviklingsniveau.
+
+**Nøglekoncepter Mestret**:
+- **ES6 Klassearkitektur**: Organiseret, vedligeholdelsesvenlig kodestruktur
+- **Async/Await Mønstre**: Moderne asynkron programmering
+- **Event-drevet Programmering**: Responsivt brugergrænsefladedesign
+- **Sikkerheds bedste praksis**: XSS-forebyggelse og inputvalidering
+
+**Brancheforbindelse**: Mønstrene du har lært (klassebaseret arkitektur, async-operationer, DOM-manipulation) er fundamentet for moderne frameworks som React, Vue og Angular. Du bygger med samme arkitektoniske tankegang som i produktionsapplikationer.
+
+**Refleksionsspørgsmål**: Hvordan ville du udvide denne chatapplikation til at håndtere flere samtaler eller brugerautentifikation? Overvej de nødvendige arkitektoniske ændringer og hvordan klassestrukturen ville udvikle sig.
+
+### Style Din Chatgrænseflade
+
+Lad os nu skabe en moderne, visuelt tiltalende chatgrænseflade med CSS. God styling får din applikation til at føles professionel og forbedrer den samlede brugeroplevelse. Vi bruger moderne CSS-funktioner som Flexbox, CSS Grid og brugerdefinerede egenskaber for et responsivt, tilgængeligt design.
 
 Opret `styles.css` med disse omfattende styles:
 
@@ -1773,106 +1962,165 @@ body {
 ```
 
 **Forståelse af CSS-arkitekturen:**
-- **Bruger** CSS-brugerdefinerede egenskaber (variabler) for konsistent tema og nem vedligeholdelse
+- **Bruger** CSS-variabler (custom properties) for konsistent tema og nem vedligeholdelse
 - **Implementerer** Flexbox-layout for responsivt design og korrekt justering
-- **Inkluderer** glidende animationer for beskedvisning uden at være distraherende
-- **Giver** visuel forskel mellem brugerbeskeder, AI-svar og fejltilstande
-- **Understøtter** responsivt design, der fungerer både på desktop og mobile enheder
-- **Tager hensyn til** tilgængelighed med reducerede bevægelsespræferencer og korrekte kontrastforhold
+- **Inkluderer** glatte animationer for besked-udseende uden at være forstyrrende
+- **Giver** visuel adskillelse mellem brugerbeskeder, AI-svar og fejltilstande
+- **Understøtter** responsivt design der virker på både desktop og mobil
+- **Tager højde for** tilgængelighed med nedsat bevægelses-præferencer og ordentlige kontrastforhold
 - **Tilbyder** mørk tilstand baseret på brugerens systempræferencer
 
-### Konfiguration af din backend-URL
+### Konfiguration af Din Backend URL
 
-Det sidste trin er at opdatere `BASE_URL` i din JavaScript, så den matcher din backend-server:
+Det sidste skridt er at opdatere `BASE_URL` i dit JavaScript, så det matcher din backend-server:
 
 ```javascript
-// For local development
+// Til lokal udvikling
 this.BASE_URL = "http://localhost:5000";
 
-// For GitHub Codespaces (replace with your actual URL)
+// Til GitHub Codespaces (erstat med din faktiske URL)
 this.BASE_URL = "https://your-codespace-name-5000.app.github.dev";
 ```
 
-**Bestemmelse af din backend-URL:**
-- **Lokal udvikling**: Brug `http://localhost:5000`, hvis du kører både frontend og backend lokalt
-- **Codespaces**: Find din backend-URL i fanen Ports, efter du har gjort port 5000 offentlig
+**Bestemmelse af din backend URL:**
+- **Lokal udvikling**: Brug `http://localhost:5000`, hvis frontend og backend kører lokalt
+- **Codespaces**: Find din backend-URL i Ports-fanen efter du har gjort port 5000 offentlig
 - **Produktion**: Erstat med dit faktiske domæne, når du deployer til en hostingtjeneste
 
-> 💡 **Testtip**: Du kan teste din backend direkte ved at besøge root-URL'en i din browser. Du bør se velkomstbeskeden fra din FastAPI-server.
+> 💡 **Test-tip**: Du kan teste din backend direkte ved at besøge rod-URL'en i din browser. Du bør se velkomstbeskeden fra din FastAPI-server.
 
-## Test og deployment
 
-Nu hvor du har bygget både frontend- og backend-komponenter, lad os teste, at alt fungerer sammen og udforske deployment-muligheder for at dele din chatassistent med andre.
 
-### Lokal testarbejdsgang
+## Test og Deployering
+
+Nu hvor du har både frontend- og backend-komponenter, lad os teste, at alt virker sammen og udforske deployeringsmuligheder for at dele din chatassistent med andre.
+
+### Lokal Test Workflow
 
 Følg disse trin for at teste din komplette applikation:
 
 ```mermaid
 graph TD
-    A[Start Backend Server] --> B[Configure Environment Variables]
+    A[Start Backend Server] --> B[Konfigurer Miljøvariabler]
     B --> C[Test API Endpoints]
-    C --> D[Open Frontend in Browser]
-    D --> E[Test Chat Functionality]
-    E --> F[Debug Any Issues]
+    C --> D[Åbn Frontend i Browser]
+    D --> E[Test Chatfunktionalitet]
+    E --> F[Fejlret Eventuelle Problemer]
 ```
-
 **Trin-for-trin testproces:**
 
 1. **Start din backend-server**:
    ```bash
    cd backend
-   source venv/bin/activate  # or venv\Scripts\activate on Windows
+   source venv/bin/activate  # eller venv\Scripts\activate på Windows
    python api.py
    ```
 
-2. **Bekræft, at API'en fungerer**:
+2. **Tjek at API’en virker**:
    - Åbn `http://localhost:5000` i din browser
-   - Du bør se velkomstbeskeden fra din FastAPI-server
+   - Du skulle gerne se velkomstbeskeden fra din FastAPI-server
 
 3. **Åbn din frontend**:
-   - Naviger til din frontend-mappe
+   - Gå til din frontend-mappe
    - Åbn `index.html` i din webbrowser
-   - Eller brug VS Codes Live Server-udvidelse for en bedre udviklingsoplevelse
+   - Eller brug VS Codes Live Server-udvidelse for bedre udviklingsoplevelse
 
-4. **Test chatfunktionen**:
+4. **Test chat-funktionaliteten**:
    - Skriv en besked i inputfeltet
    - Klik på "Send" eller tryk Enter
-   - Bekræft, at AI'en svarer korrekt
-   - Tjek browserkonsollen for eventuelle JavaScript-fejl
+   - Tjek at AI svarer relevant
+   - Se browserkonsollen efter eventuelle JavaScript-fejl
 
-### Fejlfinding af almindelige problemer
+### Fejlretning af Almindelige Problemer
 
 | Problem | Symptomer | Løsning |
 |---------|----------|----------|
-| **CORS-fejl** | Frontend kan ikke nå backend | Sørg for, at FastAPI CORSMiddleware er korrekt konfigureret |
-| **API-nøglefejl** | 401 Uautoriserede svar | Tjek din `GITHUB_TOKEN` miljøvariabel |
-| **Forbindelse nægtet** | Netværksfejl i frontend | Bekræft backend-URL og at Flask-serveren kører |
-| **Ingen AI-svar** | Tomme eller fejlbeskeder | Tjek backend-logfiler for API-kvote eller autentificeringsproblemer |
+| **CORS-fejl** | Frontend kan ikke nå backend | Sørg for at FastAPIs CORSMiddleware er korrekt konfigureret |
+| **API-nøglefejl** | 401 Unauthorized svar | Tjek din `GITHUB_TOKEN` miljøvariabel |
+| **Connection Refused** | Netværksfejl i frontend | Bekræft backend-URL og at Flask-serveren kører |
+| **Ingen AI-respons** | Tomme eller fejlsvar | Tjek backend-log for API-kvote- eller autentifikationsproblemer |
 
-**Almindelige fejlsøgningsskridt:**
+**Almindelige fejlfindingstrin:**
 - **Tjekker** browserens Developer Tools Console for JavaScript-fejl
-- **Bekræfter** at Network-fanen viser succesfulde API-anmodninger og svar
-- **Gennemgår** backend-terminaloutput for Python-fejl eller API-problemer
+- **Verificerer** at Netværksfanen viser succesfulde API-forespørgsler og svar
+- **Gennemgår** backend-terminalens output for Python-fejl eller API-problemer
 - **Bekræfter** at miljøvariabler er korrekt indlæst og tilgængelige
 
-## GitHub Copilot Agent Challenge 🚀
+## 📈 Din AI Applikationsudviklings Mastery Tidslinje
 
-Brug Agent-tilstand til at fuldføre følgende udfordring:
+```mermaid
+timeline
+    title Fuldstændig Udviklingsrejse for AI-applikationer
+    
+    section AI Grundlag
+        Forstå Generativ AI
+            : Forstå mønstergenkendelseskoncepter
+            : Mestre AI parameterkontrol
+            : Lær prompt engineering teknikker
+        
+        Integration af GitHub Modeller
+            : Naviger AI serviceplatforme
+            : Håndter autentificering sikkert
+            : Optimer modelparametre
+    
+    section Backend Udvikling
+        Python API Arkitektur
+            : Byg FastAPI applikationer
+            : Implementer asynkrone operationer
+            : Skab sikre endpoints
+        
+        AI Service Integration
+            : Forbind til eksterne AI API'er
+            : Håndter rate limiting
+            : Implementer fejlgraenser
+    
+    section Frontend Mestring
+        Moderne JavaScript Mønstre
+            : Mestre ES6 klassearkitektur
+            : Implementer async/await flows
+            : Byg responsive brugerflader
+        
+        Realtids Brugeroplevelse
+            : Skab dynamiske chatflader
+            : Håndter loading tilstande
+            : Optimer brugerinteraktioner
+    
+    section Produktion-Klarhed
+        Sikkerhed & Ydeevne
+            : Implementer sikker tokenhåndtering
+            : Forhindr XSS sårbarheder
+            : Optimer API ydeevne
+        
+        Professionel Udrulning
+            : Byg skalerbare arkitekturer
+            : Skab vedligeholdelsesvenlig kode
+            : Dokumenter udviklingsprocesser
+```
+**🎓 Graduationsmilepæl**: Du har med succes bygget en komplet AI-drevet applikation ved hjælp af de samme teknologier og arkitektoniske mønstre, der driver moderne AI-assistenter. Disse færdigheder repræsenterer skæringspunktet mellem traditionel webudvikling og banebrydende AI-integration.
 
-**Beskrivelse:** Forbedr chatassistenten ved at tilføje samtalehistorik og beskedpersistens. Denne udfordring vil hjælpe dig med at forstå, hvordan man håndterer tilstand i chatapplikationer og implementerer datalagring for bedre brugeroplevelse.
+**🔄 Næste niveau kapaciteter**:
+- Parat til at udforske avancerede AI-frameworks (LangChain, LangGraph)
+- Klædt på til at bygge multimodale AI-applikationer (tekst, billede, stemme)
+- Udstyret til at implementere vektordatabaser og søgesystemer
+- Fundament lagt for maskinlæring og AI-model finjustering
 
-**Opgave:** Modificer chatapplikationen til at inkludere samtalehistorik, der bevares mellem sessioner. Tilføj funktionalitet til at gemme chatbeskeder i lokal lagring, vise samtalehistorik, når siden indlæses, og inkluder en "Ryd historik"-knap. Implementer også skriveindikatorer og tidsstempler for beskeder for at gøre chatteoplevelsen mere realistisk.
+## GitHub Copilot Agent Udfordring 🚀
 
-Læs mere om [agent mode](https://code.visualstudio.com/blogs/2025/02/24/introducing-copilot-agent-mode) her.
+Brug Agent-tilstand til at løse følgende udfordring:
 
-## Opgave: Byg din personlige AI-assistent
+**Beskrivelse:** Forbedr chatassistenten ved at tilføje samtalehistorik og beskedvedholdelse. Denne udfordring hjælper dig med at forstå, hvordan man håndterer state i chatapplikationer og implementerer datalagring for bedre brugeroplevelse.
 
-Nu skal du skabe din egen AI-assistent-implementering. I stedet for blot at kopiere tutorial-koden er dette en mulighed for at anvende koncepterne, mens du bygger noget, der afspejler dine egne interesser og anvendelsesområder.
+**Prompt:** Ændr chatapplikationen, så den inkluderer samtalehistorik, der bevares mellem sessioner. Tilføj funktionalitet til at gemme chatbeskeder i local storage, vise samtalehistorik når siden loades, og inkluder en "Ryd Historik"-knap. Implementer også skriveindikatorer og tidsstempler på beskeder for at gøre chatoplevelsen mere realistisk.
+
+Lær mere om [agent-tilstand](https://code.visualstudio.com/blogs/2025/02/24/introducing-copilot-agent-mode) her.
+
+## Opgave: Byg Din Personlige AI Assistent
+
+Nu skal du skabe din egen AI-assistent-implementering. I stedet for blot at kopiere tutorial-koden, er dette en mulighed for at anvende koncepterne, mens du bygger noget, der afspejler dine egne interesser og brugssager.
 
 ### Projektkrav
 
-Lad os opsætte dit projekt med en ren, organiseret struktur:
+Lad os sætte dit projekt op med en ren, organiseret struktur:
 
 ```text
 my-ai-assistant/
@@ -1890,67 +2138,67 @@ my-ai-assistant/
 
 ### Kerneimplementeringsopgaver
 
-**Backend-udvikling:**
+**Backend Udvikling:**
 - **Tag** vores FastAPI-kode og gør den til din egen
-- **Skab** en unik AI-personlighed – måske en hjælpsom madlavningsassistent, en kreativ skrivepartner eller en studieven?
-- **Tilføj** solid fejlhåndtering, så din app ikke går ned, når tingene går galt
-- **Skriv** klar dokumentation for alle, der ønsker at forstå, hvordan din API fungerer
+- **Skab** en unik AI-personlighed – måske en hjælpsom madlavningsassistent, en kreativ skrivepartner eller en studiekompis?
+- **Tilføj** solid fejlhåndtering, så din app ikke går ned, når der opstår fejl
+- **Skriv** klar dokumentation for alle, der vil forstå hvordan din API virker
 
-**Frontend-udvikling:**
-- **Byg** en chatgrænseflade, der føles intuitiv og indbydende
-- **Skriv** ren, moderne JavaScript, som du ville være stolt af at vise andre udviklere
-- **Design** brugerdefineret styling, der afspejler din AI's personlighed – sjov og farverig? Ren og minimalistisk? Det er helt op til dig!
-- **Sørg for** at det fungerer godt både på telefoner og computere
+**Frontend Udvikling:**
+- **Byg** en chatgrænseflade der føles intuitiv og imødekommende
+- **Skriv** ren, moderne JavaScript, som du kan være stolt af at vise andre udviklere
+- **Design** skræddersyet styling, der afspejler din AIs personlighed – sjov og farverig? Ren og minimalistisk? Det er op til dig!
+- **Sørg for** at det virker godt på både telefoner og computere
 
-**Personaliseringskrav:**
-- **Vælg** et unikt navn og en personlighed til din AI-assistent – måske noget, der afspejler dine interesser eller de problemer, du vil løse
-- **Tilpas** det visuelle design, så det matcher din assistents stil
-- **Skriv** en fængende velkomstbesked, der får folk til at starte en samtale
-- **Test** din assistent med forskellige typer spørgsmål for at se, hvordan den reagerer
+**Personliggørelseskrav:**
+- **Vælg** et unikt navn og personlighed til din AI-assistent – måske noget, der afspejler dine interesser eller de problemer, du vil løse
+- **Tilpas** det visuelle design, så det matcher din assistents vibe
+- **Skriv** en fængende velkomstbesked, der får folk til at ville starte en samtale
+- **Test** din assistent med forskellige slags spørgsmål og se, hvordan den reagerer
 
-### Forbedringsidéer (valgfrit)
+### Forslagsidéer til Udvidelser (Valgfrit)
 
 Vil du tage dit projekt til næste niveau? Her er nogle sjove idéer at udforske:
 
-| Funktion | Beskrivelse | Færdigheder du vil øve |
+| Funktion | Beskrivelse | Færdigheder du øver |
 |---------|-------------|------------------------|
 | **Beskedhistorik** | Husk samtaler selv efter sideopdatering | Arbejde med localStorage, JSON-håndtering |
-| **Skriveindikatorer** | Vis "AI skriver..." mens du venter på svar | CSS-animationer, asynkron programmering |
-| **Besked-tidsstempler** | Vis, hvornår hver besked blev sendt | Dato/tid-formattering, UX-design |
-| **Eksport af chat** | Lad brugere downloade deres samtale | Filhåndtering, dataeksport |
-| **Tema-skift** | Skift mellem lys/mørk tilstand | CSS-variabler, brugerpræferencer |
-| **Steminput** | Tilføj tale-til-tekst funktionalitet | Web-API'er, tilgængelighed |
+| **Skriveindikatorer** | Vis "AI skriver..." mens der ventes på svar | CSS-animationer, async-programmering |
+| **Beskedtidsstempler** | Vis hvornår hver besked blev sendt | Dato/tidsformatering, UX-design |
+| **Eksportér Chat** | Lad brugere downloade deres samtale | Filhåndtering, dataeksport |
+| **Tema-skift** | Skift mellem lys og mørk tilstand | CSS-variabler, brugerpræferencer |
+| **Stemmeinput** | Tilføj tale-til-tekst funktionalitet | Web-API’er, tilgængelighed |
 
-### Test og dokumentation
+### Test og Dokumentation
 
 **Kvalitetssikring:**
-- **Test** din applikation med forskellige inputtyper og kanttilfælde
-- **Bekræft** responsivt design fungerer på forskellige skærmstørrelser
+- **Test** din applikation med forskellige inputtyper og edge cases
+- **Bekræft** at det responsive design virker på forskellige skærmstørrelser
 - **Tjek** tilgængelighed med tastaturnavigation og skærmlæsere
 - **Valider** HTML og CSS for standardoverholdelse
 
 **Dokumentationskrav:**
 - **Skriv** en README.md, der forklarer dit projekt og hvordan man kører det
-- **Inkluder** skærmbilleder af din chatgrænseflade i aktion
-- **Dokumenter** eventuelle unikke funktioner eller tilpasninger, du har tilføjet
-- **Giv** klare installationsinstruktioner til andre udviklere
+- **Inkluder** screenshots af din chatgrænseflade i brug
+- **Dokumenter** unikke funktioner eller tilpasninger du har tilføjet
+- **Giv** klare opsætningsinstruktioner til andre udviklere
 
 ### Indsendelsesretningslinjer
 
 **Projektleverancer:**
-1. Komplet projektmappe med al kildekode
-2. README.md med projektbeskrivelse og installationsinstruktioner
-3. Skærmbilleder, der viser din chatassistent i aktion
-4. Kort refleksion over, hvad du har lært, og hvilke udfordringer du har stået overfor
+1. Komplett projektmappe med al kildekode
+2. README.md med projektbeskrivelse og opsætningsinstruktioner
+3. Screenshots, der demonstrerer din chatassistent i funktion
+4. Kort refleksion over hvad du lærte og hvilke udfordringer du stod overfor
 
 **Evalueringskriterier:**
-- **Funktionalitet**: Fungerer chatassistenten som forventet?
-- **Kodekvalitet**: Er koden velorganiseret, kommenteret og vedligeholdelsesvenlig?
-- **Design**: Er grænsefladen visuelt tiltalende og brugervenlig?
+- **Funktionalitet**: Virker chatassistenten som forventet?
+- **Kodekvalitet**: Er koden velorganiseret, kommenteret og vedligeholdbar?
+- **Design**: Er interface visuelt tiltalende og brugervenligt?
 - **Kreativitet**: Hvor unik og personlig er din implementering?
-- **Dokumentation**: Er installationsinstruktionerne klare og komplette?
+- **Dokumentation**: Er opsætningsinstruktioner klare og fyldestgørende?
 
-> 💡 **Succes-tip**: Start med de grundlæggende krav først, og tilføj forbedringer, når alt fungerer. Fokuser på at skabe en poleret kerneoplevelse, før du tilføjer avancerede funktioner.
+> 💡 **Sukcesstip**: Start med basis-kravene først, og tilføj så udvidelser, når alt virker. Fokuser på at lave en poleret kerneoplevelse før avancerede features.
 
 ## Løsning
 
@@ -1960,167 +2208,168 @@ Vil du tage dit projekt til næste niveau? Her er nogle sjove idéer at udforske
 
 Klar til at tage din AI-assistent til næste niveau? Prøv disse avancerede udfordringer, der vil uddybe din forståelse af AI-integration og webudvikling.
 
-### Personlighedstilpasning
+### Personligheds Tilpasning
 
 Den virkelige magi sker, når du giver din AI-assistent en unik personlighed. Eksperimenter med forskellige systemprompter for at skabe specialiserede assistenter:
 
-**Eksempel på professionel assistent:**
+**Professionel Assistent Eksempel:**
 ```python
 call_llm(message, "You are a professional business consultant with 20 years of experience. Provide structured, actionable advice with specific steps and considerations.")
 ```
 
-**Eksempel på kreativ skrivehjælper:**
+**Kreativ Skrivningshjælper Eksempel:**
 ```python
 call_llm(message, "You are an enthusiastic creative writing coach. Help users develop their storytelling skills with imaginative prompts and constructive feedback.")
 ```
 
-**Eksempel på teknisk mentor:**
+**Teknisk Mentor Eksempel:**
 ```python
 call_llm(message, "You are a patient senior developer who explains complex programming concepts using simple analogies and practical examples.")
 ```
 
-### Frontend-forbedringer
+### Frontend Forbedringer
 
-Transformér din chatgrænseflade med disse visuelle og funktionelle forbedringer:
+Transformer din chatgrænseflade med disse visuelle og funktionelle forbedringer:
 
 **Avancerede CSS-funktioner:**
-- **Implementer** glidende beskedsanimationer og overgange
-- **Tilføj** brugerdefinerede chatboble-designs med CSS-former og gradienter
-- **Skab** en skriveindikator-animation til, når AI'en "tænker"
-- **Design** emoji-reaktioner eller et beskedvurderingssystem
+- **Implementer** glatte besked-animationer og overgange
+- **Tilføj** custom chatbobledesign med CSS-former og gradienter
+- **Skab** en skriveindikator-animation til når AI "tænker"
+- **Design** emoji-reaktioner eller beskedbedømmelsessystem
 
-**JavaScript-forbedringer:**
-- **Tilføj** tastaturgenveje (Ctrl+Enter for at sende, Escape for at rydde input)
-- **Implementer** beskedsøgning og filtreringsfunktionalitet
-- **Skab** en samtaleeksportfunktion (download som tekst eller JSON)
-- **Tilføj** automatisk lagring til localStorage for at forhindre tab af beskeder
+**JavaScript-Forbedringer:**
+- **Tilføj** tastaturgenveje (Ctrl+Enter for send, Escape for ryd input)
+- **Implementer** søge- og filtreringsfunktionalitet for beskeder
+- **Skab** eksportfunktion for samtaler (download som tekst eller JSON)
+- **Tilføj** autosave til localStorage for at forhindre beskedtab
 
-### Avanceret AI-integration
+### Avanceret AI-Integration
 
 **Flere AI-personligheder:**
-- **Skab** en dropdown-menu til at skifte mellem forskellige AI-personligheder
+- **Lav** en dropdown til at skifte imellem forskellige AI-personligheder
 - **Gem** brugerens foretrukne personlighed i localStorage
-- **Implementer** kontekstskift, der opretholder samtaleflowet
+- **Implementer** kontekstskift, der bevarer samtaleflowet
 
-**Smart svarfunktioner:**
-- **Tilføj** samtalekontekstbevidsthed (AI husker tidligere beskeder)
+**Smartsvar-funktioner:**
+- **Tilføj** samtalekontekst-awareness (AI husker tidligere beskeder)
 - **Implementer** smarte forslag baseret på samtaleemne
-- **Skab** hurtige svarknapper til almindelige spørgsmål
+- **Opret** hurtige svar-knapper til almindelige spørgsmål
 
-> 🎯 **Læringsmål**: Disse bonusudfordringer hjælper dig med at forstå avancerede webudviklingsmønstre og AI-integrationsteknikker, der bruges i produktionsapplikationer.
+> 🎯 **Læringsmål**: Disse bonusudfordringer hjælper dig med at forstå avancerede webudviklingsmønstre og AI-integrationsmetoder, som anvendes i produktionsapplikationer.
 
-## Opsummering og næste skridt
+## Resume og Næste Skridt
 
-Tillykke! Du har med succes bygget en komplet AI-drevet chatassistent fra bunden. Dette projekt har givet dig praktisk erfaring med moderne webudviklingsteknologier og AI-integration – færdigheder, der er stadig mere værdifulde i dagens teknologilandskab.
+Tillykke! Du har med succes bygget en komplet AI-drevet chatassistent fra bunden. Dette projekt har givet dig praksiserfaring med moderne webudviklingsteknologier og AI-integration – færdigheder, der bliver stadig mere værdifulde i dagens teknologilandskab.
 
-### Hvad du har opnået
+### Det, Du Har Opnået
 
-Gennem denne lektion har du mestret flere nøgleteknologier og -koncepter:
+I løbet af denne lektion har du mestret flere nøgle-teknologier og koncepter:
 
 **Backend-udvikling:**
 - **Integreret** med GitHub Models API for AI-funktionalitet
-- **Bygget** en RESTful API med Flask med korrekt fejlhåndtering
-- **Implementeret** sikker autentificering ved hjælp af miljøvariabler
-- **Konfigureret** CORS for cross-origin-anmodninger mellem frontend og backend
+- **Bygget** en RESTful API ved hjælp af Flask med korrekt fejlhåndtering
+- **Implementeret** sikker autentificering ved brug af miljøvariabler
+- **Konfigureret** CORS for kryds-oprindelses-forespørgsler mellem frontend og backend
 
 **Frontend-udvikling:**
-- **Skabt** en responsiv chatgrænseflade med semantisk HTML
+- **Oprettet** et responsivt chatinterface med semantisk HTML
 - **Implementeret** moderne JavaScript med async/await og klassebaseret arkitektur
-- **Designet** en engagerende brugergrænseflade med CSS Grid, Flexbox og animationer
+- **Designet** en engagerende brugerflade med CSS Grid, Flexbox og animationer
 - **Tilføjet** tilgængelighedsfunktioner og principper for responsivt design
 
-**Full-stack integration:**
-- **Forbundet** frontend og backend gennem HTTP API-anmodninger
-- **Håndteret** realtidsbrugerinteraktioner og asynkron dataflow
-- **Implementeret** fejlhåndtering og brugerfeedback i hele applikationen
+**Full-Stack Integration:**
+- **Forbundet** frontend og backend gennem HTTP API-kald
+- **Håndteret** realtime brugerinteraktioner og asynkron dataflow
+- **Implementeret** fejlhåndtering og brugerfeedback gennem hele applikationen
 - **Testet** den komplette applikationsarbejdsgang fra brugerinput til AI-svar
 
-### Vigtige læringsresultater
+### Væsentlige Læringsudbytter
 
 ```mermaid
 mindmap
-  root((AI Chat App Skills))
+  root((AI Chat App Færdigheder))
     API Integration
-      Authentication
-      Error Handling
-      Async Programming
-    Web Development
-      HTML5 Semantics
-      Modern CSS
+      Autentificering
+      Fejlhåndtering
+      Asynkron Programmering
+    Webudvikling
+      HTML5 Semantik
+      Moderne CSS
       ES6+ JavaScript
-    User Experience
-      Responsive Design
-      Accessibility
-      Real-time Interaction
-    AI Understanding
-      Prompt Engineering
-      Model Parameters
-      Conversation Flow
-```
+    Brugeroplevelse
+      Responsivt Design
+      Tilgængelighed
+      Realtidsinteraktion
+    AI Forståelse
+      Prompt Ingeniørarbejde
+      Modelparametre
+      Samtale Flow
+```  
+Dette projekt har introduceret dig til grundlæggende principper for at opbygge AI-drevne applikationer, som repræsenterer fremtiden for webudvikling. Du forstår nu, hvordan man integrerer AI-muligheder i traditionelle webapplikationer og skaber engagerende brugeroplevelser, der føles intelligente og responsivrige.
 
-Dette projekt har introduceret dig til fundamentet for at bygge AI-drevne applikationer, som repræsenterer fremtiden for webudvikling. Du forstår nu, hvordan man integrerer AI-funktioner i traditionelle webapplikationer og skaber engagerende brugeroplevelser, der føles intelligente og responsive.
-
-### Professionelle anvendelser
+### Professionelle Anvendelser
 
 De færdigheder, du har udviklet i denne lektion, er direkte anvendelige i moderne softwareudviklingskarrierer:
 
-- **Full-stack webudvikling** med moderne frameworks og API'er
-- **AI-integration** i webapplikationer og mobilapps
-- **API-design og udvikling** til mikroservice-arkitekturer
-- **Udvikling af brugergrænseflader** med fokus på tilgængelighed og responsivt design
-- **DevOps-praksis** inklusive miljøkonfiguration og deployment
+- **Full-stack webudvikling** med moderne frameworks og API’er  
+- **AI-integration** i webapplikationer og mobilapps  
+- **API-design og -udvikling** til mikrotjenestearkitekturer  
+- **Brugergrænsefladeudvikling** med fokus på tilgængelighed og responsivt design  
+- **DevOps-praksis** inklusive miljøkonfiguration og deployment  
 
-### Fortsæt din AI-udviklingsrejse
+### Fortsæt Din AI-udviklingsrejse
 
-**Næste læringstrin:**
-- **Udforsk** mere avancerede AI-modeller og API'er (GPT-4, Claude, Gemini)
-- **Lær** om prompt engineering-teknikker for bedre AI-svar
-- **Studér** samtaledesign og chatbot-brugeroplevelsesprincipper
-- **Undersøg** AI-sikkerhed, etik og ansvarlig AI-udviklingspraksis
-- **Byg** mere komplekse applikationer med samtalehukommelse og kontekstbevidsthed
+**Næste Læringsskridt:**  
+- **Udforsk** mere avancerede AI-modeller og API’er (GPT-4, Claude, Gemini)  
+- **Lær** om prompt engineering-teknikker for bedre AI-svar  
+- **Studer** samtaledesign og chatbot-brugeroplevelsesprincipper  
+- **Undersøg** AI-sikkerhed, etik og ansvarlig AI-udviklingspraksis  
+- **Byg** mere komplekse applikationer med samtalememory og kontekstbevidsthed  
 
-**Avancerede projektidéer:**
-- Multi-bruger chatrum med AI-moderation
-- AI-drevne kundeservice-chatbots
-- Uddannelsesmæssige tutorassistenter med personlig læring
-- Kreative skrivepartnere med forskellige AI-personligheder
-- Teknisk dokumentationsassistenter for udviklere
+**Avancerede Projektideer:**  
+- Multi-bruger chatrum med AI-moderation  
+- AI-drevne kundeservice-chatbots  
+- Uddannelsesvejledere med personlig læring  
+- Kreative skrivepartnere med forskellige AI-personligheder  
+- Tekniske dokumentationsassistenter for udviklere  
 
-## Kom i gang med GitHub Codespaces
+## Kom Godt I Gang med GitHub Codespaces
 
-Vil du prøve dette projekt i et cloud-udviklingsmiljø? GitHub Codespaces tilbyder et komplet udviklingssetup i din browser, perfekt til at eksperimentere med AI-applikationer uden lokale opsætningskrav.
+Vil du prøve dette projekt i et cloud-udviklingsmiljø? GitHub Codespaces leverer en komplet udviklingsopsætning i din browser, perfekt til at eksperimentere med AI-applikationer uden lokale installationskrav.
 
-### Opsætning af dit udviklingsmiljø
+### Opsætning af Dit Udviklingsmiljø
 
-**Trin 1: Opret fra skabelon**
-- **Naviger** til [Web Dev For Beginners repository](https://github.com/microsoft/Web-Dev-For-Beginners)
-- **Klik** på "Use this template" øverst til højre (sørg for, at du er logget ind på GitHub)
+**Trin 1: Opret fra skabelon**  
+- **Naviger** til [Web Dev For Beginners repository](https://github.com/microsoft/Web-Dev-For-Beginners)  
+- **Klik** på "Use this template" i øverste højre hjørne (sørg for at være logget ind på GitHub)  
 
-![Opret fra skabelon interface, der viser den grønne "Use this template"-knap](../../../translated_images/template.67ad477109d29a2b04599a83c964c87fcde041256d4f04d3589cbb00c696f76c.da.png)
+![Create from template interface showing the green "Use this template" button](../../../translated_images/da/template.67ad477109d29a2b.webp)  
 
-**Trin 2: Start Codespaces**
-- **Åbn** dit nyoprettede repository
-- **Klik** på den grønne "Code"-knap og vælg "Codespaces"
-- **Vælg** "Create codespace on main" for at starte dit udviklingsmiljø
+**Trin 2: Start Codespaces**  
+- **Åbn** dit nyoprettede repository  
+- **Klik** på den grønne "Code" knap, og vælg "Codespaces"  
+- **Vælg** "Create codespace on main" for at starte dit udviklingsmiljø  
 
-![Opret codespace interface med muligheder for at starte cloud-udviklingsmiljø](../../../translated_images/codespace.bcecbdf5d2747d3d17da67a78ad911c8853d68102e34748ec372cde1e9236e1d.da.png)
+![Create codespace interface with options for launching cloud development environment](../../../translated_images/da/codespace.bcecbdf5d2747d3d.webp)  
 
-**Trin 3: Miljøkonfiguration**
-Når din Codespace er indlæst, har du adgang til:
-- **Forudinstalleret** Python, Node.js og alle nødvendige udviklingsværktøjer
-- **VS Code interface** med udvidelser til webudvikling
-- **Terminaladgang** til at køre backend- og frontend-servere
-- **Port forwarding** til test af dine applikationer
+**Trin 3: Miljøkonfiguration**  
+Når din Codespace indlæses, får du adgang til:  
+- **Forudinstalleret** Python, Node.js og alle nødvendige udviklingsværktøjer  
+- **VS Code-interface** med udvidelser til webudvikling  
+- **Terminaladgang** til at køre backend- og frontend-servere  
+- **Port forwarding** til at teste dine applikationer  
 
-**Hvad Codespaces tilbyder:**
-- **Eliminerer** problemer med opsætning og konfiguration af lokale miljøer
-- **Giver** et ensartet udviklingsmiljø på tværs af forskellige enheder
-- **Indeholder** forudkonfigurerede værktøjer og udvidelser til webudvikling
-- **Tilbyder** problemfri integration med GitHub til versionskontrol og samarbejde
+**Hvad Codespaces tilbyder:**  
+- **Fjerner** problemer med lokal miljøopsætning og konfiguration  
+- **Giver** et konsistent udviklingsmiljø på tværs af forskellige enheder  
+- **Indeholder** forudkonfigurerede værktøjer og udvidelser til webudvikling  
+- **Tilbyder** sømløs integration med GitHub til versionsstyring og samarbejde  
 
-> 🚀 **Pro Tip**: Codespaces er perfekt til at lære og prototypere AI-applikationer, da det automatisk håndterer al den komplekse miljøopsætning, så du kan fokusere på at bygge og lære i stedet for at løse konfigurationsproblemer.
+> 🚀 **Pro Tip**: Codespaces er perfekt til at lære og prototype AI-applikationer, da det håndterer al kompleks miljøopsætning automatisk, så du kan fokusere på at bygge og lære fremfor problemer med konfiguration.
 
 ---
 
-**Ansvarsfraskrivelse**:  
-Dette dokument er blevet oversat ved hjælp af AI-oversættelsestjenesten [Co-op Translator](https://github.com/Azure/co-op-translator). Selvom vi bestræber os på nøjagtighed, skal du være opmærksom på, at automatiserede oversættelser kan indeholde fejl eller unøjagtigheder. Det originale dokument på dets oprindelige sprog bør betragtes som den autoritative kilde. For kritisk information anbefales professionel menneskelig oversættelse. Vi er ikke ansvarlige for eventuelle misforståelser eller fejltolkninger, der opstår som følge af brugen af denne oversættelse.
+<!-- CO-OP TRANSLATOR DISCLAIMER START -->
+**Ansvarsfraskrivelse**:
+Dette dokument er blevet oversat ved hjælp af AI-oversættelsestjenesten [Co-op Translator](https://github.com/Azure/co-op-translator). Selvom vi bestræber os på nøjagtighed, skal du være opmærksom på, at automatiserede oversættelser kan indeholde fejl eller unøjagtigheder. Det oprindelige dokument på dets modersmål skal betragtes som den autoritative kilde. For kritisk information anbefales professionel, menneskelig oversættelse. Vi påtager os intet ansvar for misforståelser eller fejltolkninger, der opstår som følge af brugen af denne oversættelse.
+<!-- CO-OP TRANSLATOR DISCLAIMER END -->

@@ -1,12 +1,3 @@
-<!--
-CO_OP_TRANSLATOR_METADATA:
-{
-  "original_hash": "973e48ad87d67bf5bb819746c9f8e302",
-  "translation_date": "2025-11-04T01:57:31+00:00",
-  "source_file": "3-terrarium/3-intro-to-DOM-and-closures/README.md",
-  "language_code": "nl"
-}
--->
 # Terrarium Project Deel 3: DOM-manipulatie en JavaScript Closures
 
 ```mermaid
@@ -26,7 +17,7 @@ journey
       Complete terrarium: 5: Student
 ```
 
-![DOM en een closure](../../../../translated_images/webdev101-js.10280393044d7eaaec7e847574946add7ddae6be2b2194567d848b61d849334a.nl.png)
+![DOM en een closure](../../../../translated_images/nl/webdev101-js.10280393044d7eaa.webp)
 > Sketchnote door [Tomomi Imura](https://twitter.com/girlie_mac)
 
 Welkom bij een van de meest boeiende aspecten van webontwikkeling - interactief maken! Het Document Object Model (DOM) is als een brug tussen je HTML en JavaScript, en vandaag gaan we het gebruiken om je terrarium tot leven te brengen. Toen Tim Berners-Lee de eerste webbrowser creëerde, stelde hij zich een web voor waar documenten dynamisch en interactief konden zijn - de DOM maakt die visie mogelijk.
@@ -105,7 +96,7 @@ flowchart TD
     style Q fill:#ffebee
 ```
 
-![DOM boomrepresentatie](../../../../translated_images/dom-tree.7daf0e763cbbba9273f9a66fe04c98276d7d23932309b195cb273a9cf1819b42.nl.png)
+![DOM boomrepresentatie](../../../../translated_images/nl/dom-tree.7daf0e763cbbba92.webp)
 
 > Een representatie van de DOM en de HTML-markup die ernaar verwijst. Van [Olfa Nasraoui](https://www.researchgate.net/publication/221417012_Profile-Based_Focused_Crawler_for_Social_Media-Sharing_Websites)
 
@@ -150,7 +141,7 @@ flowchart LR
 
 > 💡 **Closures begrijpen**: Closures zijn een belangrijk onderwerp in JavaScript, en veel ontwikkelaars gebruiken ze jarenlang voordat ze alle theoretische aspecten volledig begrijpen. Vandaag richten we ons op praktische toepassing - je zult zien dat closures natuurlijk ontstaan terwijl we onze interactieve functies bouwen. Begrip zal zich ontwikkelen naarmate je ziet hoe ze echte problemen oplossen.
 
-![DOM boomrepresentatie](../../../../translated_images/dom-tree.7daf0e763cbbba9273f9a66fe04c98276d7d23932309b195cb273a9cf1819b42.nl.png)
+![DOM boomrepresentatie](../../../../translated_images/nl/dom-tree.7daf0e763cbbba92.webp)
 
 > Een representatie van de DOM en de HTML-markup die ernaar verwijst. Van [Olfa Nasraoui](https://www.researchgate.net/publication/221417012_Profile-Based_Focused_Crawler_for_Social_Media-Sharing_Websites)
 
@@ -598,7 +589,7 @@ Test nu jouw interactieve terrarium! Open je `index.html`-bestand in een webbrow
 - **Ondersteuning voor meerdere apparaten**: Werkt op desktop en mobiel
 - **Prestatiebewust**: Geen geheugenlekken of overbodige berekeningen
 
-![afgewerkt terrarium](../../../../translated_images/terrarium-final.0920f16e87c13a84cd2b553a5af9a3ad1cffbd41fbf8ce715d9e9c43809a5e2c.nl.png)
+![afgewerkt terrarium](../../../../translated_images/nl/terrarium-final.0920f16e87c13a84.webp)
 
 ---
 

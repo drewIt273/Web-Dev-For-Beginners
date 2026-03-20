@@ -1,12 +1,3 @@
-<!--
-CO_OP_TRANSLATOR_METADATA:
-{
-  "original_hash": "a9a3bcc037a447e2d8994d99e871cd9f",
-  "translation_date": "2025-11-04T02:12:59+00:00",
-  "source_file": "8-code-editor/1-using-a-code-editor/README.md",
-  "language_code": "he"
-}
--->
 # שימוש בעורך קוד: שליטה ב-VSCode.dev
 
 זוכרים את *המטריקס* כשניאו היה צריך להתחבר למסוף מחשב ענק כדי לגשת לעולם הדיגיטלי? כלי הפיתוח של היום הם סיפור הפוך – יכולות עוצמתיות שנגישות מכל מקום. VSCode.dev הוא עורך קוד מבוסס דפדפן שמביא כלי פיתוח מקצועיים לכל מכשיר עם חיבור לאינטרנט.
@@ -185,7 +176,7 @@ VSCode.dev מביא את היכולות הללו לדפדפן שלכם:
 
 ברגע שהכל נטען, תראו סביבת עבודה נקייה ומעוצבת שנועדה לשמור אתכם ממוקדים במה שחשוב – הקוד שלכם!
 
-![ממשק ברירת המחדל של VSCode.dev](../../../../translated_images/default-vscode-dev.5d06881d65c1b3234ce50cd9ed3b0028e6031ad5f5b441bcbed96bfa6311f6d0.he.png)
+![ממשק ברירת המחדל של VSCode.dev](../../../../translated_images/he/default-vscode-dev.5d06881d65c1b323.webp)
 
 **הנה סיור בשכונה:**
 - **סרגל הפעילות** (הפס בצד שמאל): הניווט הראשי שלכם עם Explorer 📁, חיפוש 🔍, בקרת מקור 🌿, הרחבות 🧩 והגדרות ⚙️
@@ -233,7 +224,7 @@ flowchart TB
 1. גשו ל-[vscode.dev](https://vscode.dev) אם אתם לא שם כבר
 2. חפשו את כפתור "Open Remote Repository" במסך הפתיחה ולחצו עליו
 
-   ![פתיחת מאגר מרחוק](../../../../translated_images/open-remote-repository.bd9c2598b8949e7fc283cdfc8f4050c6205a7c7c6d3f78c4b135115d037d6fa2.he.png)
+   ![פתיחת מאגר מרחוק](../../../../translated_images/he/open-remote-repository.bd9c2598b8949e7f.webp)
 
 3. הדביקו כל כתובת URL של מאגר GitHub (נסו את זו: `https://github.com/microsoft/Web-Dev-For-Beginners`)
 4. לחצו Enter וצפו בקסם קורה!
@@ -242,7 +233,7 @@ flowchart TB
 
 רוצים להרגיש כמו קוסמי קוד? נסו את קיצור הדרך הזה במקלדת: Ctrl+Shift+P (או Cmd+Shift+P במק) לפתיחת Command Palette:
 
-![תפריט Command Palette](../../../../translated_images/palette-menu.4946174e07f426226afcdad707d19b8d5150e41591c751c45b5dee213affef91.he.png)
+![תפריט Command Palette](../../../../translated_images/he/palette-menu.4946174e07f42622.webp)
 
 **Command Palette הוא כמו מנוע חיפוש לכל מה שאפשר לעשות:**
 - הקלידו "open remote" והוא ימצא עבורכם את פותחן המאגרים
@@ -304,7 +295,7 @@ flowchart TB
 3. הזינו את שם הקובץ כולל הסיומת המתאימה (`style.css`, `script.js`, `index.html`)
 4. לחצו Enter כדי ליצור את הקובץ
 
-![יצירת קובץ חדש](../../../../translated_images/create-new-file.2814e609c2af9aeb6c6fd53156c503ac91c3d538f9cac63073b2dd4a7631f183.he.png)
+![יצירת קובץ חדש](../../../../translated_images/he/create-new-file.2814e609c2af9aeb.webp)
 
 **כללי שמות:**
 - השתמשו בשמות תיאוריים שמצביעים על מטרת הקובץ
@@ -322,7 +313,7 @@ flowchart TB
 2. התחילו להקליד וצפו ב-VSCode.dev עוזר לכם עם צבעים, הצעות וזיהוי שגיאות
 3. שמרו את העבודה שלכם עם Ctrl+S (Windows/Linux) או Cmd+S (Mac) – למרות שהוא שומר אוטומטית גם!
 
-![עריכת קבצים ב-VSCode.dev](../../../../translated_images/edit-a-file.52c0ee665ef19f08119d62d63f395dfefddc0a4deb9268d73bfe791f52c5807a.he.png)
+![עריכת קבצים ב-VSCode.dev](../../../../translated_images/he/edit-a-file.52c0ee665ef19f08.webp)
 
 **הדברים המגניבים שקורים בזמן שאתם מקודדים:**
 - הקוד שלכם מקבל צבעים יפים כך שקל לקרוא אותו
@@ -343,7 +334,7 @@ flowchart TB
 2. קבצים ששונו מופיעים בקטע "Changes"
 3. קידוד צבעים מציין סוגי שינויים: ירוק לתוספות, אדום למחיקות
 
-![צפייה בשינויים בבקרת מקור](../../../../translated_images/working-tree.c58eec08e6335c79cc708c0c220c0b7fea61514bd3c7fb7471905a864aceac7c.he.png)
+![צפייה בשינויים בבקרת מקור](../../../../translated_images/he/working-tree.c58eec08e6335c79.webp)
 
 **שמירת העבודה שלכם (זרימת העבודה של commit):**
 
@@ -438,7 +429,7 @@ mindmap
 2. חפש או עיין במשהו ספציפי
 3. לחץ על כל דבר שנראה מעניין כדי ללמוד עליו יותר
 
-![ממשק שוק ההרחבות](../../../../translated_images/extensions.eca0e0c7f59a10b5c88be7fe24b3e32cca6b6058b35a49026c3a9d80b1813b7c.he.png)
+![ממשק שוק ההרחבות](../../../../translated_images/he/extensions.eca0e0c7f59a10b5.webp)
 
 **מה תראה שם:**
 
@@ -491,7 +482,7 @@ mindmap
 3. בחר "הגדרות הרחבה" מהתפריט הנפתח
 4. התאם דברים עד שהם מרגישים בדיוק נכון לעבודה שלך
 
-![התאמת הגדרות הרחבה](../../../../translated_images/extension-settings.21c752ae4f4cdb78a867f140ccd0680e04619d0c44bb4afb26373e54b829d934.he.png)
+![התאמת הגדרות הרחבה](../../../../translated_images/he/extension-settings.21c752ae4f4cdb78.webp)
 
 **דברים נפוצים שתרצה להתאים:**
 - איך הקוד שלך מעוצב (טאבים מול רווחים, אורך שורה וכו')

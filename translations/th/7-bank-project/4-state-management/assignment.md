@@ -1,12 +1,3 @@
-<!--
-CO_OP_TRANSLATOR_METADATA:
-{
-  "original_hash": "50a7783473b39a2e0f133e271a102231",
-  "translation_date": "2025-10-23T21:08:17+00:00",
-  "source_file": "7-bank-project/4-state-management/assignment.md",
-  "language_code": "th"
-}
--->
 # การสร้างหน้าต่าง "เพิ่มธุรกรรม"
 
 ## ภาพรวม
@@ -112,7 +103,7 @@ CO_OP_TRANSLATOR_METADATA:
 **ผลลัพธ์ที่คาดหวัง:**
 หลังจากทำงานนี้เสร็จ แอปธนาคารของคุณควรมีฟีเจอร์ "เพิ่มธุรกรรม" ที่ทำงานได้อย่างสมบูรณ์และดูเป็นมืออาชีพ:
 
-![ภาพหน้าจอแสดงตัวอย่างหน้าต่าง "เพิ่มธุรกรรม"](../../../../translated_images/dialog.93bba104afeb79f12f65ebf8f521c5d64e179c40b791c49c242cf15f7e7fab15.th.png)
+![ภาพหน้าจอแสดงตัวอย่างหน้าต่าง "เพิ่มธุรกรรม"](../../../../translated_images/th/dialog.93bba104afeb79f1.webp)
 
 ## การทดสอบการดำเนินการ
 

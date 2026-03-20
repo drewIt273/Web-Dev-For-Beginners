@@ -1,12 +1,3 @@
-<!--
-CO_OP_TRANSLATOR_METADATA:
-{
-  "original_hash": "973e48ad87d67bf5bb819746c9f8e302",
-  "translation_date": "2025-11-04T02:24:28+00:00",
-  "source_file": "3-terrarium/3-intro-to-DOM-and-closures/README.md",
-  "language_code": "he"
-}
--->
 # פרויקט הטרריום חלק 3: מניפולציה של DOM וסגירות ב-JavaScript
 
 ```mermaid
@@ -26,7 +17,7 @@ journey
       Complete terrarium: 5: Student
 ```
 
-![DOM וסגירה](../../../../translated_images/webdev101-js.10280393044d7eaaec7e847574946add7ddae6be2b2194567d848b61d849334a.he.png)
+![DOM וסגירה](../../../../translated_images/he/webdev101-js.10280393044d7eaa.webp)
 > איור מאת [Tomomi Imura](https://twitter.com/girlie_mac)
 
 ברוכים הבאים לאחד ההיבטים המרתקים ביותר בפיתוח אתרים - הפיכת דברים לאינטראקטיביים! מודל האובייקטים של המסמך (DOM) הוא כמו גשר בין ה-HTML שלך ל-JavaScript, והיום נשתמש בו כדי להחיות את הטרריום שלך. כשטים ברנרס-לי יצר את הדפדפן הראשון, הוא דמיין רשת שבה מסמכים יכולים להיות דינמיים ואינטראקטיביים - ה-DOM הופך את החזון הזה לאפשרי.
@@ -105,7 +96,7 @@ flowchart TD
     style Q fill:#ffebee
 ```
 
-![ייצוג עץ DOM](../../../../translated_images/dom-tree.7daf0e763cbbba9273f9a66fe04c98276d7d23932309b195cb273a9cf1819b42.he.png)
+![ייצוג עץ DOM](../../../../translated_images/he/dom-tree.7daf0e763cbbba92.webp)
 
 > ייצוג של ה-DOM והסימון של ה-HTML שמתייחס אליו. מתוך [Olfa Nasraoui](https://www.researchgate.net/publication/221417012_Profile-Based_Focused_Crawler_for_Social_Media-Sharing_Websites)
 
@@ -150,7 +141,7 @@ flowchart LR
 
 > 💡 **הבנת סגירות**: סגירות הן נושא משמעותי ב-JavaScript, ומפתחים רבים משתמשים בהן במשך שנים לפני שהם מבינים את כל ההיבטים התיאורטיים. היום נתמקד ביישום מעשי - תראה סגירות מופיעות באופן טבעי כשנבנה את התכונות האינטראקטיביות שלנו. ההבנה תתפתח כשתראה איך הן פותרות בעיות אמיתיות.
 
-![ייצוג עץ DOM](../../../../translated_images/dom-tree.7daf0e763cbbba9273f9a66fe04c98276d7d23932309b195cb273a9cf1819b42.he.png)
+![ייצוג עץ DOM](../../../../translated_images/he/dom-tree.7daf0e763cbbba92.webp)
 
 > ייצוג של ה-DOM והסימון של ה-HTML שמתייחס אליו. מתוך [Olfa Nasraoui](https://www.researchgate.net/publication/221417012_Profile-Based_Focused_Crawler_for_Social_Media-Sharing_Websites)
 
@@ -593,7 +584,7 @@ function stopElementDrag() {
 - **תמיכה חוצת מכשירים**: עובד על מחשבים שולחניים וניידים
 - **מודעות ביצועים**: ללא דליפות זיכרון או חישובים מיותרים
 
-![טרריום סופי](../../../../translated_images/terrarium-final.0920f16e87c13a84cd2b553a5af9a3ad1cffbd41fbf8ce715d9e9c43809a5e2c.he.png)
+![טרריום סופי](../../../../translated_images/he/terrarium-final.0920f16e87c13a84.webp)
 
 ---
 

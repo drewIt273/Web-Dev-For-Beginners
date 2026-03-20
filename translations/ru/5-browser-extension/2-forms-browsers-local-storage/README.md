@@ -1,12 +1,3 @@
-<!--
-CO_OP_TRANSLATOR_METADATA:
-{
-  "original_hash": "2b6203a48c48d8234e0948353b47d84e",
-  "translation_date": "2025-11-03T23:32:33+00:00",
-  "source_file": "5-browser-extension/2-forms-browsers-local-storage/README.md",
-  "language_code": "ru"
-}
--->
 # Проект расширения для браузера, часть 2: Вызов API, использование локального хранилища
 
 ```mermaid
@@ -266,7 +257,7 @@ stateDiagram-v2
     ClearStorage --> FirstTime: Back to setup
 ```
 
-![Панель локального хранилища](../../../../translated_images/localstorage.472f8147b6a3f8d141d9551c95a2da610ac9a3c6a73d4a1c224081c98bae09d9.ru.png)
+![Панель локального хранилища](../../../../translated_images/ru/localstorage.472f8147b6a3f8d1.webp)
 
 > ⚠️ **Соображения безопасности**: В производственных приложениях хранение ключей API в LocalStorage представляет собой риск для безопасности, так как JavaScript может получить доступ к этим данным. Для учебных целей этот подход подходит, но в реальных приложениях следует использовать безопасное серверное хранилище для конфиденциальных данных.
 

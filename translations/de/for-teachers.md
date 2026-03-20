@@ -1,12 +1,3 @@
-<!--
-CO_OP_TRANSLATOR_METADATA:
-{
-  "original_hash": "71009af209f81cc01a1f2d324200375f",
-  "translation_date": "2025-10-03T08:28:59+00:00",
-  "source_file": "for-teachers.md",
-  "language_code": "de"
-}
--->
 ### Für Lehrkräfte
 
 Sie können dieses Curriculum gerne in Ihrem Unterricht verwenden. Es funktioniert nahtlos mit GitHub Classroom und führenden LMS-Plattformen und kann auch als eigenständiges Repository mit Ihren Schülern genutzt werden.
@@ -42,10 +33,10 @@ Dieses Curriculum enthält importierbare Pakete für gängige LMS-Workflows.
   - Moodle Cloud unterstützt Common Cartridge nur eingeschränkt. Bevorzugen Sie die oben genannte Moodle-Datei, die auch in Canvas hochgeladen werden kann.
   - Überprüfen Sie nach dem Import die Module, Fälligkeitsdaten und Quiz-Einstellungen, um sie an Ihren Semesterplan anzupassen.
 
-![Moodle](../../translated_images/moodle.94eb93d714a50cb2c97435b408017dee224348b61bc86203ffd43a4f4e57b95f.de.png)
+![Moodle](../../translated_images/de/moodle.94eb93d714a50cb2.webp)
 > Das Curriculum in einem Moodle-Klassenzimmer
 
-![Canvas](../../translated_images/canvas.fbd605ff8e5b8aff567d398528ce113db304446b90b9cad55c654de3fdfcda34.de.png)
+![Canvas](../../translated_images/de/canvas.fbd605ff8e5b8aff.webp)
 > Das Curriculum in Canvas
 
 ### Direkte Nutzung des Repositories (ohne Classroom)

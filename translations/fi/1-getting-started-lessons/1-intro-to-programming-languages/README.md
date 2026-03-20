@@ -1,12 +1,3 @@
-<!--
-CO_OP_TRANSLATOR_METADATA:
-{
-  "original_hash": "d45ddcc54eb9232a76d08328b09d792e",
-  "translation_date": "2025-11-04T01:14:39+00:00",
-  "source_file": "1-getting-started-lessons/1-intro-to-programming-languages/README.md",
-  "language_code": "fi"
-}
--->
 # Johdatus ohjelmointikieliin ja moderneihin kehittäjätyökaluihin
 
 Hei tuleva kehittäjä! 👋 Voinko kertoa sinulle jotain, mikä saa minut edelleen innostumaan joka päivä? Olet juuri astumassa maailmaan, jossa ohjelmointi ei ole pelkästään tietokoneiden kanssa puuhastelua – se on supervoima, jonka avulla voit toteuttaa villeimmät ideasi!
@@ -17,7 +8,7 @@ Kuule, ymmärrän täysin, jos ohjelmointi tuntuu juuri nyt pelottavalta. Kun al
 
 Tänään tutustumme uskomattomiin työkaluihin, jotka tekevät modernista web-kehityksestä paitsi mahdollisen, myös todella koukuttavan. Puhun samoista editoreista, selaimista ja työnkuluista, joita Netflixin, Spotifyn ja suosikkisi indie-sovellusstudion kehittäjät käyttävät joka päivä. Ja tässä tulee se osuus, joka saa sinut tanssimaan ilosta: suurin osa näistä ammattitason, teollisuusstandardin työkaluista on täysin ilmaisia!
 
-![Intro Programming](../../../../translated_images/webdev101-programming.d6e3f98e61ac4bff0b27dcbf1c3f16c8ed46984866f2d29988929678b0058fde.fi.png)
+![Intro Programming](../../../../translated_images/fi/webdev101-programming.d6e3f98e61ac4bff.webp)
 > Sketchnote by [Tomomi Imura](https://twitter.com/girlie_mac)
 
 ```mermaid

@@ -1,12 +1,3 @@
-<!--
-CO_OP_TRANSLATOR_METADATA:
-{
-  "original_hash": "50a7783473b39a2e0f133e271a102231",
-  "translation_date": "2025-10-24T14:34:07+00:00",
-  "source_file": "7-bank-project/4-state-management/assignment.md",
-  "language_code": "ms"
-}
--->
 # Laksanakan Dialog "Tambah Transaksi"
 
 ## Gambaran Keseluruhan
@@ -112,7 +103,7 @@ Rujuk dokumentasi [API pelayan](../api/README.md) untuk:
 **Hasil Dijangka:**
 Selepas menyelesaikan tugasan ini, aplikasi perbankan anda sepatutnya mempunyai ciri "Tambah Transaksi" yang berfungsi sepenuhnya dan kelihatan profesional:
 
-![Tangkap layar menunjukkan contoh dialog "Tambah transaksi"](../../../../translated_images/dialog.93bba104afeb79f12f65ebf8f521c5d64e179c40b791c49c242cf15f7e7fab15.ms.png)
+![Tangkap layar menunjukkan contoh dialog "Tambah transaksi"](../../../../translated_images/ms/dialog.93bba104afeb79f1.webp)
 
 ## Ujian Pelaksanaan Anda
 

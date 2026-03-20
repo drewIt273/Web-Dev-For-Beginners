@@ -1,12 +1,3 @@
-<!--
-CO_OP_TRANSLATOR_METADATA:
-{
-  "original_hash": "973e48ad87d67bf5bb819746c9f8e302",
-  "translation_date": "2025-11-03T22:43:04+00:00",
-  "source_file": "3-terrarium/3-intro-to-DOM-and-closures/README.md",
-  "language_code": "bn"
-}
--->
 # টেরারিয়াম প্রকল্প অংশ ৩: DOM ম্যানিপুলেশন এবং জাভাস্ক্রিপ্ট ক্লোজার
 
 ```mermaid
@@ -26,7 +17,7 @@ journey
       Complete terrarium: 5: Student
 ```
 
-![DOM এবং একটি ক্লোজার](../../../../translated_images/webdev101-js.10280393044d7eaaec7e847574946add7ddae6be2b2194567d848b61d849334a.bn.png)
+![DOM এবং একটি ক্লোজার](../../../../translated_images/bn/webdev101-js.10280393044d7eaa.webp)
 > স্কেচনোট [Tomomi Imura](https://twitter.com/girlie_mac) দ্বারা
 
 ওয়েব ডেভেলপমেন্টের সবচেয়ে আকর্ষণীয় দিকগুলোর মধ্যে একটিতে আপনাকে স্বাগতম - জিনিসগুলোকে ইন্টারঅ্যাকটিভ করা! ডকুমেন্ট অবজেক্ট মডেল (DOM) আপনার HTML এবং জাভাস্ক্রিপ্টের মধ্যে একটি সেতুর মতো, এবং আজ আমরা এটি ব্যবহার করে আপনার টেরারিয়ামকে জীবন্ত করে তুলব। যখন টিম বার্নার্স-লি প্রথম ওয়েব ব্রাউজার তৈরি করেছিলেন, তিনি এমন একটি ওয়েবের কল্পনা করেছিলেন যেখানে ডকুমেন্টগুলো গতিশীল এবং ইন্টারঅ্যাকটিভ হতে পারে - DOM সেই স্বপ্নকে বাস্তবায়িত করে।
@@ -105,7 +96,7 @@ flowchart TD
     style Q fill:#ffebee
 ```
 
-![DOM গাছের উপস্থাপনা](../../../../translated_images/dom-tree.7daf0e763cbbba9273f9a66fe04c98276d7d23932309b195cb273a9cf1819b42.bn.png)
+![DOM গাছের উপস্থাপনা](../../../../translated_images/bn/dom-tree.7daf0e763cbbba92.webp)
 
 > DOM এবং HTML মার্কআপের একটি উপস্থাপনা যা এটি রেফারেন্স করে। [Olfa Nasraoui](https://www.researchgate.net/publication/221417012_Profile-Based_Focused_Crawler_for_Social_Media-Sharing_Websites) থেকে
 
@@ -150,7 +141,7 @@ flowchart LR
 
 > 💡 **ক্লোজার বোঝা**: ক্লোজার জাভাস্ক্রিপ্টে একটি গুরুত্বপূর্ণ বিষয়, এবং অনেক ডেভেলপার এটি ব্যবহার করেন বছরের পর বছর ধরে তাত্ত্বিক দিকগুলো সম্পূর্ণরূপে বোঝার আগে। আজ, আমরা ব্যবহারিক প্রয়োগের উপর ফোকাস করছি - আপনি দেখবেন ক্লোজার কীভাবে আমাদের ইন্টারঅ্যাকটিভ বৈশিষ্ট্য তৈরি করার সময় স্বাভাবিকভাবে উদ্ভূত হয়। বাস্তব সমস্যাগুলো কীভাবে সমাধান করে তা দেখার সাথে সাথে আপনার বোঝাপড়া বিকশিত হবে।
 
-![DOM গাছের উপস্থাপনা](../../../../translated_images/dom-tree.7daf0e763cbbba9273f9a66fe04c98276d7d23932309b195cb273a9cf1819b42.bn.png)
+![DOM গাছের উপস্থাপনা](../../../../translated_images/bn/dom-tree.7daf0e763cbbba92.webp)
 
 > DOM এবং HTML মার্কআপের একটি উপস্থাপনা যা এটি রেফারেন্স করে। [Olfa Nasraoui](https://www.researchgate.net/publication/221417012_Profile-Based_Focused_Crawler_for_Social_Media-Sharing_Websites) থেকে
 
@@ -447,7 +438,7 @@ function stopElementDrag() {
 - **ক্রস-ডিভাইস সাপোর্ট**: ডেস্কটপ এবং মোবাইলে কাজ করে
 - **পারফরম্যান্স সচেতন**: কোনো মেমোরি লিক বা অপ্রয়োজনীয় গণনা নেই
 
-![সমাপ্ত টেরারিয়াম](../../../../translated_images/terrarium-final.0920f16e87c13a84cd2b553a5af9a3ad1cffbd41fbf8ce715d9e9c43809a5e2c.bn.png)
+![সমাপ্ত টেরারিয়াম](../../../../translated_images/bn/terrarium-final.0920f16e87c13a84.webp)
 
 ---
 

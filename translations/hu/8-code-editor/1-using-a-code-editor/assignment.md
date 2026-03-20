@@ -1,12 +1,3 @@
-<!--
-CO_OP_TRANSLATOR_METADATA:
-{
-  "original_hash": "effe56ba51c38d7bdfad1ea38288666b",
-  "translation_date": "2025-10-24T19:55:35+00:00",
-  "source_file": "8-code-editor/1-using-a-code-editor/assignment.md",
-  "language_code": "hu"
-}
--->
 # Készíts egy önéletrajz weboldalt a VSCode.dev segítségével
 
 Fejleszd karrierlehetőségeidet egy professzionális önéletrajz weboldal létrehozásával, amely interaktív, modern formátumban mutatja be készségeidet és tapasztalataidat. A hagyományos PDF-ek küldése helyett képzeld el, hogy egy elegáns, reszponzív weboldalt biztosítasz a toborzóknak, amely nemcsak a képesítéseidet, hanem a webfejlesztési képességeidet is bemutatja.
@@ -78,7 +69,7 @@ Mivel a VSCode.dev legalább egy fájlt igényel a repozitórium megnyitásához
 4. **Írj** egy commit üzenetet: "Kezdeti HTML struktúra hozzáadása"
 5. **Kattints** a "Commit new file" gombra a változtatások mentéséhez
 
-![Kezdeti fájl létrehozása a GitHubon](../../../../translated_images/new-file-github.com.c886796d800e8056561829a181be1382c5303da9d902d8b2dd82b68a4806e21f.hu.png)
+![Kezdeti fájl létrehozása a GitHubon](../../../../translated_images/hu/new-file-github.com.c886796d800e8056.webp)
 
 **Ez a kezdeti beállítás a következőket valósítja meg:**
 - **Létrehozza** a megfelelő HTML5 dokumentum struktúrát szemantikus elemekkel
@@ -104,7 +95,7 @@ Most, hogy a repozitórium alapja létrejött, váltsunk át a VSCode.dev-re a f
 
 ✅ **Sikerjelző**: A projekt fájljait az Explorer oldalsávban kell látnod, az `index.html` pedig szerkesztésre elérhető a fő szerkesztő területen.
 
-![Projekt betöltve a VSCode.dev-ben](../../../../translated_images/project-on-vscode.dev.e79815a9a95ee7feac72ebe5c941c91279716be37c575dbdbf2f43bea2c7d8b6.hu.png)
+![Projekt betöltve a VSCode.dev-ben](../../../../translated_images/hu/project-on-vscode.dev.e79815a9a95ee7fe.webp)
 
 **Amit az interfészen látsz:**
 - **Explorer oldalsáv**: **Megjeleníti** a repozitórium fájljait és mappastruktúráját
@@ -448,7 +439,7 @@ A bővítmények javítják a fejlesztési élményt élő előnézeti képessé
 **Azonnali eredmények telepítés után:**
 Amint a CodeSwing telepítve van, az önéletrajz weboldalad élő előnézete megjelenik a szerkesztőben. Ez lehetővé teszi, hogy pontosan lásd, hogyan néz ki az oldal, miközben változtatásokat végzel.
 
-![CodeSwing bővítmény élő előnézetet mutat](../../../../translated_images/after-codeswing-extension-pb.0ebddddcf73b550994947a9084e35e2836c713ae13839d49628e3c764c1cfe83.hu.png)
+![CodeSwing bővítmény élő előnézetet mutat](../../../../translated_images/hu/after-codeswing-extension-pb.0ebddddcf73b5509.webp)
 
 **Az interfész fejlesztett megértése:**
 - **Megosztott nézet**: **Mutatja** a kódot az egyik oldalon és az élő előnézetet a másikon

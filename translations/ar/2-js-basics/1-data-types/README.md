@@ -1,15 +1,6 @@
-<!--
-CO_OP_TRANSLATOR_METADATA:
-{
-  "original_hash": "672b0bb6e8b431075f3bdb7130590d2d",
-  "translation_date": "2025-11-03T12:25:34+00:00",
-  "source_file": "2-js-basics/1-data-types/README.md",
-  "language_code": "ar"
-}
--->
 # أساسيات JavaScript: أنواع البيانات
 
-![أساسيات JavaScript - أنواع البيانات](../../../../translated_images/webdev101-js-datatypes.4cc470179730702c756480d3ffa46507f746e5975ebf80f99fdaaf1cff09a7f4.ar.png)
+![أساسيات JavaScript - أنواع البيانات](../../../../translated_images/ar/webdev101-js-datatypes.4cc470179730702c.webp)
 > رسم توضيحي بواسطة [Tomomi Imura](https://twitter.com/girlie_mac)
 
 ```mermaid

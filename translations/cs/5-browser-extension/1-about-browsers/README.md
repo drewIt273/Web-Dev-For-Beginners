@@ -1,177 +1,270 @@
-<!--
-CO_OP_TRANSLATOR_METADATA:
-{
-  "original_hash": "33a875c522f237a2026e4653240dfc07",
-  "translation_date": "2025-10-24T21:14:43+00:00",
-  "source_file": "5-browser-extension/1-about-browsers/README.md",
-  "language_code": "cs"
-}
--->
-# Projekt rozšíření pro prohlížeče, část 1: Vše o prohlížečích
+# Browser Extension Project Part 1: Vše o prohlížečích
 
-![Sketchnote prohlížeče](../../../../translated_images/browser.60317c9be8b7f84adce43e30bff8d47a1ae15793beab762317b2bc6b74337c1a.cs.jpg)
+```mermaid
+journey
+    title Vaše cesta vývoje rozšíření prohlížeče
+    section Základy
+      Pochopit prohlížeče: 3: Student
+      Naučit se typy rozšíření: 4: Student
+      Nastavit vývojové prostředí: 4: Student
+    section Vývoj
+      Vytvořit rozhraní: 4: Student
+      Přidat funkce: 5: Student
+      Zpracovat data: 5: Student
+    section Integrace
+      Testovat v prohlížeči: 5: Student
+      Ladit problémy: 4: Student
+      Vylepšit uživatelský zážitek: 5: Student
+```
+![Browser sketchnote](../../../../translated_images/cs/browser.60317c9be8b7f84a.webp)
 > Sketchnote od [Wassim Chegham](https://dev.to/wassimchegham/ever-wondered-what-happens-when-you-type-in-a-url-in-an-address-bar-in-a-browser-3dob)
 
-## Kvíz před přednáškou
+## Přednáškový kvíz
 
-[Kvíz před přednáškou](https://ff-quizzes.netlify.app/web/quiz/23)
+[Přednáškový kvíz](https://ff-quizzes.netlify.app/web/quiz/23)
 
 ### Úvod
 
-Rozšíření pro prohlížeče jsou mini-aplikace, které zlepšují váš zážitek z prohlížení webu. Stejně jako původní vize Tima Berners-Lee o interaktivním webu, rozšíření rozšiřují schopnosti prohlížeče nad rámec jednoduchého prohlížení dokumentů. Od správců hesel, kteří chrání vaše účty, až po nástroje pro výběr barev, které pomáhají designérům najít dokonalé odstíny, rozšíření řeší každodenní výzvy při prohlížení.
+Prohlížečové rozšíření jsou miniaplikace, které vylepšují váš zážitek z prohlížení webu. Podobně jako původní vize Tima Berners-Lee pro interaktivní web, rozšíření rozšiřují schopnosti prohlížeče mimo pouhé zobrazování dokumentů. Od správců hesel, kteří udržují vaše účty v bezpečí, až po výběr barev, který pomáhá designérům získat dokonalé odstíny, rozšíření řeší každodenní výzvy při prohlížení.
 
-Než vytvoříme vaše první rozšíření, pojďme pochopit, jak prohlížeče fungují. Stejně jako Alexander Graham Bell potřeboval pochopit přenos zvuku před vynálezem telefonu, znalost základů prohlížečů vám pomůže vytvořit rozšíření, která se bezproblémově integrují s existujícími systémy prohlížečů.
+Než začneme stavět vaše první rozšíření, pojďme pochopit, jak prohlížeče fungují. Stejně jako Alexander Graham Bell potřeboval porozumět přenosu zvuku, než vynalezl telefon, znalost základů prohlížečů vám pomůže vytvářet rozšíření, která se hladce integrují do existujících systémů prohlížeče.
 
-Na konci této lekce pochopíte architekturu prohlížečů a začnete budovat své první rozšíření.
+Na konci této lekce porozumíte architektuře prohlížeče a začnete stavět své první rozšíření.
 
+```mermaid
+mindmap
+  root((Architektura prohlížeče))
+    Core Components
+      Rendering Engine
+      JavaScript Engine
+      Network Stack
+      Storage APIs
+    User Interface
+      Adresní řádek
+      Správa panelů
+      Záložky
+      Ikony rozšíření
+    Extension System
+      Manifest Files
+      Content Scripts
+      Background Pages
+      Popup Windows
+    Security Model
+      Same-Origin Policy
+      Permissions API
+      Content Security
+      Isolated Worlds
+    Development Tools
+      DevTools Integration
+      Debug Console
+      Performance Monitor
+      Extension Inspector
+```
 ## Porozumění webovým prohlížečům
 
-Webový prohlížeč je v podstatě sofistikovaný interpret dokumentů. Když do adresního řádku zadáte "google.com", prohlížeč provede složitou sérii operací - požádá o obsah ze serverů po celém světě, poté analyzuje a vykreslí tento kód do interaktivních webových stránek, které vidíte.
+Webový prohlížeč je v podstatě sofistikovaný interpret dokumentů. Když zadáte „google.com“ do adresního řádku, prohlížeč provede složitou řadu operací – požádá o obsah ze serverů po celém světě, poté tento kód zanalyzuje a vykreslí do interaktivních webových stránek, které vidíte.
 
-Tento proces odráží, jak byl navržen první webový prohlížeč WorldWideWeb Timem Berners-Leem v roce 1990, aby zpřístupnil hypertextové dokumenty všem.
+Tento proces odráží, jak byl první webový prohlížeč, WorldWideWeb, navržen Timem Berners-Leem v roce 1990, aby zpřístupnil hypertextové dokumenty všem.
 
-✅ **Trocha historie**: První prohlížeč se jmenoval 'WorldWideWeb' a byl vytvořen Sir Timothym Berners-Leem v roce 1990.
+✅ **Trocha historie**: První prohlížeč se jmenoval 'WorldWideWeb' a vytvořil ho Sir Timothy Berners-Lee v roce 1990.
 
-![rané prohlížeče](../../../../translated_images/earlybrowsers.d984b711cdf3a42ddac919d46c4b5ca7232f68ccfbd81395e04e5a64c0015277.cs.jpg)
-> Některé z prvních prohlížečů, via [Karen McGrane](https://www.slideshare.net/KMcGrane/week-4-ixd-history-personal-computing)
+![early browsers](../../../../translated_images/cs/earlybrowsers.d984b711cdf3a42d.webp)
+> Některé rané prohlížeče, podle [Karen McGrane](https://www.slideshare.net/KMcGrane/week-4-ixd-history-personal-computing)
 
 ### Jak prohlížeče zpracovávají webový obsah
 
-Proces mezi zadáním URL a zobrazením webové stránky zahrnuje několik koordinovaných kroků, které probíhají během několika sekund:
+Proces mezi zadáním URL a zobrazením webové stránky zahrnuje několik koordinovaných kroků, které probíhají během sekund:
 
 ```mermaid
 sequenceDiagram
     participant User
     participant Browser
+    participant Extension
     participant DNS
     participant Server
     
-    User->>Browser: Types URL and presses Enter
-    Browser->>DNS: Looks up server IP address
-    DNS->>Browser: Returns IP address
-    Browser->>Server: Requests web page content
-    Server->>Browser: Sends HTML, CSS, and JavaScript
-    Browser->>User: Renders complete web page
+    User->>Browser: Zadá URL a stiskne Enter
+    Browser->>Extension: Spustí událost beforeRequest
+    Extension->>Extension: Zkontroluje, zda je třeba URL upravit
+    Browser->>DNS: Vyhledá IP adresu serveru
+    DNS->>Browser: Vrátí IP adresu
+    Browser->>Server: Požádá o obsah webové stránky
+    Server->>Browser: Odesílá HTML, CSS a JavaScript
+    Browser->>Extension: Spustí událost beforeResponse
+    Extension->>Extension: Upravit obsah, pokud je potřeba
+    Browser->>User: Vykreslí kompletní webovou stránku
+    Extension->>User: Zobrazí aktualizace UI rozšíření
 ```
-
-**Co tento proces zahrnuje:**
-- **Překládá** URL čitelnou pro člověka na IP adresu serveru pomocí DNS vyhledávání
-- **Navazuje** bezpečné spojení s webovým serverem pomocí protokolů HTTP nebo HTTPS
-- **Požaduje** konkrétní obsah webové stránky ze serveru
-- **Přijímá** HTML značkování, CSS stylování a JavaScriptový kód ze serveru
+**Tento proces provádí:**
+- **Překládá** lidsky čitelnou URL na IP adresu serveru pomocí DNS dotazu
+- **Navazuje** zabezpečené spojení s webovým serverem pomocí protokolů HTTP nebo HTTPS
+- **Požaduje** specifický obsah webové stránky ze serveru
+- **Přijímá** HTML značky, CSS styly a JavaScriptový kód ze serveru
 - **Vykresluje** veškerý obsah do interaktivní webové stránky, kterou vidíte
 
-### Základní funkce prohlížeče
+### Hlavní funkce prohlížeče
 
 Moderní prohlížeče poskytují řadu funkcí, které mohou vývojáři rozšíření využít:
 
 | Funkce | Účel | Příležitosti pro rozšíření |
-|--------|------|---------------------------|
-| **Vykreslovací engine** | Zobrazuje HTML, CSS a JavaScript | Úprava obsahu, injekce stylů |
-| **JavaScriptový engine** | Spouští JavaScriptový kód | Vlastní skripty, interakce s API |
-| **Lokální úložiště** | Ukládá data lokálně | Uživatelské preference, cache |
-| **Síťový stack** | Zpracovává webové požadavky | Monitorování požadavků, analýza dat |
-| **Bezpečnostní model** | Chrání uživatele před škodlivým obsahem | Filtrování obsahu, zlepšení bezpečnosti |
+|---------|---------|------------------------|
+| **Rendering Engine** | Zobrazuje HTML, CSS a JavaScript | Úpravy obsahu, injektování stylů |
+| **JavaScript Engine** | Spouští JavaScriptový kód | Vlastní skripty, API interakce |
+| **Lokální úložiště** | Ukládá data lokálně | Uživatelská nastavení, cache |
+| **Síťová vrstva** | Řídí webové požadavky | Monitorování požadavků, analýza dat |
+| **Bezpečnostní model** | Chrání uživatele před škodlivým obsahem | Filtrování obsahu, bezpečnostní vylepšení |
 
 **Porozumění těmto funkcím vám pomůže:**
-- **Identifikovat**, kde může vaše rozšíření přinést největší hodnotu
+- **Identifikovat** kde může vaše rozšíření přinést největší užitek
 - **Vybrat** správné API prohlížeče pro funkčnost vašeho rozšíření
-- **Navrhnout** rozšíření, která efektivně spolupracují se systémy prohlížeče
-- **Zajistit**, že vaše rozšíření dodržuje nejlepší bezpečnostní postupy prohlížeče
+- **Navrhnout** rozšíření, která efektivně spolupracují se systémem prohlížeče
+- **Zajistit**, že vaše rozšíření dodržuje nejlepší bezpečnostní praktiky
 
 ### Úvahy o vývoji napříč prohlížeči
 
-Různé prohlížeče implementují standardy s drobnými odchylkami, podobně jako různé programovací jazyky mohou zpracovávat stejný algoritmus odlišně. Chrome, Firefox a Safari mají každý své jedinečné vlastnosti, které musí vývojáři při vývoji rozšíření zohlednit.
+Různé prohlížeče implementují standardy s drobnými odchylkami, podobně jako různé programovací jazyky mohou odlišně zpracovávat stejný algoritmus. Chrome, Firefox a Safari mají jedinečné charakteristiky, které musí vývojáři brát v úvahu během vývoje rozšíření.
 
-> 💡 **Tip**: Použijte [caniuse.com](https://www.caniuse.com) k ověření, které webové technologie jsou podporovány napříč různými prohlížeči. To je neocenitelné při plánování funkcí vašeho rozšíření!
+> 💡 **Užitečný tip**: Použijte [caniuse.com](https://www.caniuse.com) k ověření, které webové technologie jsou podporovány v různých prohlížečích. To je neocenitelné při plánování funkcí vašeho rozšíření!
 
 **Klíčové úvahy pro vývoj rozšíření:**
-- **Testujte** své rozšíření napříč prohlížeči Chrome, Firefox a Edge
-- **Přizpůsobte** se různým API pro rozšíření a formátům manifestů
-- **Řešte** různé charakteristiky výkonu a omezení
-- **Poskytněte** alternativy pro funkce specifické pro prohlížeče, které nemusí být dostupné
+- **Testujte** své rozšíření v prohlížečích Chrome, Firefox a Edge
+- **Přizpůsobte** se rozdílům v API rozšíření a formátech manifestu
+- **Zvládejte** různou výkonnost a omezení
+- **Poskytněte** náhradní řešení pro specifické funkce prohlížeče, které nemusí být dostupné
 
-✅ **Analytický pohled**: Můžete zjistit, které prohlížeče vaši uživatelé preferují, instalací analytických balíčků do vašich webových projektů. Tyto údaje vám pomohou určit, které prohlížeče podporovat jako první.
+✅ **Insight z analýzy**: Můžete zjistit, které prohlížeče vaši uživatelé preferují, instalací analytických balíčků ve svých webových projektech. Tato data vám pomohou určit, které prohlížeče podporovat prioritně.
 
-## Porozumění rozšířením pro prohlížeče
+## Porozumění prohlížečovým rozšířením
 
-Rozšíření pro prohlížeče řeší běžné výzvy při prohlížení webu tím, že přidávají funkce přímo do rozhraní prohlížeče. Místo vyžadování samostatných aplikací nebo složitých pracovních postupů poskytují rozšíření okamžitý přístup k nástrojům a funkcím.
+Rozšíření prohlížeče řeší běžné problémy při prohlížení webu přidáním funkcí přímo do rozhraní prohlížeče. Místo potřeby samostatných aplikací nebo složitých pracovních postupů poskytují rozšíření okamžitý přístup k nástrojům a funkcím.
 
-Tento koncept odráží, jak si raní počítačoví průkopníci jako Douglas Engelbart představovali rozšíření lidských schopností pomocí technologie - rozšíření rozšiřují základní funkčnost vašeho prohlížeče.
+Tento koncept odráží, jak raní průkopníci počítačů jako Douglas Engelbart představovali rozšíření lidských schopností technologií – rozšíření zdokonalují základní funkčnost vašeho prohlížeče.
 
-**Oblíbené kategorie rozšíření a jejich výhody:**
-- **Nástroje produktivity**: Správci úkolů, aplikace pro psaní poznámek a sledování času, které vám pomáhají zůstat organizovaní
-- **Zlepšení bezpečnosti**: Správci hesel, blokátory reklam a nástroje pro ochranu soukromí, které chrání vaše data
-- **Nástroje pro vývojáře**: Formátovače kódu, nástroje pro výběr barev a ladicí nástroje, které zjednodušují vývoj
-- **Zlepšení obsahu**: Režimy čtení, stahovače videí a nástroje pro snímání obrazovky, které zlepšují váš zážitek z webu
+```mermaid
+quadrantChart
+    title Kategorie rozšíření prohlížeče
+    x-axis Jednoduché --> Složité
+    y-axis Osobní použití --> Profesionální nástroje
+    quadrant-1 Nástroje pro vývojáře
+    quadrant-2 Firemní řešení
+    quadrant-3 Osobní užitečné nástroje
+    quadrant-4 Aplikace pro produktivitu
+    
+    Ad Blockers: [0.3, 0.2]
+    Password Managers: [0.7, 0.3]
+    Color Pickers: [0.4, 0.8]
+    Code Formatters: [0.8, 0.9]
+    Note Taking: [0.6, 0.5]
+    Video Downloaders: [0.5, 0.2]
+    Time Trackers: [0.7, 0.6]
+    Screenshot Tools: [0.4, 0.4]
+```
+**Populární kategorie rozšíření a jejich přínosy:**
+- **Nástroje produktivity**: Správci úkolů, aplikace pro poznámky a časovače, které pomáhají udržet pořádek
+- **Bezpečnostní vylepšení**: Správci hesel, blokátory reklam a nástroje na ochranu soukromí, které chrání vaše data
+- **Nástroje pro vývojáře**: Formátovače kódu, výběry barev a ladicí pomůcky, které zjednodušují vývoj
+- **Vylepšení obsahu**: Režimy čtení, stahovače videí a nástroje pro snímky obrazovky, které zlepšují váš zážitek z webu
 
-✅ **Reflexní otázka**: Jaká jsou vaše oblíbená rozšíření pro prohlížeče? Jaké konkrétní úkoly vykonávají a jak zlepšují váš zážitek z prohlížení?
+✅ **Reflexní otázka**: Jaká jsou vaše oblíbená rozšíření? Jaké konkrétní úkoly vykonávají a jak zlepšují váš zážitek z prohlížení?
+
+### 🔄 **Pedagogická kontrola**
+**Porozumění architektuře prohlížeče**: Než přistoupíte k vývoji rozšíření, ujistěte se, že umíte:
+- ✅ Vysvětlit, jak prohlížeče zpracovávají webové požadavky a vykreslují obsah
+- ✅ Identifikovat hlavní komponenty architektury prohlížeče
+- ✅ Rozumět, jak se rozšíření integrují s funkcionalitou prohlížeče
+- ✅ Rozpoznat bezpečnostní model, který uživatele chrání
+
+**Rychlý autotest**: Dokážete sledovat cestu od zadání URL až po zobrazení webové stránky?
+1. **DNS dotaz** převádí URL na IP adresu
+2. **HTTP požadavek** získává obsah ze serveru
+3. **Zpracování** analyzuje HTML, CSS a JavaScript
+4. **Vykreslení** zobrazuje finální webovou stránku
+5. **Rozšíření** mohou obsah upravit na několika krocích
 
 ## Instalace a správa rozšíření
 
-Porozumění procesu instalace rozšíření vám pomůže předvídat uživatelskou zkušenost, když lidé instalují vaše rozšíření. Proces instalace je standardizován napříč moderními prohlížeči, s drobnými odchylkami v designu rozhraní.
+Porozumění procesu instalace rozšíření vám pomůže předvídat uživatelský zážitek při instalaci vašeho rozšíření. Proces instalace je standardizovaný v moderních prohlížečích s drobnými rozdíly v designu rozhraní.
 
-![snímek obrazovky prohlížeče Edge zobrazující otevřenou stránku edge://extensions a otevřené nastavení](../../../../translated_images/install-on-edge.d68781acaf0b3d3dada8b7507cde7a64bf74b7040d9818baaa9070668e819f90.cs.png)
+![screenshot of the Edge browser showing the open edge://extensions page and open settings menu](../../../../translated_images/cs/install-on-edge.d68781acaf0b3d3d.webp)
 
 > **Důležité**: Při testování vlastních rozšíření nezapomeňte zapnout režim vývojáře a povolit rozšíření z jiných obchodů.
 
-### Proces instalace rozšíření pro vývoj
+### Vývojový proces instalace rozšíření
 
-Při vývoji a testování vlastních rozšíření postupujte podle tohoto pracovního postupu:
+Když vyvíjíte a testujete vlastní rozšíření, postupujte podle tohoto pracovního toku:
 
+```mermaid
+flowchart TD
+    A[Napište kód] --> B[Sestavte rozšíření]
+    B --> C{První instalace?}
+    C -->|Ano| D[Nahrajte nerozbalené]
+    C -->|Ne| E[Znovu načíst rozšíření]
+    D --> F[Testujte funkčnost]
+    E --> F
+    F --> G{Funguje správně?}
+    G -->|Ne| H[Opravte chyby]
+    G -->|Ano| I[Připraveno pro uživatele]
+    H --> A
+    I --> J[Publikovat do obchodu]
+    
+    style A fill:#e1f5fe
+    style F fill:#e8f5e8
+    style I fill:#f3e5f5
+    style J fill:#fff3e0
+```
 ```bash
-# Step 1: Build your extension
+# Krok 1: Vytvořte své rozšíření
 npm run build
 ```
 
 **Co tento příkaz provádí:**
-- **Kompiluje** váš zdrojový kód do souborů připravených pro prohlížeč
-- **Balí** JavaScriptové moduly do optimalizovaných balíčků
-- **Generuje** finální soubory rozšíření ve složce `/dist`
-- **Připravuje** vaše rozšíření pro instalaci a testování
+- **Komplikuje** váš zdrojový kód do souborů připravených pro prohlížeč
+- **Kombinuje** JavaScriptové moduly do optimalizovaných balíčků
+- **Vytváří** finální soubory rozšíření ve složce `/dist`
+- **Připravuje** vaše rozšíření k instalaci a testování
 
-**Krok 2: Přejděte na rozšíření prohlížeče**
-1. **Otevřete** stránku správy rozšíření vašeho prohlížeče
-2. **Klikněte** na tlačítko "Nastavení a další" (ikona `...`) v pravém horním rohu
-3. **Vyberte** "Rozšíření" z rozbalovací nabídky
+**Krok 2: Přejděte do správy rozšíření v prohlížeči**
+1. **Otevřete** stránku správy rozšíření ve svém prohlížeči
+2. **Klikněte** na tlačítko "Nastavení a další" (ikona `...`) vpravo nahoře
+3. **Vyberte** "Rozšíření" v rozbalovací nabídce
 
 **Krok 3: Načtěte své rozšíření**
-- **Pro nové instalace**: Vyberte `load unpacked` a zvolte svou složku `/dist`
+- **Pro nové instalace**: Vyberte `load unpacked` a vyberte složku `/dist`
 - **Pro aktualizace**: Klikněte na `reload` vedle již nainstalovaného rozšíření
-- **Pro testování**: Aktivujte "Režim vývojáře" pro přístup k dalším funkcím ladění
+- **Pro testování**: Zapněte "Režim vývojáře" pro přístup k dalším ladicím možnostem
 
-### Instalace produkčního rozšíření
+### Instalace rozšíření pro produkci
 
-> ✅ **Poznámka**: Tyto pokyny pro vývoj jsou specifické pro rozšíření, která sami vytvoříte. Pro instalaci publikovaných rozšíření navštivte oficiální obchody s rozšířeními pro prohlížeče, jako je [Microsoft Edge Add-ons store](https://microsoftedge.microsoft.com/addons/Microsoft-Edge-Extensions-Home).
+> ✅ **Poznámka**: Tyto vývojové instrukce jsou určeny pro rozšíření, která vytváříte sami. Pro instalaci publikovaných rozšíření navštivte oficiální obchody s rozšířeními jako [Microsoft Edge Add-ons store](https://microsoftedge.microsoft.com/addons/Microsoft-Edge-Extensions-Home).
 
-**Porozumění rozdílu:**
-- **Instalace pro vývoj** vám umožní testovat nepublikovaná rozšíření během vývoje
+**Rozdíl mezi nimi:**
+- **Vývojové instalace** umožňují testovat nevydaná rozšíření během vývoje
 - **Instalace z obchodu** poskytují ověřená, publikovaná rozšíření s automatickými aktualizacemi
 - **Sideloading** umožňuje instalaci rozšíření mimo oficiální obchody (vyžaduje režim vývojáře)
 
-## Vytvoření rozšíření pro uhlíkovou stopu
+## Stavíme rozšíření pro uhlíkovou stopu
 
-Vytvoříme rozšíření prohlížeče, které zobrazuje uhlíkovou stopu energetického využití vašeho regionu. Tento projekt demonstruje základní koncepty vývoje rozšíření a zároveň vytváří praktický nástroj pro zvýšení povědomí o životním prostředí.
+Vytvoříme rozšíření prohlížeče, které zobrazuje uhlíkovou stopu využití energie ve vaší oblasti. Tento projekt demonstruje základní principy vývoje rozšíření a zároveň představuje praktický nástroj pro environmentální povědomí.
 
-Tento přístup vychází z principu "učení se praxí", který se ukázal jako efektivní od dob vzdělávacích teorií Johna Deweyho - kombinace technických dovedností s smysluplnými aplikacemi v reálném světě.
+Tento přístup následuje princip „učení praxí“, který se osvědčil již od John Deweyho vzdělávacích teorií – kombinace technických dovedností s významnými reálnými aplikacemi.
 
-### Požadavky na projekt
+### Požadavky projektu
 
-Než začneme s vývojem, shromáždíme potřebné zdroje a závislosti:
+Než začnete vývoj, shromážděme potřebné zdroje a závislosti:
 
 **Požadovaný přístup k API:**
-- **[CO2 Signal API klíč](https://www.co2signal.com/)**: Zadejte svou e-mailovou adresu, abyste obdrželi svůj bezplatný API klíč
-- **[Kód regionu](http://api.electricitymap.org/v3/zones)**: Najděte kód svého regionu pomocí [Electricity Map](https://www.electricitymap.org/map) (například Boston používá 'US-NEISO')
+- **[CO2 Signal API klíč](https://www.co2signal.com/)**: Zadejte svou e-mailovou adresu pro bezplatný API klíč
+- **[Kód regionu](http://api.electricitymap.org/v3/zones)**: Najděte kód vašeho regionu pomocí [Electricity Map](https://www.electricitymap.org/map) (například Boston používá „US-NEISO“)
 
-**Nástroje pro vývoj:**
+**Vývojové nástroje:**
 - **[Node.js a NPM](https://www.npmjs.com)**: Nástroj pro správu balíčků pro instalaci závislostí projektu
-- **[Startovací kód](../../../../5-browser-extension/start)**: Stáhněte složku `start` pro zahájení vývoje
+- **[Výchozí kód](../../../../5-browser-extension/start)**: Stáhněte si složku `start` pro zahájení vývoje
 
-✅ **Další informace**: Zlepšete své dovednosti v oblasti správy balíčků pomocí tohoto [komplexního modulu Learn](https://docs.microsoft.com/learn/modules/create-nodejs-project-dependencies/?WT.mc_id=academic-77807-sagibbon)
+✅ **Více se naučíte**: Zlepšete své schopnosti správy balíčků pomocí tohoto [komplexního Learn modulu](https://docs.microsoft.com/learn/modules/create-nodejs-project-dependencies/?WT.mc_id=academic-77807-sagibbon)
 
 ### Porozumění struktuře projektu
 
-Porozumění struktuře projektu pomáhá efektivně organizovat práci na vývoji. Stejně jako byla Alexandrijská knihovna organizována pro snadné vyhledávání znalostí, dobře strukturovaná základna kódu zefektivňuje vývoj:
+Shrnutí struktury projektu pomáhá efektivně organizovat práci na vývoji. Podobně jako Alexandrijská knihovna byla organizována pro snadný přístup k vědomostem, dobře strukturovaná kódová báze zefektivňuje vývoj:
 
 ```
 project-root/
@@ -180,40 +273,42 @@ project-root/
 │   ├── index.html           # User interface markup
 │   ├── background.js        # Background script functionality
 │   └── main.js              # Compiled JavaScript bundle
-└── src/                     # Source development files
-    └── index.js             # Your main JavaScript code
+├── src/                     # Source development files
+│   └── index.js             # Your main JavaScript code
+├── package.json             # Project dependencies and scripts
+└── webpack.config.js        # Build configuration
 ```
 
-**Rozdělení toho, co každý soubor provádí:**
+**Co každý soubor dělá:**
 - **`manifest.json`**: **Definuje** metadata rozšíření, oprávnění a vstupní body
-- **`index.html`**: **Vytváří** uživatelské rozhraní, které se zobrazí, když uživatelé kliknou na vaše rozšíření
-- **`background.js`**: **Zpracovává** úkoly na pozadí a posluchače událostí prohlížeče
-- **`main.js`**: **Obsahuje** finální JavaScriptový kód po procesu sestavení
-- **`src/index.js`**: **Obsahuje** váš hlavní vývojový kód, který je kompilován do `main.js`
+- **`index.html`**: **Vytváří** uživatelské rozhraní, které se zobrazí po kliknutí na rozšíření
+- **`background.js`**: **Řídí** úlohy na pozadí a posluchače událostí prohlížeče
+- **`main.js`**: **Obsahuje** finální sloučený JavaScript po sestavení
+- **`src/index.js`**: **Obsahuje** hlavní vývojový kód, který se zkompiluje do `main.js`
 
-> 💡 **Tip pro organizaci**: Uložte svůj API klíč a kód regionu do bezpečné poznámky pro snadný přístup během vývoje. Tyto hodnoty budete potřebovat k testování funkčnosti vašeho rozšíření.
+> 💡 **Tip pro organizaci**: Uložte si svůj API klíč a kód regionu v zabezpečené poznámce pro snadnou referenci během vývoje. Budete je potřebovat k testování funkčnosti rozšíření.
 
-✅ **Bezpečnostní poznámka**: Nikdy nezveřejňujte API klíče nebo citlivé údaje ve svém repozitáři kódu. Ukážeme vám, jak s nimi bezpečně pracovat v dalších krocích.
+✅ **Bezpečnostní poznámka**: Nikdy nesdílejte API klíče nebo citlivé přihlašovací údaje ve vašem repozitáři kódu. Ukážeme vám, jak s nimi bezpečně pracovat v dalších krocích.
 
-## Vytvoření rozhraní rozšíření
+## Vytváření rozhraní rozšíření
 
-Nyní vytvoříme komponenty uživatelského rozhraní. Rozšíření používá dvouobrazovkový přístup: konfigurační obrazovku pro počáteční nastavení a obrazovku výsledků pro zobrazení dat.
+Nyní sestavíme komponenty uživatelského rozhraní. Rozšíření používá dvouscreenový přístup: konfigurační obrazovku pro počáteční nastavení a výsledkovou obrazovku pro zobrazení dat.
 
-Toto vychází z principu postupného odhalování, který se v návrhu rozhraní používá od počátků výpočetní techniky - odhalování informací a možností v logickém pořadí, aby se uživatelé necítili zahlceni.
+Toto následuje princip postupného odhalování v designu rozhraní používaný od raných dob počítačů – odhalování informací a možností v logickém pořadí, aby uživatelé nebyli přetíženi.
 
 ### Přehled zobrazení rozšíření
 
-**Zobrazení nastavení** - Konfigurace pro první použití:
-![snímek obrazovky dokončeného rozšíření otevřeného v prohlížeči, zobrazujícího formulář s poli pro zadání názvu regionu a API klíče.](../../../../translated_images/1.b6da8c1394b07491afeb6b2a8e5aca73ebd3cf478e27bcc9aeabb187e722648e.cs.png)
+**Nastavení** - konfigurace prvního použití:
+![screenshot of the completed extension open in a browser, displaying a form with inputs for region name and API key.](../../../../translated_images/cs/1.b6da8c1394b07491.webp)
 
-**Zobrazení výsledků** - Zobrazení dat o uhlíkové stopě:
-![snímek obrazovky dokončeného rozšíření zobrazujícího hodnoty uhlíkové spotřeby a procento fosilních paliv pro region US-NEISO.](../../../../translated_images/2.1dae52ff0804224692cd648afbf2342955d7afe3b0101b617268130dfb427f55.cs.png)
+**Výsledky** - zobrazení dat uhlíkové stopy:
+![screenshot of the completed extension displaying values for carbon usage and fossil fuel percentage for the US-NEISO region.](../../../../translated_images/cs/2.1dae52ff08042246.webp)
 
 ### Vytvoření konfiguračního formuláře
 
-Formulář nastavení shromažďuje konfigurační data uživatele při prvním použití. Po konfiguraci tyto informace přetrvávají v úložišti prohlížeče pro budoucí relace.
+Formulář pro nastavení sbírá konfigurační údaje uživatele během prvního použití. Po nastavení jsou tyto informace uloženy do úložiště prohlížeče pro další session.
 
-Do souboru `/dist/index.html` přidejte tuto strukturu formuláře:
+V souboru `/dist/index.html` přidejte tuto strukturu formuláře:
 
 ```html
 <form class="form-data" autocomplete="on">
@@ -232,16 +327,16 @@ Do souboru `/dist/index.html` přidejte tuto strukturu formuláře:
 </form>
 ```
 
-**Co tento formulář provádí:**
+**Co tento formulář dělá:**
 - **Vytváří** sémantickou strukturu formuláře s odpovídajícími štítky a asociacemi vstupů
-- **Umožňuje** funkci automatického doplňování prohlížeče pro zlepšení uživatelského zážitku
-- **Vyžaduje**, aby byla obě pole vyplněna před odesláním pomocí atributu `required`
-- **Organizuje** vstupy s popisnými názvy tříd pro snadné stylování a cílení JavaScriptu
-- **Poskytuje** jasné pokyny pro uživatele, kteří nastavují rozšíření poprvé
+- **Povoluje** automatické doplňování prohlížečem pro lepší uživatelský zážitek
+- **Požaduje** vyplnění obou polí před odesláním pomocí atributu `required`
+- **Organizuje** vstupy pomocí popisných názvů tříd pro snadné styly a cílení JavaScriptu
+- **Poskytuje** jasné instrukce uživatelům, kteří nastavují rozšíření poprvé
 
-### Vytvoření zobrazení výsledků
+### Vytváření zobrazení výsledků
 
-Dále vytvořte oblast výsledků, která bude zobrazovat data o uhlíkové stopě. Přidejte tento HTML pod formulář:
+Dále vytvořte oblast pro výsledky, která bude zobrazovat data o uhlíkové stopě. Přidejte tento HTML pod formulář:
 
 ```html
 <div class="result">
@@ -257,29 +352,79 @@ Dále vytvořte oblast výsledků, která bude zobrazovat data o uhlíkové stop
 </div>
 ```
 
-**Rozdělení toho, co tato struktura poskytuje:**
-- **`loading`**: **Zobrazuje** zprávu o načítání během získávání dat z API
-- **`errors`**: **Ukazuje** chybové zprávy, pokud volání API selže nebo jsou data neplatná
-- **`data`**: **Ukládá** surová data pro ladění během vývoje
+**Co tato struktura obsahuje:**
+- **`loading`**: **Zobrazuje** zprávu o načítání během vyhledávání dat z API
+- **`errors`**: **Ukazuje** chybové zprávy, pokud volání API selže nebo data nejsou platná
+- **`data`**: **Drží** surová data pro ladění během vývoje
 - **`result-container`**: **Prezentuje** formátované informace o uhlíkové stopě uživatelům
-- **`clear-btn`**: **Umožňuje
-**Popis:** Vylepšete rozšíření prohlížeče přidáním funkcí validace formulářů a zpětné vazby uživatelům, aby se zlepšila uživatelská zkušenost při zadávání API klíčů a kódů regionů.
+- **`clear-btn`**: **Umožňuje** uživatelům změnit region a znovu konfigurovat rozšíření
 
-**Úkol:** Vytvořte validační funkce v JavaScriptu, které ověří, zda pole pro API klíč obsahuje alespoň 20 znaků a zda kód regionu odpovídá správnému formátu (například 'US-NEISO'). Přidejte vizuální zpětnou vazbu změnou barvy okrajů vstupních polí na zelenou pro platné vstupy a červenou pro neplatné. Dále přidejte funkci přepínání viditelnosti API klíče pro zvýšení bezpečnosti.
+### Nastavení procesu sestavení
 
-Více o [agent mode](https://code.visualstudio.com/blogs/2025/02/24/introducing-copilot-agent-mode) se dozvíte zde.
+Nyní nainstalujeme závislosti projektu a otestujeme proces sestavení:
+
+```bash
+npm install
+```
+
+**Co tento instalační proces provádí:**
+- **Stahuje** Webpack a další vývojové závislosti uvedené v `package.json`
+- **Konfiguruje** nástroje pro sestavení pro překládání moderního JavaScriptu
+- **Připravuje** vývojové prostředí pro sestavení a testování rozšíření
+- **Umožňuje** balení, optimalizaci a napříč-prohlížečovou kompatibilitu
+
+> 💡 **Pohled do procesu sestavení**: Webpack sbalí váš zdrojový kód z `/src/index.js` do `/dist/main.js`. Tento proces optimalizuje kód pro produkci a zajišťuje kompatibilitu s prohlížeči.
+
+### Testování vašeho pokroku
+
+V této fázi můžete otestovat své rozšíření:
+1. **Spusťte** příkaz pro sestavení kódu
+2. **Načtěte** rozšíření do svého prohlížeče v režimu pro vývojáře
+3. **Ověřte**, že se formulář zobrazuje správně a profesionálně
+4. **Zkontrolujte**, zda jsou všechny prvky formuláře správně zarovnané a funkční
+
+**Co jste dosáhli:**
+- **Vytvořili** jste základní HTML strukturu pro vaše rozšíření
+- **Navrhli** jste rozhraní pro konfiguraci a výsledky s použitím správného sémantického značení
+- **Nastavili** jste moderní vývojový workflow za použití průmyslově standardních nástrojů
+- **Připravili** jste základy pro přidání interaktivní JavaScriptové funkčnosti
+
+### 🔄 **Pedagogická kontrola**
+**Pokrok ve vývoji rozšíření**: Ověřte své porozumění před pokračováním:
+- ✅ Dokážete vysvětlit účel jednotlivých souborů ve struktuře projektu?
+- ✅ Rozumíte, jak proces sestavení transformuje váš zdrojový kód?
+- ✅ Proč oddělujeme konfiguraci a výsledky do různých sekcí uživatelského rozhraní?
+- ✅ Jak struktura formuláře podporuje použitelnost i přístupnost?
+
+**Porozumění vývojovému workflow**: Měli byste nyní být schopni:
+1. **Upravit** HTML a CSS pro uživatelské rozhraní rozšíření
+2. **Spustit** příkaz pro sestavení a překlad změn
+3. **Znovu načíst** rozšíření v prohlížeči k otestování aktualizací
+4. **Ladit** problémy pomocí nástrojů pro vývojáře v prohlížeči
+
+Dokončili jste první fázi vývoje prohlížečových rozšíření. Stejně jako bratři Wrightové nejprve museli porozumět aerodynamice před letem, tak pochopení těchto základních konceptů vás připravuje na vývoj složitějších interaktivních funkcí v další lekci.
+
+## Výzva GitHub Copilot Agenta 🚀
+
+Použijte režim Agenta k dokončení následující výzvy:
+
+**Popis:** Vylepšete rozšíření do prohlížeče přidáním validace formuláře a zpětné vazby uživateli, aby se zlepšila uživatelská zkušenost při zadávání API klíčů a regionálních kódů.
+
+**Zadání:** Vytvořte JavaScriptové validační funkce, které ověří, zda pole s API klíčem obsahuje alespoň 20 znaků a zda regionální kód odpovídá správnému formátu (například 'US-NEISO'). Přidejte vizuální zpětnou vazbu změnou barvy okraje inputu na zelenou pro platné hodnoty a červenou pro neplatné. Dále přidejte možnost přepínání zobrazení/skrytí API klíče pro bezpečnost.
+
+Více o [režimu agenta](https://code.visualstudio.com/blogs/2025/02/24/introducing-copilot-agent-mode) se dozvíte zde.
 
 ## 🚀 Výzva
 
-Podívejte se na obchod s rozšířeními pro prohlížeče a nainstalujte si jedno do svého prohlížeče. Můžete zkoumat jeho soubory zajímavými způsoby. Co objevíte?
+Prohlédněte si obchod s rozšířeními prohlížeče a nainstalujte si jedno do svého prohlížeče. Můžete zkoumat jeho soubory zajímavými způsoby. Co zjistíte?
 
-## Kvíz po přednášce
+## Kvíz po lekci
 
-[Kvíz po přednášce](https://ff-quizzes.netlify.app/web/quiz/24)
+[Kvíz po lekci](https://ff-quizzes.netlify.app/web/quiz/24)
 
-## Přehled & Samostudium
+## Přehled a samostudium
 
-V této lekci jste se dozvěděli něco o historii webových prohlížečů; využijte této příležitosti k tomu, abyste se dozvěděli více o tom, jak si vynálezci World Wide Webu představovali jeho využití, a přečtěte si více o jeho historii. Některé užitečné stránky zahrnují:
+V této lekci jste se dozvěděli něco o historii webových prohlížečů; využijte této příležitosti a přečtěte si více o tom, jak si tvůrci World Wide Web představovali jeho použití. Některé užitečné stránky jsou:
 
 [Historie webových prohlížečů](https://www.mozilla.org/firefox/browsers/browser-history/)
 
@@ -287,11 +432,115 @@ V této lekci jste se dozvěděli něco o historii webových prohlížečů; vyu
 
 [Rozhovor s Timem Berners-Leem](https://www.theguardian.com/technology/2019/mar/12/tim-berners-lee-on-30-years-of-the-web-if-we-dream-a-little-we-can-get-the-web-we-want)
 
+### ⚡ **Co můžete udělat během příštích 5 minut**
+- [ ] Otevřete stránku rozšíření Chrome/Edge (chrome://extensions) a prozkoumejte, co máte nainstalováno
+- [ ] Podívejte se na záložku Síť (Network) v DevTools vašeho prohlížeče při načítání webové stránky
+- [ ] Zkuste zobrazit zdroj stránky (Ctrl+U), abyste viděli strukturu HTML
+- [ ] Prozkoumejte libovolný prvek na stránce a upravte jeho CSS v DevTools
+
+### 🎯 **Co můžete během této hodiny zvládnout**
+- [ ] Dokončit post-lesson kvíz a pochopit základy prohlížeče
+- [ ] Vytvořit základní manifest.json pro rozšíření prohlížeče
+- [ ] Sestavit jednoduché rozšíření "Hello World" s vyskakovacím oknem
+- [ ] Otestovat načtení rozšíření v režimu vývojáře
+- [ ] Prozkoumat dokumentaci pro vývoj rozšíření v cílovém prohlížeči
+
+### 📅 **Váš týdenní plán vývoje rozšíření**
+- [ ] Dokončit funkční rozšíření prohlížeče s reálným užitkem
+- [ ] Naučit se o content skriptech, background skriptech a popup interakcích
+- [ ] Ovládnout browser API jako úložiště, záložky a zasílání zpráv
+- [ ] Navrhnout uživatelsky přívětivá rozhraní pro vaše rozšíření
+- [ ] Testovat rozšíření na různých webech a scénářích
+- [ ] Publikovat rozšíření v obchodě s rozšířeními prohlížeče
+
+### 🌟 **Váš měsíční plán vývoje prohlížeče**
+- [ ] Vytvořit více rozšíření řešících různé uživatelské problémy
+- [ ] Naučit se pokročilá browser API a bezpečnostní postupy
+- [ ] Přispívat do open source projektů pro rozšíření do prohlížeče
+- [ ] Ovládnout kompatibilitu napříč prohlížeči a progresivní vylepšení
+- [ ] Vytvářet nástroje a šablony pro vývoj rozšíření pro ostatní
+- [ ] Stát se expertem na rozšíření do prohlížeče, který pomáhá dalším vývojářům
+
+## 🎯 Váš časový plán zvládnutí rozšíření prohlížeče
+
+```mermaid
+timeline
+    title Vývoj rozšíření prohlížeče
+    
+    section Základy (15 minut)
+        Pochopení prohlížeče: Základní architektura
+                              : Renderovací proces
+                              : Body integrace rozšíření
+        
+    section Nastavení (20 minut)
+        Vývojové prostředí: Struktura projektu
+                               : Konfigurace nástrojů pro sestavení
+                               : Režim vývojáře prohlížeče
+                               : Proces načítání rozšíření
+        
+    section Návrh rozhraní (25 minut)
+        Uživatelská zkušenost: Struktura HTML
+                       : Stylování CSS
+                       : Validace formulářů
+                       : Responzivní design
+        
+    section Hlavní funkce (35 minut)
+        Integrace JavaScriptu: Zpracování událostí
+                              : Interakce s API
+                              : Ukládání dat
+                              : Zpracování chyb
+        
+    section API prohlížeče (45 minut)
+        Integrace platformy: Systém oprávnění
+                            : Storage API
+                            : Správa záložek
+                            : Kontextové menu
+        
+    section Pokročilé funkce (1 týden)
+        Profesionální rozšíření: Skripty na pozadí
+                               : Skripty obsahu
+                               : Kompatibilita napříč prohlížeči
+                               : Optimalizace výkonu
+        
+    section Publikování (2 týdny)
+        Distribuce: Odeslání do obchodu
+                   : Proces schvalování
+                   : Uživatelská zpětná vazba
+                   : Správa aktualizací
+        
+    section Expertní úroveň (1 měsíc)
+        Ekosystém rozšíření: Pokročilá API
+                           : Nejlepší bezpečnostní postupy
+                           : Podnikové funkce
+                           : Integrace rámců
+```
+### 🛠️ Shrnutí vašeho nástroje pro vývoj rozšíření
+
+Po dokončení této lekce nyní máte:
+- **Znalosti architektury prohlížeče**: Pochopení renderovacích motorů, bezpečnostních modelů a integrace rozšíření
+- **Vývojové prostředí**: Moderní nástroje jako Webpack, NPM a možnosti ladění
+- **Základy UI/UX**: Sémantická HTML struktura s postupným odkrýváním obsahu
+- **Povědomí o bezpečnosti**: Pochopení oprávnění prohlížeče a bezpečných vývojových postupů
+- **Pojmy napříč prohlížeči**: Znalost kompatibility a testování
+- **Integrace API**: Základ práce s externími zdroji dat
+- **Profesionální workflow**: Průmyslové standardy vývoje a testování
+
+**Aplikace v reálném světě**: Tyto dovednosti se přímo uplatní v:
+- **Webovém vývoji**: Single-page aplikace a progresivní webové aplikace
+- **Desktopových aplikacích**: Electron a webová desktopová řešení
+- **Mobilním vývoji**: Hybridní aplikace a webové mobilní produkty
+- **Podnikových nástrojích**: Interní produktivní aplikace a automatizace workflow
+- **Open Source**: Přispívání do projektů rozšíření a webových standardů
+
+**Další úroveň**: Jste připraveni přidávat interaktivní funkce, pracovat s browser API a vytvářet rozšíření řešící skutečné uživatelské problémy!
+
 ## Zadání
 
-[Upravte styl svého rozšíření](assignment.md)
+[Restylujte své rozšíření](assignment.md)
 
 ---
 
-**Prohlášení**:  
-Tento dokument byl přeložen pomocí služby AI pro překlady [Co-op Translator](https://github.com/Azure/co-op-translator). Ačkoli se snažíme o přesnost, mějte prosím na paměti, že automatizované překlady mohou obsahovat chyby nebo nepřesnosti. Původní dokument v jeho rodném jazyce by měl být považován za autoritativní zdroj. Pro důležité informace se doporučuje profesionální lidský překlad. Neodpovídáme za žádná nedorozumění nebo nesprávné interpretace vyplývající z použití tohoto překladu.
+<!-- CO-OP TRANSLATOR DISCLAIMER START -->
+**Prohlášení o omezení odpovědnosti**:  
+Tento dokument byl přeložen pomocí služby automatického překladu AI [Co-op Translator](https://github.com/Azure/co-op-translator). Přestože usilujeme o přesnost, mějte prosím na paměti, že automatizované překlady mohou obsahovat chyby nebo nepřesnosti. Původní dokument v jeho rodném jazyce by měl být považován za autoritativní zdroj. Pro důležité informace se doporučuje profesionální lidský překlad. Nejsme odpovědní za jakékoli nedorozumění či chybné výklady vyplývající z použití tohoto překladu.
+<!-- CO-OP TRANSLATOR DISCLAIMER END -->

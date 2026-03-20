@@ -1,59 +1,133 @@
-<!--
-CO_OP_TRANSLATOR_METADATA:
-{
-  "original_hash": "862f7f2ef320f6f8950fae379e6ece45",
-  "translation_date": "2025-10-25T00:44:12+00:00",
-  "source_file": "6-space-game/1-introduction/README.md",
-  "language_code": "sl"
-}
--->
-# Ustvari vesoljsko igro, 1. del: Uvod
+# Ustvarjanje vesoljske igre, del 1: Uvod
 
+```mermaid
+journey
+    title Tvoja Pot Razvoja Iger
+    section Osnove
+      Nauči se arhitekturo iger: 3: Student
+      Razumi dedovanje: 4: Student
+      Razišči kompozicijo: 4: Student
+    section Komunikacija
+      Zgradi pub/sub sistem: 4: Student
+      Načrtuj tok dogodkov: 5: Student
+      Poveži komponente: 5: Student
+    section Uporaba
+      Ustvari igralne predmete: 5: Student
+      Uvedi vzorce: 5: Student
+      Načrtuj strukturo igre: 5: Student
+```
 ![Animacija vesoljske igre, ki prikazuje igranje](../../../../6-space-game/images/pewpew.gif)
 
-Tako kot NASA-jev nadzor misij koordinira več sistemov med vesoljskim izstrelitvijo, bomo zgradili vesoljsko igro, ki prikazuje, kako lahko različni deli programa delujejo skupaj brezhibno. Medtem ko ustvarjate nekaj, kar lahko dejansko igrate, se boste naučili osnovnih programskih konceptov, ki veljajo za vsak projekt programske opreme.
+Tako kot misijski nadzor NASA usklajuje več sistemov med izstrelitvijo v vesolje, bomo ustvarili vesoljsko igro, ki bo prikazala, kako različni deli programa lahko sodelujejo brezhibno. Med tem, ko boste ustvarjali nekaj, kar lahko tudi zaigrate, boste spoznali osnovne programske koncepte, ki veljajo za vsak programski projekt.
 
-Raziskali bomo dva temeljna pristopa k organizaciji kode: dedovanje in kompozicijo. To niso le akademski koncepti – to so isti vzorci, ki poganjajo vse od video iger do bančnih sistemov. Prav tako bomo implementirali komunikacijski sistem, imenovan pub/sub, ki deluje kot komunikacijska omrežja, uporabljena v vesoljskih plovilih, in omogoča različnim komponentam deljenje informacij brez ustvarjanja odvisnosti.
+Raziskali bomo dva osnovna pristopa za organizacijo kode: dedovanje in kompozicijo. To niso le akademski koncepti – gre za iste vzorce, ki poganjajo vse od video iger do bančnih sistemov. Uvedli bomo tudi sistem komunikacije, imenovan pub/sub, ki deluje podobno kot komunikacijska omrežja v vesoljskih plovilih, in omogoča različnim komponentam, da delijo informacije brez ustvarjanja odvisnosti.
 
-Do konca te serije boste razumeli, kako zgraditi aplikacije, ki se lahko razširijo in razvijajo – ne glede na to, ali razvijate igre, spletne aplikacije ali kateri koli drug sistem programske opreme.
+Na koncu te serije boste razumeli, kako ustvariti aplikacije, ki lahko rastejo in se razvijajo – ne glede na to, ali razvijate igre, spletne aplikacije ali kakršenkoli drug programski sistem.
 
-## Predhodni kviz pred predavanjem
+```mermaid
+mindmap
+  root((Igra Arhitektura))
+    Object Organization
+      Dedovanje
+      Kompozicija
+      Razredne Hierarhije
+      Mešanje Vedenja
+    Communication Patterns
+      Pub/Sub Sistem
+      Oddajniki Dogodkov
+      Pošiljanje Sporočil
+      Ohlapno Povezovanje
+    Game Objects
+      Lastnosti (x, y)
+      Vedenja (premik, trčenje)
+      Upravljanje Življenjskega Cikla
+      Upravljanje Stanja
+    Design Patterns
+      Tovarne Funkcije
+      Vzorec Opazovalca
+      Komponentni Sistem
+      Arhitektura, Usmerjena v Dogodke
+    Scalability
+      Modularna Oblika
+      Vzdržen Koda
+      Strategije Testiranja
+      Optimizacija Uspešnosti
+```
+## Predpredavanje kviz
 
-[Predhodni kviz pred predavanjem](https://ff-quizzes.netlify.app/web/quiz/29)
+[Predpredavanje kviz](https://ff-quizzes.netlify.app/web/quiz/29)
 
 ## Dedovanje in kompozicija v razvoju iger
 
-Ko projekti postajajo bolj kompleksni, postane organizacija kode ključnega pomena. Kar se začne kot preprost skript, lahko postane težko vzdrževati brez ustrezne strukture – podobno kot so misije Apollo zahtevale skrbno koordinacijo med tisočimi komponentami.
+Ko projekti rastejo v kompleksnosti, postane organizacija kode ključna. To, kar se začne kot enostaven skript, je lahko težko vzdrževati brez ustrezne strukture – podobno kot so misije Apollo zahtevale skrbno koordinacijo med tisočimi komponentami.
 
-Raziskali bomo dva temeljna pristopa za organizacijo kode: dedovanje in kompozicijo. Vsak ima svoje prednosti, razumevanje obeh pa vam pomaga izbrati pravi pristop za različne situacije. Te koncepte bomo prikazali skozi našo vesoljsko igro, kjer morajo junaki, sovražniki, dodatki moči in drugi objekti učinkovito sodelovati.
+Raziskali bomo dva osnovna pristopa za organizacijo kode: dedovanje in kompozicijo. Vsak ima svoje prednosti, in razumevanje obeh vam pomaga izbrati pravi pristop za različne situacije. Te koncepte bomo prikazali na naši vesoljski igri, kjer morajo junaki, sovražniki, močvirniki in drugi predmeti učinkovito sodelovati.
 
-✅ Ena najbolj znanih knjig o programiranju je povezana z [vzorci oblikovanja](https://en.wikipedia.org/wiki/Design_Patterns).
+✅ Ena najbolj znanih programerskih knjig se nanaša na [vzorce načrtovanja](https://en.wikipedia.org/wiki/Design_Patterns).
 
-V vsaki igri imate `objekte igre` – interaktivne elemente, ki naseljujejo vaš igralni svet. Junaki, sovražniki, dodatki moči in vizualni učinki so vsi objekti igre. Vsak obstaja na določenih koordinatah zaslona z uporabo vrednosti `x` in `y`, podobno kot pri risanju točk na koordinatni ravnini.
+V vsaki igri imate `igre objekte` – interaktivne elemente, ki napolnjujejo vaš igrivi svet. Junaki, sovražniki, močvirniki in vizualni učinki so vsi igrivi objekti. Vsak obstaja na določenih zaslonskih koordinatah z vrednostmi `x` in `y`, podobno kot točke na koordinatnem sistemu.
 
-Kljub njihovim vizualnim razlikam ti objekti pogosto delijo osnovna vedenja:
+Kljub njihovim vizualnim razlikam ti predmeti pogosto delijo osnovna vedenja:
 
-- **Obstajajo nekje** – Vsak objekt ima x in y koordinate, da igra ve, kje ga narisati
-- **Veliko jih se premika** – Junaki tečejo, sovražniki lovijo, krogle letijo po zaslonu
-- **Imajo življenjsko dobo** – Nekateri ostanejo za vedno, drugi (kot eksplozije) se pojavijo za kratek čas in izginejo
-- **Reagirajo na stvari** – Ko se stvari zaletijo, se dodatki moči poberejo, zdravstvene vrstice se posodobijo
+- **Obstajajo nekje** – vsak predmet ima x in y koordinate, da igra ve, kje ga narisati
+- **Veliko se jih lahko premika** – junaki tečejo, sovražniki lovijo, krogle letijo po zaslonu
+- **Imajo življenjski cikel** – nekateri ostanejo za vedno, drugi (kot eksplozije) se pojavijo za kratek čas in izginejo
+- **Se odzivajo na dogajanje** – ko se stvari trčijo, močvirniki pridobijo, vrstica zdravja se posodobi
 
-✅ Pomislite na igro, kot je Pac-Man. Ali lahko prepoznate štiri zgoraj navedene tipe objektov v tej igri?
+✅ Pomislite na igro, kot je Pac-Man. Ali lahko prepoznate štiri vrste zgoraj naštetih predmetov v tej igri?
 
-### Izražanje vedenja skozi kodo
+```mermaid
+classDiagram
+    class GameObject {
+        +x: number
+        +y: number
+        +type: string
+        +exists_somewhere()
+    }
+    
+    class MovableObject {
+        +moveTo(x, y)
+        +can_move_around()
+    }
+    
+    class TemporaryObject {
+        +lifespan: number
+        +has_lifespan()
+    }
+    
+    class InteractiveObject {
+        +onCollision()
+        +reacts_to_stuff()
+    }
+    
+    GameObject <|-- MovableObject
+    GameObject <|-- TemporaryObject
+    GameObject <|-- InteractiveObject
+    
+    MovableObject <|-- Hero
+    MovableObject <|-- Enemy
+    MovableObject <|-- Bullet
+    
+    TemporaryObject <|-- PowerUp
+    TemporaryObject <|-- Explosion
+    
+    InteractiveObject <|-- Collectible
+    InteractiveObject <|-- Obstacle
+```
+### Izražanje vedenja s kodo
 
-Zdaj, ko razumete skupna vedenja, ki jih delijo objekti igre, raziščimo, kako implementirati ta vedenja v JavaScriptu. Vedenje objektov lahko izrazite skozi metode, ki so priložene razredom ali posameznim objektom, in obstaja več pristopov, med katerimi lahko izbirate.
+Zdaj, ko razumete skupna vedenja, ki jih imajo igralni predmeti, poglejmo, kako jih implementirati v JavaScript. Vedenje objekta lahko izrazite preko metod, pritrjenih na razrede ali posamezne objekte, za kar obstaja več pristopov.
 
-**Pristop, ki temelji na razredih**
+**Pristop na osnovi razredov**
 
-Razredi in dedovanje zagotavljajo strukturiran pristop k organizaciji objektov igre. Tako kot taksonomski klasifikacijski sistem, ki ga je razvil Carl Linnaeus, začnete z osnovnim razredom, ki vsebuje skupne lastnosti, nato pa ustvarite specializirane razrede, ki podedujejo te osnove, hkrati pa dodajo specifične sposobnosti.
+Razredi in dedovanje nudijo strukturiran način za organizacijo igralnih predmetov. Tako kot taksonomski sistem, ki ga je razvil Carl Linnaeus, začnete z osnovnim razredom, ki vsebuje skupne lastnosti, nato pa ustvarite specializirane razrede, ki dedujejo te osnovne lastnosti in hkrati dodajo specifične zmožnosti.
 
-✅ Dedovanje je pomemben koncept za razumevanje. Več o tem preberite v [članku MDN o dedovanju](https://developer.mozilla.org/docs/Web/JavaScript/Inheritance_and_the_prototype_chain).
+✅ Dedovanje je pomemben koncept za razumevanje. Več o tem preberite v [MDN članku o dedovanju](https://developer.mozilla.org/docs/Web/JavaScript/Inheritance_and_the_prototype_chain).
 
-Tukaj je prikazano, kako lahko implementirate objekte igre z uporabo razredov in dedovanja:
+Tako lahko implementirate igralne predmete z uporabo razredov in dedovanja:
 
 ```javascript
-// Step 1: Create the base GameObject class
+// Korak 1: Ustvarite osnovno razredno GameObject
 class GameObject {
   constructor(x, y, type) {
     this.x = x;
@@ -63,19 +137,19 @@ class GameObject {
 }
 ```
 
-**Razčlenimo to korak za korakom:**
-- Ustvarjamo osnovno predlogo, ki jo lahko uporabi vsak objekt igre
-- Konstruktor shrani, kje se objekt nahaja (`x`, `y`) in kakšen tip objekta je
-- To postane osnova, na kateri bodo gradili vsi vaši objekti igre
+**Razdelimo to korak za korakom:**
+- Ustvarjamo osnovni predlogo, ki jo lahko uporabi vsak igralni predmet
+- Konstruktor shrani, kje predmet je (`x`, `y`) in kakšne vrste je
+- To postane temelj, na katerem bodo gradili vsi vaši igralni predmeti
 
 ```javascript
-// Step 2: Add movement capability through inheritance
+// Korak 2: Dodajte možnost gibanja prek dedovanja
 class Movable extends GameObject {
   constructor(x, y, type) {
-    super(x, y, type); // Call parent constructor
+    super(x, y, type); // Pokličite konstruktor nadrazreda
   }
 
-  // Add the ability to move to a new position
+  // Dodajte možnost premika na novo mesto
   moveTo(x, y) {
     this.x = x;
     this.y = y;
@@ -85,45 +159,45 @@ class Movable extends GameObject {
 
 **V zgornjem primeru smo:**
 - **Razširili** razred GameObject, da dodamo funkcionalnost premikanja
-- **Poklicali** konstruktor starša z uporabo `super()`, da inicializiramo podedovane lastnosti
-- **Dodali** metodo `moveTo()`, ki posodobi položaj objekta
+- **Poklicali** konstruktor nadrazreda z `super()`, da inicializiramo dedovane lastnosti
+- **Dodali** metodo `moveTo()`, ki posodobi pozicijo predmeta
 
 ```javascript
-// Step 3: Create specific game object types
+// Korak 3: Ustvarite določene vrste igralnih objektov
 class Hero extends Movable {
   constructor(x, y) {
-    super(x, y, 'Hero'); // Set type automatically
+    super(x, y, 'Hero'); // Nastavite vrsto samodejno
   }
 }
 
 class Tree extends GameObject {
   constructor(x, y) {
-    super(x, y, 'Tree'); // Trees don't need movement
+    super(x, y, 'Tree'); // Drevesa ne potrebujejo gibanja
   }
 }
 
-// Step 4: Use your game objects
+// Korak 4: Uporabite svoje igralne objekte
 const hero = new Hero(0, 0);
-hero.moveTo(5, 5); // Hero can move!
+hero.moveTo(5, 5); // Junak se lahko premika!
 
 const tree = new Tree(10, 15);
-// tree.moveTo() would cause an error - trees can't move
+// tree.moveTo() bi povzročil napako - drevesa se ne morejo premikati
 ```
 
 **Razumevanje teh konceptov:**
-- **Ustvarja** specializirane tipe objektov, ki podedujejo ustrezna vedenja
-- **Prikazuje**, kako dedovanje omogoča selektivno vključevanje funkcij
-- **Pokaže**, da se junaki lahko premikajo, medtem ko drevesa ostajajo na mestu
-- **Ilustrira**, kako hierarhija razredov preprečuje neprimerna dejanja
+- **Ustvarja** specializirane tipe predmetov, ki dedujejo ustrezna vedenja
+- **Prikazuje**, kako dedovanje omogoča selektivno vključevanje lastnosti
+- **Pokaže**, da se lahko junaki premikajo, medtem ko drevesa ostanejo mirna
+- **Prikazuje**, kako hierarhija razredov preprečuje neustrezna dejanja
 
-✅ Vzemite si nekaj minut in si zamislite junaka iz Pac-Mana (na primer Inky, Pinky ali Blinky) ter kako bi bil napisan v JavaScriptu.
+✅ Vzemite si nekaj minut in ponovno zamislite junaka Pac-Man (na primer Inkyja, Pinkyja ali Blinkyja) in kako bi ga napisali v JavaScriptu.
 
-**Pristop kompozicije**
+**Pristop s kompozicijo**
 
-Kompozicija sledi modularni oblikovalski filozofiji, podobno kot inženirji oblikujejo vesoljska plovila z zamenljivimi komponentami. Namesto da dedujete od starševskega razreda, kombinirate specifična vedenja, da ustvarite objekte z natančno funkcionalnostjo, ki jo potrebujejo. Ta pristop ponuja fleksibilnost brez togih hierarhičnih omejitev.
+Kompozicija sledi filozofiji modularnega oblikovanja, podobno kot inženirji oblikujejo vesoljska plovila z zamenljivimi komponentami. Namesto dedovanja od nadrazreda kombinirate specifična vedenja, da ustvarite predmete z natanko tisto funkcionalnostjo, ki jo potrebujejo. Ta pristop ponuja fleksibilnost brez stroge hierarhije.
 
 ```javascript
-// Step 1: Create base behavior objects
+// Korak 1: Ustvarite osnovne predmete vedenja
 const gameObject = {
   x: 0,
   y: 0,
@@ -138,16 +212,16 @@ const movable = {
 };
 ```
 
-**Kaj počne ta koda:**
-- **Definira** osnovni `gameObject` z lastnostmi položaja in tipa
-- **Ustvari** ločen objekt vedenja `movable` z funkcionalnostjo premikanja
-- **Loči** skrbi z ohranjanjem podatkov o položaju in logike premikanja neodvisno
+**Kaj ta koda počne:**
+- **Določi** osnovni `gameObject` z lastnostmi položaja in tipa
+- **Ustvari** ločen objekt vedenja `movable` s funkcionalnostjo premikanja
+- **Loči** skrbi tako, da ohrani podatke o položaju in logiko premikanja neodvisne
 
 ```javascript
-// Step 2: Compose objects by combining behaviors
+// Korak 2: Sestavite objekte z združevanjem vedenj
 const movableObject = { ...gameObject, ...movable };
 
-// Step 3: Create factory functions for different object types
+// Korak 3: Ustvarite tovarniške funkcije za različne tipe objektov
 function createHero(x, y) {
   return {
     ...movableObject,
@@ -168,67 +242,127 @@ function createStatic(x, y, type) {
 ```
 
 **V zgornjem primeru smo:**
-- **Združili** osnovne lastnosti objekta z vedenjem premikanja z uporabo sintakse razširitve
-- **Ustvarili** tovarniške funkcije, ki vračajo prilagojene objekte
-- **Omogočili** fleksibilno ustvarjanje objektov brez togih hierarhij razredov
-- **Dovolili**, da imajo objekti natančno tista vedenja, ki jih potrebujejo
+- **Združili** osnovne lastnosti objekta z vedenjem premikanja preko razširjanja (spread syntax)
+- **Ustvarili** pogodarske funkcije, ki vračajo prilagojene objekte
+- **Omogočili** fleksibilno ustvarjanje objektov brez stroge hierarhije razredov
+- **Dovolili** objektom, da imajo natanko tista vedenja, ki jih potrebujejo
 
 ```javascript
-// Step 4: Create and use your composed objects
+// Korak 4: Ustvarite in uporabite svoje sestavljene objekte
 const hero = createHero(10, 10);
-hero.moveTo(5, 5); // Works perfectly!
+hero.moveTo(5, 5); // Deluje popolnoma!
 
 const tree = createStatic(0, 0, 'Tree');
-// tree.moveTo() is undefined - no movement behavior was composed
+// tree.moveTo() ni definirano - ni bil sestavljen noben vedenjski premik
 ```
 
 **Ključne točke za zapomniti:**
 - **Sestavlja** objekte z mešanjem vedenj namesto dedovanja
-- **Ponuja** večjo fleksibilnost kot toge hierarhije dedovanja
-- **Dovoljuje**, da imajo objekti natančno tiste funkcije, ki jih potrebujejo
-- **Uporablja** sodobno sintakso razširitve JavaScript za čisto kombinacijo objektov 
+- **Nudi** večjo fleksibilnost kot stroge dedne hierarhije
+- **Dovoli**, da imajo objekti točno tiste funkcije, ki jih potrebujejo
+- **Uporablja** sodobno JavaScriptovo sintakso razširjanja za čisto združevanje objektov
+
 ```
 
 **Which Pattern Should You Choose?**
 
-> 💡 **Pro Tip**: Both patterns have their place in modern JavaScript development. Classes work well for clearly defined hierarchies, while composition shines when you need maximum flexibility.
+**Which Pattern Should You Choose?**
+
+```mermaid
+quadrantChart
+    title Code Organization Patterns
+    x-axis Simple --> Complex
+    y-axis Rigid --> Flexible
+    quadrant-1 Advanced Composition
+    quadrant-2 Hybrid Approaches
+    quadrant-3 Basic Inheritance
+    quadrant-4 Modern Composition
+    
+    Class Inheritance: [0.3, 0.2]
+    Interface Implementation: [0.6, 0.4]
+    Mixin Patterns: [0.7, 0.7]
+    Pure Composition: [0.8, 0.9]
+    Factory Functions: [0.5, 0.8]
+    Prototype Chain: [0.4, 0.3]
+```
+
+> 💡 **Pameten nasvet**: Obe metodi imata svoj prostor v sodobnem JavaScriptu. Razredi so primerni za jasno definirane hierarhije, medtem ko kompozicija najbolj pride do izraza, ko potrebujete največjo prilagodljivost.
 > 
-**Here's when to use each approach:**
-- **Choose** inheritance when you have clear "is-a" relationships (a Hero *is-a* Movable object)
-- **Select** composition when you need "has-a" relationships (a Hero *has* movement abilities)
-- **Consider** your team's preferences and project requirements
-- **Remember** that you can mix both approaches in the same application
+**Kdaj uporabiti katero metodo:**
+- **Izberite** dedovanje, kadar imate jasne odnose "je tipa" (Hero* je tip* premikajočega se objekta)
+- **Izberite** kompozicijo, kadar imate odnose "ima" (Hero *ima* zmožnosti premikanja)
+- **Upoštevajte** preference vaše ekipe in zahteve projekta
+- **Ne pozabite**, da lahko oba pristopa zmešate v isti aplikaciji
 
-## Communication Patterns: The Pub/Sub System
+### 🔄 **Pedagoški pregled**
+**Razumevanje organizacije predmetov**: Preden nadaljujete s komunikacijskimi vzorci, poskrbite, da lahko:
+- ✅ Razložite razliko med dedovanjem in kompozicijo
+- ✅ Prepoznate, kdaj uporabiti razrede in kdaj fabrikske funkcije
+- ✅ Razumete, kako deluje ključna beseda `super()` pri dedovanju
+- ✅ Spoznate prednosti obe metodi za razvoj iger
 
-As applications grow complex, managing communication between components becomes challenging. The publish-subscribe pattern (pub/sub) solves this problem using principles similar to radio broadcasting – one transmitter can reach multiple receivers without knowing who's listening.
+**Hitri samopreizkus**: Kako bi ustvarili letečega sovražnika, ki se lahko premika in leti?
+- **Dedovanje:** `class FlyingEnemy extends Movable`
+- **Kompozicija:** `{ ...movable, ...flyable, ...gameObject }`
 
-Consider what happens when a hero takes damage: the health bar updates, sound effects play, visual feedback appears. Rather than coupling the hero object directly to these systems, pub/sub allows the hero to broadcast a "damage taken" message. Any system that needs to respond can subscribe to this message type and react accordingly.
+**Povezava z realnostjo**: Ti vzorci se pojavijo povsod:
+- **React komponente:** Props (kompozicija) proti dedovanju razredov
+- **Igralniški motorji:** Sistemi zbirka-komponent uporabljajo kompozicijo
+- **Mobilne aplikacije:** UI ogrodja pogosto uporabljajo dedno hierarhijo
 
-✅ **Pub/Sub** stands for 'publish-subscribe'
+## Komunikacijski vzorci: sistem Pub/Sub
 
-### Understanding the Pub/Sub Architecture
+Ko aplikacije postanejo zapletene, je upravljanje komunikacije med komponentami zahtevno. Vzorec objavi-naroči se (pub/sub) rešuje ta problem s principih, podobnim radijskemu oddajanju – en oddajnik lahko doseže več prejemnikov, ne da bi vedel, kdo neposredno posluša.
 
-The pub/sub pattern keeps different parts of your application loosely coupled, meaning they can work together without being directly dependent on each other. This separation makes your code more maintainable, testable, and flexible to changes.
+Pomislite, kaj se zgodi, ko junak prejme poškodbo: vrstica zdravja se posodobi, zazvoni zvok, pojavi se vizualni povratni signal. Namesto neposrednega povezovanja junaka s temi sistemi, pub/sub omogoča junaku, da odda sporočilo "poškodba prejeta". Vsak sistem, ki mora nanj reagirati, se lahko naroči na ta tip sporočila in odzove.
 
-**The key players in pub/sub:**
-- **Messages** – Simple text labels like `'PLAYER_SCORED'` that describe what happened (plus any extra info)
-- **Publishers** – The objects that shout out "Something happened!" to anyone who's listening
-- **Subscribers** – The objects that say "I care about that event" and react when it happens
-- **Event System** – The middleman that makes sure messages get to the right listeners
+✅ **Pub/Sub** pomeni 'publish-subscribe' (objavi-naroči se)
 
-### Building an Event System
+```mermaid
+flowchart TD
+    A[Junak prejme poškodbo] --> B[Objavi: HERO_DAMAGED]
+    B --> C[Sistem dogodkov]
+    
+    C --> D[Naročnik zdravstvenega kazalnika]
+    C --> E[Naročnik zvočnega sistema]
+    C --> F[Naročnik vizualnih efektov]
+    C --> G[Naročnik sistema dosežkov]
+    
+    D --> H[Posodobi prikaz zdravja]
+    E --> I[Predvajaj zvok poškodbe]
+    F --> J[Prikaži rdeči utrip]
+    G --> K[Preveri dosežke preživetja]
+    
+    style A fill:#ffebee
+    style B fill:#e1f5fe
+    style C fill:#e8f5e8
+    style H fill:#fff3e0
+    style I fill:#fff3e0
+    style J fill:#fff3e0
+    style K fill:#fff3e0
+```
+### Razumevanje arhitekture Pub/Sub
 
-Let's create a simple but powerful event system that demonstrates these concepts:
+Vzorec pub/sub ohranja različne dele vaše aplikacije ohlapno povezane, kar pomeni, da lahko sodelujejo brez neposredne odvisnosti drug od drugega. Ta ločitev naredi vašo kodo bolj vzdržno, testno in prilagodljivo za spremembe.
+
+**Ključni igralci v pub/sub:**
+- **Sporočila** – Preprosti tekstovni oznaki, kot `'PLAYER_SCORED'`, ki opisujejo dogajanje (in morebitne dodatne informacije)
+- **Izdajatelji** – Objekti, ki kričijo "Nekaj se je zgodilo!" vsem poslušalcem
+- **Naročniki** – Objekti, ki rečejo "Zanimam se za ta dogodek" in se odzovejo, ko se zgodi
+- **Dogodkovni sistem** – Posrednik, ki zagotavlja, da sporočila pridejo do pravih poslušalcev
+
+### Ustvarjanje dogodkovnega sistema
+
+Ustvarimo preprost, a močan dogodekni sistem, ki prikazuje te koncepte:
 
 ```javascript
-// Step 1: Create the EventEmitter class
+// Korak 1: Ustvarite razred EventEmitter
 class EventEmitter {
   constructor() {
-    this.listeners = {}; // Store all event listeners
+    this.listeners = {}; // Shranite vse poslušalce dogodkov
   }
   
-  // Register a listener for a specific message type
+  // Registrirajte poslušalca za določen tip sporočila
   on(message, listener) {
     if (!this.listeners[message]) {
       this.listeners[message] = [];
@@ -236,7 +370,7 @@ class EventEmitter {
     this.listeners[message].push(listener);
   }
   
-  // Send a message to all registered listeners
+  // Pošljite sporočilo vsem registriranim poslušalcem
   emit(message, payload = null) {
     if (this.listeners[message]) {
       this.listeners[message].forEach(listener => {
@@ -247,37 +381,37 @@ class EventEmitter {
 }
 ```
 
-**Razčlenitev, kaj se tukaj dogaja:**
+**Analiza dogajanja tukaj:**
 - **Ustvari** centralni sistem za upravljanje dogodkov z uporabo preprostega razreda
-- **Shrani** poslušalce v objekt, organiziran po tipih sporočil
+- **Shranjuje** poslušalce v objekt organiziran po tipu sporočila
 - **Registrira** nove poslušalce z metodo `on()`
-- **Oddaja** sporočila vsem zainteresiranim poslušalcem z uporabo `emit()`
-- **Podpira** opcijske podatkovne pakete za posredovanje ustreznih informacij
+- **Oddaja** sporočila vsem zainteresiranim poslušalcem z metodo `emit()`
+- **Podpira** večkratne prenosne podatke za sporočanje pomembnih informacij
 
 ### Vse skupaj: praktičen primer
 
-Dobro, poglejmo to v praksi! Zgradili bomo preprost sistem premikanja, ki prikazuje, kako čist in prilagodljiv je lahko pub/sub:
+Poglejmo, kako to deluje! Ustvarili bomo preprost sistem za premikanje, ki pokaže, kako čist in prilagodljiv je pub/sub:
 
 ```javascript
-// Step 1: Define your message types
+// Korak 1: Določite svoje vrste sporočil
 const Messages = {
   HERO_MOVE_LEFT: 'HERO_MOVE_LEFT',
   HERO_MOVE_RIGHT: 'HERO_MOVE_RIGHT',
   ENEMY_SPOTTED: 'ENEMY_SPOTTED'
 };
 
-// Step 2: Create your event system and game objects
+// Korak 2: Ustvarite svoj sistem dogodkov in igralne objekte
 const eventEmitter = new EventEmitter();
 const hero = createHero(0, 0);
 ```
 
-**Kaj počne ta koda:**
-- **Definira** objekt konstant, da prepreči tipkarske napake v imenih sporočil
-- **Ustvari** instanco oddajnika dogodkov za upravljanje vse komunikacije
+**Kaj ta koda počne:**
+- **Določi** objekt s konstantami, da prepreči tipkarske napake pri imenih sporočil
+- **Ustvari** instanco event emitterja za obdelavo vse komunikacije
 - **Inicializira** junaka na začetnem položaju
 
 ```javascript
-// Step 3: Set up event listeners (subscribers)
+// Korak 3: Nastavite poslušalce dogodkov (naročnike)
 eventEmitter.on(Messages.HERO_MOVE_LEFT, () => {
   hero.moveTo(hero.x - 5, hero.y);
   console.log(`Hero moved to position: ${hero.x}, ${hero.y}`);
@@ -290,13 +424,13 @@ eventEmitter.on(Messages.HERO_MOVE_RIGHT, () => {
 ```
 
 **V zgornjem primeru smo:**
-- **Registrirali** poslušalce dogodkov, ki se odzivajo na sporočila o premikanju
-- **Posodobili** junakov položaj glede na smer premikanja
-- **Dodali** beleženje v konzolo za sledenje spremembam junakovega položaja
-- **Ločili** logiko premikanja od obdelave vnosa
+- **Registrirali** poslušalce dogodkov, ki reagirajo na premike
+- **Posodobili** položaj junaka glede na smer premikanja
+- **Dodali** izpise v konzolo za sledenje spremembam položaja junaka
+- **Ločili** logiko premikanja od upravljanja vnosa
 
 ```javascript
-// Step 4: Connect keyboard input to events (publishers)
+// Korak 4: Povežite vnos z tipkovnice z dogodki (izdajatelji)
 window.addEventListener('keydown', (event) => {
   switch(event.key) {
     case 'ArrowLeft':
@@ -309,61 +443,212 @@ window.addEventListener('keydown', (event) => {
 });
 ```
 
-**Razumevanje teh konceptov:**
-- **Povezuje** vnos s tipkovnico z dogodki igre brez tesnega povezovanja
-- **Omogoča**, da sistem vnosa posredno komunicira z objekti igre
-- **Dovoljuje**, da se več sistemov odzove na iste dogodke tipkovnice
-- **Olajša** spreminjanje tipk ali dodajanje novih metod vnosa
+**Razumevanje konceptov:**
+- **Povezuje** vnos z tipkovnice z igralnimi dogodki brez tesne povezave
+- **Omogoča** sistemu vhodov, da komunicira z igralnimi predmeti posredno
+- **Dovoli**, da več sistemov reagira na iste dogodke z tipkovnice
+- **Poenostavi** spremembo tipk ali dodajanje novih načinov vnosa
 
-> 💡 **Nasvet**: Lepota tega vzorca je v njegovi prilagodljivosti! Z lahkoto lahko dodate zvočne učinke, tresenje zaslona ali delce tako, da preprosto dodate več poslušalcev dogodkov – ni treba spreminjati obstoječe kode za tipkovnico ali premikanje.
+```mermaid
+sequenceDiagram
+    participant User
+    participant Keyboard
+    participant EventEmitter
+    participant Hero
+    participant SoundSystem
+    participant Camera
+    
+    User->>Keyboard: Pritisne ArrowLeft
+    Keyboard->>EventEmitter: emit('HERO_MOVE_LEFT')
+    EventEmitter->>Hero: Premakni levo za 5 slikovnih pik
+    EventEmitter->>SoundSystem: Predvajaj zvok koraka
+    EventEmitter->>Camera: Sledi heroju
+    
+    Hero->>Hero: Posodobi položaj
+    SoundSystem->>SoundSystem: Predvajaj zvok
+    Camera->>Camera: Prilagodi pogled
+```
+> 💡 **Pameten nasvet**: Lepota tega vzorca je njegova prilagodljivost! Z lahkoto lahko dodate zvočne učinke, tresenje zaslona ali delce, tako da preprosto dodate več poslušalcev dogodkov – ni potrebe po spreminjanju obstoječe kode za tipkovnico ali premikanje.
 > 
-**Zakaj vam bo ta pristop všeč:**
-- Dodajanje novih funkcij postane zelo enostavno – samo poslušajte dogodke, ki vas zanimajo
-- Več stvari se lahko odzove na isti dogodek, ne da bi se medsebojno motile
-- Testiranje postane veliko enostavnejše, ker vsak del deluje neodvisno
-- Ko se nekaj pokvari, točno veste, kje iskati
+**Zakaj boste ljubili ta pristop:**
+- Dodajanje novih funkcij je zelo enostavno – samo poslušajte za dogodke, ki so vam pomembni
+- Več stvari lahko reagira na isti dogodek brez medsebojnega motenja
+- Testiranje je veliko lažje, ker vsak del deluje samostojno
+- Če se kaj pokvari, natančno veste, kje iskati
 
-### Zakaj se pub/sub učinkovito prilagaja
+### Zakaj pub/sub učinkovito skalira
 
-Vzorec pub/sub ohranja preprostost, ko aplikacije postajajo bolj kompleksne. Ne glede na to, ali upravljate desetine sovražnikov, dinamične posodobitve uporabniškega vmesnika ali zvočne sisteme, vzorec obvladuje povečano kompleksnost brez sprememb v arhitekturi. Nove funkcije se integrirajo v obstoječi sistem dogodkov, ne da bi vplivale na obstoječo funkcionalnost.
+Vzorec pub/sub ohranja preprostost, ko aplikacije rastejo v kompleksnosti. Ne glede na upravljanje desetine sovražnikov, dinamične posodobitve vmesnika ali zvočne sisteme, vzorec obvladuje rast brez sprememb v arhitekturi. Nove funkcije se vključijo v obstoječi dogodekni sistem brez poseganja v že uveljavljeno funkcionalnost.
 
-> ⚠️ **Pogosta napaka**: Ne ustvarjajte preveč specifičnih tipov sporočil že na začetku. Začnite s širokimi kategorijami in jih prilagodite, ko postanejo potrebe vaše igre bolj jasne.
+> ⚠️ **Pogosta napaka**: Ne ustvarjajte preveč posebnih vrst sporočil prezgodaj. Začnite s širokimi kategorijami in jih natančneje določite, ko se potrebe igre jasneje oblikujejo.
 > 
-**Najboljše prakse, ki jih je treba upoštevati:**
-- **Združuje** povezana sporočila v logične kategorije
-- **Uporablja** opisna imena, ki jasno označujejo, kaj se je zgodilo
-- **Ohranja** podatkovne pakete sporočil preproste in osredotočene
-- **Dokumentira** tipe sporočil za sodelovanje ekipe
+**Najboljše prakse:**
+- **Združuje** sorodna sporočila v logične skupine
+- **Uporablja** opisna imena, ki jasno kažejo, kaj se je zgodilo
+- **Ohranja** podatke v sporočilih preproste in ciljno usmerjene
+- **Dokumentira** vaše tipe sporočil za sodelovanje ekipe
+
+### 🔄 **Pedagoški pregled**
+**Razumevanje arhitekture na osnovi dogodkov**: Preverite svoje znanje o celotnem sistemu:
+- ✅ Kako vzorec pub/sub preprečuje tesno povezavo med komponentami?
+- ✅ Zakaj je lažje dodajati nove funkcije z arhitekturo, ki temelji na dogodkih?
+- ✅ Kakšno vlogo ima EventEmitter v komunikacijskem toku?
+- ✅ Kako konstantne vrednosti sporočil preprečujejo napake in izboljšujejo vzdržljivost?
+
+**Izziv oblikovanja**: Kako bi z uporabo pub/sub obravnavali te situacije v igri?
+1. **Sovražnik umre**: Posodobitev točk, predvajanje zvoka, pojavljanje močvirnika, odstranjevanje s zaslona
+2. **Nivo končan**: Ustavitev glasbe, prikaz vmesnika, shranjevanje napredka, nalaganje naslednjega nivoja
+3. **Zbran močvirnik**: Izboljšanje sposobnosti, posodobitev vmesnika, predvajanje učinka, začetek časovnika
+
+**Poklicna povezava**: Ta vzorec se pojavlja v:
+- **Frontend ogrodjih**: Sistemi dogodkov v React/Vue
+- **Backend storitvah**: Komunikacija mikroservisov
+- **Igralnih motorjih**: Dogodkovni sistem Unityja
+- **Mobilnem razvoju**: Sistemi obvestil iOS/Android
 
 ---
 
-## Izziv GitHub Copilot Agent 🚀
+## Izziv GitHub Copilot agenta 🚀
 
-Uporabite način Agent za dokončanje naslednjega izziva:
+Uporabite agentni način za dokončanje naslednjega izziva:
 
-**Opis:** Ustvarite preprost sistem objektov igre z uporabo tako dedovanja kot vzorca pub/sub. Implementirali boste osnovno igro, kjer lahko različni objekti komunicirajo prek dogodkov, ne da bi neposredno vedeli drug za drugega.
+**Opis:** Ustvarite preprost sistem igralnih predmetov z uporabo dedovanja in vzorca pub/sub. Implementirali boste osnovno igro, v kateri lahko različni predmeti komunicirajo preko dogodkov, ne da bi neposredno vedeli drug za drugega.
 
-**Navodilo:** Ustvarite sistem igre v JavaScriptu z naslednjimi zahtevami: 1) Ustvarite osnovni razred GameObject z x, y koordinatami in lastnostjo tipa. 2) Ustvarite razred Hero, ki razširi GameObject in se lahko premika. 3) Ustvarite razred Enemy, ki razširi GameObject in lahko lovi junaka. 4) Implementirajte razred EventEmitter za vzorec pub/sub. 5) Nastavite poslušalce dogodkov, tako da, ko se junak premakne, bližnji sovražniki prejmejo dogodek 'HERO_MOVED' in posodobijo svoj položaj, da se premaknejo proti junaku. Vključite izjave console.log, da pokažete komunikacijo med objekti.
+**Navodila:** Ustvarite JavaScript sistem igre z naslednjimi zahtevami: 1) Ustvarite osnovni razred GameObject s koordinatami x, y in lastnostjo tipa. 2) Ustvarite razred Hero, ki podeduje GameObject in se lahko premika. 3) Ustvarite razred Enemy, ki podeduje GameObject in lahko zasleduje junaka. 4) Implementirajte razred EventEmitter za vzorec pub/sub. 5) Nastavite poslušalce dogodkov, da ko se junak premakne, bližnji sovražniki prejmejo dogodek 'HERO_MOVED' in posodobijo svojo pozicijo, da se premaknejo proti junaku. Vključite izpise v konzolo, ki prikazujejo komunikacijo med predmeti.
 
-Več o [načinu agent](https://code.visualstudio.com/blogs/2025/02/24/introducing-copilot-agent-mode) preberite tukaj.
+Več o [agent načinu](https://code.visualstudio.com/blogs/2025/02/24/introducing-copilot-agent-mode) izveste tukaj.
 
 ## 🚀 Izziv
+Razmislite, kako lahko vzorec pub-sub izboljša arhitekturo igre. Določite, kateri elementi naj oddajajo dogodke in kako naj sistem nanje odgovori. Oblikujte koncept igre in načrtujte komunikacijske vzorce med njenimi komponentami.
 
-Razmislite, kako lahko vzorec pub-sub izboljša arhitekturo igre. Določite, katere komponente naj oddajajo dogodke in kako naj sistem nanje odgovarja. Oblikujte koncept igre in začrtajte komunikacijske vzorce med njenimi komponentami.
+## Kvizek po predavanju
 
-## Kviz po predavanju
-
-[Kviz po predavanju](https://ff-quizzes.netlify.app/web/quiz/30)
+[Kvizek po predavanju](https://ff-quizzes.netlify.app/web/quiz/30)
 
 ## Pregled in samostojno učenje
 
-Več o Pub/Sub preberite v [tem članku](https://docs.microsoft.com/azure/architecture/patterns/publisher-subscriber/?WT.mc_id=academic-77807-sagibbon).
+Več o Pub/Sub se naučite [z branjem o tem](https://docs.microsoft.com/azure/architecture/patterns/publisher-subscriber/?WT.mc_id=academic-77807-sagibbon).
+
+### ⚡ **Kaj lahko storite v naslednjih 5 minutah**
+- [ ] Odprite poljubno HTML5 igro na spletu in si oglejte njeno kodo z orodji DevTools
+- [ ] Ustvarite enostaven element HTML5 Canvas in narišite osnovno obliko
+- [ ] Poskusite uporabiti `setInterval` za ustvarjanje enostavne animacijske zanke
+- [ ] Raziščite dokumentacijo Canvas API in preizkusite metodo risanja
+
+### 🎯 **Kaj lahko dosežete v tem času**
+- [ ] Dokončajte kviz po pouku in razumite koncepte razvoja iger
+- [ ] Nastavite strukturo vašega projekt igre z datotekami HTML, CSS in JavaScript
+- [ ] Ustvarite osnovno zanko igre, ki se nenehno posodablja in upodablja
+- [ ] Narišite svoje prve igralne like na platno
+- [ ] Implementirajte osnovno nalaganje sredstev za slike in zvoke
+
+### 📅 **Vaša enotedenska izdelava igre**
+- [ ] Dokončajte celotno vesoljsko igro z vsemi načrtovanimi funkcijami
+- [ ] Dodajte izpiljeno grafiko, zvočne učinke in gladke animacije
+- [ ] Implementirajte stanja igre (začetni zaslon, igranje, konec igre)
+- [ ] Ustvarite sistem točkovanja in sledenje napredku igralca
+- [ ] Naredite igro odzivno in dostopno na različnih napravah
+- [ ] Delite svojo igro na spletu in pridobite povratne informacije igralcev
+
+### 🌟 **Vaša mesečna razvojna pot igre**
+- [ ] Razvijte več iger, ki raziskujejo različne zvrsti in mehanizme
+- [ ] Naučite se ogrodja za razvoj iger, kot sta Phaser ali Three.js
+- [ ] Sodelujte v odprtokodnih projektih za razvoj iger
+- [ ] Obvladajte napredne vzorce programiranja iger in optimizacijo
+- [ ] Ustvarite portfelj, ki prikazuje vaše razvijalske sposobnosti
+- [ ] Mentorirajte druge, ki jih zanima razvoj iger in interaktivnih medijev
+
+## 🎯 Časovni načrt vašega obvladovanja razvoja iger
+
+```mermaid
+timeline
+    title Napredek pri učenju arhitekture iger
+    
+    section Objektni vzorci (20 minut)
+        Organizacija kode: Dedovanje razredov
+                         : Vzorci sestavljanja
+                         : Tovarniške funkcije
+                         : Mešanje obnašanja
+        
+    section Komunikacijski sistemi (25 minut)
+        Arhitektura dogodkov: Uvedba Pub/Sub
+                          : Oblikovanje sporočil
+                          : Oddajniki dogodkov
+                          : Ohlapno povezovanje
+        
+    section Oblikovanje objekta igre (30 minut)
+        Sistemi entitet: Upravljanje lastnosti
+                      : Sestavljanje obnašanja
+                      : Upravljanje stanja
+                      : Upravljanje življenjskega cikla
+        
+    section Arhitekturni vzorci (35 minut)
+        Oblikovanje sistema: Komponentni sistemi
+                     : Vzorec opazovalca
+                     : Vzorec ukaza
+                     : Stroj za stanja
+        
+    section Napredni koncepti (45 minut)
+        Razširljiva arhitektura: Optimizacija zmogljivosti
+                             : Upravljanje z pomnilnikom
+                             : Modularna zasnova
+                             : Strategije testiranja
+        
+    section Koncepti igralnega motorja (1 teden)
+        Profesionalni razvoj: Grafi scen
+                                 : Upravljanje sredstev
+                                 : Predstavitvene cevi
+                                 : Integracija fizike
+        
+    section Mojstrstvo okvira (2 tedna)
+        Sodobni razvoj iger: Vzorci iger z React
+                               : Optimizacija platna
+                               : Osnove WebGL
+                               : PWA igre
+        
+    section Industrijske prakse (1 mesec)
+        Profesionalne veščine: Sodelovanje v timu
+                           : Pregledi kode
+                           : Vzorci oblikovanja iger
+                           : Profiliranje zmogljivosti
+```
+### 🛠️ Povzetek vašega orodja za arhitekturo igre
+
+Po zaključku tega tečaja imate zdaj:
+- **Obvladovanje vzorcev oblikovanja**: Razumevanje kompromisov med dedovanjem in kompozicijo
+- **Arhitektura, vodena z dogodki**: Implementacija pub/sub za razširljivo komunikacijo
+- **Objektno usmerjen dizajn**: Hierarhije razredov in kompozicija vedenja
+- **Sodobni JavaScript**: Tovarniške funkcije, sintaksa razširitve in vzorci ES6+
+- **Razširljiva arhitektura**: Načela ohlapne povezanosti in modularnega oblikovanja
+- **Osnove razvoja iger**: Sistemi entitet in vzorci komponent
+- **Profesionalni vzorci**: Industrijski standardi za organizacijo kode
+
+**Uporabe v resničnem svetu**: Ti vzorci se neposredno uporabljajo na:
+- **Frontend ogrodja**: React/Vue arhitektura komponent in upravljanje stanja
+- **Backend storitve**: Komunikacija mikroservisov in sistemi, vodeni z dogodki
+- **Mobilni razvoj**: Arhitektura aplikacij za iOS/Android in sistemi obveščanja
+- **Igralne pogone**: Unity, Unreal in spletni razvoj iger
+- **Podjetniške programske rešitve**: Dogodkovno virjenje in porazdeljene sisteme
+- **API oblikovanje**: RESTful storitve in komunikacija v realnem času
+
+**Pridobljene profesionalne veščine**: Zdaj lahko:
+- **Oblikujete** razširljive programske arhitekture z dokazanimi vzorci
+- **Implementirate** sisteme, vodene z dogodki, ki obvladujejo kompleksne interakcije
+- **Izbirate** ustrezne strategije organizacije kode za različne scenarije
+- **Lahko odpravljate napake** in vzdržujete ohlapno povezane sisteme učinkovito
+- **Komunicirate** tehnične odločitve z industrijsko standardno terminologijo
+
+**Naslednji nivo**: Pripravljeni ste implementirati te vzorce v resnični igri, raziskovati napredne teme razvoja iger ali uporabiti te arhitekturne koncepte v spletnih aplikacijah!
+
+🌟 **Dosežek odklenjen**: Obvladali ste temeljne vzorce programske arhitekture, ki poganjajo vse od enostavnih iger do zapletenih podjetniških sistemov!
 
 ## Naloga
 
-[Ustvarite osnutek igre](assignment.md)
+[Pripravi osnutek igre](assignment.md)
 
 ---
 
+<!-- CO-OP TRANSLATOR DISCLAIMER START -->
 **Omejitev odgovornosti**:  
-Ta dokument je bil preveden z uporabo storitve za prevajanje AI [Co-op Translator](https://github.com/Azure/co-op-translator). Čeprav si prizadevamo za natančnost, vas prosimo, da upoštevate, da lahko avtomatski prevodi vsebujejo napake ali netočnosti. Izvirni dokument v njegovem maternem jeziku naj se šteje za avtoritativni vir. Za ključne informacije priporočamo profesionalni človeški prevod. Ne prevzemamo odgovornosti za morebitna nesporazumevanja ali napačne razlage, ki izhajajo iz uporabe tega prevoda.
+Ta dokument je bil preveden z uporabo AI prevajalske storitve [Co-op Translator](https://github.com/Azure/co-op-translator). Čeprav si prizadevamo za natančnost, vas opozarjamo, da avtomatizirani prevodi lahko vsebujejo napake ali netočnosti. Izvirni dokument v njegovem izvirnem jeziku velja za avtoritativni vir. Za kritične informacije priporočamo strokovni človeški prevod. Ne odgovarjamo za morebitne nesporazume ali napačne razlage, ki izhajajo iz uporabe tega prevoda.
+<!-- CO-OP TRANSLATOR DISCLAIMER END -->

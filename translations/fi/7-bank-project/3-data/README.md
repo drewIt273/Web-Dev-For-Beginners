@@ -1,12 +1,3 @@
-<!--
-CO_OP_TRANSLATOR_METADATA:
-{
-  "original_hash": "86ee5069f27ea3151389d8687c95fac9",
-  "translation_date": "2025-11-04T01:32:51+00:00",
-  "source_file": "7-bank-project/3-data/README.md",
-  "language_code": "fi"
-}
--->
 # Rakenna pankkisovellus, osa 3: Tietojen hakeminen ja käyttäminen
 
 Ajattele Star Trekin Enterprise-aluksen tietokonetta - kun kapteeni Picard kysyy aluksen tilasta, tiedot ilmestyvät välittömästi ilman, että koko käyttöliittymä sulkeutuu ja rakentuu uudelleen. Juuri tällaista saumattoman tiedonkulun järjestelmää olemme rakentamassa dynaamisella tiedonhakumenetelmällä.
@@ -160,7 +151,7 @@ sequenceDiagram
     Browser->>User: Displays new page (flash/reload)
 ```
 
-![Päivitysprosessi monisivuisessa sovelluksessa](../../../../translated_images/mpa.7f7375a1a2d4aa779d3f928a2aaaf9ad76bcdeb05cfce2dc27ab126024050f51.fi.png)
+![Päivitysprosessi monisivuisessa sovelluksessa](../../../../translated_images/fi/mpa.7f7375a1a2d4aa77.webp)
 
 **Miksi tämä lähestymistapa tuntui kömpelöltä:**
 - Jokainen klikkaus tarkoitti koko sivun uudelleenrakentamista
@@ -187,7 +178,7 @@ sequenceDiagram
     Browser->>User: Shows updated content (no reload)
 ```
 
-![Päivitysprosessi yksisivuisessa sovelluksessa](../../../../translated_images/spa.268ec73b41f992c2a21ef9294235c6ae597b3c37e2c03f0494c2d8857325cc57.fi.png)
+![Päivitysprosessi yksisivuisessa sovelluksessa](../../../../translated_images/fi/spa.268ec73b41f992c2.webp)
 
 **Miksi SPA:t tuntuvat niin paljon paremmilta:**
 - Vain ne osat, jotka oikeasti muuttuivat, päivitetään (fiksua, eikö?)
@@ -515,7 +506,7 @@ if (data.error) {
 
 Nyt kun testaat virheellisellä tilillä, näet hyödyllisen virheilmoituksen suoraan sivulla!
 
-![Näyttökuva, jossa virheilmoitus näkyy kirjautumisen aikana](../../../../translated_images/login-error.416fe019b36a63276764c2349df5d99e04ebda54fefe60c715ee87a28d5d4ad0.fi.png)
+![Näyttökuva, jossa virheilmoitus näkyy kirjautumisen aikana](../../../../translated_images/fi/login-error.416fe019b36a6327.webp)
 
 #### Vaihe 4: Ole inklusiivinen saavutettavuuden suhteen
 
@@ -928,7 +919,7 @@ Valmis viemään pankkisovelluksesi seuraavalle tasolle? Tehdään siitä jotain
 
 Tältä viimeistelty kojelauta voisi näyttää:
 
-![Esimerkkikuva viimeistellystä kojelaudasta tyylittelyn jälkeen](../../../../translated_images/screen2.123c82a831a1d14ab2061994be2fa5de9cec1ce651047217d326d4773a6348e4.fi.png)
+![Esimerkkikuva viimeistellystä kojelaudasta tyylittelyn jälkeen](../../../../translated_images/fi/screen2.123c82a831a1d14a.webp)
 
 Sinun ei tarvitse kopioida tätä täysin - käytä sitä inspiraationa ja tee siitä oman näköisesi!
 

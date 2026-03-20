@@ -1,17 +1,8 @@
-<!--
-CO_OP_TRANSLATOR_METADATA:
-{
-  "original_hash": "9361268ca430b2579375009e1eceb5e5",
-  "translation_date": "2025-10-11T12:16:41+00:00",
-  "source_file": "5-browser-extension/solution/translation/README.fr.md",
-  "language_code": "et"
-}
--->
 # Carbon Trigger brauserilaiend: Valmis kood
 
 Kasutades tmrow CO2 Signal API-d elektritarbimise jälgimiseks, looge brauserilaiend, mis annab teile otse brauseris meeldetuletuse teie piirkonna elektritarbimise kohta. Selle ad hoc laiendi kasutamine aitab teil teha teadlikke otsuseid oma tegevuste kohta, tuginedes nendele andmetele.
 
-![laiendi ekraanipilt](../../../../../translated_images/extension-screenshot.0e7f5bfa110e92e3875e1bc9405edd45a3d2e02963e48900adb91926a62a5807.et.png)
+![laiendi ekraanipilt](../../../../../translated_images/et/extension-screenshot.0e7f5bfa110e92e3.webp)
 
 ## Alustamine
 
@@ -31,7 +22,7 @@ npm run build
 
 Edge'i brauseris installimiseks kasutage brauseri paremas ülanurgas asuvat 'kolme punkti' menüüd, et leida laienduste paneel. Sealt valige 'Laadi lahti pakitud laiend' uue laiendi laadimiseks. Avage 'dist' kaust, kui seda küsitakse, ja laiend laetakse. Kasutamiseks vajate API-võtit CO2 Signal API jaoks ([hankige see e-posti teel siit](https://www.co2signal.com/) - sisestage oma e-posti aadress sellel lehel olevasse kasti) ja [koodi oma piirkonna jaoks](http://api.electricitymap.org/v3/zones), mis vastab [Electricity Map'ile](https://www.electricitymap.org/map) (näiteks Bostonis kasutan 'US-NEISO').
 
-![installimine](../../../../../translated_images/install-on-edge.78634f02842c48283726c531998679a6f03a45556b2ee99d8ff231fe41446324.et.png)
+![installimine](../../../../../translated_images/et/install-on-edge.78634f02842c4828.webp)
 
 Kui API-võti ja piirkond on sisestatud laiendi liidesesse, peaks värviline punkt brauseri laienduste ribal muutuma, et kajastada teie piirkonna energiatarbimist ja anda teile märku, milliseid energiamahukaid tegevusi oleks sobiv teha. Selle 'punktide' süsteemi idee sain [Energy Lollipop laiendist](https://energylollipop.com/) California heitkoguste jaoks.
 

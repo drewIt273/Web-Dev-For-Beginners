@@ -1,12 +1,3 @@
-<!--
-CO_OP_TRANSLATOR_METADATA:
-{
-  "original_hash": "00aa85715e1efd4930c17a23e3012e69",
-  "translation_date": "2025-11-04T01:46:41+00:00",
-  "source_file": "5-browser-extension/1-about-browsers/README.md",
-  "language_code": "fi"
-}
--->
 # Selaimen laajennusprojekti Osa 1: Kaikki selaimista
 
 ```mermaid
@@ -26,7 +17,7 @@ journey
       Polish experience: 5: Student
 ```
 
-![Selaimen luonnos](../../../../translated_images/browser.60317c9be8b7f84adce43e30bff8d47a1ae15793beab762317b2bc6b74337c1a.fi.jpg)
+![Selaimen luonnos](../../../../translated_images/fi/browser.60317c9be8b7f84a.webp)
 > Luonnos: [Wassim Chegham](https://dev.to/wassimchegham/ever-wondered-what-happens-when-you-type-in-a-url-in-an-address-bar-in-a-browser-3dob)
 
 ## Ennakkokysely
@@ -79,7 +70,7 @@ Tämä prosessi muistuttaa, kuinka ensimmäinen selain, WorldWideWeb, suunnitelt
 
 ✅ **Pieni historia**: Ensimmäinen selain oli nimeltään 'WorldWideWeb' ja sen loi Sir Timothy Berners-Lee vuonna 1990.
 
-![varhaiset selaimet](../../../../translated_images/earlybrowsers.d984b711cdf3a42ddac919d46c4b5ca7232f68ccfbd81395e04e5a64c0015277.fi.jpg)
+![varhaiset selaimet](../../../../translated_images/fi/earlybrowsers.d984b711cdf3a42d.webp)
 > Joitakin varhaisia selaimia, lähde: [Karen McGrane](https://www.slideshare.net/KMcGrane/week-4-ixd-history-personal-computing)
 
 ### Kuinka selaimet käsittelevät verkkosisältöä
@@ -198,7 +189,7 @@ quadrantChart
 
 Laajennuksen asennusprosessin ymmärtäminen auttaa sinua ennakoimaan käyttäjäkokemusta, kun ihmiset asentavat laajennuksesi. Asennusprosessi on standardoitu moderneissa selaimissa, pienillä käyttöliittymäsuunnittelun eroilla.
 
-![kuvakaappaus Edge-selaimesta, jossa edge://extensions-sivu ja asetukset-valikko ovat avoinna](../../../../translated_images/install-on-edge.d68781acaf0b3d3dada8b7507cde7a64bf74b7040d9818baaa9070668e819f90.fi.png)
+![kuvakaappaus Edge-selaimesta, jossa edge://extensions-sivu ja asetukset-valikko ovat avoinna](../../../../translated_images/fi/install-on-edge.d68781acaf0b3d3d.webp)
 
 > **Tärkeää**: Varmista, että kehittäjätila on kytketty päälle ja salli laajennusten asentaminen muista kaupoista testatessasi omia laajennuksiasi.
 
@@ -313,10 +304,10 @@ Tämä noudattaa progressiivisen paljastamisen periaatetta, jota on käytetty k�
 ### Laajennusnäkymien yleiskatsaus
 
 **Asetusnäkymä** - Ensimmäisen käyttökerran asetukset:
-![kuvakaappaus valmiista laajennuksesta avoinna selaimessa, jossa näkyy lomake alueen nimen ja API-avaimen syöttämiseksi.](../../../../translated_images/1.b6da8c1394b07491afeb6b2a8e5aca73ebd3cf478e27bcc9aeabb187e722648e.fi.png)
+![kuvakaappaus valmiista laajennuksesta avoinna selaimessa, jossa näkyy lomake alueen nimen ja API-avaimen syöttämiseksi.](../../../../translated_images/fi/1.b6da8c1394b07491.webp)
 
 **Tulosnäkymä** - Hiilijalanjälkitietojen näyttö:
-![kuvakaappaus valmiista laajennuksesta, joka näyttää hiilen käytön ja fossiilisten polttoaineiden prosenttiosuuden US-NEISO-alueelle.](../../../../translated_images/2.1dae52ff0804224692cd648afbf2342955d7afe3b0101b617268130dfb427f55.fi.png)
+![kuvakaappaus valmiista laajennuksesta, joka näyttää hiilen käytön ja fossiilisten polttoaineiden prosenttiosuuden US-NEISO-alueelle.](../../../../translated_images/fi/2.1dae52ff08042246.webp)
 
 ### Asetuslomakkeen rakentaminen
 

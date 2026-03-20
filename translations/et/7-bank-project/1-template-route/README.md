@@ -1,31 +1,87 @@
-<!--
-CO_OP_TRANSLATOR_METADATA:
-{
-  "original_hash": "8a07db14e75ac62f013b7de5df05981d",
-  "translation_date": "2025-10-11T12:05:39+00:00",
-  "source_file": "7-bank-project/1-template-route/README.md",
-  "language_code": "et"
-}
--->
-# Pangaäpi loomine, 1. osa: HTML-mallid ja marsruudid veebirakenduses
+# Ehita pangarakendus osa 1: HTML mallid ja marsruudid veebirakenduses
 
-## Loengu-eelne viktoriin
+```mermaid
+journey
+    title Teie Panga Rakenduse Arenduse Teekond
+    section SPA Põhitõed
+      Mõista ühe lehe rakendusi: 3: Student
+      Õpi mallide kontseptsioone: 4: Student
+      Valda DOM-i manipuleerimist: 4: Student
+    section Marsruutimise Süsteemid
+      Rakenda kliendipoolset marsruutimist: 4: Student
+      Käsitle brauseri ajalugu: 5: Student
+      Loo navigeerimissüsteemid: 5: Student
+    section Professionaalsed Musterid
+      Ehita modulaarne arhitektuur: 5: Student
+      Rakenda parimaid praktikaid: 5: Student
+      Loo kasutajakogemusi: 5: Student
+```
+Kui Apollo 11 juhtimisarvuti navigeeris 1969. aastal Kuule, pidi see lülituma erinevate programmide vahel ilma kogu süsteemi taaskäivitamata. Kaasaegsed veebirakendused töötavad sarnaselt – nad muudavad nähtavat sisu ilma kõike algusest laadimata. See loob sujuva, reageerimisvõimelise kogemuse, mida kasutajad täna ootavad.
 
-[Loengu-eelne viktoriin](https://ff-quizzes.netlify.app/web/quiz/41)
+Erinevalt traditsioonilistest veebisaitidest, mis laadivad iga toimingu puhul terve lehe uuesti, uuendavad kaasaegsed veebirakendused vaid vajalikke osi. See lähenemine, nagu missioonijuhtimine, mis vahetab ekraane, hoides samal ajal pidevat suhtlust, loob voolava kasutajakogemuse, mida oleme harjunud ootama.
 
-### Sissejuhatus
+Siin on, mis muudab vahe nii märkimisväärseks:
 
-Alates JavaScripti tulekust brauseritesse on veebilehed muutunud interaktiivsemaks ja keerukamaks kui kunagi varem. Veebitehnoloogiaid kasutatakse nüüd sageli täielikult funktsionaalsete rakenduste loomiseks, mis töötavad otse brauseris ja mida nimetatakse [veebirakendusteks](https://en.wikipedia.org/wiki/Web_application). Kuna veebirakendused on väga interaktiivsed, ei soovi kasutajad oodata, kuni kogu leht iga toimingu järel uuesti laaditakse. Seetõttu kasutatakse JavaScripti HTML-i otse värskendamiseks DOM-i abil, et pakkuda sujuvamat kasutajakogemust.
+| Traditsioonilised mitmeleheküljelised rakendused | Kaasaegsed üheleheküljelised rakendused |
+|----------------------------|-------------------------|
+| **Navigatsioon** | Iga ekraani puhul kogu lehe uuesti laadimine | Kohene sisu vahetamine |
+| **Tõhusus** | Aeglasem, kuna laaditakse kogu HTML | Kiirem, osaliste uuendustega |
+| **Kasutajakogemus** | Lehe järsud välgatuse efektid | Sujuvad, rakendusetaolised üleminekud |
+| **Andmete jagamine** | Raskendatud lehekülgede vahel | Lihtne oleku haldus |
+| **Arendus** | Mitmed HTML failid haldamiseks | Üks HTML dünaamiliste mallidega |
 
-Selles õppetükis loome aluse panga veebirakenduse loomiseks, kasutades HTML-malle mitme ekraani loomiseks, mida saab kuvada ja värskendada ilma kogu HTML-lehte uuesti laadimata.
+**Evolutsiooni mõistmine:**
+- **Traditsioonilised rakendused** nõuavad iga navigeerimise jaoks serveripäringut
+- **Kaasaegsed SPAd** laadivad ühe korra ja uuendavad sisu dünaamiliselt JavaScripti abil
+- **Kasutaja ootused** soosivad nüüd kohest ja sujuvat interaktsiooni
+- **Tõhususe eelised** hõlmavad vähendatud andmeedastusmahtu ja kiirust
 
-### Eeltingimus
+Selles õppetükis loome pangarakenduse mitme ekraaniga, mis sujuvalt üksteisega liituvad. Nagu teadlased kasutavad modulaarseid instrumente, mida saab katseteks ümber seadistada, kasutame ka HTML malle taaskasutatavate komponentidena, mida kuvatakse vastavalt vajadusele.
 
-Selle õppetüki veebirakenduse testimiseks on sul vaja kohalikku veebiserverit. Kui sul seda pole, saad paigaldada [Node.js](https://nodejs.org) ja kasutada käsku `npx lite-server` oma projekti kaustast. See loob kohaliku veebiserveri ja avab sinu rakenduse brauseris.
+Sa töötad HTML mallide (taaskasutatavad ekraanide plaanid), JavaScripti marsruutimise (süsteem, mis lülitab ekraanide vahel) ja brauseri ajaloo API-ga (mis hoiab nupu „tagasi“ ootuspäraselt toimimas). Need on samad põhimõtted, mida kasutavad ka React, Vue ja Angular raamistiku lahendused.
+
+Õppetüki lõpuks on sul toimiv pangarakendus, mis demonstreerib professionaalse üheleheküljelise rakenduse põhimõtteid.
+
+```mermaid
+mindmap
+  root((Ühelehele Rakendused))
+    Architecture
+      Template System
+      Client-side Routing
+      State Management
+      Event Handling
+    Templates
+      Taaskasutatavad Komponendid
+      Dünaamiline Sisu
+      DOM-i Manipulatsioon
+      Sisu Vahetus
+    Routing
+      URL-i Halduse
+      Ajaloo API
+      Navigeerimisloogika
+      Brauseri Integratsioon
+    User Experience
+      Kiire Navigeerimine
+      Sujuvad Üleminekud
+      Järjepidev Olekuhaldus
+      Moodne Interaktsioon
+    Performance
+      Vähendatud Serveripäringud
+      Kiirem Lehekülje Vahetus
+      Tõhus Ressursside Kasutus
+      Parem Reageerimisvõime
+```
+## Eel-loengu viktoriin
+
+[Eel-loengu viktoriin](https://ff-quizzes.netlify.app/web/quiz/41)
+
+### Mida sul vaja läheb
+
+Me vajame kohalikku veebiserverit, et testida meie pangarakendust – ära muretse, see on lihtsam kui kõlab! Kui sul veel pole paigaldatud, siis installi lihtsalt [Node.js](https://nodejs.org) ja käivita projektikaustas `npx lite-server`. See mugav käsklus käivitab kohalik serveri ja avab su rakenduse automaatselt brauseris.
 
 ### Ettevalmistus
 
-Loo oma arvutis kaust nimega `bank` ja selle sees fail nimega `index.html`. Alustame sellest HTML-i [mallist](https://en.wikipedia.org/wiki/Boilerplate_code):
+Loo oma arvutis kaust nimega `bank` ja selle sisse fail `index.html`. Alustame sellest HTML [boilerplate’st](https://en.wikipedia.org/wiki/Boilerplate_code):
 
 ```html
 <!DOCTYPE html>
@@ -41,30 +97,77 @@ Loo oma arvutis kaust nimega `bank` ja selle sees fail nimega `index.html`. Alus
 </html>
 ```
 
+**See boilerplate sisaldab:**
+- **Määrab** HTML5 dokumendi struktuuri koos korrektse DOCTYPE deklaratsiooniga
+- **Seab** märgistusena UTF-8 rahvusvahelise teksti toe
+- **Lubab** mobiilisõbralikku disaini vaateakna meta-täpi abil
+- **Seadistab** kirjeldusega tiitli, mis ilmub brauseri vahekaardil
+- **Loodab** puhta body sektsiooni, kuhu ehitame oma rakenduse
+
+> 📁 **Projekti struktuuri eelvaade**
+> 
+> **Selle õppetüki lõpuks sisaldab su projekt:**
+> ```
+> bank/
+> ├── index.html      <!-- Main HTML with templates -->
+> ├── app.js          <!-- Routing and navigation logic -->
+> └── style.css       <!-- (Optional for future lessons) -->
+> ```
+> 
+> **Failide ülesanded:**
+> - **index.html**: sisaldab kõiki malle ja määrab rakenduse struktuuri
+> - **app.js**: haldab marsruute, navigeerimist ja mallide juhtimist
+> - **Mallid**: määratlevad sisselogimise, juhtpaneeli ja teiste ekraanide kasutajaliidese
+
 ---
 
-## HTML-mallid
+## HTML mallid
 
-Kui soovid luua veebilehele mitu ekraani, võiks üheks lahenduseks olla iga ekraani jaoks eraldi HTML-faili loomine. Kuid see lahendus toob kaasa mõningaid ebamugavusi:
+Mallid lahendavad veebiarenduses põhiprobleemi. Kui Gutenberg leiutas 1440ndatel liikuvate trükikujutiste meetodi, mõistis ta, et terveid lehti pole vaja raiuda, vaid ta saab luua taaskasutatavad täheplokid ja korraldada neid vastavalt vajadusele. HTML mallid töötavad sama põhimõtte järgi – selle asemel, et teha iga ekraani jaoks eraldi HTML faile, defineerid taaskasutatavad struktuurid, mida saab vajadusel kuvada.
 
-- Kogu HTML tuleb ekraani vahetamisel uuesti laadida, mis võib olla aeglane.
+```mermaid
+flowchart TD
+    A["📋 Malli määratlus"] --> B["💬 Peidetud DOM-is"]
+    B --> C["🔍 JavaScript leiab malli"]
+    C --> D["📋 Klooni malli sisu"]
+    D --> E["🔗 Lisa nähtavasse DOM-i"]
+    E --> F["👁️ Kasutaja näeb sisu"]
+    
+    G["Sisselogimise mall"] --> A
+    H["Armatuurlaua mall"] --> A
+    I["Tulevased mallid"] --> A
+    
+    style A fill:#e3f2fd
+    style D fill:#e8f5e8
+    style F fill:#fff3e0
+    style B fill:#f3e5f5
+```
+Mõtle mallidele kui plaanidele sinu rakenduse erinevate osade jaoks. Nii nagu arhitekt loob ühe plaani ja kasutab seda mitmel korral, selle asemel et joonistada identsed ruumid uuesti, loome ka mallid ühekordselt ja käivitame neid vastavalt vajadusele. Brauser hoiab need mallid peidetuna kuni JavaScript nad aktiveerib.
+
+Kui tahad veebilehe jaoks luua mitu ekraani, võib üks lahendus olla igale ekraanile eraldi HTML faili tegemine. Kuid see lahendus toob kaasa mõned ebamugavused:
+
+- Ekraani vahetades tuleb kogu HTML uuesti laadida, mis võib olla aeglane.
 - Andmete jagamine erinevate ekraanide vahel on keeruline.
 
-Teine lähenemine on kasutada ainult ühte HTML-faili ja määratleda mitu [HTML-malli](https://developer.mozilla.org/docs/Web/HTML/Element/template) `<template>` elemendi abil. Mall on taaskasutatav HTML-plokk, mida brauser ei kuva ja mis tuleb JavaScripti abil käitamise ajal instantsida.
+Teine lähenemine on kõigi ekraanide jaoks kasutada ühte HTML faili ja defineerida mitu [HTML malli](https://developer.mozilla.org/docs/Web/HTML/Element/template) `<template>` elemendi abil. Mall on taaskasutatav HTML plokk, mida brauser tavaliselt ei kuva ja mis tuleb runtime’is JavaScripti abil luua.
 
-### Ülesanne
+### Loome selle üles
 
-Loome pangaäpi kahe ekraaniga: sisselogimisleht ja juhtpaneel. Kõigepealt lisame HTML-i kehasse kohatäite elemendi, mida kasutame oma rakenduse erinevate ekraanide instantsimiseks:
+Teeme pangarakenduse kahe põhiekraaniga: sisselogimise leht ja juhtpaneel. Esiteks lisame oma HTML kehasse placeholder-elemendi – siia kuvatakse kõik erinevad ekraanid:
 
 ```html
 <div id="app">Loading...</div>
 ```
 
-Anname sellele `id`, et seda oleks hiljem JavaScriptiga lihtsam leida.
+**Selle placeholderi mõistmine:**
+- **Loodab** konteineri ID-ga "app", kuhu kuvatakse kõik ekraanid
+- **Näitab** laadimissõnumit kuni JavaScript esimest ekraani käivitab
+- **Tagab** ühe monumendi meie dünaamilisele sisule
+- **Võimaldab** lihtsat sihtimist JavaScriptil `document.getElementById()` abil
 
-> Näpunäide: kuna selle elemendi sisu asendatakse, võime sinna panna laadimissõnumi või indikaatori, mis kuvatakse rakenduse laadimise ajal.
+> 💡 **Näpunäide:** Kuna selle elemendi sisu asendatakse, võid panna siia laadimise sõnumi või indikaatori, mis näidatakse rakenduse laadimisel.
 
-Järgmisena lisame HTML-malli sisselogimislehe jaoks. Praegu paneme sinna ainult pealkirja ja jaotise, mis sisaldab linki, mida kasutame navigeerimiseks.
+Järgmisena lisame HTML malli sisselogimislehe jaoks. Praegu paneme sinna ainult pealkirja ja sektsiooni, kus on link navigeerimiseks.
 
 ```html
 <template id="login">
@@ -75,11 +178,17 @@ Järgmisena lisame HTML-malli sisselogimislehe jaoks. Praegu paneme sinna ainult
 </template>
 ```
 
-Seejärel lisame teise HTML-malli juhtpaneeli lehe jaoks. See leht sisaldab erinevaid jaotisi:
+**Selle sisselogimise malli lahtiseletus:**
+- **Defineerib** mallina unikaalse ID-ga "login" JavaScripti sihtimiseks
+- **Sisaldab** põhielementi, mis kehtestab rakenduse brändingu
+- **Omab** semantilist `<section>` elementi seotud sisu rühmitamiseks
+- **Pakub** navigeerimislinki, mis viib kasutaja juhtpaneelile
 
-- Päis, kus on pealkiri ja väljalogimise link
-- Pangakonto praegune saldo
-- Tehingute loetelu, mis kuvatakse tabelis
+Seejärel lisame teise HTML malli juhtpaneeli jaoks. See leht sisaldab erinevaid sektsioone:
+
+- Päis pealkirja ja väljalogimislingiga
+- Hetke pangakonto saldo
+- Tehingute nimekiri, kuvatud tabelis
 
 ```html
 <template id="dashboard">
@@ -106,31 +215,88 @@ Seejärel lisame teise HTML-malli juhtpaneeli lehe jaoks. See leht sisaldab erin
 </template>
 ```
 
-> Näpunäide: HTML-mallide loomisel, kui soovid näha, kuidas need välja näevad, võid `<template>` ja `</template>` read kommenteerida, ümbritsedes need märkustega `<!-- -->`.
+**Seda juhtpaneeli osa mõistmine:**
+- **Struktureerib** lehte semantilise `<header>` elemendiga koos navigatsiooniga
+- **Kuvab** rakenduse pealkirja ühtselt kõigil ekraanidel brändingu tarbeks
+- **Pakub** väljalogimislinki, mis suunab tagasi sisselogimisse
+- **Näitab** hetke konto saldot eraldi sektsioonis
+- **Korraldab** tehingute andmed korrektselt vormindatud HTML tabelis
+- **Defineerib** tabeli päised Kuupäeva, Objekti ja Summa jaoks
+- **Jätab** tabeli keha tühjaks dünaamilise sisu lisamiseks hiljem
 
-✅ Miks me kasutame mallidel `id` atribuute? Kas võiksime kasutada midagi muud, näiteks klasse?
+> 💡 **Näpunäide:** HTML mallide loomisel, kui tahad näha, milline see välja näeb, võid `<template>` ja `</template>` reeglid kommenteerida `<!-- -->` abil.
 
-## Mallide kuvamine JavaScriptiga
+### 🔄 **Pedagoogiline kontroll**
+**Mallide süsteemi mõistmine:** Enne JavaScripti rakendamist veendu, et sa mõistad:
+- ✅ Kuidas mallid erinevad tavalistest HTML elementidest
+- ✅ Miks mallid jäävad peidetuks kuni JavaScript neid aktiveerib
+- ✅ Semantilise HTML struktuuri tähtsus malle luues
+- ✅ Kuidas mallid võimaldavad taaskasutatavaid kasutajaliidese komponente
 
-Kui proovid oma praegust HTML-faili brauseris, näed, et see jääb kuvama ainult `Laadimine...`. Seda seetõttu, et peame lisama JavaScripti koodi, et HTML-malle instantsida ja kuvada.
+**Kiire enesekontroll:** Mis juhtub, kui eemaldada oma HTML ümbert `<template>` sildid?
+*Vastus: sisu muutub koheselt nähtavaks ja kaotab oma malle funktsionaalsuse*
 
-Malli instantsimine toimub tavaliselt 3 sammus:
+**Arhitektuuri eelised:** Mallid annavad:
+- **Taaskasutuse:** üks määratlus, mitu eksemplari
+- **Tõhususe:** pole ebaolulist HTML parsimist
+- **Haldatavuse:** tsentraliseeritud kasutajaliidese struktuur
+- **Paindlikkuse:** dünaamiline sisu vahetamine
 
-1. Otsi DOM-ist malli element, näiteks kasutades [`document.getElementById`](https://developer.mozilla.org/docs/Web/API/Document/getElementById).
-2. Klooni malli element, kasutades [`cloneNode`](https://developer.mozilla.org/docs/Web/API/Node/cloneNode).
-3. Lisa see DOM-i nähtava elemendi alla, näiteks kasutades [`appendChild`](https://developer.mozilla.org/docs/Web/API/Node/appendChild).
+✅ Miks sa arvad, et kasutame mallidel `id` atribuute? Kas võiksime kasutada ka klasse?
 
-✅ Miks on vaja mall enne DOM-i lisamist kloonida? Mis juhtuks, kui me selle sammu vahele jätaksime?
+## Mallide elluäratamine JavaScriptiga
+
+Nüüd peame muutma oma mallid funktsionaalseks. Nii nagu 3D printer võtab digitaalse plaani ja loob füüsilise objekti, võtab JavaScript meie peidetud mallid ja tekitab nähtavad, interaktiivsed elemendid, mida kasutajad saavad näha ja kasutada.
+
+Protsess koosneb kolmest ühtsest etapist, mis on tänapäevase veebiarenduse alus. Kui mõistad seda mustrit, tunned selle ära paljudes raamistikudes ja teekides.
+
+Kui proovid oma praegust HTML faili brauseris, näed, et kuvatakse ainult `Loading...`. See on sellepärast, et peame lisama mõne JavaScripti koodi, mis mallid käivitab ja kuvab.
+
+Malli käivitamine toimub tavaliselt kolmes etapis:
+
+1. Leia mallielement DOM-ist, näiteks kasutades [`document.getElementById`](https://developer.mozilla.org/docs/Web/API/Document/getElementById).
+2. Kopeeri mallielement, kasutades [`cloneNode`](https://developer.mozilla.org/docs/Web/API/Node/cloneNode).
+3. Lisa see nähtava elemendi alla DOM-i näiteks kasutades [`appendChild`](https://developer.mozilla.org/docs/Web/API/Node/appendChild).
+
+```mermaid
+flowchart TD
+    A[🔍 1. samm: Leia mall] --> B[📋 2. samm: Klooni mall]
+    B --> C[🔗 3. samm: Lisa DOM-i]
+    
+    A1["document.getElementById('login')"] --> A
+    B1["template.content.cloneNode(true)"] --> B  
+    C1["app.appendChild(view)"] --> C
+    
+    C --> D[👁️ Mall nähtav kasutajale]
+    
+    style A fill:#e1f5fe
+    style B fill:#f3e5f5
+    style C fill:#e8f5e8
+    style D fill:#fff3e0
+```
+**Visuaalne protsessi lahtiseletus:**
+- **1. samm** leiab peidetud malli DOM struktuurist
+- **2. samm** loob töötava koopia, mida saab ohutult muuta
+- **3. samm** lisab koopia nähtavasse lehe ossa
+- **Tulemus** on funktsionaalne ekraan, millega kasutajad saavad suhelda
+
+✅ Miks peame enne malli lisamist DOM-ile kopeerima? Mis juhtuks, kui seda sammu vahele jätta?
 
 ### Ülesanne
 
-Loo oma projekti kausta uus fail nimega `app.js` ja impordi see fail oma HTML-i `<head>` sektsiooni:
+Loo oma projekti kausta uus fail nimega `app.js` ja impordi see fail oma HTML `<head>` sektsiooni:
 
 ```html
 <script src="app.js" defer></script>
 ```
 
-Nüüd loome `app.js`-is uue funktsiooni nimega `updateRoute`:
+**Selle skripti impordi mõistmine:**
+- **Seob** JavaScripti faili meie HTML dokumendiga
+- **Kasutab** `defer` atribuuti, et tagada skripti käivitumine peale HTML parsimise lõpetamist
+- **Lubab** juurdepääsu kõigile DOM elementidele, sest need on enne skripti käivitamist täielikult laetud
+- **Järgis** kaasaegseid parimaid tavasid skriptide laadimisel ja jõudlusel
+
+Nüüd loome `app.js` failis uue funktsiooni `updateRoute`:
 
 ```js
 function updateRoute(templateId) {
@@ -142,19 +308,71 @@ function updateRoute(templateId) {
 }
 ```
 
-Siin teeme täpselt need 3 ülaltoodud sammu. Instantsime malli, mille id on `templateId`, ja paigutame selle kloonitud sisu oma rakenduse kohatäitesse. Pange tähele, et peame kasutama `cloneNode(true)`, et kopeerida kogu malli alampuu.
+**Samm-sammult, mis toimub:**
+- **Leiab** malli elemendi unikaalse ID abil
+- **Loomistab** sügava koopia malli sisust kasutades `cloneNode(true)`
+- **Leiab** konteineri, kuhu sisu kuvatakse
+- **Tühjendab** olemasoleva sisu konteinerist
+- **Lisab** kloonitud malli sisu nähtavasse DOM-i
 
-Nüüd kutsu see funktsioon välja ühe malliga ja vaata tulemust.
+Kutsu nüüd see funktsioon ühe malliga ja vaata tulemust.
 
 ```js
 updateRoute('login');
 ```
 
-✅ Milleks on vajalik see koodirida `app.innerHTML = '';`? Mis juhtub, kui seda ei kasuta?
+**Mida see funktsioonikõne teeb:**
+- **Aktiveerib** sisselogimise malli, saates selle ID parameetrina
+- **Demonstreerib** kuidas programmeeritult lülituda erinevate rakenduse ekraanide vahel
+- **Kuvab** sisselogimisekraani „Loading...“ asemel
+
+✅ Mis on selle koodi `app.innerHTML = '';` eesmärk? Mis juhtub, kui see puudub?
 
 ## Marsruutide loomine
 
-Veebirakenduse puhul nimetatakse *marsruutimiseks* URL-ide kaardistamist konkreetsetele ekraanidele, mida tuleks kuvada. Mitme HTML-failiga veebisaidil tehakse seda automaatselt, kuna failiteed kajastuvad URL-is. Näiteks, kui sinu projekti kaustas on järgmised failid:
+Marsruutimine tähistab URL-ide sidumist õigete sisudega. Mõtle varajastele telefonitöötajatele, kes kasutasid keskjaamu kõnede ühendamiseks – nad võtsid saabunud kõne ja suunasid selle õigele sihtkohale. Veebimarsruutimine toimib samamoodi, võttes URL päringu ja määrates, millist sisu kuvada.
+
+```mermaid
+flowchart LR
+    A["🌐 URL rada<br/>/dashboard"] --> B["🗺️ Marsruutide objekt<br/>Otsing"]
+    B --> C["🎯 Malli ID<br/>'dashboard'"]
+    C --> D["📌 Leia mall<br/>getElementById"]
+    D --> E["👁️ Kuvamine<br/>Kopeeri & Lisa"]
+    
+    F["📍 /login"] --> G["🎯 'login'"]
+    H["📍 /unknown"] --> I["❌ Ei leitud"]
+    I --> J["🔄 Suuna /login-le"]
+    
+    style B fill:#e3f2fd
+    style E fill:#e8f5e8
+    style I fill:#ffebee
+    style J fill:#fff3e0
+```
+Traditsiooniliselt korraldasid veebiserverid selle, serveerides eri URL-idele erinevaid HTML-faile. Kuna meie ehitame üheleheküljelist rakendust (SPA), peame selle marsruutimise ise JavaScriptiga haldama. See annab meile parema kontrolli kasutajakogemuse ja jõudluse üle.
+
+```mermaid
+flowchart LR
+    A["🌐 URL tee<br/>/dashboard"] --> B["🗺️ Marsruutide objekt<br/>Otsing"]
+    B --> C["🎯 Malli ID<br/>'dashboard'"]
+    C --> D["📄 Leia mall<br/>getElementById"]
+    D --> E["👁️ Ekraani kuvamine<br/>Kloonimine & Lisa"]
+    
+    F["📍 /login"] --> G["🎯 'login'"]
+    H["📍 /unknown"] --> I["❌ Ei leitud"]
+    I --> J["🔄 Suuna /login-le"]
+    
+    style B fill:#e3f2fd
+    style E fill:#e8f5e8
+    style I fill:#ffebee
+    style J fill:#fff3e0
+```
+**Marsruutimise voo mõistmine:**
+- **URL muutused** kutsuvad esile marsruudi otsingu meie konfiguratsioonist
+- **Kehtivad marsruudid** seovad konkreetsete mallide ID-dega renderdamiseks
+- **Kehtetud marsruudid** toovad esile varuplaani rikete vältimiseks
+- **Mallide renderdamine** järgib eelnevalt õpitud kolmesammulist protsessi
+
+Kui rääkida veebirakendusest, siis marsruutimise all mõtleme **URL-ide** sidumist konkreetsete ekraanidega, mida kuvatakse. Lehekülgedel, kus on mitu HTML faili, tehakse see automaatselt, kuna failiteed kajastuvad URL-is. Näiteks kui sul on projektikaustas need failid:
 
 ```
 mywebsite/index.html
@@ -162,7 +380,7 @@ mywebsite/login.html
 mywebsite/admin/index.html
 ```
 
-Kui lood veebiserveri, mille juur on `mywebsite`, siis URL-i kaardistus on järgmine:
+Kui lood veebiserveri juureks kausta `mywebsite`, on URL kaardistus selline:
 
 ```
 https://site.com            --> mywebsite/index.html
@@ -170,11 +388,11 @@ https://site.com/login.html --> mywebsite/login.html
 https://site.com/admin/     --> mywebsite/admin/index.html
 ```
 
-Kuid meie veebirakenduse puhul kasutame ühte HTML-faili, mis sisaldab kõiki ekraane, seega see vaikimisi käitumine meid ei aita. Peame selle kaardi käsitsi looma ja kuvama vastava malli JavaScripti abil.
+Kuid meie veebirakenduses kasutame ühte HTML faili kõigi ekraanidega, nii et see vaikimisi käitumine ei sobi. Peame selle kaardi ise looma ja kuvamise mallide vahetamise JavaScriptiga tegema.
 
 ### Ülesanne
 
-Kasutame lihtsat objekti, et rakendada [kaarti](https://en.wikipedia.org/wiki/Associative_array) URL-i teede ja meie mallide vahel. Lisa see objekt oma `app.js` faili algusesse.
+Kasutame lihtsat objekti, et implementeerida [kaart](https://en.wikipedia.org/wiki/Associative_array) URL tee ja mallide vahel. Lisa see objekt oma `app.js` faili algusesse.
 
 ```js
 const routes = {
@@ -183,7 +401,12 @@ const routes = {
 };
 ```
 
-Nüüd muudame veidi `updateRoute` funktsiooni. Selle asemel, et `templateId` otse argumendina edasi anda, tahame selle kõigepealt praegusest URL-ist leida ja seejärel kasutada oma kaarti, et saada vastav malli ID väärtus. Saame kasutada [`window.location.pathname`](https://developer.mozilla.org/docs/Web/API/Location/pathname), et saada URL-ist ainult tee osa.
+**Selle marsruutide konfiguratsiooni mõistmine:**
+- **Defineerib** URL tee ja malli identifikaatorite vahelist kaardistust
+- **Kasutab** objekti süntaksit, kus võtmed on URL teed ja väärtused sisaldavad malli infot
+- **Võimaldab** hõlpsat otsingut, millist malli kuvada etteantud URL-i puhul
+- **Annab** lihtsasti laiendatava struktuuri uute marsruutide lisamiseks tulevikus
+Muudame natuke `updateRoute` funktsiooni. Selle asemel, et edastada `templateId` otse argumendina, tahame selle esmalt saada praegusest URL-ist ja seejärel kasutada meie kaarti vastava malli ID väärtuse saamiseks. Saame kasutada [`window.location.pathname`](https://developer.mozilla.org/docs/Web/API/Location/pathname), et saada URL-ist ainult tee osa.
 
 ```js
 function updateRoute() {
@@ -198,26 +421,100 @@ function updateRoute() {
 }
 ```
 
-Siin kaardistasime deklareeritud marsruudid vastavatele mallidele. Saad seda testida, muutes käsitsi URL-i oma brauseris.
+**Mis siin toimub, samm-sammult:**
+- **Eristab** brauseri URL-ist praeguse tee, kasutades `window.location.pathname`
+- **Otsib üles** sobiva marsruudi konfiguratsiooni meie routes objektist
+- **Hangib** mallide ID marsruudi konfiguratsioonist
+- **Järgib** sama mallide renderdamise protsessi nagu varem
+- **Loo** dünaamiline süsteem, mis reageerib URL-i muutustele
 
-✅ Mis juhtub, kui sisestad URL-i tundmatu tee? Kuidas võiksime selle lahendada?
+Siin sidusime deklareeritud marsruudid vastavate mallidega. Saate proovida, kas see töötab korrektselt, muutes URL-i käsitsi oma brauseris.
+
+✅ Mis juhtub, kui sisestate URL-i tundmatu tee? Kuidas saaksime seda lahendada?
 
 ## Navigeerimise lisamine
 
-Järgmine samm meie rakenduse jaoks on lisada võimalus liikuda lehtede vahel ilma URL-i käsitsi muutmata. See hõlmab kahte asja:
+Pärast marsruutimise seadistamist vajavad kasutajad võimalust rakenduses navigeerida. Traditsioonilised veebilehed laadivad lingile klõpsates kogu lehe uuesti, kuid me tahame uuendada nii URL-i kui sisu ilma lehe värskenduseta. See loob sujuvama kogemuse, sarnaselt sellele, kuidas töölauarakendused vahetavad erinevaid vaateid.
 
-1. Praeguse URL-i värskendamine
-2. Kuvatud malli värskendamine uue URL-i põhjal
+Me peame koordineerima kahte asja: uuenda brauseri URL nii, et kasutajad saaksid lehti järjehoidjatesse lisada ja linke jagada, ning kuvada sobiv sisu. Kui see on korrektselt rakendatud, loob see sujuva navigeerimise, mida kasutajad tänasest ootavad.
 
-Teise osa eest oleme juba hoolitsenud `updateRoute` funktsiooniga, seega peame välja mõtlema, kuidas praegust URL-i värskendada.
+```mermaid
+sequenceDiagram
+    participant User
+    participant Browser
+    participant App
+    participant Template
+    
+    User->>Browser: Klikib "Sisse logimine" linki
+    Browser->>App: onclick sündmus käivitatakse
+    App->>App: preventDefault() & navigeeri('/dashboard')
+    App->>Browser: history.pushState('/dashboard')
+    Browser->>Browser: URL uuendatakse aadressile /dashboard
+    App->>App: updateRoute() kutsutakse
+    App->>Template: Leia ja klooni juhtpaneeli mall
+    Template->>App: Tagasta kloonitud sisu
+    App->>Browser: Asenda rakenduse sisu malliga
+    Browser->>User: Kuvab juhtpaneeli ekraani
+    
+    Note over User,Template: Kasutaja klikib brauseri tagasinuppu
+    
+    User->>Browser: Klikib tagasinuppu
+    Browser->>Browser: Ajalugu liigub tagasi /login
+    Browser->>App: popstate sündmus käivitub
+    App->>App: updateRoute() kutsutakse automaatselt
+    App->>Template: Leia ja klooni sisselogimise mall
+    Template->>App: Tagasta kloonitud sisu
+    App->>Browser: Asenda rakenduse sisu malliga
+    Browser->>User: Kuvab sisselogimise ekraani
+```
+### 🔄 **Pedagoogiline kontroll**
+**Ühe lehe rakenduse arhitektuur**: Kontrolli oma arusaamist kogu süsteemist:
+- ✅ Kuidas erineb kliendipoolne marsruutimine traditsioonilisest serveripoolsest marsruutimisest?
+- ✅ Miks on History API vajalik õige SPA navigeerimiseks?
+- ✅ Kuidas võimaldavad mallid dünaamilist sisu ilma lehe laadimiseta?
+- ✅ Millist rolli mängib sündmuste töötlemine navigeerimise peatamisel?
 
-Peame kasutama JavaScripti ja täpsemalt [`history.pushState`](https://developer.mozilla.org/docs/Web/API/History/pushState), mis võimaldab URL-i värskendada ja luua uue kirje sirvimisajalukku ilma HTML-i uuesti laadimata.
+**Süsteemi integratsioon**: Teie SPA demonstreerib:
+- **Malli haldus**: Taaskasutatavad UI komponendid dünaamilise sisuga
+- **Kliendipoolne marsruutimine**: URL-i haldamine ilma serveripäringuteta
+- **Sündmustepõhine arhitektuur**: Responeeruv navigeerimine ja kasutajategevused
+- **Brauseri integratsioon**: Ajaloo ja tagasi/edasi nupu korrektne tugi
+- **Jõudluse optimeerimine**: Kiired üleminekud ja vähendatud serverikoormus
 
-> Märkus: Kuigi HTML-i ankruelementi [`<a href>`](https://developer.mozilla.org/docs/Web/HTML/Element/a) saab kasutada iseseisvalt erinevatele URL-idele viitavate hüperlinkide loomiseks, põhjustab see vaikimisi brauseri HTML-i uuesti laadimise. Selle käitumise vältimiseks, kui marsruutimist käsitletakse kohandatud JavaScriptiga, on vaja klõpsuüritusel kasutada preventDefault() funktsiooni.
+**Professionaalsed mustrid**: Sa oled rakendanud:
+- **Mudeli-vaate eraldamine**: Mallid eraldatud rakendusloogikast
+- **Oleku haldus**: URL-i olek sünkroonitud kuvatava sisuga
+- **Järk-järguline täiustamine**: JavaScript täiustab põhilist HTML funktsionaalsust
+- **Kasutajakogemus**: Sujuv rakenduslik navigeerimine ilma lehe värskenduseta
+
+> � **Arhitektuuri vaatenurk**: Navigeerimissüsteemi komponendid
+>
+> **Mida ehitad:**
+> - **🔄 URL-i haldus**: Värskendab brauseri aadressiriba ilma lehte laadimata
+> - **📋 Mallisüsteem**: Vahetab sisaldust dünaamiliselt vastavalt praegusele marsruudile  
+> - **📚 Ajaloo integreerimine**: Säilitab tagasi/edasi nupu funktsionaalsuse
+> - **🛡️ Veahaldus**: Õrnad tagasipõrked vigaste või puuduvate marsruutide puhul
+>
+> **Kuidas komponendid koos töötavad:**
+> - **Kuulab** navigeerimise sündmusi (klõpsud, ajaloo muutused)
+> - **Uuendab** URL-i History API abil
+> - **Renderdab** vastava malli uue marsruudi jaoks
+> - **Hoidab** sujuva kasutajakogemuse kogu protsessi vältel
+
+Meie järgmine samm rakenduses on lisada võimalus navigeerida lehtede vahel ilma URL-i käsitsi muutmata. Selleks peame tegema kahte asja:
+
+  1. Uuendama praegust URL-i
+  2. Uuendama kuvatavat malli uue URL-i põhjal
+
+Teise osaga tegeleme juba funktsiooniga `updateRoute`, nii et peame välja selgitama, kuidas uuendada praegust URL-i.
+
+Peame kasutama JavaScripti ja täpsemalt [`history.pushState`](https://developer.mozilla.org/docs/Web/API/History/pushState), mis võimaldab uuendada URL-i ja luua uue kirje sirvimisajalukku ilma HTML-i uuesti laadimata.
+
+> ⚠️ **Oluline märkus**: Kuigi HTML-i ankruelementi [`<a href>`](https://developer.mozilla.org/docs/Web/HTML/Element/a) saab kasutada linkide loomiseks erinevatesse URL-idesse, paneb see brauseri vaikimisi laadima kogu HTML-i uuesti. Seda käitumist tuleb marsruutimise käsitlemisel kohandatud JavaScriptiga vältida, kasutades klõpsusündmuse peatumiseks funktsiooni preventDefault().
 
 ### Ülesanne
 
-Loome uue funktsiooni, mida saame kasutada oma rakenduses navigeerimiseks:
+Loome uue funktsiooni, mida saame kasutada navigeerimiseks meie rakenduses:
 
 ```js
 function navigate(path) {
@@ -226,9 +523,15 @@ function navigate(path) {
 }
 ```
 
-See meetod värskendab esmalt praegust URL-i antud tee põhjal ja seejärel värskendab malli. Omadus `window.location.origin` tagastab URL-i juure, võimaldades meil antud teest täieliku URL-i uuesti koostada.
+**Mida see navigeerimisfunktsioon teeb:**
+- **Uuendab** brauseri URL-i uue tee suhtes kasutades `history.pushState`
+- **Lisab** uue kirje brauseri ajaloo virna, tagamaks tagasi/edasi nupu toe
+- **Käivitab** funktsiooni `updateRoute()`, et kuvada vastav mall
+- **Hoidab** ühe lehe rakenduse kogemuse ilma lehe värskenduseta
 
-Nüüd, kui meil on see funktsioon olemas, saame lahendada probleemi, mis tekib, kui tee ei vasta ühelegi määratletud marsruudile. Muudame `updateRoute` funktsiooni, lisades tagasipöördumise ühe olemasoleva marsruudi juurde, kui vastet ei leita.
+See meetod uuendab esmalt praeguse URL-i sisendi kaudu ja seejärel uuendab malli. Atribuut `window.location.origin` tagastab URL-i juure, võimaldades meil rekonstrueerida komplekti URL-i antud tee baasil.
+
+Nüüd, kui meil on see funktsioon olemas, saame lahendada probleemi, mis tekib, kui tee ei vasta ühelegi määratletud marsruudile. Muudame `updateRoute` funktsiooni, lisades tagavara marsruudi ühe olemasoleva marsruudi juures, kui vasteid ei leita.
 
 ```js
 function updateRoute() {
@@ -239,12 +542,23 @@ function updateRoute() {
     return navigate('/login');
   }
 
-  ...
+  const template = document.getElementById(route.templateId);
+  const view = template.content.cloneNode(true);
+  const app = document.getElementById('app');
+  app.innerHTML = '';
+  app.appendChild(view);
+}
 ```
 
-Kui marsruuti ei leita, suuname nüüd `login` lehele.
+**Olulised punktid, mida meeles pidada:**
+- **Kontrollib**, kas praeguse tee jaoks on vastav marsruut olemas
+- **Suunab ümber** sisselogimise lehele, kui pääsedakse vigasele marsruudile
+- **Pakub** tagavaramehhanismi, mis hoiab ära katkise navigeerimise
+- **Tagab**, et kasutajad näevad alati kehtivat lehte, isegi valede URL-idega
 
-Nüüd loome funktsiooni, mis saab URL-i, kui linki klõpsatakse, ja takistab brauseri vaikimisi linkide käitumist:
+Kui marsruuti ei leita, suuname nüüd kasutaja lehele `login`.
+
+Nüüd loome funktsiooni, mis hangib URL-i lingi klõpsamisel ja takistab brauseri vaikimisi lingikäitumist:
 
 ```js
 function onLinkClick(event) {
@@ -253,7 +567,11 @@ function onLinkClick(event) {
 }
 ```
 
-Täiendame navigeerimissüsteemi, lisades sidumised meie HTML-is olevatele *Login* ja *Logout* linkidele.
+**Mis toimub selles klõpsukäsitlejas:**
+- **Takistab** brauseri vaikimisi lingikäitumist, kasutades `preventDefault()`
+- **Eristab** sihtkoha URL-i klõpsatud lingielemendist
+- **Kutsume** meie kohandatud navigeerimisfunktsiooni välja lehe uuesti laadimise asemel
+- **Hoidab** sujuva ühe lehe rakenduse kogemuse
 
 ```html
 <a href="/dashboard" onclick="onLinkClick(event)">Login</a>
@@ -261,62 +579,245 @@ Täiendame navigeerimissüsteemi, lisades sidumised meie HTML-is olevatele *Logi
 <a href="/login" onclick="onLinkClick(event)">Logout</a>
 ```
 
-Ülaltoodud `event` objekt püüab kinni `click` sündmuse ja edastab selle meie `onLinkClick` funktsioonile.
+**Mida see onclick sidumine saavutab:**
+- **Ühendab** iga lingi meie kohandatud navigeerimissüsteemiga
+- **Edastab** klõpsusündmuse meie funktsioonile `onLinkClick` töötlemiseks
+- **Võimaldab** sujuvat navigeerimist ilma lehe laadimiseta
+- **Hoidab** korrektset URL-i struktuuri, mida kasutajad saavad järjehoidjatesse lisada või jagada
 
-Kasutades [`onclick`](https://developer.mozilla.org/docs/Web/API/GlobalEventHandlers/onclick) atribuuti, seome `click` sündmuse JavaScripti koodiga, siin `navigate()` funktsiooni väljakutsega.
+Attribuut [`onclick`](https://developer.mozilla.org/docs/Web/API/GlobalEventHandlers/onclick) seob `click` sündmuse JavaScripti koodiga, siin kutsudes välja funktsiooni `navigate()`.
 
-Proovi nendele linkidele klõpsata, nüüd peaksid saama oma rakenduse erinevate ekraanide vahel liikuda.
+Proovige klõpsata nendel linkidel, peaksite nüüd saama navigeerida oma rakenduse erinevate ekraanide vahel.
 
-✅ Meetod `history.pushState` on osa HTML5 standardist ja rakendatud [kõikides kaasaegsetes brauserites](https://caniuse.com/?search=pushState). Kui ehitad veebirakendust vanematele brauseritele, on selle API asemel võimalik kasutada ühte nippi: kasutades [räsimärki (`#`)](https://en.wikipedia.org/wiki/URI_fragment) enne teed, saad rakendada marsruutimist, mis töötab tavalise ankrunavigatsiooniga ja ei lae lehte uuesti, kuna selle eesmärk oli luua sisemisi linke lehe sees.
+✅ Meetod `history.pushState` on osa HTML5 standardist ning toetatud [kõigis moodsates brauserites](https://caniuse.com/?search=pushState). Kui ehitate veebirakendust vanemate brauserite jaoks, saate selle API asemel kasutada trikki: kasutades tee ees [räsimärki (`#`)](https://en.wikipedia.org/wiki/URI_fragment) saate rakendada marsruutimist, mis töötab tavalise ankrunavigatsiooni korral ja ei lae lehte uuesti, kuna selle eesmärk oli luua sisemised lingid ühelt lehelt teisele.
 
-## Brauseri edasi- ja tagasinuppude käsitlemine
+## Tagasi ja Edasi nupu töölepanek
 
-`history.pushState` kasutamine loob uusi kirjeid brauseri navigeerimisajalukku. Saad seda kontrollida, hoides all oma brauseri *tagasinuppu*, see peaks kuvama midagi sellist:
+Tagasi ja edasi nupud on veebisirvimise alustalad, sarnaselt sellele, kuidas NASA missioonikontrollid saavad kosmosemissiooni ajal vaadata varasemaid süsteemi olekuid. Kasutajad ootavad nende nuppude korrektset tööd, ja kui need ei tööta, rikub see ootuspärase sirvimiskogemuse.
 
-![Navigeerimisajaloo ekraanipilt](../../../../translated_images/history.7fdabbafa521e06455b738d3dafa3ff41d3071deae60ead8c7e0844b9ed987d8.et.png)
+Meie ühe lehe rakendus vajab täiendavat seadistust selle toetamiseks. Brauser hoiab ajaloo virna (mida me oleme täitnud funktsiooniga `history.pushState`), aga kui kasutajad neid nuppe kasutavad, peab meie rakendus reageerima, uuendades kuvatavat sisu vastavalt.
 
-Kui proovid paar korda tagasinuppu klõpsata, näed, et praegune URL muutub ja ajalugu värskendatakse, kuid sama mall jääb kuvatuks.
+```mermaid
+sequenceDiagram
+    participant User
+    participant Browser
+    participant App
+    participant Template
+    
+    User->>Browser: Klikib "Logi sisse" linki
+    Browser->>App: onclick sündmus käivitus
+    App->>App: preventDefault() & navigate('/dashboard')
+    App->>Browser: history.pushState('/dashboard')
+    Browser->>Browser: URL uuendatakse aadressile /dashboard
+    App->>App: updateRoute() kutsutakse
+    App->>Template: Leia ja klooni armatuurlaua mall
+    Template->>App: Tagasta kloonitud sisu
+    App->>Browser: Asenda rakenduse sisu malliga
+    Browser->>User: Kuvab armatuurlaua ekraani
+    
+    Note over User,Template: Kasutaja klikib brauseri tagasi nuppu
+    
+    User->>Browser: Klikib tagasi nupule
+    Browser->>Browser: Ajalugu liigub tagasi aadressile /login
+    Browser->>App: popstate sündmus käivitus
+    App->>App: updateRoute() kutsutakse automaatselt
+    App->>Template: Leia ja klooni sisselogimise mall
+    Template->>App: Tagasta kloonitud sisu
+    App->>Browser: Asenda rakenduse sisu malliga
+    Browser->>User: Kuvab sisselogimise ekraani
+```
+**Olulised suhtluspunktid:**
+- **Kasutajate tegevused** põhjustavad navigeerimist klõpsude või brauserinuppude abil
+- **Rakendus lõikab läbi** lingiklikid, et vältida lehe laadimist
+- **History API** haldab URL-i muutusi ja brauseriajalugu
+- **Mallid** annavad sisu struktuuri iga ekraani jaoks
+- **Sündmuste kuulajad** tagavad, et rakendus reageerib igat tüüpi navigeerimisele
 
-Seda seetõttu, et rakendus ei tea, et peame iga kord, kui ajalugu muutub, kutsuma `updateRoute()`. Kui vaatad [`history.pushState` dokumentatsiooni](https://developer.mozilla.org/docs/Web/API/History/pushState), näed, et kui olek muutub - st liigume teisele URL-ile - käivitatakse [`popstate`](https://developer.mozilla.org/docs/Web/API/Window/popstate_event) sündmus. Kasutame seda probleemi lahendamiseks.
+Funktsioon `history.pushState` loob uusi kirjeid brauseri ajaloos. Seda näeb, kui hoiate all oma brauseri *tagasi-nuppu*, mis peaks kuvama midagi sellist:
+
+![Navigatsiooniajaloo ekraanipilt](../../../../translated_images/et/history.7fdabbafa521e064.webp)
+
+Kui proovite tunnustada tagasi-nuppu mitu korda, näete, et praegune URL muutub ja ajalugu uuendatakse, kuid sama mall jääb kuvatuks.
+
+Sellepärast, et rakendus ei tea, et meil tuleb kõigil ajaloo muutustel kutsuda `updateRoute()` funktsiooni. Vaadates [`history.pushState` dokumentatsiooni](https://developer.mozilla.org/docs/Web/API/History/pushState), näete, et kui olek muutub – mis tähendab, et liikusime uude URL-i – vallandub [`popstate`](https://developer.mozilla.org/docs/Web/API/Window/popstate_event) sündmus. Me kasutame seda probleemi parandamiseks.
 
 ### Ülesanne
 
-Selleks, et veenduda, et kuvatav mall värskendatakse, kui brauseri ajalugu muutub, lisame uue funktsiooni, mis kutsub `updateRoute()`. Teeme seda oma `app.js` faili lõpus:
+Veendumaks, et kuvatav mall uuendatakse brauseriajaloo muutudes, lisame uue funktsiooni, mis kutsub välja `updateRoute()`. Teeme seda faili `app.js` allosas:
 
 ```js
 window.onpopstate = () => updateRoute();
 updateRoute();
 ```
 
-> Märkus: kasutasime siin [noolefunktsiooni](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Functions/Arrow_functions), et deklareerida oma `popstate` sündmuse käitleja lühidalt, kuid sama hästi töötaks ka tavaline funktsioon.
+**Mida see ajaloo integreerimine tähendab:**
+- **Kuulab** `popstate` sündmusi, mis toimuvad brauseri nuppudega navigeerimisel
+- **Kasutab** noolefunktsiooni lühikese sündmusekäsitleja süntaksi jaoks
+- **Kutsutakse** `updateRoute()` automaatselt iga ajaloo oleku muutumise korral
+- **Algatatakse** rakendus, kutsudes `updateRoute()` välja lehe laadimisel
+- **Tagab** õige malli kuvamise olenemata navigeerimise viisist
 
-Siin on meeldetuletusvideo noolefunktsioonide kohta:
+> 💡 **Nipp**: Kasutasime siin [noolefunktsiooni](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Functions/Arrow_functions), et deklareerida `popstate` sündmuse käsitleja lühemalt, aga ka tavaline funktsioon toimiks sama hästi.
+
+Siin on värske video noolefunktsioonidest:
 
 [![Noolefunktsioonid](https://img.youtube.com/vi/OP6eEbOj2sc/0.jpg)](https://youtube.com/watch?v=OP6eEbOj2sc "Noolefunktsioonid")
 
-> 🎥 Klõpsa ülaloleval pildil, et vaadata videot noolefunktsioonidest.
+> 🎥 Klõpsa ülalolevale pildile, et vaadata videot noolefunktsioonidest.
 
-Nüüd proovi kasutada oma brauseri edasi- ja tagasinuppe ning kontrolli, kas kuvatav marsruut on seekord õigesti värskendatud.
+Proovige nüüd kasutada oma brauseri tagasi ja edasi nuppe, ja kontrollige, et kuvatav marsruut on seekord korrektselt uuendatud.
+
+### ⚡ **Mida saad järgnevate 5 minutiga teha**
+- [ ] Testi oma pangarakenduse navigeerimist brauseri tagasi/edasi nuppudega
+- [ ] Proovi käsitsi erinevaid URL-e aadressiribale kirjutades juhtida marsruutimist
+- [ ] Ava brauseri DevTools ja vaata, kuidas mallid kloneeritakse DOM-i
+- [ ] Katseta `console.log` lisamist marsruutimise voo jälgimiseks
+
+### 🎯 **Mida saad selle tunni jooksul saavutada**
+- [ ] Täida õppetunni lõpus olev viktoriin ja mõista SPA arhitektuuri kontseptsioone
+- [ ] Lisa CSS kujundus, et teha oma pangarakenduse mallid professionaalseks
+- [ ] Rakenda 404 vealeht koos korrapärase veahaldusega
+- [ ] Loo tänuleht koos täiendava marsruutimise funktsionaalsusega
+- [ ] Lisa laadimise olekud ja sujuvad üleminekud mallide vahel
+
+### 📅 **Sinu nädala pikkune SPA arenduse teekond**
+- [ ] Valmista kogu pangarakendus koos vormide, andmehalduste ja püsimisega
+- [ ] Lisa keerukamaid marsruutimise võimalusi nagu marsruudi parameetrid ja pesastatud marsruudid
+- [ ] Rakenda navigeerimiskaitseid ja autentimispõhist marsruutimist
+- [ ] Loo taaskasutatavad mallikomponendid ja komponentide teek
+- [ ] Lisa animatsioonid ja üleminekud sujuvamaks kasutajakogemuseks
+- [ ] Paiguta oma SPA hostimisplatvormile ja seadista marsruutimine korralikult
+
+### 🌟 **Sinu kuu pikkune frontend arhitektuuri meistriklass**
+- [ ] Ehita keerukaid SPA-sid kasutades moodsaid raamistikke nagu React, Vue või Angular
+- [ ] Õpi edasiarenenud olekuhalduse mustreid ja raamatukogusid
+- [ ] Saa meisterlikuks ehitustööriistade ja arendusvoogude kasutamises SPA arenduses
+- [ ] Rakenda progressiivse veebirakenduse funktsioone ja võrguühenduseta kasutusvõimalusi
+- [ ] Uuri jõudluse optimeerimise tehnikaid suurte SPA-de jaoks
+- [ ] Panusta avatud lähtekoodiga SPA projektidesse ja jaga oma teadmisi
+
+## 🎯 Sinu ühe lehe rakenduse meistriklassi ajakava
+
+```mermaid
+timeline
+    title SPA arendus ja moodsa veebiarhitektuuri õppimise areng
+    
+    section Alused (20 minutit)
+        Mallisüsteemid: HTML malli elemendid
+                        : DOM manipuleerimine
+                        : Sisu kloonimine
+                        : Dünaamiline renderdamine
+        
+    section Marsruutimise alused (30 minutit)
+        Kliendipoolne navigeerimine: URLi haldamine
+                              : Ajaloo API
+                              : Marsruudi kaardistamine
+                              : Sündmuste käsitlemine
+        
+    section Kasutajakogemus (40 minutit)
+        Navigeerimise täiendamine: Brauseri integratsioon
+                         : Tagasi nupu tugi
+                         : Vigade käitlemine
+                         : Sujuvad üleminekud
+        
+    section Arhitektuurimustrid (50 minutit)
+        Professionaalsed SPA-d: Komponendisüsteemid
+                         : Oleku haldamine
+                         : Jõudluse optimeerimine
+                         : Vea piirid
+        
+    section Täiustatud tehnikad (1 nädal)
+        Raamistiku integreerimine: React Router
+                             : Vue Router
+                             : Angular Router
+                             : Oleku teegid
+        
+    section Täiustamised tootmises (1 kuu)
+        Ettevõtte arendus: Koostamissüsteemid
+                              : Testimise strateegiad
+                              : Paigalduskanalid
+                              : Jõudluse jälgimine
+```
+### 🛠️ Sinu SPA arendustööriistade kokkusaare
+
+Pärast selle õppetunni lõpetamist oled meistriks saanud:
+- **Malli arhitektuur**: Taaskasutatavad HTML komponendid dünaamilise sisuga
+- **Kliendipoolne marsruutimine**: URL-i haldamine ja navigeerimine ilma lehe laadimiseta
+- **Brauseri integratsioon**: History API kasutamine ja tagasi/edasi nupu tugi
+- **Sündmustepõhised süsteemid**: Navigeerimise ja kasutajategevuste haldamine
+- **DOM-i manipuleerimine**: Mallide kloonimine, sisu vahetamine ja elementide haldus
+- **Veahaldus**: Õrnad tagasipõrked vigaste marsruutide ja puuduvate sisude korral
+- **Jõudluse mustrid**: Tõhus sisu laadimine ja renderdamisstrateegiad
+
+**Reaalmaailma rakendused**: Sinu SPA arendusoskused kehtivad otse:
+- **Moodsa veebirakendustena**: React, Vue, Angular ja teiste raamistikute arendus
+- **Progressiivsete veebirakendustena**: Võimalus töötada võrguühenduseta ja läbi rakendusliku kogemuse
+- **Ettevõtte juhtpaneelid**: Keerukad ärirakendused mitme vaatega
+- **E-kaubanduse platvormid**: Toodete kataloogid, ostukorvid ja kassavood
+- **Sisuthaldus**: Dünaamiline sisu loomine ja redigeerimine
+- **Mobiiliarendus**: Hübriidrakendused veebitehnoloogiate baasil
+
+**Saadud professionaalsed oskused**: Sa suudad nüüd:
+- **Arhitekteeri** ühe lehe rakendused nõuetekohase vastutuse lahutusega  
+- **Rakenda** klient-poolseid marsruutimise süsteeme, mis skaleeruvad rakenduse keerukusega  
+- **Siluri** keerukaid navigeerimisvooge brauseri arendajatööriistade abil  
+- **Optimeeri** rakenduse jõudlust tõhusa mallihalduse kaudu  
+- **Disaini** kasutajakogemusi, mis tunduvad loomulikud ja reageerivad  
+
+**Valdab Frontendi Arenduse Põhimõtteid**:  
+- **Komponendi Arhitektuur**: Taaskasutatavad kasutajaliidese mustrid ja mallisüsteemid  
+- **Oleku Sünkroniseerimine**: URL-i oleku haldamine ja brauseri ajalugu  
+- **Sündmuspõhine Programmeerimine**: Kasutajate interaktsioonide käsitlemine ja navigeerimine  
+- **Jõudluse Optimeerimine**: Tõhus DOM-i manipuleerimine ja sisu laadimine  
+- **Kasutajakogemuse Disain**: Sujuvad üleminekud ja intuitiivne navigeerimine  
+
+**Järgmine tase**: Oled valmis avastama kaasaegseid frontend raamistikuid, täiustatud oleku haldust või ehitama keerukaid ettevõtte rakendusi!  
+
+🌟 **Saavutus avatud**: Oled loonud professionaalse ühe lehe rakenduse aluse kaasaegsete veebiarhitektuuri mustritega!  
 
 ---
 
+## GitHub Copilot Agendi Väljakutse 🚀
+
+Kasutage Agendi režiimi, et täita järgmine väljakutse:
+
+**Kirjeldus:** Täienda pangarakendust, rakendades veakäsitlust ja 404 lehe mall, mis parandab kasutajakogemust vigaste marsruutide korral.
+
+**Juhis:** Loo uus HTML mall id-ga "not-found", mis kuvab kasutajasõbraliku 404 vealehe koos stiilidega. Muuda seejärel JavaScripti marsruutimise loogikat nii, et see mall kuvatakse, kui kasutajad navigeerivad kehtetutele URL-idele, ning lisa "Go Home" nupp, mis viib tagasi sisselogimislehele.  
+
+Lisateavet leiad [agent mode](https://code.visualstudio.com/blogs/2025/02/24/introducing-copilot-agent-mode) kohta.  
+
 ## 🚀 Väljakutse
 
-Lisa uus mall ja marsruut kolmanda lehe jaoks, mis näitab selle rakenduse autorite andmeid.
+Lisa uus mall ja marsruut kolmandale lehele, mis kuvab selle rakenduse krediiti.
 
-## Loengu-järgne viktoriin
+**Väljakutse eesmärgid:**  
+- **Loo** uus HTML mall asjakohase sisustruktuuriga  
+- **Lisa** uus marsruut routes konfiguratsiooni objekti  
+- **Lisa** navigeerimislingid krediidile ja krediidilt tagasi  
+- **Testi**, et kogu navigeerimine töötab korrektselt brauseri ajaloo abil  
 
-[Loengu-järgne viktoriin](https://ff-quizzes.netlify.app/web/quiz/42)
+## Loengujärgne test
 
-## Ülevaade ja iseseisev õppimine
+[Loengujärgne test](https://ff-quizzes.netlify.app/web/quiz/42)  
 
-Marsruutimine on üks üllatavalt keerulisi veebiarenduse osi, eriti kuna veeb liigub lehe värskendamise käitumiselt ühe lehe rakenduste värskendamisele. Loe veidi [kuidas Azure Static Web App teenus](https://docs.microsoft.com/azure/static-web-apps/routes/?WT.mc_id=academic-77807-sagibbon) käsitleb marsruutimist. Kas oskad selgitada, miks mõned selles dokumendis kirjeldatud otsused on vajalikud?
+## Ülevaade & Isetudeng
 
-## Ülesanne
+Marsruutimine on üks üllatavalt keerulisi veebiarenduse osi, eriti kuna veeb liigub lehe värskendustest ühe lehe rakenduste lehe värskendusteni. Loe natuke, kuidas [Azure Static Web App teenus](https://docs.microsoft.com/azure/static-web-apps/routes/?WT.mc_id=academic-77807-sagibbon) marsruutimist käsitleb. Kas suudad selgitada, miks mõned selles dokumendis kirjeldatud otsused on vajalikud?  
+
+**Lisamaterjalid:**  
+- **Uuri**, kuidas populaarsed raamistikud nagu React Router ja Vue Router teostavad klient-poolset marsruutimist  
+- **Uuri** hash-põhise marsruutimise ja history API marsruutimise erinevusi  
+- **Õpi** serveripoolse renderdamise (SSR) kohta ja selle mõju marsruutimisstrateegiatele  
+- **Uuri**, kuidas Progressiivsed Veebirakendused (PWA-d) käsitlevad marsruutimist ja navigeerimist  
+
+## Kodutöö  
 
 [Paranda marsruutimist](assignment.md)
 
 ---
 
-**Lahtiütlus**:  
-See dokument on tõlgitud AI tõlketeenuse [Co-op Translator](https://github.com/Azure/co-op-translator) abil. Kuigi püüame tagada täpsust, palume arvestada, et automaatsed tõlked võivad sisaldada vigu või ebatäpsusi. Algne dokument selle algses keeles tuleks pidada autoriteetseks allikaks. Olulise teabe puhul soovitame kasutada professionaalset inimtõlget. Me ei vastuta selle tõlke kasutamisest tulenevate arusaamatuste või valesti tõlgenduste eest.
+<!-- CO-OP TRANSLATOR DISCLAIMER START -->
+**Vastutusest loobumine**:
+See dokument on tõlgitud tehisintellektil põhineva tõlketeenuse [Co-op Translator](https://github.com/Azure/co-op-translator) abil. Kuigi me pingutame täpsuse nimel, palun arvestage, et automaatsed tõlked võivad sisaldada vigu või ebatäpsusi. Originaaldokument selle algses keeles tuleks lugeda autoriteetseks allikaks. Olulise teabe korral soovitatakse professionaalset inimtõlget. Me ei vastuta selle tõlke kasutamisest tekkida võivate arusaamatuste või valesti mõistmiste eest.
+<!-- CO-OP TRANSLATOR DISCLAIMER END -->

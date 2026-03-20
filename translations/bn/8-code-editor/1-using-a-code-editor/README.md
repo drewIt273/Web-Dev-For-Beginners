@@ -1,12 +1,3 @@
-<!--
-CO_OP_TRANSLATOR_METADATA:
-{
-  "original_hash": "a9a3bcc037a447e2d8994d99e871cd9f",
-  "translation_date": "2025-11-03T22:25:40+00:00",
-  "source_file": "8-code-editor/1-using-a-code-editor/README.md",
-  "language_code": "bn"
-}
--->
 # কোড এডিটর ব্যবহার: VSCode.dev-এ দক্ষতা অর্জন
 
 *দ্য ম্যাট্রিক্স* সিনেমায় নিওকে বিশাল কম্পিউটার টার্মিনালে প্লাগ ইন করতে হয়েছিল ডিজিটাল জগতে প্রবেশের জন্য। আজকের ওয়েব ডেভেলপমেন্ট টুলস সম্পূর্ণ বিপরীত – যেকোনো জায়গা থেকে সহজেই শক্তিশালী ক্ষমতা পাওয়া যায়। VSCode.dev একটি ব্রাউজার-ভিত্তিক কোড এডিটর যা পেশাদার ডেভেলপমেন্ট টুলসকে ইন্টারনেট সংযোগযুক্ত যেকোনো ডিভাইসে নিয়ে আসে।
@@ -185,7 +176,7 @@ VSCode.dev এই ক্ষমতাগুলো আপনার ব্রাউ
 
 সবকিছু লোড হয়ে গেলে, আপনি একটি সুন্দর পরিষ্কার ওয়ার্কস্পেস দেখতে পাবেন যা আপনাকে গুরুত্বপূর্ণ বিষয়ের উপর মনোযোগ দিতে সাহায্য করে – আপনার কোড!
 
-![ডিফল্ট VSCode.dev ইন্টারফেস](../../../../translated_images/default-vscode-dev.5d06881d65c1b3234ce50cd9ed3b0028e6031ad5f5b441bcbed96bfa6311f6d0.bn.png)
+![ডিফল্ট VSCode.dev ইন্টারফেস](../../../../translated_images/bn/default-vscode-dev.5d06881d65c1b323.webp)
 
 **এটি আপনার আশেপাশের ট্যুর:**
 - **অ্যাক্টিভিটি বার** (বাম দিকে স্ট্রিপটি): আপনার প্রধান নেভিগেশন যেখানে আছে Explorer 📁, Search 🔍, Source Control 🌿, Extensions 🧩, এবং Settings ⚙️
@@ -233,7 +224,7 @@ flowchart TB
 1. [vscode.dev](https://vscode.dev)-এ যান যদি আপনি ইতিমধ্যে সেখানে না থাকেন
 2. ওয়েলকাম স্ক্রিনে "Open Remote Repository" বোতামটি খুঁজুন এবং ক্লিক করুন
 
-   ![রিমোট রিপোজিটরি খুলুন](../../../../translated_images/open-remote-repository.bd9c2598b8949e7fc283cdfc8f4050c6205a7c7c6d3f78c4b135115d037d6fa2.bn.png)
+   ![রিমোট রিপোজিটরি খুলুন](../../../../translated_images/bn/open-remote-repository.bd9c2598b8949e7f.webp)
 
 3. যেকোনো GitHub রিপোজিটরি URL পেস্ট করুন (এটি চেষ্টা করুন: `https://github.com/microsoft/Web-Dev-For-Beginners`)
 4. Enter চাপুন এবং জাদু দেখুন!
@@ -242,7 +233,7 @@ flowchart TB
 
 কোডিং উইজার্ডের মতো অনুভব করতে চান? এই কীবোর্ড শর্টকাট চেষ্টা করুন: Ctrl+Shift+P (বা Mac-এ Cmd+Shift+P) কমান্ড প্যালেট খুলতে:
 
-![কমান্ড প্যালেট](../../../../translated_images/palette-menu.4946174e07f426226afcdad707d19b8d5150e41591c751c45b5dee213affef91.bn.png)
+![কমান্ড প্যালেট](../../../../translated_images/bn/palette-menu.4946174e07f42622.webp)
 
 **কমান্ড প্যালেট হলো সবকিছু করার জন্য একটি সার্চ ইঞ্জিনের মতো:**
 - "open remote" টাইপ করুন এবং এটি রিপোজিটরি ওপেনার খুঁজে দেবে
@@ -304,7 +295,7 @@ flowchart TB
 3. উপযুক্ত এক্সটেনশনসহ ফাইলের নাম লিখুন (`style.css`, `script.js`, `index.html`)
 4. Enter চাপুন ফাইল তৈরি করতে
 
-![নতুন ফাইল তৈরি করা](../../../../translated_images/create-new-file.2814e609c2af9aeb6c6fd53156c503ac91c3d538f9cac63073b2dd4a7631f183.bn.png)
+![নতুন ফাইল তৈরি করা](../../../../translated_images/bn/create-new-file.2814e609c2af9aeb.webp)
 
 **নামকরণের নিয়মাবলী:**
 - ফাইলের উদ্দেশ্য নির্দেশ করে বর্ণনামূলক নাম ব্যবহার করুন
@@ -381,7 +372,7 @@ mindmap
 2. ঘুরে দেখুন বা নির্দিষ্ট কিছু খুঁজুন
 3. যা আকর্ষণীয় মনে হয় তাতে ক্লিক করুন এবং আরও জানুন
 
-![এক্সটেনশন মার্কেটপ্লেস ইন্টারফেস](../../../../translated_images/extensions.eca0e0c7f59a10b5c88be7fe24b3e32cca6b6058b35a49026c3a9d80b1813b7c.bn.png)
+![এক্সটেনশন মার্কেটপ্লেস ইন্টারফেস](../../../../translated_images/bn/extensions.eca0e0c7f59a10b5.webp)
 
 **আপনি সেখানে যা দেখতে পাবেন:**
 
@@ -434,7 +425,7 @@ mindmap
 3. ড্রপডাউন থেকে "এক্সটেনশন সেটিংস" নির্বাচন করুন
 4. আপনার ওয়ার্কফ্লো অনুযায়ী জিনিসগুলো সামঞ্জস্য করুন
 
-![এক্সটেনশন সেটিংস কাস্টমাইজ করা](../../../../translated_images/extension-settings.21c752ae4f4cdb78a867f140ccd0680e04619d0c44bb4afb26373e54b829d934.bn.png)
+![এক্সটেনশন সেটিংস কাস্টমাইজ করা](../../../../translated_images/bn/extension-settings.21c752ae4f4cdb78.webp)
 
 **যা আপনি সাধারণত সামঞ্জস্য করতে চাইবেন:**
 - আপনার কোড কীভাবে ফরম্যাট হবে (ট্যাব বনাম স্পেস, লাইন দৈর্ঘ্য ইত্যাদি)

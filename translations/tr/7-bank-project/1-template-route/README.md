@@ -1,12 +1,3 @@
-<!--
-CO_OP_TRANSLATOR_METADATA:
-{
-  "original_hash": "351678bece18f07d9daa987a881fb062",
-  "translation_date": "2025-11-04T00:58:50+00:00",
-  "source_file": "7-bank-project/1-template-route/README.md",
-  "language_code": "tr"
-}
--->
 # Bankacılık Uygulaması Yapımı Bölüm 1: Web Uygulamasında HTML Şablonları ve Yönlendirmeler
 
 ```mermaid
@@ -652,7 +643,7 @@ sequenceDiagram
 
 `history.pushState` kullanımı, tarayıcının navigasyon geçmişinde yeni girişler oluşturur. Tarayıcınızın *geri düğmesini* basılı tutarak bunu kontrol edebilirsiniz, şöyle bir şey göstermesi gerekir:
 
-![Navigasyon geçmişi ekran görüntüsü](../../../../translated_images/history.7fdabbafa521e06455b738d3dafa3ff41d3071deae60ead8c7e0844b9ed987d8.tr.png)
+![Navigasyon geçmişi ekran görüntüsü](../../../../translated_images/tr/history.7fdabbafa521e064.webp)
 
 Geri düğmesine birkaç kez tıklamayı deneyin, URL'nin değiştiğini ve geçmişin güncellendiğini göreceksiniz, ancak aynı şablon görüntülenmeye devam eder.
 

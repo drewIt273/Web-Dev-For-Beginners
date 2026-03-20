@@ -1,12 +1,3 @@
-<!--
-CO_OP_TRANSLATOR_METADATA:
-{
-  "original_hash": "a9a3bcc037a447e2d8994d99e871cd9f",
-  "translation_date": "2025-11-06T13:16:55+00:00",
-  "source_file": "8-code-editor/1-using-a-code-editor/README.md",
-  "language_code": "uk"
-}
--->
 # Використання редактора коду: освоєння VSCode.dev
 
 Пам'ятаєте, як у *Матриці* Нео підключався до величезного комп'ютерного терміналу, щоб отримати доступ до цифрового світу? Сучасні інструменти веб-розробки — це зовсім інша історія: надзвичайно потужні можливості, доступні з будь-якого місця. VSCode.dev — це редактор коду, який працює у браузері та надає професійні інструменти розробки на будь-якому пристрої з доступом до інтернету.
@@ -185,7 +176,7 @@ VSCode.dev приносить ці можливості у ваш браузер
 
 Коли все завантажиться, ви побачите красиво оформлений робочий простір, створений для того, щоб ви могли зосередитися на найважливішому — вашому коді!
 
-![Інтерфейс VSCode.dev за замовчуванням](../../../../translated_images/default-vscode-dev.5d06881d65c1b3234ce50cd9ed3b0028e6031ad5f5b441bcbed96bfa6311f6d0.uk.png)
+![Інтерфейс VSCode.dev за замовчуванням](../../../../translated_images/uk/default-vscode-dev.5d06881d65c1b323.webp)
 
 **Ось ваш тур по околицях:**
 - **Панель активності** (та смужка зліва): Ваш основний навігатор з Explorer 📁, Search 🔍, Source Control 🌿, Extensions 🧩 та Settings ⚙️
@@ -233,7 +224,7 @@ flowchart TB
 1. Перейдіть на [vscode.dev](https://vscode.dev), якщо ви ще не там
 2. Знайдіть кнопку "Open Remote Repository" на екрані привітання та натисніть її
 
-   ![Відкриття віддаленого репозиторію](../../../../translated_images/open-remote-repository.bd9c2598b8949e7fc283cdfc8f4050c6205a7c7c6d3f78c4b135115d037d6fa2.uk.png)
+   ![Відкриття віддаленого репозиторію](../../../../translated_images/uk/open-remote-repository.bd9c2598b8949e7f.webp)
 
 3. Вставте будь-який URL репозиторію GitHub (спробуйте цей: `https://github.com/microsoft/Web-Dev-For-Beginners`)
 4. Натисніть Enter і спостерігайте за магією!
@@ -242,7 +233,7 @@ flowchart TB
 
 Хочете відчути себе чарівником програмування? Спробуйте цей ярлик клавіатури: Ctrl+Shift+P (або Cmd+Shift+P на Mac), щоб відкрити Command Palette:
 
-![Command Palette](../../../../translated_images/palette-menu.4946174e07f426226afcdad707d19b8d5150e41591c751c45b5dee213affef91.uk.png)
+![Command Palette](../../../../translated_images/uk/palette-menu.4946174e07f42622.webp)
 
 **Command Palette — це як пошукова система для всього, що ви можете зробити:**
 - Введіть "open remote", і вона знайде відкривач репозиторіїв для вас
@@ -304,7 +295,7 @@ flowchart TB
 3. Введіть назву файлу, включаючи відповідне розширення (`style.css`, `script.js`, `index.html`)
 4. Натисніть Enter, щоб створити файл
 
-![Створення нового файлу](../../../../translated_images/create-new-file.2814e609c2af9aeb6c6fd53156c503ac91c3d538f9cac63073b2dd4a7631f183.uk.png)
+![Створення нового файлу](../../../../translated_images/uk/create-new-file.2814e609c2af9aeb.webp)
 
 **Правила іменування:**
 - Використовуйте описові назви, які вказують на призначення файлу
@@ -386,7 +377,7 @@ mindmap
 2. Переглядайте або шукайте щось конкретне
 3. Натисніть на те, що здається цікавим, щоб дізнатися більше
 
-![Інтерфейс маркетплейсу розширень](../../../../translated_images/extensions.eca0e0c7f59a10b5c88be7fe24b3e32cca6b6058b35a49026c3a9d80b1813b7c.uk.png)
+![Інтерфейс маркетплейсу розширень](../../../../translated_images/uk/extensions.eca0e0c7f59a10b5.webp)
 
 **Що ви побачите там:**
 
@@ -439,7 +430,7 @@ mindmap
 3. Виберіть "Extension Settings" у випадаючому меню
 4. Налаштуйте все так, щоб це відповідало вашому робочому процесу
 
-![Налаштування розширень](../../../../translated_images/extension-settings.21c752ae4f4cdb78a867f140ccd0680e04619d0c44bb4afb26373e54b829d934.uk.png)
+![Налаштування розширень](../../../../translated_images/uk/extension-settings.21c752ae4f4cdb78.webp)
 
 **Загальні речі, які ви можете налаштувати:**
 - Як форматувати ваш код (табуляція проти пробілів, довжина рядка тощо)

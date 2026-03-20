@@ -1,12 +1,3 @@
-<!--
-CO_OP_TRANSLATOR_METADATA:
-{
-  "original_hash": "7cbdbd132d39a2bb493e85bc2a9387cc",
-  "translation_date": "2025-11-04T02:33:32+00:00",
-  "source_file": "7-bank-project/2-forms/README.md",
-  "language_code": "he"
-}
--->
 # בניית אפליקציית בנקאות חלק 2: יצירת טופס כניסה והרשמה
 
 ```mermaid
@@ -295,7 +286,7 @@ graph TD
 2. שימו לב לשינויים בשורת הכתובת של הדפדפן שלכם
 3. שימו לב כיצד הדף נטען מחדש והנתונים מופיעים בכתובת ה-URL
 
-![צילום מסך של שינוי כתובת ה-URL בדפדפן לאחר לחיצה על כפתור הרשמה](../../../../translated_images/click-register.e89a30bf0d4bc9ca867dc537c4cea679a7c26368bd790969082f524fed2355bc.he.png)
+![צילום מסך של שינוי כתובת ה-URL בדפדפן לאחר לחיצה על כפתור הרשמה](../../../../translated_images/he/click-register.e89a30bf0d4bc9ca.webp)
 
 ### השוואת שיטות HTTP
 
@@ -350,7 +341,7 @@ graph TD
 2. **לחצו** על כפתור "צור חשבון"
 3. **שימו לב** לתגובת השרת בדפדפן שלכם
 
-![חלון דפדפן בכתובת localhost:5000/api/accounts, מציג מחרוזת JSON עם נתוני משתמש](../../../../translated_images/form-post.61de4ca1b964d91a9e338416e19f218504dd0af5f762fbebabfe7ae80edf885f.he.png)
+![חלון דפדפן בכתובת localhost:5000/api/accounts, מציג מחרוזת JSON עם נתוני משתמש](../../../../translated_images/he/form-post.61de4ca1b964d91a.webp)
 
 **מה שאתם אמורים לראות:**
 - **הדפדפן מפנה** לכתובת ה-URL של נקודת הקצה של ה-API
@@ -575,7 +566,7 @@ async function register() {
 3. **לחץ** על "צור חשבון"
 4. **צפה** בהודעות הקונסולה ובמשוב למשתמש
 
-![צילום מסך המציג הודעת לוג בקונסולת הדפדפן](../../../../translated_images/browser-console.efaf0b51aaaf67782a29e1a0bb32cc063f189b18e894eb5926e02f1abe864ec2.he.png)
+![צילום מסך המציג הודעת לוג בקונסולת הדפדפן](../../../../translated_images/he/browser-console.efaf0b51aaaf6778.webp)
 
 **מה אתה אמור לראות:**
 - **מצב טעינה** מופיע על כפתור השליחה
@@ -750,7 +741,7 @@ input:focus:invalid {
 3. **נסה** תווים מיוחדים בשדה שם המשתמש
 4. **הכנס** סכום יתרה שלילי
 
-![צילום מסך המציג שגיאת ולידציה בעת ניסיון לשלוח את הטופס](../../../../translated_images/validation-error.8bd23e98d416c22f80076d04829a4bb718e0e550fd622862ef59008ccf0d5dce.he.png)
+![צילום מסך המציג שגיאת ולידציה בעת ניסיון לשלוח את הטופס](../../../../translated_images/he/validation-error.8bd23e98d416c22f.webp)
 
 **מה תבחין:**
 - **הדפדפן מציג** הודעות ולידציה מקוריות
@@ -892,7 +883,7 @@ timeline
 
 הנה דוגמה לאיך עמוד ההתחברות הסופי יכול להיראות לאחר קצת עיצוב:
 
-![צילום מסך של עמוד ההתחברות לאחר הוספת סגנונות CSS](../../../../translated_images/result.96ef01f607bf856aa9789078633e94a4f7664d912f235efce2657299becca483.he.png)
+![צילום מסך של עמוד ההתחברות לאחר הוספת סגנונות CSS](../../../../translated_images/he/result.96ef01f607bf856a.webp)
 
 ## חידון לאחר ההרצאה
 

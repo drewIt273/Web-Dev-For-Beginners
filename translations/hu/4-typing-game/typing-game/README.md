@@ -1,19 +1,10 @@
-<!--
-CO_OP_TRANSLATOR_METADATA:
-{
-  "original_hash": "e6b75e5b8caae906473a8a09d77b7121",
-  "translation_date": "2025-10-24T20:27:48+00:00",
-  "source_file": "4-typing-game/typing-game/README.md",
-  "language_code": "hu"
-}
--->
-# Játék készítése események segítségével
+# Egy játék létrehozása eseményekkel
 
-Gondolkodtál már azon, hogyan tudják a weboldalak, hogy mikor kattintasz egy gombra vagy írsz egy szövegdobozba? Ez az eseményvezérelt programozás varázsa! Mi lenne, ha ezt az alapvető készséget egy hasznos dolog építésével tanulnád meg – egy gépelési sebesség játékot, amely reagál minden billentyűleütésedre.
+Gondolkodtál már valaha azon, hogyan tudják a weboldalak, mikor kattintasz egy gombra vagy gépelsz egy szövegdobozba? Ez az eseményvezérelt programozás varázsa! Mi lehet jobb módja ennek az alapvető készségnek az elsajátítására, mint egy hasznos dolog készítése – egy gépelési sebesség játék, amely minden billentyűleütésedre reagál.
 
-Első kézből fogod látni, hogyan "beszélnek" a webböngészők a JavaScript kódoddal. Minden alkalommal, amikor kattintasz, gépelsz vagy mozgatod az egeret, a böngésző apró üzeneteket küld (ezeket eseményeknek nevezzük) a kódodnak, és te döntöd el, hogyan reagálj rájuk!
+Első kézből fogod látni, hogyan „beszélgetnek” a webböngészők a JavaScript kódoddal. Minden kattintás, gépelés vagy egérmozgás alkalmával a böngésző apró üzeneteket (ezeket nevezzük eseményeknek) küld a kódodnak, és te döntheted el, hogyan válaszolsz!
 
-Mire végeztünk, egy valódi gépelési játékot fogsz létrehozni, amely nyomon követi a sebességedet és pontosságodat. Ennél is fontosabb, hogy megérted az alapvető koncepciókat, amelyek minden interaktív weboldalt működtetnek, amit valaha használtál. Merüljünk el benne!
+Amikor végeztünk, egy valódi gépelős játékot fogsz készíteni, amely méri a sebességedet és a pontosságodat. Ami még fontosabb, megérted azokat az alapvető fogalmakat, amelyeket minden interaktív weboldal használ, amit valaha használtál. Vágjunk bele!
 
 ## Előadás előtti kvíz
 
@@ -21,96 +12,95 @@ Mire végeztünk, egy valódi gépelési játékot fogsz létrehozni, amely nyom
 
 ## Eseményvezérelt programozás
 
-Gondolj a kedvenc alkalmazásodra vagy weboldaladra – mi teszi élővé és reszponzívvá? Az, ahogyan reagál arra, amit csinálsz! Minden érintés, kattintás, húzás vagy billentyűleütés egy "eseményt" hoz létre, és itt történik a webfejlesztés igazi varázsa.
+Gondolj a kedvenc alkalmazásodra vagy weboldaladra – mi teszi élővé és reagálóképessé? Minden arról szól, hogyan reagál arra, amit csinálsz! Minden érintés, kattintás, húzás vagy billentyűleütés eseményt hoz létre, és itt történik meg a webfejlesztés valódi varázsa.
 
-Ami a webes programozást igazán érdekessé teszi, az az, hogy sosem tudjuk, mikor kattint valaki arra a gombra, vagy kezd el gépelni egy szövegdobozba. Lehet, hogy azonnal kattint, vár öt percet, vagy soha nem kattint! Ez a kiszámíthatatlanság azt jelenti, hogy másképp kell gondolkodnunk arról, hogyan írjuk meg a kódunkat.
+Ez teszi a webes programozást különösen érdekessé: soha nem tudhatjuk, mikor kattintanak valakinek arra a gombra vagy kezdi el gépelni egy szövegdobozban. Azonnal kattinthatnak, várhatnak öt percet, vagy talán soha nem is kattintanak! Ez a kiszámíthatatlanság miatt másképp kell gondolkodnunk a kód írásáról.
 
-Ahelyett, hogy olyan kódot írnánk, amely receptként felülről lefelé fut, olyan kódot írunk, amely türelmesen vár, hogy valami történjen. Ez hasonló ahhoz, ahogyan a 1800-as években a távírókezelők ültek a gépeik mellett, készen arra, hogy válaszoljanak, amint egy üzenet érkezett a dróton.
+Ahelyett, hogy a kódot fentről lefelé futó receptként írnánk meg, olyan kódot írunk, ami türelmesen várakozik, hogy valami megtörténjen. Ez hasonló ahhoz, ahogy az 1800-as években a távírógépesek ültek a gépük mellett, készen arra, hogy azonnal reagáljanak, amint üzenet érkezik a dróton keresztül.
 
-Tehát mi is pontosan az "esemény"? Egyszerűen fogalmazva, ez valami, ami történik! Amikor kattintasz egy gombra – az egy esemény. Amikor beírsz egy betűt – az egy esemény. Amikor mozgatod az egeret – az egy másik esemény.
+De mi is az az „esemény”? Egyszerűen valami, ami történik! Amikor rákattintasz egy gombra – az egy esemény. Amikor beütöd egy betűt – az egy esemény. Amikor mozgatod az egeret – az is egy esemény.
 
-Az eseményvezérelt programozás lehetővé teszi, hogy a kódunk hallgasson és reagáljon. Különleges funkciókat hozunk létre, amelyeket **eseményfigyelőknek** nevezünk, amelyek türelmesen várnak bizonyos dolgok megtörténésére, majd akcióba lépnek, amikor ezek bekövetkeznek.
+Az eseményvezérelt programozás lehetővé teszi, hogy a kódunk hallgasson és reagáljon. Különleges függvényeket hozunk létre, amelyeket **eseményfigyelőknek** hívunk, és ezek türelmesen várnak, hogy bizonyos dolgok történjenek, majd akcióba lendülnek, amikor megtörténnek.
 
-Gondolj az eseményfigyelőkre úgy, mint egy csengőre a kódod számára. Beállítod a csengőt (`addEventListener()`), megmondod neki, milyen hangot hallgasson (például 'click' vagy 'keypress'), majd meghatározod, mi történjen, amikor valaki megnyomja (a saját funkciódat).
+Gondolj az eseményfigyelőkre úgy, mint egy csengő a kódodhoz. Beállítod a csengőt (`addEventListener()`), megmondod neki, milyen hangot figyeljen (például 'click' vagy 'keypress'), majd megadod, mi történjen, ha valaki megnyomja (a saját függvényed).
 
 **Így működnek az eseményfigyelők:**
-- **Figyelnek** bizonyos felhasználói műveletekre, mint kattintások, billentyűleütések vagy egérmozgások
-- **Végrehajtják** a saját kódodat, amikor a megadott esemény bekövetkezik
+- **Hallgatnak** specifikus felhasználói műveletekre, mint kattintás, billentyűleütés vagy egérmozgás
+- **Futtatják** a saját kódodat, amikor a megadott esemény bekövetkezik
 - **Azonnal reagálnak** a felhasználói interakciókra, zökkenőmentes élményt teremtve
 - **Kezelnek** több eseményt ugyanazon az elemen különböző figyelők segítségével
 
-> **NOTE:** Érdemes kiemelni, hogy számos módja van eseményfigyelők létrehozásának. Használhatsz névtelen függvényeket, vagy létrehozhatsz névvel ellátottakat. Használhatsz különböző rövidítéseket, például a `click` tulajdonság beállítását, vagy az `addEventListener()` használatát. A gyakorlatban az `addEventListener()`-re és névtelen függvényekre fogunk koncentrálni, mivel ez a webfejlesztők által leggyakrabban használt technika. Ez a legflexibilisebb is, mivel az `addEventListener()` minden eseményhez működik, és az esemény neve paraméterként megadható.
+> **MEGJEGYZÉS:** Érdemes kiemelni, hogy számos módja van eseményfigyelők létrehozásának. Használhatsz névtelen függvényeket, vagy nevezetteket. Használhatsz különböző rövidítéseket, például a `click` tulajdonság beállítását, vagy az `addEventListener()` használatát. A gyakorlatunkban az `addEventListener()` és névtelen függvények használatára fókuszálunk, mivel ez a leggyakoribb technika a webfejlesztők körében. Ez a legkevésbé kötött módszer, mivel az `addEventListener()` minden eseményre működik, és az esemény nevét paraméterként adhatod meg.
 
 ### Gyakori események
 
-Bár a webböngészők tucatnyi különböző eseményt kínálnak, amelyeket figyelhetsz, a legtöbb interaktív alkalmazás csak néhány alapvető eseményre támaszkodik. Ezeknek az alapvető eseményeknek a megértése lehetővé teszi, hogy kifinomult felhasználói interakciókat építs.
+Bár a webböngészők több tucat különféle eseményt kínálnak, amelyekre figyelhetsz, a legtöbb interaktív alkalmazás csak néhány alapvető eseményre támaszkodik. Ezeknek az eseményeknek a megértése adja meg az alapokat a bonyolult felhasználói interakciókhoz.
 
-[Számos esemény](https://developer.mozilla.org/docs/Web/Events) áll rendelkezésedre, amelyeket figyelhetsz, amikor alkalmazást hozol létre. Alapvetően bármi, amit a felhasználó egy oldalon csinál, eseményt vált ki, ami nagy hatalmat ad neked, hogy biztosítsd a kívánt élményt. Szerencsére általában csak egy kis maroknyi eseményre van szükséged. Íme néhány gyakori (beleértve azt a kettőt, amelyet a játékunk létrehozásakor használni fogunk):
+Van [több tucat esemény](https://developer.mozilla.org/docs/Web/Events), amelyeket egy alkalmazás készítésekor hallgathatsz. Gyakorlatilag bármi, amit a felhasználó egy oldalon csinál, eseményt vált ki, ami nagy hatalmat ad arra, hogy biztosítsd számukra a kívánt élményt. Szerencsére általában csak pár eseményre van szükséged. Íme néhány gyakori (köztük az a kettő, amiket a játék készítésekor fogunk használni):
 
-| Esemény | Leírás | Gyakori felhasználási esetek |
-|--------|--------|-----------------------------|
+| Esemény | Leírás | Gyakori felhasználási módok |
+|---------|--------|-----------------------------|
 | `click` | A felhasználó valamire kattintott | Gombok, linkek, interaktív elemek |
-| `contextmenu` | A felhasználó jobb egérgombbal kattintott | Egyedi jobb kattintásos menük |
-| `select` | A felhasználó kijelölt egy szöveget | Szövegszerkesztés, másolási műveletek |
-| `input` | A felhasználó szöveget írt be | Űrlapellenőrzés, valós idejű keresés |
+| `contextmenu` | A felhasználó a jobb egérgombbal kattintott | Egyedi jobbklikk menük |
+| `select` | A felhasználó kijelölt szöveget | Szövegszerkesztés, másolás |
+| `input` | A felhasználó szöveget írt be | Űrlap ellenőrzés, valós idejű keresés |
 
 **Ezeknek az eseménytípusoknak a megértése:**
-- **Kiváltódnak**, amikor a felhasználók interakcióba lépnek az oldalad bizonyos elemeivel
-- **Részletes információt nyújtanak** a felhasználói műveletről eseményobjektumokon keresztül
-- **Lehetővé teszik**, hogy reszponzív, interaktív webalkalmazásokat hozz létre
-- **Konzisztensen működnek** különböző böngészőkben és eszközökön
+- **Indul** el, amikor a felhasználók adott elemeket érintenek meg az oldalon
+- **Részletes információkat szolgáltat** a felhasználói műveletről eseményobjektumokon keresztül
+- **Lehetővé teszi** interaktív, reagáló webalkalmazások létrehozását
+- **Működik** következetesen különböző böngészőkben és eszközökön
 
-## A játék elkészítése
+## A játék létrehozása
 
-Most, hogy megértetted, hogyan működnek az események, tegyük próbára ezt a tudást valami hasznos dolog építésével. Készítsünk egy gépelési sebesség játékot, amely bemutatja az eseménykezelést, miközben segít egy fontos fejlesztői készség fejlesztésében.
+Most, hogy érted az események működését, tegyük is próbára ezt a tudást egy hasznos dolog elkészítésével. Létrehozunk egy gépelési sebesség játékot, amely bemutatja az eseménykezelést, miközben egy fontos fejlesztői készségedet fejleszti.
 
-Egy játékot fogunk készíteni, hogy felfedezzük, hogyan működnek az események a JavaScriptben. A játékunk a játékos gépelési képességét fogja tesztelni, ami az egyik leginkább alábecsült készség, amelyet minden fejlesztőnek érdemes elsajátítania. Érdekesség: a ma használt QWERTY billentyűzetkiosztást valójában az 1870-es években tervezték írógépekhez – és a jó gépelési készségek ma is ugyanolyan értékesek a programozók számára! A játék általános menete így fog kinézni:
+Egy játékot fogunk készíteni, hogy megvizsgáljuk az események működését JavaScript-ben. A játékunk egy játékos gépelési tudását fogja tesztelni, ami az egyik alulértékelt készség, amit minden fejlesztőnek érdemes elsajátítania. Érdekesség: a QWERTY billentyűzet-elrendezést, amit ma használunk, az 1870-es években tervezték gépírók számára – és a jó gépelési készségek ma is ugyanolyan értékesek a programozók számára! A játék általános menete így néz ki:
 
 ```mermaid
 flowchart TD
-    A[Player clicks Start] --> B[Random quote displays]
-    B --> C[Player types in textbox]
-    C --> D{Word complete?}
-    D -->|Yes| E[Highlight next word]
-    D -->|No| F{Correct so far?}
-    F -->|Yes| G[Keep normal styling]
-    F -->|No| H[Show error styling]
-    E --> I{Quote complete?}
-    I -->|No| C
-    I -->|Yes| J[Show success message with time]
+    A[Játékos kattint a Start gombra] --> B[Véletlenszerű idézet megjelenik]
+    B --> C[Játékos begépeli a szövegdobozba]
+    C --> D{Szó kész?}
+    D -->|Igen| E[Következő szó kiemelése]
+    D -->|Nem| F{Eddig helyes?}
+    F -->|Igen| G[Normál stílus megtartása]
+    F -->|Nem| H[Hibastílus megjelenítése]
+    E --> I{Idézet kész?}
+    I -->|Nem| C
+    I -->|Igen| J[Sikerüzenet megjelenítése idővel]
     G --> C
     H --> C
 ```
-
 **Így fog működni a játékunk:**
-- **Elindul**, amikor a játékos rákattint az indítás gombra, és megjelenít egy véletlenszerű idézetet
-- **Nyomon követi** a játékos gépelési előrehaladását szó szerint valós időben
+- **Elindul**, amikor a játékos rákattint a start gombra, és megjelenik egy véletlenszerű idézet
+- **Követi** a játékos gépelési folyamatát szóról szóra, valós időben
 - **Kiemeli** az aktuális szót, hogy irányítsa a játékos figyelmét
-- **Azonnali vizuális visszajelzést ad** a gépelési hibákról
-- **Kiszámítja** és megjeleníti az összes időt, amikor az idézet befejeződik
+- **Azonnali** vizuális visszajelzést ad a gépelési hibákra
+- **Számolja** és megjeleníti az összes eltelt időt, amikor az idézet befejeződik
 
-Építsük meg a játékunkat, és tanuljunk az eseményekről!
+Készítsük el a játékot, és tanuljunk meg az eseményekről!
 
 ### Fájlstruktúra
 
-Mielőtt elkezdenénk kódolni, szerveződjünk! Ha már az elején tiszta fájlstruktúrát hozol létre, az később megkímél a fejfájástól, és professzionálisabbá teszi a projektedet. 😊
+Mielőtt kódolni kezdenénk, rendezkedjünk be! Ha már az elején tiszta fájlstruktúránk van, az később sok fejfájást megelőz, és profibbá teszi a projektedet. 😊
 
-Egyszerűen fogjuk tartani, csak három fájllal: `index.html` az oldal struktúrájához, `script.js` az összes játéklogikához, és `style.css`, hogy minden jól nézzen ki. Ez a klasszikus trió, amely a web nagy részét működteti!
+Egyszerűen tartjuk majd három fájlra: `index.html` a lap szerkezetéhez, `script.js` a játék logikájához, és `style.css` hogy szépen nézzen ki. Ez egy klasszikus trió, ami a legtöbb weboldalt működteti!
 
-**Hozz létre egy új mappát a munkádhoz egy konzol vagy terminál ablak megnyitásával, és add ki a következő parancsot:**
+**Hozz létre egy új mappát a munkádhoz úgy, hogy nyitsz egy konzolt vagy terminált, és beírod a következő parancsot:**
 
 ```bash
-# Linux or macOS
+# Linux vagy macOS
 mkdir typing-game && cd typing-game
 
 # Windows
 md typing-game && cd typing-game
 ```
 
-**Ezek a parancsok a következőket teszik:**
-- **Létrehoznak** egy új könyvtárat `typing-game` néven a projektfájlok számára
-- **Automatikusan belépnek** az újonnan létrehozott könyvtárba
-- **Beállítanak** egy tiszta munkaterületet a játékfejlesztéshez
+**Ezeknek a parancsoknak a funkciója:**
+- **Létrehoz** egy új `typing-game` nevű könyvtárat a projekt fájljaidnak
+- **Belép** automatikusan az újonnan létrehozott könyvtárba
+- **Tiszta munkaterületet biztosít** a játék fejlesztéséhez
 
 **Nyisd meg a Visual Studio Code-ot:**
 
@@ -120,36 +110,36 @@ code .
 
 **Ez a parancs:**
 - **Elindítja** a Visual Studio Code-ot az aktuális könyvtárban
-- **Megnyitja** a projektmappádat a szerkesztőben
-- **Hozzáférést biztosít** az összes szükséges fejlesztői eszközhöz
+- **Megnyitja** a projekt mappádat a szerkesztőben
+- **Hozzáférést ad** az összes fejlesztői eszközhöz, amire szükséged lesz
 
-**Adj hozzá három fájlt a mappához a Visual Studio Code-ban a következő nevekkel:**
-- `index.html` – Tartalmazza a játékod szerkezetét és tartalmát
-- `script.js` – Kezeli az összes játéklogikát és eseményfigyelőt
-- `style.css` – Meghatározza a vizuális megjelenést és a stílust
+**Add hozzá a mappához a következő három fájlt Visual Studio Code-ban:**
+- `index.html` – tartalmazza a játék szerkezetét és tartalmát
+- `script.js` – kezeli az összes játék logikát és eseményfigyelőt
+- `style.css` – meghatározza a vizuális megjelenést és stílust
 
 ## Felhasználói felület létrehozása
 
-Most építsük meg a színpadot, ahol minden játék akció zajlik majd! Gondolj erre úgy, mint egy űrhajó vezérlőpaneljének tervezésére – biztosítanunk kell, hogy minden, amire a játékosoknak szükségük van, ott legyen, ahol számítanak rá.
+Most építsük meg a színpadot, ahol az egész játék eseménye zajlik majd! Gondolj erre úgy, mint egy űrhajó vezérlőpultjának megtervezésére – biztosnak kell lennünk abban, hogy minden, amire a játékosoknak szükségük van, ott legyen, ahol elvárják.
 
-Gondoljuk át, hogy mit igényel a játékunk. Ha egy gépelési játékot játszanál, mit szeretnél látni a képernyőn? Íme, mire lesz szükségünk:
+Határozzuk meg, mire van szüksége a játékunknak. Ha te játszanál egy gépelős játékkal, mit szeretnél látni a képernyőn? Íme, amire szükségünk lesz:
 
-| UI Elem | Cél | HTML Elem |
-|---------|-----|-----------|
-| Idézet megjelenítése | Megmutatja a gépelendő szöveget | `<p>` `id="quote"`-val |
-| Üzenet terület | Állapot- és sikerüzeneteket jelenít meg | `<p>` `id="message"`-val |
-| Szövegbevitel | Ahol a játékosok begépelik az idézetet | `<input>` `id="typed-value"`-val |
-| Indítás gomb | Elindítja a játékot | `<button>` `id="start"`-tal |
+| Felhasználói felület elem | Cél | HTML elem |
+|---------------------------|-----|-----------|
+| Idézet megjelenítő | Megjeleníti a begépelendő szöveget | `<p>` az `id="quote"`-tal |
+| Üzenet terület | Állapot- és sikerüzeneteket mutat | `<p>` az `id="message"`-szel |
+| Szövegbeviteli mező | Ahol a játékosok begépelik az idézetet | `<input>` az `id="typed-value"`-val |
+| Start gomb | Elindítja a játékot | `<button>` az `id="start"`-tal |
 
-**A felhasználói felület struktúrájának megértése:**
-- **Logikusan szervezi** a tartalmat felülről lefelé
-- **Egyedi ID-kat rendel** az elemekhez JavaScript célzásához
-- **Világos vizuális hierarchiát biztosít** a jobb felhasználói élmény érdekében
-- **Tartalmaz** szemantikus HTML elemeket az akadálymentesség érdekében
+**A felhasználói felület szerkezetének megértése:**
+- **Logikusan szervezi** a tartalmat fentről lefelé
+- **Egyedi ID-ket rendel** az elemekhez a JavaScript használatához
+- **Világos vizuális hierarchiát ad** a jobb felhasználói élményhez
+- **Tartalmaz** szemantikus HTML elemeket a jobb hozzáférhetőség érdekében
 
-Mindegyikhez ID-kat kell rendelni, hogy JavaScriptben dolgozhassunk velük. Hozzáadjuk a CSS és JavaScript fájlokra való hivatkozásokat is, amelyeket létre fogunk hozni.
+Mindegyik elemhez ID-k kellenek, hogy dolgozni tudjunk velük JavaScriptből. Hivatkozásokat is hozzá fogunk adni az általunk készítendő CSS és JavaScript fájlokra.
 
-Hozz létre egy új fájlt `index.html` néven. Add hozzá a következő HTML-t:
+Hozz létre egy új fájlt `index.html` néven, majd illeszd be a következő HTML-t:
 
 ```html
 <!-- inside index.html -->
@@ -172,67 +162,119 @@ Hozz létre egy új fájlt `index.html` néven. Add hozzá a következő HTML-t:
 </html>
 ```
 
-**Az HTML struktúra lebontása:**
-- **Kapcsolja** a CSS stíluslapot a `<head>`-ben a stílushoz
-- **Világos címet és utasításokat hoz létre** a felhasználók számára
-- **Helyőrző bekezdéseket hoz létre** specifikus ID-kkal a dinamikus tartalomhoz
-- **Tartalmaz** egy beviteli mezőt akadálymentességi attribútumokkal
-- **Biztosít** egy indítás gombot a játék elindításához
+**Mit valósít meg ez a HTML szerkezet?**
+- **Csatolja** a CSS stíluslapot a `<head>` szekcióban a formázáshoz
+- **Készít** világos címet és használati útmutatót a felhasználóknak
+- **Létrehoz** helyőrző bekezdéseket specifikus ID-kkel dinamikus tartalomhoz
+- **Tartalmaz** egy bevitel mezőt elérhetőségi attribútumokkal
+- **Biztosít** egy start gombot a játék elindításához
 - **Betölti** a JavaScript fájlt a végén az optimális teljesítmény érdekében
 
 ### Az alkalmazás elindítása
 
-Az alkalmazás gyakori tesztelése a fejlesztés során segít korán észrevenni a problémákat, és valós időben látni a haladást. A Live Server egy felbecsülhetetlen eszköz, amely automatikusan frissíti a böngészőt, amikor mented a változtatásokat, így sokkal hatékonyabbá teszi a fejlesztést.
+A fejlesztés közbeni gyakori tesztelés segít időben elkapni a hibákat, és valós időben látni az előrehaladást. A Live Server egy felbecsülhetetlen eszköz, amely automatikusan frissíti a böngészőt, amikor módosításokat mentesz, így sokkal hatékonyabbá teszi a fejlesztést.
 
-Mindig a legjobb iteratívan fejleszteni, hogy lásd, hogyan néz ki a dolgok. Indítsuk el az alkalmazásunkat. A Visual Studio Code-hoz van egy csodálatos bővítmény, a [Live Server](https://marketplace.visualstudio.com/items?itemName=ritwickdey.LiveServer&WT.mc_id=academic-77807-sagibbon), amely helyileg hosztolja az alkalmazásodat, és minden mentéskor frissíti a böngészőt.
+Mindig érdemes iteratívan fejleszteni, hogy lásd, hogyan néz ki. Indítsuk el az alkalmazást. Van egy remek bővítmény a Visual Studio Code-hoz, a [Live Server](https://marketplace.visualstudio.com/items?itemName=ritwickdey.LiveServer&WT.mc_id=academic-77807-sagibbon), amely helyi szerverként szolgál, és minden mentéskor frissíti a böngészőt.
 
-**Telepítsd a [Live Server](https://marketplace.visualstudio.com/items?itemName=ritwickdey.LiveServer&WT.mc_id=academic-77807-sagibbon)-t a link követésével és az Install gombra kattintva:**
+**Telepítsd a [Live Server](https://marketplace.visualstudio.com/items?itemName=ritwickdey.LiveServer&WT.mc_id=academic-77807-sagibbon) bővítményt a linken, majd kattints a Telepítés gombra:**
 
-**A telepítés során a következő történik:**
-- **Megnyitja** a böngésződet a Visual Studio Code-ban
-- **Végigvezet** a bővítmény telepítési folyamatán
-- **Előfordulhat**, hogy újra kell indítanod a Visual Studio Code-ot a beállítás befejezéséhez
+**Ez történik a telepítés közben:**
+- **Megnyitja** a böngésződ a Visual Studio Code megnyitásához
+- **Végigvezet** az installáció folyamatán
+- **Előfordulhat**, hogy újra kell indítanod a Visual Studio Code-ot a telepítés befejezéséhez
 
-**A telepítés után a Visual Studio Code-ban nyomd meg a Ctrl-Shift-P (vagy Cmd-Shift-P) billentyűkombinációt a parancspaletta megnyitásához:**
+**Telepítés után a Visual Studio Code-ban nyomd meg Ctrl-Shift-P-t (vagy Cmd-Shift-P-t), hogy megnyisd a parancs palettát:**
 
-**A parancspaletta megértése:**
+**A parancs paletta lényege:**
 - **Gyors hozzáférést biztosít** az összes VS Code parancshoz
-- **Keres** parancsokat gépelés közben
-- **Billentyűparancsokat kínál** a gyorsabb fejlesztéshez
+- **Keresést végez** gépelés közben
+- **Billentyűparancsokat kínál** a gyorsabb fejlesztésért
 
-**Írd be: "Live Server: Open with Live Server":**
+**Írd be: „Live Server: Open with Live Server”:**
 
-**A Live Server funkciói:**
-- **Elindít** egy helyi fejlesztői szervert a projektedhez
-- **Automatikusan frissíti** a böngészőt, amikor fájlokat mentesz
-- **Kiszolgálja** a fájljaidat egy helyi URL-ről (általában `localhost:5500`)
+**A Live Server a következőket teszi:**
+- **Indít** egy helyi fejlesztői szervert a projektedhez
+- **Automatikusan** frissíti a böngészőt a fájlok mentésekor
+- **Lokálisan szolgálja ki** a fájlokat URL-en (általában `localhost:5500`)
 
-**Nyiss meg egy böngészőt, és navigálj ide: `https://localhost:5500`:**
+**Nyiss meg egy böngészőt, és navigálj a `https://localhost:5500` címre:**
 
-Most látnod kell az általad létrehozott oldalt! Adjunk hozzá némi funkcionalitást.
+Most már látnod kell az általad létrehozott oldalt! Adjunk hozzá némi funkcionalitást.
 
 ## CSS hozzáadása
 
-Most tegyük szebbé a dolgokat! A vizuális visszajelzés kulcsfontosságú volt a felhasználói felületek számára a számítástechnika korai napjai óta. Az 1980-as években a kutatók felfedezték, hogy az azonnali vizuális visszajelzés drámaian javítja a felhasználói teljesítményt és csökkenti a hibákat. Pontosan ezt fogjuk létrehozni.
+Most pedig tegyük széppé a dolgokat! A vizuális visszajelzés már a számítástechnika korai napjaitól kulcsfontosságú volt a felhasználói felületekben. Az 1980-as évek kutatói felfedezték, hogy az azonnali vizuális visszajelzés drámaian javítja a felhasználók teljesítményét és csökkenti a hibákat. Pontosan ezt fogjuk létrehozni.
 
-A játékunknak kristálytisztán kell jeleznie, hogy mi történik. A játékosoknak azonnal tudniuk kell, melyik szót kell begépelniük, és ha hibát követnek el, azt azonnal látniuk kell. Készítsünk néhány egyszerű, de hatékony stílust:
+A játékunknak kristálytisztán kell megmutatnia, mi történik. A játékosoknak azonnal tudniuk kell, melyik szót kell gépelniük, és ha hibáznak, azt azonnal látniuk kell. Készítsünk egyszerű, de hatékony stílusokat:
 
-H
-| Idézetek tömbje | Tárolja az összes lehetséges idézetet a játékhoz | `['Idézet 1', 'Idézet 2', ...]` |
-| Szavak tömbje | Törje fel az aktuális idézetet egyedi szavakra | `['Amikor', 'te', 'van', ...]` |
-| Szó index | Követi, hogy a játékos melyik szót gépeli | `0, 1, 2, 3...` |
-| Kezdési idő | Számolja az eltelt időt a pontozáshoz | `Date.now()` |
+Hozz létre egy új fájlt `style.css` néven, és illeszd be a következő szintaxist.
 
-**Szükségünk lesz hivatkozásokra a felhasználói felület elemeihez is:**
+```css
+/* inside style.css */
+.highlight {
+  background-color: yellow;
+}
+
+.error {
+  background-color: lightcoral;
+  border: red;
+}
+```
+
+**Mit csinálnak ezek a CSS osztályok:**
+- **Kiemelik** az aktuális szót sárga háttérrel a világos vizuális irányításért
+- **Jelezik** a gépelési hibákat világos korall színű háttérrel
+- **Azonnali visszajelzést adnak** anélkül, hogy zavarnák a gépelési folyamatot
+- **Kontrasztos színeket használnak** az akadálymentesség és egyértelmű kommunikáció érdekében
+
+✅ Ami a CSS-t illeti, az oldalt úgy alakíthatod, ahogy csak szeretnéd. Szánj egy kis időt, és tedd vonzóbbá az oldalt:
+
+- Válassz más betűtípust
+- Színezd ki a címeket
+- Méretezd át az elemeket
+
+## JavaScript
+
+Most jönnek az érdekes részek! 🎉 Megvan a HTML szerkezetünk és a CSS stílusunk, de jelenleg a játék olyan, mint egy szép autó motor nélkül. A JavaScript lesz a motor – ő teszi lehetővé, hogy minden ténylegesen működjön és reagáljon a játékosok cselekedeteire.
+
+Itt fogod látni, hogyan kel életre a kreációd. Lépésről lépésre fogunk haladni, hogy ne legyen túlterhelő:
+
+| Lépés | Cél | Mit tanulsz |
+|-------|-----|-------------|
+| [Konstansok létrehozása](../../../../4-typing-game/typing-game) | Idézetek és DOM hivatkozások beállítása | Változókezelés és DOM kiválasztás |
+| [Eseményfigyelő a játék indításához](../../../../4-typing-game/typing-game) | A játék inicializálásának kezelése | Eseménykezelés és UI frissítések |
+| [Eseményfigyelő a gépeléshez](../../../../4-typing-game/typing-game) | Felhasználói bemenet valós idejű feldolgozása | Bemenet ellenőrzése és dinamikus visszajelzés |
+
+**Ez a strukturált megközelítés segít neked:**
+- **Logikus, kezelhető részekre bontani** a kódodat
+- **Lépésenként felépíteni** a funkcionalitást, így könnyebb hibákat keresni
+- **Megérteni, hogyan működnek együtt** az alkalmazás különböző részei
+- **Ismételhető mintákat létrehozni** jövőbeli projektekhez
+
+De először hozz létre egy új fájlt `script.js` néven.
+
+### Konstansok hozzáadása
+
+Mielőtt belevágnánk az akcióba, gyűjtsük össze az összes erőforrásunkat! Pont úgy, ahogy a NASA irányítóközpontja előkészíti a megfigyelő rendszereket a kilövés előtt, sokkal könnyebb, ha mindennel fel vagy készülve és készen állsz. Így később nem kell keresgélned, és elkerülöd az elírásokat.
+
+Először ezt kell beállítanunk:
+
+| Adattípus | Cél | Példa |
+| Idézetek tömbje | Az összes lehetséges idézet tárolása a játék számára | `['Idézet 1', 'Idézet 2', ...]` |
+| Szó tömb | Az aktuális idézet szavakra bontása | `['Amikor', 'te', 'vagy', ...]` |
+| Szó index | Következze nyomon, melyik szót gépeli a játékos | `0, 1, 2, 3...` |
+| Kezdési idő | Az eltelt idő kiszámítása a pontozáshoz | `Date.now()` |
+
+**Szükségünk lesz hivatkozásokra a felhasználói felület elemeihez:**
 | Elem | ID | Cél |
-|------|----|-----|
-| Szövegbevitel | `typed-value` | Ahol a játékosok gépelnek |
-| Idézet megjelenítése | `quote` | Megjeleníti a gépelendő idézetet |
+|---------|----|---------|
+| Szövegbeviteli mező | `typed-value` | Itt gépelnek a játékosok |
+| Idézet megjelenítés | `quote` | Megjeleníti az leütendő idézetet |
 | Üzenet terület | `message` | Állapotfrissítéseket jelenít meg |
 
 ```javascript
-// inside script.js
-// all of our quotes
+// a script.js fájlban
+// az összes idézetünk
 const quotes = [
     'When you have eliminated the impossible, whatever remains, however improbable, must be the truth.',
     'There is nothing more deceptive than an obvious fact.',
@@ -242,255 +284,312 @@ const quotes = [
     'Nothing clears up a case so much as stating it to another person.',
     'Education never ends, Watson. It is a series of lessons, with the greatest for the last.',
 ];
-// store the list of words and the index of the word the player is currently typing
+// tárolja a szavak listáját és a jelenleg gépelt szó indexét
 let words = [];
 let wordIndex = 0;
-// the starting time
+// a kezdő idő
 let startTime = Date.now();
-// page elements
+// az oldal elemei
 const quoteElement = document.getElementById('quote');
 const messageElement = document.getElementById('message');
 const typedValueElement = document.getElementById('typed-value');
 ```
 
-**Az alábbiakban bemutatjuk, mit ér el ez a beállítási kód:**
-- **Tárolja** Sherlock Holmes idézeteinek tömbjét `const` használatával, mivel az idézetek nem változnak
-- **Inicializálja** a nyomkövetési változókat `let` használatával, mivel ezek az értékek frissülnek a játék során
-- **Rögzíti** a DOM elemekre való hivatkozásokat `document.getElementById()` segítségével a hatékony hozzáférés érdekében
-- **Előkészíti** az összes játékfunkció alapját egyértelmű, leíró változónevekkel
-- **Logikusan szervezi** az összefüggő adatokat és elemeket az egyszerűbb kódkarbantartás érdekében
+**Vizsgáljuk meg, mit valósít meg ez a beállító kód:**
+- **Tárol** egy Sherlock Holmes idézeteket tartalmazó tömböt `const`-tal, mivel az idézetek nem változnak
+- **Inicializál** követő változókat `let`-tel, mert ezek értékei a játék során frissülnek
+- **Megszerez** hivatkozásokat DOM elemekre `document.getElementById()`-val a hatékony hozzáférésért
+- **Kiépít** minden játékfunkció alapját világos, leíró változónevekkel
+- **Logikusan szervez** adatok és elemek összefüggéseit a könnyebb kódkarbantartás érdekében
 
-✅ Nyugodtan adj hozzá több idézetet a játékodhoz
+✅ Folytasd az idézetek hozzáadását a játékodhoz
 
-> 💡 **Profi tipp**: Az elemeket bármikor lekérhetjük a kódban a `document.getElementById()` használatával. Mivel rendszeresen hivatkozni fogunk ezekre az elemekre, elkerülhetjük a string literálokkal kapcsolatos elírásokat, ha konstansokat használunk. Olyan keretrendszerek, mint a [Vue.js](https://vuejs.org/) vagy a [React](https://reactjs.org/) segíthetnek a kód központosított kezelésében.
+> 💡 **Pro Tipp**: A `document.getElementById()` segítségével bármikor lekérhetjük az elemeket a kódban. Mivel gyakran hivatkozunk ezekre az elemekre, ajánlott a hibák elkerülése végett konstansokat használni a string literálok helyett. Frameworkök, mint a [Vue.js](https://vuejs.org/) vagy a [React](https://reactjs.org/) segíthetnek a kód központosabb kezelésében.
 >
-**Miért működik ez a megközelítés ilyen jól:**
-- **Elkerüli** a helyesírási hibákat, amikor többször hivatkozunk elemekre
-- **Javítja** a kód olvashatóságát leíró konstans nevekkel
-- **Lehetővé teszi** a jobb IDE támogatást automatikus kiegészítéssel és hibakereséssel
-- **Könnyebbé teszi** az átalakítást, ha az elem ID-k később megváltoznak
+**Ezért működik ez a megközelítés kiválóan:**
+- **Megelőzi** a helyesírási hibákat, amikor többször hivatkozunk az elemekre
+- **Javítja** a kód olvashatóságát leíró konstansnevekkel
+- **Lehetővé teszi** jobb IDE támogatást automatikus kiegészítéssel és hibajelzéssel
+- **Megkönnyíti** az átalakítást, ha később változnak az elemazonosítók
 
-Nézz meg egy videót a `const`, `let` és `var` használatáról
+Szánj egy percet, hogy megnézz egy videót a `const`, `let` és `var` használatáról
 
 [![Változók típusai](https://img.youtube.com/vi/JNIXfGiDWM8/0.jpg)](https://youtube.com/watch?v=JNIXfGiDWM8 "Változók típusai")
 
-> 🎥 Kattints a fenti képre egy videóért a változókról.
+> 🎥 Kattints a fenti képre egy változókról szóló videóhoz.
 
-### Indítási logika hozzáadása
+### Add hozzá az indítási logikát
 
-Itt áll össze minden! 🚀 Most fogod megírni az első valódi eseményfigyelődet, és van valami igazán kielégítő abban, hogy látod, ahogy a kódod reagál egy gombnyomásra.
+Itt áll össze minden a helyére! 🚀 Éppen az első valódi eseményfigyelődet írod, és elégedettséggel tölt el látni, ahogy a kódodon gombnyomásra reagál.
 
-Gondolj bele: valahol odakint egy játékos meg fogja nyomni a "Start" gombot, és a kódodnak készen kell állnia rá. Nem tudjuk, mikor fogja megnyomni - lehet, hogy azonnal, lehet, hogy miután kávét szerez - de amikor megteszi, a játékod életre kel.
+Gondolj bele: valahol egy játékos rányom a "Start" gombra, és a kódodnak készen kell állnia. Fogalmunk sincs, mikor nyomja meg – lehet rögtön, vagy egy kávé után –, de amikor megteszi, azonnal életre kel a játék.
 
-Amikor a felhasználó rákattint a `start` gombra, ki kell választanunk egy idézetet, be kell állítanunk a felhasználói felületet, és nyomon kell követnünk az aktuális szót és az időzítést. Az alábbi JavaScript kódot kell hozzáadnod; ezt a kódrészlet után részletezzük.
+Amikor a felhasználó a `start`-ot kattintja, ki kell választanunk egy idézetet, be kell állítanunk a felhasználói felületet, valamint követni kell az aktuális szót és az időzítést. Lentebb megtalálod a szükséges JavaScript kódot; az alatt részletesen átbeszéljük.
 
 ```javascript
-// at the end of script.js
+// a script.js végén
 document.getElementById('start').addEventListener('click', () => {
-  // get a quote
+  // szerezzen be egy idézetet
   const quoteIndex = Math.floor(Math.random() * quotes.length);
   const quote = quotes[quoteIndex];
-  // Put the quote into an array of words
+  // Tegye az idézetet egy szavakból álló tömbbe
   words = quote.split(' ');
-  // reset the word index for tracking
+  // állítsa alaphelyzetbe a szóindexet a követéshez
   wordIndex = 0;
 
-  // UI updates
-  // Create an array of span elements so we can set a class
+  // Felhasználói felület frissítése
+  // Hozzon létre egy span elemekből álló tömböt, hogy osztályt tudjunk beállítani
   const spanWords = words.map(function(word) { return `<span>${word} </span>`});
-  // Convert into string and set as innerHTML on quote display
+  // Alakítsa stringgé és állítsa be a quote display innerHTML-jeként
   quoteElement.innerHTML = spanWords.join('');
-  // Highlight the first word
+  // Emelje ki az első szót
   quoteElement.childNodes[0].className = 'highlight';
-  // Clear any prior messages
+  // Törölje az előző üzeneteket
   messageElement.innerText = '';
 
-  // Setup the textbox
-  // Clear the textbox
+  // Állítsa be a szövegdobozt
+  // Törölje a szövegdobozt
   typedValueElement.value = '';
-  // set focus
+  // állítsa a fókuszt
   typedValueElement.focus();
-  // set the event handler
+  // állítsa be az eseménykezelőt
 
-  // Start the timer
+  // Indítsa el az órát
   startTime = new Date().getTime();
 });
 ```
 
-**A kód logikai szakaszokra bontása:**
+**Daraboljuk szét a kódot logikai részekre:**
 
-**📊 Szókövetési beállítás:**
-- **Kiválaszt** egy véletlenszerű idézetet a `Math.floor()` és `Math.random()` segítségével a változatosság érdekében
-- **Átalakítja** az idézetet egyedi szavak tömbjévé a `split(' ')` használatával
-- **Visszaállítja** a `wordIndex` értékét 0-ra, mivel a játékosok az első szóval kezdenek
-- **Előkészíti** a játék állapotát egy új körre
+**📊 Szókövetés beállítása:**
+- **Kiválaszt** véletlenszerű idézetet a `Math.floor()` és `Math.random()` segítségével a változatosságért
+- **Átalakítja** az idézetet egy-egy szóra bontott tömbbé a `split(' ')` használatával
+- **Visszaállítja** a `wordIndex` értékét 0-ra, mert a játékos az első szóval kezd
+- **Előkészíti** a játékállapotot egy új körhöz
 
-**🎨 Felhasználói felület beállítása és megjelenítése:**
-- **Létrehoz** egy `<span>` elemekből álló tömböt, amely minden szót egyedi stílusba csomagol
-- **Összekapcsolja** a span elemeket egyetlen stringgé a hatékony DOM frissítés érdekében
+**🎨 UI beállítása és megjelenítés:**
+- **Létrehoz** egy tömböt `<span>` elemekből, amelyek az egyes szavakat egyenként stylingolják
+- **Összefűzi** a span elemeket egyetlen sztringgé a hatékony DOM-frissítésért
 - **Kiemeli** az első szót a `highlight` CSS osztály hozzáadásával
-- **Törli** az előző játék üzeneteit, hogy tiszta lapot biztosítson
+- **Törli** az előző játéküzeneteket, hogy tiszta állapot legyen
 
 **⌨️ Szövegmező előkészítése:**
-- **Törli** a meglévő szöveget a bevitel mezőben
-- **Fókuszál** a szövegmezőre, hogy a játékosok azonnal gépelhessenek
-- **Előkészíti** a bevitel területét az új játékhoz
+- **Kitörli** a beviteli mező tartalmát
+- **A fókuszt a szövegmezőre állítja**, hogy a játékos azonnal kezdhesse a gépelést
+- **Felállítja** a mezőt az új játékhoz
 
-**⏱️ Időzítő inicializálása:**
-- **Rögzíti** az aktuális időbélyeget a `new Date().getTime()` segítségével
-- **Lehetővé teszi** a gépelési sebesség és a befejezési idő pontos kiszámítását
-- **Elindítja** a teljesítménykövetést a játékhoz
+**⏱️ Időmérő inicializálása:**
+- **Lekéri** az aktuális időbélyeget `new Date().getTime()` segítségével
+- **Lehetővé teszi** a gépelési sebesség és befejezési idő pontos mérését
+- **Elindítja** a játék teljesítménykövetését
 
-### Gépelési logika hozzáadása
+### Add hozzá a gépelési logikát
 
-Itt foglalkozunk a játék szívével! Ne aggódj, ha ez eleinte soknak tűnik - minden darabot végigveszünk, és a végére látni fogod, milyen logikus az egész.
+Itt érünk a játék szívéhez! Ne aggódj, ha elsőre soknak tűnik – lépésről lépésre átvesszük, és a végére látni fogod, mennyire logikus az egész.
 
-Amit itt építünk, az meglehetősen kifinomult: minden egyes alkalommal, amikor valaki begépel egy betűt, a kódunk ellenőrzi, mit gépelt, visszajelzést ad neki, és eldönti, mi történjen ezután. Ez hasonló ahhoz, ahogy a korai szövegszerkesztők, mint például a WordStar az 1970-es években, valós idejű visszajelzést adtak a gépelőknek.
+Egy fejlett rendszert építünk: minden egyes betű leütésekor a kód ellenőrzi a beírt értéket, visszajelzést ad, és eldönti, mi történjen tovább. Ez hasonlít az 1970-es évekbeli WordStarhoz hasonló szövegszerkesztők valós idejű visszajelzésére.
 
 ```javascript
-// at the end of script.js
+// a script.js végén
 typedValueElement.addEventListener('input', () => {
-  // Get the current word
+  // Az aktuális szó lekérése
   const currentWord = words[wordIndex];
-  // get the current value
+  // az aktuális érték lekérése
   const typedValue = typedValueElement.value;
 
   if (typedValue === currentWord && wordIndex === words.length - 1) {
-    // end of sentence
-    // Display success
+    // a mondat vége
+    // Siker megjelenítése
     const elapsedTime = new Date().getTime() - startTime;
     const message = `CONGRATULATIONS! You finished in ${elapsedTime / 1000} seconds.`;
     messageElement.innerText = message;
   } else if (typedValue.endsWith(' ') && typedValue.trim() === currentWord) {
-    // end of word
-    // clear the typedValueElement for the new word
+    // a szó vége
+    // a typedValueElement törlése az új szóhoz
     typedValueElement.value = '';
-    // move to the next word
+    // lépés a következő szóra
     wordIndex++;
-    // reset the class name for all elements in quote
+    // az osztálynév visszaállítása az összes quote elemen
     for (const wordElement of quoteElement.childNodes) {
       wordElement.className = '';
     }
-    // highlight the new word
+    // az új szó kiemelése
     quoteElement.childNodes[wordIndex].className = 'highlight';
   } else if (currentWord.startsWith(typedValue)) {
-    // currently correct
-    // highlight the next word
+    // jelenleg helyes
+    // a következő szó kiemelése
     typedValueElement.className = '';
   } else {
-    // error state
+    // hibás állapot
     typedValueElement.className = 'error';
   }
 });
 ```
 
-**A gépelési logika folyamatának megértése:**
+**A gépelési logika folyamata:**
 
-Ez a funkció vízesés-szerű megközelítést alkalmaz, amely a legspecifikusabbtól a legáltalánosabb feltételekig ellenőrzi az állapotokat. Nézzük meg minden forgatókönyvet:
+Ez a függvény vízesés-szerűen vizsgálja a feltételeket a legspecifikusabból a legáltalánosabb felé. Nézzük az egyes eseteket:
 
 ```mermaid
 flowchart TD
-    A[Player types character] --> B[Get current word and typed value]
-    B --> C{Quote complete?}
-    C -->|Yes| D[Show completion message with time]
-    C -->|No| E{Word complete with space?}
-    E -->|Yes| F[Clear input, move to next word, update highlight]
-    E -->|No| G{Typing correctly so far?}
-    G -->|Yes| H[Remove error styling]
-    G -->|No| I[Show error styling]
+    A[Játékos gépel karaktert] --> B[Aktuális szó és gépelt érték lekérése]
+    B --> C{Idézet kész?}
+    C -->|Igen| D[Befejező üzenet megjelenítése az idővel]
+    C -->|Nem| E{Szó kész szóközzel?}
+    E -->|Igen| F[Bemenet törlése, következő szó, kiemelés frissítése]
+    E -->|Nem| G{Eddig helyesen gépel?}
+    G -->|Igen| H[Hibastílus eltávolítása]
+    G -->|Nem| I[Hibastílus megjelenítése]
 ```
+**🏁 Idézet befejezve (1. eset):**
+- **Ellenőrzi**, hogy a gépelt érték megegyezik-e a jelenlegi szóval ÉS az utolsó szónál vagyunk-e
+- **Kiszámolja** az eltelt időt a kezdési idő és az aktuális idő különbségeként
+- **Átváltja** az ezredmásodperceket másodpercre osztással 1 000-rel
+- **Megjeleníti** a gratuláló üzenetet a befejezési idővel együtt
 
-**🏁 Idézet befejezve (1. forgatókönyv):**
-- **Ellenőrzi**, hogy a begépelt érték megegyezik-e az aktuális szóval ÉS az utolsó szónál vagyunk-e
-- **Kiszámítja** az eltelt időt úgy, hogy a kezdési időt kivonja az aktuális időből
-- **Átalakítja** a milliszekundumokat másodpercekké az 1,000-rel való osztással
-- **Megjeleníti** a gratuláló üzenetet a befejezési idővel
+**✅ Szó befejezve (2. eset):**
+- **Észleli** a szó befejezését a szóköz beírásával a végén
+- **Ellenőrzi**, hogy a levágott input pontosan megegyezik-e a szóval
+- **Kitisztítja** a beviteli mezőt a következő szóhoz
+- **Lépteti** a `wordIndex`-et az új szóra
+- **Frissíti** a vizuális kiemelést, eltávolítva minden osztályt és kiemelve az új szót
 
-**✅ Szó befejezve (2. forgatókönyv):**
-- **Észleli** a szó befejezését, amikor a bevitel szóközzel végződik
-- **Érvényesíti**, hogy a levágott bevitel pontosan megegyezik az aktuális szóval
-- **Törli** a bevitel mezőt a következő szóhoz
-- **Tovább lép** a következő szóra a `wordIndex` növelésével
-- **Frissíti** a vizuális kiemelést az összes osztály eltávolításával és az új szó kiemelésével
+**📝 Gépelés folyamatban (3. eset):**
+- **Ellenőrzi**, hogy a jelenlegi szó kezdete megegyezik-e az eddig begépelt karakterekkel
+- **Eltávolítja** az esetleges hibastílusokat a helyes gépelés jelzésére
+- **Engedi** a további gépelést zavarás nélkül
 
-**📝 Gépelés folyamatban (3. forgatókönyv):**
-- **Ellenőrzi**, hogy az aktuális szó azzal kezdődik-e, amit eddig begépeltek
-- **Eltávolítja** az esetleges hibás stílusokat, hogy jelezze a helyes bevitel
-- **Lehetővé teszi** a folyamatos gépelést megszakítás nélkül
+**❌ Hibás állapot (4. eset):**
+- **Aktiválódik**, ha a begépelt szöveg nem egyezik az elvárt szó kezdetével
+- **Hozzáadja** az error CSS osztályt az azonnali vizuális visszajelzéshez
+- **Segíti** a játékosokat a hibák gyors felismerésében és javításában
 
-**❌ Hibás állapot (4. forgatókönyv):**
-- **Kiváltja**, amikor a begépelt szöveg nem egyezik az elvárt szó kezdetével
-- **Alkalmazza** a hibás CSS osztályt az azonnali vizuális visszajelzés érdekében
-- **Segíti** a játékosokat gyorsan azonosítani és kijavítani a hibákat
+## Teszteld az alkalmazásod
 
-## Teszteld az alkalmazásodat
+Nézd, mit értél el! 🎉 Egy valódi, működő gépelős játékot építettél eseményvezérelt programozással. Szánj egy percet, hogy ezt értékeld – nem kis teljesítmény!
 
-Nézd meg, mit értél el! 🎉 Most építettél egy valódi, működő gépelési játékot eseményvezérelt programozással. Szánj egy pillanatot arra, hogy ezt értékeld - ez nem kis teljesítmény!
+Most következik a tesztelés! Vajon működik-e elvárás szerint? Kimaradt valami? Ez teljesen normális, ha nem tökéletes elsőre. Még a tapasztalt fejlesztők is találnak hibákat a kódjukban rendszeresen. Ez a fejlesztési folyamat része!
 
-Most jön a tesztelési fázis! Vajon úgy működik, ahogy vártuk? Valamit kihagytunk? Az a helyzet, hogy ha valami nem működik tökéletesen azonnal, az teljesen normális. Még a tapasztalt fejlesztők is rendszeresen találnak hibákat a kódjukban. Ez mind része a fejlesztési folyamatnak!
+Kattints a `start`-ra, és kezdj el gépelni! Olyan lesz, mint az előző animáción láttuk.
 
-Kattints a `start` gombra, és kezdj el gépelni! Úgy kellene kinéznie, mint az előző animációban.
+![A játék animációja](../../../../4-typing-game/images/demo.gif)
 
-![A játék működésének animációja](../../../../4-typing-game/images/demo.gif)
+**Mit érdemes tesztelni az alkalmazásban:**
+- **Ellenőrzi**, hogy a Start-ra kattintva egy véletlenszerű idézet jelenik meg
+- **Megerősíti**, hogy gépelés közben a jelenlegi szó megfelelően kiemelt
+- **Ellenőrzi**, hogy a hibás gépelés hibastílust kap
+- **Biztosítja**, hogy a szavak befejezése megfelelően lépteti a kiemelést
+- **Teszteli**, hogy az idézet befejezésekor megjelenik a befejezési üzenet és az időzítés
 
-**Mit kell tesztelni az alkalmazásodban:**
-- **Ellenőrzi**, hogy a Start gombra kattintva véletlenszerű idézet jelenik meg
-- **Megerősíti**, hogy a gépelés helyesen kiemeli az aktuális szót
-- **Ellenőrzi**, hogy hibás gépelés esetén megjelenik a hibás stílus
-- **Biztosítja**, hogy a szavak befejezése megfelelően előrehaladjon a kiemelésben
-- **Teszteli**, hogy az idézet befejezésekor megjelenik a befejezési üzenet az idővel
-
-**Gyakori hibakeresési tippek:**
-- **Ellenőrizd** a böngésző konzolt (F12) JavaScript hibákért
-- **Győződj meg róla**, hogy minden fájlnév pontosan egyezik (kis- és nagybetű érzékeny)
-- **Biztosítsd**, hogy a Live Server megfelelően fut és frissít
-- **Tesztelj** különböző idézeteket, hogy megbizonyosodj a véletlenszerű kiválasztás működéséről
+**Tipikus hibakeresési tanácsok:**
+- **Nézd meg** a böngésző konzolját (F12) JavaScript hibákért
+- **Ellenőrizd**, hogy az összes fájlnév pontosan egyezik (kis- és nagybetű érzékeny)
+- **Biztosítsd**, hogy a Live Server fut és megfelelően frissít
+- **Tesztelj** több idézettel a véletlenszerű kiválasztás teszteléséhez
 
 ---
 
 ## GitHub Copilot Agent kihívás 🎮
 
-Használd az Agent módot az alábbi kihívás teljesítéséhez:
+Az Agent mód használatával teljesítsd a következő kihívást:
 
-**Leírás:** Bővítsd a gépelési játékot egy nehézségi rendszerrel, amely a játékos teljesítményéhez igazodik. Ez a kihívás segít gyakorolni az eseménykezelést, az adatelemzést és a dinamikus UI frissítéseket.
+**Leírás:** Bővítsd a gépelős játékot egy nehézségi rendszerrel, amely a játékos teljesítménye alapján állítja be a játékmenetet. Ez a kihívás fejlett eseménykezelés, adat-elemzés és dinamikus UI-frissítések gyakorlását segíti.
 
-**Feladat:** Hozz létre egy nehézségi beállítási rendszert a gépelési játékhoz, amely:
-1. Követi a játékos gépelési sebességét (szavak per perc) és pontossági százalékát
-2. Automatikusan igazodik három nehézségi szinthez: Könnyű (egyszerű idézetek), Közepes (aktuális idézetek), Nehéz (összetett idézetek írásjelekkel)
-3. Megjeleníti az aktuális nehézségi szintet és a játékos statisztikáit a felhasználói felületen
-4. Beépít egy sorozatszámlálót, amely 3 egymást követő jó teljesítmény után növeli a nehézséget
-5. Vizualis visszajelzést ad (színek, animációk) a nehézségi változások jelzésére
+**Feladat:** Hozz létre egy nehézségi beállító rendszert a gépelős játékhoz, amely:
+1. Követi a játékos gépelési sebességét (szavak percenként) és pontossági százalékát
+2. Automatikusan vált három nehézségi szint között: Könnyű (egyszerű idézetek), Közepes (jelenlegi idézetek), Nehéz (bonyolult idézetek írásjelekkel)
+3. Megjeleníti az aktuális nehézségi szintet és a játékos statisztikáit a UI-n
+4. Bevezet egy sorozatszámlálót, amely 3 egymás utáni jó teljesítmény után növeli a nehézséget
+5. Vizualizációs visszajelzést ad (színek, animációk) a nehézség változásáról
 
-Add hozzá a szükséges HTML elemeket, CSS stílusokat és JavaScript funkciókat a funkció megvalósításához. Tartalmazz megfelelő hibakezelést, és biztosítsd, hogy a játék hozzáférhető maradjon megfelelő ARIA címkékkel.
+Adj hozzá szükséges HTML elemeket, CSS stílusokat és JavaScript funkciókat a funkció megvalósításához. Alkalmazz megfelelő hibakezelést, és gondoskodj arról, hogy a játék ARIA címkékkel továbbra is elérhető maradjon.
 
-További információ az [agent mode](https://code.visualstudio.com/blogs/2025/02/24/introducing-copilot-agent-mode) használatáról itt.
+További infó az [agent mód használatáról](https://code.visualstudio.com/blogs/2025/02/24/introducing-copilot-agent-mode).
 
 ## 🚀 Kihívás
 
-Készen állsz arra, hogy a gépelési játékodat a következő szintre emeld? Próbáld meg megvalósítani ezeket a fejlett funkciókat, hogy mélyítsd az eseménykezelés és a DOM manipuláció megértését:
+Készen állsz, hogy a gépelős játékodat a következő szintre emeld? Próbáld meg megvalósítani ezeket a fejlett funkciókat az eseménykezelés és DOM manipuláció mélyebb megértése érdekében:
 
 **További funkciók hozzáadása:**
 
-| Funkció | Leírás | Gyakorlandó készségek |
-|---------|--------|-----------------------|
-| **Beviteli vezérlés** | Tiltsd le az `input` eseményfigyelőt a befejezéskor, és engedélyezd újra, amikor a gombot megnyomják | Eseménykezelés és állapotvezérlés |
-| **UI állapotkezelés** | Tiltsd le a szövegmezőt, amikor a játékos befejezi az idézetet | DOM tulajdonságok manipulálása |
-| **Modális párbeszédablak** | Jeleníts meg egy modális párbeszédablakot a sikerüzenettel | Fejlett UI minták és hozzáférhetőség |
-| **Legjobb eredmény rendszer** | Tárold a legjobb eredményeket `localStorage` használatával | Böngésző tárolási API-k és adatmegőrzés |
+| Funkció | Leírás | Gyakorolt készségek |
+|---------|-------------|------------------------|
+| **Beviteli vezérlés** | A `input` esemény figyelőjének letiltása befejezéskor, és újraengedélyezése gombra kattintáskor | Eseménykezelés és állapotvezérlés |
+| **UI állapotkezelés** | A szövegmező letiltása, ha a játékos befejezte az idézetet | DOM tulajdonságok manipulálása |
+| **Modal párbeszédablak** | Modal ablak megjelenítése sikerüzenettel | Haladó UI minták és akadálymentesség |
+| **Legjobb eredmény rendszer** | Eredmények tárolása `localStorage` segítségével | Böngésző tároló API-k és adatmegőrzés |
 
 **Megvalósítási tippek:**
-- **Tanulmányozd** a `localStorage.setItem()` és `localStorage.getItem()` használatát a tartós tároláshoz
-- **Gyakorold** az eseményfigyelők dinamikus hozzáadását és eltávolítását
-- **Fedezd fel** a HTML párbeszédablak elemeket vagy CSS modális mintákat
-- **Fontold meg** a hozzáférhetőséget, amikor formázási vezérlőket tiltasz le és engedélyezel
+- **Ismerkedj meg** a `localStorage.setItem()` és `localStorage.getItem()` használatával tartós tároláshoz
+- **Gyakorold** eseményfigyelők dinamikus hozzáadását és eltávolítását
+- **Fedezd fel** az HTML dialog elemeket vagy CSS modal mintákat
+- **Figyelj** az akadálymentességre a beviteli vezérlők letiltásakor és engedélyezésekor
 
-## Utóelőadás kvíz
+## Előadás utáni kvíz
 
-[Utóelőadás kvíz](https://ff-quizzes.netlify.app/web/quiz/22)
+[Előadás utáni kvíz](https://ff-quizzes.netlify.app/web/quiz/22)
 
-## Áttekintés és önálló tanulás
+---
 
-Olvass utána [az összes elérhető eseménynek](https://developer.mozilla.org/docs/Web/Events), amelyeket a fejlesztő a webböngészőn keresztül használhat, és gondold át azokat a forgatókönyveket, amelyekben mindegyiket használnád.
+## 🚀 A te gépelős játék mesterképezésed idővonala
+
+### ⚡ **Mit tehetsz a következő 5 percben**
+- [ ] Teszteld a gépelős játékodat különböző idézetekkel, hogy zökkenőmentesen működik-e
+- [ ] Kísérletezz a CSS stílussal – próbáld meg változtatni a kiemelés és a hibaszínt
+- [ ] Nyisd meg a böngésződ DevTools-át (F12) és figyeld a Konzolt játék közben
+- [ ] Próbáld meg a lehető leggyorsabban befejezni egy idézetet
+
+### ⏰ **Mit érhetsz el ezen az órán**
+- [ ] Adj még idézeteket a tömbhöz (akár kedvenc könyveidből vagy filmjeidből)
+- [ ] Valósítsd meg a legjobb eredmény rendszert `localStorage`-ből a kihívás szekció szerint
+- [ ] Készíts szavak per perc kalkulátort, amely megjelenik minden játék végén
+- [ ] Adj hanghatásokat helyes gépeléshez, hibához és játék befejezéséhez
+
+### 📅 **Hét napos kalandod**
+- [ ] Építs többjátékos verziót, ahol barátok szópárbajban versenyezhetnek
+- [ ] Hozz létre különböző nehézségi szinteket változó idézetbonyolultsággal
+- [ ] Adj előrehaladási sávot, ami mutatja, mennyit gépeltél az idézetből
+- [ ] Valósíts meg felhasználói fiókokat személyes statisztika követéssel
+- [ ] Tervezzen egyedi témákat és hagyd, hogy a felhasználók választhassanak stílust
+
+### 🗓️ **Havi átalakulásod**
+- [ ] Alkoss gépelős tanfolyamot leckékkel, amelyek fokozatosan tanítják meg az ujjelhelyezést
+- [ ] Építs elemző rendszert, amely megmutatja, mely betűk vagy szavak okoznak legtöbb hibát
+- [ ] Adj támogatást különböző nyelvekhez és billentyűzetkiosztásokhoz
+- [ ] Integráld oktatási API-kkal, hogy idézeteket húzz irodalmi adatbázisokból
+- [ ] Tedd közzé továbbfejlesztett gépelős játékodat mások számára
+
+### 🎯 **Utolsó önreflexió**
+
+**Mielőtt továbblépnél, ünnepeld meg ezeket:**
+- Mi volt a legkielégítőbb pillanat a játék építése közben?
+- Hogy érzed magad az eseményvezérelt programozás kapcsán most, a kezdetekhez képest?
+- Mi az az egy funkció, amit izgatottan vársz, hogy beépíts, hogy a játék egyedi legyen?
+- Hogyan alkalmazhatod az eseménykezelési fogalmakat más projektekben?
+
+```mermaid
+journey
+    title Az eseményprogramozási magabiztosságod útja
+    section Ma
+      Események megértése: 3: You
+      Felhasználói felület építése: 4: You
+      Eseményfigyelők írása: 5: You
+    section Ezen a héten
+      Funkciók hozzáadása: 4: You
+      Hibakeresés: 5: You
+      Felhasználói élmény növelése: 4: You
+    section Következő hónap
+      Összetett alkalmazások építése: 5: You
+      Mások tanítása: 5: You
+      Keretrendszerek készítése: 5: You
+```
+> 🌟 **Emlékezz rá**: Mostanra elsajátítottad azt az egyik legfontosabb koncepciót, amely minden interaktív weboldal és alkalmazás alapja. Az eseményvezérelt programozás ad életet és rugalmasságot a webnek. Minden egyes dropdown menü, valós idejű űrlapvalidáció, vagy kattintásra reagáló játék mögött ez a varázslat áll. Nem csupán kódolni tanulsz – élményeket hozol létre, amelyek intuitívak és lebilincselőek! 🎉
+
+---
+
+## Áttekintés & Önálló tanulás
+
+Olvasd el [az összes elérhető eseményt](https://developer.mozilla.org/docs/Web/Events), amelyeket a böngésző biztosít fejlesztőknek, és gondolkodj el, mikor melyiket érdemes használni.
 
 ## Feladat
 
@@ -498,5 +597,7 @@ Olvass utána [az összes elérhető eseménynek](https://developer.mozilla.org/
 
 ---
 
-**Felelősség kizárása**:  
-Ez a dokumentum az [Co-op Translator](https://github.com/Azure/co-op-translator) AI fordítási szolgáltatás segítségével lett lefordítva. Bár törekszünk a pontosságra, kérjük, vegye figyelembe, hogy az automatikus fordítások hibákat vagy pontatlanságokat tartalmazhatnak. Az eredeti dokumentum az eredeti nyelvén tekintendő hiteles forrásnak. Kritikus információk esetén javasolt professzionális emberi fordítást igénybe venni. Nem vállalunk felelősséget semmilyen félreértésért vagy téves értelmezésért, amely a fordítás használatából eredhet.
+<!-- CO-OP TRANSLATOR DISCLAIMER START -->
+**Felelősségkizárás**:
+Ez a dokumentum az AI fordító szolgáltatás [Co-op Translator](https://github.com/Azure/co-op-translator) segítségével készült. Bár a pontosságra törekszünk, kérjük, vegye figyelembe, hogy az automatikus fordítások hibákat vagy pontatlanságokat tartalmazhatnak. Az eredeti dokumentum az anyanyelvén tekinthető hivatalos forrásnak. Fontos információk esetén professzionális, emberi fordítást javaslunk. Nem vállalunk felelősséget az ebből eredő félreértésekért vagy félreértelmezésekért.
+<!-- CO-OP TRANSLATOR DISCLAIMER END -->

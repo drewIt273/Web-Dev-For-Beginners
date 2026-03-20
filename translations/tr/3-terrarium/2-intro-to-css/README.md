@@ -1,12 +1,3 @@
-<!--
-CO_OP_TRANSLATOR_METADATA:
-{
-  "original_hash": "e39f3a4e3bcccf94639e3af1248f8a4d",
-  "translation_date": "2025-11-04T00:55:10+00:00",
-  "source_file": "3-terrarium/2-intro-to-css/README.md",
-  "language_code": "tr"
-}
--->
 # Teraryum Projesi Bölüm 2: CSS'e Giriş
 
 ```mermaid
@@ -30,7 +21,7 @@ journey
       Glass reflections: 5: Student
 ```
 
-![CSS'e Giriş](../../../../translated_images/webdev101-css.3f7af5991bf53a200d79e7257e5e450408d8ea97f5b531d31b2e3976317338ee.tr.png)
+![CSS'e Giriş](../../../../translated_images/tr/webdev101-css.3f7af5991bf53a20.webp)
 > Sketchnote: [Tomomi Imura](https://twitter.com/girlie_mac)
 
 HTML teraryumunuzun oldukça basit göründüğünü hatırlıyor musunuz? CSS, bu sade yapıyı görsel olarak çekici bir şeye dönüştürdüğümüz yerdir.
@@ -205,7 +196,7 @@ body {
 
 Tarayıcınızın geliştirici araçlarını (F12) açın, Elementler sekmesine gidin ve `<h1>` öğenizi inceleyin. Body'den yazı tipi ailesini miras aldığını göreceksiniz:
 
-![miras alınan yazı tipi](../../../../translated_images/1.cc07a5cbe114ad1d4728c35134584ac1b87db688eff83cf75985cf31fe0ed95c.tr.png)
+![miras alınan yazı tipi](../../../../translated_images/tr/1.cc07a5cbe114ad1d.webp)
 
 ✅ **Deney Zamanı**: Body öğesinde `color`, `line-height` veya `text-align` gibi diğer miras alınabilir özellikleri ayarlamayı deneyin. Başlığınız ve diğer öğeler üzerinde ne olur?
 
@@ -335,7 +326,7 @@ Teraryumumuzda, her bitkinin benzer bir stile ihtiyacı var ancak aynı zamanda 
 **Her bitki için HTML yapısı:**
 ```html
 <div class="plant-holder">
-  <img class="plant" alt="Decorative plant for terrarium" id="plant1" src="../../../../translated_images/plant1.d18b18ffe73da18f8b1ac7aba73b4050af52f4a0c9174aeac464b85123fc2850.tr.png" />
+  <img class="plant" alt="Decorative plant for terrarium" id="plant1" src="../../../../translated_images/tr/plant1.d18b18ffe73da18f8b1ac7aba73b4050af52f4a0c9174aeac464b85123fc2850.png" />
 </div>
 ```
 
@@ -599,7 +590,7 @@ Teraryumunuzu gerçekçi cam yansımalarıyla geliştirmeye hazır mısınız? B
 
 Cam yüzeylerden ışığın nasıl yansıdığını simüle eden ince vurgular oluşturacaksınız. Bu yaklaşım, Jan van Eyck gibi Rönesans ressamlarının boyalı camı üç boyutlu göstermek için ışık ve yansımayı nasıl kullandıklarına benzer. İşte hedefiniz:
 
-![bitmiş teraryum](../../../../translated_images/terrarium-final.2f07047ffc597d0a06b06cab28a77801a10dd12fdb6c7fc630e9c40665491c53.tr.png)
+![bitmiş teraryum](../../../../translated_images/tr/terrarium-final.2f07047ffc597d0a.webp)
 
 **Meydan okumanız:**
 - **Oluşturun** cam yansımaları için ince beyaz veya açık renkli oval şekiller

@@ -1,12 +1,3 @@
-<!--
-CO_OP_TRANSLATOR_METADATA:
-{
-  "original_hash": "5c383cc2cc23bb164b06417d1c107a44",
-  "translation_date": "2025-11-25T11:44:30+00:00",
-  "source_file": "1-getting-started-lessons/2-github-basics/README.md",
-  "language_code": "ar"
-}
--->
 # مقدمة إلى GitHub
 
 مرحبًا بك، أيها المطور المستقبلي! 👋 هل أنت مستعد للانضمام إلى ملايين المبرمجين حول العالم؟ أنا متحمس جدًا لتعريفك بـ GitHub – فكر فيه كأنه منصة التواصل الاجتماعي للمبرمجين، ولكن بدلاً من مشاركة صور الغداء، نحن نشارك الأكواد ونبني أشياء مذهلة معًا!
@@ -17,7 +8,7 @@ CO_OP_TRANSLATOR_METADATA:
 
 سنخوض هذه الرحلة معًا، خطوة بخطوة. لا استعجال، لا ضغط – فقط أنت وأنا وبعض الأدوات الرائعة التي ستصبح أصدقائك الجدد!
 
-![مقدمة إلى GitHub](../../../../translated_images/webdev101-github.8846d7971abef6f947909b4f9d343e2a23778aa716ca6b9d71df7174ee5009ac.ar.png)
+![مقدمة إلى GitHub](../../../../translated_images/ar/webdev101-github.8846d7971abef6f9.webp)
 > رسم توضيحي بواسطة [Tomomi Imura](https://twitter.com/girlie_mac)
 
 ```mermaid
@@ -603,7 +594,7 @@ flowchart TD
 
 ✅ طريقة جيدة للعثور على مستودعات "مناسبة للمبتدئين" هي [البحث باستخدام الوسم 'good-first-issue'](https://github.blog/2020-01-22-browse-good-first-issues-to-start-contributing-to-open-source/).
 
-![نسخ مستودع محليًا](../../../../translated_images/clone_repo.5085c48d666ead57664f050d806e325d7f883be6838c821e08bc823ab7c66665.ar.png)
+![نسخ مستودع محليًا](../../../../translated_images/ar/clone_repo.5085c48d666ead57.webp)
 
 هناك عدة طرق لنسخ الأكواد. إحدى الطرق هي "استنساخ" محتويات المستودع باستخدام HTTPS، SSH، أو باستخدام GitHub CLI (واجهة سطر الأوامر).
 

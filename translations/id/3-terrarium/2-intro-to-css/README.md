@@ -1,12 +1,3 @@
-<!--
-CO_OP_TRANSLATOR_METADATA:
-{
-  "original_hash": "e39f3a4e3bcccf94639e3af1248f8a4d",
-  "translation_date": "2025-11-06T11:48:40+00:00",
-  "source_file": "3-terrarium/2-intro-to-css/README.md",
-  "language_code": "id"
-}
--->
 # Proyek Terrarium Bagian 2: Pengantar CSS
 
 ```mermaid
@@ -30,7 +21,7 @@ journey
       Glass reflections: 5: Student
 ```
 
-![Pengantar CSS](../../../../translated_images/webdev101-css.3f7af5991bf53a200d79e7257e5e450408d8ea97f5b531d31b2e3976317338ee.id.png)
+![Pengantar CSS](../../../../translated_images/id/webdev101-css.3f7af5991bf53a20.webp)
 > Sketchnote oleh [Tomomi Imura](https://twitter.com/girlie_mac)
 
 Ingat bagaimana terrarium HTML Anda terlihat cukup sederhana? CSS adalah tempat kita mengubah struktur polos itu menjadi sesuatu yang menarik secara visual.
@@ -205,7 +196,7 @@ body {
 
 Buka alat pengembang browser Anda (F12), navigasikan ke tab Elemen, dan inspeksi elemen `<h1>` Anda. Anda akan melihat bahwa elemen tersebut mewarisi keluarga font dari body:
 
-![font yang diwarisi](../../../../translated_images/1.cc07a5cbe114ad1d4728c35134584ac1b87db688eff83cf75985cf31fe0ed95c.id.png)
+![font yang diwarisi](../../../../translated_images/id/1.cc07a5cbe114ad1d.webp)
 
 ✅ **Waktu Eksperimen**: Cobalah mengatur properti lain yang dapat diwarisi pada `<body>` seperti `color`, `line-height`, atau `text-align`. Apa yang terjadi pada heading dan elemen lainnya?
 
@@ -335,7 +326,7 @@ Di terrarium kita, setiap tanaman membutuhkan gaya yang serupa tetapi juga membu
 **Inilah struktur HTML untuk setiap tanaman:**
 ```html
 <div class="plant-holder">
-  <img class="plant" alt="Decorative plant for terrarium" id="plant1" src="../../../../translated_images/plant1.d18b18ffe73da18f8b1ac7aba73b4050af52f4a0c9174aeac464b85123fc2850.id.png" />
+  <img class="plant" alt="Decorative plant for terrarium" id="plant1" src="../../../../translated_images/id/plant1.d18b18ffe73da18f8b1ac7aba73b4050af52f4a0c9174aeac464b85123fc2850.png" />
 </div>
 ```
 
@@ -599,7 +590,7 @@ Siap meningkatkan terrarium Anda dengan refleksi kaca yang realistis? Teknik ini
 
 Anda akan membuat sorotan halus yang mensimulasikan bagaimana cahaya memantul dari permukaan kaca. Pendekatan ini mirip dengan bagaimana pelukis Renaisans seperti Jan van Eyck menggunakan cahaya dan refleksi untuk membuat kaca yang dilukis tampak tiga dimensi. Berikut adalah tujuan Anda:
 
-![finished terrarium](../../../../translated_images/terrarium-final.2f07047ffc597d0a06b06cab28a77801a10dd12fdb6c7fc630e9c40665491c53.id.png)
+![finished terrarium](../../../../translated_images/id/terrarium-final.2f07047ffc597d0a.webp)
 
 **Tantangan Anda:**
 - **Buat** bentuk oval putih atau berwarna terang untuk refleksi kaca

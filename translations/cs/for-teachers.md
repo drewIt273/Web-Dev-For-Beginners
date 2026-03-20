@@ -1,12 +1,3 @@
-<!--
-CO_OP_TRANSLATOR_METADATA:
-{
-  "original_hash": "71009af209f81cc01a1f2d324200375f",
-  "translation_date": "2025-10-03T10:34:49+00:00",
-  "source_file": "for-teachers.md",
-  "language_code": "cs"
-}
--->
 ### Pro pedagogy
 
 Tento učební plán můžete využít ve své třídě. Funguje bez problémů s GitHub Classroom a předními platformami LMS a lze jej také použít jako samostatné úložiště se studenty.
@@ -42,10 +33,10 @@ Tento učební plán obsahuje importovatelné balíčky pro běžné pracovní p
   - Moodle Cloud má omezenou podporu Common Cartridge. Preferujte výše uvedený soubor pro Moodle, který lze také nahrát do Canvas.
   - Po importu zkontrolujte moduly, termíny odevzdání a nastavení kvízů, aby odpovídaly vašemu rozvrhu.
 
-![Moodle](../../translated_images/moodle.94eb93d714a50cb2c97435b408017dee224348b61bc86203ffd43a4f4e57b95f.cs.png)
+![Moodle](../../translated_images/cs/moodle.94eb93d714a50cb2.webp)
 > Učební plán v prostředí Moodle
 
-![Canvas](../../translated_images/canvas.fbd605ff8e5b8aff567d398528ce113db304446b90b9cad55c654de3fdfcda34.cs.png)
+![Canvas](../../translated_images/cs/canvas.fbd605ff8e5b8aff.webp)
 > Učební plán v prostředí Canvas
 
 ### Použití úložiště přímo (bez Classroom)

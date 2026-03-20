@@ -1,12 +1,3 @@
-<!--
-CO_OP_TRANSLATOR_METADATA:
-{
-  "original_hash": "71009af209f81cc01a1f2d324200375f",
-  "translation_date": "2025-10-03T10:57:24+00:00",
-  "source_file": "for-teachers.md",
-  "language_code": "sl"
-}
--->
 ### Za učitelje
 
 Vabljeni, da uporabite ta učni načrt v svojem razredu. Odlično deluje z GitHub Classroom in vodilnimi platformami LMS, prav tako pa ga lahko uporabljate kot samostojno repozitorij s svojimi učenci.
@@ -42,10 +33,10 @@ Ta učni načrt vključuje uvozne pakete za običajne LMS delovne tokove.
   - Moodle Cloud ima omejeno podporo za Common Cartridge. Raje uporabite zgornjo datoteko Moodle, ki jo lahko naložite tudi v Canvas.
   - Po uvozu pregledajte module, roke in nastavitve kvizov, da se ujemajo z vašim urnikom semestra.
 
-![Moodle](../../translated_images/moodle.94eb93d714a50cb2c97435b408017dee224348b61bc86203ffd43a4f4e57b95f.sl.png)
+![Moodle](../../translated_images/sl/moodle.94eb93d714a50cb2.webp)
 > Učni načrt v učilnici Moodle
 
-![Canvas](../../translated_images/canvas.fbd605ff8e5b8aff567d398528ce113db304446b90b9cad55c654de3fdfcda34.sl.png)
+![Canvas](../../translated_images/sl/canvas.fbd605ff8e5b8aff.webp)
 > Učni načrt v Canvas
 
 ### Neposredna uporaba repozitorija (brez Classroom)

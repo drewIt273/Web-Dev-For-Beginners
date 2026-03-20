@@ -1,12 +1,3 @@
-<!--
-CO_OP_TRANSLATOR_METADATA:
-{
-  "original_hash": "2b6203a48c48d8234e0948353b47d84e",
-  "translation_date": "2025-11-03T23:08:12+00:00",
-  "source_file": "5-browser-extension/2-forms-browsers-local-storage/README.md",
-  "language_code": "bn"
-}
--->
 # ব্রাউজার এক্সটেনশন প্রকল্প পার্ট ২: API কল করা, লোকাল স্টোরেজ ব্যবহার করা
 
 ```mermaid
@@ -268,7 +259,7 @@ stateDiagram-v2
     ClearStorage --> FirstTime: Back to setup
 ```
 
-![লোকাল স্টোরেজ প্যান](../../../../translated_images/localstorage.472f8147b6a3f8d141d9551c95a2da610ac9a3c6a73d4a1c224081c98bae09d9.bn.png)
+![লোকাল স্টোরেজ প্যান](../../../../translated_images/bn/localstorage.472f8147b6a3f8d1.webp)
 
 > ⚠️ **নিরাপত্তা বিবেচনা**: প্রোডাকশন অ্যাপ্লিকেশনগুলিতে, LocalStorage-এ API কী সংরক্ষণ করা নিরাপত্তার ঝুঁকি তৈরি করে কারণ জাভাস্ক্রিপ্ট এই ডেটা অ্যাক্সেস করতে পারে। শেখার উদ্দেশ্যে, এই পদ্ধতি ঠিক আছে, তবে প্রকৃত অ্যাপ্লিকেশনগুলিতে সংবেদনশীল ক্রেডেনশিয়ালের জন্য নিরাপদ সার্ভার-সাইড স্টোরেজ ব্যবহার করা উচিত।
 

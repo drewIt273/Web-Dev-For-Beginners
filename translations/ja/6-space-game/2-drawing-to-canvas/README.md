@@ -1,12 +1,3 @@
-<!--
-CO_OP_TRANSLATOR_METADATA:
-{
-  "original_hash": "7994743c5b21fdcceb36307916ef249a",
-  "translation_date": "2025-11-06T13:01:41+00:00",
-  "source_file": "6-space-game/2-drawing-to-canvas/README.md",
-  "language_code": "ja"
-}
--->
 # 宇宙ゲームを作ろう パート2: ヒーローとモンスターをキャンバスに描画する
 
 ```mermaid
@@ -108,7 +99,7 @@ quadrantChart
     UI Elements: [0.9, 0.1]
 ```
 
-![キャンバスのグリッド](../../../../translated_images/canvas_grid.5f209da785ded492a01ece440e3032afe51efa500cc2308e5ea4252487ceaf0b.ja.png)
+![キャンバスのグリッド](../../../../translated_images/ja/canvas_grid.5f209da785ded492.webp)
 > 画像提供: [MDN](https://developer.mozilla.org/docs/Web/API/Canvas_API/Tutorial/Drawing_shapes)
 
 キャンバス要素に描画するには、キャンバスグラフィックの基礎を形成する同じ3ステップのプロセスに従います。このプロセスを数回行うと、自然に身につきます。
@@ -329,11 +320,11 @@ Canvas要素を含むウェブページを作成します。黒い画面 `1024*7
 
 - ヒーローの船
 
-   ![ヒーローの船](../../../../translated_images/player.dd24c1afa8c71e9b82b2958946d4bad13308681392d4b5ddcc61a0e818ef8088.ja.png)
+   ![ヒーローの船](../../../../translated_images/ja/player.dd24c1afa8c71e9b.webp)
 
 - 5×5のモンスター
 
-   ![モンスターの船](../../../../translated_images/enemyShip.5df2a822c16650c2fb3c06652e8ec8120cdb9122a6de46b9a1a56d54db22657f.ja.png)
+   ![モンスターの船](../../../../translated_images/ja/enemyShip.5df2a822c16650c2.webp)
 
 ### 開発を始めるための推奨ステップ
 
@@ -468,7 +459,7 @@ for (let x = START_X; x < STOP_X; x += ENEMY_SPACING) {
 
 完成した結果は以下のようになります:
 
-![黒い画面にヒーローと5*5のモンスター](../../../../translated_images/partI-solution.36c53b48c9ffae2a5e15496b23b604ba5393433e4bf91608a7a0a020eb7a2691.ja.png)
+![黒い画面にヒーローと5*5のモンスター](../../../../translated_images/ja/partI-solution.36c53b48c9ffae2a.webp)
 
 ## 解答
 

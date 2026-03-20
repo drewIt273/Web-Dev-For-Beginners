@@ -1,12 +1,3 @@
-<!--
-CO_OP_TRANSLATOR_METADATA:
-{
-  "original_hash": "71009af209f81cc01a1f2d324200375f",
-  "translation_date": "2025-10-03T09:35:25+00:00",
-  "source_file": "for-teachers.md",
-  "language_code": "it"
-}
--->
 ### Per gli educatori
 
 Siete invitati a utilizzare questo curriculum nella vostra classe. Funziona perfettamente con GitHub Classroom e le principali piattaforme LMS, e può anche essere utilizzato come repository autonomo con i vostri studenti.
@@ -42,10 +33,10 @@ Questo curriculum include pacchetti importabili per flussi di lavoro comuni su L
   - Moodle Cloud ha un supporto limitato per Common Cartridge. Preferite il file Moodle sopra, che può anche essere caricato in Canvas.
   - Dopo l'importazione, rivedete i moduli, le date di scadenza e le impostazioni dei quiz per adattarli al vostro calendario.
 
-![Moodle](../../translated_images/moodle.94eb93d714a50cb2c97435b408017dee224348b61bc86203ffd43a4f4e57b95f.it.png)
+![Moodle](../../translated_images/it/moodle.94eb93d714a50cb2.webp)
 > Il curriculum in una classe Moodle
 
-![Canvas](../../translated_images/canvas.fbd605ff8e5b8aff567d398528ce113db304446b90b9cad55c654de3fdfcda34.it.png)
+![Canvas](../../translated_images/it/canvas.fbd605ff8e5b8aff.webp)
 > Il curriculum in Canvas
 
 ### Utilizzo diretto del repository (senza Classroom)

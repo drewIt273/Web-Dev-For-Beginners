@@ -1,12 +1,3 @@
-<!--
-CO_OP_TRANSLATOR_METADATA:
-{
-  "original_hash": "71009af209f81cc01a1f2d324200375f",
-  "translation_date": "2025-10-03T09:15:22+00:00",
-  "source_file": "for-teachers.md",
-  "language_code": "mr"
-}
--->
 ### शिक्षकांसाठी
 
 तुम्ही तुमच्या वर्गात हा अभ्यासक्रम वापरण्यास स्वागत आहे. GitHub Classroom आणि प्रमुख LMS प्लॅटफॉर्मसह हे सहजपणे कार्य करते, तसेच तुम्ही तुमच्या विद्यार्थ्यांसोबत स्वतंत्र रिपॉझिटरी म्हणून देखील वापरू शकता.
@@ -42,10 +33,10 @@ CO_OP_TRANSLATOR_METADATA:
   - Moodle Cloud मध्ये Common Cartridge साठी मर्यादित समर्थन आहे. वरील Moodle फाइलला प्राधान्य द्या, जी Canvas मध्ये देखील अपलोड केली जाऊ शकते.
   - आयात केल्यानंतर, तुमच्या टर्म शेड्यूलशी जुळण्यासाठी मॉड्यूल्स, देय तारखा आणि क्विझ सेटिंग्ज पुनरावलोकन करा.
 
-![Moodle](../../translated_images/moodle.94eb93d714a50cb2c97435b408017dee224348b61bc86203ffd43a4f4e57b95f.mr.png)
+![Moodle](../../translated_images/mr/moodle.94eb93d714a50cb2.webp)
 > Moodle वर्गात अभ्यासक्रम
 
-![Canvas](../../translated_images/canvas.fbd605ff8e5b8aff567d398528ce113db304446b90b9cad55c654de3fdfcda34.mr.png)
+![Canvas](../../translated_images/mr/canvas.fbd605ff8e5b8aff.webp)
 > Canvas मध्ये अभ्यासक्रम
 
 ### थेट रिपॉझिटरी वापरा (Classroom न वापरता)

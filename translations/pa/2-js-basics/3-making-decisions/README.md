@@ -1,15 +1,6 @@
-<!--
-CO_OP_TRANSLATOR_METADATA:
-{
-  "original_hash": "c688385d15dd3645e924ea0ffee8967f",
-  "translation_date": "2025-11-03T16:08:56+00:00",
-  "source_file": "2-js-basics/3-making-decisions/README.md",
-  "language_code": "pa"
-}
--->
 # ਜਾਵਾਸਕ੍ਰਿਪਟ ਬੇਸਿਕਸ: ਫੈਸਲੇ ਲੈਣਾ
 
-![ਜਾਵਾਸਕ੍ਰਿਪਟ ਬੇਸਿਕਸ - ਫੈਸਲੇ ਲੈਣਾ](../../../../translated_images/webdev101-js-decisions.69e1b20f272dd1f0b1cb2f8adaff3ed2a77c4f91db96d8a0594132a353fa189a.pa.png)
+![ਜਾਵਾਸਕ੍ਰਿਪਟ ਬੇਸਿਕਸ - ਫੈਸਲੇ ਲੈਣਾ](../../../../translated_images/pa/webdev101-js-decisions.69e1b20f272dd1f0.webp)
 
 > ਸਕੈਚਨੋਟ [ਟੋਮੋਮੀ ਇਮੁਰਾ](https://twitter.com/girlie_mac) ਦੁਆਰਾ
 

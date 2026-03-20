@@ -1,12 +1,3 @@
-<!--
-CO_OP_TRANSLATOR_METADATA:
-{
-  "original_hash": "50a7783473b39a2e0f133e271a102231",
-  "translation_date": "2025-10-22T14:19:28+00:00",
-  "source_file": "7-bank-project/4-state-management/assignment.md",
-  "language_code": "ar"
-}
--->
 # تنفيذ مربع حوار "إضافة معاملة"
 
 ## نظرة عامة
@@ -112,7 +103,7 @@ CO_OP_TRANSLATOR_METADATA:
 **النتيجة المتوقعة:**
 بعد إكمال هذه المهمة، يجب أن يحتوي تطبيقك البنكي على ميزة "إضافة معاملة" كاملة الوظائف تبدو وتعمل بشكل احترافي:
 
-![لقطة شاشة تعرض مثالًا لمربع حوار "إضافة معاملة"](../../../../translated_images/dialog.93bba104afeb79f12f65ebf8f521c5d64e179c40b791c49c242cf15f7e7fab15.ar.png)
+![لقطة شاشة تعرض مثالًا لمربع حوار "إضافة معاملة"](../../../../translated_images/ar/dialog.93bba104afeb79f1.webp)
 
 ## اختبار التنفيذ الخاص بك
 

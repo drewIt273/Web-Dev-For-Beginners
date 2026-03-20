@@ -1,12 +1,3 @@
-<!--
-CO_OP_TRANSLATOR_METADATA:
-{
-  "original_hash": "71009af209f81cc01a1f2d324200375f",
-  "translation_date": "2025-10-03T08:38:59+00:00",
-  "source_file": "for-teachers.md",
-  "language_code": "fa"
-}
--->
 ### برای مربیان
 
 شما می‌توانید از این برنامه درسی در کلاس خود استفاده کنید. این برنامه به‌طور یکپارچه با GitHub Classroom و پلتفرم‌های LMS پیشرو کار می‌کند و همچنین می‌توان آن را به‌عنوان یک مخزن مستقل با دانش‌آموزان استفاده کرد.
@@ -42,10 +33,10 @@ CO_OP_TRANSLATOR_METADATA:
   - Moodle Cloud پشتیبانی محدودی از Common Cartridge دارد. فایل Moodle بالا را ترجیح دهید که همچنین می‌تواند در Canvas بارگذاری شود.
   - پس از وارد کردن، ماژول‌ها، تاریخ‌های سررسید و تنظیمات آزمون را بررسی کنید تا با برنامه ترم شما مطابقت داشته باشد.
 
-![Moodle](../../translated_images/moodle.94eb93d714a50cb2c97435b408017dee224348b61bc86203ffd43a4f4e57b95f.fa.png)
+![Moodle](../../translated_images/fa/moodle.94eb93d714a50cb2.webp)
 > برنامه درسی در کلاس Moodle
 
-![Canvas](../../translated_images/canvas.fbd605ff8e5b8aff567d398528ce113db304446b90b9cad55c654de3fdfcda34.fa.png)
+![Canvas](../../translated_images/fa/canvas.fbd605ff8e5b8aff.webp)
 > برنامه درسی در Canvas
 
 ### استفاده مستقیم از مخزن (بدون Classroom)

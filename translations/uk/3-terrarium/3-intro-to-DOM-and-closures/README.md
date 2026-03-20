@@ -1,12 +1,3 @@
-<!--
-CO_OP_TRANSLATOR_METADATA:
-{
-  "original_hash": "973e48ad87d67bf5bb819746c9f8e302",
-  "translation_date": "2025-11-06T13:35:03+00:00",
-  "source_file": "3-terrarium/3-intro-to-DOM-and-closures/README.md",
-  "language_code": "uk"
-}
--->
 # Проєкт "Тераріум", Частина 3: Маніпуляція DOM і замикання в JavaScript
 
 ```mermaid
@@ -26,7 +17,7 @@ journey
       Complete terrarium: 5: Student
 ```
 
-![DOM і замикання](../../../../translated_images/webdev101-js.10280393044d7eaaec7e847574946add7ddae6be2b2194567d848b61d849334a.uk.png)
+![DOM і замикання](../../../../translated_images/uk/webdev101-js.10280393044d7eaa.webp)
 > Скетчнот від [Tomomi Imura](https://twitter.com/girlie_mac)
 
 Ласкаво просимо до одного з найцікавіших аспектів веб-розробки — створення інтерактивності! Document Object Model (DOM) — це як міст між вашим HTML і JavaScript, і сьогодні ми використаємо його, щоб оживити ваш тераріум. Коли Тім Бернерс-Лі створив перший веб-браузер, він уявляв веб як динамічний і інтерактивний простір — DOM робить це можливим.
@@ -105,7 +96,7 @@ flowchart TD
     style Q fill:#ffebee
 ```
 
-![Представлення дерева DOM](../../../../translated_images/dom-tree.7daf0e763cbbba9273f9a66fe04c98276d7d23932309b195cb273a9cf1819b42.uk.png)
+![Представлення дерева DOM](../../../../translated_images/uk/dom-tree.7daf0e763cbbba92.webp)
 
 > Представлення DOM і HTML-розмітки, яка його описує. Від [Olfa Nasraoui](https://www.researchgate.net/publication/221417012_Profile-Based_Focused_Crawler_for_Social_Media-Sharing_Websites)
 
@@ -150,7 +141,7 @@ flowchart LR
 
 > 💡 **Розуміння замикань**: Замикання — це важлива тема в JavaScript, і багато розробників використовують їх роками, перш ніж повністю зрозуміти всі теоретичні аспекти. Сьогодні ми зосередимося на практичному застосуванні — ви побачите, як замикання природно виникають під час створення наших інтерактивних функцій. Розуміння розвиватиметься, коли ви побачите, як вони вирішують реальні проблеми.
 
-![Представлення дерева DOM](../../../../translated_images/dom-tree.7daf0e763cbbba9273f9a66fe04c98276d7d23932309b195cb273a9cf1819b42.uk.png)
+![Представлення дерева DOM](../../../../translated_images/uk/dom-tree.7daf0e763cbbba92.webp)
 
 > Представлення DOM і HTML-розмітки, яка його описує. Від [Olfa Nasraoui](https://www.researchgate.net/publication/221417012_Profile-Based_Focused_Crawler_for_Social_Media-Sharing_Websites)
 
@@ -573,7 +564,7 @@ function stopElementDrag() {
 - **Підтримка різних пристроїв**: Працює на настільних комп'ютерах і мобільних пристроях
 - **Свідомість продуктивності**: Без витоків пам'яті чи зайвих обчислень
 
-![готовий тераріум](../../../../translated_images/terrarium-final.0920f16e87c13a84cd2b553a5af9a3ad1cffbd41fbf8ce715d9e9c43809a5e2c.uk.png)
+![готовий тераріум](../../../../translated_images/uk/terrarium-final.0920f16e87c13a84.webp)
 
 ---
 

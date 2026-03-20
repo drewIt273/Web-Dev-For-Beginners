@@ -1,12 +1,3 @@
-<!--
-CO_OP_TRANSLATOR_METADATA:
-{
-  "original_hash": "50a7783473b39a2e0f133e271a102231",
-  "translation_date": "2025-10-23T22:30:39+00:00",
-  "source_file": "7-bank-project/4-state-management/assignment.md",
-  "language_code": "no"
-}
--->
 # Implementere "Legg til transaksjon"-dialog
 
 ## Oversikt
@@ -112,7 +103,7 @@ Se [server-API-dokumentasjonen](../api/README.md) for:
 **Forventet resultat:**
 Etter å ha fullført denne oppgaven, skal bankappen din ha en fullt funksjonell "Legg til transaksjon"-funksjon som ser profesjonell ut og fungerer som den skal:
 
-![Skjermbilde som viser et eksempel på "Legg til transaksjon"-dialog](../../../../translated_images/dialog.93bba104afeb79f12f65ebf8f521c5d64e179c40b791c49c242cf15f7e7fab15.no.png)
+![Skjermbilde som viser et eksempel på "Legg til transaksjon"-dialog](../../../../translated_images/no/dialog.93bba104afeb79f1.webp)
 
 ## Testing av implementeringen
 

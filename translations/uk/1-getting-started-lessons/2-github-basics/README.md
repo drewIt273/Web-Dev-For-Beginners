@@ -1,12 +1,3 @@
-<!--
-CO_OP_TRANSLATOR_METADATA:
-{
-  "original_hash": "5c383cc2cc23bb164b06417d1c107a44",
-  "translation_date": "2025-11-18T18:52:37+00:00",
-  "source_file": "1-getting-started-lessons/2-github-basics/README.md",
-  "language_code": "uk"
-}
--->
 # Вступ до GitHub
 
 Привіт, майбутній розробнику! 👋 Готовий приєднатися до мільйонів кодерів по всьому світу? Я щиро радий познайомити тебе з GitHub – уяви це як соціальну мережу для програмістів, але замість фото обідів ми ділимося кодом і створюємо неймовірні речі разом!
@@ -17,7 +8,7 @@ CO_OP_TRANSLATOR_METADATA:
 
 Ми пройдемо цей шлях разом, крок за кроком. Без поспіху, без тиску – лише ти, я і кілька дійсно крутих інструментів, які стануть твоїми новими найкращими друзями!
 
-![Вступ до GitHub](../../../../translated_images/webdev101-github.8846d7971abef6f947909b4f9d343e2a23778aa716ca6b9d71df7174ee5009ac.uk.png)
+![Вступ до GitHub](../../../../translated_images/uk/webdev101-github.8846d7971abef6f9.webp)
 > Скетчноут від [Tomomi Imura](https://twitter.com/girlie_mac)
 
 ```mermaid
@@ -583,7 +574,7 @@ flowchart TD
 
 ✅ Хороший спосіб знайти репозиторії, дружні до новачків, – це [шукати за тегом 'good-first-issue'](https://github.blog/2020-01-22-browse-good-first-issues-to-start-contributing-to-open-source/).
 
-![Скопіювати репозиторій локально](../../../../translated_images/clone_repo.5085c48d666ead57664f050d806e325d7f883be6838c821e08bc823ab7c66665.uk.png)
+![Скопіювати репозиторій локально](../../../../translated_images/uk/clone_repo.5085c48d666ead57.webp)
 
 Існує кілька способів копіювання коду. Один із них – "клонувати" вміст репозиторію, використовуючи HTTPS, SSH або GitHub CLI (Command Line Interface).
 

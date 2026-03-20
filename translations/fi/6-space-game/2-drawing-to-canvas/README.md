@@ -1,12 +1,3 @@
-<!--
-CO_OP_TRANSLATOR_METADATA:
-{
-  "original_hash": "7994743c5b21fdcceb36307916ef249a",
-  "translation_date": "2025-11-04T01:39:23+00:00",
-  "source_file": "6-space-game/2-drawing-to-canvas/README.md",
-  "language_code": "fi"
-}
--->
 # Rakenna avaruuspeli osa 2: Piirrä sankari ja hirviöt kankaalle
 
 ```mermaid
@@ -108,7 +99,7 @@ quadrantChart
     UI Elements: [0.9, 0.1]
 ```
 
-![canvasin ruudukko](../../../../translated_images/canvas_grid.5f209da785ded492a01ece440e3032afe51efa500cc2308e5ea4252487ceaf0b.fi.png)
+![canvasin ruudukko](../../../../translated_images/fi/canvas_grid.5f209da785ded492.webp)
 > Kuva [MDN:stä](https://developer.mozilla.org/docs/Web/API/Canvas_API/Tutorial/Drawing_shapes)
 
 Canvas-elementille piirtäminen noudattaa samaa kolmen vaiheen prosessia, joka muodostaa kaikkien canvas-grafiikoiden perustan. Kun teet tämän muutaman kerran, se muuttuu toiseksi luonteeksi:
@@ -329,11 +320,11 @@ Sinun tulee rakentaa verkkosivu, jossa on Canvas-elementti. Sen tulisi näyttä�
 
 - Sankarilaiva
 
-   ![Sankarilaiva](../../../../translated_images/player.dd24c1afa8c71e9b82b2958946d4bad13308681392d4b5ddcc61a0e818ef8088.fi.png)
+   ![Sankarilaiva](../../../../translated_images/fi/player.dd24c1afa8c71e9b.webp)
 
 - 5*5 hirviöjoukko
 
-   ![Hirviölaiva](../../../../translated_images/enemyShip.5df2a822c16650c2fb3c06652e8ec8120cdb9122a6de46b9a1a56d54db22657f.fi.png)
+   ![Hirviölaiva](../../../../translated_images/fi/enemyShip.5df2a822c16650c2.webp)
 
 ### Suositellut kehitysvaiheet
 
@@ -467,7 +458,7 @@ for (let x = START_X; x < STOP_X; x += ENEMY_SPACING) {
 
 Valmis tulos näyttää tältä:
 
-![Musta ruutu, jossa sankari ja 5*5 hirviötä](../../../../translated_images/partI-solution.36c53b48c9ffae2a5e15496b23b604ba5393433e4bf91608a7a0a020eb7a2691.fi.png)
+![Musta ruutu, jossa sankari ja 5*5 hirviötä](../../../../translated_images/fi/partI-solution.36c53b48c9ffae2a.webp)
 
 ## Ratkaisu
 

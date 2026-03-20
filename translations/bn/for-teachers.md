@@ -1,12 +1,3 @@
-<!--
-CO_OP_TRANSLATOR_METADATA:
-{
-  "original_hash": "71009af209f81cc01a1f2d324200375f",
-  "translation_date": "2025-10-03T09:11:17+00:00",
-  "source_file": "for-teachers.md",
-  "language_code": "bn"
-}
--->
 ### শিক্ষকদের জন্য
 
 আপনার ক্লাসরুমে এই পাঠ্যক্রম ব্যবহার করতে পারেন। এটি GitHub Classroom এবং শীর্ষস্থানীয় LMS প্ল্যাটফর্মগুলোর সাথে সহজেই কাজ করে, এবং এটি আপনার শিক্ষার্থীদের সাথে একটি স্বতন্ত্র রিপোজিটরি হিসেবেও ব্যবহার করা যেতে পারে।
@@ -42,10 +33,10 @@ CO_OP_TRANSLATOR_METADATA:
   - Moodle Cloud-এ Common Cartridge সমর্থন সীমিত। উপরের Moodle ফাইলটি পছন্দ করুন, যা Canvas-এও আপলোড করা যেতে পারে।
   - আমদানির পরে, আপনার টার্ম শিডিউলের সাথে মডিউল, ডিউ তারিখ এবং কুইজ সেটিংস পর্যালোচনা করুন।
 
-![Moodle](../../translated_images/moodle.94eb93d714a50cb2c97435b408017dee224348b61bc86203ffd43a4f4e57b95f.bn.png)
+![Moodle](../../translated_images/bn/moodle.94eb93d714a50cb2.webp)
 > Moodle ক্লাসরুমে পাঠ্যক্রম
 
-![Canvas](../../translated_images/canvas.fbd605ff8e5b8aff567d398528ce113db304446b90b9cad55c654de3fdfcda34.bn.png)
+![Canvas](../../translated_images/bn/canvas.fbd605ff8e5b8aff.webp)
 > Canvas-এ পাঠ্যক্রম
 
 ### সরাসরি রিপোজিটরি ব্যবহার করুন (ক্লাসরুম ছাড়া)

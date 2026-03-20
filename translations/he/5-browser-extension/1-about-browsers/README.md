@@ -1,12 +1,3 @@
-<!--
-CO_OP_TRANSLATOR_METADATA:
-{
-  "original_hash": "00aa85715e1efd4930c17a23e3012e69",
-  "translation_date": "2025-11-04T02:41:55+00:00",
-  "source_file": "5-browser-extension/1-about-browsers/README.md",
-  "language_code": "he"
-}
--->
 # פרויקט הרחבת דפדפן חלק 1: הכל על דפדפנים
 
 ```mermaid
@@ -26,7 +17,7 @@ journey
       Polish experience: 5: Student
 ```
 
-![שרטוט דפדפן](../../../../translated_images/browser.60317c9be8b7f84adce43e30bff8d47a1ae15793beab762317b2bc6b74337c1a.he.jpg)
+![שרטוט דפדפן](../../../../translated_images/he/browser.60317c9be8b7f84a.webp)
 > שרטוט מאת [Wassim Chegham](https://dev.to/wassimchegham/ever-wondered-what-happens-when-you-type-in-a-url-in-an-address-bar-in-a-browser-3dob)
 
 ## שאלון לפני השיעור
@@ -79,7 +70,7 @@ mindmap
 
 ✅ **קצת היסטוריה**: הדפדפן הראשון נקרא 'WorldWideWeb' ונוצר על ידי סר טימותי ברנרס-לי בשנת 1990.
 
-![דפדפנים מוקדמים](../../../../translated_images/earlybrowsers.d984b711cdf3a42ddac919d46c4b5ca7232f68ccfbd81395e04e5a64c0015277.he.jpg)
+![דפדפנים מוקדמים](../../../../translated_images/he/earlybrowsers.d984b711cdf3a42d.webp)
 > כמה דפדפנים מוקדמים, דרך [Karen McGrane](https://www.slideshare.net/KMcGrane/week-4-ixd-history-personal-computing)
 
 ### איך דפדפנים מעבדים תוכן אינטרנטי
@@ -198,7 +189,7 @@ quadrantChart
 
 הבנת תהליך התקנת ההרחבות עוזרת לכם לצפות את חוויית המשתמש כאשר אנשים מתקינים את ההרחבה שלכם. תהליך ההתקנה סטנדרטי בדפדפנים מודרניים, עם וריאציות קלות בעיצוב הממשק.
 
-![צילום מסך של דפדפן Edge שמציג את דף ניהול ההרחבות edge://extensions ואת תפריט ההגדרות הפתוח](../../../../translated_images/install-on-edge.d68781acaf0b3d3dada8b7507cde7a64bf74b7040d9818baaa9070668e819f90.he.png)
+![צילום מסך של דפדפן Edge שמציג את דף ניהול ההרחבות edge://extensions ואת תפריט ההגדרות הפתוח](../../../../translated_images/he/install-on-edge.d68781acaf0b3d3d.webp)
 
 > **חשוב**: ודאו שאתם מפעילים מצב מפתחים ומאפשרים הרחבות מחנויות אחרות כאשר אתם בודקים את ההרחבות שלכם.
 
@@ -313,10 +304,10 @@ project-root/
 ### סקירת תצוגות ההרחבה
 
 **תצוגת הגדרות** - הגדרת משתמש בפעם הראשונה:
-![צילום מסך של ההרחבה המושלמת פתוחה בדפדפן, מציגה טופס עם שדות להזנת שם אזור ומפתח API.](../../../../translated_images/1.b6da8c1394b07491afeb6b2a8e5aca73ebd3cf478e27bcc9aeabb187e722648e.he.png)
+![צילום מסך של ההרחבה המושלמת פתוחה בדפדפן, מציגה טופס עם שדות להזנת שם אזור ומפתח API.](../../../../translated_images/he/1.b6da8c1394b07491.webp)
 
 **תצוגת תוצאות** - הצגת נתוני טביעת רגל פחמנית:
-![צילום מסך של ההרחבה המושלמת מציגה ערכים לשימוש פחמן ואחוז דלקים מאובנים עבור אזור US-NEISO.](../../../../translated_images/2.1dae52ff0804224692cd648afbf2342955d7afe3b0101b617268130dfb427f55.he.png)
+![צילום מסך של ההרחבה המושלמת מציגה ערכים לשימוש פחמן ואחוז דלקים מאובנים עבור אזור US-NEISO.](../../../../translated_images/he/2.1dae52ff08042246.webp)
 
 ### בניית טופס ההגדרות
 

@@ -1,12 +1,3 @@
-<!--
-CO_OP_TRANSLATOR_METADATA:
-{
-  "original_hash": "e39f3a4e3bcccf94639e3af1248f8a4d",
-  "translation_date": "2025-11-03T12:36:47+00:00",
-  "source_file": "3-terrarium/2-intro-to-css/README.md",
-  "language_code": "ar"
-}
--->
 # مشروع التيراريوم الجزء الثاني: مقدمة في CSS
 
 ```mermaid
@@ -30,7 +21,7 @@ journey
       Glass reflections: 5: Student
 ```
 
-![مقدمة في CSS](../../../../translated_images/webdev101-css.3f7af5991bf53a200d79e7257e5e450408d8ea97f5b531d31b2e3976317338ee.ar.png)
+![مقدمة في CSS](../../../../translated_images/ar/webdev101-css.3f7af5991bf53a20.webp)
 > رسم توضيحي بواسطة [Tomomi Imura](https://twitter.com/girlie_mac)
 
 هل تتذكر كيف كان شكل التيراريوم الخاص بك بسيطًا جدًا؟ CSS هو المكان الذي نحول فيه هذا الهيكل البسيط إلى شيء جذاب بصريًا.
@@ -205,7 +196,7 @@ body {
 
 افتح أدوات المطور في المتصفح (F12)، انتقل إلى علامة التبويب العناصر، وقم بفحص عنصر `<h1>` الخاص بك. سترى أنه يرث نوع الخط من body:
 
-![الخط الموروث](../../../../translated_images/1.cc07a5cbe114ad1d4728c35134584ac1b87db688eff83cf75985cf31fe0ed95c.ar.png)
+![الخط الموروث](../../../../translated_images/ar/1.cc07a5cbe114ad1d.webp)
 
 ✅ **وقت التجربة**: حاول تعيين خصائص أخرى قابلة للوراثة على `<body>` مثل `color`، `line-height`، أو `text-align`. ماذا يحدث لعناوينك والعناصر الأخرى؟
 
@@ -335,7 +326,7 @@ h1 {
 **إليك هيكل HTML لكل نبتة:**
 ```html
 <div class="plant-holder">
-  <img class="plant" alt="Decorative plant for terrarium" id="plant1" src="../../../../translated_images/plant1.d18b18ffe73da18f8b1ac7aba73b4050af52f4a0c9174aeac464b85123fc2850.ar.png" />
+  <img class="plant" alt="Decorative plant for terrarium" id="plant1" src="../../../../translated_images/ar/plant1.d18b18ffe73da18f8b1ac7aba73b4050af52f4a0c9174aeac464b85123fc2850.png" />
 </div>
 ```
 
@@ -599,7 +590,7 @@ flowchart LR
 
 ستقوم بإنشاء لمسات خفيفة تحاكي كيفية انعكاس الضوء على الأسطح الزجاجية. هذه الطريقة مشابهة لكيفية استخدام رسامي عصر النهضة مثل جان فان إيك الضوء والانعكاس لجعل الزجاج المرسوم يبدو ثلاثي الأبعاد. إليك ما تهدف إليه:
 
-![finished terrarium](../../../../translated_images/terrarium-final.2f07047ffc597d0a06b06cab28a77801a10dd12fdb6c7fc630e9c40665491c53.ar.png)
+![finished terrarium](../../../../translated_images/ar/terrarium-final.2f07047ffc597d0a.webp)
 
 **تحديك:**
 - **قم بإنشاء** أشكال بيضاوية بيضاء أو فاتحة اللون للانعكاسات الزجاجية

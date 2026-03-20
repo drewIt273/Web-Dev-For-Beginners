@@ -1,12 +1,3 @@
-<!--
-CO_OP_TRANSLATOR_METADATA:
-{
-  "original_hash": "50a7783473b39a2e0f133e271a102231",
-  "translation_date": "2025-10-24T16:40:44+00:00",
-  "source_file": "7-bank-project/4-state-management/assignment.md",
-  "language_code": "my"
-}
--->
 # "ငွေစာရင်း ထည့်သွင်းရန်" ဒိုင်ယာလော့ဂ်ကို အကောင်အထည်ဖော်ခြင်း
 
 ## အကျဉ်းချုပ်
@@ -112,7 +103,7 @@ CO_OP_TRANSLATOR_METADATA:
 **မျှော်လင့်ရသော ရလဒ်:**
 ဒီအလုပ်ကို ပြီးမြောက်ပြီးနောက် သင့်ဘဏ်အက်ပ်တွင် အလှဆင်ထားပြီး အကျိုးရှိသော "ငွေစာရင်း ထည့်သွင်းရန်" လုပ်ဆောင်ချက်တစ်ခု ပါဝင်မည်ဖြစ်ပြီး အောက်ပါပုံစံအတိုင်း လုပ်ဆောင်မှုနှင့် အပြင်အဆင်များကို ပေးစွမ်းနိုင်ရမည်-
 
-![Screenshot showing an example "Add transaction" dialog](../../../../translated_images/dialog.93bba104afeb79f12f65ebf8f521c5d64e179c40b791c49c242cf15f7e7fab15.my.png)
+![Screenshot showing an example "Add transaction" dialog](../../../../translated_images/my/dialog.93bba104afeb79f1.webp)
 
 ## သင့်အကောင်အထည်ဖော်မှုကို စမ်းသပ်ခြင်း
 

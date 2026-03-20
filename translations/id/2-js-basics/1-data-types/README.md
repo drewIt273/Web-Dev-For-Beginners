@@ -1,15 +1,6 @@
-<!--
-CO_OP_TRANSLATOR_METADATA:
-{
-  "original_hash": "672b0bb6e8b431075f3bdb7130590d2d",
-  "translation_date": "2025-11-06T11:38:24+00:00",
-  "source_file": "2-js-basics/1-data-types/README.md",
-  "language_code": "id"
-}
--->
 # Dasar-Dasar JavaScript: Tipe Data
 
-![Dasar-Dasar JavaScript - Tipe Data](../../../../translated_images/webdev101-js-datatypes.4cc470179730702c756480d3ffa46507f746e5975ebf80f99fdaaf1cff09a7f4.id.png)
+![Dasar-Dasar JavaScript - Tipe Data](../../../../translated_images/id/webdev101-js-datatypes.4cc470179730702c.webp)
 > Sketchnote oleh [Tomomi Imura](https://twitter.com/girlie_mac)
 
 ```mermaid

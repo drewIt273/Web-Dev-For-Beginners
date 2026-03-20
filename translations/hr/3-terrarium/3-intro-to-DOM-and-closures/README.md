@@ -1,78 +1,169 @@
-<!--
-CO_OP_TRANSLATOR_METADATA:
-{
-  "original_hash": "bc93f6285423033ebf5b8abeb5282888",
-  "translation_date": "2025-10-25T00:01:16+00:00",
-  "source_file": "3-terrarium/3-intro-to-DOM-and-closures/README.md",
-  "language_code": "hr"
-}
--->
-# Projekt Terarij, 3. dio: Manipulacija DOM-om i JavaScript zatvaranja
+# Terrarij Projekt Dio 3: Manipulacija DOM-om i JavaScript Zatvaranja
 
-![DOM i zatvaranje](../../../../translated_images/webdev101-js.10280393044d7eaaec7e847574946add7ddae6be2b2194567d848b61d849334a.hr.png)
-> Sketchnote od [Tomomi Imura](https://twitter.com/girlie_mac)
+```mermaid
+journey
+    title Vaše JavaScript DOM Putovanje
+    section Osnove
+      Razumjeti DOM: 3: Student
+      Naučiti closures: 4: Student
+      Povezati elemente: 4: Student
+    section Interakcija
+      Postaviti događaje povlačenja: 4: Student
+      Pratiti koordinate: 5: Student
+      Rukovati pomicanjem: 5: Student
+    section Dorada
+      Dodati čišćenje: 4: Student
+      Testirati funkcionalnost: 5: Student
+      Završiti terarij: 5: Student
+```
+![DOM i zatvaranje](../../../../translated_images/hr/webdev101-js.10280393044d7eaa.webp)
+> Sketchnote autora [Tomomi Imura](https://twitter.com/girlie_mac)
 
-Dobrodošli u jedan od najzanimljivijih aspekata web razvoja - stvaranje interaktivnosti! Document Object Model (DOM) je poput mosta između vašeg HTML-a i JavaScripta, a danas ćemo ga koristiti kako bismo vaš terarij oživjeli. Kada je Tim Berners-Lee stvorio prvi web preglednik, zamislio je web gdje dokumenti mogu biti dinamični i interaktivni - DOM omogućuje ostvarenje te vizije.
+Dobrodošli u jedan od najzanimljivijih aspekata web razvoja - stvaranje interaktivnosti! Document Object Model (DOM) je poput mosta između vašeg HTML-a i JavaScripta, a danas ćemo ga koristiti da oživimo vaš terrarij. Kada je Tim Berners-Lee stvorio prvi web preglednik, zamislio je web na kojem dokumenti mogu biti dinamični i interaktivni - DOM tu viziju čini mogućom.
 
-Također ćemo istražiti JavaScript zatvaranja, što na prvi pogled može zvučati zastrašujuće. Zamislite zatvaranja kao stvaranje "džepova memorije" u kojima vaše funkcije mogu zapamtiti važne informacije. To je poput svakog biljnog elementa u vašem terariju koji ima vlastiti zapis podataka za praćenje svoje pozicije. Do kraja ove lekcije shvatit ćete koliko su prirodna i korisna.
+Također ćemo istražiti JavaScript zatvaranja, što na prvi pogled može zvučati zastrašujuće. Razmislite o zatvaranjima kao o stvaranju "memorijskih džepova" u kojima vaše funkcije mogu pamtiti važne informacije. To je kao da svaka biljka u vašem terrariju ima svoj vlastiti zapis podataka za praćenje svoje pozicije. Na kraju ove lekcije, shvatit ćete koliko su prirodna i korisna.
 
-Evo što ćemo izraditi: terarij u kojem korisnici mogu povlačiti i ispuštati biljke gdje god žele. Naučit ćete tehnike manipulacije DOM-om koje omogućuju sve, od povlačenja i ispuštanja datoteka do interaktivnih igara. Oživimo vaš terarij.
+Evo što gradimo: terrarij u kojem korisnici mogu povlačiti i ispuštati biljke gdje god žele. Naučit ćete tehnike manipulacije DOM-om koje pokreću sve od povuci-i-pusti prijenosa datoteka do interaktivnih igara. Oživimo vaš terrarij.
 
-## Kviz prije predavanja
+```mermaid
+mindmap
+  root((DOM & JavaScript))
+    DOM Stablo
+      Odabir Elementa
+      Pristup Svojstvima
+      Obrada Događaja
+      Dinamička Ažuriranja
+    Događaji
+      Pokazivački Događaji
+      Događaji Miša
+      Dodirni Događaji
+      Osluškivači Događaja
+    Closure-i
+      Privatne Varijable
+      Opseg Funkcije
+      Memorijska Postojanost
+      Upravljanje Stanjem
+    Prevuci i Pusti
+      Praćenje Pozicije
+      Matematika Koordinata
+      Životni Ciklus Događaja
+      Interakcija Korisnika
+    Moderni Obrasci
+      Delegiranje Događaja
+      Performanse
+      Više Uređaja
+      Pristupačnost
+```
+## Predpredavanje Kviz
 
-[Pre-lecture quiz](https://ff-quizzes.netlify.app/web/quiz/19)
+[Predpredavanje kviz](https://ff-quizzes.netlify.app/web/quiz/19)
 
-## Razumijevanje DOM-a: Vaša ulaznica za interaktivne web stranice
+## Razumijevanje DOM-a: Vaš Ulaz u Interaktivne Web Stranice
 
-Document Object Model (DOM) način je na koji JavaScript komunicira s vašim HTML elementima. Kada vaš preglednik učita HTML stranicu, stvara strukturirani prikaz te stranice u memoriji - to je DOM. Zamislite ga kao obiteljsko stablo gdje je svaki HTML element član obitelji kojem JavaScript može pristupiti, modificirati ga ili ga premjestiti.
+Document Object Model (DOM) je način na koji JavaScript komunicira s vašim HTML elementima. Kada vaš preglednik učita HTML stranicu, on stvara strukturiranu reprezentaciju te stranice u memoriji - to je DOM. Zamislite ga kao obiteljsko stablo gdje je svaki HTML element član obitelji kojem JavaScript može pristupiti, mijenjati ga ili preraspodijeliti.
 
-Manipulacija DOM-om pretvara statične stranice u interaktivne web stranice. Svaki put kad vidite da se gumb mijenja boju pri prelasku mišem, sadržaj se ažurira bez osvježavanja stranice ili elemente koje možete povlačiti, to je rad manipulacije DOM-om.
+Manipulacija DOM-om pretvara statične stranice u interaktivne web stranice. Svaki put kada vidite da se gumb mijenja bojom pri prelasku mišem, sadržaj se ažurira bez osvježavanja stranice ili elemente koje možete povlačiti, to je DOM manipulacija na djelu.
 
-![Prikaz DOM stabla](../../../../translated_images/dom-tree.7daf0e763cbbba9273f9a66fe04c98276d7d23932309b195cb273a9cf1819b42.hr.png)
+```mermaid
+flowchart TD
+    A["Dokument"] --> B["HTML"]
+    B --> C["Zaglavlje"]
+    B --> D["Tijelo"]
+    C --> E["Naslov"]
+    C --> F["Meta Oznake"]
+    D --> G["H1: Moj Terrarij"]
+    D --> H["Div: Kontejner Stranice"]
+    H --> I["Div: Lijevi Kontejner"]
+    H --> J["Div: Desni Kontejner"]
+    H --> K["Div: Terrarij"]
+    I --> L["Elementi Biljaka 1-7"]
+    J --> M["Elementi Biljaka 8-14"]
+    
+    L --> N["img#plant1"]
+    L --> O["img#plant2"]
+    M --> P["img#plant8"]
+    M --> Q["img#plant9"]
+    
+    style A fill:#e1f5fe
+    style B fill:#f3e5f5
+    style D fill:#e8f5e8
+    style H fill:#fff3e0
+    style N fill:#ffebee
+    style O fill:#ffebee
+    style P fill:#ffebee
+    style Q fill:#ffebee
+```
+![Reprezentacija DOM stabla](../../../../translated_images/hr/dom-tree.7daf0e763cbbba92.webp)
 
-> Prikaz DOM-a i HTML oznaka koje ga referenciraju. Od [Olfa Nasraoui](https://www.researchgate.net/publication/221417012_Profile-Based_Focused_Crawler_for_Social_Media-Sharing_Websites)
+> Reprezentacija DOM-a i HTML oznaka koje ga referenciraju. Iz [Olfa Nasraoui](https://www.researchgate.net/publication/221417012_Profile-Based_Focused_Crawler_for_Social_Media-Sharing_Websites)
 
 **Evo što DOM čini moćnim:**
-- **Omogućuje** strukturirani način pristupa bilo kojem elementu na vašoj stranici
-- **Omogućuje** dinamično ažuriranje sadržaja bez osvježavanja stranice
-- **Omogućuje** reakciju u stvarnom vremenu na interakcije korisnika poput klikova i povlačenja
+- **Pruža** strukturiran način pristupa bilo kojem elementu na vašoj stranici
+- **Omogućuje** dinamička ažuriranja sadržaja bez osvježavanja stranice
+- **Dozvoljava** odgovor u stvarnom vremenu na korisničke interakcije poput klikova i povlačenja
 - **Stvara** temelj za moderne interaktivne web aplikacije
 
-## JavaScript zatvaranja: Stvaranje organiziranog i moćnog koda
+## JavaScript Zatvaranja: Stvaranje Organiziranog, Moćnog Koda
 
-[JavaScript zatvaranje](https://developer.mozilla.org/docs/Web/JavaScript/Closures) je poput davanja funkciji vlastitog privatnog radnog prostora s trajnom memorijom. Zamislite kako su Darwinove zebe na Galapagosu razvile specijalizirane kljunove na temelju svog specifičnog okruženja - zatvaranja djeluju slično, stvarajući specijalizirane funkcije koje "pamte" svoj specifični kontekst čak i nakon što je njihova roditeljska funkcija završila.
+[JavaScript zatvaranje](https://developer.mozilla.org/docs/Web/JavaScript/Closures) je poput davanja funkciji vlastitog privatnog radnog prostora s trajnom memorijom. Razmislite o Darwinovim sjenicama na Galapagoskim otocima koje su razvile specijalizirane kljunove ovisno o njihovom određenom okolišu - zatvaranja rade slično, stvarajući specijalizirane funkcije koje "pamte" svoj specifični kontekst čak i nakon što njihova roditeljska funkcija završi.
 
-U našem terariju, zatvaranja pomažu svakoj biljci da neovisno pamti svoju poziciju. Ovaj obrazac pojavljuje se u profesionalnom JavaScript razvoju, čineći ga vrijednim konceptom za razumijevanje.
+U našem terrariju, zatvaranja pomažu svakoj biljci da pamti svoju poziciju neovisno. Ovaj obrazac se pojavljuje kroz profesionalni JavaScript razvoj, što ga čini vrijednim konceptom za razumijevanje.
 
-> 💡 **Razumijevanje zatvaranja**: Zatvaranja su značajna tema u JavaScriptu, a mnogi ih programeri koriste godinama prije nego što u potpunosti shvate sve teorijske aspekte. Danas se fokusiramo na praktičnu primjenu - vidjet ćete kako se zatvaranja prirodno pojavljuju dok gradimo naše interaktivne funkcije. Razumijevanje će se razvijati kako budete vidjeli kako rješavaju stvarne probleme.
+```mermaid
+flowchart LR
+    A["dragElement(plant1)"] --> B["Stvara zatvaranje"]
+    A2["dragElement(plant2)"] --> B2["Stvara zatvaranje"]
+    
+    B --> C["Privatne varijable"]
+    B2 --> C2["Privatne varijable"]
+    
+    C --> D["pos1, pos2, pos3, pos4"]
+    C --> E["funkcija pointerDrag"]
+    C --> F["funkcija elementDrag"]
+    C --> G["funkcija stopElementDrag"]
+    
+    C2 --> D2["pos1, pos2, pos3, pos4"]
+    C2 --> E2["funkcija pointerDrag"]
+    C2 --> F2["funkcija elementDrag"]
+    C2 --> G2["funkcija stopElementDrag"]
+    
+    H["Bilježi poziciju biljke 1"] --> B
+    H2["Bilježi poziciju biljke 2"] --> B2
+    
+    style B fill:#e8f5e8
+    style B2 fill:#e8f5e8
+    style C fill:#fff3e0
+    style C2 fill:#fff3e0
+```
+> 💡 **Razumijevanje Zatvaranja**: Zatvaranja su važna tema u JavaScriptu, a mnogi programeri ih koriste godinama prije nego što u potpunosti shvate sve teorijske aspekte. Danas se fokusiramo na praktičnu primjenu - vidjet ćete zatvaranja prirodno kako se pojavljuju dok gradimo naše interaktivne značajke. Razumijevanje će se razvijati kako budete vidjeli kako rješavaju stvarne probleme.
 
-![Prikaz DOM stabla](../../../../translated_images/dom-tree.7daf0e763cbbba9273f9a66fe04c98276d7d23932309b195cb273a9cf1819b42.hr.png)
+![Reprezentacija DOM stabla](../../../../translated_images/hr/dom-tree.7daf0e763cbbba92.webp)
 
-> Prikaz DOM-a i HTML oznaka koje ga referenciraju. Od [Olfa Nasraoui](https://www.researchgate.net/publication/221417012_Profile-Based_Focused_Crawler_for_Social_Media-Sharing_Websites)
+> Reprezentacija DOM-a i HTML oznaka koje ga referenciraju. Iz [Olfa Nasraoui](https://www.researchgate.net/publication/221417012_Profile-Based_Focused_Crawler_for_Social_Media-Sharing_Websites)
 
-U ovoj lekciji dovršit ćemo naš interaktivni projekt terarija stvaranjem JavaScripta koji će omogućiti korisniku manipulaciju biljkama na stranici.
+U ovoj lekciji ćemo dovršiti naš interaktivni terrarij projekt stvaranjem JavaScripta koji će korisniku omogućiti manipuliranje biljkama na stranici.
 
-## Prije nego počnemo: Priprema za uspjeh
+## Prije nego što Počnemo: Postavljanje za Uspjeh
 
-Trebat će vam vaši HTML i CSS datoteke iz prethodnih lekcija o terariju - sada ćemo taj statični dizajn učiniti interaktivnim. Ako se prvi put pridružujete, dovršavanje tih lekcija prvo će vam pružiti važan kontekst.
+Trebate imati HTML i CSS datoteke iz prethodnih terrarij lekcija - spremni smo učiniti taj statični dizajn interaktivnim. Ako ste se pridružili prvi put, preporučujemo da prvo završite te lekcije za važan kontekst.
 
-Evo što ćemo izraditi:
-- **Glatko povlačenje i ispuštanje** za sve biljke u terariju
-- **Praćenje koordinata** kako bi biljke zapamtile svoje pozicije
+Evo što ćemo napraviti:
+- **Glatko povlačenje i ispuštanje** svih biljaka u terrariju
+- **Praćenje koordinata** tako da biljke pamte svoje pozicije
 - **Potpuno interaktivno sučelje** koristeći vanilla JavaScript
 - **Čist, organiziran kod** koristeći obrasce zatvaranja
 
-## Postavljanje JavaScript datoteke
+## Postavljanje Vaše JavaScript Datoteke
 
-Izradimo JavaScript datoteku koja će učiniti vaš terarij interaktivnim.
+Kreirajmo JavaScript datoteku koja će učiniti vaš terrarij interaktivnim.
 
-**Korak 1: Izradite svoju skriptu**
+**Korak 1: Kreirajte svoju skriptu**
 
-U mapi terarija izradite novu datoteku pod nazivom `script.js`.
+U svojoj mapi terrarija, kreirajte novu datoteku nazvanu `script.js`.
 
-**Korak 2: Povežite JavaScript s vašim HTML-om**
+**Korak 2: Povežite JavaScript sa svojim HTML-om**
 
-Dodajte ovu oznaku skripte u odjeljak `<head>` vaše `index.html` datoteke:
+Dodajte ovaj skript tag u odjeljak `<head>` vaše `index.html` datoteke:
 
 ```html
 <script src="./script.js" defer></script>
@@ -80,26 +171,26 @@ Dodajte ovu oznaku skripte u odjeljak `<head>` vaše `index.html` datoteke:
 
 **Zašto je atribut `defer` važan:**
 - **Osigurava** da vaš JavaScript čeka dok se sav HTML ne učita
-- **Sprječava** pogreške gdje JavaScript traži elemente koji još nisu spremni
+- **Sprječava** pogreške kada JavaScript traži elemente koji još nisu spremni
 - **Jamči** da su svi vaši biljni elementi dostupni za interakciju
-- **Pruža** bolje performanse nego postavljanje skripti na dno stranice
+- **Pruža** bolju izvedbu nego postavljanje skripti na dno stranice
 
-> ⚠️ **Važna napomena**: Atribut `defer` sprječava uobičajene probleme s vremenom učitavanja. Bez njega, JavaScript bi mogao pokušati pristupiti HTML elementima prije nego što se učitaju, što bi uzrokovalo pogreške.
+> ⚠️ **Važna Napomena**: Atribut `defer` sprječava uobičajene probleme s redoslijedom izvršavanja. Bez njega, JavaScript može pokušati pristupiti HTML elementima prije nego što su učitani, izazivajući pogreške.
 
 ---
 
-## Povezivanje JavaScripta s vašim HTML elementima
+## Povezivanje JavaScripta s Vašim HTML Elementima
 
-Prije nego što možemo učiniti elemente povlačivima, JavaScript mora locirati te elemente u DOM-u. Zamislite to kao sustav katalogizacije knjižnice - jednom kada imate broj kataloga, možete pronaći točno onu knjigu koja vam treba i pristupiti svim njezinim sadržajima.
+Prije nego što možemo omogućiti povlačenje elemenata, JavaScript ih mora locirati u DOM-u. Zamislite to kao sustav katalogizacije u knjižnici - kad imate katalogski broj, možete pronaći točno knjigu koju trebate i pristupiti svim njezinim sadržajima.
 
-Koristit ćemo metodu `document.getElementById()` za uspostavljanje tih veza. To je poput preciznog sustava arhiviranja - pružite ID i locirate točno onaj element koji vam treba u vašem HTML-u.
+Koristit ćemo metodu `document.getElementById()` za uspostavljanje ovih veza. To je poput preciznog sustava arhiviranja - vi dajete ID, a ona pronalazi točno onaj element koji vam treba u vašem HTML-u.
 
-### Omogućavanje funkcionalnosti povlačenja za sve biljke
+### Omogućavanje Funkcionalnosti Povlačenja za Sve Biljke
 
-Dodajte ovaj kod u vašu `script.js` datoteku:
+Dodajte ovaj kod u svoju datoteku `script.js`:
 
 ```javascript
-// Enable drag functionality for all 14 plants
+// Omogući funkcionalnost povlačenja za svih 14 biljaka
 dragElement(document.getElementById('plant1'));
 dragElement(document.getElementById('plant2'));
 dragElement(document.getElementById('plant3'));
@@ -119,36 +210,46 @@ dragElement(document.getElementById('plant14'));
 **Evo što ovaj kod postiže:**
 - **Locira** svaki biljni element u DOM-u koristeći njegov jedinstveni ID
 - **Dohvaća** JavaScript referencu na svaki HTML element
-- **Prosljeđuje** svaki element funkciji `dragElement` (koju ćemo uskoro izraditi)
+- **Prosljeđuje** svaki element funkciji `dragElement` (koju ćemo sada kreirati)
 - **Priprema** svaku biljku za interakciju povlačenja i ispuštanja
-- **Povezuje** vašu HTML strukturu s JavaScript funkcionalnošću
+- **Povezuje** vašu HTML strukturu s JavaScript funkcionalnostima
 
-> 🎯 **Zašto koristiti ID-ove umjesto klasa?** ID-ovi pružaju jedinstvene identifikatore za specifične elemente, dok su CSS klase dizajnirane za stiliziranje grupa elemenata. Kada JavaScript treba manipulirati pojedinačnim elementima, ID-ovi nude preciznost i performanse koje su nam potrebne.
+> 🎯 **Zašto koristimo ID umjesto klasa?** ID-ovi pružaju jedinstvene identifikatore za specifične elemente, dok su CSS klase dizajnirane za stiliziranje grupa elemenata. Kada JavaScript treba manipulirati pojedinačnim elementima, ID-ovi pružaju preciznost i učinkovitost koja nam treba.
 
-> 💡 **Savjet**: Primijetite kako pozivamo `dragElement()` za svaku biljku pojedinačno. Ovaj pristup osigurava da svaka biljka dobije vlastito neovisno ponašanje povlačenja, što je ključno za glatku interakciju korisnika.
+> 💡 **Pametni savjet**: Primijetite kako pozivamo `dragElement()` za svaku biljku zasebno. Ovaj pristup osigurava da svaka biljka dobije svoje neovisno ponašanje povlačenja, što je ključno za glatku korisničku interakciju.
+
+### 🔄 **Pedagoška Provjera**
+**Razumijevanje Povezivanja DOM-a**: Prije nego krenete u funkcionalnost povlačenja, potvrdite da možete:
+- ✅ Objasniti kako `document.getElementById()` pronalazi HTML elemente
+- ✅ Razumjeti zašto koristimo jedinstvene ID-ove za svaku biljku
+- ✅ Opisati svrhu atributa `defer` u skriptama
+- ✅ Prepoznati kako se JavaScript i HTML povezuju kroz DOM
+
+**Brzi Samoprovjera**: Što bi se dogodilo da dva elementa imaju isti ID? Zašto `getElementById()` vraća samo jedan element?  
+*Odgovor: ID-ovi trebaju biti jedinstveni; ako su duplicirani, vraća se samo prvi element*
 
 ---
 
-## Izrada zatvaranja funkcije dragElement
+## Izgradnja Funkcije zatvaranja za Element za Povlačenje
 
-Sada ćemo izraditi srž naše funkcionalnosti povlačenja: zatvaranje koje upravlja ponašanjem povlačenja za svaku biljku. Ovo zatvaranje će sadržavati više unutarnjih funkcija koje zajedno rade na praćenju pokreta miša i ažuriranju pozicija elemenata.
+Sada ćemo stvoriti srce naše funkcionalnosti povlačenja: zatvaranje koje upravlja ponašanjem povlačenja za svaku biljku. Ovo zatvaranje će sadržavati više unutarnjih funkcija koje surađuju u praćenju pomaka miša i ažuriranju položaja elemenata.
 
-Zatvaranja su savršena za ovaj zadatak jer nam omogućuju stvaranje "privatnih" varijabli koje traju između poziva funkcija, dajući svakoj biljci vlastiti neovisni sustav za praćenje koordinata.
+Zatvaranja su savršena za ovaj zadatak jer nam omogućuju stvaranje "privatnih" varijabli koje traju između poziva funkcija, dajući svakoj biljci vlastiti sustav praćenja koordinata.
 
-### Razumijevanje zatvaranja kroz jednostavan primjer
+### Razumijevanje Zatvaranja kroz Jednostavan Primjer
 
-Dopustite mi da demonstriram zatvaranja jednostavnim primjerom koji ilustrira koncept:
+Dopustite mi da pokažem zatvaranja s jednim jednostavnim primjerom koji ilustrira koncept:
 
 ```javascript
 function createCounter() {
-    let count = 0; // This is like a private variable
+    let count = 0; // Ovo je poput privatne varijable
     
     function increment() {
-        count++; // The inner function remembers the outer variable
+        count++; // Unutarnja funkcija pamti vanjsku varijablu
         return count;
     }
     
-    return increment; // We're giving back the inner function
+    return increment; // Vraćamo unutarnju funkciju
 }
 
 const myCounter = createCounter();
@@ -159,176 +260,238 @@ console.log(myCounter()); // 2
 **Evo što se događa u ovom obrascu zatvaranja:**
 - **Stvara** privatnu varijablu `count` koja postoji samo unutar ovog zatvaranja
 - **Unutarnja funkcija** može pristupiti i mijenjati tu vanjsku varijablu (mehanizam zatvaranja)
-- **Kada vratimo** unutarnju funkciju, ona održava svoju vezu s tim privatnim podacima
-- **Čak i nakon** što `createCounter()` završi izvršenje, `count` ostaje i pamti svoju vrijednost
+- **Kada vraćamo** unutarnju funkciju, ona održava vezu s tim privatnim podacima
+- **Čak i nakon** što `createCounter()` završi izvođenje, `count` ostaje i pamti svoju vrijednost
 
 ### Zašto su zatvaranja savršena za funkcionalnost povlačenja
 
-Za naš terarij, svaka biljka mora zapamtiti svoje trenutne koordinate pozicije. Zatvaranja pružaju savršeno rješenje:
+Za naš terrarij, svaka biljka treba pamtiti svoje trenutne koordinate pozicije. Zatvaranja pružaju savršeno rješenje:
 
 **Ključne prednosti za naš projekt:**
-- **Održava** privatne varijable pozicije za svaku biljku neovisno
+- **Održava** privatne varijable položaja za svaku biljku neovisno
 - **Čuva** podatke o koordinatama između događaja povlačenja
-- **Sprječava** sukobe varijabli između različitih povlačivih elemenata
-- **Stvara** čist, organiziran kod
+- **Sprječava** konflikte varijabli između različitih elemenata koje se mogu povlačiti
+- **Stvara** čist i organiziran kod
 
-> 🎯 **Cilj učenja**: Ne morate odmah savladati svaki aspekt zatvaranja. Fokusirajte se na to kako nam pomažu organizirati kod i održavati stanje za našu funkcionalnost povlačenja.
+> 🎯 **Cilj učenja**: Ne trebate odmah savladati svaki aspekt zatvaranja. Fokusirajte se na to kako nam pomažu organizirati kod i održavati stanje za našu funkcionalnost povlačenja.
 
-### Izrada funkcije dragElement
+```mermaid
+stateDiagram-v2
+    [*] --> Ready: Učitavanje stranice
+    Ready --> DragStart: Korisnik pritisne (pointerdown)
+    DragStart --> Dragging: Miš/prst se pomiče (pointermove)
+    Dragging --> Dragging: Nastavi pomicanje
+    Dragging --> DragEnd: Korisnik pusti (pointerup)
+    DragEnd --> Ready: Resetiranje za sljedeće povlačenje
+    
+    state DragStart {
+        [*] --> CapturePosition
+        CapturePosition --> SetupListeners
+        SetupListeners --> [*]
+    }
+    
+    state Dragging {
+        [*] --> CalculateMovement
+        CalculateMovement --> UpdatePosition
+        UpdatePosition --> [*]
+    }
+    
+    state DragEnd {
+        [*] --> RemoveListeners
+        RemoveListeners --> CleanupState
+        CleanupState --> [*]
+    }
+```
+### Kreiranje funkcije dragElement
 
-Sada ćemo izraditi glavnu funkciju koja će upravljati svim logikom povlačenja. Dodajte ovu funkciju ispod deklaracija vaših biljnih elemenata:
+Sada izgradimo glavnu funkciju koja će rukovati svojom logikom povlačenja. Dodajte ovu funkciju ispod deklaracija biljnih elemenata:
 
 ```javascript
 function dragElement(terrariumElement) {
-    // Initialize position tracking variables
-    let pos1 = 0,  // Previous mouse X position
-        pos2 = 0,  // Previous mouse Y position  
-        pos3 = 0,  // Current mouse X position
-        pos4 = 0;  // Current mouse Y position
+    // Inicijaliziraj varijable za praćenje položaja
+    let pos1 = 0,  // Prethodna X pozicija miša
+        pos2 = 0,  // Prethodna Y pozicija miša
+        pos3 = 0,  // Trenutna X pozicija miša
+        pos4 = 0;  // Trenutna Y pozicija miša
     
-    // Set up the initial drag event listener
+    // Postavi početnog slušača za događaj povlačenja
     terrariumElement.onpointerdown = pointerDrag;
 }
 ```
 
-**Razumijevanje sustava praćenja pozicije:**
-- **`pos1` i `pos2`**: Spremaju razliku između starih i novih pozicija miša
+**Razumijevanje sustava praćenja položaja:**
+- **`pos1` i `pos2`**: Spremaju razliku između starog i novog položaja miša
 - **`pos3` i `pos4`**: Prate trenutne koordinate miša
-- **`terrariumElement`**: Specifični biljni element koji činimo povlačivim
-- **`onpointerdown`**: Događaj koji se aktivira kada korisnik započne povlačenje
+- **`terrariumElement`**: Specifični biljni element koji ćemo učiniti povlačivim
+- **`onpointerdown`**: Događaj koji se aktivira kada korisnik počne povlačiti
 
-**Evo kako obrazac zatvaranja funkcionira:**
-- **Stvara** privatne varijable pozicije za svaki biljni element
-- **Održava** te varijable tijekom cijelog životnog ciklusa povlačenja
-- **Osigurava** da svaka biljka neovisno prati svoje koordinate
-- **Pruža** čisto sučelje kroz funkciju `dragElement`
+**Evo kako radi obrazac zatvaranja:**
+- **Stvara** privatne varijable položaja za svaki biljni element
+- **Održava** te varijable kroz cijeli životni ciklus povlačenja
+- **Osigurava** da svaka biljka prati svoje vlastite koordinate neovisno
+- **Pruža** čist sučelje kroz funkciju `dragElement`
 
-### Zašto koristiti događaje pokazivača?
+### Zašto koristiti Pointer Evente?
 
 Možda se pitate zašto koristimo `onpointerdown` umjesto poznatijeg `onclick`. Evo objašnjenja:
 
-| Vrsta događaja | Najbolje za | Nedostatak |
-|----------------|------------|------------|
-| `onclick` | Jednostavni klikovi na gumb | Ne može upravljati povlačenjem (samo klikovi i otpuštanja) |
+| Tip događaja | Najbolji za | Mana |
+|--------------|-------------|-------|
+| `onclick`    | Jednostavni klikovi na gumb | Ne može rukovati povlačenjem (samo klik i otpuštanje) |
 | `onpointerdown` | Miš i dodir | Noviji, ali danas dobro podržan |
-| `onmousedown` | Samo za desktop miš | Isključuje mobilne korisnike |
+| `onmousedown` | Samo miš na desktopu | Ne funkcionira za mobilne korisnike |
 
-**Zašto su događaji pokazivača savršeni za ono što gradimo:**
-- **Odlično radi** bez obzira koristi li netko miš, prst ili čak olovku
-- **Isti osjećaj** na prijenosnom računalu, tabletu ili telefonu
-- **Upravlja** stvarnim pokretom povlačenja (ne samo klikom i gotovim)
+**Zašto su pointer eventi savršeni za ono što gradimo:**
+- **Odlično rade** bilo da netko koristi miš, prst ili olovku
+- **Isto se osjećaju** na laptopu, tabletu ili telefonu
+- **Rukuje** aktivnim povlačenjem (ne samo klikom)
 - **Stvara** glatko iskustvo koje korisnici očekuju od modernih web aplikacija
 
-> 💡 **Priprema za budućnost**: Događaji pokazivača su moderan način upravljanja interakcijama korisnika. Umjesto pisanja zasebnog koda za miš i dodir, dobivate oboje besplatno. Prilično zgodno, zar ne?
+> 💡 **Buduća zaštita**: Pointer eventi su moderni način za rukovanje korisničkim interakcijama. Umjesto da pišete zaseban kod za miš i dodir, dobijete oba besplatno. Prilično zgodno, zar ne?
+
+### 🔄 **Pedagoška Provjera**
+**Razumijevanje rukovanja događajima**: Pauzirajte kako biste potvrdili razumijevanje događaja:
+- ✅ Zašto koristimo pointer evente umjesto mouse eventa?
+- ✅ Kako varijable zatvaranja traju između poziva funkcija?
+- ✅ Koju ulogu ima `preventDefault()` u glatkom povlačenju?
+- ✅ Zašto postavljamo slušače na dokument, a ne na pojedinačne elemente?
+
+**Povezanost sa stvarnim svijetom**: Razmislite o sučeljima povuci-i-pusti koje svakodnevno koristite:
+- **Prijenos datoteka**: Povlačenje datoteka u prozor preglednika
+- **Kanban table**: Premještanje zadataka između stupaca
+- **Galerije slika**: Promjena redoslijeda fotografija
+- **Mobilna sučelja**: Klizanje i povlačenje na zaslonima osjetljivim na dodir
 
 ---
 
-## Funkcija pointerDrag: Hvatanje početka povlačenja
+## Funkcija pointerDrag: Hvatanje Početka Povlačenja
 
-Kada korisnik pritisne biljku (bilo klikom miša ili dodirom prsta), funkcija `pointerDrag` stupa na snagu. Ova funkcija bilježi početne koordinate i postavlja sustav povlačenja.
+Kada korisnik pritisne na biljku (bilo klikom miša ili dodirom prsta), funkcija `pointerDrag` kreće u akciju. Ova funkcija hvata početne koordinate i postavlja sustav povlačenja.
 
-Dodajte ovu funkciju unutar vašeg zatvaranja `dragElement`, odmah nakon linije `terrariumElement.onpointerdown = pointerDrag;`:
+Dodajte ovu funkciju unutar svog zatvaranja `dragElement`, odmah nakon retka `terrariumElement.onpointerdown = pointerDrag;`:
 
 ```javascript
 function pointerDrag(e) {
-    // Prevent default browser behavior (like text selection)
+    // Spriječi zadano ponašanje preglednika (poput odabira teksta)
     e.preventDefault();
     
-    // Capture the initial mouse/touch position
-    pos3 = e.clientX;  // X coordinate where drag started
-    pos4 = e.clientY;  // Y coordinate where drag started
+    // Zabilježi početnu poziciju miša/dodira
+    pos3 = e.clientX;  // X koordinata na kojoj je početno povlačenje započeto
+    pos4 = e.clientY;  // Y koordinata na kojoj je početno povlačenje započeto
     
-    // Set up event listeners for the dragging process
+    // Postavi slušače događaja za proces povlačenja
     document.onpointermove = elementDrag;
     document.onpointerup = stopElementDrag;
 }
 ```
 
 **Korak po korak, evo što se događa:**
-- **Sprječava** zadano ponašanje preglednika koje bi moglo ometati povlačenje
+- **Sprječava** zadano ponašanje preglednika koje bi moglo smetati povlačenju
 - **Bilježi** točne koordinate gdje je korisnik započeo gestu povlačenja
-- **Postavlja** slušatelje događaja za kontinuirano kretanje povlačenja
-- **Priprema** sustav za praćenje kretanja miša/prsta preko cijelog dokumenta
+- **Usmjerava** slušače događaja za nastavak praćenja pomicanja
+- **Priprema** sustav za praćenje pokreta miša/prsta kroz cijeli dokument
 
-### Razumijevanje sprječavanja događaja
+### Razumijevanje sprečavanja događaja
 
-Linija `e.preventDefault()` ključna je za glatko povlačenje:
+Red `e.preventDefault()` je ključan za glatko povlačenje:
 
-**Bez sprječavanja, preglednici bi mogli:**
-- **Odabrati** tekst prilikom povlačenja preko stranice
-- **Pokrenuti** kontekstne izbornike na desni klik povlačenja
-- **Ometati** naše prilagođeno ponašanje povlačenja
+**Bez sprečavanja, preglednici bi mogli:**
+- **Selektirati** tekst prilikom povlačenja preko stranice
+- **Pokrenuti** kontekstne izbornike pri desnom kliku i povlačenju
+- **Omesti** našu prilagođenu funkcionalnost povlačenja
 - **Stvoriti** vizualne artefakte tijekom operacije povlačenja
 
-> 🔍 **Eksperiment**: Nakon dovršetka ove lekcije, pokušajte ukloniti `e.preventDefault()` i vidjeti kako to utječe na iskustvo povlačenja. Brzo ćete shvatiti zašto je ova linija ključna!
+> 🔍 **Eksperimentirajte**: Nakon završetka ove lekcije, pokušajte ukloniti `e.preventDefault()` i vidjeti kako to utječe na iskustvo povlačenja. Brzo ćete shvatiti zašto je ovaj redak neophodan!
 
 ### Sustav praćenja koordinata
 
 Svojstva `e.clientX` i `e.clientY` daju nam precizne koordinate miša/dodira:
 
 | Svojstvo | Što mjeri | Primjena |
-|----------|-----------|----------|
-| `clientX` | Horizontalni položaj u odnosu na prikaz | Praćenje kretanja lijevo-desno |
-| `clientY` | Vertikalni položaj u odnosu na prikaz | Praćenje kretanja gore-dolje |
-
+|----------|------------|-----------|
+| `clientX` | Horizontalnu poziciju relativno prema vidljivom dijelu prozora | Praćenje kretanja lijevo-desno |
+| `clientY` | Vertikalnu poziciju relativno prema vidljivom dijelu prozora | Praćenje kretanja gore-dolje |
 **Razumijevanje ovih koordinata:**
-- **Pruža** informacije o pozicioniranju u pikselima
-- **Ažurira** u stvarnom vremenu dok korisnik pomiče pokazivač
-- **Ostaje** dosljedno na različitim veličinama zaslona i razinama zumiranja
+- **Pruža** podatke o pozicioniranju s pikselom precizno
+- **Ažurira se** u stvarnom vremenu dok korisnik pomiče pokazivač
+- **Ostaje** konzistentno na različitim veličinama zaslona i razinama zumiranja
 - **Omogućuje** glatke, responzivne interakcije povlačenja
 
 ### Postavljanje slušatelja događaja na razini dokumenta
 
-Primijetite kako postavljamo događaje za kretanje i zaustavljanje na cijeli `document`, a ne samo na biljni element:
+Primijetite kako povezujemo događaje pomicanja i zaustavljanja na cijeli `document`, a ne samo na element biljke:
 
 ```javascript
 document.onpointermove = elementDrag;
 document.onpointerup = stopElementDrag;
 ```
 
-**Zašto postaviti na dokument:**
-- **Nastavlja** praćenje čak i kada miš napusti biljni element
-- **Sprječava** prekid povlačenja ako se korisnik brzo pomakne
-- **Pruža** glatko povlačenje preko cijelog zaslona
-- **Upravlja** rubnim slučajevima kada pokazivač napusti prozor preglednika
+**Zašto povezati na dokument:**
+- **Nastavlja** praćenje čak i kada miš izađe iz elementa biljke
+- **Sprječava** prekid povlačenja ako korisnik brzo pomakne miš
+- **Omogućuje** glatko povlačenje preko cijelog zaslona
+- **Rješava** rubne slučajeve gdje pokazivač izađe iz prozora preglednika
 
-> ⚡ **Napomena o performansama**: Očistit ćemo ove slušatelje događaja na razini dokumenta kada povlačenje završi kako bismo izbjegli curenje memorije i probleme s performansama.
+> ⚡ **Napomena o izvedbi**: Očistit ćemo ove slušatelje na razini dokumenta kada povlačenje prestane kako bismo izbjegli curenje memorije i probleme s izvedbom.
 
-## Dovršavanje sustava povlačenja: Kretanje i čišćenje
+## Završetak sustava povlačenja: pokretanje i čišćenje
 
-Sada ćemo dodati dvije preostale funkcije koje upravljaju stvarnim kretanjem povlačenja i čišćenjem kada povlačenje završi. Ove funkcije zajedno stvaraju glatko, responzivno kretanje biljaka po vašem terariju.
+Sada ćemo dodati preostale dvije funkcije koje upravljaju stvarnim pomicanjem pri povlačenju i čišćenjem nakon završetka povlačenja. Te funkcije surađuju kako bi se postiglo glatko, responzivno pomicanje biljke po vašem terariju.
 
-### Funkcija elementDrag: Praćenje kretanja
+### Funkcija elementDrag: praćenje pomicanja
 
 Dodajte funkciju `elementDrag` odmah nakon zatvarajuće vitičaste zagrade funkcije `pointerDrag`:
 
 ```javascript
 function elementDrag(e) {
-    // Calculate the distance moved since the last event
-    pos1 = pos3 - e.clientX;  // Horizontal distance moved
-    pos2 = pos4 - e.clientY;  // Vertical distance moved
+    // Izračunaj udaljenost koju je objekt pomaknuo od posljednjeg događaja
+    pos1 = pos3 - e.clientX;  // Horizontalna udaljenost pomaka
+    pos2 = pos4 - e.clientY;  // Vertikalna udaljenost pomaka
     
-    // Update the current position tracking
-    pos3 = e.clientX;  // New current X position
-    pos4 = e.clientY;  // New current Y position
+    // Ažuriraj praćenje trenutne pozicije
+    pos3 = e.clientX;  // Nova trenutačna X pozicija
+    pos4 = e.clientY;  // Nova trenutačna Y pozicija
     
-    // Apply the movement to the element's position
+    // Primijeni pomak na poziciju elementa
     terrariumElement.style.top = (terrariumElement.offsetTop - pos2) + 'px';
     terrariumElement.style.left = (terrariumElement.offsetLeft - pos1) + 'px';
 }
 ```
 
-**Razumijevanje matematike koordinata:**
-- **`pos1` i `pos2`**: Izračunavaju koliko se miš pomaknuo od zadnjeg ažuriranja
-- **`pos3` i `pos4`**: Spremaju trenutni položaj miša za sljedeći izračun
-- **`offsetTop` i `offsetLeft`**: Dohvaćaju trenutni položaj elementa na stranici
-- **Logika oduzimanja**: Pomicanje elementa za istu udaljenost koju je miš prešao
+**Razumijevanje koordinatne matematike:**
+- **`pos1` i `pos2`**: Izračunavaju koliko se miš pomaknuo od posljednjeg ažuriranja
+- **`pos3` i `pos4`**: Spremaju trenutnu poziciju miša za sljedeću računski korak
+- **`offsetTop` i `offsetLeft`**: Dohvaćaju trenutnu poziciju elementa na stranici
+- **Logika oduzimanja**: Pomjera element za isti iznos koliko se miš pomaknuo
 
-**Evo kako se računa pomicanje:**
-1. **Mjeri** razliku između starog i novog položaja miša
-2. **Izračunava** koliko treba pomaknuti element na temelju kretanja miša
-3. **Ažurira** CSS svojstva položaja elementa u stvarnom vremenu
-4. **Sprema** novi položaj kao osnovu za sljedeći izračun pomicanja
+```mermaid
+sequenceDiagram
+    participant User
+    participant Mouse
+    participant JavaScript
+    participant Plant
+    
+    User->>Mouse: Počni povlačenje na (100, 50)
+    Mouse->>JavaScript: pointerdown događaj
+    JavaScript->>JavaScript: Spremi početnu poziciju (pos3=100, pos4=50)
+    JavaScript->>JavaScript: Postavi slušatelje za pomicanje/pusti
+    
+    User->>Mouse: Pomakni se na (110, 60)
+    Mouse->>JavaScript: pointermove događaj
+    JavaScript->>JavaScript: Izračunaj: pos1=10, pos2=10
+    JavaScript->>Plant: Ažuriraj: left += 10px, top += 10px
+    Plant->>Plant: Prikaz na novoj poziciji
+    
+    User->>Mouse: Pusti na (120, 65)
+    Mouse->>JavaScript: pointerup događaj
+    JavaScript->>JavaScript: Ukloni slušatelje
+    JavaScript->>JavaScript: Resetiraj za sljedeće povlačenje
+```
+**Evo raščlambe izračuna pomaka:**
+1. **Mjeri** razliku između stare i nove pozicije miša
+2. **Izračunava** koliko treba pomaknuti element na temelju pomaka miša
+3. **Ažurira** CSS pozicijske osobine elementa u stvarnom vremenu
+4. **Sprema** novu poziciju kao bazu za sljedeći izračun pomaka
 
 ### Vizualni prikaz matematike
 
@@ -338,19 +501,18 @@ sequenceDiagram
     participant JavaScript
     participant Plant
     
-    Mouse->>JavaScript: Move from (100,50) to (110,60)
-    JavaScript->>JavaScript: Calculate: moved 10px right, 10px down
-    JavaScript->>Plant: Update position by +10px right, +10px down
-    Plant->>Plant: Render at new position
+    Mouse->>JavaScript: Pomakni se s (100,50) na (110,60)
+    JavaScript->>JavaScript: Izračunaj: pomaknuto 10px desno, 10px dolje
+    JavaScript->>Plant: Ažuriraj poziciju za +10px desno, +10px dolje
+    Plant->>Plant: Prikaži na novoj poziciji
 ```
+### Funkcija stopElementDrag: čišćenje
 
-### Funkcija stopElementDrag: Čišćenje
-
-Dodajte funkciju za čišćenje nakon zatvorene vitičaste zagrade funkcije `elementDrag`:
+Dodajte funkciju za čišćenje odmah nakon zatvarajuće vitičaste zagrade funkcije `elementDrag`:
 
 ```javascript
 function stopElementDrag() {
-    // Remove the document-level event listeners
+    // Ukloni slušatelje događaja na razini dokumenta
     document.onpointerup = null;
     document.onpointermove = null;
 }
@@ -359,18 +521,18 @@ function stopElementDrag() {
 **Zašto je čišćenje važno:**
 - **Sprječava** curenje memorije zbog preostalih slušatelja događaja
 - **Zaustavlja** ponašanje povlačenja kad korisnik pusti biljku
-- **Omogućuje** neovisno povlačenje drugih elemenata
+- **Omogućuje** da se drugi elementi mogu povlačiti neovisno
 - **Resetira** sustav za sljedeću operaciju povlačenja
 
 **Što se događa bez čišćenja:**
-- Slušatelji događaja nastavljaju raditi čak i nakon što povlačenje prestane
-- Performanse se pogoršavaju zbog nakupljanja neiskorištenih slušatelja
+- Slušatelji događaja nastavljaju raditi i nakon prestanka povlačenja
+- Izvedba opada kako se nakupljaju neiskorišteni slušatelji
 - Neočekivano ponašanje pri interakciji s drugim elementima
-- Resursi preglednika troše se na nepotrebno rukovanje događajima
+- Resursi preglednika se troše na nepotrebnu obradu događaja
 
-### Razumijevanje CSS svojstava položaja
+### Razumijevanje CSS pozicijskih svojstava
 
-Naš sustav povlačenja manipulira s dva ključna CSS svojstva:
+Naš sustav povlačenja manipulira dvjema ključnim CSS osobinama:
 
 | Svojstvo | Što kontrolira | Kako ga koristimo |
 |----------|----------------|-------------------|
@@ -378,107 +540,215 @@ Naš sustav povlačenja manipulira s dva ključna CSS svojstva:
 | `left` | Udaljenost od lijevog ruba | Horizontalno pozicioniranje tijekom povlačenja |
 
 **Ključni uvidi o offset svojstvima:**
-- **`offsetTop`**: Trenutna udaljenost od gornjeg ruba pozicioniranog roditeljskog elementa
-- **`offsetLeft`**: Trenutna udaljenost od lijevog ruba pozicioniranog roditeljskog elementa
-- **Kontekst pozicioniranja**: Ove vrijednosti su relativne prema najbližem pozicioniranom pretku
-- **Ažuriranja u stvarnom vremenu**: Promjene se događaju odmah kad mijenjamo CSS svojstva
+- **`offsetTop`**: Trenutna udaljenost od vrha roditeljskog elementa s pozicioniranjem
+- **`offsetLeft`**: Trenutna udaljenost od lijevog ruba roditeljskog elementa s pozicioniranjem
+- **Kontekst pozicioniranja**: Ove vrijednosti su relativne najbližem položeno roditelju
+- **Ažuriranja u stvarnom vremenu**: Mijenjaju se odmah pri izmjeni CSS osobina
 
-> 🎯 **Filozofija dizajna**: Ovaj sustav povlačenja namjerno je fleksibilan – nema "zona za ispuštanje" ili ograničenja. Korisnici mogu postaviti biljke bilo gdje, pružajući im potpunu kreativnu kontrolu nad dizajnom terarija.
+> 🎯 **Filozofija dizajna**: Ovaj sustav povlačenja je namjerno fleksibilan – nema "zona za ispuštanje" ili ograničenja. Korisnici mogu postaviti biljke bilo gdje, dajući im potpunu kreativnu kontrolu nad dizajnom terarija.
 
-## Sve na jednom mjestu: Vaš kompletan sustav povlačenja
+## Sve zajedno: vaš kompletan sustav povlačenja
 
 Čestitamo! Upravo ste izgradili sofisticirani sustav povlačenja i ispuštanja koristeći čisti JavaScript. Vaša kompletna funkcija `dragElement` sada sadrži moćan closure koji upravlja:
 
 **Što vaš closure postiže:**
-- **Održava** privatne varijable položaja za svaku biljku neovisno
-- **Upravlja** cijelim životnim ciklusom povlačenja od početka do kraja
-- **Omogućuje** glatko i responzivno kretanje po cijelom ekranu
-- **Pravilno čisti** resurse kako bi spriječio curenje memorije
-- **Stvara** intuitivno i kreativno sučelje za dizajn terarija
+- **Održava** privatne varijable pozicije za svaku biljku neovisno
+- **Upravlja** kompletnim životnim ciklusom povlačenja od početka do kraja
+- **Pruža** glatko, responzivno pomicanje po cijelom zaslonu
+- **Čisti** resurse ispravno kako bi spriječio curenja memorije
+- **Kreira** intuitivno, kreativno sučelje za dizajn terarija
 
 ### Testiranje vašeg interaktivnog terarija
 
-Sada testirajte svoj interaktivni terarij! Otvorite svoju datoteku `index.html` u web pregledniku i isprobajte funkcionalnost:
+Sada testirajte svoj interaktivni terarij! Otvorite datoteku `index.html` u web pregledniku i isprobajte funkcionalnost:
 
-1. **Kliknite i držite** bilo koju biljku za početak povlačenja
-2. **Pomaknite miš ili prst** i gledajte kako biljka glatko prati pokret
-3. **Otpustite** kako biste ispustili biljku na novu poziciju
-4. **Eksperimentirajte** s različitim rasporedima kako biste istražili sučelje
+1. **Kliknite i držite** bilo koju biljku da započnete povlačenje
+2. **Pomaknite miš ili prst** i promatrajte kako biljka glatko prati pokrete
+3. **Otpustite** da ispustite biljku na novu poziciju
+4. **Eksperimentirajte** s različitim rasporedima i istražite sučelje
 
-🥇 **Postignuće**: Stvorili ste potpuno interaktivnu web aplikaciju koristeći osnovne koncepte koje profesionalni programeri svakodnevno koriste. Ova funkcionalnost povlačenja i ispuštanja koristi iste principe kao i prijenos datoteka, kanban ploče i mnogi drugi interaktivni sustavi.
+🥇 **Postignuće**: Stvorili ste potpuno interaktivnu web aplikaciju koristeći temeljne koncepte koje profesionalni developeri koriste svakodnevno. Ta funkcionalnost povlačenja i ispuštanja koristi iste principe iza uploadanja datoteka, kanban ploča i mnogih drugih interaktivnih sučelja.
 
-![završeni terarij](../../../../translated_images/terrarium-final.0920f16e87c13a84cd2b553a5af9a3ad1cffbd41fbf8ce715d9e9c43809a5e2c.hr.png)
+### 🔄 **Pedagoški provjeravanje**
+**Potpuno razumijevanje sustava**: Provjerite svoje razumijevanje kompletnog sustava povlačenja:
+- ✅ Kako closures održavaju neovisno stanje za svaku biljku?
+- ✅ Zašto je matematički izračun koordinata nužan za glatko kretanje?
+- ✅ Što bi se dogodilo da zaboravimo očistiti slušatelje događaja?
+- ✅ Kako se ovaj obrazac skalira na složenije interakcije?
+
+**Razmišljanje o kvaliteti koda**: Pregledajte svoje kompletno rješenje:
+- **Modularni dizajn**: Svaka biljka dobiva vlastitu instancu closure-a
+- **Učinkovitost događaja**: Ispravno postavljanje i čišćenje slušatelja
+- **Podrška za uređaje**: Radi na desktopu i mobilnim uređajima
+- **Svijest o izvedbi**: Nema curenja memorije ili suvišnih izračuna
+
+![finished terrarium](../../../../translated_images/hr/terrarium-final.0920f16e87c13a84.webp)
 
 ---
 
-## Izazov GitHub Copilot Agent 🚀
+## Izazov GitHub Copilot agenta 🚀
 
-Koristite Agent način rada za dovršavanje sljedećeg izazova:
+Koristite Agent mod da dovršite sljedeći izazov:
 
-**Opis:** Poboljšajte projekt terarija dodavanjem funkcionalnosti za resetiranje koja vraća sve biljke na njihove izvorne pozicije uz glatke animacije.
+**Opis:** Poboljšajte projekt terarija dodavanjem funkcionalnosti resetiranja koja vraća sve biljke na njihove početne pozicije s glatkim animacijama.
 
-**Zadatak:** Stvorite gumb za resetiranje koji, kad se klikne, animira sve biljke natrag na njihove izvorne pozicije u bočnoj traci koristeći CSS prijelaze. Funkcija bi trebala spremiti izvorne pozicije kad se stranica učita i glatko premjestiti biljke natrag na te pozicije u trajanju od 1 sekunde kad se pritisne gumb za resetiranje.
+**Zadatak:** Napravite gumb za resetiranje koji, kad se klikne, animira sve biljke natrag na njihove izvorne pozicije sa strane koristeći CSS prijelaze. Funkcija treba pohraniti početne položaje pri učitavanju stranice i glatko vratiti biljke na te pozicije tijekom 1 sekunde prilikom pritiskanja gumba za reset.
 
-Saznajte više o [agent načinu rada](https://code.visualstudio.com/blogs/2025/02/24/introducing-copilot-agent-mode) ovdje.
+Više o [agent modu](https://code.visualstudio.com/blogs/2025/02/24/introducing-copilot-agent-mode) pročitajte ovdje.
 
 ## 🚀 Dodatni izazov: Proširite svoje vještine
 
-Spremni za podizanje vašeg terarija na višu razinu? Pokušajte implementirati ove nadogradnje:
+Spremni ste podići svoj terarij na višu razinu? Ispunite ove dodatke:
 
-**Kreativna proširenja:**
-- **Dvostruki klik** na biljku kako bi se premjestila u prvi plan (manipulacija z-indexom)
-- **Dodajte vizualne povratne informacije** poput suptilnog sjaja prilikom prelaska mišem preko biljaka
-- **Implementirajte granice** kako biste spriječili da biljke budu povučene izvan terarija
-- **Stvorite funkciju spremanja** koja pamti pozicije biljaka koristeći localStorage
-- **Dodajte zvučne efekte** za podizanje i postavljanje biljaka
+**Kreativne ekstenzije:**
+- **Dvoklik** na biljku da je dovedete u prvi plan (manipulacija z-index-om)
+- **Dodajte vizualnu povratnu informaciju** poput suptilnog sjaja pri prelasku mišem preko biljaka
+- **Implementirajte granice** da spriječite povlačenje biljaka izvan terarija
+- **Napravite funkciju spremanja** koja pamti pozicije biljaka koristeći localStorage
+- **Dodajte zvučne efekte** prilikom podizanja i postavljanja biljaka
 
-> 💡 **Prilika za učenje**: Svaki od ovih izazova naučit će vas novim aspektima manipulacije DOM-om, rukovanja događajima i dizajna korisničkog iskustva.
+> 💡 **Prilika za učenje**: Svaki od ovih izazova će vas naučiti novim aspektima manipulacije DOM-om, rukovanja događajima i dizajna korisničkog iskustva.
 
 ## Kviz nakon predavanja
 
 [Kviz nakon predavanja](https://ff-quizzes.netlify.app/web/quiz/20)
 
-## Pregled i samostalno učenje: Produbljivanje vašeg razumijevanja
+## Pregled i samostalno učenje: produbljivanje razumijevanja
 
-Savladali ste osnove manipulacije DOM-om i closures, ali uvijek ima prostora za daljnje istraživanje! Evo nekoliko smjernica za proširenje vašeg znanja i vještina.
+Osvladali ste osnove manipulacije DOM-om i closures, ali uvijek ima prostora za istraživanje! Evo nekoliko smjerova za proširenje vašeg znanja i vještina.
 
 ### Alternativni pristupi povlačenju i ispuštanju
 
-Koristili smo pointer događaje za maksimalnu fleksibilnost, ali web razvoj nudi više pristupa:
+Koristili smo pokazivačke događaje za maksimalnu fleksibilnost, ali web razvoj nudi više pristupa:
 
 | Pristup | Najbolje za | Vrijednost učenja |
-|---------|-------------|-------------------|
-| [HTML Drag and Drop API](https://developer.mozilla.org/docs/Web/API/HTML_Drag_and_Drop_API) | Prijenos datoteka, formalne zone povlačenja | Razumijevanje mogućnosti koje pruža preglednik |
-| [Touch Events](https://developer.mozilla.org/docs/Web/API/Touch_events) | Interakcije specifične za mobilne uređaje | Obrasci razvoja prilagođeni mobilnim uređajima |
-| CSS `transform` svojstva | Glatke animacije | Tehnike optimizacije performansi |
+|----------|-------------|-------------------|
+| [HTML Drag and Drop API](https://developer.mozilla.org/docs/Web/API/HTML_Drag_and_Drop_API) | Upload datoteka, formalne zone za povlačenje | Razumijevanje izvornog ponašanja preglednika |
+| [Touch Events](https://developer.mozilla.org/docs/Web/API/Touch_events) | Interakcije specifične za mobilne uređaje | Mobile-first razvojni obrasci |
+| CSS `transform` osobine | Glatke animacije | Tehnike optimizacije izvedbe |
 
 ### Napredne teme manipulacije DOM-om
 
-**Sljedeći koraci u vašem procesu učenja:**
-- **Delegacija događaja**: Učinkovito rukovanje događajima za više elemenata
-- **Intersection Observer**: Otkrivanje kad elementi ulaze/izlaze iz vidnog polja
+**Sljedeći koraci u učenju:**
+- **Delegiranje događaja**: Efikasno upravljanje događajima za više elemenata
+- **Intersection Observer**: Otkrivanje kada elementi ulaze ili izlaze iz vidljivog dijela
 - **Mutation Observer**: Praćenje promjena u strukturi DOM-a
-- **Web Components**: Stvaranje ponovno upotrebljivih, inkapsuliranih UI elemenata
-- **Koncepti virtualnog DOM-a**: Razumijevanje kako okviri optimiziraju ažuriranja DOM-a
+- **Web komponenta**: Kreiranje višekratno upotrebljivih, enkapsuliranih UI elemenata
+- **Koncepti virtualnog DOM-a**: Razumijevanje kako frameworki optimiziraju ažuriranja DOM-a
 
-### Ključni resursi za nastavak učenja
+### Bitni izvori za kontinuirano učenje
 
 **Tehnička dokumentacija:**
-- [MDN Pointer Events Guide](https://developer.mozilla.org/docs/Web/API/Pointer_events) - Sveobuhvatan vodič za pointer događaje
-- [W3C Pointer Events Specification](https://www.w3.org/TR/pointerevents1/) - Službena dokumentacija standarda
-- [JavaScript Closures Deep Dive](https://developer.mozilla.org/docs/Web/JavaScript/Closures) - Napredni obrasci za closures
+- [MDN vodič za Pointer Events](https://developer.mozilla.org/docs/Web/API/Pointer_events) - Sveobuhvatna referenca pointer događaja
+- [W3C specifikacija za Pointer Events](https://www.w3.org/TR/pointerevents1/) - Službena dokumentacija standarda
+- [Duboko o JavaScript closures](https://developer.mozilla.org/docs/Web/JavaScript/Closures) - Napredni obrasci closure-a
 
 **Kompatibilnost preglednika:**
-- [CanIUse.com](https://caniuse.com/) - Provjerite podršku značajki u različitim preglednicima
+- [CanIUse.com](https://caniuse.com/) - Provjera podrške značajki u preglednicima
 - [MDN Browser Compatibility Data](https://github.com/mdn/browser-compat-data) - Detaljne informacije o kompatibilnosti
 
 **Prilike za vježbu:**
-- **Izradite** igru slagalice koristeći slične mehanizme povlačenja
-- **Kreirajte** kanban ploču s upravljanjem zadacima povlačenjem i ispuštanjem
-- **Dizajnirajte** galeriju slika s mogućnošću povlačenja fotografija
-- **Eksperimentirajte** s gestama dodira za mobilna sučelja
+- **Izgradite** puzzle igru koristeći sličnu mehaniku povlačenja
+- **Napravite** kanban ploču s upravljanjem zadacima povlačenjem i ispuštanjem
+- **Dizajnirajte** galeriju slika sa sortirajućim slikama povlačenjem
+- **Eksperimentirajte** s dodirnim gestama za mobilna sučelja
 
-> 🎯 **Strategija učenja**: Najbolji način za učvršćivanje ovih koncepata je kroz praksu. Pokušajte izraditi varijacije sučelja za povlačenje – svaki projekt naučit će vas nečemu novom o interakciji korisnika i manipulaciji DOM-om.
+> 🎯 **Strategija učenja**: Najbolji način da utvrdite ove koncepte je praksa. Isprobajte izradu varijacija sučelja za povlačenje – svaki projekt naučit će vas nešto novo o interakciji korisnika i manipulaciji DOM-om.
+
+### ⚡ **Što možete učiniti u sljedećih 5 minuta**
+- [ ] Otvorite DevTools u pregledniku i upišite `document.querySelector('body')` u konzolu
+- [ ] Probajte promijeniti tekst na web stranici koristeći `innerHTML` ili `textContent`
+- [ ] Dodajte slušatelj događaja klika na bilo koji gumb ili vezu na stranici
+- [ ] Istražite strukturu DOM stabla koristeći panel Elements
+
+### 🎯 **Što možete postići u ovom satu**
+- [ ] Dovršite kviz nakon lekcije i pregledajte koncepte manipulacije DOM-om
+- [ ] Napravite interaktivnu web stranicu koja reagira na korisničke klike
+- [ ] Vježbajte rukovanje događajima s različitim vrstama (click, mouseover, keypress)
+- [ ] Izradite jednostavnu listu zadataka ili brojač korištenjem manipulacije DOM-om
+- [ ] Istražite odnos između HTML elemenata i JavaScript objekata
+
+### 📅 **Vaše tjedno putovanje kroz JavaScript**
+- [ ] Dovršite projekt interaktivnog terarija s povlačenjem i ispuštanjem
+- [ ] Ovladate event delegacijom za učinkovito rukovanje događajima
+- [ ] Naučite o event loopu i asinkronom JavaScriptu
+- [ ] Vježbajte closures izrađujući module s privatnim stanjima
+- [ ] Istražite moderne DOM API-je poput Intersection Observera
+- [ ] Napravite interaktivne komponente bez korištenja frameworka
+
+### 🌟 **Vaša mjesečna ovladavanja JavaScript-om**
+- [ ] Izradite složenu single-page aplikaciju koristeći vanilla JavaScript
+- [ ] Naučite moderni framework (React, Vue ili Angular) i usporedite s vanilla DOM-om
+- [ ] Doprinosite open source JavaScript projektima
+- [ ] Ovladate naprednim konceptima poput web komponenti i custom elemenata
+- [ ] Izradite performantne web aplikacije s optimalnim DOM obrascima
+- [ ] Podučavajte druge o manipulaciji DOM-om i osnovama JavaScript-a
+
+## 🎯 Vaš vremenski plan majstorstva JavaScript DOM-a
+
+```mermaid
+timeline
+    title Napredak učenja DOM-a i JavaScripta
+    
+    section Osnove (15 minuta)
+        Razumijevanje DOM-a: Metode odabira elemenata
+                         : Navigacija kroz strukturu stabla
+                         : Obrasci pristupa svojstvima
+        
+    section Obrada događaja (20 minuta)
+        Interakcija s korisnikom: Osnove pokazivačkih događaja
+                             : Postavljanje osluškivača događaja
+                             : Kompatibilnost između uređaja
+                             : Tehnike sprječavanja događaja
+        
+    section Zatvaranja (25 minuta)
+        Upravljanje opsegom: Kreiranje privatnih varijabli
+                            : Trajnost funkcija
+                            : Obrasci upravljanja stanjem
+                            : Učinkovitost memorije
+        
+    section Sustav povlačenja (30 minuta)
+        Interaktivne značajke: Praćenje koordinata
+                            : Izračun pozicije
+                            : Matematika kretanja
+                            : Postupci čišćenja
+        
+    section Napredni obrasci (45 minuta)
+        Profesionalne vještine: Delegiranje događaja
+                             : Optimizacija performansi
+                             : Rukovanje pogreškama
+                             : Razmatranja pristupačnosti
+        
+    section Razumijevanje okvira (1 tjedan)
+        Moderne razvojne tehnologije: Koncepti virtualnog DOM-a
+                                  : Biblioteke za upravljanje stanjem
+                                  : Arhitekture komponenti
+                                  : Integracija alata za izgradnju
+        
+    section Razina stručnjaka (1 mjesec)
+        Napredni DOM API-ji: Intersection Observer
+                          : Mutation Observer
+                          : Prilagođeni elementi
+                          : Web komponente
+```
+### 🛠️ Sažetak vašeg JavaScript alata
+
+Nakon dovršetka ove lekcije, sada imate:
+- **Ovladavanje DOM-om**: Selekcija elemenata, manipulacija svojstvima, navigacija po stablu
+- **Ekspertiza u događajima**: Rukovanje interakcijama na svim uređajima pomoću pointer događaja
+- **Razumijevanje closures**: Upravljanje privatnim stanjem i trajanje funkcija
+- **Interaktivni sustavi**: Potpuna implementacija povlačenja i ispuštanja od nule
+- **Svijest o izvedbi**: Ispravno čišćenje događaja i upravljanje memorijom
+- **Moderni obrasci**: Tehnike organizacije koda korištene u profesionalnom razvoju
+- **Korisničko iskustvo**: Kreiranje intuitivnih, responzivnih sučelja
+
+**Profesionalne vještine koje ste stekli**: Izgradili ste značajke koristeći iste tehnike kao:
+- **Trello/Kanban ploče**: Povlačenje kartica između kolona
+- **Sustavi za upload datoteka**: Rukovanje datotekama povlačenjem i ispuštanjem
+- **Galerije slika**: Sučelja za raspored fotografija
+- **Mobilne aplikacije**: Obrasci za dodirne interakcije
+
+**Sljedeći nivo**: Spremni ste istražiti moderne frameworke poput React, Vue ili Angular koji nadograđuju ove temeljne koncepte manipulacije DOM-om!
 
 ## Zadatak
 
@@ -486,5 +756,7 @@ Koristili smo pointer događaje za maksimalnu fleksibilnost, ali web razvoj nudi
 
 ---
 
-**Izjava o odricanju odgovornosti**:  
-Ovaj dokument je preveden pomoću AI usluge za prevođenje [Co-op Translator](https://github.com/Azure/co-op-translator). Iako nastojimo osigurati točnost, imajte na umu da automatski prijevodi mogu sadržavati pogreške ili netočnosti. Izvorni dokument na izvornom jeziku treba smatrati autoritativnim izvorom. Za ključne informacije preporučuje se profesionalni prijevod od strane čovjeka. Ne preuzimamo odgovornost za nesporazume ili pogrešna tumačenja koja proizlaze iz korištenja ovog prijevoda.
+<!-- CO-OP TRANSLATOR DISCLAIMER START -->
+**Izjava o odricanju odgovornosti**:
+Ovaj dokument preveden je pomoću AI prevoditeljskog servisa [Co-op Translator](https://github.com/Azure/co-op-translator). Iako nastojimo postići točnost, imajte na umu da automatski prijevodi mogu sadržavati pogreške ili netočnosti. Izvornik dokumenta na izvornom jeziku treba smatrati službenim i autoritativnim izvorom. Za kritične informacije preporučuje se profesionalni ljudski prijevod. Ne snosimo odgovornost za bilo kakva nesporazuma ili kriva tumačenja koja proizađu iz korištenja ovog prijevoda.
+<!-- CO-OP TRANSLATOR DISCLAIMER END -->

@@ -1,12 +1,3 @@
-<!--
-CO_OP_TRANSLATOR_METADATA:
-{
-  "original_hash": "e39f3a4e3bcccf94639e3af1248f8a4d",
-  "translation_date": "2025-11-06T11:23:52+00:00",
-  "source_file": "3-terrarium/2-intro-to-css/README.md",
-  "language_code": "vi"
-}
--->
 # Dự án Terrarium Phần 2: Giới thiệu về CSS
 
 ```mermaid
@@ -30,7 +21,7 @@ journey
       Glass reflections: 5: Student
 ```
 
-![Giới thiệu về CSS](../../../../translated_images/webdev101-css.3f7af5991bf53a200d79e7257e5e450408d8ea97f5b531d31b2e3976317338ee.vi.png)
+![Giới thiệu về CSS](../../../../translated_images/vi/webdev101-css.3f7af5991bf53a20.webp)
 > Sketchnote bởi [Tomomi Imura](https://twitter.com/girlie_mac)
 
 Bạn còn nhớ terrarium HTML của mình trông khá đơn giản chứ? CSS chính là nơi chúng ta biến cấu trúc cơ bản đó thành một thứ hấp dẫn về mặt thị giác.
@@ -205,7 +196,7 @@ body {
 
 Mở công cụ phát triển của trình duyệt (F12), điều hướng đến tab Elements, và kiểm tra phần tử `<h1>` của bạn. Bạn sẽ thấy rằng nó thừa hưởng font family từ body:
 
-![font thừa hưởng](../../../../translated_images/1.cc07a5cbe114ad1d4728c35134584ac1b87db688eff83cf75985cf31fe0ed95c.vi.png)
+![font thừa hưởng](../../../../translated_images/vi/1.cc07a5cbe114ad1d.webp)
 
 ✅ **Thời gian thử nghiệm**: Hãy thử đặt các thuộc tính có thể thừa hưởng khác trên `<body>` như `color`, `line-height`, hoặc `text-align`. Điều gì xảy ra với tiêu đề và các phần tử khác?
 
@@ -335,7 +326,7 @@ Trong terrarium của chúng ta, mỗi cây cần kiểu tương tự nhưng cũ
 **Đây là cấu trúc HTML cho mỗi cây:**
 ```html
 <div class="plant-holder">
-  <img class="plant" alt="Decorative plant for terrarium" id="plant1" src="../../../../translated_images/plant1.d18b18ffe73da18f8b1ac7aba73b4050af52f4a0c9174aeac464b85123fc2850.vi.png" />
+  <img class="plant" alt="Decorative plant for terrarium" id="plant1" src="../../../../translated_images/vi/plant1.d18b18ffe73da18f8b1ac7aba73b4050af52f4a0c9174aeac464b85123fc2850.png" />
 </div>
 ```
 
@@ -599,7 +590,7 @@ Sẵn sàng nâng cấp terrarium của bạn với hiệu ứng phản chiếu 
 
 Bạn sẽ tạo các điểm sáng tinh tế mô phỏng cách ánh sáng phản chiếu trên bề mặt thủy tinh. Cách tiếp cận này tương tự như cách các họa sĩ thời Phục hưng như Jan van Eyck sử dụng ánh sáng và phản chiếu để làm cho thủy tinh được vẽ trông như ba chiều. Đây là mục tiêu của bạn:
 
-![terrarium hoàn thiện](../../../../translated_images/terrarium-final.2f07047ffc597d0a06b06cab28a77801a10dd12fdb6c7fc630e9c40665491c53.vi.png)
+![terrarium hoàn thiện](../../../../translated_images/vi/terrarium-final.2f07047ffc597d0a.webp)
 
 **Thử thách của bạn:**
 - **Tạo** các hình oval màu trắng hoặc sáng để làm hiệu ứng phản chiếu thủy tinh

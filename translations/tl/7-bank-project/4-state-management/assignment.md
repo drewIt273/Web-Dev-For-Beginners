@@ -1,12 +1,3 @@
-<!--
-CO_OP_TRANSLATOR_METADATA:
-{
-  "original_hash": "50a7783473b39a2e0f133e271a102231",
-  "translation_date": "2025-10-22T15:34:02+00:00",
-  "source_file": "7-bank-project/4-state-management/assignment.md",
-  "language_code": "tl"
-}
--->
 # Pagpapatupad ng "Magdagdag ng Transaksyon" na Dialog
 
 ## Pangkalahatang-ideya
@@ -112,7 +103,7 @@ Tingnan ang [server API documentation](../api/README.md) para sa:
 **Inaasahang Resulta:**
 Pagkatapos makumpleto ang assignment na ito, ang iyong banking app ay dapat magkaroon ng ganap na functional na "Magdagdag ng Transaksyon" na tampok na mukhang propesyonal at maayos ang pagganap:
 
-![Screenshot na nagpapakita ng halimbawa ng "Magdagdag ng Transaksyon" na dialog](../../../../translated_images/dialog.93bba104afeb79f12f65ebf8f521c5d64e179c40b791c49c242cf15f7e7fab15.tl.png)
+![Screenshot na nagpapakita ng halimbawa ng "Magdagdag ng Transaksyon" na dialog](../../../../translated_images/tl/dialog.93bba104afeb79f1.webp)
 
 ## Pagsubok ng Iyong Pagpapatupad
 

@@ -1,12 +1,3 @@
-<!--
-CO_OP_TRANSLATOR_METADATA:
-{
-  "original_hash": "7994743c5b21fdcceb36307916ef249a",
-  "translation_date": "2025-11-03T16:51:17+00:00",
-  "source_file": "6-space-game/2-drawing-to-canvas/README.md",
-  "language_code": "pa"
-}
--->
 # ਸਪੇਸ ਗੇਮ ਬਣਾਓ ਭਾਗ 2: ਹੀਰੋ ਅਤੇ ਮੌਂਸਟਰਜ਼ ਨੂੰ ਕੈਨਵਸ 'ਤੇ ਡਰਾਇੰਗ ਕਰੋ
 
 ```mermaid
@@ -108,7 +99,7 @@ quadrantChart
     UI Elements: [0.9, 0.1]
 ```
 
-![ਕੈਨਵਸ ਦਾ ਗ੍ਰਿਡ](../../../../translated_images/canvas_grid.5f209da785ded492a01ece440e3032afe51efa500cc2308e5ea4252487ceaf0b.pa.png)
+![ਕੈਨਵਸ ਦਾ ਗ੍ਰਿਡ](../../../../translated_images/pa/canvas_grid.5f209da785ded492.webp)
 > ਚਿੱਤਰ [MDN](https://developer.mozilla.org/docs/Web/API/Canvas_API/Tutorial/Drawing_shapes) ਤੋਂ
 
 ਕੈਨਵਸ ਤੱਤ 'ਤੇ ਡਰਾਇੰਗ ਕਰਨ ਲਈ, ਤੁਸੀਂ ਉਹੀ ਤਿੰਨ-ਕਦਮ ਪ੍ਰਕਿਰਿਆ ਅਪਣਾਉਂਦੇ ਹੋ ਜੋ ਸਾਰੇ ਕੈਨਵਸ ਗ੍ਰਾਫਿਕਸ ਦੀ ਬੁਨਿਆਦ ਬਣਦੀ ਹੈ। ਜਦ ਤੁਸੀਂ ਇਹ ਕੁਝ ਵਾਰ ਕਰਦੇ ਹੋ, ਇਹ ਦੂਸਰੀ ਕੁਦਰਤ ਬਣ ਜਾਂਦੀ ਹੈ:
@@ -301,7 +292,7 @@ async function renderGameScreen() {
 
 ਅੰਤਮ ਨਤੀਜਾ ਇਸ ਤਰ੍ਹਾਂ ਦਿਖਾਈ ਦੇਣਾ ਚਾਹੀਦਾ ਹੈ:  
 
-![ਕਾਲੀ ਸਕ੍ਰੀਨ ਜਿਸ ਵਿੱਚ ਇੱਕ ਹੀਰੋ ਅਤੇ 5*5 ਮੋਨਸਟਰ ਹਨ](../../../../translated_images/partI-solution.36c53b48c9ffae2a5e15496b23b604ba5393433e4bf91608a7a0a020eb7a2691.pa.png)  
+![ਕਾਲੀ ਸਕ੍ਰੀਨ ਜਿਸ ਵਿੱਚ ਇੱਕ ਹੀਰੋ ਅਤੇ 5*5 ਮੋਨਸਟਰ ਹਨ](../../../../translated_images/pa/partI-solution.36c53b48c9ffae2a.webp)  
 
 ## ਹੱਲ  
 

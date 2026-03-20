@@ -1,12 +1,3 @@
-<!--
-CO_OP_TRANSLATOR_METADATA:
-{
-  "original_hash": "71009af209f81cc01a1f2d324200375f",
-  "translation_date": "2025-10-03T11:04:47+00:00",
-  "source_file": "for-teachers.md",
-  "language_code": "uk"
-}
--->
 ### Для викладачів
 
 Ви можете використовувати цю навчальну програму у своїй аудиторії. Вона бездоганно працює з GitHub Classroom і провідними платформами LMS, а також може використовуватися як окремий репозиторій зі студентами.
@@ -42,10 +33,10 @@ CO_OP_TRANSLATOR_METADATA:
   - Moodle Cloud має обмежену підтримку Common Cartridge. Віддавайте перевагу файлу Moodle вище, який також можна завантажити в Canvas.
   - Після імпорту перегляньте модулі, дати здачі та налаштування вікторин, щоб вони відповідали вашому розкладу.
 
-![Moodle](../../translated_images/moodle.94eb93d714a50cb2c97435b408017dee224348b61bc86203ffd43a4f4e57b95f.uk.png)
+![Moodle](../../translated_images/uk/moodle.94eb93d714a50cb2.webp)
 > Навчальна програма в Moodle
 
-![Canvas](../../translated_images/canvas.fbd605ff8e5b8aff567d398528ce113db304446b90b9cad55c654de3fdfcda34.uk.png)
+![Canvas](../../translated_images/uk/canvas.fbd605ff8e5b8aff.webp)
 > Навчальна програма в Canvas
 
 ### Використання репозиторію напряму (без Classroom)

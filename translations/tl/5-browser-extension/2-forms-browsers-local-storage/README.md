@@ -1,12 +1,3 @@
-<!--
-CO_OP_TRANSLATOR_METADATA:
-{
-  "original_hash": "2b6203a48c48d8234e0948353b47d84e",
-  "translation_date": "2025-11-03T14:08:38+00:00",
-  "source_file": "5-browser-extension/2-forms-browsers-local-storage/README.md",
-  "language_code": "tl"
-}
--->
 # Browser Extension Project Part 2: Gumamit ng API, Local Storage
 
 ```mermaid
@@ -268,7 +259,7 @@ stateDiagram-v2
     ClearStorage --> FirstTime: Back to setup
 ```
 
-![Local storage pane](../../../../translated_images/localstorage.472f8147b6a3f8d141d9551c95a2da610ac9a3c6a73d4a1c224081c98bae09d9.tl.png)
+![Local storage pane](../../../../translated_images/tl/localstorage.472f8147b6a3f8d1.webp)
 
 > ⚠️ **Pagsasaalang-alang sa Seguridad**: Sa mga production application, ang pag-iimbak ng API keys sa LocalStorage ay may panganib sa seguridad dahil maa-access ito ng JavaScript. Para sa layunin ng pag-aaral, ang approach na ito ay maayos, ngunit ang mga totoong application ay dapat gumamit ng secure server-side storage para sa mga sensitibong credentials.
 

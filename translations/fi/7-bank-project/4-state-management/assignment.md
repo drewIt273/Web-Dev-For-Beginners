@@ -1,12 +1,3 @@
-<!--
-CO_OP_TRANSLATOR_METADATA:
-{
-  "original_hash": "50a7783473b39a2e0f133e271a102231",
-  "translation_date": "2025-10-23T00:32:11+00:00",
-  "source_file": "7-bank-project/4-state-management/assignment.md",
-  "language_code": "fi"
-}
--->
 # Toteuta "Lisää tapahtuma" -dialogi
 
 ## Yleiskatsaus
@@ -112,7 +103,7 @@ Katso [palvelimen API-dokumentaatio](../api/README.md) saadaksesi tietoa:
 **Odotettu tulos:**
 Tehtävän suorittamisen jälkeen pankkisovelluksessasi pitäisi olla täysin toimiva "Lisää tapahtuma" -ominaisuus, joka näyttää ja käyttäytyy ammattimaisesti:
 
-![Näyttökuva esimerkkidialogista "Lisää tapahtuma"](../../../../translated_images/dialog.93bba104afeb79f12f65ebf8f521c5d64e179c40b791c49c242cf15f7e7fab15.fi.png)
+![Näyttökuva esimerkkidialogista "Lisää tapahtuma"](../../../../translated_images/fi/dialog.93bba104afeb79f1.webp)
 
 ## Toteutuksen testaus
 

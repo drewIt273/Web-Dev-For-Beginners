@@ -1,12 +1,3 @@
-<!--
-CO_OP_TRANSLATOR_METADATA:
-{
-  "original_hash": "5c383cc2cc23bb164b06417d1c107a44",
-  "translation_date": "2025-11-18T18:36:54+00:00",
-  "source_file": "1-getting-started-lessons/2-github-basics/README.md",
-  "language_code": "vi"
-}
--->
 # Giới thiệu về GitHub
 
 Chào bạn, nhà phát triển tương lai! 👋 Sẵn sàng tham gia cùng hàng triệu lập trình viên trên khắp thế giới chưa? Mình thực sự rất hào hứng giới thiệu với bạn về GitHub – hãy nghĩ về nó như một mạng xã hội dành cho lập trình viên, nhưng thay vì chia sẻ ảnh bữa trưa, chúng ta chia sẻ mã nguồn và cùng nhau xây dựng những điều tuyệt vời!
@@ -17,7 +8,7 @@ Mình biết điều này có thể khiến bạn cảm thấy hơi quá tải l
 
 Chúng ta sẽ cùng nhau đi qua hành trình này, từng bước một. Không vội vàng, không áp lực – chỉ có bạn, mình, và một số công cụ cực kỳ thú vị sắp trở thành người bạn thân mới của bạn!
 
-![Giới thiệu về GitHub](../../../../translated_images/webdev101-github.8846d7971abef6f947909b4f9d343e2a23778aa716ca6b9d71df7174ee5009ac.vi.png)
+![Giới thiệu về GitHub](../../../../translated_images/vi/webdev101-github.8846d7971abef6f9.webp)
 > Sketchnote bởi [Tomomi Imura](https://twitter.com/girlie_mac)
 
 ```mermaid
@@ -610,7 +601,7 @@ Bạn không chỉ học cách viết mã ở đây – bạn đang chuẩn bị
 
 ✅ Một cách tốt để tìm các repo 'thân thiện với người mới bắt đầu' là [tìm kiếm theo thẻ 'good-first-issue'](https://github.blog/2020-01-22-browse-good-first-issues-to-start-contributing-to-open-source/).
 
-![Sao chép repo về máy](../../../../translated_images/clone_repo.5085c48d666ead57664f050d806e325d7f883be6838c821e08bc823ab7c66665.vi.png)
+![Sao chép repo về máy](../../../../translated_images/vi/clone_repo.5085c48d666ead57.webp)
 
 Có nhiều cách để sao chép mã. Một cách là "clone" nội dung của repository, sử dụng HTTPS, SSH, hoặc GitHub CLI (Command Line Interface).
 

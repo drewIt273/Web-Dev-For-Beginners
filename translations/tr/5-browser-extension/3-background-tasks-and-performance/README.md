@@ -1,12 +1,3 @@
-<!--
-CO_OP_TRANSLATOR_METADATA:
-{
-  "original_hash": "b275fed2c6fc90d2b9b6661a3225faa2",
-  "translation_date": "2025-11-04T01:06:40+00:00",
-  "source_file": "5-browser-extension/3-background-tasks-and-performance/README.md",
-  "language_code": "tr"
-}
--->
 # Tarayıcı Uzantısı Projesi Bölüm 3: Arka Plan Görevleri ve Performans Hakkında Bilgi Edinin
 
 ```mermaid
@@ -126,7 +117,7 @@ Edge'de Geliştirici Araçlarını açmak için sağ üst köşedeki üç noktay
 
 Haydi bunu deneyelim. Bir web sitesi açın (Microsoft.com bu iş için iyi çalışır) ve 'Kaydı başlat' düğmesine tıklayın. Şimdi sayfayı yenileyin ve profil oluşturucu her şeyi yakalasın. Kaydı durdurduğunuzda, tarayıcının siteyi 'komut dosyaları', 'render' ve 'boyama' işlemleriyle nasıl işlediğine dair ayrıntılı bir döküm göreceksiniz. Bu, görev kontrolünün bir roket fırlatışı sırasında her sistemi izlediği gibi - tam olarak neler olduğunu ve ne zaman olduğunu gerçek zamanlı verilerle görüyorsunuz.
 
-![Edge profiler](../../../../translated_images/profiler.5a4a62479c5df01cfec9aab74173dba13f91d2c968e1a1ae434c26165792df15.tr.png)
+![Edge profiler](../../../../translated_images/tr/profiler.5a4a62479c5df01c.webp)
 
 ✅ [Microsoft Belgeleri](https://docs.microsoft.com/microsoft-edge/devtools-guide/performance/?WT.mc_id=academic-77807-sagibbon) daha fazla ayrıntı için harika bir kaynak
 
@@ -136,11 +127,11 @@ Profil zaman çizelgesindeki öğeleri seçerek sayfanız yüklenirken gerçekle
 
 Profil zaman çizelgesinin bir bölümünü seçerek ve özet paneline bakarak sayfanızın performansının bir anlık görüntüsünü alın:
 
-![Edge profiler snapshot](../../../../translated_images/snapshot.97750180ebcad73794a3594b36925eb5c8dbaac9e03fec7f9b974188c9ac63c7.tr.png)
+![Edge profiler snapshot](../../../../translated_images/tr/snapshot.97750180ebcad737.webp)
 
 Olay Günlüğü panelini kontrol ederek herhangi bir olayın 15 ms'den uzun sürüp sürmediğini görebilirsiniz:
 
-![Edge event log](../../../../translated_images/log.804026979f3707e00eebcfa028b2b5a88cec6292f858767bb6703afba65a7d9c.tr.png)
+![Edge event log](../../../../translated_images/tr/log.804026979f3707e0.webp)
 
 ✅ Profil oluşturucuyu tanıyın! Bu sitede geliştirici araçlarını açın ve herhangi bir darboğaz olup olmadığını kontrol edin. En yavaş yüklenen varlık hangisi? En hızlı olan hangisi?
 

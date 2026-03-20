@@ -1,12 +1,3 @@
-<!--
-CO_OP_TRANSLATOR_METADATA:
-{
-  "original_hash": "d45ddcc54eb9232a76d08328b09d792e",
-  "translation_date": "2025-11-04T00:21:41+00:00",
-  "source_file": "1-getting-started-lessons/1-intro-to-programming-languages/README.md",
-  "language_code": "it"
-}
--->
 # Introduzione ai Linguaggi di Programmazione e agli Strumenti Moderni per Sviluppatori
 
 Ciao futuro sviluppatore! 👋 Posso dirti qualcosa che mi emoziona ogni giorno? Stai per scoprire che programmare non riguarda solo i computer – è come avere superpoteri per dare vita alle tue idee più folli!
@@ -17,7 +8,7 @@ Ascolta, capisco perfettamente se la programmazione ti sembra intimidatoria in q
 
 Oggi esploreremo gli incredibili strumenti che rendono possibile, e seriamente coinvolgente, lo sviluppo web moderno. Sto parlando degli stessi editor, browser e flussi di lavoro che gli sviluppatori di Netflix, Spotify e del tuo studio di app indie preferito usano ogni giorno. Ecco la parte che ti farà ballare dalla gioia: la maggior parte di questi strumenti professionali e standard del settore sono completamente gratuiti!
 
-![Intro Programming](../../../../translated_images/webdev101-programming.d6e3f98e61ac4bff0b27dcbf1c3f16c8ed46984866f2d29988929678b0058fde.it.png)
+![Intro Programming](../../../../translated_images/it/webdev101-programming.d6e3f98e61ac4bff.webp)
 > Sketchnote di [Tomomi Imura](https://twitter.com/girlie_mac)
 
 ```mermaid

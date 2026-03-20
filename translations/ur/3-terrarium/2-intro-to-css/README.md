@@ -1,12 +1,3 @@
-<!--
-CO_OP_TRANSLATOR_METADATA:
-{
-  "original_hash": "e39f3a4e3bcccf94639e3af1248f8a4d",
-  "translation_date": "2025-11-03T13:15:52+00:00",
-  "source_file": "3-terrarium/2-intro-to-css/README.md",
-  "language_code": "ur"
-}
--->
 # ٹیریریم پروجیکٹ حصہ 2: CSS کا تعارف
 
 ```mermaid
@@ -30,7 +21,7 @@ journey
       Glass reflections: 5: Student
 ```
 
-![CSS کا تعارف](../../../../translated_images/webdev101-css.3f7af5991bf53a200d79e7257e5e450408d8ea97f5b531d31b2e3976317338ee.ur.png)
+![CSS کا تعارف](../../../../translated_images/ur/webdev101-css.3f7af5991bf53a20.webp)
 > اسکیچ نوٹ [Tomomi Imura](https://twitter.com/girlie_mac) کی طرف سے
 
 یاد ہے آپ کا HTML ٹیریریم کتنا سادہ نظر آ رہا تھا؟ CSS وہ جگہ ہے جہاں ہم اس سادہ ڈھانچے کو بصری طور پر دلکش چیز میں تبدیل کرتے ہیں۔
@@ -205,7 +196,7 @@ body {
 
 اپنے براؤزر کے ڈیولپر ٹولز (F12) کھولیں، ایلیمنٹس ٹیب پر جائیں، اور اپنے `<h1>` عنصر کا معائنہ کریں۔ آپ دیکھیں گے کہ یہ باڈی سے فونٹ فیملی وراثت میں لیتا ہے:
 
-![وراثت میں لیا گیا فونٹ](../../../../translated_images/1.cc07a5cbe114ad1d4728c35134584ac1b87db688eff83cf75985cf31fe0ed95c.ur.png)
+![وراثت میں لیا گیا فونٹ](../../../../translated_images/ur/1.cc07a5cbe114ad1d.webp)
 
 ✅ **تجربہ کا وقت**: باڈی پر دیگر وراثت میں ملنے والی پراپرٹیز جیسے `color`, `line-height`, یا `text-align` سیٹ کرنے کی کوشش کریں۔ آپ کے ہیڈنگ اور دیگر عناصر کے ساتھ کیا ہوتا ہے؟
 
@@ -335,7 +326,7 @@ ID سلیکٹرز `#` علامت کا استعمال کرتے ہیں اور عن
 **ہر پودے کے لیے HTML ڈھانچہ یہ ہے:**
 ```html
 <div class="plant-holder">
-  <img class="plant" alt="Decorative plant for terrarium" id="plant1" src="../../../../translated_images/plant1.d18b18ffe73da18f8b1ac7aba73b4050af52f4a0c9174aeac464b85123fc2850.ur.png" />
+  <img class="plant" alt="Decorative plant for terrarium" id="plant1" src="../../../../translated_images/ur/plant1.d18b18ffe73da18f8b1ac7aba73b4050af52f4a0c9174aeac464b85123fc2850.png" />
 </div>
 ```
 
@@ -561,7 +552,7 @@ Agent mode کا استعمال کرتے ہوئے درج ذیل چیلنج مکم
 
 آپ ہلکے سفید یا ہلکے رنگ کے بیضوی شکلیں بنائیں گے جو شیشے کی عکاسی کی نقل کرتے ہیں۔ یہ طریقہ اس طرح ہے جیسے Renaissance کے مصور جیسے Jan van Eyck نے روشنی اور عکاسی کا استعمال کرتے ہوئے پینٹ شدہ شیشے کو تین جہتی ظاہر کیا۔ آپ کا مقصد یہ ہے:
 
-![finished terrarium](../../../../translated_images/terrarium-final.2f07047ffc597d0a06b06cab28a77801a10dd12fdb6c7fc630e9c40665491c53.ur.png)
+![finished terrarium](../../../../translated_images/ur/terrarium-final.2f07047ffc597d0a.webp)
 
 **آپ کا چیلنج:**
 - **بنائیں** ہلکے سفید یا روشنی والے بیضوی شکلیں شیشے کی عکاسی کے لیے

@@ -1,87 +1,132 @@
-<!--
-CO_OP_TRANSLATOR_METADATA:
-{
-  "original_hash": "92c4431eac70670b0450b02c1d11279a",
-  "translation_date": "2025-10-23T22:28:19+00:00",
-  "source_file": "3-terrarium/2-intro-to-css/README.md",
-  "language_code": "no"
-}
--->
-# Terrarium Prosjekt Del 2: Introduksjon til CSS
+# Terrarium-prosjekt Del 2: Introduksjon til CSS
 
-![Introduksjon til CSS](../../../../translated_images/webdev101-css.3f7af5991bf53a200d79e7257e5e450408d8ea97f5b531d31b2e3976317338ee.no.png)
+```mermaid
+journey
+    title Din CSS-stilreise
+    section Grunnlag
+      Koble til CSS-fil: 3: Student
+      Forstå kaskade: 4: Student
+      Lær arv: 4: Student
+    section Selektorer
+      Målrett elementer: 4: Student
+      Klassemønstre: 5: Student
+      ID-spesifisitet: 5: Student
+    section Oppsett
+      Plasser elementer: 4: Student
+      Lag containere: 5: Student
+      Bygg terrarium: 5: Student
+    section Polering
+      Legg til visuelle effekter: 5: Student
+      Responsivt design: 5: Student
+      Glassrefleksjoner: 5: Student
+```
+![Introduksjon til CSS](../../../../translated_images/no/webdev101-css.3f7af5991bf53a20.webp)
 > Sketchnote av [Tomomi Imura](https://twitter.com/girlie_mac)
 
-Husker du hvordan HTML-terrariumet ditt så ganske enkelt ut? CSS er der vi forvandler den enkle strukturen til noe visuelt tiltalende.
+Husker du hvordan HTML-terrariet ditt så ganske enkelt ut? CSS er der vi forvandler den enkle strukturen til noe visuelt tiltalende.
 
-Hvis HTML er som å bygge rammen til et hus, er CSS alt som får det til å føles som et hjem – malingsfarger, møblering, belysning og hvordan rommene flyter sammen. Tenk på hvordan Versailles-palasset startet som en enkel jaktlodge, men nøye oppmerksomhet til dekorasjon og layout forvandlet det til en av verdens mest praktfulle bygninger.
+Hvis HTML er som å bygge rammen til et hus, så er CSS alt som får det til å føles som hjemme – malingsfarger, møblering, belysning og hvordan rommene flyter sammen. Tenk på hvordan Versailles-palasset startet som en enkel jakthytte, men nøye oppmerksomhet på dekorasjon og layout forvandlet det til en av verdens mest praktfulle bygninger.
 
-I dag skal vi forvandle terrariumet ditt fra funksjonelt til polert. Du vil lære hvordan du posisjonerer elementer presist, lager layout som tilpasser seg ulike skjermstørrelser, og skaper den visuelle appellen som gjør nettsteder engasjerende.
+I dag skal vi forvandle terrariet ditt fra funksjonelt til polert. Du vil lære hvordan du plasserer elementer presist, får oppsett til å tilpasse seg forskjellige skjermstørrelser, og skaper det visuelle uttrykket som gjør nettsider engasjerende.
 
-Ved slutten av denne leksjonen vil du se hvordan strategisk CSS-styling kan forbedre prosjektet ditt dramatisk. La oss legge til litt stil i terrariumet ditt.
+Ved slutten av denne leksjonen vil du se hvordan strategisk CSS-styling dramatisk kan forbedre prosjektet ditt. La oss tilføre litt stil til terrariet ditt.
 
-## Quiz før forelesning
+```mermaid
+mindmap
+  root((CSS Grunnleggende))
+    Cascade
+      Specificity Regler
+      Arv
+      Prioritetsrekkefølge
+      Konfliktløsning
+    Selectors
+      Elementetiketter
+      Klasser (.class)
+      IDer (#id)
+      Kombinatorer
+    Box Model
+      Margin
+      Border
+      Padding
+      Innhold
+    Layout
+      Posisjonering
+      Visningstyper
+      Flexbox
+      Grid
+    Visual Effects
+      Farger
+      Skygger
+      Overganger
+      Animasjoner
+    Responsive Design
+      Mediespørringer
+      Fleksible Enheter
+      Viewport Meta
+      Mobil Først
+```
+## Forhåndsquiz
 
-[Quiz før forelesning](https://ff-quizzes.netlify.app/web/quiz/17)
+[Forhåndsquiz](https://ff-quizzes.netlify.app/web/quiz/17)
 
 ## Komme i gang med CSS
 
-CSS blir ofte sett på som bare "å gjøre ting pene," men det har et mye bredere formål. CSS er som å være regissør for en film – du kontrollerer ikke bare hvordan alt ser ut, men også hvordan det beveger seg, reagerer på interaksjon og tilpasser seg ulike situasjoner.
+CSS blir ofte sett på som bare «å gjøre ting pene», men det har et mye bredere formål. CSS er som å være regissør for en film – du kontrollerer ikke bare hvordan alt ser ut, men også hvordan det beveger seg, reagerer på interaksjon, og tilpasser seg ulike situasjoner.
 
-Moderne CSS er utrolig kapabel. Du kan skrive kode som automatisk justerer layout for telefoner, nettbrett og stasjonære datamaskiner. Du kan lage jevne animasjoner som guider brukernes oppmerksomhet dit det trengs. Resultatene kan være ganske imponerende når alt fungerer sammen.
+Moderne CSS er bemerkelsesverdig kapabel. Du kan skrive kode som automatisk justerer oppsett for telefoner, nettbrett og stasjonære datamaskiner. Du kan lage glatte animasjoner som leder brukerens oppmerksomhet dit det trengs. Resultatene kan være ganske imponerende når alt fungerer sammen.
 
-> 💡 **Proff-tips**: CSS utvikler seg stadig med nye funksjoner og kapabiliteter. Sjekk alltid [CanIUse.com](https://caniuse.com) for å verifisere nettleserstøtte for nyere CSS-funksjoner før du bruker dem i produksjonsprosjekter.
+> 💡 **Profftips**: CSS utvikler seg stadig med nye funksjoner og muligheter. Sjekk alltid [CanIUse.com](https://caniuse.com) for å verifisere nettleserstøtte for nyere CSS-funksjoner før du bruker dem i produksjonsprosjekter.
 
 **Dette skal vi oppnå i denne leksjonen:**
-- **Skaper** et komplett visuelt design for terrariumet ditt ved hjelp av moderne CSS-teknikker
-- **Utforsker** grunnleggende konsepter som kaskade, arv og CSS-selektorer
-- **Implementerer** responsive posisjonerings- og layoutstrategier
-- **Bygger** terrariumbeholderen ved hjelp av CSS-former og styling
+- **Skaper** et komplett visuelt design for terrariet ditt med moderne CSS-teknikker
+- **Utforsker** grunnleggende konsepter som kaskade, arv og CSS-velgere
+- **Implementerer** responsiv posisjonering og oppsettsstrategier
+- **Bygger** terrariets beholder ved bruk av CSS-former og styling
 
 ### Forutsetning
 
-Du bør ha fullført HTML-strukturen for terrariumet ditt fra forrige leksjon og ha det klart til å styles.
+Du bør ha fullført HTML-strukturen for terrariet ditt fra forrige leksjon og ha det klart til styling.
 
 > 📺 **Videoressurs**: Sjekk ut denne nyttige videoen
 >
-> [![CSS Grunnleggende Tutorial](https://img.youtube.com/vi/6yIdOIV9p1I/0.jpg)](https://www.youtube.com/watch?v=6yIdOIV9p1I)
+> [![CSS Basics Tutorial](https://img.youtube.com/vi/6yIdOIV9p1I/0.jpg)](https://www.youtube.com/watch?v=6yIdOIV9p1I)
 
 ### Sette opp CSS-filen din
 
-Før vi kan begynne å style, må vi koble CSS til HTML-en vår. Denne koblingen forteller nettleseren hvor den finner stylinginstruksjonene for terrariumet vårt.
+Før vi kan starte med styling, må vi koble CSS til HTML-en vår. Denne forbindelsen forteller nettleseren hvor stylinginstruksjonene for terrariet vårt finnes.
 
-I terrarium-mappen din, opprett en ny fil kalt `style.css`, og koble den deretter til HTML-dokumentets `<head>`-seksjon:
+I terrarimappen din lager du en ny fil kalt `style.css`, så lenker du til den i `<head>`-delen av HTML-dokumentet ditt:
 
 ```html
 <link rel="stylesheet" href="./style.css" />
 ```
 
 **Dette gjør koden:**
-- **Oppretter** en kobling mellom HTML- og CSS-filene dine
+- **Oppretter** en forbindelse mellom HTML- og CSS-filene dine
 - **Forteller** nettleseren å laste og bruke stilene fra `style.css`
 - **Bruker** attributtet `rel="stylesheet"` for å spesifisere at dette er en CSS-fil
-- **Refererer** til filbanen med `href="./style.css"`
+- **Refererer** filbanen med `href="./style.css"`
 
-## Forstå CSS-kaskaden
+## Forståelse av CSS-kaskaden
 
-Har du noen gang lurt på hvorfor CSS kalles "Cascading" Style Sheets? Stiler kaskader ned som et fossefall, og noen ganger kommer de i konflikt med hverandre.
+Har du noen gang lurt på hvorfor CSS heter "Cascading Style Sheets"? Stiler faller som et fossestryk, og noen ganger kommer de i konflikt med hverandre.
 
-Tenk på hvordan militære kommandostrukturer fungerer – en generell ordre kan si "alle tropper skal ha på seg grønt," men en spesifikk ordre til enheten din kan si "ha på deg blå uniform til seremonien." Den mer spesifikke instruksjonen har forrang. CSS følger lignende logikk, og å forstå denne hierarkien gjør feilsøking mye enklere.
+Tenk på hvordan militære kommandostrukturer fungerer – en generalordre kan si "alle tropper skal bære grønt," men en spesifikk ordre til din enhet kan si "bruk dressblått til seremonien." Den mer spesifikke instruksen går foran. CSS følger lignende logikk, og å forstå denne hierarkien gjør feilsøking mye enklere.
 
 ### Eksperimentere med kaskadeprioritet
 
-La oss se kaskaden i aksjon ved å lage en stilkonflikt. Først, legg til en inline-stil i `<h1>`-taggen din:
+La oss se kaskaden i aksjon ved å skape en stilkonflikt. Først, legg til en inline-stil på `<h1>`-taggen din:
 
 ```html
 <h1 style="color: red">My Terrarium</h1>
 ```
 
-**Hva denne koden gjør:**
-- **Bruker** en rød farge direkte på `<h1>`-elementet ved hjelp av inline-styling
-- **Bruker** attributtet `style` for å legge inn CSS direkte i HTML
-- **Oppretter** den høyeste prioriteten for stilregelen for dette spesifikke elementet
+**Dette gjør koden:**
+- **Setter** fargen rød direkte på `<h1>`-elementet ved bruk av inline-style
+- **Bruker** `style`-attributtet for å legge CSS direkte inn i HTML-en
+- **Skaper** stilen med høyest prioritet for dette spesifikke elementet
 
-Legg deretter til denne regelen i `style.css`-filen din:
+Neste, legg denne regelen til `style.css`-filen din:
 
 ```css
 h1 {
@@ -89,29 +134,50 @@ h1 {
 }
 ```
 
-**I det ovennevnte har vi:**
-- **Definert** en CSS-regel som retter seg mot alle `<h1>`-elementer
-- **Satt** tekstfargen til blå ved hjelp av et eksternt stilark
-- **Opprettet** en lavere prioritet regel sammenlignet med inline-stiler
+**Her har vi:**
+- **Definert** en CSS-regel som målretter alle `<h1>`-elementene
+- **Satt** tekstfargen til blå via et eksternt stylesheet
+- **Laget** en regel med lavere prioritet sammenlignet med inline-stiler
 
-✅ **Kunnskapssjekk**: Hvilken farge vises i webappen din? Hvorfor vinner den fargen? Kan du tenke på scenarier der du kanskje vil overstyre stiler?
+✅ **Kunnskapssjekk**: Hvilken farge vises i webappen din? Hvorfor vinner den fargen? Kan du tenke deg situasjoner hvor det kan være ønskelig å overstyre stiler?
 
-> 💡 **CSS-prioritetsrekkefølge (høyest til lavest):**
-> 1. **Inline-stiler** (style-attributt)
+```mermaid
+flowchart TD
+    A["Nettleser møter h1-element"] --> B{"Sjekk for inline-stiler"}
+    B -->|Funnet| C["style='color: red'"] 
+    B -->|Ingen| D{"Sjekk for ID-regler"}
+    C --> E["Bruk rød farge (1000 poeng)"]
+    D -->|Funnet| F["#heading { color: green }"]
+    D -->|Ingen| G{"Sjekk for klasse-regler"}
+    F --> H["Bruk grønn farge (100 poeng)"]
+    G -->|Funnet| I[".title { color: blue }"]
+    G -->|Ingen| J{"Sjekk element-regler"}
+    I --> K["Bruk blå farge (10 poeng)"]
+    J -->|Funnet| L["h1 { color: purple }"]
+    J -->|Ingen| M["Bruk nettleserstandard"]
+    L --> N["Bruk lilla farge (1 poeng)"]
+    
+    style C fill:#ff6b6b
+    style F fill:#51cf66
+    style I fill:#339af0
+    style L fill:#9775fa
+```
+> 💡 **CSS prioriteringsrekkefølge (høyest til lavest):**
+> 1. **Inline-stiler** (style-attributtet)
 > 2. **ID-er** (#myId)
 > 3. **Klasser** (.myClass) og attributter
-> 4. **Element-selektorer** (h1, div, p)
-> 5. **Nettleserens standardinnstillinger**
+> 4. **Elementvelgere** (h1, div, p)
+> 5. **Nettleserstandarder**
 
 ## CSS-arv i praksis
 
-CSS-arv fungerer som genetikk – elementer arver visse egenskaper fra sine overordnede elementer. Hvis du setter fontfamilien på body-elementet, bruker all tekst inni automatisk den samme fonten. Det er som hvordan Habsburg-familiens karakteristiske kjeve dukket opp gjennom generasjoner uten å bli spesifisert for hver enkelt.
+CSS-arv fungerer som genetikk – elementer arver visse egenskaper fra sine overordnede elementer. Hvis du setter fontfamilien på `<body>`-elementet, bruker all tekst innenfor automatisk den samme fonten. Det er likt hvordan Habsburg-familiens karakteristiske kjeveform dukket opp over flere generasjoner uten at det var spesifisert for hver enkelt.
 
-Men ikke alt blir arvet. Tekststiler som fonter og farger blir arvet, men layoutegenskaper som marginer og grenser blir ikke. Akkurat som barn kan arve fysiske trekk, men ikke foreldrenes klesvalg.
+Men ikke alt blir arvet. Tekststiler som fonter og farger arves, men oppsetts-egenskaper som marger og rammer gjør ikke det. Akkurat som barn kan arve fysiske trekk, men ikke foreldrenes motepreferanser.
 
-### Observere fontarv
+### Se på font-arv
 
-La oss se arv i aksjon ved å sette en fontfamilie på `<body>`-elementet:
+La oss se arv i praksis ved å sette en fontfamilie på `<body>`-elementet:
 
 ```css
 body {
@@ -119,31 +185,46 @@ body {
 }
 ```
 
-**Bryte ned hva som skjer her:**
-- **Setter** fontfamilien for hele siden ved å rette seg mot `<body>`-elementet
-- **Bruker** en fontstabel med reservealternativer for bedre nettleserkompatibilitet
-- **Bruker** moderne systemfonter som ser flotte ut på tvers av ulike operativsystemer
-- **Sikrer** at alle barnelementer arver denne fonten med mindre det spesifikt overstyres
+**Hva som skjer her:**
+- **Setter** fontfamilien for hele siden ved å målrette `<body>`
+- **Bruker** en font-stack med fallback-alternativer for bedre kompatibilitet i nettlesere
+- **Benytter** moderne systemfonter som ser bra ut på ulike operativsystemer
+- **Sikrer** at alle underordnede elementer arver denne fonten med mindre det overstyres eksplisitt
 
-Åpne nettleserens utviklerverktøy (F12), naviger til Elements-fanen, og inspiser `<h1>`-elementet ditt. Du vil se at det arver fontfamilien fra body:
+Åpne nettleserens utviklerverktøy (F12), gå til Elementer-fanen, og inspiser `<h1>`-elementet ditt. Du vil se at det arver fontfamilien fra body:
 
-![arvet font](../../../../translated_images/1.cc07a5cbe114ad1d4728c35134584ac1b87db688eff83cf75985cf31fe0ed95c.no.png)
+![arvet font](../../../../translated_images/no/1.cc07a5cbe114ad1d.webp)
 
-✅ **Eksperimenttid**: Prøv å sette andre arvelige egenskaper på `<body>` som `color`, `line-height` eller `text-align`. Hva skjer med overskriften din og andre elementer?
+✅ **Eksperimenter**: Prøv å sette andre arvelige egenskaper på `<body>` som `color`, `line-height` eller `text-align`. Hva skjer med overskriften og andre elementer?
 
 > 📝 **Arvelige egenskaper inkluderer**: `color`, `font-family`, `font-size`, `line-height`, `text-align`, `visibility`
 >
 > **Ikke-arvelige egenskaper inkluderer**: `margin`, `padding`, `border`, `width`, `height`, `position`
 
-## Mestre CSS-selektorer
+### 🔄 **Pedagogisk sjekk**
+**Forståelse av CSS-grunnlag**: Før du går videre til velgere, bør du kunne:
+- ✅ Forklare forskjellen mellom kaskade og arv
+- ✅ Forutsi hvilken stil som vil vinne i en spesifisitetskonflikt
+- ✅ Identifisere hvilke egenskaper som arves fra foreldreelementer
+- ✅ Koble CSS-filer korrekt til HTML
 
-CSS-selektorer er din måte å rette seg mot spesifikke elementer for styling. De fungerer som å gi presise retninger – i stedet for å si "huset," kan du si "det blå huset med den røde døren på Maple Street."
+**Rask test**: Hvis du har disse stilene, hvilken farge får et `<h1>` inne i en `<div class="special">`?  
+```css
+div { color: blue; }
+.special { color: green; }
+h1 { color: red; }
+```
+*Svar: Rød (elementvelgeren retter seg direkte mot h1)*
 
-CSS gir ulike måter å være spesifikk på, og å velge riktig selektor er som å velge det passende verktøyet for oppgaven. Noen ganger trenger du å style hver dør i nabolaget, og noen ganger bare én spesifikk dør.
+## Mestre CSS-velgere
 
-### Element-selektorer (Tagger)
+CSS-velgere er måten du målretter bestemte elementer for styling. De fungerer som å gi presise anvisninger – i stedet for å si "huset", kan du si "det blå huset med den røde døren i Maple Street."
 
-Element-selektorer retter seg mot HTML-elementer etter taggnavn. De er perfekte for å sette grunnleggende stiler som gjelder bredt over siden din:
+CSS tilbyr ulike måter å være spesifikk på, og det å velge riktig velger er som å velge det riktige verktøyet for en oppgave. Noen ganger må du style hver dør i nabolaget, andre ganger bare én bestemt dør.
+
+### Elementvelgere (Tagger)
+
+Elementvelgere målretter HTML-elementer etter taggnavn. De er perfekte for å sette grunnleggende stiler som gjelder over hele siden:
 
 ```css
 body {
@@ -161,18 +242,18 @@ h1 {
 ```
 
 **Forstå disse stilene:**
-- **Setter** konsistent typografi over hele siden med `body`-selektoren
-- **Fjerner** standard nettlesermarginer og padding for bedre kontroll
-- **Styler** alle overskriftselementer med farge, justering og avstand
-- **Bruker** `rem`-enheter for skalerbar, tilgjengelig fontstørrelse
+- **Setter** konsekvent typografi på hele siden med `body`-velgeren
+- **Fjerner** nettleserens standard marger og padding for bedre kontroll
+- **Styler** alle overskriftselementene med farge, justering og avstand
+- **Bruker** `rem`-enheter for skalerbar og tilgjengelig fontstørrelse
 
-Mens element-selektorer fungerer godt for generell styling, trenger du mer spesifikke selektorer for å style individuelle komponenter som plantene i terrariumet ditt.
+Selv om elementvelgere fungerer godt for generell styling, trenger du mer spesifikke velgere for å style individuelle komponenter som plantene i terrariet ditt.
 
-### ID-selektorer for unike elementer
+### ID-velgere for unike elementer
 
-ID-selektorer bruker symbolet `#` og retter seg mot elementer med spesifikke `id`-attributter. Siden ID-er må være unike på en side, er de perfekte for å style individuelle, spesielle elementer som våre venstre og høyre plantebeholdere.
+ID-velgere bruker `#`-symbolet og målretter elementer med spesifikke `id`-attributter. Siden ID-er må være unike på en side, er de perfekte for å style individuelle, spesielle elementer som beholderne for venstre og høyre plante.
 
-La oss lage stylingen for terrariumets sidebeholdere der plantene skal bo:
+La oss lage styling for terrariets sidebeholdere hvor plantene skal bo:
 
 ```css
 #left-container {
@@ -199,13 +280,13 @@ La oss lage stylingen for terrariumets sidebeholdere der plantene skal bo:
 ```
 
 **Dette oppnår koden:**
-- **Posisjonerer** beholdere ved de ytterste venstre og høyre kantene ved hjelp av `absolute` posisjonering
-- **Bruker** `vh` (viewport height) enheter for responsiv høyde som tilpasser seg skjermstørrelse
-- **Bruker** `box-sizing: border-box` slik at padding inkluderes i totalbredden
+- **Plasserer** beholdere helt til venstre og høyre ved bruk av `absolute` posisjonering
+- **Bruker** `vh` (viewport height)-enheter for responsiv høyde som tilpasser seg skjermstørrelsen
+- **Setter** `box-sizing: border-box` slik at padding inkluderes i total bredde
 - **Fjerner** unødvendige `px`-enheter fra nullverdier for renere kode
-- **Setter** en subtil bakgrunnsfarge som er mer behagelig for øynene enn skarp grå
+- **Setter** en subtil bakgrunnsfarge som er mer behagelig for øynene enn en skarp grå
 
-✅ **Kodekvalitetsutfordring**: Legg merke til hvordan denne CSS-en bryter DRY (Don't Repeat Yourself)-prinsippet. Kan du refaktorere den ved å bruke både en ID og en klasse?
+✅ **Kodekvalitetsutfordring**: Legg merke til at denne CSS-en bryter med DRY-prinsippet (Don't Repeat Yourself). Kan du refaktorere den ved å bruke både ID og klasse?
 
 **Forbedret tilnærming:**
 ```html
@@ -233,22 +314,22 @@ La oss lage stylingen for terrariumets sidebeholdere der plantene skal bo:
 }
 ```
 
-### Klasse-selektorer for gjenbrukbare stiler
+### Klassevelgere for gjenbrukbare stiler
 
-Klasse-selektorer bruker symbolet `.` og er perfekte når du vil bruke de samme stilene på flere elementer. I motsetning til ID-er kan klasser gjenbrukes gjennom hele HTML-en din, noe som gjør dem ideelle for konsistente stylingsmønstre.
+Klassevelgere bruker `.`-symbolet og er perfekte når du vil bruke de samme stilene på flere elementer. I motsetning til ID-er kan klasser gjenbrukes over hele HTML-en, noe som gjør dem ideelle for konsistente stilmønstre.
 
-I terrariumet vårt trenger hver plante lignende styling, men også individuell posisjonering. Vi vil bruke en kombinasjon av klasser for delte stiler og ID-er for unik posisjonering.
+I terrariet vårt trenger hver plante lignende styling, men også individuell posisjonering. Vi vil bruke en kombinasjon av klasser for felles stiler og ID-er for unik posisjonering.
 
 **Her er HTML-strukturen for hver plante:**
 ```html
 <div class="plant-holder">
-  <img class="plant" alt="Decorative plant for terrarium" id="plant1" src="../../../../translated_images/plant1.d18b18ffe73da18f8b1ac7aba73b4050af52f4a0c9174aeac464b85123fc2850.no.png" />
+  <img class="plant" alt="Decorative plant for terrarium" id="plant1" src="../../../../translated_images/no/plant1.d18b18ffe73da18f.png" />
 </div>
 ```
 
-**Viktige elementer forklart:**
-- **Bruker** `class="plant-holder"` for konsistent beholderstyling på tvers av alle planter
-- **Bruker** `class="plant"` for delte bildestiler og oppførsel
+**Nøkkelelementer forklart:**
+- **Bruker** `class="plant-holder"` for konsistent container-styling på tvers av alle planter
+- **Setter** `class="plant"` for felles bildefunksjon og oppførsel
 - **Inkluderer** unik `id="plant1"` for individuell posisjonering og JavaScript-interaksjon
 - **Gir** beskrivende alt-tekst for skjermlesertilgjengelighet
 
@@ -274,37 +355,53 @@ Legg nå til disse stilene i `style.css`-filen din:
 }
 ```
 
-**Bryte ned disse stilene:**
-- **Oppretter** relativ posisjonering for planteholderen for å etablere en posisjoneringskontekst
-- **Setter** hver planteholder til 13% høyde, slik at alle planter passer vertikalt uten scrolling
-- **Flytter** beholdere litt til venstre for bedre sentrering av planter innenfor beholderne
-- **Lar** planter skalere responsivt med `max-width` og `max-height` egenskaper
-- **Bruker** `z-index` for å lagre planter over andre elementer i terrariumet
+**Hva disse stilene gjør:**
+- **Oppretter** relativ posisjonering for planteholderen for å etablere kontekst for posisjonering
+- **Setter** hver planteholder til 13 % høyde, slik at alle planter får plass vertikalt uten rulling
+- **Flytter** holderne litt mot venstre for bedre sentrering av plantene i beholderne
+- **Tillater** plantene å skalere responsivt med `max-width` og `max-height`
+- **Bruker** `z-index` for å legge plantene over andre elementer i terrariet
 - **Legger til** en subtil hover-effekt med CSS-overganger for bedre brukerinteraksjon
 
-✅ **Kritisk tenkning**: Hvorfor trenger vi både `.plant-holder` og `.plant` selektorer? Hva ville skjedd hvis vi prøvde å bruke bare én?
+✅ **Kritisk tenkning**: Hvorfor trenger vi både `.plant-holder` og `.plant` velgere? Hva ville skjedd hvis vi bare brukte én?
 
-> 💡 **Designmønster**: Beholderen (`.plant-holder`) kontrollerer layout og posisjonering, mens innholdet (`.plant`) kontrollerer utseende og skalering. Denne separasjonen gjør koden mer vedlikeholdbar og fleksibel.
+> 💡 **Designmønster**: Containeren (`.plant-holder`) styrer layout og posisjonering, mens innholdet (`.plant`) styrer utseende og skalering. Denne separasjonen gjør koden mer vedlikeholdbar og fleksibel.
 
 ## Forstå CSS-posisjonering
 
-CSS-posisjonering er som å være sceneregissør for et teaterstykke – du dirigerer hvor hver skuespiller står og hvordan de beveger seg rundt på scenen. Noen skuespillere følger standardformasjonen, mens andre trenger spesifikk posisjonering for dramatisk effekt.
+CSS-posisjonering er som å være regi for et teaterstykke – du bestemmer hvor hver skuespiller står og hvordan de beveger seg på scenen. Noen følger standard formasjon, mens andre trenger spesiell plassering for dramatisk effekt.
 
-Når du forstår posisjonering, blir mange layoututfordringer håndterbare. Trenger du en navigasjonslinje som holder seg øverst mens brukerne ruller? Posisjonering fikser det. Vil du ha en verktøytips som vises på et spesifikt sted? Det er også posisjonering.
+Når du forstår posisjonering, blir mange layoututfordringer håndterbare. Trenger du en navigasjonslinje som blir værende øverst mens brukeren blar? Posisjonering løser det. Vil du ha et verktøytips som dukker opp på et bestemt sted? Det er også posisjonering.
 
 ### De fem posisjonsverdiene
 
+```mermaid
+quadrantChart
+    title CSS-posisjoneringsstrategi
+    x-axis Dokumentflyt --> Fjernet fra flyt
+    y-axis Statisk posisjon --> Presis kontroll
+    quadrant-1 Absolutt
+    quadrant-2 Fast
+    quadrant-3 Statisk
+    quadrant-4 Sticky
+    
+    Static: [0.2, 0.2]
+    Relative: [0.3, 0.6]
+    Absolute: [0.8, 0.8]
+    Fixed: [0.9, 0.7]
+    Sticky: [0.5, 0.9]
+```
 | Posisjonsverdi | Oppførsel | Bruksområde |
-|----------------|----------|-------------|
+|----------------|-----------|-------------|
 | `static` | Standardflyt, ignorerer top/left/right/bottom | Normal dokumentlayout |
-| `relative` | Posisjonert relativt til sin normale posisjon | Små justeringer, opprette posisjoneringskontekst |
-| `absolute` | Posisjonert relativt til nærmeste posisjonerte forfader | Presis plassering, overlegg |
-| `fixed` | Posisjonert relativt til visningsvinduet | Navigasjonslinjer, flytende elementer |
-| `sticky` | Veksler mellom relativ og fast basert på scrolling | Overskrifter som fester seg ved scrolling |
+| `relative` | Posisjonert relativt til sin normale plassering | Små justeringer, etablere posisjoneringskontekst |
+| `absolute` | Posisjonert relativt til nærmeste posisjonerte forelder | Presis plassering, overlapp |
+| `fixed` | Posisjonert relativt til viewporten | Navigasjonslinjer, flytende elementer |
+| `sticky` | Bytter mellom relativ og fast basert på scroll | Overskrifter som fester seg ved scroll |
 
-### Posisjonering i vårt terrarium
+### Posisjonering i terrariet vårt
 
-Terrariumet vårt bruker en strategisk kombinasjon av posisjonstyper for å skape ønsket layout:
+Terrariet benytter en strategisk kombinasjon av posisjonstyper for det ønskede oppsettet:
 
 ```css
 /* Container positioning */
@@ -328,25 +425,60 @@ Terrariumet vårt bruker en strategisk kombinasjon av posisjonstyper for å skap
 
 **Forstå posisjoneringsstrategien:**
 - **Absolutte beholdere** fjernes fra normal dokumentflyt og festes til skjermkanter
-- **Relativ planteholder** skaper en posisjoneringskontekst mens den forblir i dokumentflyt
-- **Absolutte planter** kan posisjoneres presist innenfor sine relative beholdere
-- **Denne kombinasjonen** lar planter stables vertikalt mens de er individuelt posisjonerbare
+- **Relative planteholdere** oppretter en posisjoneringskontekst samtidig som de forblir i dokumentflyten
+- **Absolutte planter** kan plasseres presist innenfor sine relative beholdere
+- **Kombinasjonen** lar plantene stables vertikalt samtidig som de kan posisjoneres individuelt
 
-> 🎯 **Hvorfor dette er viktig**: `plant`-elementene trenger absolutt posisjonering for å bli flyttbare i neste leksjon. Absolutt posisjonering fjerner dem fra den normale layoutflyten, noe som gjør dra-og-slipp-interaksjoner mulig.
+> 🎯 **Hvorfor dette er viktig**: `plant`-elementene trenger absolutt posisjonering for å bli dra-og-slippbare i neste leksjon. Absolutt posisjonering fjerner dem fra normal layoutflyt, noe som gjør dra-og-slipp-interaksjoner mulig.
 
-✅ **Eksperimenttid**: Prøv å endre posisjonsverdiene og observer resultatene:
-- Hva skjer hvis du endrer `.container` fra `absolute` til `relative`?
-- Hvordan endrer layouten seg hvis `.plant-holder` bruker `absolute` i stedet for `relative`?
+✅ **Eksperimenter**: Prøv å endre posisjonsverdiene og observer resultatene:
+- Hva skjer om du endrer `.container` fra `absolute` til `relative`?
+- Hvordan endres layouten hvis `.plant-holder` bruker `absolute` i stedet for `relative`?
 - Hva skjer når du bytter `.plant` til `relative` posisjonering?
 
-## Bygge terrariumet med CSS
+### 🔄 **Pedagogisk innsjekking**
+**CSS Posisjonering Mesterlig**: Ta en pause for å verifisere forståelsen din:
+- ✅ Kan du forklare hvorfor planter trenger absolutt posisjonering for drag-and-drop?
+- ✅ Forstår du hvordan relative beholdere skaper posisjoneringskontekst?
+- ✅ Hvorfor bruker sidebeholderne absolutt posisjonering?
+- ✅ Hva ville skjedd hvis du fjernet alle posisjoneringsdeklarasjoner helt?
 
-Nå skal vi bygge en glasskrukke ved hjelp av kun CSS – ingen bilder eller grafikkprogramvare nødvendig.
+**Reell Verden Kobling**: Tenk på hvordan CSS-posisjonering speiler reell verden layout:
+- **Static**: Bøker på en hylle (naturlig rekkefølge)
+- **Relative**: Flytte en bok litt men beholde plassen
+- **Absolute**: Plassere et bokmerke på en eksakt sidenummer
+- **Fixed**: En klistrelapp som forblir synlig mens du blar sider
 
-Å lage realistisk utseende glass, skygger og dybdeeffekter ved hjelp av posisjonering og gjennomsiktighet demonstrerer CSS sine visuelle kapabiliteter. Denne teknikken speiler hvordan arkitekter i Bauhaus-bevegelsen brukte enkle geometriske former for å skape komplekse, vakre strukturer. Når du forstår disse prinsippene, vil du gjenkjenne CSS-teknikkene bak mange webdesign.
+## Bygge Terrariet med CSS
 
-### Lage komponentene til glasskrukken
-La oss bygge terrarium-glasset bit for bit. Hver del bruker absolutt posisjonering og prosentbasert størrelse for responsiv design:
+Nå skal vi bygge en glasskrukke kun med CSS – ingen bilder eller grafikkprogrammer nødvendig.
+
+Å skape realistisk glass, skygger og dybdeeffekter ved å bruke posisjonering og transparens viser CSS sine visuelle muligheter. Denne teknikken speiler hvordan arkitekter innen Bauhaus-bevegelsen brukte enkle geometriske former for å lage komplekse, vakre strukturer. Når du forstår disse prinsippene, vil du kjenne igjen CSS-teknikkene bak mange nettdesign.
+
+```mermaid
+flowchart LR
+    A[Krukkens Topp] --> E[Fullstendig Terrarium]
+    B[Krukkens Vegger] --> E
+    C[Jordlag] --> E
+    D[Krukkens Bunn] --> E
+    F[Glass Effekter] --> E
+    
+    A1["50% bredde<br/>5% høyde<br/>Topp posisjon"] --> A
+    B1["60% bredde<br/>80% høyde<br/>Avrundede kanter<br/>0.5 opasitet"] --> B
+    C1["60% bredde<br/>5% høyde<br/>Mørk brun<br/>Bunnlag"] --> C
+    D1["50% bredde<br/>1% høyde<br/>Bunn posisjon"] --> D
+    F1["Subtile skygger<br/>Transparens<br/>Z-indeks lagdeling"] --> F
+    
+    style E fill:#d1e1df,stroke:#3a241d
+    style A fill:#e8f5e8
+    style B fill:#e8f5e8
+    style C fill:#8B4513
+    style D fill:#e8f5e8
+```
+
+### Lage Komponentene til Glasskrukken
+
+La oss bygge terrarium-krukken bit for bit. Hver del bruker absolutt posisjonering og prosentbaserte størrelser for responsivt design:
 
 ```css
 .jar-walls {
@@ -398,89 +530,200 @@ La oss bygge terrarium-glasset bit for bit. Hver del bruker absolutt posisjoneri
 }
 ```
 
+
 **Forstå terrarium-konstruksjonen:**
 - **Bruker** prosentbaserte dimensjoner for responsiv skalering på alle skjermstørrelser
 - **Plasserer** elementer absolutt for å stable og justere dem presist
-- **Bruker** ulike opasitetsverdier for å skape en glassgjennomsiktighetseffekt
-- **Implementerer** `z-index` lagdeling slik at plantene vises inne i glasset
-- **Legger til** subtile skygger og raffinert avrunding av kantene for et mer realistisk utseende
+- **Bruker** ulike opasitetsverdier for å skape glasseffekten
+- **Implementerer** `z-index` lagring slik at planter vises inni krukken
+- **Legger til** subtile boksskygger og raffinert border-radius for mer realistisk utseende
 
-### Responsiv design med prosenter
+### Responsivt Design med Prosenter
 
-Legg merke til hvordan alle dimensjoner bruker prosenter i stedet for faste pikselverdier:
+Legg merke til at alle dimensjonene bruker prosenter i stedet for faste piksler:
 
 **Hvorfor dette er viktig:**
-- **Sikrer** at terrariet skalerer proporsjonalt på alle skjermstørrelser
-- **Opprettholder** de visuelle relasjonene mellom glasskomponentene
-- **Gir** en konsistent opplevelse fra mobiltelefoner til store skrivebordsskjermer
-- **Lar** designet tilpasse seg uten å bryte det visuelle oppsettet
+- **Sikrer** at terrariet skaleres proporsjonalt på hvilken som helst skjermstørrelse
+- **Opprettholder** de visuelle forholdene mellom krukkens komponenter
+- **Gir** en konsekvent opplevelse fra mobiltelefoner til store stasjonære skjermer
+- **Lar** designen tilpasse seg uten å bryte layouten visuelt
 
-### CSS-enheter i praksis
+### CSS-enheter i bruk
 
-Vi bruker `rem`-enheter for avrunding av kantene, som skalerer relativt til rotfontstørrelsen. Dette skaper mer tilgjengelige design som respekterer brukerens fontpreferanser. Lær mer om [CSS relative enheter](https://www.w3.org/TR/css-values-3/#font-relative-lengths) i den offisielle spesifikasjonen.
+Vi bruker `rem`-enheter for border-radius, som skalerer relativt til rot-fontstørrelsen. Dette skaper mer tilgjengelige design som respekterer brukerens fontpreferanser. Les mer om [CSS relative units](https://www.w3.org/TR/css-values-3/#font-relative-lengths) i den offisielle spesifikasjonen.
 
-✅ **Visuell eksperimentering**: Prøv å endre disse verdiene og observer effektene:
-- Endre glassets opasitet fra 0.5 til 0.8 – hvordan påvirker dette glassets utseende?
-- Juster jordfargen fra `#3a241d` til `#8B4513` – hvilken visuell effekt har dette?
-- Endre `z-index` for jorden til 2 – hva skjer med lagdelingen?
+✅ **Visuell eksperimentering**: Prøv å endre disse verdiene og se effektene:
+- Endre jar-opasiteten fra 0.5 til 0.8 – hvordan påvirker det glassutseendet?
+- Juster jordfargen fra `#3a241d` til `#8B4513` – hvilken visuell effekt får det?
+- Endre `z-index` for jorden til 2 – hva skjer med lagringen?
+
+### 🔄 **Pedagogisk innsjekking**
+**Forståelse av visuell CSS-design**: Bekreft forståelsen din av visuell CSS:
+- ✅ Hvordan skaper prosentbaserte dimensjoner responsiv design?
+- ✅ Hvorfor skaper opasitet glasseffekten?
+- ✅ Hvilken rolle spiller z-index i lagdelingen?
+- ✅ Hvordan skaper border-radius verdiene krukkeformen?
+
+**Designprinsipp**: Legg merke til hvordan vi bygger komplekse visuelle elementer fra enkle former:
+1. **Rektangler** → **Avrundede rektangler** → **Krukkekomponenter**
+2. **Flate farger** → **Opasitet** → **Glasseffekt**
+3. **Individuelle elementer** → **Lagvis sammensetning** → **3D-utseende**
 
 ---
 
-## GitHub Copilot Agent-utfordring 🚀
+## GitHub Copilot Agent Challenge 🚀
 
-Bruk Agent-modus for å fullføre følgende utfordring:
+Bruk Agent-modus for å fullføre denne utfordringen:
 
-**Beskrivelse:** Lag en CSS-animasjon som får terrarium-plantene til å svaie forsiktig frem og tilbake, og simulerer en naturlig briseeffekt. Dette vil hjelpe deg med å øve på CSS-animasjoner, transformasjoner og nøkkelrammer, samtidig som det forbedrer terrariets visuelle appell.
+**Beskrivelse:** Lag en CSS-animasjon som får terrariumplantene til å svaie forsiktig fram og tilbake, som en naturlig bris. Dette hjelper deg å praktisere CSS-animasjoner, transformasjoner og keyframes samtidig som terrariet ditt får liv.
 
-**Oppgave:** Legg til CSS-nøkkelrammeanimasjoner for å få plantene i terrariet til å svaie forsiktig fra side til side. Lag en svaieanimasjon som roterer hver plante litt (2-3 grader) til venstre og høyre med en varighet på 3-4 sekunder, og bruk den på `.plant`-klassen. Sørg for at animasjonen går i en uendelig loop og har en easing-funksjon for naturlig bevegelse.
+**Oppgave:** Legg til CSS keyframe-animasjoner for å få plantene i terrariet til å svaie forsiktig fra side til side. Lag en svingende animasjon som roterer hver plante svakt (2-3 grader) til venstre og høyre med en varighet på 3-4 sekunder, og anvend den på `.plant`-klassen. Sørg for at animasjonen går i loop og har en easing-funksjon for naturlig bevegelse.
 
-Lær mer om [agent-modus](https://code.visualstudio.com/blogs/2025/02/24/introducing-copilot-agent-mode) her.
+Les mer om [agent mode](https://code.visualstudio.com/blogs/2025/02/24/introducing-copilot-agent-mode) her.
 
-## 🚀 Utfordring: Legge til glassrefleksjoner
+## 🚀 Utfordring: Legge til Glassrefleksjoner
 
-Klar til å forbedre terrariet med realistiske glassrefleksjoner? Denne teknikken vil gi dybde og realisme til designet.
+Klar for å forbedre terrariet med realistiske glassrefleksjoner? Denne teknikken tilfører dybde og realisme til designen.
 
-Du skal lage subtile høydepunkter som simulerer hvordan lys reflekteres fra glassoverflater. Denne tilnærmingen ligner på hvordan renessansemalere som Jan van Eyck brukte lys og refleksjon for å få malt glass til å se tredimensjonalt ut. Her er målet ditt:
+Du skal lage subtile høylys som simulerer hvordan lys reflekteres på glassoverflater. Denne tilnærmingen ligner på hvordan renessanse-malere som Jan van Eyck brukte lys og refleksjon for å få malt glass til å virke tredimensjonalt. Slik skal det bli:
 
-![ferdig terrarium](../../../../translated_images/terrarium-final.2f07047ffc597d0a06b06cab28a77801a10dd12fdb6c7fc630e9c40665491c53.no.png)
+![finished terrarium](../../../../translated_images/no/terrarium-final.2f07047ffc597d0a.webp)
 
 **Din utfordring:**
 - **Lag** subtile hvite eller lyse ovale former for glassrefleksjonene
-- **Plasser** dem strategisk på venstre side av glasset
+- **Plasser** dem strategisk på venstre side av krukken
 - **Bruk** passende opasitet og uskarphetseffekter for realistisk lysrefleksjon
-- **Bruk** `border-radius` for å lage organiske, bobleaktige former
-- **Eksperimenter** med gradienter eller skygger for forbedret realisme
+- **Bruk** `border-radius` for å lage organiske, boblelignende former
+- **Eksperimenter** med graderinger eller boksskygger for forbedret realisme
 
 ## Quiz etter forelesning
 
 [Quiz etter forelesning](https://ff-quizzes.netlify.app/web/quiz/18)
 
-## Utvid CSS-kunnskapene dine
+## Utvid Dine CSS-Kunnskaper
 
-CSS kan virke komplekst i starten, men å forstå disse kjernekonseptene gir et solid grunnlag for mer avanserte teknikker.
+CSS kan virke komplekst i starten, men når du forstår disse kjerneprinsippene får du et solid grunnlag for mer avanserte teknikker.
 
 **Dine neste CSS-læringsområder:**
 - **Flexbox** - forenkler justering og distribusjon av elementer
-- **CSS Grid** - gir kraftige verktøy for å lage komplekse oppsett
-- **CSS-variabler** - reduserer repetisjon og forbedrer vedlikeholdbarhet
-- **Responsiv design** - sikrer at nettsteder fungerer godt på ulike skjermstørrelser
+- **CSS Grid** - kraftige verktøy for å lage komplekse layouter
+- **CSS Variabler** - reduserer gjentakelse og forbedrer vedlikehold
+- **Responsivt design** - sikrer at nettsider fungerer godt på ulike skjermstørrelser
 
 ### Interaktive læringsressurser
 
-Øv på disse konseptene med disse engasjerende, praktiske spillene:
+Prøv disse konsepter med engasjerende, praktiske spill:
 - 🐸 [Flexbox Froggy](https://flexboxfroggy.com/) - Mestre Flexbox gjennom morsomme utfordringer
 - 🌱 [Grid Garden](https://codepip.com/games/grid-garden/) - Lær CSS Grid ved å dyrke virtuelle gulrøtter
-- 🎯 [CSS Battle](https://cssbattle.dev/) - Test CSS-ferdighetene dine med kodeutfordringer
+- 🎯 [CSS Battle](https://cssbattle.dev/) - Test dine CSS-ferdigheter med kodingsutfordringer
 
 ### Ytterligere læring
 
-For omfattende CSS-grunnleggende, fullfør dette Microsoft Learn-modulet: [Style your HTML app with CSS](https://docs.microsoft.com/learn/modules/build-simple-website/4-css-basics/?WT.mc_id=academic-77807-sagibbon)
+For en omfattende innføring i CSS-fundamenter, fullfør denne Microsoft Learn-modulen: [Style your HTML app with CSS](https://docs.microsoft.com/learn/modules/build-simple-website/4-css-basics/?WT.mc_id=academic-77807-sagibbon)
+
+### ⚡ **Hva du kan gjøre på de neste 5 minuttene**
+- [ ] Åpne DevTools og inspiser CSS-stiler på en nettside via Elements-panelet
+- [ ] Lag en enkel CSS-fil og koble den til en HTML-side
+- [ ] Prøv å endre farger med forskjellige metoder: hex, RGB og navngitte farger
+- [ ] Øv på boksen-modellen ved å legge til padding og margin på en div
+
+### 🎯 **Hva du kan oppnå denne timen**
+- [ ] Fullfør quiz etter leksjonen og gå gjennom CSS-fundamenter
+- [ ] Style HTML-siden din med fonter, farger og marger
+- [ ] Lag en enkel layout med flexbox eller grid
+- [ ] Eksperimenter med CSS-overganger for myke effekter
+- [ ] Øv på responsivt design med medieforespørsler
+
+### 📅 **Din uke-lange CSS-reise**
+- [ ] Fullfør terrarium-styling-oppgaven med kreativitet
+- [ ] Mestre CSS Grid ved å bygge en fotogalleri-layout
+- [ ] Lær CSS-animasjoner for å bringe designene til liv
+- [ ] Utforsk CSS preprocessors som Sass eller Less
+- [ ] Studer designprinsipper og bruk dem i CSS
+- [ ] Analyser og gjenskap interessante design du finner på nettet
+
+### 🌟 **Din månedslange designmestring**
+- [ ] Bygg et komplett responsivt nettside-designsystem
+- [ ] Lær CSS-in-JS eller utility-first rammeverk som Tailwind
+- [ ] Bidra til open source-prosjekter med CSS-forbedringer
+- [ ] Mestre avanserte CSS-konsepter som CSS egendefinerte egenskaper og containment
+- [ ] Lag gjenbrukbare komponentbiblioteker med modulær CSS
+- [ ] Veilede andre som lærer CSS og del designkunnskap
+
+## 🎯 Din CSS-mestringstidslinje
+
+```mermaid
+timeline
+    title CSS Læringsprogresjon
+    
+    section Grunnlag (10 minutter)
+        Filtilkobling: Koble CSS til HTML
+                       : Forstå kaskaderegler
+                       : Lær arv grunnleggende
+        
+    section Velgere (15 minutter)
+        Målretting av elementer: Elementvelgere
+                             : Klasse mønstre
+                             : ID-spesifisitet
+                             : Kombinatorer
+        
+    section Boksmodell (20 minutter)
+        Grunnleggende oppsett: Margin og polstring
+                             : Kant-egenskaper
+                             : Innholds-størrelse
+                             : Boks-størrelse oppførsel
+        
+    section Posisjonering (25 minutter)
+        Plassering av elementer: Statisk vs relativ
+                              : Absolutt posisjonering
+                              : Z-indeks lagdeling
+                              : Responsiv enheter
+        
+    section Visuell design (30 minutter)
+        Stylingmestring: Farger og opasitet
+                        : Skygger og effekter
+                        : Overganger
+                        : Transform egenskaper
+        
+    section Responsivt design (45 minutter)
+        Multi-enhetsstøtte: Mediespørringer
+                          : Fleksible oppsett
+                          : Mobil-først tilnærming
+                          : Visningsport-optimalisering
+        
+    section Avanserte teknikker (1 uke)
+        Moderne CSS: Flexbox oppsett
+                   : CSS Grid systemer
+                   : Egne egenskaper
+                   : Animajons nøkkelbilder
+        
+    section Profesjonelle ferdigheter (1 måned)
+        CSS Arkitektur: Komponent mønstre
+                       : Vedlikeholdbar kode
+                       : Ytelsesoptimalisering
+                       : Tverr-nettleser kompatibilitet
+```
+
+### 🛠️ Din CSS-verktøykasse Oppsummering
+
+Etter å ha fullført denne leksjonen har du nå:
+- **Cascade-forståelse**: Hvordan stiler arves og overstyres
+- **Selector-mesterlig**: Presis målretting med elementer, klasser og IDer
+- **Posisjoneringsferdigheter**: Strategisk plassering og lagdeling av elementer
+- **Visuell design**: Lage glasseffekter, skygger og transparens
+- **Responsive teknikker**: Prosentbaserte layouter som tilpasser seg alle skjermer
+- **Kodeorganisering**: Ren, vedlikeholdbar CSS-struktur
+- **Moderne praksis**: Bruk av relative enheter og tilgjengelige designmønstre
+
+**Neste steg**: Terrariet ditt har nå både struktur (HTML) og stil (CSS). Den siste leksjonen legger til interaktivitet med JavaScript!
 
 ## Oppgave
 
-[CSS Refactoring](assignment.md)
+[CSS Refaktorering](assignment.md)
 
 ---
 
-**Ansvarsfraskrivelse**:  
-Dette dokumentet er oversatt ved hjelp av AI-oversettelsestjenesten [Co-op Translator](https://github.com/Azure/co-op-translator). Selv om vi streber etter nøyaktighet, vær oppmerksom på at automatiserte oversettelser kan inneholde feil eller unøyaktigheter. Det originale dokumentet på sitt opprinnelige språk bør anses som den autoritative kilden. For kritisk informasjon anbefales profesjonell menneskelig oversettelse. Vi er ikke ansvarlige for misforståelser eller feiltolkninger som oppstår ved bruk av denne oversettelsen.
+<!-- CO-OP TRANSLATOR DISCLAIMER START -->
+**Ansvarsfraskrivelse**:
+Dette dokumentet er oversatt ved bruk av AI-oversettelsestjenesten [Co-op Translator](https://github.com/Azure/co-op-translator). Selv om vi streber etter nøyaktighet, må du være klar over at automatiske oversettelser kan inneholde feil eller unøyaktigheter. Det opprinnelige dokumentet på originalspråket skal betraktes som den autoritative kilden. For kritisk informasjon anbefales profesjonell menneskelig oversettelse. Vi er ikke ansvarlige for eventuelle misforståelser eller feiltolkninger som oppstår ved bruk av denne oversettelsen.
+<!-- CO-OP TRANSLATOR DISCLAIMER END -->

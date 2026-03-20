@@ -1,12 +1,3 @@
-<!--
-CO_OP_TRANSLATOR_METADATA:
-{
-  "original_hash": "2b6203a48c48d8234e0948353b47d84e",
-  "translation_date": "2025-11-04T00:39:03+00:00",
-  "source_file": "5-browser-extension/2-forms-browsers-local-storage/README.md",
-  "language_code": "it"
-}
--->
 # Progetto Estensione Browser Parte 2: Chiamare un'API, utilizzare Local Storage
 
 ```mermaid
@@ -268,7 +259,7 @@ stateDiagram-v2
     ClearStorage --> FirstTime: Back to setup
 ```
 
-![Pannello di local storage](../../../../translated_images/localstorage.472f8147b6a3f8d141d9551c95a2da610ac9a3c6a73d4a1c224081c98bae09d9.it.png)
+![Pannello di local storage](../../../../translated_images/it/localstorage.472f8147b6a3f8d1.webp)
 
 > ⚠️ **Considerazione sulla Sicurezza**: Nelle applicazioni di produzione, memorizzare le chiavi API nella LocalStorage comporta rischi di sicurezza poiché JavaScript può accedere a questi dati. Per scopi didattici, questo approccio va bene, ma le applicazioni reali dovrebbero utilizzare archiviazione sicura lato server per credenziali sensibili.
 

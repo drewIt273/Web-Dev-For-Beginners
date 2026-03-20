@@ -1,12 +1,3 @@
-<!--
-CO_OP_TRANSLATOR_METADATA:
-{
-  "original_hash": "351678bece18f07d9daa987a881fb062",
-  "translation_date": "2025-11-06T12:15:21+00:00",
-  "source_file": "7-bank-project/1-template-route/README.md",
-  "language_code": "ms"
-}
--->
 # Bina Aplikasi Perbankan Bahagian 1: Templat HTML dan Laluan dalam Aplikasi Web
 
 ```mermaid
@@ -652,7 +643,7 @@ sequenceDiagram
 
 Menggunakan `history.pushState` mencipta entri baru dalam sejarah navigasi pelayar. Anda boleh memeriksanya dengan menahan *butang mundur* pelayar anda, ia seharusnya memaparkan sesuatu seperti ini:
 
-![Tangkap layar sejarah navigasi](../../../../translated_images/history.7fdabbafa521e06455b738d3dafa3ff41d3071deae60ead8c7e0844b9ed987d8.ms.png)
+![Tangkap layar sejarah navigasi](../../../../translated_images/ms/history.7fdabbafa521e064.webp)
 
 Jika anda cuba klik pada butang mundur beberapa kali, anda akan melihat bahawa URL semasa berubah dan sejarah dikemas kini, tetapi templat yang sama terus dipaparkan.
 

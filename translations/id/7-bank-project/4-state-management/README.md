@@ -1,12 +1,3 @@
-<!--
-CO_OP_TRANSLATOR_METADATA:
-{
-  "original_hash": "b807b09df716dc48a2b750835bf8e933",
-  "translation_date": "2025-11-06T11:49:59+00:00",
-  "source_file": "7-bank-project/4-state-management/README.md",
-  "language_code": "id"
-}
--->
 # Membangun Aplikasi Perbankan Bagian 4: Konsep Manajemen State
 
 ## ⚡ Apa yang Bisa Anda Lakukan dalam 5 Menit Berikutnya
@@ -190,7 +181,7 @@ Seperti desain kompartemen Titanic yang tampak kokoh hingga beberapa kompartemen
 
 Alih-alih mengejar ekor kita sendiri, kita akan membuat sistem **manajemen state terpusat**. Anggap saja seperti memiliki satu orang yang sangat terorganisir yang bertanggung jawab atas semua hal penting:
 
-![Skema yang menunjukkan aliran data antara HTML, tindakan pengguna, dan state](../../../../translated_images/data-flow.fa2354e0908fecc89b488010dedf4871418a992edffa17e73441d257add18da4.id.png)
+![Skema yang menunjukkan aliran data antara HTML, tindakan pengguna, dan state](../../../../translated_images/id/data-flow.fa2354e0908fecc8.webp)
 
 ```mermaid
 flowchart TD
@@ -804,7 +795,7 @@ Tantangan ini akan membantu Anda berpikir seperti pengembang profesional yang me
 
 Berikut adalah contoh hasil setelah menyelesaikan tugas:
 
-![Screenshot menunjukkan contoh dialog "Tambah transaksi"](../../../../translated_images/dialog.93bba104afeb79f12f65ebf8f521c5d64e179c40b791c49c242cf15f7e7fab15.id.png)
+![Screenshot menunjukkan contoh dialog "Tambah transaksi"](../../../../translated_images/id/dialog.93bba104afeb79f1.webp)
 
 ---
 

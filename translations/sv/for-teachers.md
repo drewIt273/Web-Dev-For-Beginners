@@ -1,12 +1,3 @@
-<!--
-CO_OP_TRANSLATOR_METADATA:
-{
-  "original_hash": "71009af209f81cc01a1f2d324200375f",
-  "translation_date": "2025-10-03T09:53:51+00:00",
-  "source_file": "for-teachers.md",
-  "language_code": "sv"
-}
--->
 ### För lärare
 
 Du är välkommen att använda detta kursmaterial i ditt klassrum. Det fungerar smidigt med GitHub Classroom och ledande LMS-plattformar, och det kan även användas som en fristående repo med dina elever.
@@ -42,10 +33,10 @@ Detta kursmaterial innehåller importbara paket för vanliga LMS-arbetsflöden.
   - Moodle Cloud har begränsat stöd för Common Cartridge. Föredra Moodle-filen ovan, som också kan laddas upp i Canvas.
   - Efter import, granska moduler, förfallodatum och quizinställningar för att matcha ditt terminschema.
 
-![Moodle](../../translated_images/moodle.94eb93d714a50cb2c97435b408017dee224348b61bc86203ffd43a4f4e57b95f.sv.png)
+![Moodle](../../translated_images/sv/moodle.94eb93d714a50cb2.webp)
 > Kursmaterialet i ett Moodle-klassrum
 
-![Canvas](../../translated_images/canvas.fbd605ff8e5b8aff567d398528ce113db304446b90b9cad55c654de3fdfcda34.sv.png)
+![Canvas](../../translated_images/sv/canvas.fbd605ff8e5b8aff.webp)
 > Kursmaterialet i Canvas
 
 ### Använd repot direkt (utan Classroom)

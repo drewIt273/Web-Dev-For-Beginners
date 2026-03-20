@@ -1,12 +1,3 @@
-<!--
-CO_OP_TRANSLATOR_METADATA:
-{
-  "original_hash": "effe56ba51c38d7bdfad1ea38288666b",
-  "translation_date": "2025-10-22T17:28:31+00:00",
-  "source_file": "8-code-editor/1-using-a-code-editor/assignment.md",
-  "language_code": "pa"
-}
--->
 # VSCode.dev ਦੀ ਵਰਤੋਂ ਕਰਕੇ ਰਿਜ਼ਿਊਮ ਵੈਬਸਾਈਟ ਬਣਾਓ
 
 ਇੱਕ ਇੰਟਰਐਕਟਿਵ ਅਤੇ ਆਧੁਨਿਕ ਫਾਰਮੈਟ ਵਿੱਚ ਆਪਣੀ ਕਾਬਲਿਯਤ ਅਤੇ ਤਜਰਬੇ ਨੂੰ ਦਰਸਾਉਣ ਵਾਲੀ ਪ੍ਰੋਫੈਸ਼ਨਲ ਰਿਜ਼ਿਊਮ ਵੈਬਸਾਈਟ ਬਣਾਕੇ ਆਪਣੇ ਕਰੀਅਰ ਦੇ ਮੌਕਿਆਂ ਨੂੰ ਬਦਲੋ। ਰਵਾਇਤੀ PDF ਭੇਜਣ ਦੀ ਬਜਾਏ, ਸੋਚੋ ਕਿ ਰਿਕਰੂਟਰਾਂ ਨੂੰ ਇੱਕ ਸਲੀਕ ਅਤੇ ਜਵਾਬਦੇਹ ਵੈਬਸਾਈਟ ਪ੍ਰਦਾਨ ਕਰਦੇ ਹੋ ਜੋ ਤੁਹਾਡੇ ਗੁਣਾਂ ਅਤੇ ਵੈਬ ਡਿਵੈਲਪਮੈਂਟ ਦੀ ਯੋਗਤਾ ਦਿਖਾਉਂਦੀ ਹੈ।
@@ -78,7 +69,7 @@ CO_OP_TRANSLATOR_METADATA:
 4. ਇੱਕ ਕਮਿਟ ਸੁਨੇਹਾ ਲਿਖੋ: "Add initial HTML structure"
 5. "Commit new file" 'ਤੇ ਕਲਿਕ ਕਰਕੇ ਆਪਣੇ ਬਦਲਾਅ ਸੇਵ ਕਰੋ
 
-![GitHub 'ਤੇ ਸ਼ੁਰੂਆਤੀ ਫਾਈਲ ਬਣਾਉਣਾ](../../../../translated_images/new-file-github.com.c886796d800e8056561829a181be1382c5303da9d902d8b2dd82b68a4806e21f.pa.png)
+![GitHub 'ਤੇ ਸ਼ੁਰੂਆਤੀ ਫਾਈਲ ਬਣਾਉਣਾ](../../../../translated_images/pa/new-file-github.com.c886796d800e8056.webp)
 
 **ਇਹ ਸ਼ੁਰੂਆਤੀ ਸੈਟਅਪ ਕੀ ਪ੍ਰਾਪਤ ਕਰਦਾ ਹੈ:**
 - **ਸਥਾਪਿਤ ਕਰਦਾ ਹੈ** ਸਹੀ HTML5 ਦਸਤਾਵੇਜ਼ ਸੰਰਚਨਾ ਸੈਮਾਂਟਿਕ ਤੱਤਾਂ ਨਾਲ
@@ -104,7 +95,7 @@ CO_OP_TRANSLATOR_METADATA:
 
 ✅ **ਸਫਲਤਾ ਸੂਚਕ**: ਤੁਹਾਨੂੰ ਆਪਣੇ ਪ੍ਰੋਜੈਕਟ ਫਾਈਲਾਂ Explorer ਸਾਈਡਬਾਰ ਵਿੱਚ ਅਤੇ `index.html` ਮੁੱਖ ਐਡੀਟਰ ਖੇਤਰ ਵਿੱਚ ਐਡੀਟ ਕਰਨ ਲਈ ਉਪਲਬਧ ਹੋਣੀਆਂ ਚਾਹੀਦੀਆਂ ਹਨ।
 
-![VSCode.dev ਵਿੱਚ ਪ੍ਰੋਜੈਕਟ ਲੋਡ ਕੀਤਾ](../../../../translated_images/project-on-vscode.dev.e79815a9a95ee7feac72ebe5c941c91279716be37c575dbdbf2f43bea2c7d8b6.pa.png)
+![VSCode.dev ਵਿੱਚ ਪ੍ਰੋਜੈਕਟ ਲੋਡ ਕੀਤਾ](../../../../translated_images/pa/project-on-vscode.dev.e79815a9a95ee7fe.webp)
 
 **ਇੰਟਰਫੇਸ ਵਿੱਚ ਤੁਸੀਂ ਕੀ ਦੇਖੋਗੇ:**
 - **Explorer sidebar**: **ਤੁਹਾਡੇ ਰਿਪੋਜ਼ਟਰੀ ਫਾਈਲਾਂ ਅਤੇ ਫੋਲਡਰ ਸੰਰਚਨਾ ਦਿਖਾਉਂਦਾ ਹੈ**

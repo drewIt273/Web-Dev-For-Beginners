@@ -1,12 +1,3 @@
-<!--
-CO_OP_TRANSLATOR_METADATA:
-{
-  "original_hash": "e39f3a4e3bcccf94639e3af1248f8a4d",
-  "translation_date": "2025-11-04T01:58:16+00:00",
-  "source_file": "3-terrarium/2-intro-to-css/README.md",
-  "language_code": "nl"
-}
--->
 # Terrarium Project Deel 2: Introductie tot CSS
 
 ```mermaid
@@ -30,7 +21,7 @@ journey
       Glass reflections: 5: Student
 ```
 
-![Introductie tot CSS](../../../../translated_images/webdev101-css.3f7af5991bf53a200d79e7257e5e450408d8ea97f5b531d31b2e3976317338ee.nl.png)
+![Introductie tot CSS](../../../../translated_images/nl/webdev101-css.3f7af5991bf53a20.webp)
 > Sketchnote door [Tomomi Imura](https://twitter.com/girlie_mac)
 
 Weet je nog hoe je HTML-terrarium er vrij basic uitzag? Met CSS transformeren we die eenvoudige structuur tot iets visueel aantrekkelijks.
@@ -205,7 +196,7 @@ body {
 
 Open de ontwikkelaarstools van je browser (F12), ga naar het tabblad Elements en inspecteer je `<h1>`-element. Je zult zien dat het de lettertypefamilie van het body-element erft:
 
-![geërfd lettertype](../../../../translated_images/1.cc07a5cbe114ad1d4728c35134584ac1b87db688eff83cf75985cf31fe0ed95c.nl.png)
+![geërfd lettertype](../../../../translated_images/nl/1.cc07a5cbe114ad1d.webp)
 
 ✅ **Experimenteren**: Probeer andere overerfbare eigenschappen in te stellen op `<body>` zoals `color`, `line-height` of `text-align`. Wat gebeurt er met je koptekst en andere elementen?
 
@@ -335,7 +326,7 @@ In ons terrarium heeft elke plant vergelijkbare styling nodig, maar ook individu
 **Hier is de HTML-structuur voor elke plant:**
 ```html
 <div class="plant-holder">
-  <img class="plant" alt="Decorative plant for terrarium" id="plant1" src="../../../../translated_images/plant1.d18b18ffe73da18f8b1ac7aba73b4050af52f4a0c9174aeac464b85123fc2850.nl.png" />
+  <img class="plant" alt="Decorative plant for terrarium" id="plant1" src="../../../../translated_images/nl/plant1.d18b18ffe73da18f8b1ac7aba73b4050af52f4a0c9174aeac464b85123fc2850.png" />
 </div>
 ```
 
@@ -599,7 +590,7 @@ Klaar om je terrarium te verbeteren met realistische glans op glas? Deze technie
 
 Je gaat subtiele highlights creëren die simuleren hoe licht reflecteert op glasoppervlakken. Deze aanpak is vergelijkbaar met hoe Renaissance-schilders zoals Jan van Eyck licht en reflectie gebruikten om geschilderd glas driedimensionaal te laten lijken. Dit is wat je wilt bereiken:
 
-![finished terrarium](../../../../translated_images/terrarium-final.2f07047ffc597d0a06b06cab28a77801a10dd12fdb6c7fc630e9c40665491c53.nl.png)
+![finished terrarium](../../../../translated_images/nl/terrarium-final.2f07047ffc597d0a.webp)
 
 **Jouw uitdaging:**
 - **Creëer** subtiele witte of lichtgekleurde ovale vormen voor de glans op het glas

@@ -1,12 +1,3 @@
-<!--
-CO_OP_TRANSLATOR_METADATA:
-{
-  "original_hash": "973e48ad87d67bf5bb819746c9f8e302",
-  "translation_date": "2025-11-04T01:27:08+00:00",
-  "source_file": "3-terrarium/3-intro-to-DOM-and-closures/README.md",
-  "language_code": "fi"
-}
--->
 # Terrarium-projekti, osa 3: DOM-manipulaatio ja JavaScript-sulkeumat
 
 ```mermaid
@@ -26,7 +17,7 @@ journey
       Complete terrarium: 5: Student
 ```
 
-![DOM ja sulkeuma](../../../../translated_images/webdev101-js.10280393044d7eaaec7e847574946add7ddae6be2b2194567d848b61d849334a.fi.png)
+![DOM ja sulkeuma](../../../../translated_images/fi/webdev101-js.10280393044d7eaa.webp)
 > Sketchnote: [Tomomi Imura](https://twitter.com/girlie_mac)
 
 Tervetuloa yhteen verkkokehityksen kiehtovimmista osa-alueista – interaktiivisuuden luomiseen! Document Object Model (DOM) toimii sillan tavoin HTML:n ja JavaScriptin välillä, ja tänään käytämme sitä herättääksemme terrariosi eloon. Kun Tim Berners-Lee loi ensimmäisen verkkoselaimen, hän kuvitteli verkon, jossa dokumentit voisivat olla dynaamisia ja interaktiivisia – DOM tekee tämän vision mahdolliseksi.
@@ -105,7 +96,7 @@ flowchart TD
     style Q fill:#ffebee
 ```
 
-![DOM-puun esitys](../../../../translated_images/dom-tree.7daf0e763cbbba9273f9a66fe04c98276d7d23932309b195cb273a9cf1819b42.fi.png)
+![DOM-puun esitys](../../../../translated_images/fi/dom-tree.7daf0e763cbbba92.webp)
 
 > DOM:n ja sitä vastaavan HTML-koodin esitys. Lähde: [Olfa Nasraoui](https://www.researchgate.net/publication/221417012_Profile-Based_Focused_Crawler_for_Social_Media-Sharing_Websites)
 
@@ -150,7 +141,7 @@ flowchart LR
 
 > 💡 **Sulkeumien ymmärtäminen**: Sulkeumat ovat merkittävä aihe JavaScriptissä, ja monet kehittäjät käyttävät niitä vuosia ennen kuin täysin ymmärtävät kaikki teoreettiset näkökohdat. Tänään keskitymme käytännön sovellukseen – näet, kuinka sulkeumat syntyvät luonnollisesti interaktiivisia ominaisuuksia rakentaessamme. Ymmärrys kehittyy, kun näet, kuinka ne ratkaisevat todellisia ongelmia.
 
-![DOM-puun esitys](../../../../translated_images/dom-tree.7daf0e763cbbba9273f9a66fe04c98276d7d23932309b195cb273a9cf1819b42.fi.png)
+![DOM-puun esitys](../../../../translated_images/fi/dom-tree.7daf0e763cbbba92.webp)
 
 > DOM:n ja sitä vastaavan HTML-koodin esitys. Lähde: [Olfa Nasraoui](https://www.researchgate.net/publication/221417012_Profile-Based_Focused_Crawler_for_Social_Media-Sharing_Websites)
 
@@ -589,7 +580,7 @@ Testaa nyt interaktiivista terrariumiasi! Avaa `index.html`-tiedosto verkkoselai
 - **Laitteiden välinen tuki**: Toimii sekä työpöydällä että mobiililaitteilla
 - **Suorituskyky huomioitu**: Ei muistivuotoja tai tarpeettomia laskelmia
 
-![valmis terrarium](../../../../translated_images/terrarium-final.0920f16e87c13a84cd2b553a5af9a3ad1cffbd41fbf8ce715d9e9c43809a5e2c.fi.png)
+![valmis terrarium](../../../../translated_images/fi/terrarium-final.0920f16e87c13a84.webp)
 
 ---
 

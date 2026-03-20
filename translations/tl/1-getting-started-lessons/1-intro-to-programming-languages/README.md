@@ -1,12 +1,3 @@
-<!--
-CO_OP_TRANSLATOR_METADATA:
-{
-  "original_hash": "d45ddcc54eb9232a76d08328b09d792e",
-  "translation_date": "2025-11-03T13:47:42+00:00",
-  "source_file": "1-getting-started-lessons/1-intro-to-programming-languages/README.md",
-  "language_code": "tl"
-}
--->
 # Panimula sa Mga Wika ng Programming at Modernong Developer Tools
 
 Kamusta, hinaharap na developer! 👋 Pwede ba akong magbahagi ng isang bagay na palaging nagbibigay sa akin ng kilig araw-araw? Malapit mo nang matuklasan na ang programming ay hindi lang tungkol sa mga computer – ito ay parang pagkakaroon ng superpowers para maisakatuparan ang mga pinakamalupit mong ideya!
@@ -17,7 +8,7 @@ Alam mo, naiintindihan ko kung bakit nakakatakot ang programming sa simula. Noon
 
 Ngayon, sisilipin natin ang mga kamangha-manghang tools na ginagawang posible ang modernong web development – at sobrang nakakaadik! Pinag-uusapan natin ang parehong editors, browsers, at workflows na ginagamit ng mga developer sa Netflix, Spotify, at sa paborito mong indie app studio araw-araw. At eto ang magpapasayaw sa'yo: karamihan sa mga propesyonal-grade, industry-standard tools na ito ay ganap na libre!
 
-![Intro Programming](../../../../translated_images/webdev101-programming.d6e3f98e61ac4bff0b27dcbf1c3f16c8ed46984866f2d29988929678b0058fde.tl.png)
+![Intro Programming](../../../../translated_images/tl/webdev101-programming.d6e3f98e61ac4bff.webp)
 > Sketchnote ni [Tomomi Imura](https://twitter.com/girlie_mac)
 
 ```mermaid

@@ -1,12 +1,3 @@
-<!--
-CO_OP_TRANSLATOR_METADATA:
-{
-  "original_hash": "86ee5069f27ea3151389d8687c95fac9",
-  "translation_date": "2025-11-03T13:59:01+00:00",
-  "source_file": "7-bank-project/3-data/README.md",
-  "language_code": "tl"
-}
--->
 # Gumawa ng Banking App Bahagi 3: Mga Paraan ng Pagkuha at Paggamit ng Data
 
 Isipin ang computer ng Enterprise sa Star Trek - kapag tinanong ni Captain Picard ang status ng barko, agad na lumalabas ang impormasyon nang hindi nagre-restart o nagre-rebuild ang buong interface. Ang seamless na daloy ng impormasyon na iyon ang eksaktong ginagawa natin dito gamit ang dynamic na pagkuha ng data.
@@ -160,7 +151,7 @@ sequenceDiagram
     Browser->>User: Displays new page (flash/reload)
 ```
 
-![Workflow ng pag-update sa multi-page application](../../../../translated_images/mpa.7f7375a1a2d4aa779d3f928a2aaaf9ad76bcdeb05cfce2dc27ab126024050f51.tl.png)
+![Workflow ng pag-update sa multi-page application](../../../../translated_images/tl/mpa.7f7375a1a2d4aa77.webp)
 
 **Bakit pakiramdam na clunky ang approach na ito:**
 - Bawat click ay nangangahulugan ng pag-rebuild ng buong page mula sa simula
@@ -187,7 +178,7 @@ sequenceDiagram
     Browser->>User: Shows updated content (no reload)
 ```
 
-![Workflow ng pag-update sa single-page application](../../../../translated_images/spa.268ec73b41f992c2a21ef9294235c6ae597b3c37e2c03f0494c2d8857325cc57.tl.png)
+![Workflow ng pag-update sa single-page application](../../../../translated_images/tl/spa.268ec73b41f992c2.webp)
 
 **Bakit mas maganda ang pakiramdam ng SPAs:**
 - Ang mga bahagi lang na talagang nagbago ang na-update (matalino, di ba?)
@@ -523,7 +514,7 @@ if (data.error) {
 
 Ngayon, kapag sinubukan mong mag-login gamit ang invalid na account, makikita mo ang isang kapaki-pakinabang na mensahe ng error sa mismong pahina!
 
-![Screenshot na nagpapakita ng mensahe ng error na lumalabas sa pag-login](../../../../translated_images/login-error.416fe019b36a63276764c2349df5d99e04ebda54fefe60c715ee87a28d5d4ad0.tl.png)
+![Screenshot na nagpapakita ng mensahe ng error na lumalabas sa pag-login](../../../../translated_images/tl/login-error.416fe019b36a6327.webp)
 
 #### Hakbang 4: Pagiging Inclusive sa Accessibility
 
@@ -961,7 +952,7 @@ Handa ka na bang dalhin ang iyong banking app sa susunod na antas? Gawin natin i
 
 Ganito ang maaaring hitsura ng isang polished na dashboard:
 
-![Screenshot ng isang halimbawa ng resulta ng dashboard pagkatapos ng styling](../../../../translated_images/screen2.123c82a831a1d14ab2061994be2fa5de9cec1ce651047217d326d4773a6348e4.tl.png)
+![Screenshot ng isang halimbawa ng resulta ng dashboard pagkatapos ng styling](../../../../translated_images/tl/screen2.123c82a831a1d14a.webp)
 
 Huwag kang mag-alala kung hindi mo ito eksaktong ma-match - gamitin ito bilang inspirasyon at gawin itong sarili mo!
 

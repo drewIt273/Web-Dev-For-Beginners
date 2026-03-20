@@ -1,15 +1,6 @@
-<!--
-CO_OP_TRANSLATOR_METADATA:
-{
-  "original_hash": "672b0bb6e8b431075f3bdb7130590d2d",
-  "translation_date": "2025-11-03T15:11:19+00:00",
-  "source_file": "2-js-basics/1-data-types/README.md",
-  "language_code": "ne"
-}
--->
 # जाभास्क्रिप्ट आधारभूत: डाटा प्रकारहरू
 
-![जाभास्क्रिप्ट आधारभूत - डाटा प्रकारहरू](../../../../translated_images/webdev101-js-datatypes.4cc470179730702c756480d3ffa46507f746e5975ebf80f99fdaaf1cff09a7f4.ne.png)
+![जाभास्क्रिप्ट आधारभूत - डाटा प्रकारहरू](../../../../translated_images/ne/webdev101-js-datatypes.4cc470179730702c.webp)
 > स्केच नोट [टोमोमी इमुरा](https://twitter.com/girlie_mac) द्वारा
 
 ```mermaid

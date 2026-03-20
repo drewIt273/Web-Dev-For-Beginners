@@ -1,12 +1,3 @@
-<!--
-CO_OP_TRANSLATOR_METADATA:
-{
-  "original_hash": "71009af209f81cc01a1f2d324200375f",
-  "translation_date": "2025-10-03T09:38:34+00:00",
-  "source_file": "for-teachers.md",
-  "language_code": "pl"
-}
--->
 ### Dla nauczycieli
 
 Zapraszamy do korzystania z tego programu nauczania w swojej klasie. Doskonale współpracuje z GitHub Classroom i wiodącymi platformami LMS, a także może być używany jako samodzielne repozytorium z uczniami.
@@ -42,10 +33,10 @@ Ten program nauczania zawiera pakiety do importowania dla popularnych przepływ�
   - Moodle Cloud ma ograniczone wsparcie dla Common Cartridge. Preferuj powyższy plik Moodle, który można również przesłać do Canvas.
   - Po zaimportowaniu przejrzyj moduły, terminy i ustawienia quizów, aby dopasować je do harmonogramu semestru.
 
-![Moodle](../../translated_images/moodle.94eb93d714a50cb2c97435b408017dee224348b61bc86203ffd43a4f4e57b95f.pl.png)
+![Moodle](../../translated_images/pl/moodle.94eb93d714a50cb2.webp)
 > Program nauczania w klasie Moodle
 
-![Canvas](../../translated_images/canvas.fbd605ff8e5b8aff567d398528ce113db304446b90b9cad55c654de3fdfcda34.pl.png)
+![Canvas](../../translated_images/pl/canvas.fbd605ff8e5b8aff.webp)
 > Program nauczania w Canvas
 
 ### Korzystanie bezpośrednio z repozytorium (bez Classroom)

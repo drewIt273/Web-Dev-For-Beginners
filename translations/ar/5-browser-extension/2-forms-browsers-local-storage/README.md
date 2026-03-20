@@ -1,12 +1,3 @@
-<!--
-CO_OP_TRANSLATOR_METADATA:
-{
-  "original_hash": "2b6203a48c48d8234e0948353b47d84e",
-  "translation_date": "2025-11-03T12:48:54+00:00",
-  "source_file": "5-browser-extension/2-forms-browsers-local-storage/README.md",
-  "language_code": "ar"
-}
--->
 # مشروع إضافة المتصفح الجزء الثاني: الاتصال بـ API واستخدام التخزين المحلي
 
 ```mermaid
@@ -268,7 +259,7 @@ stateDiagram-v2
     ClearStorage --> FirstTime: Back to setup
 ```
 
-![لوحة التخزين المحلي](../../../../translated_images/localstorage.472f8147b6a3f8d141d9551c95a2da610ac9a3c6a73d4a1c224081c98bae09d9.ar.png)
+![لوحة التخزين المحلي](../../../../translated_images/ar/localstorage.472f8147b6a3f8d1.webp)
 
 > ⚠️ **اعتبار أمني**: في التطبيقات الإنتاجية، تخزين مفاتيح API في LocalStorage يشكل مخاطر أمنية لأن JavaScript يمكنه الوصول إلى هذه البيانات. لأغراض التعلم، هذا النهج يعمل بشكل جيد، لكن التطبيقات الحقيقية يجب أن تستخدم تخزين آمن على الخادم للمعلومات الحساسة.
 

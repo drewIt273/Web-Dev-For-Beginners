@@ -1,12 +1,3 @@
-<!--
-CO_OP_TRANSLATOR_METADATA:
-{
-  "original_hash": "71009af209f81cc01a1f2d324200375f",
-  "translation_date": "2025-10-03T09:07:39+00:00",
-  "source_file": "for-teachers.md",
-  "language_code": "hi"
-}
--->
 ### शिक्षकों के लिए
 
 आप इस पाठ्यक्रम का उपयोग अपने कक्षा में कर सकते हैं। यह GitHub Classroom और प्रमुख LMS प्लेटफॉर्म्स के साथ आसानी से काम करता है, और इसे आपके छात्रों के साथ एक स्वतंत्र रिपॉजिटरी के रूप में भी उपयोग किया जा सकता है।
@@ -42,10 +33,10 @@ CO_OP_TRANSLATOR_METADATA:
   - Moodle Cloud में Common Cartridge समर्थन सीमित है। ऊपर दी गई Moodle फ़ाइल को प्राथमिकता दें, जिसे Canvas में भी अपलोड किया जा सकता है।
   - आयात के बाद, मॉड्यूल, नियत तिथियां, और क्विज़ सेटिंग्स की समीक्षा करें ताकि वे आपके टर्म शेड्यूल से मेल खा सकें।
 
-![Moodle](../../translated_images/moodle.94eb93d714a50cb2c97435b408017dee224348b61bc86203ffd43a4f4e57b95f.hi.png)
+![Moodle](../../translated_images/hi/moodle.94eb93d714a50cb2.webp)
 > Moodle कक्षा में पाठ्यक्रम
 
-![Canvas](../../translated_images/canvas.fbd605ff8e5b8aff567d398528ce113db304446b90b9cad55c654de3fdfcda34.hi.png)
+![Canvas](../../translated_images/hi/canvas.fbd605ff8e5b8aff.webp)
 > Canvas में पाठ्यक्रम
 
 ### सीधे रिपॉजिटरी का उपयोग करें (कोई Classroom नहीं)

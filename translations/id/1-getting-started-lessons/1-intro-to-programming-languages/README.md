@@ -1,12 +1,3 @@
-<!--
-CO_OP_TRANSLATOR_METADATA:
-{
-  "original_hash": "d45ddcc54eb9232a76d08328b09d792e",
-  "translation_date": "2025-11-06T11:41:21+00:00",
-  "source_file": "1-getting-started-lessons/1-intro-to-programming-languages/README.md",
-  "language_code": "id"
-}
--->
 # Pengantar Bahasa Pemrograman dan Alat Pengembang Modern
 
 Hai, calon pengembang! 👋 Boleh saya ceritakan sesuatu yang masih membuat saya merinding setiap hari? Kamu akan segera menyadari bahwa pemrograman bukan hanya tentang komputer – ini adalah kekuatan super nyata untuk mewujudkan ide-ide terliarmu!
@@ -17,7 +8,7 @@ Dengar, saya benar-benar mengerti jika pemrograman terasa menakutkan sekarang. K
 
 Hari ini, kita akan menjelajahi alat-alat luar biasa yang membuat pengembangan web modern tidak hanya mungkin, tetapi juga sangat adiktif. Saya berbicara tentang editor, browser, dan alur kerja yang sama persis yang digunakan pengembang di Netflix, Spotify, dan studio aplikasi indie favoritmu setiap hari. Dan ini bagian yang akan membuatmu ingin menari kegirangan: sebagian besar alat profesional kelas industri ini sepenuhnya gratis!
 
-![Intro Programming](../../../../translated_images/webdev101-programming.d6e3f98e61ac4bff0b27dcbf1c3f16c8ed46984866f2d29988929678b0058fde.id.png)
+![Intro Programming](../../../../translated_images/id/webdev101-programming.d6e3f98e61ac4bff.webp)
 > Sketchnote oleh [Tomomi Imura](https://twitter.com/girlie_mac)
 
 ```mermaid

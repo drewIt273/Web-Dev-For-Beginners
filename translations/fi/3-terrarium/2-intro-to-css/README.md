@@ -1,12 +1,3 @@
-<!--
-CO_OP_TRANSLATOR_METADATA:
-{
-  "original_hash": "e39f3a4e3bcccf94639e3af1248f8a4d",
-  "translation_date": "2025-11-04T01:28:10+00:00",
-  "source_file": "3-terrarium/2-intro-to-css/README.md",
-  "language_code": "fi"
-}
--->
 # Terrarium-projekti Osa 2: Johdatus CSS:ään
 
 ```mermaid
@@ -30,7 +21,7 @@ journey
       Glass reflections: 5: Student
 ```
 
-![Johdatus CSS:ään](../../../../translated_images/webdev101-css.3f7af5991bf53a200d79e7257e5e450408d8ea97f5b531d31b2e3976317338ee.fi.png)
+![Johdatus CSS:ään](../../../../translated_images/fi/webdev101-css.3f7af5991bf53a20.webp)
 > Sketchnote: [Tomomi Imura](https://twitter.com/girlie_mac)
 
 Muistatko, kuinka HTML-terrariumisi näytti melko yksinkertaiselta? CSS:n avulla voimme muuttaa tuon pelkistetyn rakenteen visuaalisesti houkuttelevaksi.
@@ -205,7 +196,7 @@ body {
 
 Avaa selaimesi kehitystyökalut (F12), siirry Elements-välilehteen ja tarkista `<h1>`-elementtisi. Näet, että se perii fonttiperheen body-elementiltä:
 
-![peritty fontti](../../../../translated_images/1.cc07a5cbe114ad1d4728c35134584ac1b87db688eff83cf75985cf31fe0ed95c.fi.png)
+![peritty fontti](../../../../translated_images/fi/1.cc07a5cbe114ad1d.webp)
 
 ✅ **Kokeilua**: Kokeile asettaa muita periytyviä ominaisuuksia `<body>`-elementille, kuten `color`, `line-height` tai `text-align`. Mitä tapahtuu otsikolle ja muille elementeille?
 
@@ -335,7 +326,7 @@ Terrariumissamme jokainen kasvi tarvitsee samanlaista tyylittelyä, mutta myös 
 **Tässä on jokaisen kasvin HTML-rakenne:**
 ```html
 <div class="plant-holder">
-  <img class="plant" alt="Decorative plant for terrarium" id="plant1" src="../../../../translated_images/plant1.d18b18ffe73da18f8b1ac7aba73b4050af52f4a0c9174aeac464b85123fc2850.fi.png" />
+  <img class="plant" alt="Decorative plant for terrarium" id="plant1" src="../../../../translated_images/fi/plant1.d18b18ffe73da18f8b1ac7aba73b4050af52f4a0c9174aeac464b85123fc2850.png" />
 </div>
 ```
 
@@ -592,7 +583,7 @@ Valmis parantamaan terrariumiasi realistisilla lasin heijastuksilla? Tämä tekn
 
 Luot hienovaraisia korostuksia, jotka simuloivat, miten valo heijastuu lasipinnoilta. Tämä lähestymistapa on samanlainen kuin miten renessanssimaalari Jan van Eyck käytti valoa ja heijastusta saadakseen maalatun lasin näyttämään kolmiulotteiselta. Tässä on tavoitteenasi:
 
-![valmis terrarium](../../../../translated_images/terrarium-final.2f07047ffc597d0a06b06cab28a77801a10dd12fdb6c7fc630e9c40665491c53.fi.png)
+![valmis terrarium](../../../../translated_images/fi/terrarium-final.2f07047ffc597d0a.webp)
 
 **Haasteesi:**
 - **Luo** hienovaraisia valkoisia tai vaaleanvärisiä soikeita muotoja lasin heijastuksille

@@ -1,12 +1,3 @@
-<!--
-CO_OP_TRANSLATOR_METADATA:
-{
-  "original_hash": "2066c17078e9d18b5e309f31d8e8bc24",
-  "translation_date": "2025-11-03T13:10:45+00:00",
-  "source_file": "9-chat-project/README.md",
-  "language_code": "ur"
-}
--->
 # چیٹ اسسٹنٹ بنائیں AI کے ساتھ
 
 یاد کریں کہ اسٹار ٹریک میں جب عملہ آرام سے جہاز کے کمپیوٹر سے بات کرتا تھا، پیچیدہ سوالات پوچھتا تھا اور سوچ سمجھ کر جواب حاصل کرتا تھا؟ جو 1960 کی دہائی میں خالص سائنس فکشن لگتا تھا، وہ اب کچھ ایسا ہے جو آپ ویب ٹیکنالوجیز کے ذریعے بنا سکتے ہیں جو آپ پہلے ہی جانتے ہیں۔
@@ -61,7 +52,7 @@ print(response.choices[0].message.content)
 
 یہ ہے کہ آپ کا مکمل شدہ پروجیکٹ کیسا نظر آئے گا:
 
-![چیٹ ایپ انٹرفیس جو صارف اور AI اسسٹنٹ کے درمیان گفتگو دکھا رہا ہے](../../../translated_images/screenshot.0a1ee0d123df681b4501eb53ffb267519fcc20aa653eabecef1e7561ddfb1cab.ur.png)
+![چیٹ ایپ انٹرفیس جو صارف اور AI اسسٹنٹ کے درمیان گفتگو دکھا رہا ہے](../../../translated_images/ur/screenshot.0a1ee0d123df681b.webp)
 
 ## 🗺️ AI ایپلیکیشن ڈویلپمنٹ کے ذریعے آپ کا سیکھنے کا سفر
 
@@ -194,7 +185,7 @@ mindmap
 
 **بنیادی اصول**: AI ایپلیکیشن ڈویلپمنٹ روایتی ویب ڈویلپمنٹ کی مہارتوں کو AI سروس انٹیگریشن کے ساتھ جوڑتا ہے، ذہین ایپلیکیشنز تخلیق کرتا ہے جو صارفین کے لیے قدرتی اور جوابدہ محسوس ہوتی ہیں۔
 
-![GitHub Models AI Playground انٹرفیس ماڈل کے انتخاب اور ٹیسٹنگ ایریا کے ساتھ](../../../translated_images/playground.d2b927122224ff8ff4028fc842176e353c339147d8925455f36c92fb1655c477.ur.png)
+![GitHub Models AI Playground انٹرفیس ماڈل کے انتخاب اور ٹیسٹنگ ایریا کے ساتھ](../../../translated_images/ur/playground.d2b927122224ff8f.webp)
 
 **یہاں ہے کہ پلے گراؤنڈ کو اتنا مفید کیا بناتا ہے:**
 - **مختلف AI ماڈلز آزمائیں** جیسے GPT-4o-mini، Claude، اور دیگر (سب مفت!)
@@ -204,7 +195,7 @@ mindmap
 
 جب آپ تھوڑا سا کھیل چکے ہوں، تو بس "کوڈ" ٹیب پر کلک کریں اور اپنی پروگرامنگ زبان منتخب کریں تاکہ آپ کو وہ نفاذی کوڈ ملے جس کی آپ کو ضرورت ہے۔
 
-![پلے گراؤنڈ کا انتخاب مختلف پروگرامنگ زبانوں کے لیے کوڈ جنریشن کے اختیارات دکھا رہا ہے](../../../translated_images/playground-choice.1d23ba7d407f47584c9f446c77f0bcf70cae794cc9c8d7849a3cca4a3693e6c4.ur.png)
+![پلے گراؤنڈ کا انتخاب مختلف پروگرامنگ زبانوں کے لیے کوڈ جنریشن کے اختیارات دکھا رہا ہے](../../../translated_images/ur/playground-choice.1d23ba7d407f4758.webp)
 
 ## Python بیک اینڈ انٹیگریشن سیٹ اپ کرنا
 
@@ -1930,14 +1921,14 @@ mindmap
 - [Web Dev For Beginners repository](https://github.com/microsoft/Web-Dev-For-Beginners) پر جائیں  
 - اوپر دائیں کونے میں "Use this template" پر کلک کریں (یقینی بنائیں کہ آپ GitHub میں لاگ ان ہیں)  
 
-![ٹیمپلیٹ انٹرفیس دکھا رہا ہے جس میں سبز "Use this template" بٹن ہے](../../../translated_images/template.67ad477109d29a2b04599a83c964c87fcde041256d4f04d3589cbb00c696f76c.ur.png)  
+![ٹیمپلیٹ انٹرفیس دکھا رہا ہے جس میں سبز "Use this template" بٹن ہے](../../../translated_images/ur/template.67ad477109d29a2b.webp)  
 
 **مرحلہ 2: Codespaces لانچ کریں**  
 - اپنی نئی بنائی گئی repository کھولیں  
 - سبز "Code" بٹن پر کلک کریں اور "Codespaces" منتخب کریں  
 - "Create codespace on main" منتخب کریں تاکہ آپ کا ڈیولپمنٹ ماحول شروع ہو سکے  
 
-![Codespace انٹرفیس دکھا رہا ہے جس میں کلاؤڈ ڈیولپمنٹ ماحول لانچ کرنے کے اختیارات ہیں](../../../translated_images/codespace.bcecbdf5d2747d3d17da67a78ad911c8853d68102e34748ec372cde1e9236e1d.ur.png)  
+![Codespace انٹرفیس دکھا رہا ہے جس میں کلاؤڈ ڈیولپمنٹ ماحول لانچ کرنے کے اختیارات ہیں](../../../translated_images/ur/codespace.bcecbdf5d2747d3d.webp)  
 
 **مرحلہ 3: ماحول کی ترتیب**  
 جب آپ کا Codespace لوڈ ہو جائے، آپ کو رسائی حاصل ہوگی:  

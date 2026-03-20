@@ -1,12 +1,3 @@
-<!--
-CO_OP_TRANSLATOR_METADATA:
-{
-  "original_hash": "2066c17078e9d18b5e309f31d8e8bc24",
-  "translation_date": "2025-11-04T01:55:49+00:00",
-  "source_file": "9-chat-project/README.md",
-  "language_code": "nl"
-}
--->
 # Bouw een Chat Assistent met AI
 
 Herinner je je in Star Trek hoe de bemanning casual met de boordcomputer praatte, complexe vragen stelde en doordachte antwoorden kreeg? Wat in de jaren '60 pure sciencefiction leek, kun je nu zelf bouwen met webtechnologieën die je al kent.
@@ -61,7 +52,7 @@ print(response.choices[0].message.content)
 
 Zo ziet je voltooide project eruit:
 
-![Chat-app interface die een gesprek toont tussen gebruiker en AI-assistent](../../../translated_images/screenshot.0a1ee0d123df681b4501eb53ffb267519fcc20aa653eabecef1e7561ddfb1cab.nl.png)
+![Chat-app interface die een gesprek toont tussen gebruiker en AI-assistent](../../../translated_images/nl/screenshot.0a1ee0d123df681b.webp)
 
 ## 🗺️ Jouw leertraject door AI-toepassingsontwikkeling
 
@@ -194,7 +185,7 @@ mindmap
 
 **Kernprincipe**: AI-toepassingsontwikkeling combineert traditionele webontwikkelingsvaardigheden met AI-dienstintegratie, waardoor intelligente toepassingen ontstaan die natuurlijk en responsief aanvoelen voor gebruikers.
 
-![GitHub Models AI Playground interface met modelselectie en testgebied](../../../translated_images/playground.d2b927122224ff8ff4028fc842176e353c339147d8925455f36c92fb1655c477.nl.png)
+![GitHub Models AI Playground interface met modelselectie en testgebied](../../../translated_images/nl/playground.d2b927122224ff8f.webp)
 
 **Waarom de playground zo handig is:**
 - **Probeer** verschillende AI-modellen zoals GPT-4o-mini, Claude en anderen (allemaal gratis!)
@@ -204,7 +195,7 @@ mindmap
 
 Zodra je wat hebt geëxperimenteerd, klik je gewoon op het tabblad "Code" en kies je je programmeertaal om de implementatiecode te krijgen die je nodig hebt.
 
-![Playground keuze toont codegeneratie-opties voor verschillende programmeertalen](../../../translated_images/playground-choice.1d23ba7d407f47584c9f446c77f0bcf70cae794cc9c8d7849a3cca4a3693e6c4.nl.png)
+![Playground keuze toont codegeneratie-opties voor verschillende programmeertalen](../../../translated_images/nl/playground-choice.1d23ba7d407f4758.webp)
 
 ## Het instellen van de Python backend-integratie
 
@@ -2365,14 +2356,14 @@ Wil je dit project uitproberen in een cloudontwikkelingsomgeving? GitHub Codespa
 - **Ga naar** de [Web Dev For Beginners repository](https://github.com/microsoft/Web-Dev-For-Beginners)  
 - **Klik** op "Use this template" in de rechterbovenhoek (zorg ervoor dat je bent ingelogd op GitHub)  
 
-![Interface voor het maken van een template met de groene knop "Use this template"](../../../translated_images/template.67ad477109d29a2b04599a83c964c87fcde041256d4f04d3589cbb00c696f76c.nl.png)  
+![Interface voor het maken van een template met de groene knop "Use this template"](../../../translated_images/nl/template.67ad477109d29a2b.webp)  
 
 **Stap 2: Codespaces Starten**  
 - **Open** je nieuw aangemaakte repository  
 - **Klik** op de groene knop "Code" en selecteer "Codespaces"  
 - **Kies** "Create codespace on main" om je ontwikkelomgeving te starten  
 
-![Interface voor het maken van een codespace met opties voor het starten van een cloudontwikkelingsomgeving](../../../translated_images/codespace.bcecbdf5d2747d3d17da67a78ad911c8853d68102e34748ec372cde1e9236e1d.nl.png)  
+![Interface voor het maken van een codespace met opties voor het starten van een cloudontwikkelingsomgeving](../../../translated_images/nl/codespace.bcecbdf5d2747d3d.webp)  
 
 **Stap 3: Omgevingsconfiguratie**  
 Zodra je Codespace is geladen, heb je toegang tot:  

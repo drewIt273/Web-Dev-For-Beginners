@@ -1,12 +1,3 @@
-<!--
-CO_OP_TRANSLATOR_METADATA:
-{
-  "original_hash": "351678bece18f07d9daa987a881fb062",
-  "translation_date": "2025-11-06T12:55:02+00:00",
-  "source_file": "7-bank-project/1-template-route/README.md",
-  "language_code": "ja"
-}
--->
 # 銀行アプリを作成する Part 1: WebアプリでのHTMLテンプレートとルート
 
 ```mermaid
@@ -635,7 +626,7 @@ sequenceDiagram
 
 `history.pushState`を使用するとブラウザのナビゲーション履歴に新しいエントリが作成されます。ブラウザの*戻るボタン*を押し続けると、次のような履歴が表示されるはずです:
 
-![ナビゲーション履歴のスクリーンショット](../../../../translated_images/history.7fdabbafa521e06455b738d3dafa3ff41d3071deae60ead8c7e0844b9ed987d8.ja.png)
+![ナビゲーション履歴のスクリーンショット](../../../../translated_images/ja/history.7fdabbafa521e064.webp)
 
 戻るボタンを数回クリックしてみると、現在のURLが変更され履歴が更新されますが、同じテンプレートが表示され続けます。
 

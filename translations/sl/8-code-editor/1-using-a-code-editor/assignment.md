@@ -1,12 +1,3 @@
-<!--
-CO_OP_TRANSLATOR_METADATA:
-{
-  "original_hash": "effe56ba51c38d7bdfad1ea38288666b",
-  "translation_date": "2025-10-25T00:21:02+00:00",
-  "source_file": "8-code-editor/1-using-a-code-editor/assignment.md",
-  "language_code": "sl"
-}
--->
 # Ustvarite spletno stran z življenjepisom z uporabo VSCode.dev
 
 Izboljšajte svoje karierne možnosti z izdelavo profesionalne spletne strani z življenjepisom, ki interaktivno in sodobno prikazuje vaše veščine in izkušnje. Namesto pošiljanja tradicionalnih PDF-jev si zamislite, da bi kadrovnikom ponudili elegantno, odzivno spletno stran, ki prikazuje vaše kvalifikacije in sposobnosti spletnega razvoja.
@@ -78,7 +69,7 @@ Ker VSCode.dev zahteva vsaj eno datoteko za odpiranje repozitorija, bomo glavno 
 4. **Napišite** sporočilo za commit: "Dodaj začetno HTML strukturo"
 5. **Kliknite** "Commit new file", da shranite spremembe
 
-![Ustvarjanje začetne datoteke na GitHubu](../../../../translated_images/new-file-github.com.c886796d800e8056561829a181be1382c5303da9d902d8b2dd82b68a4806e21f.sl.png)
+![Ustvarjanje začetne datoteke na GitHubu](../../../../translated_images/sl/new-file-github.com.c886796d800e8056.webp)
 
 **Kaj doseže ta začetna nastavitev:**
 - **Vzpostavi** pravilno strukturo dokumenta HTML5 s semantičnimi elementi
@@ -104,7 +95,7 @@ Zdaj, ko je temelj vašega repozitorija vzpostavljen, preidimo na VSCode.dev za 
 
 ✅ **Indikator uspeha**: Videti bi morali datoteke svojega projekta v stranski vrstici Explorer in `index.html`, ki je na voljo za urejanje v glavnem urejevalnem območju.
 
-![Projekt naložen v VSCode.dev](../../../../translated_images/project-on-vscode.dev.e79815a9a95ee7feac72ebe5c941c91279716be37c575dbdbf2f43bea2c7d8b6.sl.png)
+![Projekt naložen v VSCode.dev](../../../../translated_images/sl/project-on-vscode.dev.e79815a9a95ee7fe.webp)
 
 **Kaj boste videli v vmesniku:**
 - **Stranska vrstica Explorer**: **Prikazuje** datoteke vašega repozitorija in strukturo map
@@ -448,7 +439,7 @@ Razširitve izboljšajo vašo izkušnjo razvoja z omogočanjem funkcij, kot so p
 **Takojšnji rezultati po namestitvi:**
 Ko je CodeSwing nameščen, se bo v urejevalniku prikazal predogled vaše spletne strani z življenjepisom v živo. To vam omogoča, da vidite, kako vaša stran izgleda, medtem ko jo spreminjate.
 
-![Razširitev CodeSwing prikazuje predogled v živo](../../../../translated_images/after-codeswing-extension-pb.0ebddddcf73b550994947a9084e35e2836c713ae13839d49628e3c764c1cfe83.sl.png)
+![Razširitev CodeSwing prikazuje predogled v živo](../../../../translated_images/sl/after-codeswing-extension-pb.0ebddddcf73b5509.webp)
 
 **Razumevanje izboljšanega vmesnika:**
 - **Razdeljen pogled**: **Prikazuje** vašo kodo na eni strani in predogled v živo na drugi

@@ -1,12 +1,3 @@
-<!--
-CO_OP_TRANSLATOR_METADATA:
-{
-  "original_hash": "2b6203a48c48d8234e0948353b47d84e",
-  "translation_date": "2025-11-06T11:59:02+00:00",
-  "source_file": "5-browser-extension/2-forms-browsers-local-storage/README.md",
-  "language_code": "id"
-}
--->
 # Proyek Ekstensi Browser Bagian 2: Memanggil API, menggunakan Penyimpanan Lokal
 
 ```mermaid
@@ -268,7 +259,7 @@ stateDiagram-v2
     ClearStorage --> FirstTime: Back to setup
 ```
 
-![Panel penyimpanan lokal](../../../../translated_images/localstorage.472f8147b6a3f8d141d9551c95a2da610ac9a3c6a73d4a1c224081c98bae09d9.id.png)
+![Panel penyimpanan lokal](../../../../translated_images/id/localstorage.472f8147b6a3f8d1.webp)
 
 > ⚠️ **Pertimbangan Keamanan**: Dalam aplikasi produksi, menyimpan kunci API di LocalStorage menimbulkan risiko keamanan karena JavaScript dapat mengakses data ini. Untuk tujuan pembelajaran, pendekatan ini baik-baik saja, tetapi aplikasi nyata harus menggunakan penyimpanan sisi server yang aman untuk kredensial sensitif.
 

@@ -1,12 +1,3 @@
-<!--
-CO_OP_TRANSLATOR_METADATA:
-{
-  "original_hash": "7994743c5b21fdcceb36307916ef249a",
-  "translation_date": "2025-11-04T02:36:49+00:00",
-  "source_file": "6-space-game/2-drawing-to-canvas/README.md",
-  "language_code": "he"
-}
--->
 # בנה משחק חלל חלק 2: ציור גיבור ומפלצות על הקנבס
 
 ```mermaid
@@ -108,7 +99,7 @@ quadrantChart
     UI Elements: [0.9, 0.1]
 ```
 
-![הרשת של הקנבס](../../../../translated_images/canvas_grid.5f209da785ded492a01ece440e3032afe51efa500cc2308e5ea4252487ceaf0b.he.png)
+![הרשת של הקנבס](../../../../translated_images/he/canvas_grid.5f209da785ded492.webp)
 > תמונה מ-[MDN](https://developer.mozilla.org/docs/Web/API/Canvas_API/Tutorial/Drawing_shapes)
 
 כדי לצייר על אלמנט הקנבס, תעקבו אחר אותו תהליך בן שלושה שלבים שמרכיב את הבסיס לכל גרפיקת הקנבס. ברגע שתעשו זאת כמה פעמים, זה יהפוך לטבע שני:
@@ -329,11 +320,11 @@ flowchart TD
 
 - ספינת גיבור
 
-   ![ספינת גיבור](../../../../translated_images/player.dd24c1afa8c71e9b82b2958946d4bad13308681392d4b5ddcc61a0e818ef8088.he.png)
+   ![ספינת גיבור](../../../../translated_images/he/player.dd24c1afa8c71e9b.webp)
 
 - 5*5 מפלצות
 
-   ![ספינת מפלצת](../../../../translated_images/enemyShip.5df2a822c16650c2fb3c06652e8ec8120cdb9122a6de46b9a1a56d54db22657f.he.png)
+   ![ספינת מפלצת](../../../../translated_images/he/enemyShip.5df2a822c16650c2.webp)
 
 ### צעדים מומלצים להתחלת הפיתוח
 
@@ -470,7 +461,7 @@ for (let x = START_X; x < STOP_X; x += ENEMY_SPACING) {
 
 התוצאה הסופית צריכה להיראות כך:  
 
-![מסך שחור עם גיבור ו-5*5 מפלצות](../../../../translated_images/partI-solution.36c53b48c9ffae2a5e15496b23b604ba5393433e4bf91608a7a0a020eb7a2691.he.png)  
+![מסך שחור עם גיבור ו-5*5 מפלצות](../../../../translated_images/he/partI-solution.36c53b48c9ffae2a.webp)  
 
 ## פתרון  
 

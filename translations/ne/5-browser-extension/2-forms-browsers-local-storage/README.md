@@ -1,12 +1,3 @@
-<!--
-CO_OP_TRANSLATOR_METADATA:
-{
-  "original_hash": "2b6203a48c48d8234e0948353b47d84e",
-  "translation_date": "2025-11-03T15:58:57+00:00",
-  "source_file": "5-browser-extension/2-forms-browsers-local-storage/README.md",
-  "language_code": "ne"
-}
--->
 # ब्राउजर एक्सटेन्सन प्रोजेक्ट भाग २: API कल गर्नुहोस्, लोकल स्टोरेज प्रयोग गर्नुहोस्
 
 ```mermaid
@@ -268,7 +259,7 @@ stateDiagram-v2
     ClearStorage --> FirstTime: Back to setup
 ```
 
-![लोकल स्टोरेज प्यान](../../../../translated_images/localstorage.472f8147b6a3f8d141d9551c95a2da610ac9a3c6a73d4a1c224081c98bae09d9.ne.png)
+![लोकल स्टोरेज प्यान](../../../../translated_images/ne/localstorage.472f8147b6a3f8d1.webp)
 
 > ⚠️ **सुरक्षा विचार**: उत्पादन अनुप्रयोगहरूमा, लोकल स्टोरेजमा API कुञ्जीहरू भण्डारण गर्दा सुरक्षा जोखिमहरू हुन्छन् किनभने जाभास्क्रिप्टले यो डाटामा पहुँच गर्न सक्छ। सिक्ने उद्देश्यका लागि, यो दृष्टिकोण ठीक छ, तर वास्तविक अनुप्रयोगहरूले संवेदनशील प्रमाणपत्रहरूको लागि सुरक्षित सर्भर-साइड स्टोरेज प्रयोग गर्नुपर्छ।
 

@@ -1,12 +1,3 @@
-<!--
-CO_OP_TRANSLATOR_METADATA:
-{
-  "original_hash": "50a7783473b39a2e0f133e271a102231",
-  "translation_date": "2025-10-24T19:31:56+00:00",
-  "source_file": "7-bank-project/4-state-management/assignment.md",
-  "language_code": "sw"
-}
--->
 # Tekeleza "Ongeza Muamala" Dialogi
 
 ## Muhtasari
@@ -112,7 +103,7 @@ Rejelea [nyaraka za API ya seva](../api/README.md) kwa:
 **Matokeo Yanayotarajiwa:**
 Baada ya kukamilisha kazi hii, programu yako ya benki inapaswa kuwa na kipengele kamili cha "Ongeza Muamala" ambacho kinaonekana na kinafanya kazi kitaalamu:
 
-![Picha ya skrini inayoonyesha mfano wa dialogi ya "Ongeza muamala"](../../../../translated_images/dialog.93bba104afeb79f12f65ebf8f521c5d64e179c40b791c49c242cf15f7e7fab15.sw.png)
+![Picha ya skrini inayoonyesha mfano wa dialogi ya "Ongeza muamala"](../../../../translated_images/sw/dialog.93bba104afeb79f1.webp)
 
 ## Kupima Utekelezaji Wako
 

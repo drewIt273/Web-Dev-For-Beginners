@@ -1,52 +1,59 @@
-<!--
-CO_OP_TRANSLATOR_METADATA:
-{
-  "original_hash": "acad15f3164cd6348e065ff38619aae9",
-  "translation_date": "2025-10-24T23:55:51+00:00",
-  "source_file": "1-getting-started-lessons/2-github-basics/README.md",
-  "language_code": "hr"
-}
--->
 # Uvod u GitHub
 
-Pozdrav, budući programeru! 👋 Spreman si pridružiti se milijunima kodera diljem svijeta? Iskreno sam uzbuđen što ti mogu predstaviti GitHub – zamisli ga kao društvenu mrežu za programere, samo što umjesto dijeljenja fotografija ručka dijelimo kod i zajedno gradimo nevjerojatne stvari!
+Bok, budući programeru! 👋 Spreman za pridruživanje milijunima programera diljem svijeta? Iskreno sam uzbuđen što ću ti predstaviti GitHub – zamisli to kao društvenu mrežu za programere, samo što umjesto dijeljenja slika svog ručka, dijelimo kod i zajedno gradimo nevjerojatne stvari!
 
-Ono što me apsolutno oduševljava: svaka aplikacija na tvom mobitelu, svaka web stranica koju posjetiš i većina alata koje ćeš naučiti koristiti izgrađeni su od strane timova programera koji surađuju na platformama poput GitHuba. Ona glazbena aplikacija koju obožavaš? Netko poput tebe je pridonio njenom razvoju. Ona igra koju ne možeš prestati igrati? Da, vjerojatno je izgrađena uz suradnju na GitHubu. A sada ćeš TI naučiti kako postati dio te nevjerojatne zajednice!
+Ono što me potpuno oduševljava jest ovo: svaka aplikacija na tvom telefonu, svaka web stranica koju posjetiš i većina alata koje ćeš naučiti koristiti napravljeni su od strane timova programera koji surađuju na platformama poput GitHuba. Ta glazbena aplikacija koja ti se sviđa? Netko poput tebe je na tome radio. Ta igra koju ne možeš prestati igrati? Da, vjerojatno je izrađena uz suradnju na GitHubu. I sada ćeš TI naučiti kako biti dio te nevjerojatne zajednice!
 
-Znam da ti se ovo na početku može činiti previše – iskreno, sjećam se kad sam prvi put gledao GitHub stranicu i mislio "Što ovo sve znači?" Ali evo u čemu je stvar: svaki programer je započeo točno tamo gdje si ti sada. Do kraja ove lekcije imat ćeš vlastiti GitHub repozitorij (zamisli ga kao svoj osobni projekt u oblaku), znat ćeš kako spremiti svoj rad, podijeliti ga s drugima, pa čak i pridonijeti projektima koje koriste milijuni ljudi.
+Znam da ti to može na početku djelovati previše – sjećam se i sam da sam gledao svoju prvu GitHub stranicu misleći "Što, zaboga, sve ovo znači?" Ali evo što je važno: svaki programer je počeo točno tamo gdje si sada ti. Do kraja ove lekcije imat ćeš svoj vlastiti GitHub repozitorij (zamislite to kao tvoju osobnu vitrinu projekata u oblaku), i znat ćeš kako spremiti svoj rad, podijeliti ga s drugima, pa čak i pridonijeti projektima koje koristi milijune ljudi.
 
-Krenut ćemo na ovo putovanje zajedno, korak po korak. Bez žurbe, bez pritiska – samo ti, ja i neki stvarno cool alati koji će postati tvoji novi najbolji prijatelji!
+Krenut ćemo na ovo putovanje zajedno, korak po korak. Bez žurbe, bez pritiska – samo ti, ja i nekoliko stvarno cool alata koji će ubrzo postati tvoji novi najbolji prijatelji!
 
-![Uvod u GitHub](../../../../translated_images/webdev101-github.8846d7971abef6f947909b4f9d343e2a23778aa716ca6b9d71df7174ee5009ac.hr.png)
-> Sketchnote autorice [Tomomi Imura](https://twitter.com/girlie_mac)
+![Intro to GitHub](../../../../translated_images/hr/webdev101-github.8846d7971abef6f9.webp)
+> Sketchnote by [Tomomi Imura](https://twitter.com/girlie_mac)
 
-## Kviz prije predavanja
-[Pre-lecture quiz](https://ff-quizzes.netlify.app)
+```mermaid
+journey
+    title Vaša GitHub avantura danas
+    section Postavljanje
+      Instalirajte Git: 4: You
+      Kreirajte račun: 5: You
+      Prvi repozitorij: 5: You
+    section Ovladavanje Gitom
+      Lokalni izmjene: 4: You
+      Commitovi i Push: 5: You
+      Grananje: 4: You
+    section Suradnja
+      Forkajte projekte: 4: You
+      Pull zahtjevi: 5: You
+      Open Source: 5: You
+```
+## Pred-predavanje kviz
+[Pred-predavanje kviz](https://ff-quizzes.netlify.app)
 
 ## Uvod
 
-Prije nego što zaronimo u stvarno uzbudljive stvari, pripremimo tvoje računalo za malo GitHub magije! Zamisli ovo kao organiziranje svojih umjetničkih potrepština prije nego što stvoriš remek-djelo – imati prave alate spremne čini sve puno lakšim i zabavnijim.
+Prije nego što zaronimo u stvarno uzbudljive stvari, pripremimo tvoj računalni sustav za malo GitHub čarolije! Zamislite ovo kao organiziranje tvojih umjetničkih potrepština prije nego što započneš s majstorskim djelom – imati prave alate spremne čini sve lakšim i puno zabavnijim.
 
-Provest ću te kroz svaki korak postavljanja osobno i obećavam da nije ni približno zastrašujuće kako se možda čini na prvi pogled. Ako nešto odmah ne shvatiš, to je potpuno normalno! Sjećam se kad sam prvi put postavljao svoje razvojno okruženje i osjećao se kao da pokušavam čitati drevne hijeroglife. Svaki programer je bio točno tamo gdje si ti sada, pitajući se radi li sve ispravno. Spoiler: ako si ovdje i učiš, već radiš ispravno! 🌟
+Vodit ću te kroz svaki korak postavljanja osobno i obećavam da nije ni približno tako zastrašujuće kako bi na prvi pogled moglo izgledati. Ako ti nešto ne klikne odmah, to je potpuno normalno! Sjećam se kad sam postavljao svoje prvo razvojno okruženje i osjećao se kao da pokušavam čitati drevne hijeroglife. Svaki programer bio je točno tamo gdje si ti sada, pitajući se radi li to ispravno. Spojler alert: ako si ovdje i učiš, već radiš ispravno! 🌟
 
 U ovoj lekciji pokrit ćemo:
 
-- praćenje rada na tvom računalu
+- praćenje rada koji obavljaš na svojem računalu
 - rad na projektima s drugima
-- kako pridonijeti softveru otvorenog koda
+- kako doprinijeti open source softveru
 
 ### Preduvjeti
 
-Pripremimo tvoje računalo za malo GitHub magije! Ne brini – ovo postavljanje je nešto što trebaš učiniti samo jednom, a onda si spreman za cijelo svoje kodersko putovanje.
+Pripremimo tvoje računalo za malo GitHub čarolije! Ne brini – ovo postavljanje trebaš napraviti samo jednom, a onda ćeš biti spreman za cijelo svoje programersko putovanje.
 
-U redu, krenimo s osnovama! Prvo, trebamo provjeriti je li Git već instaliran na tvom računalu. Git je poput super-pametnog asistenta koji pamti svaku promjenu koju napraviš u svom kodu – puno bolje od paničnog pritiskanja Ctrl+S svake dvije sekunde (svi smo to radili!).
+Dobro, krenimo od temelja! Prvo trebamo provjeriti je li Git već instaliran na tvom računalu. Git je zapravo kao superpametni pomoćnik koji pamti svaku promjenu koju napraviš u svom kodu – mnogo je bolji nego panično pritiskati Ctrl+S svake dvije sekunde (svi smo to prošli!).
 
-Provjerimo je li Git već instaliran tako da upišemo ovu čarobnu naredbu u terminal:
+Provjerimo je li Git već instaliran tako da upišeš ovu magičnu naredbu u svoj terminal:
 `git --version`
 
-Ako Git još nije instaliran, nema problema! Samo posjeti [download Git](https://git-scm.com/downloads) i preuzmi ga. Kad ga instaliraš, trebamo Gitu predstaviti tebe kako treba:
+Ako Git još nije instaliran, nema brige! Samo posjeti [download Git](https://git-scm.com/downloads) i preuzmi ga. Nakon što ga instaliraš, trebaš upoznati Git kako treba:
 
-> 💡 **Prvo postavljanje**: Ove naredbe govore Gitu tko si ti. Ove informacije bit će pridružene svakoj promjeni koju napraviš, pa odaberi ime i e-mail s kojima se osjećaš ugodno dijeliti javno.
+> 💡 **Prvo postavljanje**: Ove naredbe Git-u govore tko si. Te informacije bit će povezane sa svakim tvojim komitom, zato odaberi ime i email koje ti je ugodno dijeliti javno.
 
 ```bash
 git config --global user.name "your-name"
@@ -58,113 +65,136 @@ Za provjeru je li Git već konfiguriran možeš upisati:
 git config --list
 ```
 
-Trebat će ti i GitHub račun, uređivač koda (poput Visual Studio Code-a), i trebat ćeš otvoriti svoj terminal (ili: command prompt).
+Trebat će ti također GitHub račun, uređivač koda (kao što je Visual Studio Code) i trebaš otvoriti svoj terminal (ili: command prompt).
 
 Posjeti [github.com](https://github.com/) i kreiraj račun ako ga već nemaš, ili se prijavi i popuni svoj profil.
 
-💡 **Moderni savjet**: Razmisli o postavljanju [SSH ključeva](https://docs.github.com/en/authentication/connecting-to-github-with-ssh) ili korištenju [GitHub CLI](https://cli.github.com/) za lakšu autentifikaciju bez lozinki.
+💡 **Suvremeni savjet**: Razmotri postavljanje [SSH ključeva](https://docs.github.com/en/authentication/connecting-to-github-with-ssh) ili korištenje [GitHub CLI](https://cli.github.com/) za lakšu autentifikaciju bez lozinki.
 
-✅ GitHub nije jedini repozitorij koda na svijetu; postoje i drugi, ali GitHub je najpoznatiji.
+✅ GitHub nije jedini repozitorij koda na svijetu; postoje i drugi, ali GitHub je najpoznatiji
 
 ### Priprema
 
-Trebat će ti mapa s kodnim projektom na tvom lokalnom računalu (laptop ili PC) i javni repozitorij na GitHubu, koji će poslužiti kao primjer kako pridonijeti projektima drugih.
+Trebat ćeš imati mapu s projektnim kodom na lokalnom računalu (laptop ili PC), i javni repozitorij na GitHubu, koji će poslužiti kao primjer kako doprinijeti projektima drugih.
 
-### Čuvanje tvog koda
+### Sigurnost tvog koda
 
-Razgovarajmo o sigurnosti na trenutak – ali ne brini, nećemo te preplaviti strašnim stvarima! Zamisli ove sigurnosne prakse kao zaključavanje auta ili kuće. To su jednostavne navike koje postaju prirodne i štite tvoj trud.
+Razgovarajmo o sigurnosti na trenutak – ali ne brini, nećemo te preplaviti strašnim stvarima! Zamislimo sigurnosne prakse kao zaključavanje auta ili kuće. To su jednostavne navike koje postaju druga priroda i štite tvoj naporan rad.
 
-Pokazat ćemo ti moderne, sigurne načine rada s GitHubom od samog početka. Na taj način razvijaš dobre navike koje će ti koristiti tijekom cijele karijere u kodiranju.
+Pokazat ćemo ti moderne, sigurne načine rada s GitHubom odmah od početka. Tako ćeš razviti dobre navike koje će ti koristiti tijekom cijele programerske karijere.
 
 Kad radiš s GitHubom, važno je slijediti najbolje sigurnosne prakse:
 
-| Područje sigurnosti | Najbolja praksa | Zašto je važno |
-|---------------------|-----------------|----------------|
-| **Autentifikacija** | Koristi SSH ključeve ili osobne pristupne tokene | Lozinke su manje sigurne i postupno se ukidaju |
+| Sigurnosno područje | Najbolja praksa | Zašto je važno |
+|---------------------|-----------------|---------------|
+| **Autentifikacija** | Koristi SSH ključeve ili Personal Access Token-e | Lozinke su manje sigurne i izbacuju se iz upotrebe |
 | **Dvofaktorska autentifikacija** | Omogući 2FA na svom GitHub računu | Dodaje dodatni sloj zaštite računa |
-| **Sigurnost repozitorija** | Nikad ne objavljuj osjetljive informacije | API ključevi i lozinke ne bi trebali biti u javnim repozitorijima |
-| **Upravljanje ovisnostima** | Omogući Dependabot za ažuriranja | Održava tvoje ovisnosti sigurnima i ažuriranima |
+| **Sigurnost repozitorija** | Nikad ne komitiraj osjetljive podatke | API ključevi i lozinke ne smiju biti u javnim repozitorijima |
+| **Upravljanje ovisnostima** | Omogući Dependabot za ažuriranja | Održava ovisnosti sigurnim i ažuriranim |
 
-> ⚠️ **Važan sigurnosni podsjetnik**: Nikada ne objavljuj API ključeve, lozinke ili druge osjetljive informacije u bilo kojem repozitoriju. Koristi varijable okruženja i `.gitignore` datoteke za zaštitu osjetljivih podataka.
+> ⚠️ **Kritičan sigurnosni podsjetnik**: Nikad ne komitiraj API ključeve, lozinke ili druge osjetljive informacije u bilo koji repozitorij. Koristi varijable okoline i `.gitignore` datoteke za zaštitu osjetljivih podataka.
 
-**Postavljanje moderne autentifikacije:**
+**Suvremeno postavljanje autentifikacije:**
 
 ```bash
-# Generate SSH key (modern ed25519 algorithm)
+# Generiraj SSH ključ (moderan ed25519 algoritam)
 ssh-keygen -t ed25519 -C "your_email@example.com"
 
-# Set up Git to use SSH
+# Postavi Git da koristi SSH
 git remote set-url origin git@github.com:username/repository.git
 ```
 
-> 💡 **Savjet profesionalaca**: SSH ključevi eliminiraju potrebu za stalnim unosom lozinki i sigurniji su od tradicionalnih metoda autentifikacije.
+> 💡 **Profesionalni savjet**: SSH ključevi eliminiraju potrebu za ponovnim unosom lozinki i sigurniji su od tradicionalnih metoda autentifikacije.
 
 ---
 
-## Upravljanje kodom kao profesionalac
+## Upravljanje svojim kodom kao profesionalac
 
-U redu, OVO je trenutak kad stvari postaju stvarno uzbudljive! 🎉 Sada ćemo naučiti kako pratiti i upravljati svojim kodom kao pravi profesionalci, i iskreno, ovo je jedna od mojih najdražih stvari za podučavanje jer je prava promjena u igri.
+E pa, OVO je ono gdje stvari postaju stvarno uzbudljive! 🎉 Upravo ćemo naučiti kako pratiti i upravljati svojim kodom kao profesionalci, i iskreno, ovo je jedna od mojih omiljenih stvari za podučavati jer mijenja igru.
 
-Zamisli ovo: pišeš nevjerojatnu priču i želiš pratiti svaku verziju, svaki briljantni edit i svaki "čekaj, ovo je genijalno!" trenutak. To je upravo ono što Git radi za tvoj kod! To je kao da imaš najnevjerojatniju bilježnicu koja pamti SVE – svaki pritisak tipke, svaku promjenu, svaki "ups, sve sam pokvario" trenutak koji možeš odmah poništiti.
+Zamislite ovo: pišeš fantastičnu priču i želiš pratiti svaki nacrt, svaku briljantnu izmenu i svaki "čekaj, pa ovo je genijalno!" trenutak na putu. Upravo to Git radi za tvoj kod! Kao da imaš nevjerojatnu bilježnicu koja putuje kroz vrijeme i pamti SVE – svaki pritisak tipke, svaku promjenu, svaki "ups, sve sam zezao" trenutak koji možeš odmah poništiti.
 
-Iskreno, ovo može na početku djelovati zbunjujuće. Kad sam počeo, mislio sam "Zašto jednostavno ne mogu spremiti svoje datoteke kao inače?" Ali vjeruj mi: kad ti Git postane jasan (i hoće!), imat ćeš jedan od onih trenutaka kad pomisliš "Kako sam IKADA kodirao bez ovoga?" To je kao da otkriješ da možeš letjeti nakon što si cijeli život hodao!
+Iskreno – na početku ti to može biti previše. Kad sam ja počinjao, mislio sam "Zašto ne mogu samo normalno spremiti datoteke?" Ali vjeruj mi: čim ti Git klikne (i hoće!), dobit ćeš onaj "aha" trenutak kad pomisliš "Kako sam PA ikad programirao bez ovoga?" Kao da otkriješ da možeš letjeti kad si cijeli život hodao!
 
-Recimo da imaš mapu lokalno s nekim kodnim projektom i želiš početi pratiti svoj napredak koristeći git - sustav za kontrolu verzija. Neki ljudi uspoređuju korištenje gita s pisanjem ljubavnog pisma svom budućem ja. Čitajući svoje poruke o promjenama danima, tjednima ili mjesecima kasnije, moći ćeš se prisjetiti zašto si donio određenu odluku ili "vratiti" promjenu – naravno, ako napišeš dobre poruke o promjenama.
+Recimo da imaš mapu lokalno s nekim projektnim kodom i želiš početi pratiti svoj napredak pomoću git-a – sustava za praćenje verzija. Neki ljudi uspoređuju korištenje git-a s pisanjem ljubavnog pisma svojem budućem ja. Kad kasnije čitaš svoje komit poruke nakon dana, tjedana ili mjeseci, moći ćeš se sjetiti zašto si donio određenu odluku ili "vratiti" promjenu – pod uvjetom da pišeš dobre "commit message".
 
-### Zadatak: Kreiraj svoj prvi repozitorij!
+```mermaid
+flowchart TD
+    A[📁 Vaše Projektne Datoteke] --> B{Je li to Git Repozitorij?}
+    B -->|Ne| C[git init]
+    B -->|Da| D[Izvrši Promjene]
+    C --> D
+    D --> E[git add .]
+    E --> F["git commit -m 'poruka'"]
+    F --> G[git push]
+    G --> H[🌟 Kod na GitHubu!]
+    
+    H --> I{Želite li surađivati?}
+    I -->|Da| J[Fork i Kloniraj]
+    I -->|Ne| D
+    J --> K[Kreiraj Grananje]
+    K --> L[Izvrši Promjene]
+    L --> M[Pull Request]
+    M --> N[🎉 Sudjelujete!]
+    
+    style A fill:#fff59d
+    style H fill:#c8e6c9
+    style N fill:#ff4081,color:#fff
+```
+### Zadatak: Napravi svoj prvi repozitorij!
 
-> 🎯 **Tvoj zadatak (i jako sam uzbuđen zbog toga!)**: Zajedno ćemo kreirati tvoj prvi GitHub repozitorij! Kad završimo, imat ćeš svoj mali kutak interneta gdje će živjeti tvoj kod, i napravit ćeš svoju prvu "promjenu" (to je programerski izraz za pametno spremanje svog rada).
+> 🎯 **Tvoja misija (i toliko sam uzbuđen zbog tebe!)**: Zajedno ćemo napraviti tvoj prvi GitHub repozitorij! Do kraja ove lekcije imati ćeš svoj mali kutak interneta gdje živi tvoj kod i napravit ćeš svoj prvi "commit" (to je programerski izraz za pametno spremanje rada). 
 >
-> Ovo je zaista poseban trenutak – službeno se pridružuješ globalnoj zajednici programera! Još se sjećam uzbuđenja kad sam kreirao svoj prvi repozitorij i pomislio "Wow, stvarno ovo radim!"
+> Ovo je stvarno poseban trenutak – službeno se pridružuješ globalnoj zajednici programera! Još se sjećam uzbuđenja kad sam napravio svoj prvi repozitorij i pomislio "Vau, stvarno to radim!"
 
-Prođimo kroz ovu avanturu zajedno, korak po korak. Uzmi si vremena za svaki dio – nema nagrade za žurbu, i obećavam da će svaki korak imati smisla. Zapamti, svaki koderski superstar kojeg se diviš jednom je bio točno tamo gdje si ti, spreman kreirati svoj prvi repozitorij. Kako je to cool?
+Prođimo zajedno kroz ovu avanturu, korak po korak. Uzmi si vremena za svaki dio – nema nagrade za žurbu i obećajem da će svaki korak imati smisla. Sjeti se, svaki programerski superstar kojeg cijeniš nekad je sjedio točno gdje si ti sada, spreman napraviti svoj prvi repozitorij. Kako je to super, zar ne?
 
 > Pogledaj video
 > 
-> [![Osnove Gita i GitHuba video](https://img.youtube.com/vi/9R31OUPpxU4/0.jpg)](https://www.youtube.com/watch?v=9R31OUPpxU4)
+> [![Git and GitHub basics video](https://img.youtube.com/vi/9R31OUPpxU4/0.jpg)](https://www.youtube.com/watch?v=9R31OUPpxU4)
 
-**Krenimo zajedno:**
+**Napravimo to zajedno:**
 
-1. **Kreiraj svoj repozitorij na GitHubu**. Posjeti GitHub.com i potraži onaj svijetlo zeleni gumb **New** (ili znak **+** u gornjem desnom kutu). Klikni na njega i odaberi **New repository**.
+1. **Napravi svoj repozitorij na GitHubu**. Otiđi na GitHub.com i potraži onaj svijetlo zeleni gumb **New** (ili znak **+** u gornjem desnom kutu). Klikni na njega i odaberi **New repository**.
 
-   Evo što trebaš učiniti:
-   1. Daj svom repozitoriju ime – neka bude nešto što ti ima smisla!
-   1. Dodaj opis ako želiš (to pomaže drugima da razumiju o čemu se radi u tvom projektu)
-   1. Odluči želiš li da bude javan (da ga svi mogu vidjeti) ili privatan (samo za tebe)
-   1. Preporučujem da označiš okvir za dodavanje README datoteke – to je kao naslovna stranica tvog projekta
-   1. Klikni **Create repository** i proslavi – upravo si kreirao svoj prvi repozitorij! 🎉
+   Evo što treba napraviti:
+   1. Daj repozitoriju ime – neka ti znači nešto!
+   1. Dodaj opis ako želiš (pomaže drugima da razumiju o čemu je tvoj projekt)
+   1. Odluči hoćeš li da bude javan (svi ga mogu vidjeti) ili privatan (samo ti)
+   1. Preporučujem da označiš kućicu za dodavanje README datoteke – to je kao naslovnica tvog projekta
+   1. Klikni **Create repository** i slavi – upravo si napravio svoj prvi repozitorij! 🎉
 
-2. **Navigiraj do svoje projektne mape**. Sada otvorimo tvoj terminal (ne brini, nije tako strašan kako izgleda!). Moramo reći tvom računalu gdje se nalaze tvoje projektne datoteke. Upiši ovu naredbu:
+2. **Idi u svoj projektni folder**. Sada otvorimo terminal (ne brini, nije tako strašno kako izgleda!). Trebamo reći računalu gdje su tvoje projektne datoteke. Upiši ovu naredbu:
 
    ```bash
    cd [name of your folder]
    ```
 
    **Što ovdje radimo:**
-   - U osnovi kažemo "Hej računalo, odvedi me do moje projektne mape"
-   - Ovo je kao otvaranje određene mape na tvom desktopu, ali to radimo tekstualnim naredbama
-   - Zamijeni `[ime tvoje mape]` stvarnim imenom tvoje projektne mape
+   - Recimo računalu "Hej, odvodi me u moj projektni folder"
+   - Kao da otvaraš određenu mapu na desktopu, samo sada radimo s tekstualnim naredbama
+   - Zamijeni `[name of your folder]` stvarnim imenom svoje projektne mape
 
-3. **Pretvori svoju mapu u Git repozitorij**. Ovdje se događa magija! Upiši:
+3. **Pretvori svoju mapu u Git repozitorij**. Ovamo dolazi magija! Upiši:
 
    ```bash
    git init
    ```
 
-   **Evo što se upravo dogodilo (prilično cool stvari!):**
-   - Git je upravo stvorio skrivenu `.git` mapu u tvom projektu – nećeš je vidjeti, ali tamo je!
-   - Tvoja obična mapa sada je "repozitorij" koji može pratiti svaku promjenu koju napraviš
-   - Zamisli to kao da svojoj mapi daješ supermoći da pamti sve
+   **Evo što se upravo dogodilo (prilično kul stvari!):**
+   - Git je upravo stvorio skrivenu `.git` mapu u tvom projektu – nećeš je vidjeti, ali je tu!
+   - Tvoja obična mapa sada je "repozitorij" koji može pratiti svaku tvoju promjenu
+   - Zamislite to kao da daješ svojoj mapi supermoći da sve pamti
 
-4. **Provjeri što se događa**. Pogledaj što Git misli o tvom projektu trenutno:
+4. **Provjeri što se događa**. Pogledajmo što Git misli o tvom projektu trenutno:
 
    ```bash
    git status
    ```
 
-   **Razumijevanje onoga što ti Git govori:**
+   **Razumijevanje što ti Git govori:**
    
-   Možda ćeš vidjeti nešto što izgleda ovako:
+   Možda vidiš nešto ovako:
 
    ```output
    Changes not staged for commit:
@@ -175,66 +205,66 @@ Prođimo kroz ovu avanturu zajedno, korak po korak. Uzmi si vremena za svaki dio
         modified:   file2.txt
    ```
 
-   **Ne paničari! Evo što to znači:**
-   - Datoteke u **crvenom** su datoteke koje imaju promjene, ali još nisu spremne za spremanje
-   - Datoteke u **zelenom** (kad ih vidiš) su spremne za spremanje
-   - Git ti pomaže tako što ti točno govori što možeš učiniti sljedeće
+   **Ne paniči! Evo što to znači:**
+   - Datoteke u **crvenom** su datoteke koje su promijenjene, ali još nisu spremne za pohranu
+   - Datoteke u **zelenom** (kad ih vidiš) su spremne za pohranu
+   - Git ti pomaže govoreći ti što možeš sljedeće napraviti
 
-   > 💡 **Savjet profesionalaca**: Naredba `git status` je tvoj najbolji prijatelj! Koristi je kad god si zbunjen oko toga što se događa. To je kao da pitaš Git "Hej, koja je situacija trenutno?"
+   > 💡 **Profesionalni savjet**: naredba `git status` tvoj je najbolji prijatelj! Koristi ju kad god si zbunjen što se događa. Kao da pitaš Git "Hej, kakva je sada situacija?"
 
-5. **Pripremi svoje datoteke za spremanje** (to se zove "staging"):
+5. **Pripremi datoteke za pohranu** (to se zove "staging"):
 
    ```bash
    git add .
    ```
 
-   **Što smo upravo učinili:**
-   - Rekli smo Gitu "Hej, želim uključiti SVE svoje datoteke u sljedeće spremanje"
-   - `.` je kao da kažeš "sve u ovoj mapi"
-   - Sada su tvoje datoteke "pripremljene" i spremne za sljedeći korak
+   **Što smo upravo napravili:**
+   - Rekli smo Gitu "Hej, želim uključiti SVE datoteke u sljedeće spremanje"
+   - `.` znači "sve u ovoj mapi"
+   - Sada su tvoje datoteke "staged" i spremne za sljedeći korak
 
-   **Želiš biti selektivniji?** Možeš dodati samo određene datoteke:
+   **Želiš biti izbirljiviji?** Možeš dodati samo određene datoteke:
 
    ```bash
    git add [file or folder name]
    ```
 
-   **Zašto bi to želio učiniti?**
+   **Zašto bi to želio?**
    - Ponekad želiš spremiti povezane promjene zajedno
-   - Pomaže ti organizirati svoj rad u logične cjeline
-   - Olakšava razumijevanje što se promijenilo i kada
+   - Pomaže ti organizirati rad u logične cjeline
+   - Lakše je razumjeti što se i kada promijenilo
 
-   **Promijenio si mišljenje?** Nema problema! Možeš ukloniti datoteke iz pripreme ovako:
+   **Predomislio si se?** Nema problema! Možeš ukloniti datoteke iz "staged" ovako:
 
    ```bash
-   # Unstage everything
+   # Ukloni sve iz staging područja
    git reset
    
-   # Unstage just one file
+   # Ukloni samo jednu datoteku iz staging područja
    git reset [file name]
    ```
 
-   Ne brini – ovo ne briše tvoj rad, samo uklanja datoteke iz "spremne za spremanje" hrpe.
+   Ne brini – ovo ne briše tvoj rad, samo uklanja datoteke iz reda "spremnih za pohranu".
 
-6. **Trajno spremi svoj rad** (napravi svoju prvu promjenu!):
+6. **Spremi svoj rad trajno** (napravi svoj prvi commit!):
 
    ```bash
    git commit -m "first commit"
    ```
 
-   **🎉 Čestitamo! Upravo si napravio svoju prvu promjenu!**
+   **🎉 Čestitamo! Upravo si napravio svoj prvi commit!**
    
-   **Evo što se upravo dogodilo:**
-   - Git je napravio "snimku" svih pripremljenih datoteka u ovom trenutku
-   - Tvoja poruka o promjeni "prva promjena" objašnjava o čemu se radi u ovoj točki spremanja
-   - Git je ovoj snimci dao jedinstveni ID kako bi je uvijek mogao pronaći kasnije
+   **Evo što se dogodilo:**
+   - Git je napravio "snapshhot" svih tvojih staged datoteka u ovom trenutku
+   - Tvoja commit poruka "first commit" objašnjava o čemu je ova točka spremanja
+   - Git je ovom snapshotu dodijelio jedinstveni ID da ga uvijek možeš pronaći kasnije
    - Službeno si počeo pratiti povijest svog projekta!
 
-   > 💡 **Buduće poruke o promjenama**: Za svoje sljedeće promjene budi detaljniji! Umjesto "ažurirano", probaj "Dodana kontakt forma na početnu stranicu" ili "Popravljen bug u navigacijskom izborniku". Tvoj budući ja će ti biti zahvalan!
+   > 💡 **Poruke za buduće commitove**: Za sljedeće komite budi opisniji! Umjesto "updated stuff", probaj "Add contact form to homepage" ili "Fix navigation menu bug". Tvoje buduće ja će ti biti zahvalno!
 
-7. **Poveži svoj lokalni projekt s GitHubom**. Trenutno tvoj projekt postoji samo na tvom računalu. Povežimo ga s tvojim GitHub repozitorijem kako bi ga mogao podijeliti sa svijetom!
+7. **Poveži svoj lokalni projekt s GitHubom**. Trenutno je tvoj projekt samo na tvom računalu. Povežimo ga s tvojim GitHub repozitorijem da ga možeš podijeliti sa svijetom!
 
-   Prvo, idi na stranicu svog GitHub repozitorija i kopiraj URL. Zatim se vrati ovdje i upiši:
+   Prvo, ode na stranicu svog GitHub repozitorija i kopiraj URL. Zatim se vrati ovamo i upiši:
 
    ```bash
    git remote add origin https://github.com/username/repository_name.git
@@ -242,347 +272,497 @@ Prođimo kroz ovu avanturu zajedno, korak po korak. Uzmi si vremena za svaki dio
    
    (Zamijeni taj URL stvarnim URL-om svog repozitorija!)
 
-   **Što smo upravo učinili:**
-- Stvorili smo vezu između vašeg lokalnog projekta i vašeg GitHub repozitorija  
-- "Origin" je samo nadimak za vaš GitHub repozitorij – kao da dodajete kontakt u svoj telefon  
-- Sada vaš lokalni Git zna kamo poslati vaš kod kad budete spremni podijeliti ga  
+   **Što smo upravo napravili:**
+   - Stvorili smo vezu između vašeg lokalnog projekta i vašeg GitHub spremišta
+   - "Origin" je samo nadimak za vaše GitHub spremište – kao da dodajete kontakt u svoj telefon
+   - Sada vaš lokalni Git zna kamo poslati vaš kod kad budete spremni za dijeljenje
 
-💡 **Lakši način**: Ako imate instaliran GitHub CLI, ovo možete učiniti jednim naredbom:  
+   💡 **Jednostavniji način**: Ako imate instaliran GitHub CLI, ovo možete napraviti jednim naredbom:
    ```bash
    gh repo create my-repo --public --push --source=.
    ```
-  
-8. **Pošaljite svoj kod na GitHub** (veliki trenutak!):  
+
+8. **Pošaljite svoj kod na GitHub** (veliki trenutak!):
 
    ```bash
    git push -u origin main
    ```
-  
-**🚀 To je to! Prenosite svoj kod na GitHub!**  
 
-**Što se događa:**  
-- Vaši commitovi putuju s vašeg računala na GitHub  
-- Zastavica `-u` postavlja trajnu vezu kako bi budući pushovi bili lakši  
-- "main" je naziv vaše primarne grane (kao glavni folder)  
-- Nakon ovoga, za buduće prijenose samo trebate upisati `git push`!  
+   **🚀 To je to! Učitavate svoj kod na GitHub!**
+   
+   **Što se događa:**
+   - Vaši commiti putuju s vašeg računala na GitHub
+   - `-u` oznaka uspostavlja trajnu vezu kako bi budući push bio jednostavniji
+   - "main" je naziv vaše glavne grane (kao glavni direktorij)
+   - Nakon ovoga za buduće učitavanje samo upišite `git push`!
 
-💡 **Brza napomena**: Ako se vaša grana zove drugačije (npr. "master"), koristite taj naziv. Možete provjeriti pomoću `git branch --show-current`.  
+   💡 **Brza napomena**: Ako se vaša grana zove drugačije (npr. "master"), koristite taj naziv. Možete provjeriti s `git branch --show-current`.
 
-9. **Vaš novi dnevni ritam kodiranja** (ovdje postaje zarazno!):  
+9. **Vaš novi dnevni ritam kodiranja** (ovdje postaje zarazno!):
 
-Od sada, kad god napravite promjene u svom projektu, slijedite ovaj jednostavan trokorak:  
+   Od sada, kad god napravite promjene na projektu, imate ovaj jednostavni ples od tri koraka:
 
    ```bash
    git add .
    git commit -m "describe what you changed"
    git push
    ```
-  
-**Ovo postaje vaš ritam kodiranja:**  
-- Napravite sjajne promjene u svom kodu ✨  
-- Dodajte ih s `git add` ("Hej Git, obrati pažnju na ove promjene!")  
-- Spremite ih s `git commit` i opisnom porukom (budući vi će vam biti zahvalan!)  
-- Podijelite ih sa svijetom koristeći `git push` 🚀  
-- Ponavljajte – ozbiljno, ovo postaje prirodno kao disanje!  
 
-Obožavam ovaj način rada jer je poput stvaranja više točaka za spremanje u videoigri. Napravili ste promjenu koja vam se sviđa? Commitajte je! Želite isprobati nešto rizično? Nema problema – uvijek se možete vratiti na posljednji commit ako nešto pođe po zlu!  
+   **Ovo postaje vaš puls kodiranja:**
+   - Napravite sjajne promjene u kodu ✨
+   - Stage-ajte ih s `git add` ("Hej Git, obrati pažnju na ove promjene!")
+   - Spremite ih s `git commit` i opisnom porukom (budući vi će vam zahvaliti!)
+   - Podijelite ih sa svijetom koristeći `git push` 🚀
+   - Ponovite – ozbiljno, ovo postaje isto kao disati!
 
-> 💡 **Savjet**: Možda biste također trebali razmisliti o korištenju `.gitignore` datoteke kako biste spriječili da se datoteke koje ne želite pratiti pojave na GitHubu - poput bilješki koje čuvate u istom folderu, ali nemaju mjesto u javnom repozitoriju. Možete pronaći predloške za `.gitignore` datoteke na [.gitignore templates](https://github.com/github/gitignore) ili stvoriti jednu koristeći [gitignore.io](https://www.toptal.com/developers/gitignore).  
+   Volim ovaj radni tok jer je kao imati više točaka spremanja u videoigri. Napravili ste promjenu koju volite? Commitajte ju! Želite isprobati nešto riskantno? Nema problema – uvijek se možete vratiti na posljednji commit ako stvari krenu po zlu!
 
-#### Moderni Git radni procesi  
+   > 💡 **Savjet**: Možda ćete htjeti koristiti `.gitignore` datoteku da spriječite da datoteke koje ne želite pratiti budu vidljive na GitHubu – poput datoteke s bilješkama koju držite u istom direktoriju, ali nema mjesto u javnom spremištu. Možete pronaći predloške za `.gitignore` datoteke na [.gitignore templates](https://github.com/github/gitignore) ili izraditi jednu pomoću [gitignore.io](https://www.toptal.com/developers/gitignore).
 
-Razmislite o usvajanju ovih modernih praksi:  
+### 🧠 **Prvi unos u spremište: Kako se osjećate?**
 
-- **Konvencionalni commitovi**: Koristite standardizirani format poruka commitova poput `feat:`, `fix:`, `docs:`, itd. Saznajte više na [conventionalcommits.org](https://www.conventionalcommits.org/)  
-- **Atomski commitovi**: Neka svaki commit predstavlja jednu logičku promjenu  
-- **Česti commitovi**: Commitajte često s opisnim porukama umjesto velikih, rijetkih commitova  
+**Uzmite trenutak za slavlje i razmišljanje:**
+- Kako ste se osjećali kad ste prvi put vidjeli svoj kod na GitHubu?
+- Koji vam je korak bio najzbunjujući, a koji neočekivano jednostavan?
+- Možete li vlastitim riječima objasniti razliku između `git add`, `git commit` i `git push`?
 
-#### Poruke commitova  
+```mermaid
+stateDiagram-v2
+    [*] --> LocalFiles: Stvori projekt
+    LocalFiles --> Staged: git add .
+    Staged --> Committed: git commit
+    Committed --> GitHub: git push
+    GitHub --> [*]: Uspjeh! 🎉
+    
+    note right of Staged
+        Datoteke spremne za spremanje
+    end note
+    
+    note right of Committed
+        Stvoren snimak
+    end note
+```
+> **Zapamtite**: Čak i iskusni developeri ponekad zaborave točne naredbe. Da ovaj radni tok postane mišićna memorija treba vježbe – odlično vam ide!
 
-Sjajna poruka u subject liniji Git commita završava sljedeću rečenicu:  
-Ako se primijeni, ovaj commit će <ovdje ide vaš subject>.  
+#### Moderni Git radni tokovi
 
-Za subject koristite imperativ, sadašnje vrijeme: "promijeni" umjesto "promijenio" ili "mijenja".  
-Kao i u subjectu, u tijelu (opcionalno) također koristite imperativ, sadašnje vrijeme. Tijelo bi trebalo uključivati motivaciju za promjenu i usporediti je s prethodnim ponašanjem. Objašnjavate `zašto`, a ne `kako`.  
+Razmislite o usvajanju ovih modernih praksi:
 
-✅ Odvojite nekoliko minuta i istražite GitHub. Možete li pronaći zaista sjajnu poruku commita? Možete li pronaći vrlo minimalnu? Koje informacije smatrate najvažnijima i najkorisnijima za prenošenje u poruci commita?  
+- **Conventional Commits**: Koristite standardizirani format poruke commita poput `feat:`, `fix:`, `docs:`, itd. Saznajte više na [conventionalcommits.org](https://www.conventionalcommits.org/)
+- **Atomski commitovi**: Svaki commit treba predstavljati jednu logičku promjenu
+- **Česti commitovi**: Često commitajte s opisnim porukama umjesto velikih, rijetkih commitova
 
-## Suradnja s drugima (najzabavniji dio!)  
+#### Poruke commitova
 
-Pripremite se jer OVO je trenutak kada GitHub postaje apsolutno magičan! 🪄 Savladali ste upravljanje vlastitim kodom, ali sada ulazimo u moj apsolutno najdraži dio – suradnju s nevjerojatnim ljudima iz cijelog svijeta.  
+Dobar naslov Git commita završava slijedeću rečenicu:
+Ako se primijeni, ovaj commit će <ovdje napišite svoj naslov>
 
-Zamislite ovo: probudite se sutra i vidite da je netko iz Tokija poboljšao vaš kod dok ste spavali. Zatim netko iz Berlina ispravi grešku na kojoj ste zapeli. Do poslijepodneva, programer iz São Paula dodao je funkciju o kojoj niste ni razmišljali. To nije znanstvena fantastika – to je samo utorak u GitHub svemiru!  
+Za naslov koristite imperativ, sadašnje vrijeme: "promijeni", a ne "promijenio" ili "promjene".
+Kao u naslovu, i u tijelu (opcionalno) koristite imperativ, sadašnje vrijeme. Tijelo bi trebalo uključivati motivaciju promjene i kontrast prema prethodnom ponašanju. Objašnjavate „zašto“, ne „kako“.
 
-Ono što me zaista uzbuđuje jest da su vještine suradnje koje ćete naučiti? Točno iste radne procese koje timovi u Googleu, Microsoftu i vašim omiljenim startupima koriste svaki dan. Ne učite samo cool alat – učite tajni jezik koji omogućuje cijelom softverskom svijetu da surađuje.  
+✅ Provedite nekoliko minuta istražujući GitHub. Možete li pronaći zaista dobru poruku commit-a? Možete li pronaći neku minimalnu? Koje informacije mislite da su najvažnije i najkorisnije za prenijeti porukom commit-a?
 
-Ozbiljno, jednom kad doživite uzbuđenje kad vam netko spoji prvi pull request, shvatit ćete zašto programeri postaju toliko strastveni oko open sourcea. To je kao da ste dio najvećeg, najkreativnijeg timskog projekta na svijetu!  
+## Rad s drugima (Zabavni dio!)
 
-> Pogledajte video  
->  
-> [![Osnove Gita i GitHuba video](https://img.youtube.com/vi/bFCM-PC3cu8/0.jpg)](https://www.youtube.com/watch?v=bFCM-PC3cu8)  
+Zadržite svoj šešir jer OVO je mjesto gdje GitHub postaje prava čarolija! 🪄 Savladali ste upravljanje vlastitim kodom, a sada ulazimo u moj najdraži dio – suradnju s nevjerojatnim ljudima iz cijelog svijeta.
 
-Glavni razlog za postavljanje stvari na GitHub bio je omogućiti suradnju s drugim programerima.  
+Zamislite ovo: probudite se sutra i vidite da vam je netko u Tokiju unaprijedio kod dok ste spavali. Zatim netko u Berlinu popravi bug na kojem ste zapeli. Popodne developeri u São Paulu dodaju značajku o kojoj nikad niste ni razmišljali. To nije znanstvena fantastika – to je samo utorak u GitHub svemiru!
 
-U svom repozitoriju, idite na `Insights > Community` kako biste vidjeli kako se vaš projekt uspoređuje s preporučenim standardima zajednice.  
+Ono što me stvarno usrećuje jest da su vještine suradnje koje ćete naučiti? To su APSOLUTNO isti radni tokovi koje koriste timovi u Googleu, Microsoftu i vašim omiljenim startupima svaki dan. Ne učite samo cool alat – učite tajni jezik koji cijelom softverskom svijetu omogućuje suradnju.
 
-Želite li da vaš repozitorij izgleda profesionalno i privlačno? Posjetite svoj repozitorij i kliknite na `Insights > Community`. Ova sjajna značajka pokazuje kako se vaš projekt uspoređuje s onim što GitHub zajednica smatra "dobrim praksama za repozitorij".  
+Ozbiljno, kad osjetite uzbuđenje kad vam netko spoji prvi pull request, shvatit ćete zašto developeri vole otvoreni izvor. Kao da ste dio najvećeg i najkreativnijeg timskog projekta na svijetu!
 
-> 🎯 **Učinite svoj projekt sjajnim**: Dobro organiziran repozitorij s dobrom dokumentacijom je poput čistog, privlačnog izloga. Pokazuje ljudima da vam je stalo do vašeg rada i potiče druge da doprinesu!  
+> Pogledajte video
+>
+> [![Git and GitHub basics video](https://img.youtube.com/vi/bFCM-PC3cu8/0.jpg)](https://www.youtube.com/watch?v=bFCM-PC3cu8)
 
-**Evo što čini repozitorij izvrsnim:**  
+Glavni razlog za stavljanje stvari na GitHub bio je omogućiti suradnju s drugim developerima.
 
-| Što dodati | Zašto je važno | Što vam donosi |
-|------------|----------------|----------------|
-| **Opis** | Prvi dojam je važan! | Ljudi odmah znaju što vaš projekt radi |
-| **README** | Prednja stranica vašeg projekta | Kao ljubazni vodič za nove posjetitelje |
-| **Smjernice za doprinos** | Pokazuje da ste otvoreni za pomoć | Ljudi znaju točno kako vam mogu pomoći |
-| **Kodeks ponašanja** | Stvara prijateljski prostor | Svi se osjećaju dobrodošli sudjelovati |
-| **Licenca** | Pravna jasnoća | Drugi znaju kako mogu koristiti vaš kod |
-| **Sigurnosna politika** | Pokazuje da ste odgovorni | Demonstrira profesionalne prakse |
+```mermaid
+flowchart LR
+    A[🔍 Pronađi projekt] --> B[🍴 Forkaj spremište]
+    B --> C[📥 Kloniraj lokalno]
+    C --> D[🌿 Kreiraj granu]
+    D --> E[✏️ Napravi izmjene]
+    E --> F[💾 Spremi izmjene]
+    F --> G[📤 Gurni granu]
+    G --> H[🔄 Kreiraj Pull Request]
+    H --> I{Pregled održavatelja}
+    I -->|✅ Odobreno| J[🎉 Spoji!]
+    I -->|❓ Traže se izmjene| K[📝 Napravi ažuriranja]
+    K --> F
+    J --> L[🧹 Očisti grane]
+    
+    style A fill:#e3f2fd
+    style J fill:#e8f5e8
+    style L fill:#fff3e0
+```
+U svom spremištu idite na `Insights > Community` da vidite kako se vaš projekt uspoređuje s preporučenim standardima zajednice.
 
-> 💡 **Profesionalni savjet**: GitHub nudi predloške za sve ove datoteke. Kada stvarate novi repozitorij, označite okvire za automatsko generiranje ovih datoteka.  
+Želite da vaše spremište izgleda profesionalno i primamljivo? Idite u svoje spremište i kliknite `Insights > Community`. Ova super značajka pokazuje kako se vaš projekt uspoređuje s onim što GitHub zajednica smatra "dobrim praksama u spremištima."
 
-**Moderne značajke GitHuba koje treba istražiti:**  
+> 🎯 **Neka vaš projekt zablista**: Dobro organizirano spremište s dobrom dokumentacijom je kao uredna, pozivajuća izloga trgovine. Kaže ljudima da vam je stalo do vašeg rada i tjera druge da žele doprinijeti!
 
-🤖 **Automatizacija & CI/CD:**  
-- **GitHub Actions** za automatizirano testiranje i implementaciju  
-- **Dependabot** za automatsko ažuriranje ovisnosti  
+**Evo što čini spremište sjajnim:**
 
-💬 **Zajednica & Upravljanje projektima:**  
-- **GitHub Discussions** za razgovore u zajednici izvan problema  
-- **GitHub Projects** za upravljanje projektima u kanban stilu  
-- **Pravila zaštite grana** za provođenje standarda kvalitete koda  
+| Što dodati | Zašto je važno | Što vam to donosi |
+|-----------|----------------|-------------------|
+| **Opis** | Prvi dojam je važan! | Ljudi odmah znaju čemu vaš projekt služi |
+| **README** | Naslovna stranica vašeg projekta | Kao prijateljski vodič za nove posjetitelje |
+| **Smjernice za doprinos** | Pokazuje da ste otvoreni za pomoć | Ljudi točno znaju kako vam mogu pomoći |
+| **Code of Conduct** | Stvara prijateljsko okruženje | Svi se osjećaju dobrodošli za sudjelovanje |
+| **Licenca** | Pravna jasnoća | Drugi znaju kako smiju koristiti vaš kod |
+| **Sigurnosna politika** | Pokazuje da ste odgovorni | Pokazuje profesionalne prakse |
 
-Sve ove resurse koristit će novi članovi tima. A to su obično stvari koje novi suradnici pregledavaju prije nego što uopće pogledaju vaš kod, kako bi saznali je li vaš projekt pravo mjesto za njihovo ulaganje vremena.  
+> 💡 **Profesionalni savjet**: GitHub nudi predloške za sve ove datoteke. Prilikom izrade novog spremišta, označite polja da automatski generirate ove datoteke.
 
-✅ README datoteke, iako zahtijevaju vrijeme za pripremu, često se zanemaruju od strane zauzetih održavatelja. Možete li pronaći primjer posebno opisne README datoteke? Napomena: postoje neki [alati za pomoć pri izradi dobrih README datoteka](https://www.makeareadme.com/) koje biste mogli isprobati.  
+**Moderni GitHub alati za istraživanje:**
 
-### Zadatak: Spojite neki kod  
+🤖 **Automatizacija i CI/CD:**
+- **GitHub Actions** za automatizirano testiranje i distribuciju
+- **Dependabot** za automatske nadogradnje ovisnosti
 
-Dokumentacija za doprinos pomaže ljudima da doprinesu projektu. Objašnjava koje vrste doprinosa tražite i kako proces funkcionira. Suradnici će morati proći kroz niz koraka kako bi mogli doprinijeti vašem repozitoriju na GitHubu:  
+💬 **Zajednica i upravljanje projektima:**
+- **GitHub Discussions** za razgovore u zajednici izvan issuea
+- **GitHub Projects** za upravljanje projektima u kanban stilu
+- **Pravila zaštite grana** za održavanje standarda kvalitete koda
 
-1. **Forkanje vašeg repozitorija** Vjerojatno ćete htjeti da ljudi _forkaju_ vaš projekt. Forkanje znači stvaranje replike vašeg repozitorija na njihovom GitHub profilu.  
-1. **Kloniranje**. Nakon toga će klonirati projekt na svoj lokalni stroj.  
-1. **Stvaranje grane**. Želite zamoliti suradnike da stvore _granu_ za svoj rad.  
-1. **Usmjeravanje promjena na jedno područje**. Zamolite suradnike da se usredotoče na jednu stvar odjednom - na taj način su veće šanse da možete _spojiti_ njihov rad. Zamislite da napišu ispravak greške, dodaju novu funkciju i ažuriraju nekoliko testova - što ako želite, ili možete implementirati samo 2 od 3, ili 1 od 3 promjene?  
 
-✅ Zamislite situaciju u kojoj su grane posebno kritične za pisanje i isporuku dobrog koda. Koje slučajeve upotrebe možete zamisliti?  
+Svi ovi resursi pomažu u uvođenju novih članova tima. A to su tipično stvari kojima se novi suradnici prvo bave prije nego pogledaju vaš kod, da otkriju je li vaš projekt pravo mjesto za njihovo vrijeme.
 
-> Napomena, budite promjena koju želite vidjeti u svijetu i stvorite grane za svoj vlastiti rad također. Svaki commit koji napravite bit će napravljen na grani na kojoj trenutno radite. Koristite `git status` da vidite na kojoj ste grani.  
+✅ README datoteke, iako zahtijevaju vrijeme za pripremu, često zanemaruju zauzeti održavatelji. Možete li pronaći primjer posebno opisne? Napomena: postoje [alati za izradu dobrih README-a](https://www.makeareadme.com/) koje biste možda željeli isprobati.
 
-Prođimo kroz radni proces suradnika. Pretpostavimo da je suradnik već _forkao_ i _klonirao_ repozitorij tako da ima Git repozitorij spreman za rad na svom lokalnom stroju:  
+### Zadatak: Spojite neki kod
 
-1. **Stvorite granu**. Koristite naredbu `git branch` za stvaranje grane koja će sadržavati promjene koje namjeravaju doprinijeti:  
+Dokumentacija za doprinos pomaže ljudima da doprinesu projektu. Objašnjava koje vrste doprinosa tražite i kako proces funkcionira. Suradnici trebaju slijediti nekoliko koraka da bi mogli doprinijeti vašem repozitoriju na GitHubu:
+
+
+1. **Forkajte svoj repozitorij** Vjerojatno ćete htjeti da ljudi _forkaju_ vaš projekt. Forkanje znači stvaranje kopije vašeg spremišta na njihovom GitHub profilu.
+1. **Kloniranje**. Iz tamo će klonirati projekt na svoje lokalno računalo. 
+1. **Napravite granu**. Zamolite ih da naprave _granu_ za svoj rad. 
+1. **Usredotočite promjenu na jedno područje**. Zamolite suradnike da svoje doprinose usredotoče na jednu stvar odjednom – tako je veća vjerojatnost da ćete moći _spojiti_ njihov rad. Zamislite da napišu popravak buga, dodaju novu značajku i ažuriraju nekoliko testova – što ako želite, ili možete implementirati samo 2 od 3, ili 1 od 3 promjene?
+
+✅ Zamislite situaciju u kojoj su grane posebno važne za pisanje i isporuku dobrog koda. Koje slučajeve upotrebe možete zamisliti?
+
+> Zapamtite, budite promjena koju želite vidjeti u svijetu i stvarajte grane i za svoj rad. Svaki commit koji napravite biti će na grani na kojoj ste trenutno "checked out". Koristite `git status` da vidite koja je to grana.
+
+Prođimo kroz radni tok suradnika. Pretpostavimo da je suradnik već _forkao_ i _klonirao_ repo pa ima Git repozitorij spreman za rad na svojem lokalnom računalu:
+
+1. **Napravite granu**. Koristite naredbu `git branch` da napravite granu koja će sadržavati promjene koje planira doprinijeti:
 
    ```bash
    git branch [branch-name]
    ```
-  
-   > 💡 **Moderni pristup**: Također možete stvoriti i prebaciti se na novu granu jednom naredbom:  
+
+   > 💡 **Moderan pristup**: Možete napraviti i odmah prebaciti se na novu granu jednom naredbom:
    ```bash
    git switch -c [branch-name]
    ```
-  
-1. **Prebacite se na radnu granu**. Prebacite se na određenu granu i ažurirajte radni direktorij pomoću `git switch`:  
+
+1. **Prebaci se na radnu granu**. Prebacite se na određenu granu i osvježite radni direktorij s `git switch`:
 
    ```bash
    git switch [branch-name]
    ```
-  
-   > 💡 **Moderna napomena**: `git switch` je moderna zamjena za `git checkout` pri promjeni grana. Jasnija je i sigurnija za početnike.  
 
-1. **Radite na promjenama**. U ovom trenutku želite dodati svoje promjene. Ne zaboravite obavijestiti Git o tome pomoću sljedećih naredbi:  
+   > 💡 **Moderena napomena**: `git switch` je moderna zamjena za `git checkout` kod promjene grana. Jasnije je i sigurnije za početnike.
+
+1. **Radite**. Sada želite dodati svoje promjene. Ne zaboravite to reći Git-u sljedećim naredbama:
 
    ```bash
    git add .
    git commit -m "my changes"
    ```
-  
-   > ⚠️ **Kvaliteta poruke commita**: Pobrinite se da svom commitu date dobro ime, kako za sebe tako i za održavatelja repozitorija kojem pomažete. Budite specifični o tome što ste promijenili!  
 
-1. **Spojite svoj rad s `main` granom**. U nekom trenutku završavate s radom i želite spojiti svoj rad s onim iz `main` grane. `main` grana se možda promijenila u međuvremenu pa se pobrinite da je prvo ažurirate na najnoviju verziju pomoću sljedećih naredbi:  
+   > ⚠️ **Kvaliteta poruke commita**: Pobrinite se da vaš commit ima dobar naziv, i za vlastitu korist i za održavatelja repozitorija kojem pomažete. Budite specifični što ste promijenili!
+
+1. **Spojite svoj rad s `main` granom**. Kad završite s radom, želite spojiti svoj rad s onim na `main` grani. `main` grana se možda u međuvremenu promijenila pa se prvo pobrinite da je osvježite do najnovije verzije sljedećim naredbama:
 
    ```bash
    git switch main
    git pull
    ```
-  
-   U ovom trenutku želite osigurati da se svi _konflikti_, situacije u kojima Git ne može lako _spojiti_ promjene, dogode u vašoj radnoj grani. Stoga pokrenite sljedeće naredbe:  
+
+   Sad želite izbjeći bilo kakve _konflikte_, situacije u kojima Git ne može jednostavno _spojiti_ promjene u vašoj radnoj grani. Stoga pokrenite sljedeće naredbe:
 
    ```bash
    git switch [branch_name]
    git merge main
    ```
-  
-   Naredba `git merge main` donijet će sve promjene iz `main` u vašu granu. Nadamo se da možete samo nastaviti. Ako ne, VS Code će vam pokazati gdje je Git _zbunjen_ i samo izmijenite zahvaćene datoteke kako biste odredili koji sadržaj je najtočniji.  
 
-   💡 **Moderna alternativa**: Razmislite o korištenju `git rebase` za čišću povijest:  
+   Naredba `git merge main` donosi sve promjene s `main` grane u vašu granu. Nadamo se da možete nastaviti bez problema. Ako ne, VS Code će vam pokazati gdje je Git _zbunjen_, a vi samo promijenite pogođene datoteke kako biste naznačili koji sadržaj je točan.
+
+   💡 **Moderna alternativa**: Razmislite o korištenju `git rebase` za čišću povijest:
    ```bash
    git rebase main
    ```
-  
-   Ovo ponovno reproducira vaše commitove na vrhu najnovije main grane, stvarajući linearnu povijest.  
+   Ovo reproducira vaše commitove na vrh najnovije main grane, stvarajući linearnu povijest.
 
-1. **Pošaljite svoj rad na GitHub**. Slanje vašeg rada na GitHub znači dvije stvari. Pushing vaše grane na vaš repozitorij i zatim otvaranje PR-a, Pull Requesta.  
+1. **Pošaljite svoj rad na GitHub**. Slanje rada na GitHub znači dvije stvari. Pushanje vaše grane na vaš repozitorij i zatim otvaranje PR, Pull Requesta.
 
    ```bash
    git push --set-upstream origin [branch-name]
    ```
-  
-   Gornja naredba stvara granu na vašem forkiranom repozitoriju.  
 
-1. **Otvorite PR**. Zatim želite otvoriti PR. To radite tako da odete na forkirani repozitorij na GitHubu. Vidjet ćete oznaku na GitHubu gdje vas pita želite li stvoriti novi PR, kliknite na to i bit ćete preusmjereni na sučelje gdje možete promijeniti naslov poruke commita, dati mu prikladniji opis. Sada će održavatelj repozitorija koji ste forkali vidjeti ovaj PR i _držimo palčeve_ da će cijeniti i _spojiti_ vaš PR. Sada ste suradnik, bravo :)  
+   Gornja naredba stvara granu na vašem forkiranom repozitoriju.
 
-   💡 **Moderni savjet**: PR-ove možete stvoriti i pomoću GitHub CLI:  
+### 🤝 **Provjera suradničkih vještina: Spremni za rad s drugima?**
+
+**Pogledajmo kako se osjećate oko suradnje:**
+- Je li vam sad jasna ideja forkanja i pull requestova?
+- Koju bi stvar o radu s granama željeli više vježbati?
+- Koliko se ugodno osjećate u doprinosu tuđem projektu?
+
+```mermaid
+mindmap
+  root((Git Suradnja))
+    Branching
+      Feature branches
+      Bug fix branches
+      Eksperimentalni rad
+    Pull Requests
+      Pregled koda
+      Diskusija
+      Testiranje
+    Best Practices
+      Jasne poruke commit-a
+      Male fokusirane promjene
+      Dobra dokumentacija
+```
+> **Poticanje samopouzdanja**: Svaki developer kojeg cijenite bio je nekad nervozan oko svog prvog pull requesta. GitHub zajednica iznimno dobrodošla je prema početnicima!
+
+1. **Otvorite PR**. Sljedeće, želite otvoriti PR. To napravite tako da odete na forkani repozitorij na GitHubu. Vidjet ćete na GitHubu obavijest koja vas pita želite li napraviti novi PR, kliknete na to i odvest će vas na sučelje gdje možete promijeniti naslov poruke commita, dati prikladniji opis. Sada održavatelj repo-a koji ste forkali vidjet će ovaj PR i _kucajmo prstima_ da će cijeniti i _spojiti_ vaš PR. Sada ste suradnik, jebiga :)
+
+   💡 **Moderni savjet**: PR-ove možete također kreirati korištenjem GitHub CLI:
    ```bash
    gh pr create --title "Your PR title" --body "Description of changes"
    ```
-  
-   🔧 **Najbolje prakse za PR-ove**:  
-   - Povežite se s povezanim problemima koristeći ključne riječi poput "Fixes #123"  
-   - Dodajte snimke zaslona za promjene korisničkog sučelja  
-   - Zatražite specifične recenzente  
-   - Koristite nacrte PR-ova za rad u tijeku  
-   - Osigurajte da svi CI testovi prođu prije nego zatražite recenziju  
 
-1. **Očistite**. Smatra se dobrom praksom _očistiti_ nakon što uspješno spojite PR. Želite očistiti i svoju lokalnu granu i granu koju ste poslali na GitHub. Prvo je izbrišite lokalno pomoću sljedeće naredbe:  
+   🔧 **Najbolje prakse za PR-ove**:
+   - Povežite s povezanim issueima koristeći ključne riječi poput "Fixes #123"
+   - Dodajte screenshotove za promjene korisničkog sučelja
+   - Zatražite specifične recenzente
+   - Koristite PR-ove u draftu za rad u tijeku
+   - Osigurajte da svi CI provjere prođu prije nego što zatražite pregled
+1. **Očistite**. Smatra se dobrom praksom _očistiti_ nakon što uspješno spojite PR. Želite očistiti i svoju lokalnu granu i granu koju ste poslali na GitHub. Prvo je izbrišite lokalno sljedećom naredbom: 
 
    ```bash
    git branch -d [branch-name]
    ```
-  
-   Pobrinite se da odete na GitHub stranicu za forkirani repozitorij i uklonite udaljenu granu koju ste upravo poslali.  
 
-`Pull request` se čini kao smiješan izraz jer zapravo želite gurnuti svoje promjene u projekt. No, održavatelj (vlasnik projekta) ili glavni tim mora razmotriti vaše promjene prije nego ih spoji s "main" granom projekta, pa zapravo tražite odluku o promjeni od održavatelja.  
+   Zatim obavezno idite na GitHub stranicu forkiranog repozitorija i uklonite udaljenu granu koju ste upravo poslali.
 
-Pull request je mjesto za usporedbu i raspravu o razlikama uvedenim na grani uz recenzije, komentare, integrirane testove i još mnogo toga. Dobar pull request otprilike slijedi ista pravila kao i poruka commita. Možete dodati referencu na problem u trackeru problema, kada vaš rad, na primjer, rješava problem. To se radi pomoću `#` nakon kojeg slijedi broj vašeg problema. Na primjer `#97`.  
-🤞Držimo palčeve da svi provjeri prođu i da vlasnik(i) projekta spoje vaše promjene u projekt🤞
+`Pull request` zvuči kao neozbiljan termin jer zapravo želite gurnuti svoje promjene u projekt. Ali održavatelj (vlasnik projekta) ili glavni tim mora razmotriti vaše promjene prije spajanja s "main" granom projekta, tako da zapravo tražite odluku o promjeni od održavatelja.
 
-Ažurirajte svoju trenutnu lokalnu radnu granu sa svim novim commitovima iz odgovarajuće udaljene grane na GitHubu:
+Pull request je mjesto za usporedbu i diskusiju razlika uvedenih na grani s pregledima, komentarima, integriranim testovima i još mnogo toga. Dobar pull request slijedi otprilike ista pravila kao i poruka komita. Možete dodati referencu na problem u trackeru problema, na primjer kada vaš rad rješava neki problem. To se radi korištenjem `#` nakon kojeg slijedi broj vašeg problema. Na primjer `#97`.
+
+🤞Nadam se da će svi provjere proći i da će vlasnici projekta spojiti vaše promjene u projekt🤞
+
+Ažurirajte svoju trenutnu lokalnu radnu granu sa svim novim komitima s odgovarajuće udaljene grane na GitHubu:
 
 `git pull`
 
-## Doprinos otvorenom kodu (Vaša prilika da ostavite trag!)
+## Doprinoseći Open Sourceu (Vaša prilika da ostavite trag!)
 
-Jeste li spremni za nešto što će vas potpuno oduševiti? 🤯 Razgovarajmo o doprinosu projektima otvorenog koda – i već se naježim od uzbuđenja što ću ovo podijeliti s vama!
+Jeste li spremni za nešto što će vam potpuno "isključiti mozak"? 🤯 Razgovarajmo o doprinosu open source projektima – i već mi se dižu žmarci samo dok razmišljam da to s vama podijelim!
 
-Ovo je vaša prilika da postanete dio nečeg zaista izvanrednog. Zamislite da poboljšavate alate koje milijuni programera koriste svaki dan ili da popravljate grešku u aplikaciji koju vaši prijatelji obožavaju. To nije samo san – to je ono što doprinos otvorenom kodu predstavlja!
+Ovo je vaša prilika da postanete dio nečeg doista izvanrednog. Zamislite da poboljšavate alate koje milijuni programera koriste svakodnevno, ili da popravljate grešku u aplikaciji koju vaši prijatelji vole. To nije samo san – to je ono o čemu je doprinos open sourceu!
 
-Evo što mi svaki put izazove trnce: svaki alat koji ste dosad koristili – vaš editor koda, okviri koje ćemo istraživati, pa čak i preglednik u kojem ovo čitate – započeo je s nekim poput vas koji je napravio svoj prvi doprinos. Taj briljantni programer koji je izradio vaš omiljeni VS Code dodatak? Nekada je bio početnik koji je drhtavim rukama kliknuo "create pull request", baš kao što ćete i vi uskoro učiniti.
+Ono što me svaki put oduševljava kad razmišljam o tome: svaki alat koji ste učili koristiti – vaš kôd editor, okviri koje ćemo istraživati, čak i preglednik u kojem ovo čitate – započeo je s nekim poput vas koji je napravio svoj prvi doprinos. Ovaj briljantni programer koji je napravio vašu omiljenu VS Code ekstenziju? Nekada je bio početnik koji je drhtavim rukama kliknuo "create pull request", baš kao što ćete vi sada.
 
-A evo najljepšeg dijela: zajednica otvorenog koda je poput najvećeg grupnog zagrljaja na internetu. Većina projekata aktivno traži nove suradnike i ima probleme označene kao "good first issue" posebno za ljude poput vas! Voditelji projekata iskreno se uzbude kad vide nove suradnike jer se sjećaju svojih prvih koraka.
+I najljepši dio: open source zajednica je kao najveći internet zagrljaj. Većina projekata aktivno traži novake i imaju issue-e označene kao "good first issue" posebno za ljude poput vas! Održavatelji se iskreno vesele kad vide nove doprinose jer se sjećaju svojih vlastitih prvih koraka.
 
-Ovdje ne učite samo programirati – pripremate se za pridruživanje globalnoj obitelji graditelja koji se svakog dana bude s mišlju "Kako možemo učiniti digitalni svijet malo boljim?" Dobrodošli u klub! 🌟
+```mermaid
+flowchart TD
+    A[🔍 Istražite GitHub] --> B[🏷️ Pronađite "dobar prvi zadatak"]
+    B --> C[📖 Pročitajte Smjernice za doprinos]
+    C --> D[🍴 Forkajte Repozitorij]
+    D --> E[💻 Postavite Lokalno Okruženje]
+    E --> F[🌿 Izradite Feature Granu]
+    F --> G[✨ Napravite Svoj Doprinos]
+    G --> H[🧪 Testirajte Promjene]
+    H --> I[📝 Napišite Jasni Commit]
+    I --> J[📤 Gurnite i Kreirajte PR]
+    J --> K[💬 Sudjelujte u Povratnim informacijama]
+    K --> L[🎉 Spojeno! Vi ste Suradnik!]
+    L --> M[🌟 Pronađite Sljedeći Zadatak]
+    
+    style A fill:#e1f5fe
+    style L fill:#c8e6c9
+    style M fill:#fff59d
+```
+Ne učite samo kako kodirati – pripremate se da se pridružite globalnoj obitelji graditelja koji se svakog dana bude pitajući "Kako možemo učiniti digitalni svijet barem malo boljim?" Dobrodošli u klub! 🌟
 
-Prvo, pronađimo repozitorij (ili **repo**) na GitHubu koji vas zanima i kojem želite doprinijeti nekom promjenom. Želite kopirati njegov sadržaj na svoje računalo.
+Prvo, pronađimo repozitorij (ili **repo**) na GitHubu koji vas zanima i u kojem želite doprinijeti promjenom. Želit ćete kopirati njegov sadržaj na svoje računalo.
 
-✅ Dobar način za pronalazak repozitorija prilagođenih početnicima je [pretraživanje prema oznaci 'good-first-issue'](https://github.blog/2020-01-22-browse-good-first-issues-to-start-contributing-to-open-source/).
+✅ Dobar način za pronalaženje 'prijateljskih za početnike' repozitorija je [pretraživanje po oznaci 'good-first-issue'](https://github.blog/2020-01-22-browse-good-first-issues-to-start-contributing-to-open-source/).
 
-![Kopiraj repo lokalno](../../../../translated_images/clone_repo.5085c48d666ead57664f050d806e325d7f883be6838c821e08bc823ab7c66665.hr.png)
+![Kopirajte repozitorij lokalno](../../../../translated_images/hr/clone_repo.5085c48d666ead57.webp)
 
-Postoji nekoliko načina za kopiranje koda. Jedan od načina je "kloniranje" sadržaja repozitorija, koristeći HTTPS, SSH ili GitHub CLI (Command Line Interface).
+Postoji nekoliko načina za kopiranje koda. Jedan od načina je "kloniranje" sadržaja repozitorija, koristeći HTTPS, SSH, ili GitHub CLI (Command Line Interface).
 
 Otvorite svoj terminal i klonirajte repozitorij ovako:
 ```bash
-# Using HTTPS
+# Korištenje HTTPS-a
 git clone https://github.com/ProjectURL
 
-# Using SSH (requires SSH key setup)
+# Korištenje SSH-a (zahtijeva postavljanje SSH ključa)
 git clone git@github.com:username/repository.git
 
-# Using GitHub CLI
+# Korištenje GitHub CLI-ja
 gh repo clone username/repository
 ```
 
-Za rad na projektu, prebacite se u odgovarajuću mapu:
+Za rad na projektu, prebacite se u odgovarajući direktorij:
 `cd ProjectURL`
 
 Također možete otvoriti cijeli projekt koristeći:
-- **[GitHub Codespaces](https://github.com/features/codespaces)** - GitHubovo razvojno okruženje u oblaku s VS Codeom u pregledniku
-- **[GitHub Desktop](https://desktop.github.com/)** - GUI aplikacija za Git operacije  
-- **[GitHub.dev](https://github.dev)** - Pritisnite tipku `.` na bilo kojem GitHub repozitoriju da biste otvorili VS Code u pregledniku
-- **VS Code** s ekstenzijom za GitHub Pull Requests
+- **[GitHub Codespaces](https://github.com/features/codespaces)** - GitHubovo razvojno okruženje u oblaku s VS Code u pregledniku
+- **[GitHub Desktop](https://desktop.github.com/)** - GUI aplikaciju za Git operacije  
+- **[GitHub.dev](https://github.dev)** - Pritisnite tipku `.` na bilo kojem GitHub repozitoriju za otvaranje VS Code u pregledniku
+- **VS Code** s ekstenzijom GitHub Pull Requests
 
-Na kraju, možete preuzeti kod u zipanoj mapi.
+Na kraju, možete preuzeti kod u zipani folder.
 
-### Nekoliko zanimljivih stvari o GitHubu
+### Još nekoliko zanimljivih stvari o GitHubu
 
-Možete označiti zvjezdicom, pratiti i/ili "forkati" bilo koji javni repozitorij na GitHubu. Svoje označene repozitorije možete pronaći u padajućem izborniku u gornjem desnom kutu. To je poput označavanja stranica, ali za kod.
+Možete označiti zvjezdicom, pratiti i/ili "forkati" bilo koji javni repozitorij na GitHubu. Možete pronaći svoje označene repozitorije u padajućem izborniku gore desno. To je poput bookmarka, ali za kod.
 
-Projekti imaju alat za praćenje problema, uglavnom na GitHubu u kartici "Issues", osim ako nije drugačije navedeno, gdje ljudi raspravljaju o problemima vezanim za projekt. A kartica Pull Requests je mjesto gdje ljudi raspravljaju i pregledavaju promjene koje su u tijeku.
+Projekti imaju tracker za probleme, većinom na GitHubu u kartici "Issues" osim ako nije drugačije naznačeno, gdje ljudi raspravljaju o problemima vezanim za projekt. Kartica Pull Requests je mjesto gdje ljudi raspravljaju i pregledavaju promjene koje su u tijeku.
 
 Projekti također mogu imati rasprave na forumima, mailing listama ili chat kanalima poput Slacka, Discorda ili IRC-a.
 
-🔧 **Moderni GitHub alati**:
+🔧 **Moderne GitHub značajke**:
 - **GitHub Discussions** - Ugrađeni forum za razgovore zajednice
-- **GitHub Sponsors** - Financijska podrška voditeljima projekata  
-- **Security tab** - Izvješća o ranjivostima i sigurnosne obavijesti
-- **Actions tab** - Pregled automatiziranih tijekova rada i CI/CD procesa
-- **Insights tab** - Analitika o suradnicima, commitovima i zdravlju projekta
-- **Projects tab** - GitHubovi ugrađeni alati za upravljanje projektima
+- **GitHub Sponsors** - Financijska podrška održavateljima  
+- **Kartica Security** - Izvještaji o ranjivostima i sigurnosni savjeti
+- **Kartica Actions** - Pregled automatiziranih tijekova rada i CI/CD pipelinea
+- **Kartica Insights** - Analitika o contributorima, komitima i zdravlju projekta
+- **Kartica Projects** - Ugrađeni GitHub alati za upravljanje projektima
 
-✅ Pogledajte svoj novi GitHub repo i isprobajte nekoliko stvari, poput uređivanja postavki, dodavanja informacija u repo, stvaranja projekta (poput Kanban ploče) i postavljanja GitHub Actions za automatizaciju. Puno toga možete učiniti!
+✅ Istražite svoj novi GitHub repo i isprobajte nekoliko stvari, poput uređivanja postavki, dodavanja informacija u vaš repo, kreiranja projekta (kao Kanban ploča) i postavljanja GitHub Actions za automatizaciju. Možete jako puno toga!
 
 ---
 
-## 🚀 Izazov 
+## 🚀 Izazov
 
-Dobro, vrijeme je da testirate svoje nove GitHub supermoći! 🚀 Evo izazova koji će sve učiniti jasnim na najzadovoljavajući način:
+Dobro, vrijeme je da isprobate svoje nove sjajne GitHub supermoći! 🚀 Evo izazova koji će vam pomoći da sve klikne na najzadovoljavajući način:
 
-Pozovite prijatelja (ili člana obitelji koji vas uvijek pita što radite s tim "računalnim stvarima") i krenite na zajedničku avanturu kodiranja! Ovo je mjesto gdje se događa prava magija – stvorite projekt, neka ga oni forkaju, napravite nekoliko grana i spojite promjene kao profesionalci kakvi postajete.
+Uzmite prijatelja (ili člana obitelji koji vas stalno pita što radite sa svim tim "računalnim stvarima") i krenite zajedno u suradnički kôd avanturu! Tu se događa prava magija – napravite projekt, neka ga oni forkaju, napravite neke grane i spajajte promjene kao pravi profesionalci u nastajanju.
 
-Neću lagati – vjerojatno ćete se smijati u nekom trenutku (posebno kad oboje pokušate promijeniti isti redak), možda ćete se češati po glavi u zbunjenosti, ali sigurno ćete imati one nevjerojatne "aha!" trenutke koji čine sve učenje vrijednim. Osim toga, postoji nešto posebno u dijeljenju tog prvog uspješnog spajanja s nekim drugim – to je poput male proslave koliko ste daleko stigli!
+Neću lagati – vjerojatno ćete se smijati u nekom trenutku (pogotovo kad oboje pokušate promijeniti istu liniju), možda ćete češati glavu u zbunjenosti, ali sigurno ćete imati divne "aha!" trenutke koji čine sav vaš trud vrijednim. Osim toga, postoji nešto posebno u dijeljenju tog prvog uspješnog spajanja s nekim drugim – to je kao mala proslava koliko ste daleko stigli!
 
-Još nemate partnera za kodiranje? Bez brige! GitHub zajednica prepuna je nevjerojatno gostoljubivih ljudi koji se sjećaju kako je bilo biti nov. Potražite repozitorije s oznakom "good first issue" – oni vam doslovno poručuju "Hej početnici, dođite učiti s nama!" Kako je to sjajno?
+Još nemate partnera za kodiranje? Nema brige! GitHub zajednica je prepuna iznimno gostoljubivih ljudi koji se sjećaju kako je bilo biti nov. Potražite repozitorije s oznakama "good first issue" – one u osnovi kažu "Hej početnici, dođite učiti s nama!" Kako je to sjajno?
 
-## Kviz nakon predavanja
-[Kviz nakon predavanja](https://ff-quizzes.netlify.app/web/en/)
+## Post-lecture Quiz
+[Post-lecture quiz](https://ff-quizzes.netlify.app/web/en/)
 
 ## Pregled i nastavak učenja
 
-Uf! 🎉 Pogledajte se – upravo ste savladali osnove GitHuba kao pravi šampion! Ako vam se mozak sada osjeća malo preopterećeno, to je potpuno normalno i iskreno dobar znak. Upravo ste naučili alate za koje mi je trebalo tjednima da se osjećam ugodno kad sam počinjao.
+Uf! 🎉 Pogledajte se – upravo ste osvojili osnove GitHuba kao pravi prvak! Ako vam je mozak malo pun sada, to je potpuno normalno i zapravo dobar znak. Upravo ste naučili alate za koje je meni trebalo tjednima da se osjećam ugodno kada sam počinjao.
 
-Git i GitHub su nevjerojatno moćni (kao, stvarno moćni), i svaki programer kojeg poznajem – uključujući one koji sada izgledaju kao čarobnjaci – morao je vježbati i malo se mučiti prije nego što je sve kliknulo. Činjenica da ste prošli ovu lekciju znači da ste već na putu da savladate neke od najvažnijih alata u programerskom alatu.
+Git i GitHub su nevjerojatno moćni (ozbiljno moćni), i svaki programer kojeg znam – uključujući one koji sada izgledaju kao čarobnjaci – morao je vježbati i spoticati se prije nego što mu je sve kliknulo. Činjenica da ste prošli ovu lekciju znači da ste već na putu da svladate neke od najvažnijih alata u razvojnom alatu programera.
 
-Evo nekoliko fantastičnih resursa koji će vam pomoći da vježbate i postanete još bolji:
+Evo nekoliko odličnih resursa za praksu i postajanje još bolji:
 
-- [Vodič za doprinos softveru otvorenog koda](https://opensource.guide/how-to-contribute/#how-to-submit-a-contribution) – Vaša karta za ostavljanje traga
-- [Git cheatsheet](https://training.github.com/downloads/github-git-cheat-sheet/) – Držite ovo pri ruci za brzu referencu!
+- [Vodič za doprinos open source softveru](https://opensource.guide/how-to-contribute/#how-to-submit-a-contribution) – Vaš vodič za ostavljanje traga
+- [Git cheatsheet](https://training.github.com/downloads/github-git-cheat-sheet/) – Držite ovo pri ruci za brzi pregled!
 
-I zapamtite: praksa donosi napredak, ne savršenstvo! Što više koristite Git i GitHub, to će vam postati prirodnije. GitHub je stvorio neke nevjerojatne interaktivne tečajeve koji vam omogućuju vježbanje u sigurnom okruženju:
+I zapamtite: praksa donosi napredak, a ne savršenstvo! Što više koristite Git i GitHub, to postaje prirodnije. GitHub je stvorio neke sjajne interaktivne tečajeve koji vam dopuštaju praksu u sigurnom okruženju:
 
 - [Uvod u GitHub](https://github.com/skills/introduction-to-github)
-- [Komunikacija pomoću Markdowna](https://github.com/skills/communicate-using-markdown)  
+- [Komunicirajte koristeći Markdown](https://github.com/skills/communicate-using-markdown)  
 - [GitHub Pages](https://github.com/skills/github-pages)
-- [Upravljanje sukobima pri spajanju](https://github.com/skills/resolve-merge-conflicts)
+- [Upravljanje sukobima spajanja](https://github.com/skills/resolve-merge-conflicts)
 
-**Osjećate se avanturistički? Pogledajte ove moderne alate:**
-- [Dokumentacija za GitHub CLI](https://cli.github.com/manual/) – Za trenutke kad želite biti čarobnjak komandne linije
-- [Dokumentacija za GitHub Codespaces](https://docs.github.com/en/codespaces) – Kodirajte u oblaku!
-- [Dokumentacija za GitHub Actions](https://docs.github.com/en/actions) – Automatizirajte sve
-- [Najbolje prakse za Git](https://www.atlassian.com/git/tutorials/comparing-workflows) – Poboljšajte svoj radni tijek 
+**Želite li avanturu? Isprobajte ove moderne alate:**
+- [Dokumentacija GitHub CLI](https://cli.github.com/manual/) – Za kad želite biti kao čarobnjak komandne linije
+- [Dokumentacija GitHub Codespaces](https://docs.github.com/en/codespaces) – Kodirajte u oblaku!
+- [Dokumentacija GitHub Actions](https://docs.github.com/en/actions) – Automatizirajte sve što možete
+- [Najbolje prakse za Git](https://www.atlassian.com/git/tutorials/comparing-workflows) – Podignite svoj radni tijek na višu razinu
 
-## Izazov s GitHub Copilot Agentom 🚀
+## GitHub Copilot Agent Izazov 🚀
 
-Koristite Agent način rada za dovršavanje sljedećeg izazova:
+Koristite Agent način rada za završetak sljedećeg izazova:
 
-**Opis:** Stvorite suradnički projekt web razvoja koji demonstrira kompletan GitHub tijek rada koji ste naučili u ovoj lekciji. Ovaj izazov pomoći će vam da vježbate stvaranje repozitorija, značajke suradnje i moderne Git tijekove rada u stvarnom scenariju.
+**Opis:** Kreirajte suradnički projekt web razvoja koji demonstrira kompletan GitHub radni tijek koji ste naučili u ovoj lekciji. Ovaj izazov će vam pomoći da vježbate kreiranje repozitorija, suradničke značajke i moderne Git radne procese u stvarnom scenariju.
 
-**Zadatak:** Stvorite novi javni GitHub repozitorij za jednostavan projekt "Resursi za web razvoj". Repozitorij bi trebao uključivati dobro strukturiranu README.md datoteku koja navodi korisne alate i resurse za web razvoj, organizirane po kategorijama (HTML, CSS, JavaScript itd.). Postavite repozitorij s odgovarajućim standardima zajednice, uključujući licencu, smjernice za doprinos i kodeks ponašanja. Stvorite najmanje dvije grane za značajke: jednu za dodavanje CSS resursa i drugu za JavaScript resurse. Napravite commitove na svakoj grani s opisnim porukama commitova, a zatim stvorite pull requestove za spajanje promjena natrag u glavnu granu. Omogućite GitHub značajke poput Issues, Discussions i postavite osnovni GitHub Actions tijek rada za automatizirane provjere.
+**Zadatak:** Kreirajte novi javni GitHub repozitorij za jednostavan projekt "Resursi za web razvoj". Repozitorij treba sadržavati dobro strukturirani README.md datoteku s popisom korisnih alata i resursa za web razvoj, organizirano po kategorijama (HTML, CSS, JavaScript, itd.). Postavite repozitorij s pravilima zajednice uključujući licencu, smjernice za doprinos i kodeks ponašanja. Kreirajte barem dvije funkcijske grane: jednu za dodavanje CSS resursa i drugu za JavaScript resurse. Napravite komite na svakoj grani s opisnim porukama komita, zatim kreirajte pull requestove za spajanje promjena natrag u main. Omogućite GitHub značajke kao što su Issues, Discussions i postavite osnovni GitHub Actions tijek rada za automatizirane provjere.
 
-## Zadatak 
+## Zadatak
 
-Vaša misija, ako je odlučite prihvatiti: Završite [Uvod u GitHub](https://github.com/skills/introduction-to-github) tečaj na GitHub Skills. Ovaj interaktivni tečaj omogućit će vam da vježbate sve što ste naučili u sigurnom, vođenom okruženju. Osim toga, dobit ćete cool značku kad završite! 🏅
+Vaša misija, ako je odlučite prihvatiti: Završite [Uvod u GitHub](https://github.com/skills/introduction-to-github) tečaj na GitHub Skills. Ovaj interaktivni tečaj će vam omogućiti praksu svega što ste naučili u sigurnom i vođenom okruženju. Uz to, dobit ćete sjajnu značku kada završite! 🏅
 
-**Osjećate se spremni za više izazova?**
-- Postavite SSH autentifikaciju za svoj GitHub račun (bez više lozinki!)
-- Pokušajte koristiti GitHub CLI za svoje svakodnevne Git operacije
-- Stvorite repozitorij s GitHub Actions tijekom rada
-- Istražite GitHub Codespaces otvaranjem ovog repozitorija u uređivaču temeljenom na oblaku
-
-Zapamtite: svaki stručnjak je jednom bio početnik. Možete vi to! 💪
+**Spremni za više izazova?**
+- Postavite SSH autentifikaciju za svoj GitHub račun (zaboravite lozinke!)
+- Isprobajte GitHub CLI za svoje svakodnevne Git radnje
+- Kreirajte repozitorij s GitHub Actions tijek rada
+- Istražite GitHub Codespaces otvaranjem ovog repozitorija u uređivaču u oblaku
 
 ---
 
-**Izjava o odricanju odgovornosti**:  
-Ovaj dokument je preveden pomoću AI usluge za prevođenje [Co-op Translator](https://github.com/Azure/co-op-translator). Iako nastojimo osigurati točnost, imajte na umu da automatski prijevodi mogu sadržavati pogreške ili netočnosti. Izvorni dokument na izvornom jeziku treba smatrati autoritativnim izvorom. Za ključne informacije preporučuje se profesionalni prijevod od strane čovjeka. Ne preuzimamo odgovornost za nesporazume ili pogrešna tumačenja koja proizlaze iz korištenja ovog prijevoda.
+## 🚀 Vaš GitHub vremenski plan majstorstva
+
+### ⚡ **Što možete učiniti u sljedećih 5 minuta**
+- [ ] Oznaciti zvjezdicom ovaj repozitorij i tri druga projekta koja vas zanimaju
+- [ ] Postaviti dvofaktorsku autentikaciju na svom GitHub računu
+- [ ] Kreirati jednostavan README za svoj prvi repozitorij
+- [ ] Zapratiti 5 programera čiji rad vas inspirira
+
+### 🎯 **Što možete postići u ovom satu**
+- [ ] Završiti post-lesson kviz i razmisliti o svom GitHub putovanju
+- [ ] Postaviti SSH ključeve za autentifikaciju bez lozinke na GitHubu
+- [ ] Kreirati svoj prvi značajan komit s odličnom porukom komita
+- [ ] Istražiti GitHubovu karticu "Explore" za otkrivanje trending projekata
+- [ ] Vježbati forkanje repozitorija i napraviti malu promjenu
+
+### 📅 **Vaša tjedna GitHub avantura**
+- [ ] Završiti GitHub Skills tečajeve (Uvod u GitHub, Markdown)
+- [ ] Napraviti svoj prvi pull request na open source projektu
+- [ ] Postaviti GitHub Pages stranicu za prikaz svog rada
+- [ ] Pridružiti se GitHub Discussions na projektima koji vas zanimaju
+- [ ] Kreirati repozitorij s pravilima zajednice (README, Licenca, itd.)
+- [ ] Isprobati GitHub Codespaces za razvoj u oblaku
+
+### 🌟 **Vaša mjesečna transformacija**
+- [ ] Doprinijeti 3 različita open source projekta
+- [ ] Mentorirati nekoga novog u GitHubu (proslijediti iskustvo!)
+- [ ] Postaviti automatizirane tijekove rada s GitHub Actions
+- [ ] Izgraditi portfelj koji prikazuje vaše GitHub doprinose
+- [ ] Sudjelovati na Hacktoberfestu ili sličnim zajedničkim događajima
+- [ ] Postati održavatelj vlastitog projekta kojem drugi doprinose
+
+### 🎓 **Završna provjera GitHub majstorstva**
+
+**Proslavite koliko ste daleko stigli:**
+- Što vam je najdraža stvar u korištenju GitHuba?
+- Koja vas suradnička značajka najviše oduševljava?
+- Kako se sada osjećate u vezi doprinosa open sourceu?
+- Koji projekt želite prvi poduprijeti?
+
+```mermaid
+journey
+    title Vaše Povjerenje u GitHub Putovanje
+    section Danas
+      Nervozan: 3: You
+      Znatiželjan: 4: You
+      Uzbuđen: 5: You
+    section Ovaj Tjedan
+      Vježbanje: 4: You
+      Doprinos: 5: You
+      Povezivanje: 5: You
+    section Sljedeći Mjesec
+      Suradnja: 5: You
+      Vođenje: 5: You
+      Inspiriranje Drugih: 5: You
+```
+> 🌍 **Dobrodošli u globalnu zajednicu programera!** Sada imate alate za suradnju s milijunima programera širom svijeta. Vaš prvi doprinos može se činiti malim, ali zapamtite - svaki veliki open source projekt započeo je s nekim tko je napravio svoj prvi komit. Pitanje nije hoćete li utjecati, nego koji će fantastični projekt prvi imati koristi od vaše jedinstvene perspektive! 🚀
+
+Zapamtite: svaki stručnjak je nekada bio početnik. Vi to možete! 💪
+
+---
+
+<!-- CO-OP TRANSLATOR DISCLAIMER START -->
+**Odricanje od odgovornosti**:
+Ovaj dokument je preveden korištenjem AI usluge za prevođenje [Co-op Translator](https://github.com/Azure/co-op-translator). Iako težimo točnosti, imajte na umu da automatski prijevodi mogu sadržavati pogreške ili netočnosti. Izvorni dokument na izvornom jeziku treba se smatrati autoritativnim izvorom. Za kritične informacije preporučuje se profesionalni ljudski prijevod. Ne snosimo odgovornost za bilo kakva nesporazuma ili pogrešna tumačenja koja proizlaze iz korištenja ovog prijevoda.
+<!-- CO-OP TRANSLATOR DISCLAIMER END -->

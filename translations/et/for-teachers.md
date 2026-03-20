@@ -1,12 +1,3 @@
-<!--
-CO_OP_TRANSLATOR_METADATA:
-{
-  "original_hash": "71009af209f81cc01a1f2d324200375f",
-  "translation_date": "2025-10-11T11:36:13+00:00",
-  "source_file": "for-teachers.md",
-  "language_code": "et"
-}
--->
 ### Õpetajatele
 
 Olete oodatud kasutama seda õppekava oma klassiruumis. See töötab sujuvalt koos GitHub Classroomi ja juhtivate LMS platvormidega ning seda saab kasutada ka iseseisva repona koos oma õpilastega.
@@ -42,10 +33,10 @@ See õppekava sisaldab importitavaid pakette, mis sobivad tavaliste LMS töövoo
   - Moodle Cloudil on piiratud Common Cartridge'i tugi. Eelistage ülaltoodud Moodle'i faili, mida saab samuti Canvas'isse üles laadida.
   - Pärast importimist vaadake üle moodulid, tähtaegade ja viktoriinide seaded, et need vastaksid teie semestri ajakavale.
 
-![Moodle](../../translated_images/moodle.94eb93d714a50cb2c97435b408017dee224348b61bc86203ffd43a4f4e57b95f.et.png)
+![Moodle](../../translated_images/et/moodle.94eb93d714a50cb2.webp)
 > Õppekava Moodle'i klassiruumis
 
-![Canvas](../../translated_images/canvas.fbd605ff8e5b8aff567d398528ce113db304446b90b9cad55c654de3fdfcda34.et.png)
+![Canvas](../../translated_images/et/canvas.fbd605ff8e5b8aff.webp)
 > Õppekava Canvas'is
 
 ### Repositooriumi otsene kasutamine (ilma Classroomita)

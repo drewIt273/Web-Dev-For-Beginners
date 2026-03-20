@@ -1,12 +1,3 @@
-<!--
-CO_OP_TRANSLATOR_METADATA:
-{
-  "original_hash": "50a7783473b39a2e0f133e271a102231",
-  "translation_date": "2025-10-23T22:05:27+00:00",
-  "source_file": "7-bank-project/4-state-management/assignment.md",
-  "language_code": "da"
-}
--->
 # Implementer "Tilføj Transaktion" Dialog
 
 ## Oversigt
@@ -112,7 +103,7 @@ Se [server-API-dokumentationen](../api/README.md) for:
 **Forventet resultat:**
 Efter at have fuldført denne opgave, bør din bankapp have en fuldt funktionel "Tilføj Transaktion"-funktion, der ser professionel ud og fungerer perfekt:
 
-![Skærmbillede, der viser et eksempel på "Tilføj transaktion"-dialog](../../../../translated_images/dialog.93bba104afeb79f12f65ebf8f521c5d64e179c40b791c49c242cf15f7e7fab15.da.png)
+![Skærmbillede, der viser et eksempel på "Tilføj transaktion"-dialog](../../../../translated_images/da/dialog.93bba104afeb79f1.webp)
 
 ## Test af din implementering
 

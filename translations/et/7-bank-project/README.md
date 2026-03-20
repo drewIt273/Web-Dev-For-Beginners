@@ -1,17 +1,8 @@
-<!--
-CO_OP_TRANSLATOR_METADATA:
-{
-  "original_hash": "830359535306594b448db6575ce5cdee",
-  "translation_date": "2025-10-11T12:01:12+00:00",
-  "source_file": "7-bank-project/README.md",
-  "language_code": "et"
-}
--->
 # :dollar: Panga loomine
 
 Selles projektis õpid, kuidas luua fiktiivset panka. Need õppetunnid sisaldavad juhiseid veebirakenduse kujundamiseks ja marsruutide loomiseks, vormide ehitamiseks, oleku haldamiseks ning API-st andmete hankimiseks, mille abil saad panga andmeid kätte.
 
-| ![Ekraan1](../../../translated_images/screen1.baccbba0f1f93364672eb250d2fbd21574bb1caf79a2155022dc098a741cbdfe.et.png) | ![Ekraan2](../../../translated_images/screen2.123c82a831a1d14ab2061994be2fa5de9cec1ce651047217d326d4773a6348e4.et.png) |
+| ![Ekraan1](../../../translated_images/et/screen1.baccbba0f1f93364.webp) | ![Ekraan2](../../../translated_images/et/screen2.123c82a831a1d14a.webp) |
 |--------------------------------|--------------------------------|
 
 ## Õppetunnid

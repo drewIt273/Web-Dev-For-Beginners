@@ -1,12 +1,3 @@
-<!--
-CO_OP_TRANSLATOR_METADATA:
-{
-  "original_hash": "2066c17078e9d18b5e309f31d8e8bc24",
-  "translation_date": "2025-11-03T13:53:25+00:00",
-  "source_file": "9-chat-project/README.md",
-  "language_code": "tl"
-}
--->
 # Gumawa ng Chat Assistant gamit ang AI
 
 Naalala mo ba sa Star Trek kung paano nakikipag-usap ang crew sa computer ng barko, nagtatanong ng mahihirap na tanong at nakakatanggap ng makabuluhang sagot? Ang tila purong science fiction noong 1960s ay ngayon ay kaya mo nang gawin gamit ang mga teknolohiyang web na alam mo na.
@@ -61,7 +52,7 @@ print(response.choices[0].message.content)
 
 Ganito ang magiging hitsura ng iyong natapos na proyekto:
 
-![Chat app interface na nagpapakita ng usapan sa pagitan ng user at AI assistant](../../../translated_images/screenshot.0a1ee0d123df681b4501eb53ffb267519fcc20aa653eabecef1e7561ddfb1cab.tl.png)
+![Chat app interface na nagpapakita ng usapan sa pagitan ng user at AI assistant](../../../translated_images/tl/screenshot.0a1ee0d123df681b.webp)
 
 ## 🗺️ Ang Iyong Paglalakbay sa Pagbuo ng AI Application
 
@@ -194,7 +185,7 @@ mindmap
 
 **Pangunahing Prinsipyo**: Ang pagbuo ng AI application ay pinagsasama ang tradisyunal na kasanayan sa web development at AI service integration, na lumilikha ng matatalinong aplikasyon na natural at tumutugon sa mga user.
 
-![GitHub Models AI Playground interface na may model selection at testing area](../../../translated_images/playground.d2b927122224ff8ff4028fc842176e353c339147d8925455f36c92fb1655c477.tl.png)
+![GitHub Models AI Playground interface na may model selection at testing area](../../../translated_images/tl/playground.d2b927122224ff8f.webp)
 
 **Narito kung bakit kapaki-pakinabang ang playground:**
 - **Subukan** ang iba't ibang AI models tulad ng GPT-4o-mini, Claude, at iba pa (lahat libre!)
@@ -204,7 +195,7 @@ mindmap
 
 Kapag nakapaglaro ka na nang kaunti, i-click lang ang "Code" tab at piliin ang programming language para makuha ang implementation code na kailangan mo.
 
-![Playground choice na nagpapakita ng code generation options para sa iba't ibang programming languages](../../../translated_images/playground-choice.1d23ba7d407f47584c9f446c77f0bcf70cae794cc9c8d7849a3cca4a3693e6c4.tl.png)
+![Playground choice na nagpapakita ng code generation options para sa iba't ibang programming languages](../../../translated_images/tl/playground-choice.1d23ba7d407f4758.webp)
 
 ## Pag-set Up ng Python Backend Integration
 
@@ -2364,14 +2355,14 @@ Gusto mo bang subukan ang proyektong ito sa isang cloud development environment?
 - **Pumunta** sa [Web Dev For Beginners repository](https://github.com/microsoft/Web-Dev-For-Beginners)  
 - **I-click** ang "Use this template" sa kanang itaas na bahagi (siguraduhing naka-log in ka sa GitHub)  
 
-![Interface ng paggawa mula sa template na nagpapakita ng berdeng "Use this template" button](../../../translated_images/template.67ad477109d29a2b04599a83c964c87fcde041256d4f04d3589cbb00c696f76c.tl.png)  
+![Interface ng paggawa mula sa template na nagpapakita ng berdeng "Use this template" button](../../../translated_images/tl/template.67ad477109d29a2b.webp)  
 
 **Hakbang 2: I-launch ang Codespaces**  
 - **Buksan** ang iyong bagong likhang repository  
 - **I-click** ang berdeng "Code" button at piliin ang "Codespaces"  
 - **Piliin** ang "Create codespace on main" upang simulan ang iyong development environment  
 
-![Interface ng paggawa ng codespace na may mga opsyon para sa paglulunsad ng cloud development environment](../../../translated_images/codespace.bcecbdf5d2747d3d17da67a78ad911c8853d68102e34748ec372cde1e9236e1d.tl.png)  
+![Interface ng paggawa ng codespace na may mga opsyon para sa paglulunsad ng cloud development environment](../../../translated_images/tl/codespace.bcecbdf5d2747d3d.webp)  
 
 **Hakbang 3: Configuration ng Environment**  
 Kapag nag-load ang iyong Codespace, magkakaroon ka ng access sa:  

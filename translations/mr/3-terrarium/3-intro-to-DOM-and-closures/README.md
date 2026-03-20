@@ -1,12 +1,3 @@
-<!--
-CO_OP_TRANSLATOR_METADATA:
-{
-  "original_hash": "973e48ad87d67bf5bb819746c9f8e302",
-  "translation_date": "2025-11-03T14:37:33+00:00",
-  "source_file": "3-terrarium/3-intro-to-DOM-and-closures/README.md",
-  "language_code": "mr"
-}
--->
 # टेरारियम प्रकल्प भाग ३: DOM मॅनिप्युलेशन आणि जावास्क्रिप्ट क्लोजर्स
 
 ```mermaid
@@ -26,7 +17,7 @@ journey
       Complete terrarium: 5: Student
 ```
 
-![DOM आणि क्लोजर](../../../../translated_images/webdev101-js.10280393044d7eaaec7e847574946add7ddae6be2b2194567d848b61d849334a.mr.png)
+![DOM आणि क्लोजर](../../../../translated_images/mr/webdev101-js.10280393044d7eaa.webp)
 > स्केच नोट [Tomomi Imura](https://twitter.com/girlie_mac) यांच्याकडून
 
 वेब विकासातील सर्वात आकर्षक पैलूंच्या स्वागतासाठी तयार व्हा - गोष्टी परस्परसंवादी बनवणे! डॉक्युमेंट ऑब्जेक्ट मॉडेल (DOM) हे तुमच्या HTML आणि जावास्क्रिप्टमधील एक पूल आहे, आणि आज आपण त्याचा उपयोग तुमच्या टेरारियमला जिवंत करण्यासाठी करू. जेव्हा टिम बर्नर्स-लीने पहिला वेब ब्राउझर तयार केला, तेव्हा त्यांनी एक वेब कल्पना केली होती जिथे दस्तऐवज गतिशील आणि परस्परसंवादी असू शकतात - DOM त्या दृष्टिकोनाला शक्य बनवते.
@@ -105,7 +96,7 @@ flowchart TD
     style Q fill:#ffebee
 ```
 
-![DOM ट्रीचे प्रतिनिधित्व](../../../../translated_images/dom-tree.7daf0e763cbbba9273f9a66fe04c98276d7d23932309b195cb273a9cf1819b42.mr.png)
+![DOM ट्रीचे प्रतिनिधित्व](../../../../translated_images/mr/dom-tree.7daf0e763cbbba92.webp)
 
 > DOM आणि त्याचा संदर्भ देणारा HTML मार्कअपचे प्रतिनिधित्व. [Olfa Nasraoui](https://www.researchgate.net/publication/221417012_Profile-Based_Focused_Crawler_for_Social_Media-Sharing_Websites) कडून
 
@@ -150,7 +141,7 @@ flowchart LR
 
 > 💡 **क्लोजर्स समजून घेणे**: क्लोजर्स जावास्क्रिप्टमधील एक महत्त्वाचा विषय आहे, आणि अनेक विकसक त्याचा पूर्ण सैद्धांतिक पैलू समजण्याआधी अनेक वर्षे त्याचा वापर करतात. आज, आम्ही व्यावहारिक अनुप्रयोगावर लक्ष केंद्रित करत आहोत - तुम्ही पाहाल की ते परस्परसंवादी वैशिष्ट्ये तयार करताना नैसर्गिकरित्या कसे उद्भवतात. समजून घेणे विकसित होईल कारण तुम्ही पाहाल की ते वास्तविक समस्यांचे निराकरण कसे करतात.
 
-![DOM ट्रीचे प्रतिनिधित्व](../../../../translated_images/dom-tree.7daf0e763cbbba9273f9a66fe04c98276d7d23932309b195cb273a9cf1819b42.mr.png)
+![DOM ट्रीचे प्रतिनिधित्व](../../../../translated_images/mr/dom-tree.7daf0e763cbbba92.webp)
 
 > DOM आणि त्याचा संदर्भ देणारा HTML मार्कअपचे प्रतिनिधित्व. [Olfa Nasraoui](https://www.researchgate.net/publication/221417012_Profile-Based_Focused_Crawler_for_Social_Media-Sharing_Websites) कडून
 
@@ -540,7 +531,7 @@ function stopElementDrag() {
 - **क्रॉस-डिव्हाइस सपोर्ट**: डेस्कटॉप आणि मोबाइलवर कार्य करते
 - **परफॉर्मन्स कॉन्शस**: मेमरी लीक किंवा अनावश्यक गणना नाही
 
-![finished terrarium](../../../../translated_images/terrarium-final.0920f16e87c13a84cd2b553a5af9a3ad1cffbd41fbf8ce715d9e9c43809a5e2c.mr.png)
+![finished terrarium](../../../../translated_images/mr/terrarium-final.0920f16e87c13a84.webp)
 
 ---
 

@@ -1,12 +1,3 @@
-<!--
-CO_OP_TRANSLATOR_METADATA:
-{
-  "original_hash": "71009af209f81cc01a1f2d324200375f",
-  "translation_date": "2025-10-03T09:04:50+00:00",
-  "source_file": "for-teachers.md",
-  "language_code": "ko"
-}
--->
 ### 교육자를 위한 안내
 
 이 커리큘럼은 교실에서 자유롭게 활용하실 수 있습니다. GitHub Classroom 및 주요 LMS 플랫폼과 원활하게 작동하며, 학생들과 함께 독립적인 저장소로도 사용할 수 있습니다.
@@ -42,10 +33,10 @@ CO_OP_TRANSLATOR_METADATA:
   - Moodle Cloud는 Common Cartridge 지원이 제한적입니다. 위의 Moodle 파일을 사용하는 것이 좋으며, 이는 Canvas에도 업로드할 수 있습니다.
   - 가져온 후, 모듈, 마감일, 퀴즈 설정을 학기 일정에 맞게 검토하세요.
 
-![Moodle](../../translated_images/moodle.94eb93d714a50cb2c97435b408017dee224348b61bc86203ffd43a4f4e57b95f.ko.png)
+![Moodle](../../translated_images/ko/moodle.94eb93d714a50cb2.webp)
 > Moodle 교실에서의 커리큘럼
 
-![Canvas](../../translated_images/canvas.fbd605ff8e5b8aff567d398528ce113db304446b90b9cad55c654de3fdfcda34.ko.png)
+![Canvas](../../translated_images/ko/canvas.fbd605ff8e5b8aff.webp)
 > Canvas에서의 커리큘럼
 
 ### 저장소를 직접 사용하기 (GitHub Classroom 없이)

@@ -1,12 +1,3 @@
-<!--
-CO_OP_TRANSLATOR_METADATA:
-{
-  "original_hash": "50a7783473b39a2e0f133e271a102231",
-  "translation_date": "2025-10-24T21:02:04+00:00",
-  "source_file": "7-bank-project/4-state-management/assignment.md",
-  "language_code": "cs"
-}
--->
 # Implementace dialogu „Přidat transakci“
 
 ## Přehled
@@ -112,7 +103,7 @@ Podívejte se na [dokumentaci serverového API](../api/README.md) pro:
 **Očekávaný výsledek:**
 Po dokončení tohoto úkolu by vaše bankovní aplikace měla mít plně funkční funkci „Přidat transakci“, která vypadá a chová se profesionálně:
 
-![Screenshot zobrazující příklad dialogu „Přidat transakci“](../../../../translated_images/dialog.93bba104afeb79f12f65ebf8f521c5d64e179c40b791c49c242cf15f7e7fab15.cs.png)
+![Screenshot zobrazující příklad dialogu „Přidat transakci“](../../../../translated_images/cs/dialog.93bba104afeb79f1.webp)
 
 ## Testování vaší implementace
 

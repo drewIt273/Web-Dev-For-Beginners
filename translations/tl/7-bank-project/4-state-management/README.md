@@ -1,12 +1,3 @@
-<!--
-CO_OP_TRANSLATOR_METADATA:
-{
-  "original_hash": "b807b09df716dc48a2b750835bf8e933",
-  "translation_date": "2025-11-03T13:58:02+00:00",
-  "source_file": "7-bank-project/4-state-management/README.md",
-  "language_code": "tl"
-}
--->
 # Gumawa ng Banking App Bahagi 4: Mga Konsepto ng State Management
 
 ## ⚡ Ano ang Magagawa Mo sa Loob ng 5 Minuto
@@ -190,7 +181,7 @@ Ang [state management](https://en.wikipedia.org/wiki/State_management) ay tungko
 
 Sa halip na maguluhan, gagawa tayo ng **centralized state management** system. Isipin ito na parang may isang organisadong tao na namamahala sa lahat ng mahahalagang bagay:
 
-![Schema na nagpapakita ng daloy ng data sa pagitan ng HTML, mga aksyon ng user, at estado](../../../../translated_images/data-flow.fa2354e0908fecc89b488010dedf4871418a992edffa17e73441d257add18da4.tl.png)
+![Schema na nagpapakita ng daloy ng data sa pagitan ng HTML, mga aksyon ng user, at estado](../../../../translated_images/tl/data-flow.fa2354e0908fecc8.webp)
 
 ```mermaid
 flowchart TD
@@ -803,7 +794,7 @@ Ang hamon na ito ay makakatulong sa iyo na mag-isip tulad ng isang propesyonal n
 
 Narito ang isang halimbawa ng resulta pagkatapos makumpleto ang assignment:
 
-![Screenshot na nagpapakita ng halimbawa ng "Add transaction" dialog](../../../../translated_images/dialog.93bba104afeb79f12f65ebf8f521c5d64e179c40b791c49c242cf15f7e7fab15.tl.png)
+![Screenshot na nagpapakita ng halimbawa ng "Add transaction" dialog](../../../../translated_images/tl/dialog.93bba104afeb79f1.webp)
 
 ---
 

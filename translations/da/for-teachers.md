@@ -1,12 +1,3 @@
-<!--
-CO_OP_TRANSLATOR_METADATA:
-{
-  "original_hash": "71009af209f81cc01a1f2d324200375f",
-  "translation_date": "2025-10-03T09:57:07+00:00",
-  "source_file": "for-teachers.md",
-  "language_code": "da"
-}
--->
 ### For undervisere
 
 Du er velkommen til at bruge dette pensum i din undervisning. Det fungerer problemfrit med GitHub Classroom og førende LMS-platforme, og det kan også bruges som et selvstændigt repo med dine elever.
@@ -42,10 +33,10 @@ Dette pensum inkluderer importbare pakker til almindelige LMS-arbejdsgange.
   - Moodle Cloud har begrænset Common Cartridge-support. Foretræk Moodle-filen ovenfor, som også kan uploades til Canvas.
   - Efter import, gennemgå moduler, deadlines og quizindstillinger for at matche din terminsplan.
 
-![Moodle](../../translated_images/moodle.94eb93d714a50cb2c97435b408017dee224348b61bc86203ffd43a4f4e57b95f.da.png)
+![Moodle](../../translated_images/da/moodle.94eb93d714a50cb2.webp)
 > Pensum i et Moodle-klasselokale
 
-![Canvas](../../translated_images/canvas.fbd605ff8e5b8aff567d398528ce113db304446b90b9cad55c654de3fdfcda34.da.png)
+![Canvas](../../translated_images/da/canvas.fbd605ff8e5b8aff.webp)
 > Pensum i Canvas
 
 ### Brug repoet direkte (uden Classroom)

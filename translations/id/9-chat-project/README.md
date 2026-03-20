@@ -1,12 +1,3 @@
-<!--
-CO_OP_TRANSLATOR_METADATA:
-{
-  "original_hash": "2066c17078e9d18b5e309f31d8e8bc24",
-  "translation_date": "2025-11-06T11:46:11+00:00",
-  "source_file": "9-chat-project/README.md",
-  "language_code": "id"
-}
--->
 # Membangun Asisten Chat dengan AI
 
 Ingat dalam Star Trek ketika kru berbicara santai dengan komputer kapal, menanyakan pertanyaan kompleks dan mendapatkan jawaban yang bijaksana? Apa yang tampak seperti fiksi ilmiah murni di tahun 1960-an sekarang adalah sesuatu yang bisa Anda bangun menggunakan teknologi web yang sudah Anda kenal.
@@ -61,7 +52,7 @@ print(response.choices[0].message.content)
 
 Berikut adalah tampilan proyek akhir Anda:
 
-![Antarmuka aplikasi chat yang menunjukkan percakapan antara pengguna dan asisten AI](../../../translated_images/screenshot.0a1ee0d123df681b4501eb53ffb267519fcc20aa653eabecef1e7561ddfb1cab.id.png)
+![Antarmuka aplikasi chat yang menunjukkan percakapan antara pengguna dan asisten AI](../../../translated_images/id/screenshot.0a1ee0d123df681b.webp)
 
 ## 🗺️ Perjalanan Belajar Anda Melalui Pengembangan Aplikasi AI
 
@@ -194,7 +185,7 @@ mindmap
 
 **Prinsip Inti**: Pengembangan aplikasi AI menggabungkan keterampilan pengembangan web tradisional dengan integrasi layanan AI, menciptakan aplikasi cerdas yang terasa alami dan responsif bagi pengguna.
 
-![Antarmuka GitHub Models AI Playground dengan pilihan model dan area pengujian](../../../translated_images/playground.d2b927122224ff8ff4028fc842176e353c339147d8925455f36c92fb1655c477.id.png)
+![Antarmuka GitHub Models AI Playground dengan pilihan model dan area pengujian](../../../translated_images/id/playground.d2b927122224ff8f.webp)
 
 **Inilah yang membuat playground sangat berguna:**
 - **Coba** berbagai model AI seperti GPT-4o-mini, Claude, dan lainnya (semuanya gratis!)
@@ -204,7 +195,7 @@ mindmap
 
 Setelah Anda mencoba-coba sedikit, cukup klik tab "Code" dan pilih bahasa pemrograman Anda untuk mendapatkan kode implementasi yang Anda butuhkan.
 
-![Pilihan playground menunjukkan opsi pembuatan kode untuk berbagai bahasa pemrograman](../../../translated_images/playground-choice.1d23ba7d407f47584c9f446c77f0bcf70cae794cc9c8d7849a3cca4a3693e6c4.id.png)
+![Pilihan playground menunjukkan opsi pembuatan kode untuk berbagai bahasa pemrograman](../../../translated_images/id/playground-choice.1d23ba7d407f4758.webp)
 
 ## Menyiapkan Integrasi Backend Python
 
@@ -2365,14 +2356,14 @@ Ingin mencoba proyek ini di lingkungan pengembangan cloud? GitHub Codespaces men
 - **Arahkan** ke [repository Web Dev For Beginners](https://github.com/microsoft/Web-Dev-For-Beginners)  
 - **Klik** "Use this template" di sudut kanan atas (pastikan Anda sudah masuk ke GitHub)  
 
-![Antarmuka pembuatan dari template yang menunjukkan tombol hijau "Use this template"](../../../translated_images/template.67ad477109d29a2b04599a83c964c87fcde041256d4f04d3589cbb00c696f76c.id.png)  
+![Antarmuka pembuatan dari template yang menunjukkan tombol hijau "Use this template"](../../../translated_images/id/template.67ad477109d29a2b.webp)  
 
 **Langkah 2: Luncurkan Codespaces**  
 - **Buka** repository yang baru Anda buat  
 - **Klik** tombol hijau "Code" dan pilih "Codespaces"  
 - **Pilih** "Create codespace on main" untuk memulai lingkungan pengembangan Anda  
 
-![Antarmuka pembuatan codespace dengan opsi untuk meluncurkan lingkungan pengembangan cloud](../../../translated_images/codespace.bcecbdf5d2747d3d17da67a78ad911c8853d68102e34748ec372cde1e9236e1d.id.png)  
+![Antarmuka pembuatan codespace dengan opsi untuk meluncurkan lingkungan pengembangan cloud](../../../translated_images/id/codespace.bcecbdf5d2747d3d.webp)  
 
 **Langkah 3: Konfigurasi Lingkungan**  
 Setelah Codespace Anda dimuat, Anda akan memiliki akses ke:  

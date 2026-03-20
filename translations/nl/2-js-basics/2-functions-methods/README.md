@@ -1,15 +1,6 @@
-<!--
-CO_OP_TRANSLATOR_METADATA:
-{
-  "original_hash": "71f7d7dafa1c7194d79ddac87f669ff9",
-  "translation_date": "2025-11-04T01:48:54+00:00",
-  "source_file": "2-js-basics/2-functions-methods/README.md",
-  "language_code": "nl"
-}
--->
 # JavaScript Basis: Methoden en Functies
 
-![JavaScript Basis - Functies](../../../../translated_images/webdev101-js-functions.be049c4726e94f8b7605c36330ac42eeb5cd8ed02bcdd60fdac778174d6cb865.nl.png)
+![JavaScript Basis - Functies](../../../../translated_images/nl/webdev101-js-functions.be049c4726e94f8b.webp)
 > Sketchnote door [Tomomi Imura](https://twitter.com/girlie_mac)
 
 ```mermaid

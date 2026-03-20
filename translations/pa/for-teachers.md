@@ -1,12 +1,3 @@
-<!--
-CO_OP_TRANSLATOR_METADATA:
-{
-  "original_hash": "71009af209f81cc01a1f2d324200375f",
-  "translation_date": "2025-10-03T09:22:43+00:00",
-  "source_file": "for-teachers.md",
-  "language_code": "pa"
-}
--->
 ### ਅਧਿਆਪਕਾਂ ਲਈ
 
 ਤੁਹਾਨੂੰ ਆਪਣੇ ਕਲਾਸਰੂਮ ਵਿੱਚ ਇਸ ਪਾਠਕ੍ਰਮ ਨੂੰ ਵਰਤਣ ਦੀ ਆਗਿਆ ਹੈ। ਇਹ GitHub Classroom ਅਤੇ ਪ੍ਰਮੁੱਖ LMS ਪਲੇਟਫਾਰਮਾਂ ਨਾਲ ਬੇਹਤਰੀਨ ਤਰੀਕੇ ਨਾਲ ਕੰਮ ਕਰਦਾ ਹੈ, ਅਤੇ ਇਸਨੂੰ ਆਪਣੇ ਵਿਦਿਆਰਥੀਆਂ ਨਾਲ ਇੱਕ ਸਵਤੰਤਰ ਰਿਪੋ ਵਜੋਂ ਵੀ ਵਰਤਿਆ ਜਾ ਸਕਦਾ ਹੈ।
@@ -42,10 +33,10 @@ CO_OP_TRANSLATOR_METADATA:
   - Moodle Cloud ਵਿੱਚ Common Cartridge ਸਹਾਇਤਾ ਸੀਮਿਤ ਹੈ। ਉਪਰੋਕਤ Moodle ਫਾਈਲ ਨੂੰ ਤਰਜੀਹ ਦਿਓ, ਜਿਸਨੂੰ Canvas ਵਿੱਚ ਵੀ ਅੱਪਲੋਡ ਕੀਤਾ ਜਾ ਸਕਦਾ ਹੈ।
   - ਇੰਪੋਰਟ ਕਰਨ ਤੋਂ ਬਾਅਦ, ਮਾਡਿਊਲ, ਮਿਆਦ ਦੀਆਂ ਮਿਤੀਆਂ, ਅਤੇ ਕਵਿਜ਼ ਸੈਟਿੰਗਾਂ ਦੀ ਸਮੀਖਾ ਕਰੋ ਤਾਂ ਜੋ ਇਹ ਤੁਹਾਡੇ ਟਰਮ ਸ਼ਡਿਊਲ ਨਾਲ ਮੇਲ ਖਾਂਦੇ ਹੋਣ।
 
-![Moodle](../../translated_images/moodle.94eb93d714a50cb2c97435b408017dee224348b61bc86203ffd43a4f4e57b95f.pa.png)
+![Moodle](../../translated_images/pa/moodle.94eb93d714a50cb2.webp)
 > Moodle ਕਲਾਸਰੂਮ ਵਿੱਚ ਪਾਠਕ੍ਰਮ
 
-![Canvas](../../translated_images/canvas.fbd605ff8e5b8aff567d398528ce113db304446b90b9cad55c654de3fdfcda34.pa.png)
+![Canvas](../../translated_images/pa/canvas.fbd605ff8e5b8aff.webp)
 > Canvas ਵਿੱਚ ਪਾਠਕ੍ਰਮ
 
 ### ਰਿਪੋ ਨੂੰ ਸਿੱਧੇ ਤੌਰ 'ਤੇ ਵਰਤੋ (ਕੋਈ Classroom ਨਹੀਂ)

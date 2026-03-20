@@ -1,12 +1,3 @@
-<!--
-CO_OP_TRANSLATOR_METADATA:
-{
-  "original_hash": "351678bece18f07d9daa987a881fb062",
-  "translation_date": "2025-11-03T15:43:11+00:00",
-  "source_file": "7-bank-project/1-template-route/README.md",
-  "language_code": "ne"
-}
--->
 # बैंकिङ एप निर्माण भाग १: वेब एपमा HTML टेम्प्लेट र रुटहरू
 
 ```mermaid
@@ -614,7 +605,7 @@ sequenceDiagram
 
 `history.pushState` प्रयोग गरेर ब्राउजरको नेभिगेसन history मा नयाँ प्रविष्टिहरू सिर्जना हुन्छ। तपाईंले आफ्नो ब्राउजरको *back button* थिचेर जाँच गर्न सक्नुहुन्छ, यसले केही यस्तो देखाउनु पर्छ:
 
-![नेभिगेसन history को स्क्रिनशट](../../../../translated_images/history.7fdabbafa521e06455b738d3dafa3ff41d3071deae60ead8c7e0844b9ed987d8.ne.png)
+![नेभिगेसन history को स्क्रिनशट](../../../../translated_images/ne/history.7fdabbafa521e064.webp)
 
 यदि तपाईं back बटन केही पटक क्लिक गर्नुहुन्छ भने, तपाईं देख्नुहुनेछ कि हालको URL परिवर्तन हुन्छ र history अपडेट हुन्छ, तर उही template प्रदर्शन भइरहन्छ।
 

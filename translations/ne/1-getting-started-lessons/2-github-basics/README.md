@@ -1,12 +1,3 @@
-<!--
-CO_OP_TRANSLATOR_METADATA:
-{
-  "original_hash": "5c383cc2cc23bb164b06417d1c107a44",
-  "translation_date": "2025-11-25T12:08:53+00:00",
-  "source_file": "1-getting-started-lessons/2-github-basics/README.md",
-  "language_code": "ne"
-}
--->
 # GitHub परिचय
 
 नमस्ते, भविष्यका डेभलपर! 👋 संसारभरका लाखौं कोडरहरूसँग सामेल हुन तयार हुनुहुन्छ? म साँच्चै उत्साहित छु तपाईंलाई GitHub मा परिचय गराउन – यसलाई प्रोग्रामरहरूको लागि सामाजिक मिडिया प्लेटफर्मको रूपमा सोच्नुहोस्, तर यहाँ लन्चको फोटोहरू साझा गर्ने सट्टा, हामी कोड साझा गर्दैछौं र सँगै अद्भुत चीजहरू निर्माण गर्दैछौं!
@@ -17,7 +8,7 @@ CO_OP_TRANSLATOR_METADATA:
 
 हामी यो यात्रा सँगै गर्नेछौं, एक कदममा। कुनै हतार छैन, कुनै दबाब छैन – केवल तपाईं, म, र केही साँच्चै चिसो उपकरणहरू जुन तपाईंको नयाँ साथी बन्नेछन्!
 
-![GitHub परिचय](../../../../translated_images/webdev101-github.8846d7971abef6f947909b4f9d343e2a23778aa716ca6b9d71df7174ee5009ac.ne.png)
+![GitHub परिचय](../../../../translated_images/ne/webdev101-github.8846d7971abef6f9.webp)
 > स्केच नोट [Tomomi Imura](https://twitter.com/girlie_mac) द्वारा
 
 ```mermaid
@@ -594,7 +585,7 @@ flowchart TD
 
 ✅ 'सुरुवाती-अनुकूल' रिपोजिटरीहरू खोज्नको लागि [ट्याग 'good-first-issue' द्वारा खोज्नुहोस्](https://github.blog/2020-01-22-browse-good-first-issues-to-start-contributing-to-open-source/)।
 
-![रिपो स्थानीय रूपमा प्रतिलिपि गर्नुहोस्](../../../../translated_images/clone_repo.5085c48d666ead57664f050d806e325d7f883be6838c821e08bc823ab7c66665.ne.png)
+![रिपो स्थानीय रूपमा प्रतिलिपि गर्नुहोस्](../../../../translated_images/ne/clone_repo.5085c48d666ead57.webp)
 
 कोड प्रतिलिपि गर्ने धेरै तरिकाहरू छन्। एउटा तरिका भनेको रिपोजिटरीको सामग्री "क्लोन" गर्नु हो, HTTPS, SSH, वा GitHub CLI (कमाण्ड लाइन इन्टरफेस) प्रयोग गरेर।
 

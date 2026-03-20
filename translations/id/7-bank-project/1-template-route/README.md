@@ -1,12 +1,3 @@
-<!--
-CO_OP_TRANSLATOR_METADATA:
-{
-  "original_hash": "351678bece18f07d9daa987a881fb062",
-  "translation_date": "2025-11-06T11:51:51+00:00",
-  "source_file": "7-bank-project/1-template-route/README.md",
-  "language_code": "id"
-}
--->
 # Membangun Aplikasi Perbankan Bagian 1: Template HTML dan Rute dalam Aplikasi Web
 
 ```mermaid
@@ -652,7 +643,7 @@ sequenceDiagram
 
 Menggunakan `history.pushState` menciptakan entri baru dalam riwayat navigasi browser. Anda dapat memeriksanya dengan menahan *tombol kembali* browser Anda, seharusnya menampilkan sesuatu seperti ini:
 
-![Screenshot riwayat navigasi](../../../../translated_images/history.7fdabbafa521e06455b738d3dafa3ff41d3071deae60ead8c7e0844b9ed987d8.id.png)
+![Screenshot riwayat navigasi](../../../../translated_images/id/history.7fdabbafa521e064.webp)
 
 Jika Anda mencoba mengklik tombol kembali beberapa kali, Anda akan melihat bahwa URL saat ini berubah dan riwayat diperbarui, tetapi template yang sama tetap ditampilkan.
 

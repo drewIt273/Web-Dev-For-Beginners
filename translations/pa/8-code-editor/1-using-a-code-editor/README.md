@@ -1,12 +1,3 @@
-<!--
-CO_OP_TRANSLATOR_METADATA:
-{
-  "original_hash": "a9a3bcc037a447e2d8994d99e871cd9f",
-  "translation_date": "2025-11-03T16:10:45+00:00",
-  "source_file": "8-code-editor/1-using-a-code-editor/README.md",
-  "language_code": "pa"
-}
--->
 # ਕੋਡ ਐਡੀਟਰ ਦੀ ਵਰਤੋਂ: VSCode.dev ਵਿੱਚ ਮਾਹਰ ਬਣਨਾ
 
 *ਦ ਮੈਟ੍ਰਿਕਸ* ਵਿੱਚ ਯਾਦ ਹੈ ਜਦੋਂ ਨਿਓ ਨੂੰ ਡਿਜੀਟਲ ਦੁਨੀਆ ਵਿੱਚ ਪਹੁੰਚ ਕਰਨ ਲਈ ਇੱਕ ਵੱਡੇ ਕੰਪਿਊਟਰ ਟਰਮੀਨਲ ਨਾਲ ਜੁੜਨਾ ਪਿਆ ਸੀ? ਅੱਜ ਦੇ ਵੈੱਬ ਡਿਵੈਲਪਮੈਂਟ ਟੂਲਸ ਇਸ ਦੇ ਬਿਲਕੁਲ ਉਲਟ ਹਨ - ਬੇਹੱਦ ਸ਼ਕਤੀਸ਼ਾਲੀ ਸਮਰੱਥਾਵਾਂ ਜੋ ਕਿਤੇ ਵੀ ਪਹੁੰਚਯੋਗ ਹਨ। VSCode.dev ਇੱਕ ਬ੍ਰਾਊਜ਼ਰ-ਅਧਾਰਿਤ ਕੋਡ ਐਡੀਟਰ ਹੈ ਜੋ ਕਿਸੇ ਵੀ ਇੰਟਰਨੈਟ ਕਨੈਕਸ਼ਨ ਵਾਲੇ ਡਿਵਾਈਸ 'ਤੇ ਪੇਸ਼ੇਵਰ ਡਿਵੈਲਪਮੈਂਟ ਟੂਲਸ ਲਿਆਉਂਦਾ ਹੈ।
@@ -185,7 +176,7 @@ VSCode.dev ਇਹ ਸਮਰੱਥਾਵਾਂ ਤੁਹਾਡੇ ਬ੍ਰਾਊ
 
 ਜਦੋਂ ਸਭ ਕੁਝ ਲੋਡ ਹੋ ਜਾਂਦਾ ਹੈ, ਤੁਸੀਂ ਇੱਕ ਸੁੰਦਰ ਤੌਰ 'ਤੇ ਸਾਫ ਕਾਰਜਸਥਾਨ ਦੇਖੋਗੇ ਜੋ ਤੁਹਾਨੂੰ ਤੁਹਾਡੇ ਕੋਡ 'ਤੇ ਧਿਆਨ ਕੇਂਦਰਿਤ ਰੱਖਣ ਲਈ ਡਿਜ਼ਾਈਨ ਕੀਤਾ ਗਿਆ ਹੈ!
 
-![Default VSCode.dev interface](../../../../translated_images/default-vscode-dev.5d06881d65c1b3234ce50cd9ed3b0028e6031ad5f5b441bcbed96bfa6311f6d0.pa.png)
+![Default VSCode.dev interface](../../../../translated_images/pa/default-vscode-dev.5d06881d65c1b323.webp)
 
 **ਇਹ ਹੈ ਤੁਹਾਡੇ ਪੜੋਸ ਦਾ ਦੌਰਾ:**
 - **ਐਕਟਿਵਿਟੀ ਬਾਰ** (ਖੱਬੇ ਪਾਸੇ ਵਾਲੀ ਸਟ੍ਰਿਪ): ਤੁਹਾਡਾ ਮੁੱਖ ਨੈਵੀਗੇਸ਼ਨ ਜਿਸ ਵਿੱਚ Explorer 📁, Search 🔍, Source Control 🌿, Extensions 🧩, ਅਤੇ Settings ⚙️ ਸ਼ਾਮਲ ਹਨ
@@ -233,7 +224,7 @@ flowchart TB
 1. [vscode.dev](https://vscode.dev) 'ਤੇ ਜਾਓ ਜੇ ਤੁਸੀਂ ਪਹਿਲਾਂ ਹੀ ਉੱਥੇ ਨਹੀਂ ਹੋ
 2. ਵੈਲਕਮ ਸਕ੍ਰੀਨ 'ਤੇ "Open Remote Repository" ਬਟਨ ਲੱਭੋ ਅਤੇ ਇਸ 'ਤੇ ਕਲਿੱਕ ਕਰੋ
 
-   ![Open remote repository](../../../../translated_images/open-remote-repository.bd9c2598b8949e7fc283cdfc8f4050c6205a7c7c6d3f78c4b135115d037d6fa2.pa.png)
+   ![Open remote repository](../../../../translated_images/pa/open-remote-repository.bd9c2598b8949e7f.webp)
 
 3. ਕਿਸੇ ਵੀ GitHub ਰਿਪੋਜ਼ਿਟਰੀ URL ਨੂੰ ਪੇਸਟ ਕਰੋ (ਇਸ ਨੂੰ ਕੋਸ਼ਿਸ਼ ਕਰੋ: `https://github.com/microsoft/Web-Dev-For-Beginners`)
 4. Enter ਦਬਾਓ ਅਤੇ ਜਾਦੂ ਦੇਖੋ!
@@ -242,7 +233,7 @@ flowchart TB
 
 ਤੁਹਾਨੂੰ ਕੋਡਿੰਗ ਜਾਦੂਗਰ ਵਾਂਗ ਮਹਿਸੂਸ ਕਰਨਾ ਹੈ? ਇਹ ਕੀਬੋਰਡ ਸ਼ਾਰਟਕਟ ਦੀ ਕੋਸ਼ਿਸ਼ ਕਰੋ: Ctrl+Shift+P (ਜਾਂ Mac 'ਤੇ Cmd+Shift+P) ਕਮਾਂਡ ਪੈਲੇਟ ਖੋਲ੍ਹਣ ਲਈ:
 
-![Command Palette](../../../../translated_images/palette-menu.4946174e07f426226afcdad707d19b8d5150e41591c751c45b5dee213affef91.pa.png)
+![Command Palette](../../../../translated_images/pa/palette-menu.4946174e07f42622.webp)
 
 **ਕਮਾਂਡ ਪੈਲੇਟ ਇਹ ਹੈ ਜਿਵੇਂ ਤੁਹਾਡੇ ਲਈ ਹਰ ਚੀਜ਼ ਲਈ ਇੱਕ ਖੋਜ ਇੰਜਨ ਹੋਵੇ:**
 - "open remote" ਟਾਈਪ ਕਰੋ ਅਤੇ ਇਹ ਤੁਹਾਡੇ ਲਈ ਰਿਪੋਜ਼ਿਟਰੀ ਓਪਨਰ ਲੱਭੇਗਾ

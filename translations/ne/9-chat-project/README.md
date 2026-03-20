@@ -1,12 +1,3 @@
-<!--
-CO_OP_TRANSLATOR_METADATA:
-{
-  "original_hash": "2066c17078e9d18b5e309f31d8e8bc24",
-  "translation_date": "2025-11-03T15:30:23+00:00",
-  "source_file": "9-chat-project/README.md",
-  "language_code": "ne"
-}
--->
 # एआईको साथमा च्याट सहायक बनाउनुहोस्
 
 स्टार ट्रेकमा जहाजको कम्प्युटरसँग कुरा गर्दै जटिल प्रश्न सोध्ने र विचारशील उत्तर प्राप्त गर्ने दृश्य सम्झनुहुन्छ? १९६० को दशकमा विज्ञान कल्पनाजस्तो देखिने कुरा अब तपाईंले पहिले नै जान्ने वेब प्रविधिहरू प्रयोग गरेर निर्माण गर्न सक्नुहुन्छ।
@@ -61,7 +52,7 @@ print(response.choices[0].message.content)
 
 तपाईंको समाप्त परियोजना यस्तो देखिनेछ:
 
-![च्याट एप इन्टरफेसमा प्रयोगकर्ता र एआई सहायक बीचको संवाद देखाउँदै](../../../translated_images/screenshot.0a1ee0d123df681b4501eb53ffb267519fcc20aa653eabecef1e7561ddfb1cab.ne.png)
+![च्याट एप इन्टरफेसमा प्रयोगकर्ता र एआई सहायक बीचको संवाद देखाउँदै](../../../translated_images/ne/screenshot.0a1ee0d123df681b.webp)
 
 ## 🗺️ एआई अनुप्रयोग विकासको माध्यमबाट तपाईंको सिक्ने यात्रा
 
@@ -1628,14 +1619,14 @@ mindmap
 - **[Web Dev For Beginners repository](https://github.com/microsoft/Web-Dev-For-Beginners)** मा जानुहोस्
 - **शीर्ष-दायाँ कुनामा "Use this template" क्लिक गर्नुहोस्** (पक्का गर्नुहोस् कि तपाईं GitHub मा लगइन हुनुहुन्छ)
 
-![टेम्प्लेटबाट सिर्जना गर्ने इन्टरफेस जसमा हरियो "Use this template" बटन देखिन्छ](../../../translated_images/template.67ad477109d29a2b04599a83c964c87fcde041256d4f04d3589cbb00c696f76c.ne.png)
+![टेम्प्लेटबाट सिर्जना गर्ने इन्टरफेस जसमा हरियो "Use this template" बटन देखिन्छ](../../../translated_images/ne/template.67ad477109d29a2b.webp)
 
 **चरण २: Codespaces सुरु गर्नुहोस्**
 - **तपाईंको नयाँ सिर्जित रिपोजिटरी खोल्नुहोस्**
 - **हरियो "Code" बटन क्लिक गर्नुहोस् र "Codespaces" चयन गर्नुहोस्**
 - **"Create codespace on main" चयन गर्नुहोस्** ताकि तपाईंको विकास वातावरण सुरु होस्
 
-![Codespace सिर्जना गर्ने इन्टरफेस जसमा क्लाउड विकास वातावरण सुरु गर्ने विकल्पहरू छन्](../../../translated_images/codespace.bcecbdf5d2747d3d17da67a78ad911c8853d68102e34748ec372cde1e9236e1d.ne.png)
+![Codespace सिर्जना गर्ने इन्टरफेस जसमा क्लाउड विकास वातावरण सुरु गर्ने विकल्पहरू छन्](../../../translated_images/ne/codespace.bcecbdf5d2747d3d.webp)
 
 **चरण ३: वातावरण कन्फिगरेसन**
 तपाईंको Codespace लोड भएपछि, तपाईंले पहुँच पाउनुहुनेछ:

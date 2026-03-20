@@ -1,12 +1,3 @@
-<!--
-CO_OP_TRANSLATOR_METADATA:
-{
-  "original_hash": "71009af209f81cc01a1f2d324200375f",
-  "translation_date": "2025-10-03T10:16:18+00:00",
-  "source_file": "for-teachers.md",
-  "language_code": "id"
-}
--->
 ### Untuk Pendidik
 
 Anda dipersilakan menggunakan kurikulum ini di kelas Anda. Kurikulum ini bekerja dengan lancar menggunakan GitHub Classroom dan platform LMS terkemuka, serta dapat digunakan sebagai repositori mandiri bersama siswa Anda.
@@ -42,10 +33,10 @@ Kurikulum ini mencakup paket yang dapat diimpor untuk alur kerja LMS umum.
   - Moodle Cloud memiliki dukungan Common Cartridge yang terbatas. Lebih baik gunakan file Moodle di atas, yang juga dapat diunggah ke Canvas.
   - Setelah diimpor, tinjau modul, tanggal jatuh tempo, dan pengaturan kuis agar sesuai dengan jadwal semester Anda.
 
-![Moodle](../../translated_images/moodle.94eb93d714a50cb2c97435b408017dee224348b61bc86203ffd43a4f4e57b95f.id.png)
+![Moodle](../../translated_images/id/moodle.94eb93d714a50cb2.webp)
 > Kurikulum di kelas Moodle
 
-![Canvas](../../translated_images/canvas.fbd605ff8e5b8aff567d398528ce113db304446b90b9cad55c654de3fdfcda34.id.png)
+![Canvas](../../translated_images/id/canvas.fbd605ff8e5b8aff.webp)
 > Kurikulum di Canvas
 
 ### Penggunaan repositori secara langsung (tanpa Classroom)

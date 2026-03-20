@@ -1,12 +1,3 @@
-<!--
-CO_OP_TRANSLATOR_METADATA:
-{
-  "original_hash": "351678bece18f07d9daa987a881fb062",
-  "translation_date": "2025-11-03T12:40:11+00:00",
-  "source_file": "7-bank-project/1-template-route/README.md",
-  "language_code": "ar"
-}
--->
 # بناء تطبيق مصرفي الجزء الأول: قوالب HTML والمسارات في تطبيق ويب
 
 ```mermaid
@@ -652,7 +643,7 @@ sequenceDiagram
 
 استخدام `history.pushState` ينشئ إدخالات جديدة في سجل التنقل الخاص بالمتصفح. يمكنك التحقق من ذلك عن طريق الضغط على *زر الرجوع* في متصفحك، يجب أن يعرض شيئًا مثل هذا:
 
-![لقطة شاشة لسجل التنقل](../../../../translated_images/history.7fdabbafa521e06455b738d3dafa3ff41d3071deae60ead8c7e0844b9ed987d8.ar.png)
+![لقطة شاشة لسجل التنقل](../../../../translated_images/ar/history.7fdabbafa521e064.webp)
 
 إذا حاولت النقر على زر الرجوع عدة مرات، سترى أن عنوان URL الحالي يتغير ويتم تحديث السجل، لكن نفس القالب يستمر في العرض.
 

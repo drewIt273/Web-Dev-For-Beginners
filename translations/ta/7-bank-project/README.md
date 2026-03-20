@@ -1,17 +1,8 @@
-<!--
-CO_OP_TRANSLATOR_METADATA:
-{
-  "original_hash": "830359535306594b448db6575ce5cdee",
-  "translation_date": "2025-10-11T12:01:05+00:00",
-  "source_file": "7-bank-project/README.md",
-  "language_code": "ta"
-}
--->
 # :dollar: வங்கி உருவாக்கம்
 
 இந்த திட்டத்தில், நீங்கள் ஒரு கற்பனை வங்கியை உருவாக்குவது எப்படி என்பதை கற்றுக்கொள்வீர்கள். இந்த பாடங்கள் ஒரு வலை பயன்பாட்டை அமைப்பது மற்றும் வழிகள் வழங்குவது, படிவங்களை உருவாக்குவது, நிலையை நிர்வகிப்பது, மற்றும் API-இல் இருந்து வங்கியின் தரவுகளை பெறுவது போன்ற வழிமுறைகளை உள்ளடக்கியது.
 
-| ![Screen1](../../../translated_images/screen1.baccbba0f1f93364672eb250d2fbd21574bb1caf79a2155022dc098a741cbdfe.ta.png) | ![Screen2](../../../translated_images/screen2.123c82a831a1d14ab2061994be2fa5de9cec1ce651047217d326d4773a6348e4.ta.png) |
+| ![Screen1](../../../translated_images/ta/screen1.baccbba0f1f93364.webp) | ![Screen2](../../../translated_images/ta/screen2.123c82a831a1d14a.webp) |
 |--------------------------------|--------------------------------|
 
 ## பாடங்கள்

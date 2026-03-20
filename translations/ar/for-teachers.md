@@ -1,12 +1,3 @@
-<!--
-CO_OP_TRANSLATOR_METADATA:
-{
-  "original_hash": "71009af209f81cc01a1f2d324200375f",
-  "translation_date": "2025-10-03T08:35:50+00:00",
-  "source_file": "for-teachers.md",
-  "language_code": "ar"
-}
--->
 ### للمعلمين
 
 مرحبًا بكم في استخدام هذا المنهج الدراسي في صفوفكم. يعمل بسلاسة مع GitHub Classroom ومنصات إدارة التعلم (LMS) الرائدة، ويمكن أيضًا استخدامه كمستودع مستقل مع طلابكم.
@@ -42,10 +33,10 @@ CO_OP_TRANSLATOR_METADATA:
   - لدى Moodle Cloud دعم محدود لـ Common Cartridge. يُفضل استخدام ملف Moodle أعلاه، والذي يمكن أيضًا تحميله في Canvas.
   - بعد الاستيراد، راجع الوحدات، المواعيد النهائية، وإعدادات الامتحانات لتتناسب مع جدول الفصل الدراسي الخاص بك.
 
-![Moodle](../../translated_images/moodle.94eb93d714a50cb2c97435b408017dee224348b61bc86203ffd43a4f4e57b95f.ar.png)
+![Moodle](../../translated_images/ar/moodle.94eb93d714a50cb2.webp)
 > المنهج الدراسي في فصل Moodle
 
-![Canvas](../../translated_images/canvas.fbd605ff8e5b8aff567d398528ce113db304446b90b9cad55c654de3fdfcda34.ar.png)
+![Canvas](../../translated_images/ar/canvas.fbd605ff8e5b8aff.webp)
 > المنهج الدراسي في Canvas
 
 ### استخدام المستودع مباشرة (بدون Classroom)

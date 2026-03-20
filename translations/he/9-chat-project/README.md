@@ -1,12 +1,3 @@
-<!--
-CO_OP_TRANSLATOR_METADATA:
-{
-  "original_hash": "2066c17078e9d18b5e309f31d8e8bc24",
-  "translation_date": "2025-11-04T02:22:22+00:00",
-  "source_file": "9-chat-project/README.md",
-  "language_code": "he"
-}
--->
 # בניית עוזר צ'אט עם AI
 
 זוכרים את "מסע בין כוכבים" כשהצוות היה משוחח עם מחשב הספינה, שואל שאלות מורכבות ומקבל תשובות מחושבות? מה שנראה כמו מדע בדיוני טהור בשנות ה-60 הוא עכשיו משהו שאתם יכולים לבנות באמצעות טכנולוגיות אינטרנט שאתם כבר מכירים.
@@ -61,7 +52,7 @@ print(response.choices[0].message.content)
 
 כך ייראה הפרויקט המוגמר שלכם:
 
-![ממשק אפליקציית צ'אט המציג שיחה בין משתמש לעוזר AI](../../../translated_images/screenshot.0a1ee0d123df681b4501eb53ffb267519fcc20aa653eabecef1e7561ddfb1cab.he.png)
+![ממשק אפליקציית צ'אט המציג שיחה בין משתמש לעוזר AI](../../../translated_images/he/screenshot.0a1ee0d123df681b.webp)
 
 ## 🗺️ מסע הלמידה שלכם בפיתוח אפליקציות AI
 
@@ -194,7 +185,7 @@ mindmap
 
 **עיקרון מרכזי**: פיתוח אפליקציות AI משלב כישורי פיתוח אינטרנט מסורתיים עם אינטגרציית שירותי AI, ליצירת אפליקציות חכמות שמרגישות טבעיות ומגיבות למשתמשים.
 
-![ממשק GitHub Models AI Playground עם בחירת מודלים ואזור בדיקה](../../../translated_images/playground.d2b927122224ff8ff4028fc842176e353c339147d8925455f36c92fb1655c477.he.png)
+![ממשק GitHub Models AI Playground עם בחירת מודלים ואזור בדיקה](../../../translated_images/he/playground.d2b927122224ff8f.webp)
 
 **מה הופך את ה-Playground לכל כך שימושי:**
 - **נסו** מודלים שונים של AI כמו GPT-4o-mini, Claude ואחרים (כולם חינמיים!)
@@ -204,7 +195,7 @@ mindmap
 
 אחרי שתשחקו קצת, פשוט לחצו על לשונית "Code" ובחרו את שפת התכנות שלכם כדי לקבל את קוד היישום שתצטרכו.
 
-![בחירת Playground המציגה אפשרויות יצירת קוד לשפות תכנות שונות](../../../translated_images/playground-choice.1d23ba7d407f47584c9f446c77f0bcf70cae794cc9c8d7849a3cca4a3693e6c4.he.png)
+![בחירת Playground המציגה אפשרויות יצירת קוד לשפות תכנות שונות](../../../translated_images/he/playground-choice.1d23ba7d407f4758.webp)
 
 ## הגדרת אינטגרציה בצד השרת עם Python
 
@@ -2333,14 +2324,14 @@ mindmap
 - **נווט** ל-[מאגר Web Dev For Beginners](https://github.com/microsoft/Web-Dev-For-Beginners)  
 - **לחץ** על "Use this template" בפינה הימנית העליונה (ודא שאתה מחובר ל-GitHub)  
 
-![ממשק יצירה מתבנית המציג את כפתור "Use this template" הירוק](../../../translated_images/template.67ad477109d29a2b04599a83c964c87fcde041256d4f04d3589cbb00c696f76c.he.png)  
+![ממשק יצירה מתבנית המציג את כפתור "Use this template" הירוק](../../../translated_images/he/template.67ad477109d29a2b.webp)  
 
 **שלב 2: הפעלת Codespaces**  
 - **פתח** את המאגר החדש שיצרת  
 - **לחץ** על כפתור "Code" הירוק ובחר "Codespaces"  
 - **בחר** "Create codespace on main" כדי להתחיל את סביבת הפיתוח שלך  
 
-![ממשק יצירת Codespace עם אפשרויות להפעלת סביבת פיתוח בענן](../../../translated_images/codespace.bcecbdf5d2747d3d17da67a78ad911c8853d68102e34748ec372cde1e9236e1d.he.png)  
+![ממשק יצירת Codespace עם אפשרויות להפעלת סביבת פיתוח בענן](../../../translated_images/he/codespace.bcecbdf5d2747d3d.webp)  
 
 **שלב 3: הגדרת הסביבה**  
 ברגע ש-Codespace נטען, תהיה לך גישה ל:  

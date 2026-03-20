@@ -1,12 +1,3 @@
-<!--
-CO_OP_TRANSLATOR_METADATA:
-{
-  "original_hash": "5c383cc2cc23bb164b06417d1c107a44",
-  "translation_date": "2025-11-18T18:44:50+00:00",
-  "source_file": "1-getting-started-lessons/2-github-basics/README.md",
-  "language_code": "ja"
-}
--->
 # GitHubの紹介
 
 こんにちは、未来の開発者さん！👋 世界中の何百万ものコーダーに仲間入りする準備はできていますか？GitHubを紹介できることに本当にワクワクしています。これはプログラマーのためのソーシャルメディアプラットフォームのようなもので、ランチの写真を共有する代わりにコードを共有して一緒に素晴らしいものを作り上げるんです！
@@ -17,7 +8,7 @@ CO_OP_TRANSLATOR_METADATA:
 
 一歩ずつ一緒に進んでいきましょう。急がず、プレッシャーもなしで、あなたと私、そしてこれからあなたの新しい親友になる本当にクールなツールたちと一緒に！
 
-![GitHubの紹介](../../../../translated_images/webdev101-github.8846d7971abef6f947909b4f9d343e2a23778aa716ca6b9d71df7174ee5009ac.ja.png)
+![GitHubの紹介](../../../../translated_images/ja/webdev101-github.8846d7971abef6f9.webp)
 > スケッチノート提供：[Tomomi Imura](https://twitter.com/girlie_mac)
 
 ```mermaid
@@ -593,7 +584,7 @@ flowchart TD
 
 ✅ '初心者向け'リポジトリを見つける良い方法は、[タグ 'good-first-issue' で検索すること](https://github.blog/2020-01-22-browse-good-first-issues-to-start-contributing-to-open-source/)です。
 
-![リポジトリをローカルにコピー](../../../../translated_images/clone_repo.5085c48d666ead57664f050d806e325d7f883be6838c821e08bc823ab7c66665.ja.png)
+![リポジトリをローカルにコピー](../../../../translated_images/ja/clone_repo.5085c48d666ead57.webp)
 
 コードをコピーする方法はいくつかあります。一つの方法は、HTTPS、SSH、またはGitHub CLI（コマンドラインインターフェース）を使用してリポジトリの内容を「クローン」することです。
 

@@ -1,45 +1,76 @@
-<!--
-CO_OP_TRANSLATOR_METADATA:
-{
-  "original_hash": "90b19cde5b79b29e91babd3138cd8035",
-  "translation_date": "2025-10-23T21:57:06+00:00",
-  "source_file": "1-getting-started-lessons/3-accessibility/README.md",
-  "language_code": "da"
-}
--->
-# Oprettelse af tilgængelige websider
+# Oprettelse af Tilgængelige Websider
 
-![Alt om tilgængelighed](../../../../translated_images/webdev101-a11y.8ef3025c858d897a403a1a42c0897c76e11b724d9a8a0c0578dd4316f7507622.da.png)
+![Alt om Tilgængelighed](../../../../translated_images/da/webdev101-a11y.8ef3025c858d897a.webp)
 > Sketchnote af [Tomomi Imura](https://twitter.com/girlie_mac)
 
-## Quiz før lektionen
-[Quiz før lektionen](https://ff-quizzes.netlify.app/web/)
+```mermaid
+journey
+    title Din Tilgængeligheds Læringsrejse
+    section Fundament
+      Forstå Brugere: 5: You
+      Testværktøjer: 4: You
+      POUR Principper: 5: You
+    section Opbyg Færdigheder
+      Semantisk HTML: 4: You
+      Visuelt Design: 5: You
+      ARIA Teknikker: 4: You
+    section Master Praksis
+      Tastaturnavigation: 5: You
+      Formular Tilgængelighed: 4: You
+      Virkelighedstestning: 5: You
+```
+## For-forelæsning Quiz
+[For-forelæsning quiz](https://ff-quizzes.netlify.app/web/)
 
-> Webben er stærk på grund af dens universelle karakter. Adgang for alle, uanset handicap, er en essentiel del.
+> Internettets styrke er i dets universalitet. Adgang for alle uanset handicap er et essentielt aspekt.
 >
 > \- Sir Timothy Berners-Lee, W3C-direktør og opfinder af World Wide Web
 
-Her er noget, der måske vil overraske dig: Når du bygger tilgængelige websites, hjælper du ikke kun mennesker med handicap – du gør faktisk webben bedre for alle!
+Her er noget, der måske overrasker dig: når du bygger tilgængelige websites, hjælper du ikke kun mennesker med handicap—du gør faktisk internettet bedre for alle!
 
-Har du nogensinde lagt mærke til de små ramper ved gadehjørner? De blev oprindeligt designet til kørestole, men nu hjælper de også folk med barnevogne, leveringsarbejdere med vogne, rejsende med rullekufferter og cyklister. Det er præcis sådan, tilgængeligt webdesign fungerer – løsninger, der hjælper én gruppe, ender ofte med at gavne alle. Ret sejt, ikke?
+Har du nogensinde lagt mærke til de nedkørsler ved fortovene? De blev oprindeligt designet til kørestole, men de hjælper nu mennesker med barnevogne, leveringsfolk med vogne, rejsende med kufferter på hjul og cyklister også. Det er præcis sådan tilgængeligt webdesign fungerer—løsninger, der hjælper én gruppe, ender ofte med at gavne alle. Ret sejt, ikke?
 
-I denne lektion vil vi udforske, hvordan man skaber websites, der virkelig fungerer for alle, uanset hvordan de bruger nettet. Du vil opdage praktiske teknikker, der allerede er indbygget i webstandarder, få hands-on erfaring med testværktøjer og se, hvordan tilgængelighed gør dine sider mere brugervenlige for alle.
+I denne lektion skal vi udforske, hvordan man skaber websites, der virkelig fungerer for alle, uanset hvordan de browser nettet. Du vil opdage praktiske teknikker, der allerede er indbygget i webstandarder, få praktisk erfaring med testværktøjer, og se hvordan tilgængelighed gør dine sites mere brugervenlige for alle brugere.
 
-Ved slutningen af denne lektion vil du have selvtillid til at gøre tilgængelighed til en naturlig del af din udviklingsproces. Klar til at udforske, hvordan gennemtænkte designvalg kan åbne webben for milliarder af brugere? Lad os komme i gang!
+Ved slutningen af denne lektion vil du have selvtillid til at gøre tilgængelighed til en naturlig del af din udviklingsarbejdsgang. Klar til at udforske hvordan gennemtenkte designvalg kan åbne nettet for milliarder af brugere? Lad os gå i gang!
 
+```mermaid
+mindmap
+  root((Webtilgængelighed))
+    Users
+      Skærmlæsere
+      Tastaturnavigation
+      Styring med stemme
+      Forstørrelse
+    Technologies
+      HTML semantik
+      ARIA attributter
+      CSS fokusindikatorer
+      Tastaturbegivenheder
+    Benefits
+      Større publikum
+      Bedre SEO
+      Lovmæssig overholdelse
+      Universelt design
+    Testing
+      Automatiserede værktøjer
+      Manuel testning
+      Brugerfeedback
+      Reelt hjælpemiddel teknologi
+```
 > Du kan tage denne lektion på [Microsoft Learn](https://docs.microsoft.com/learn/modules/web-development-101/accessibility/?WT.mc_id=academic-77807-sagibbon)!
 
-## Forståelse af hjælpemidler
+## Forståelse af Hjælpemidler
 
-Før vi begynder at kode, lad os tage et øjeblik til at forstå, hvordan mennesker med forskellige evner faktisk oplever webben. Dette er ikke bare teori – at forstå disse navigationsmønstre i den virkelige verden vil gøre dig til en meget bedre udvikler!
+Før vi springer ud i kodningen, lad os tage et øjeblik til at forstå, hvordan folk med forskellige evner faktisk oplever nettet. Det er ikke bare teori—forståelse af disse virkelige navigationsmønstre vil gøre dig til en meget bedre udvikler!
 
-Hjælpemidler er ret fantastiske værktøjer, der hjælper mennesker med handicap med at interagere med websites på måder, der kan overraske dig. Når du først forstår, hvordan disse teknologier fungerer, bliver det meget mere intuitivt at skabe tilgængelige weboplevelser. Det er som at lære at se din kode gennem en andens øjne.
+Hjælpemidler er ret fantastiske værktøjer, der hjælper mennesker med handicap med at interagere med websites på måder, der måske overrasker dig. Når du først er kommet ind i, hvordan disse teknologier fungerer, bliver det meget mere intuitivt at skabe tilgængelige weboplevelser. Det er som at lære at se din kode gennem en anden persons øjne.
 
 ### Skærmlæsere
 
-[Skærmlæsere](https://en.wikipedia.org/wiki/Screen_reader) er ret sofistikerede teknologier, der konverterer digital tekst til tale eller punktskrift. Selvom de primært bruges af personer med synshandicap, er de også meget nyttige for brugere med indlæringsvanskeligheder som dysleksi.
+[Skærmlæsere](https://en.wikipedia.org/wiki/Screen_reader) er ret avancerede teknologier, der omdanner digital tekst til tale eller braille-output. Selvom de primært bruges af personer med synsnedsættelse, er de også super hjælpsomme for brugere med læringsvanskeligheder som dysleksi.
 
-Jeg kan godt lide at tænke på en skærmlæser som en virkelig smart fortæller, der læser en bog højt for dig. Den læser indholdet højt i en logisk rækkefølge, annoncerer interaktive elementer som "knap" eller "link" og giver tastaturgenveje til at navigere rundt på en side. Men her er sagen – skærmlæsere kan kun udføre deres magi, hvis vi bygger websites med korrekt struktur og meningsfuldt indhold. Det er her, du som udvikler kommer ind i billedet!
+Jeg kan godt lide at tænke på en skærmlæser som en rigtig smart oplæser, der læser en bog for dig. Den læser indhold højt i en logisk rækkefølge, annoncerer interaktive elementer som "knap" eller "link," og giver tastaturgenveje til at hoppe rundt på en side. Men her er sagen—skærmlæsere kan kun udføre deres magi, hvis vi bygger websites med korrekt struktur og meningsfuldt indhold. Der kommer du ind som udvikler!
 
 **Populære skærmlæsere på tværs af platforme:**
 - **Windows**: [NVDA](https://www.nvaccess.org/about-nvda/) (gratis og mest populær), [JAWS](https://webaim.org/articles/jaws/), [Narrator](https://support.microsoft.com/windows/complete-guide-to-narrator-e4397a0d-ef4f-b386-d8ae-c172f109bdb1/?WT.mc_id=academic-77807-sagibbon) (indbygget)
@@ -47,173 +78,238 @@ Jeg kan godt lide at tænke på en skærmlæser som en virkelig smart fortæller
 - **Android**: [TalkBack](https://support.google.com/accessibility/android/answer/6283677) (indbygget)
 - **Linux**: [Orca](https://wiki.gnome.org/Projects/Orca) (gratis og open-source)
 
-**Hvordan skærmlæsere navigerer webindhold:**
+**Sådan navigerer skærmlæsere webindhold:**
 
-Skærmlæsere tilbyder flere navigationsmetoder, der gør browsing effektiv for erfarne brugere:
-- **Sekventiel læsning**: Læser indhold fra top til bund, som at følge en bog
-- **Landmark-navigation**: Hopper mellem sektioner på siden (header, nav, main, footer)
-- **Overskriftsnavigation**: Springer mellem overskrifter for at forstå sidens struktur
+Skærmlæsere tilbyder flere navigationsmetoder, der gør browsing effektivt for erfarne brugere:
+- **Sekventiel læsning**: Læser indhold fra top til bund, som når man følger en bog
+- **Landemarkering navigation**: Hop mellem sidesektioner (header, nav, main, footer)
+- **Overskriftsnavigation**: Spring mellem overskrifter for at forstå sidestrukturen
 - **Linklister**: Genererer en liste over alle links for hurtig adgang
-- **Formularfelter**: Navigerer direkte mellem inputfelter og knapper
+- **Formkontroller**: Naviger direkte mellem inputfelter og knapper
 
-> 💡 **Her er noget, der blæste mig omkuld**: 68% af skærmlæserbrugere navigerer primært via overskrifter ([WebAIM Survey](https://webaim.org/projects/screenreadersurvey9/#finding)). Det betyder, at din overskriftsstruktur er som et kort for brugerne – når du gør det rigtigt, hjælper du bogstaveligt talt folk med at finde rundt i dit indhold hurtigere!
+> 💡 **Her er noget, der blæste mig bagover**: 68% af skærmlæserbrugere navigerer primært via overskrifter ([WebAIM Survey](https://webaim.org/projects/screenreadersurvey9/#finding)). Det betyder, at din overskriftsstruktur er som et kort for brugerne—når du får det rigtigt, hjælper du bogstaveligt talt folk med hurtigere at finde rundt i dit indhold!
 
-### Opbygning af din testarbejdsgang
+### Byg din testarbejdsgang
 
-Her er gode nyheder – effektiv tilgængelighedstestning behøver ikke at være overvældende! Du vil gerne kombinere automatiserede værktøjer (de er fantastiske til at fange åbenlyse problemer) med noget hands-on testning. Her er en systematisk tilgang, som jeg har fundet ud af fanger de fleste problemer uden at tage hele din dag:
+Her er noget godt nyt—effektiv tilgængelighedstest behøver ikke være overvældende! Du vil gerne kombinere automatiserede værktøjer (de er fantastiske til at fange åbenlyse problemer) med noget praktisk testning. Her er en systematisk tilgang, som jeg har fundet fanger flest problemer uden at tage hele din dag.
 
-**Essentiel manuel testarbejdsgang:**
+**Nødvendig manuel testarbejdsgang:**
 
 ```mermaid
-graph TD
-    A[Start Testing] --> B{Keyboard Navigation}
-    B --> C[Tab through all interactive elements]
-    C --> D{Screen Reader Testing}
-    D --> E[Test with NVDA/VoiceOver]
-    E --> F{Zoom Testing}
-    F --> G[Zoom to 200% and test functionality]
-    G --> H{Color/Contrast Check}
-    H --> I[Verify all text meets contrast ratios]
-    I --> J{Focus Management}
-    J --> K[Ensure focus indicators are visible]
-    K --> L[Testing Complete]
+flowchart TD
+    A[🚀 Start Testning] --> B{⌨️ Tastaturnavigation}
+    B --> C[Tab gennem alle interaktive elementer]
+    C --> D{🎧 Skærmlæser Test}
+    D --> E[Test med NVDA/VoiceOver]
+    E --> F{🔍 Zoom Test}
+    F --> G[Zoom til 200% og test funktionalitet]
+    G --> H{🎨 Farve/Kontrast Tjek}
+    H --> I[Verificer at al tekst opfylder kontrastforhold]
+    I --> J{👁️ Fokusstyring}
+    J --> K[Sørg for at fokusindikatorer er synlige]
+    K --> L[✅ Testning Fuldført]
+    
+    style A fill:#e3f2fd
+    style L fill:#e8f5e8
+    style B fill:#fff3e0
+    style D fill:#f3e5f5
+    style F fill:#e0f2f1
+    style H fill:#fce4ec
+    style J fill:#e8eaf6
 ```
-
-**Trin-for-trin testtjekliste:**
+**Trin-for-trin test-checkliste:**
 1. **Tastaturnavigation**: Brug kun Tab, Shift+Tab, Enter, Space og piletaster
-2. **Skærmlæsertest**: Aktiver NVDA, VoiceOver eller Narrator og naviger med lukkede øjne
-3. **Zoomtest**: Test ved 200% og 400% zoomniveauer
-4. **Farvekontrastverifikation**: Tjek al tekst og UI-komponenter
-5. **Fokusindikator-test**: Sørg for, at alle interaktive elementer har synlige fokusmarkeringer
+2. **Test med skærmlæser**: Aktivér NVDA, VoiceOver eller Narrator og naviger med lukkede øjne
+3. **Zoom test**: Test ved 200% og 400% zoom niveauer
+4. **Farvekontrastkontrol**: Tjek al tekst og UI-komponenter
+5. **Test fokusindikator**: Sørg for at alle interaktive elementer har synlige fokus-tilstande
 
-✅ **Start med Lighthouse**: Åbn din browsers DevTools, kør en Lighthouse-tilgængelighedsaudit, og brug resultaterne til at fokusere på dine manuelle testområder.
+✅ **Start med Lighthouse**: Åbn din browsers DevTools, kør en Lighthouse-tilgængelighedsaudit, og brug resultaterne til at guide din manuelle testindsats.
 
 ### Zoom- og forstørrelsesværktøjer
 
-Du ved, hvordan du nogle gange zoomer ind på din telefon, når teksten er for lille, eller kniber øjnene sammen på din laptops skærm i stærkt sollys? Mange brugere er afhængige af forstørrelsesværktøjer for at gøre indhold læsbart hver eneste dag. Dette inkluderer personer med nedsat syn, ældre voksne og alle, der nogensinde har prøvet at læse en hjemmeside udendørs.
+Du kender det sikkert—nogle gange kniber du fingrene for at zoome på din telefon, når teksten er for lille, eller squinter på din laptop i stærkt sollys? Mange brugere er afhængige af forstørrelsesværktøjer for at gøre indhold læseligt hver eneste dag. Dette inkluderer personer med nedsat syn, ældre voksne og alle, der nogensinde har prøvet at læse et website udendørs.
 
-Moderne zoomteknologier er udviklet ud over blot at gøre ting større. At forstå, hvordan disse værktøjer fungerer, vil hjælpe dig med at skabe responsive designs, der forbliver funktionelle og attraktive på ethvert forstørrelsesniveau.
+Moderne zoom-teknologier har udviklet sig ud over bare at gøre ting større. Forståelse af hvordan disse værktøjer fungerer, vil hjælpe dig med at skabe responsive designs, der forbliver funktionelle og flotte ved alle forstørrelsesniveauer.
 
-**Moderne browser-zoomfunktioner:**
+**Moderne browseres zoom-muligheder:**
 - **Sidezoom**: Skalerer alt indhold proportionalt (tekst, billeder, layout) - dette er den foretrukne metode
-- **Kun tekstzoom**: Øger skrifttypestørrelsen, mens den oprindelige layout bevares
-- **Pinch-to-zoom**: Mobilgestik til midlertidig forstørrelse
-- **Browserstøtte**: Alle moderne browsere understøtter zoom op til 500% uden at bryde funktionaliteten
+- **Tekst-zoom**: Forøger skriftstørrelsen mens originalt layout bevares
+- **Knib-til-zoom**: Mobil gestus til midlertidig forstørrelse
+- **Browser support**: Alle moderne browsere understøtter zoom op til 500% uden at bryde funktionalitet
 
 **Specialiseret forstørrelsessoftware:**
 - **Windows**: [Magnifier](https://support.microsoft.com/windows/use-magnifier-to-make-things-on-the-screen-easier-to-see-414948ba-8b1c-d3bd-8615-0e5e32204198) (indbygget), [ZoomText](https://www.freedomscientific.com/training/zoomtext/getting-started/)
 - **macOS/iOS**: [Zoom](https://www.apple.com/accessibility/mac/vision/) (indbygget med avancerede funktioner)
 
-> ⚠️ **Designovervejelse**: WCAG kræver, at indhold forbliver funktionelt, når det zoomes til 200%. På dette niveau bør horisontal scrolling være minimal, og alle interaktive elementer bør forblive tilgængelige.
+> ⚠️ **Designovervejelse**: WCAG kræver, at indhold forbliver funktionelt ved zoom på 200%. På dette niveau bør vandret rulning være minimal, og alle interaktive elementer skal forblive tilgængelige.
 
-✅ **Test dit responsive design**: Zoom din browser til 200% og 400%. Tilpasser dit layout sig elegant? Kan du stadig få adgang til alle funktioner uden overdreven scrolling?
+✅ **Test dit responsive design**: Zoom din browser til 200% og 400%. Tilpasser dit layout sig elegant? Kan du stadig få adgang til al funktionalitet uden overdreven rulning?
 
-## Moderne tilgængelighedstestværktøjer
+## Moderne Tilgængelighedstestværktøjer
 
-Nu hvor du forstår, hvordan folk navigerer på nettet med hjælpemidler, lad os udforske de værktøjer, der hjælper dig med at bygge og teste tilgængelige websites.
+Nu hvor du forstår, hvordan folk navigerer på nettet med hjælpemidler, lad os udforske værktøjerne, der hjælper dig med at bygge og teste tilgængelige websites.
 
-Tænk på det sådan: automatiserede værktøjer er gode til at fange åbenlyse problemer (som manglende alt-tekst), mens hands-on testning hjælper dig med at sikre, at dit site føles godt at bruge i den virkelige verden. Sammen giver de dig selvtillid til, at dine sites fungerer for alle.
+Tænk på det sådan: automatiserede værktøjer er gode til at fange åbenlyse problemer (som manglende alt-tekst), mens praktisk testning hjælper dig med at sikre, at dit site føles godt at bruge i virkeligheden. Sammen giver de dig tillid til, at dine sites fungerer for alle.
 
 ### Farvekontrasttest
 
-Her er gode nyheder: farvekontrast er et af de mest almindelige tilgængelighedsproblemer, men det er også et af de nemmeste at løse. God kontrast gavner alle – fra brugere med synshandicap til folk, der prøver at læse deres telefoner på stranden.
+Her er noget godt nyt: farvekontrast er et af de mest almindelige tilgængelighedsproblemer, men det er også et af de nemmeste at rette. God kontrast gavner alle—fra brugere med synsnedsættelse til folk, der prøver at læse deres telefon på stranden.
 
-**WCAG-kontrastkrav:**
+**WCAG krav til kontrast:**
 
 | Teksttype | WCAG AA (Minimum) | WCAG AAA (Forbedret) |
 |-----------|-------------------|---------------------|
 | **Normal tekst** (under 18pt) | 4.5:1 kontrastforhold | 7:1 kontrastforhold |
 | **Stor tekst** (18pt+ eller 14pt+ fed) | 3:1 kontrastforhold | 4.5:1 kontrastforhold |
-| **UI-komponenter** (knapper, formularrammer) | 3:1 kontrastforhold | 3:1 kontrastforhold |
+| **UI-komponenter** (knapper, formulargrænser) | 3:1 kontrastforhold | 3:1 kontrastforhold |
 
-**Essentielle testværktøjer:**
-- [Colour Contrast Analyser](https://www.tpgi.com/color-contrast-checker/) - Desktop-app med farvevælger
+**Nødvendige testværktøjer:**
+- [Colour Contrast Analyser](https://www.tpgi.com/color-contrast-checker/) - Desktop app med farvevælger
 - [WebAIM Contrast Checker](https://webaim.org/resources/contrastchecker/) - Webbaseret med øjeblikkelig feedback
-- [Stark](https://www.getstark.co/) - Designværktøjs-plugin til Figma, Sketch, Adobe XD
+- [Stark](https://www.getstark.co/) - Designplugin til Figma, Sketch, Adobe XD
 - [Accessible Colors](https://accessible-colors.com/) - Find tilgængelige farvepaletter
 
-✅ **Byg bedre farvepaletter**: Start med dine brandfarver og brug kontrasttestere til at skabe tilgængelige variationer. Dokumentér disse som en del af dit designsystems tilgængelige farvetokens.
+✅ **Skab bedre farvepaletter**: Start med dine brandfarver og brug kontrastkontrollere til at skabe tilgængelige variationer. Dokumentér disse som dit designsystems tilgængelige farvetoner.
 
-### Omfattende tilgængelighedsaudit
+### Omfattende tilgængelighedsauditering
 
-Den mest effektive tilgængelighedstest kombinerer flere tilgange. Intet enkelt værktøj fanger alt, så opbygning af en testrutine med forskellige metoder sikrer grundig dækning.
+Den mest effektive tilgængelighedstest kombinerer flere tilgange. Intet enkelt værktøj fanger alt, så det at opbygge en testrutine med forskellige metoder sikrer grundig dækning.
 
-**Browserbaseret test (indbygget i DevTools):**
-- **Chrome/Edge**: Lighthouse-tilgængelighedsaudit + Tilgængelighedspanel
-- **Firefox**: Tilgængelighedsinspektør med detaljeret trævisning
-- **Safari**: Audit-fane i Web Inspector med VoiceOver-simulering
+**Browserbaseret testning (indbygget i DevTools):**
+- **Chrome/Edge**: Lighthouse tilgængelighedsaudit + Accessibility-panel
+- **Firefox**: Accessibility Inspector med detaljeret trævisning
+- **Safari**: Audit-faneblad i Web Inspector med VoiceOver-simulering
 
 **Professionelle testudvidelser:**
-- [axe DevTools](https://www.deque.com/axe/devtools/) - Industri-standard automatiseret test
+- [axe DevTools](https://www.deque.com/axe/devtools/) - Branche-standard automatiseret test
 - [WAVE](https://wave.webaim.org/extension/) - Visuel feedback med fejlmarkering
-- [Accessibility Insights](https://accessibilityinsights.io/) - Microsofts omfattende testværktøj
+- [Accessibility Insights](https://accessibilityinsights.io/) - Microsofts omfattende testsuite
 
-**Kommandolinje og CI/CD-integration:**
+**Kommando-linje og CI/CD-integration:**
 - [axe-core](https://github.com/dequelabs/axe-core) - JavaScript-bibliotek til automatiseret test
-- [Pa11y](https://pa11y.org/) - Kommandolinje tilgængelighedstestværktøj
-- [Lighthouse CI](https://github.com/GoogleChrome/lighthouse-ci) - Automatiseret tilgængelighedsscore
+- [Pa11y](https://pa11y.org/) - Kommandolinjeværktøj til tilgængelighedstest
+- [Lighthouse CI](https://github.com/GoogleChrome/lighthouse-ci) - Automatiseret tilgængelighedsscorer
 
-> 🎯 **Testmål**: Stræb efter en Lighthouse-tilgængelighedsscore på 95+ som din baseline. Husk, automatiserede værktøjer fanger kun omkring 30-40% af tilgængelighedsproblemer – manuel testning er stadig essentiel!
+> 🎯 **Testmål**: Sigter efter en Lighthouse tilgængelighedsscore på 95+ som baseline. Husk, automatiserede værktøjer fanger kun ca. 30-40% af tilgængelighedsproblemerne—manuel test er stadig essentiel!
 
-## Byg tilgængelighed fra bunden
+### 🧠 **Testfærdigheder Check: Klar til at finde problemer?**
 
-Nøglen til succes med tilgængelighed er at indarbejde det i din grundstruktur fra dag ét. Jeg ved, det kan være fristende at tænke "Jeg tilføjer tilgængelighed senere," men det er som at prøve at tilføje en rampe til et hus, efter det allerede er bygget. Muligt? Ja. Let? Ikke rigtig.
+**Lad os se, hvordan du har det med tilgængelighedstest:**
+- Hvilken testmetode virker mest tilgængelig for dig lige nu?
+- Kan du forestille dig at bruge kun tastaturnavigation en hel dag?
+- Hvad er en tilgængelighedsbarriere, du personligt har oplevet online?
 
-Tænk på tilgængelighed som planlægning af et hus – det er meget nemmere at inkludere kørestolsadgang i dine oprindelige arkitektplaner end at eftermontere alt senere.
+```mermaid
+pie title "Tilgængelighedsproblemer Opdaget af Forskellige Metoder"
+    "Automatiserede Værktøjer" : 35
+    "Manuel Testning" : 40
+    "Brugerfeedback" : 25
+```
+> **Selvtillidsboost**: Professionelle tilgængelighedstestere bruger denne eksakte kombination af metoder. Du lærer branches standard praksis!
 
-### POUR-principperne: Din tilgængelighedsfundament
+## Byg Tilgængelighed fra Grundlaget
 
-Web Content Accessibility Guidelines (WCAG) er bygget omkring fire grundlæggende principper, der staver POUR. Bare rolig – dette er ikke tørre akademiske begreber! De er faktisk praktiske retningslinjer for at skabe indhold, der fungerer for alle.
+Nøglen til tilgængelighedssucces er at bygge den ind i dit fundament fra dag ét. Jeg ved, det er fristende at tænke "Jeg tilføjer tilgængelighed senere," men det er som at forsøge at tilføje en rampe til et hus, efter det allerede er bygget. Muligt? Ja. Let? Ikke rigtig.
 
-Når du får styr på POUR, bliver det meget mere intuitivt at træffe tilgængelighedsbeslutninger. Det er som at have en mental tjekliste, der guider dine designvalg. Lad os bryde det ned:
+Tænk på tilgængelighed som planlægning af et hus—det er meget lettere at inkludere kørestolsadgang i dine arkitektoniske planer fra starten end at skulle tilføje det bagefter.
 
-**🔍 Opfatteligt**: Information skal præsenteres på måder, som brugere kan opfatte gennem deres tilgængelige sanser
+### POUR principperne: Dit tilgængelighedsfundament
 
-- Giv tekstalternativer til ikke-tekstindhold (billeder, videoer, lyd)
+Web Content Accessibility Guidelines (WCAG) er bygget op omkring fire grundlæggende principper, der staver POUR. Bare rolig—det er ikke tørre akademiske begreber! De er faktisk praktiske retningslinjer til at gøre indhold, der fungerer for alle.
+
+Når du først har styr på POUR, bliver det meget mere intuitivt at træffe beslutninger om tilgængelighed. Det er som at have en mental tjekliste, der guider dine designvalg. Lad os gennemgå dem:
+
+```mermaid
+flowchart LR
+    A[🔍 OPGRIBELIG<br/>Kan brugere opfatte det?] --> B[🎮 BRUGBAR<br/>Kan brugere anvende det?]
+    B --> C[📖 FORSTÅELIG<br/>Kan brugere forstå det?]
+    C --> D[💪 ROBUST<br/>Virker det overalt?]
+    
+    A1[Alternativ tekst<br/>Undertekster<br/>Kontrast] --> A
+    B1[Tastaturadgang<br/>Ingen anfald<br/>Tidsbegrænsninger] --> B
+    C1[Klart sprog<br/>Forudsigeligt<br/>Fejlhjælp] --> C
+    D1[Gyldig kode<br/>Kompatibel<br/>Fremtidssikret] --> D
+    
+    style A fill:#e1f5fe
+    style B fill:#e8f5e8
+    style C fill:#fff3e0
+    style D fill:#f3e5f5
+```
+**🔍 Perceptible (Opfatteligt)**: Information skal kunne præsenteres på måder, som brugere kan opfatte gennem deres tilgængelige sanser
+
+- Giv tekstalternativer for ikke-tekstligt indhold (billeder, videoer, lyd)
 - Sørg for tilstrækkelig farvekontrast for al tekst og UI-komponenter
-- Tilbyd undertekster og transskriptioner til multimedieindhold
-- Design indhold, der forbliver funktionelt, når det forstørres op til 200%
+- Tilbyd billedtekster og transskriptioner for multimedieindhold
+- Design indhold, der forbliver funktionelt ved op til 200% størrelse
 - Brug flere sensoriske karakteristika (ikke kun farve) til at formidle information
 
-**🎮 Operabelt**: Alle grænsefladekomponenter skal kunne betjenes via tilgængelige inputmetoder
+**🎮 Operable (Betjeneligt)**: Alle grænsefladekomponenter skal kunne betjenes via tilgængelige inputmetoder
 
 - Gør al funktionalitet tilgængelig via tastaturnavigation
 - Giv brugerne tilstrækkelig tid til at læse og interagere med indhold
-- Undgå indhold, der forårsager anfald eller vestibulære lidelser
-- Hjælp brugere med at navigere effektivt med klar struktur og landemærker
-- Sørg for, at interaktive elementer har tilstrækkelige målstørrelser (minimum 44px)
+- Undgå indhold, der kan forårsage anfald eller vestibulære lidelser
+- Hjælp brugere med effektiv navigation med klar struktur og landemærker
+- Sørg for, at interaktive elementer har passende mål (mindst 44px)
 
-**📖 Forståeligt**: Information og UI-betjening skal være klar og forståelig
+**📖 Understandable (Forståeligt)**: Information og interface skal være klare og letforståelige
 
 - Brug klart, enkelt sprog, der passer til din målgruppe
 - Sørg for, at indhold vises og fungerer på forudsigelige, konsistente måder
-- Giv klare instruktioner og fejlmeddelelser for brugerinput
+- Giv klare instruktioner og fejlbeskeder ved brugerinput
 - Hjælp brugere med at forstå og rette fejl i formularer
-- Organiser indhold med logisk læserækkefølge og informationshierarki
+- Organisér indhold med logisk læserækkefølge og informationshierarki
 
-**💪 Robust**: Indhold skal fungere pålideligt på tværs af forskellige teknologier og hjælpemidler
+**💪 Robust (Robust)**: Indhold skal fungere pålideligt på tværs af forskellige teknologier og hjælpemidler
 
-- Brug gyldig, semantisk HTML som din grundstruktur
-- Sørg for kompatibilitet med nuværende og fremtidige hjælpemidler
-- Følg webstandarder og bedste praksis for markup
-- Test på tværs af forskellige browsere, enheder og hjælpemidler
-- Strukturér indhold, så det nedgraderes elegant, når avancerede funktioner ikke understøttes
+- **Brug gyldig, semantisk HTML som dit fundament**
+- **Sørg for kompatibilitet med nuværende og fremtidige hjælpemidler**
+- **Følg webstandarder og bedste praksis for markup**
+- **Test på tværs af forskellige browsere, enheder og hjælpemidler**
+- **Strukturer indhold, så det nedbrydes pænt, når avancerede funktioner ikke understøttes**
 
-## Skabelse af tilgængeligt visuelt design
+### 🎯 **POUR-principper Check: At få det til at hænge fast**
+
+**Hurtig refleksion over grundlaget:**
+- Kan du tænke på en webfunktion, der fejler hvert af POUR-principperne?
+- Hvilket princip føles mest naturligt for dig som udvikler?
+- Hvordan kan disse principper forbedre design for alle, ikke kun brugere med handicap?
+
+```mermaid
+quadrantChart
+    title POUR Principper Indvirkningsmatrix
+    x-axis Lav indsats --> Høj indsats
+    y-axis Lav indvirkning --> Høj indvirkning
+    quadrant-1 Hurtige gevinster
+    quadrant-2 Store projekter
+    quadrant-3 Overvej senere
+    quadrant-4 Strategisk fokus
+    
+    Alt Text: [0.2, 0.9]
+    Color Contrast: [0.3, 0.8]
+    Semantic HTML: [0.4, 0.9]
+    Keyboard Nav: [0.6, 0.8]
+    ARIA Complex: [0.8, 0.7]
+    Screen Reader Testing: [0.7, 0.6]
+```
+> **Husk**: Start med høj-impact, lav-indsats forbedringer. Semantisk HTML og alt-tekst giver dig det største tilgængelighedsboost for mindst indsats!
+
+## Skabe tilgængeligt visuelt design
 
 Godt visuelt design og tilgængelighed går hånd i hånd. Når du designer med tilgængelighed i tankerne, opdager du ofte, at disse begrænsninger fører til renere, mere elegante løsninger, der gavner alle brugere.
 
-Lad os udforske, hvordan man skaber visuelt tiltalende designs, der fungerer for alle, uanset deres visuelle evner eller de forhold, hvorunder de ser dit indhold.
+Lad os udforske, hvordan du skaber visuelt tiltalende designs, der fungerer for alle, uanset deres visuelle evner eller de forhold, de ser dit indhold under.
 
-### Farve- og visuelle tilgængelighedsstrategier
-Farver er stærke til kommunikation, men de bør aldrig være den eneste måde, du formidler vigtig information på. Design ud over farver skaber mere robuste og inkluderende oplevelser, der fungerer i flere situationer.
+### Farve og visuelle tilgængelighedsstrategier
 
-**Design for forskelle i farvesyn:**
+Farve er et stærkt kommunikationsmiddel, men det bør aldrig være den eneste måde, du formidler vigtig information på. Design ud over farve skaber mere robuste, inkluderende oplevelser, der fungerer i flere situationer.
 
-Omkring 8% af mænd og 0,5% af kvinder har en form for forskel i farvesyn (ofte kaldet "farveblindhed"). De mest almindelige typer er:
-- **Deuteranopia**: Vanskeligheder med at skelne mellem rød og grøn
-- **Protanopia**: Rød fremstår mere dæmpet
-- **Tritanopia**: Vanskeligheder med blå og gul (sjælden)
+**Design for farvesynet forskelle:**
+
+Omtrent 8 % af mænd og 0,5 % af kvinder har en eller anden form for farvesynsforskel (ofte kaldet "farveblindhed"). De mest almindelige typer er:
+- **Deuteranopi**: Vanskeligheder med at skelne rød og grøn
+- **Protanopi**: Rød fremstår mere svag
+- **Tritanopi**: Vanskeligheder med blå og gul (sjældent)
 
 **Inklusive farvestrategier:**
 
@@ -242,17 +338,17 @@ Omkring 8% af mænd og 0,5% af kvinder har en form for forskel i farvesyn (ofte 
 }
 ```
 
-**Ud over grundlæggende kontrastkrav:**
-- Test dine farvevalg med farveblind-simulatorer
+**Udover grundlæggende kontrastkrav:**
+- Test dine farvevalg med farveblindhedssimulatorer
 - Brug mønstre, teksturer eller former sammen med farvekodning
-- Sørg for, at interaktive tilstande forbliver genkendelige uden farver
-- Overvej, hvordan dit design ser ud i højkontrasttilstand
+- Sørg for, at interaktive tilstande forbliver genkendelige uden farve
+- Overvej, hvordan dit design ser ud i højkontrast-tilstand
 
-✅ **Test din farveadgang**: Brug værktøjer som [Coblis](https://www.color-blindness.com/coblis-color-blindness-simulator/) for at se, hvordan dit websted ser ud for brugere med forskellige typer farvesyn.
+✅ **Test din farvetilgængelighed**: Brug værktøjer som [Coblis](https://www.color-blindness.com/coblis-color-blindness-simulator/) for at se, hvordan dit site fremstår for brugere med forskellige typer farvesyn.
 
 ### Fokusindikatorer og interaktionsdesign
 
-Fokusindikatorer er den digitale ækvivalent til en markør – de viser tastaturbrugere, hvor de befinder sig på siden. Veludformede fokusindikatorer forbedrer oplevelsen for alle ved at gøre interaktioner klare og forudsigelige.
+Fokusindikatorer er det digitale svar på en markør—de viser tastaturbrugere, hvor de er på siden. Godt designede fokusindikatorer forbedrer oplevelsen for alle ved at gøre interaktioner klare og forudsigelige.
 
 **Moderne bedste praksis for fokusindikatorer:**
 
@@ -284,22 +380,43 @@ button:focus:not(:focus-visible) {
 ```
 
 **Krav til fokusindikatorer:**
-- **Synlighed**: Skal have mindst 3:1 kontrastforhold med omkringliggende elementer
-- **Bredde**: Minimum 2px tykkelse rundt om hele elementet
-- **Vedholdenhed**: Skal forblive synlig, indtil fokus flyttes
-- **Adskillelse**: Skal være visuelt forskellig fra andre UI-tilstande
+- **Synlighed**: Skal have mindst 3:1 kontrastforhold til omgivelserne
+- **Bredde**: Minimum 2px tykkelse omkring hele elementet
+- **Vedholdenhed**: Skal forblive synlig, indtil fokus flyttes andetsteds
+- **Distinktion**: Skal visuelt adskille sig fra andre UI-tilstande
 
-> 💡 **Designtip**: Gode fokusindikatorer bruger ofte en kombination af kontur, box-shadow og farveændringer for at sikre synlighed på forskellige baggrunde og kontekster.
+> 💡 **Design Tip**: Gode fokusindikatorer bruger ofte en kombination af outline, box-shadow og farveændringer for at sikre synlighed på forskellige baggrunde og i forskellige kontekster.
 
-✅ **Auditér fokusindikatorer**: Tab dig gennem dit websted og bemærk, hvilke elementer der har klare fokusindikatorer. Er nogle svære at se eller helt mangler?
+✅ **Auditér fokusindikatorer**: Tab dig igennem dit website og bemærk, hvilke elementer der har klare fokusindikatorer. Er nogen svære at se eller helt manglende?
 
 ### Semantisk HTML: Fundamentet for tilgængelighed
 
-Semantisk HTML er som at give hjælpemidler et GPS-system til dit websted. Når du bruger de rigtige HTML-elementer til deres tilsigtede formål, giver du skærmlæsere, tastaturer og andre værktøjer et detaljeret kort, der hjælper brugerne med at navigere effektivt.
+Semantisk HTML er som at give hjælpemidler et GPS-system til dit website. Når du bruger de rigtige HTML-elementer til deres tilsigtede formål, giver du grundlæggende skærmlæsere, tastaturer og andre hjælpemidler et detaljeret kort over, hvordan brugere effektivt navigerer.
 
-Her er en analogi, der virkelig gav mening for mig: semantisk HTML er forskellen mellem et velorganiseret bibliotek med klare kategorier og nyttige skilte versus et lager, hvor bøgerne er spredt tilfældigt. Begge steder har de samme bøger, men hvor ville du helst prøve at finde noget? Præcis!
+Her er en analogi, der virkelig ramte plet for mig: semantisk HTML er forskellen mellem et velorganiseret bibliotek med klare kategorier og hjælpsomme skilte versus et lager, hvor bøger er spredt tilfældigt. Begge steder har de samme bøger, men hvilket sted ville du helst prøve at finde noget i? Præcis!
 
-**Byggestenene i en tilgængelig sidestruktur:**
+```mermaid
+flowchart TD
+    A[🏠 HTML-dokument] --> B[📰 header]
+    A --> C[🧭 nav]
+    A --> D[📄 hovedindhold]
+    A --> E[📋 footer]
+    
+    B --> B1[h1: Sidenavn<br/>Logo og branding]
+    C --> C1[ul: Navigation<br/>Primære links]
+    D --> D1[artikel: Indhold<br/>sektion: Underafsnit]
+    D --> D2[aside: Sidebar<br/>Relateret indhold]
+    E --> E1[nav: Footer-links<br/>Ophavsret-info]
+    
+    D1 --> D1a[h1: Sidetitel<br/>h2: Hovedafsnit<br/>h3: Underafsnit]
+    
+    style A fill:#e3f2fd
+    style B fill:#e8f5e8
+    style C fill:#fff3e0
+    style D fill:#f3e5f5
+    style E fill:#e0f2f1
+```
+**Byggesten til tilgængelig sidestruktur:**
 
 ```html
 <!-- Landmark elements provide page navigation structure -->
@@ -356,34 +473,60 @@ Her er en analogi, der virkelig gav mening for mig: semantisk HTML er forskellen
 
 **Hvorfor semantisk HTML transformerer tilgængelighed:**
 
-| Semantisk element | Formål | Fordel for skærmlæsere |
-|------------------|---------|----------------------|
-| `<header>` | Side- eller sektionens overskrift | "Banner-landmærke" - hurtig navigation til toppen |
-| `<nav>` | Navigationslinks | "Navigationslandmærke" - liste over navigationssektioner |
-| `<main>` | Primært sideindhold | "Hovedlandmærke" - spring direkte til indhold |
-| `<article>` | Selvstændigt indhold | Angiver artikelgrænser |
+| Semantisk Element | Formål | Skærmlæser Fordel |
+|-------------------|---------|-------------------|
+| `<header>` | Side- eller sektionoverskrift | "Banner landmark" - hurtig navigation til toppen |
+| `<nav>` | Navigationslinks | "Navigation landmark" - liste over nav sektioner |
+| `<main>` | Primært sideindhold | "Main landmark" - spring direkte til indhold |
+| `<article>` | Selvstændigt indhold | Marker artiklens grænser |
 | `<section>` | Tematiske indholdsgrupper | Giver indholdsstruktur |
-| `<aside>` | Relateret sideindhold | "Komplementært landmærke" |
-| `<footer>` | Side- eller sektionens fodnote | "Contentinfo-landmærke" |
+| `<aside>` | Relateret sideløbende indhold | "Complementary landmark" |
+| `<footer>` | Side- eller sektionsfod | "Contentinfo landmark" |
 
 **Skærmlæser-superkræfter med semantisk HTML:**
-- **Landmærkenavigation**: Spring mellem større sektioner på siden øjeblikkeligt
-- **Overskriftsoversigt**: Generer en indholdsfortegnelse fra din overskriftsstruktur
+- **Landmark-navigation**: Hop mellem større sidesektioner øjeblikkeligt
+- **Overskriftsoversigt**: Generer indholdsfortegnelse ud fra din overskriftsstruktur
 - **Elementlister**: Opret lister over alle links, knapper eller formularfelter
-- **Kontekstforståelse**: Forstå relationer mellem indholdssektioner
+- **Kontekstbevidsthed**: Forstå relationer mellem indholdssektioner
 
-> 🎯 **Hurtig test**: Prøv at navigere på dit websted med en skærmlæser ved hjælp af landmærkegenveje (D for landmærke, H for overskrift, K for link i NVDA/JAWS). Giver navigationen mening?
+> 🎯 **Hurtig test**: Prøv at navigere på dit site med en skærmlæser ved hjælp af landmark-genveje (D for landmark, H for heading, K for link i NVDA/JAWS). Giver navigationen mening?
 
-✅ **Auditér din semantiske struktur**: Brug tilgængelighedspanelet i din browsers DevTools til at se tilgængelighedstræet og sikre, at din markup skaber en logisk struktur.
+### 🏗️ **Semantisk HTML Mestringscheck: Byg stærke fundamenter**
 
-### Overskriftsstruktur: Skab en logisk indholdsoversigt
+**Lad os evaluere din semantiske forståelse:**
+- Kan du identificere landemærker på en webside bare ved at se HTML’en?
+- Hvordan ville du forklare forskellen mellem `<section>` og `<div>` til en ven?
+- Hvad er det første, du ville tjekke, hvis en skærmlæserbruger rapporterede navigationsproblemer?
 
-Overskrifter er helt afgørende for tilgængeligt indhold – de er som rygraden, der holder det hele sammen. Skærmlæserbrugere er stærkt afhængige af overskrifter for at forstå og navigere i dit indhold. Tænk på det som at give en indholdsfortegnelse for din side.
+```mermaid
+stateDiagram-v2
+    [*] --> UnsementicHTML: div suppe
+    UnsementicHTML --> SemanticHTML: Tilføj landemærker
+    SemanticHTML --> AccessibleHTML: Test med AT
+    AccessibleHTML --> [*]: Bruger succes!
+    
+    note right of UnsementicHTML
+        Skærmlæsere tabte
+        Tastaturnavigation ødelagt
+    end note
+    
+    note right of AccessibleHTML
+        Klar navigation
+        Effektiv browsing
+    end note
+```
+> **Pro-indblik**: God semantisk HTML løser cirka 70 % af tilgængelighedsproblemer automatisk. Mestring af dette fundament bringer dig rigtig langt!
+
+✅ **Auditér din semantiske struktur**: Brug tilgængelighedspanelet i din browsers DevTools for at se tilgængelighedstræet og sikre, at dit markup skaber en logisk struktur.
+
+### Overskriftshierarki: Skabe en logisk indholdsoversigt
+
+Overskrifter er absolut afgørende for tilgængeligt indhold—de er som rygraden, der holder det hele sammen. Skærmlæserbrugere stoler kraftigt på overskrifter for at forstå og navigere dit indhold. Tænk på det som at give en indholdsfortegnelse til din side.
 
 **Her er den gyldne regel for overskrifter:**
-Spring aldrig niveauer over. Gå altid logisk frem fra `<h1>` til `<h2>` til `<h3>` osv. Kan du huske, da du lavede dispositioner i skolen? Det er præcis samme princip – du ville ikke springe fra "I. Hovedpunkt" direkte til "C. Under-underpunkt" uden et "A. Underpunkt" imellem, vel?
+Spring aldrig niveauer over. Bevæg dig altid logisk fra `<h1>` til `<h2>` til `<h3>` og så videre. Kan du huske at lave dispositioner i skolen? Det er præcis det samme princip—du ville ikke springe fra "I. Hovedpunkt" direkte til "C. Under-underpunkt" uden "A. Underpunkt" imellem, vel?
 
-**Eksempel på perfekt overskriftsstruktur:**
+**Perfekt eksempel på overskriftsstruktur:**
 
 ```html
 <!-- ✅ Excellent: Logical, hierarchical progression -->
@@ -422,28 +565,28 @@ Spring aldrig niveauer over. Gå altid logisk frem fra `<h1>` til `<h2>` til `<h
 <h1>Another main heading?</h1> <!-- Multiple h1s -->
 ```
 
-**Bedste praksis for overskrifter:**
-- **Én `<h1>` pr. side**: Typisk din hovedsidetitel eller primære indholdsoverskrift
+**Overskrifts bedste praksis:**
+- **Én `<h1>` per side**: Typisk dit hovedsideoverskrift eller primære indhold
 - **Logisk progression**: Spring aldrig niveauer over (h1 → h2 → h3, ikke h1 → h3)
-- **Beskrivende indhold**: Gør overskrifter meningsfulde, når de læses uden kontekst
+- **Meningsfuldt indhold**: Gør overskrifter forståelige, også ude af kontekst
 - **Visuel styling med CSS**: Brug CSS til udseende, HTML-niveauer til struktur
 
-**Statistikker om skærmlæsernavigation:**
-- 68% af skærmlæserbrugere navigerer via overskrifter ([WebAIM Survey](https://webaim.org/projects/screenreadersurvey9/#finding))
-- Brugere forventer at finde en logisk overskriftsstruktur
-- Overskrifter giver den hurtigste måde at forstå sidestrukturen på
+**Statistik for skærmlæsernavigation:**
+- 68 % af skærmlæserbrugere navigerer via overskrifter ([WebAIM Survey](https://webaim.org/projects/screenreadersurvey9/#finding))
+- Brugere forventer at finde en logisk overskriftsoversigt
+- Overskrifter giver den hurtigste måde at forstå sidestrukturen
 
-> 💡 **Pro Tip**: Brug browserudvidelser som "HeadingsMap" til at visualisere din overskriftsstruktur. Den bør læses som en velorganiseret indholdsfortegnelse.
+> 💡 **Pro Tips**: Brug browser-udvidelser som "HeadingsMap" til at visualisere din overskriftsstruktur. Den skal læses som en velorganiseret indholdsfortegnelse.
 
-✅ **Test din overskriftsstruktur**: Brug en skærmlæsers overskriftsnavigation (H-tasten i NVDA) til at springe gennem dine overskrifter. Fortæller progressionen historien om dit indhold logisk?
+✅ **Test din overskriftsstruktur**: Brug en skærmlæsers overskriftsnavigation (H-tasten i NVDA) til at hoppe gennem dine overskrifter. Fortæller progressionen logisk historien om dit indhold?
 
-### Avancerede visuelle tilgængelighedsteknikker
+### Avancerede teknikker for visuel tilgængelighed
 
-Ud over de grundlæggende krav til kontrast og farver er der sofistikerede teknikker, der hjælper med at skabe virkelig inkluderende visuelle oplevelser. Disse metoder sikrer, at dit indhold fungerer under forskellige visningsforhold og med hjælpemidler.
+Ud over grundlæggende kontrast og farve findes der avancerede teknikker, som hjælper med at skabe virkelig inkluderende visuelle oplevelser. Disse metoder sikrer, at dit indhold fungerer under forskellige betragtningsforhold og hjælpemidler.
 
-**Vigtige strategier for visuel kommunikation:**
+**Væsentlige strategier for visuel kommunikation:**
 
-- **Multimodal feedback**: Kombiner visuelle, tekstuelle og nogle gange lydmæssige signaler
+- **Multimodal feedback**: Kombiner visuelle, tekstuelle og undertiden lydmæssige signaler
 - **Progressiv afsløring**: Præsenter information i fordøjelige bidder
 - **Konsistente interaktionsmønstre**: Brug velkendte UI-konventioner
 - **Responsiv typografi**: Skaler tekst passende på tværs af enheder
@@ -505,41 +648,41 @@ Ud over de grundlæggende krav til kontrast og farver er der sofistikerede tekni
 }
 ```
 
-> 🎯 **Tilgængelighedsmønster**: "Skip link" er afgørende for tastaturbrugere. Det bør være det første fokuserbare element på din side og springe direkte til hovedindholdet.
+> 🎯 **Tilgængelighedsmønster**: "Skip link" er essentielt for tastaturbrugere. Det bør være det første fokuserbare element på din side og springe direkte til hovedindholdsområdet.
 
-✅ **Implementér skip navigation**: Tilføj skip links til dine sider og test dem ved at trykke på Tab, så snart siden indlæses. De bør dukke op og give dig mulighed for at springe til hovedindholdet.
+✅ **Implementér skip navigation**: Tilføj skip links til dine sider og test dem ved at trykke på Tab lige når siden indlæses. De skal dukke op og give mulighed for at hoppe til hovedindholdet.
 
-## Skab meningsfuld linktekst
+## Skriv meningsfuld linktekst
 
-Links er i bund og grund internettets motorveje, men dårligt skrevet linktekst er som vejskilte, der bare siger "Sted" i stedet for "Indre København." Ikke særlig hjælpsomt, vel?
+Links er grundlæggende internettets motorveje, men dårligt skrevne linktekster er som vejskilte, der bare siger "Sted" i stedet for "Downtown Chicago." Ikke særlig hjælpsomt, vel?
 
-Her er noget, der virkelig overraskede mig, da jeg først lærte det: skærmlæsere kan udtrække alle links fra en side og vise dem som én stor liste. Forestil dig, hvis nogen gav dig en oversigt over alle links på din side. Ville hvert enkelt give mening alene? Det er testen, din linktekst skal bestå!
+Her er noget, der blæste mig omkuld, da jeg først lærte det: Skærmlæsere kan udtrække alle links fra en side og vise dem som én lang liste. Forestil dig, hvis nogen gav dig et register over alle links på din side. Ville hvert link give mening alene? Det er testen, din linktekst skal bestå!
 
-### Forstå linknavigationsmønstre
+### Forståelse af linknavigationsmønstre
 
-Skærmlæsere tilbyder kraftfulde linknavigationsfunktioner, der afhænger af veludformet linktekst:
+Skærmlæsere tilbyder kraftfulde linknavigationsfunktioner, der er afhængige af veldesignet linktekst:
 
-**Linknavigationsmetoder:**
-- **Sekventiel læsning**: Links læses i kontekst som en del af indholdsflowet
-- **Generering af linklister**: Alle sidens links samlet i en søgbar oversigt
-- **Hurtig navigation**: Spring mellem links ved hjælp af tastaturgenveje (K i NVDA)
-- **Søgefunktionalitet**: Find specifikke links ved at skrive delvis tekst
+**Metoder til linknavigation:**
+- **Sekventiel læsning**: Links læses i kontekst som en del af indholdsflow
+- **Linklistegenerering**: Alle sidelinks sammenstillet i en søgbar liste
+- **Hurtig navigation**: Hop mellem links med tastaturgenveje (K i NVDA)
+- **Søgefunktion**: Find specifikke links ved at skrive delvise tekster
 
-**Hvorfor kontekst betyder noget:**
-Når skærmlæserbrugere genererer en linkliste, ser de noget som dette:
+**Hvorfor kontekst er vigtig:**
+Når skærmlæserbrugere genererer en linkliste, ser de noget i retning af:
 - "Download rapport"
-- "Lær mere"
+- "Læs mere"
 - "Klik her"
 - "Privatlivspolitik"
 - "Klik her"
 
-Kun to af disse links giver nyttig information, når de læses uden kontekst!
+Kun to af disse links giver nyttig information, når de læses ude af kontekst!
 
-> 📊 **Brugerindvirkning**: Skærmlæserbrugere scanner linklister for hurtigt at forstå sideindhold. Generisk linktekst tvinger dem til at navigere tilbage til hver links kontekst, hvilket betydeligt forsinker deres browsingoplevelse.
+> 📊 **Brugerpåvirkning**: Skærmlæserbrugere scanner linklister for hurtigt at forstå sideindhold. Generisk linktekst tvinger dem til at navigere tilbage til hvert links kontekst, hvilket betydeligt forsinker deres browsingoplevelse.
 
-### Almindelige fejl i linktekst, der skal undgås
+### Almindelige fejl i linktekst, du bør undgå
 
-At forstå, hvad der ikke fungerer, hjælper dig med at genkende og rette tilgængelighedsproblemer i eksisterende indhold.
+Hvis du forstår, hvad der ikke virker, kan du genkende og rette tilgængelighedsproblemer i eksisterende indhold.
 
 **❌ Generisk linktekst, der ikke giver kontekst:**
 
@@ -568,16 +711,16 @@ At forstå, hvad der ikke fungerer, hjælper dig med at genkende og rette tilgæ
 ```
 
 **Hvorfor disse mønstre fejler:**
-- **"Klik her"** fortæller ikke brugerne noget om destinationen
+- **"Klik her"** fortæller brugerne intet om destinationen
 - **"Læs mere"** gentaget flere gange skaber forvirring
-- **Rå URL'er** er svære for skærmlæsere at udtale klart
+- **Rå URL’er** er svære for skærmlæsere at udtale klart
 - **Enkeltord** som "Gå" eller "Se" mangler beskrivende kontekst
 
 ### Skriv fremragende linktekst
 
-Beskrivende linktekst gavner alle – seende brugere kan hurtigt scanne links, og skærmlæserbrugere forstår destinationer med det samme.
+Beskrivende linktekst gavner alle—seende brugere kan hurtigt scanne links, og skærmlæserbrugere forstår destinationerne med det samme.
 
-**✅ Klare, beskrivende eksempler på linktekst:**
+**✅ Klare, beskrivende linktekst eksempler:**
 
 ```html
 <!-- Descriptive text that explains the destination -->
@@ -605,17 +748,17 @@ Beskrivende linktekst gavner alle – seende brugere kan hurtigt scanne links, o
 ```
 
 **Bedste praksis for linktekst:**
-- **Vær specifik**: "Download kvartalsrapporten" vs. "Download"
+- **Vær specifik**: "Download det kvartalsvise finansielle rapport" versus "Download"
 - **Inkluder filtype og størrelse**: "(PDF, 1,2MB)" for downloadbare filer
-- **Nævn, hvis links åbner eksternt**: "(åbner i nyt vindue)" når det er relevant
-- **Brug aktivt sprog**: "Kontakt os" vs. "Kontakt side"
-- **Hold det kort**: Stræb efter 2-8 ord, når det er muligt
+- **Nævn hvis links åbnes eksternt**: "(åbner i nyt vindue)" hvor relevant
+- **Brug aktivt sprog**: "Kontakt os" versus "Kontakt side"
+- **Hold det kort**: Sigter efter 2-8 ord, når muligt
 
-### Avancerede tilgængelighedsmønstre for links
+### Avancerede mønstre for linktilgængelighed
 
-Nogle gange kræver visuelle designbegrænsninger eller tekniske krav særlige løsninger. Her er sofistikerede teknikker til almindelige udfordrende scenarier:
+Nogle gange kræver visuelle designbegrænsninger eller tekniske krav særlige løsninger. Her er avancerede teknikker til almindeligt udfordrende scenarier:
 
-**Brug af ARIA for forbedret kontekst:**
+**Brug af ARIA til forbedret kontekst:**
 
 ```html
 <!-- When button text must be short but needs more context -->
@@ -684,46 +827,45 @@ Nogle gange kræver visuelle designbegrænsninger eller tekniske krav særlige l
 }
 ```
 
-> ⚠️ **Vigtigt**: Når du bruger `target="_blank"`, skal du altid informere brugerne om, at linket åbner i et nyt vindue eller en ny fane. Uventede navigationsændringer kan være forvirrende.
+> ⚠️ **Vigtigt**: Når du bruger `target="_blank"`, skal du altid informere brugerne om, at linket åbner i et nyt vindue eller faneblad. Uventede navigation ændringer kan være forvirrende.
 
-✅ **Test din linkkontekst**: Brug din browsers udviklerværktøjer til at generere en liste over alle links på din side. Kan du forstå formålet med hvert link uden nogen omkringliggende kontekst?
+✅ **Test din linkkontekst**: Brug din browsers udviklerværktøjer til at generere en liste over alle links på din side. Kan du forstå formålet med hvert link uden nogen omgivende kontekst?
 
-## ARIA: Supercharging HTML-tilgængelighed
+## ARIA: Superkraft til HTML-tilgængelighed
 
-[Accessible Rich Internet Applications (ARIA)](https://developer.mozilla.org/docs/Web/Accessibility/ARIA) er som at have en universel oversætter mellem dine komplekse webapplikationer og hjælpemidler. Når HTML alene ikke kan udtrykke alt, hvad dine interaktive komponenter gør, træder ARIA til for at udfylde hullerne.
+[Accessible Rich Internet Applications (ARIA)](https://developer.mozilla.org/docs/Web/Accessibility/ARIA) er som en universel oversætter mellem dine komplekse webapplikationer og hjælpemidler. Når HTML alene ikke kan udtrykke alt, hvad dine interaktive komponenter gør, træder ARIA til for at udfylde hullerne.
 
-Jeg kan godt lide at tænke på ARIA som at tilføje nyttige kommentarer til din HTML – lidt som sceneanvisninger i et teatermanuskript, der hjælper skuespillerne med at forstå deres roller og relationer.
+Jeg tænker på ARIA som at tilføje hjælpsomme noter til din HTML—lidt ligesom sceneanvisninger i et skuespil, der hjælper skuespillere med at forstå deres roller og relationer.
 
-**Her er den vigtigste regel om ARIA**: Brug altid semantisk HTML først, og tilføj derefter ARIA for at forbedre det. Tænk på ARIA som krydderi, ikke hovedretten. Det bør præcisere og forbedre din HTML-struktur, aldrig erstatte den. Få fundamentet på plads først!
+**Her er den vigtigste regel om ARIA**: Brug altid semantisk HTML først, og tilføj ARIA for at forbedre det. Tænk på ARIA som krydderi, ikke hovedretten. Det skal tydeliggøre og forbedre din HTML-struktur, aldrig erstatte den. Få fundamentet på plads først!
 
-### Strategisk implementering af ARIA
+### Strategisk ARIA-implementering
 
-ARIA er kraftfuldt, men med stor magt følger stort ansvar. Forkert brug af ARIA kan gøre tilgængeligheden værre end ingen ARIA overhovedet. Her er, hvornår og hvordan du bruger det effektivt:
+ARIA er kraftfuld, men med magt følger ansvar. Forkert ARIA kan gøre tilgængelighed værre end slet ingen ARIA. Her er hvornår og hvordan du bruger det effektivt:
 
 **✅ Brug ARIA når:**
-- Du opretter brugerdefinerede interaktive widgets (akkordioner, faner, karuseller)
-- Du bygger dynamisk indhold, der ændres uden sideopdateringer
-- Du giver yderligere kontekst for komplekse UI-relationer
-- Du angiver indlæsningsstatus eller live-indholdsopdateringer
+- Du skaber brugerdefinerede interaktive widgets (akkordeoner, faner, karuseller)
+- Du bygger dynamisk indhold, der ændres uden sidegenindlæsning
+- Du giver ekstra kontekst til komplekse UI-relationer
+- Du angiver indlæsningsstatus eller live opdateringer
 - Du skaber app-lignende grænseflader med brugerdefinerede kontroller
 
 **❌ Undgå ARIA når:**
-- Standard HTML-elementer allerede giver de nødvendige semantikker
+- Standard HTML-elementer allerede giver den nødvendige semantik
 - Du er usikker på, hvordan du implementerer det korrekt
-- Det duplikerer information, der allerede er givet af semantisk HTML
-- Du ikke har testet med faktiske hjælpemidler
+- Det duplikerer information allerede givet af semantisk HTML
+- Du ikke har testet med reelle hjælpemidler
 
-> 🎯 **ARIA's gyldne regel**: "Ændr ikke semantikken, medmindre du absolut skal, sørg altid for tastaturtilgængelighed, og test med rigtige hjælpemidler."
-
+> 🎯 **ARIA’s gyldne regel**: "Ændr ikke semantik, medmindre det er absolut nødvendigt, sikr altid tastaturtilgængelighed, og test med reelle hjælpemidler."
 **De fem kategorier af ARIA:**
 
 1. **Roller**: Hvad er dette element? (`button`, `tab`, `dialog`)
 2. **Egenskaber**: Hvad er dets funktioner? (`aria-required`, `aria-haspopup`)
 3. **Tilstande**: Hvad er dets aktuelle tilstand? (`aria-expanded`, `aria-checked`)
-4. **Landmærker**: Hvor er det i sidestrukturen? (`banner`, `navigation`, `main`)
-5. **Live-regioner**: Hvordan skal ændringer annonceres? (`aria-live`, `aria-atomic`)
+4. **Landemærker**: Hvor befinder det sig i sidens struktur? (`banner`, `navigation`, `main`)
+5. **Live regioner**: Hvordan skal ændringer meddeles? (`aria-live`, `aria-atomic`)
 
-### Vigtige ARIA-mønstre for moderne webapps
+### Væsentlige ARIA mønstre til moderne webapps
 
 Disse mønstre løser de mest almindelige tilgængelighedsudfordringer i interaktive webapplikationer:
 
@@ -751,7 +893,7 @@ Disse mønstre løser de mest almindelige tilgængelighedsudfordringer i interak
 </div>
 ```
 
-**Live-regioner for dynamisk indhold:**
+**Live regioner til dynamisk indhold:**
 
 ```html
 <!-- Polite announcements (don't interrupt current speech) -->
@@ -795,16 +937,16 @@ Disse mønstre løser de mest almindelige tilgængelighedsudfordringer i interak
 ```
 
 ```javascript
-// JavaScript to manage accordion state
+// JavaScript til at håndtere tilstandsforløb for akkordeon
 function toggleAccordion(trigger) {
   const panel = document.getElementById(trigger.getAttribute('aria-controls'));
   const isExpanded = trigger.getAttribute('aria-expanded') === 'true';
   
-  // Toggle states
+  // Skift tilstand
   trigger.setAttribute('aria-expanded', !isExpanded);
   panel.hidden = isExpanded;
   
-  // Announce change to screen readers
+  // Meddel ændring til skærmlæsere
   const status = document.getElementById('status-updates');
   status.textContent = isExpanded ? 'Section collapsed' : 'Section expanded';
 }
@@ -812,74 +954,110 @@ function toggleAccordion(trigger) {
 
 ### Bedste praksis for ARIA-implementering
 
-ARIA er kraftfuldt, men kræver omhyggelig implementering. Hvis du følger disse retningslinjer, sikrer du, at din ARIA forbedrer i stedet for at hæmme tilgængeligheden:
+ARIA er kraftfuldt, men kræver omhyggelig implementering. At følge disse retningslinjer hjælper med at sikre, at din ARIA forbedrer i stedet for at begrænse tilgængeligheden:
 
-**🛡️ Grundprincipper:**
+**🛡️ Kerneprincipper:**
 
+```mermaid
+flowchart TD
+    A[🚀 Start med semantisk HTML] --> B{Giver HTML de nødvendige semantikker?}
+    B -->|Ja| C[✅ Brug kun HTML]
+    B -->|Nej| D[Overvej ARIA-forbedring]
+    D --> E{Kan du opnå det med enklere midler?}
+    E -->|Ja| F[🔄 Forenkle tilgang]
+    E -->|Nej| G[📝 Implementer ARIA forsigtigt]
+    G --> H[🧪 Test med rigtige AT]
+    H --> I{Fungerer som forventet?}
+    I -->|Nej| J[🔧 Fejlret og ret]
+    I -->|Ja| K[✅ Succes!]
+    J --> H
+    F --> C
+    
+    style A fill:#e3f2fd
+    style C fill:#e8f5e8
+    style K fill:#e8f5e8
+    style G fill:#fff3e0
+    style H fill:#f3e5f5
+```
 1. **Semantisk HTML først**: Foretræk altid `<button>` frem for `<div role="button">`
-2. **Bryder ikke semantikken**: Overstyr aldrig eksisterende HTML-betydning (undgå `<h1 role="button">`)
-3. **Bevar tastaturtilgængelighed**: Alle interaktive ARIA-elementer skal være fuldt tastaturtilgængelige
-4. **Test med rigtige brugere**: ARIA-support varierer betydeligt mellem hjælpemidler
-5. **Start simpelt**: Komplekse ARIA-implementeringer har større risiko for fejl
+2. **Bryd ikke semantik**: Overstyr aldrig eksisterende HTML-betydning (undgå `<h1 role="button">`)
+3. **Oprethold tastaturtilgængelighed**: Alle interaktive ARIA-elementer skal være fuldt tilgængelige med tastatur
+4. **Test med rigtige brugere**: ARIA-understøttelse varierer betydeligt mellem hjælpemidler
+5. **Start enkelt**: Komplekse ARIA-implementeringer har større risiko for fejl
 
 **🔍 Testarbejdsgang:**
 
 ```mermaid
 graph TD
-    A[Write ARIA code] --> B[Validate HTML]
-    B --> C[Test with keyboard only]
-    C --> D[Test with screen reader]
-    D --> E[Test across browsers]
-    E --> F{Issues found?}
-    F -->|Yes| G[Fix and re-test]
-    F -->|No| H[Implementation complete]
+    A[Skriv ARIA-kode] --> B[Valider HTML]
+    B --> C[Test med kun tastatur]
+    C --> D[Test med skærmlæser]
+    D --> E[Test på tværs af browsere]
+    E --> F{Fundet problemer?}
+    F -->|Ja| G[Ret og test igen]
+    F -->|Nej| H[Implementering fuldført]
     G --> B
 ```
+**🚫 Almindelige ARIA-fejl, der skal undgås:**
 
-**🚫 Almindelige ARIA-fejl, der bør undgås:**
-
-- **Modstridende information**: Undgå at modarbejde HTML-semantik
-- **Overmærkning**: For meget ARIA-information kan forvirre brugere
-- **Statisk ARIA**: Glemmer at opdatere ARIA-tilstande, når indhold ændres
+- **Modstridende information**: Modsig ikke HTML-semantik
+- **Over-mærkning**: For meget ARIA-information overvælder brugere
+- **Statisk ARIA**: At glemme at opdatere ARIA-tilstande ved indholdsændringer
 - **Utestede implementeringer**: ARIA, der fungerer i teorien, men fejler i praksis
-- **Manglende tastatursupport**: ARIA-roller uden tilsvarende tastaturinteraktioner
+- **Manglende tastaturunderstøttelse**: ARIA-roller uden tilsvarende tastaturinteraktioner
 
-> 💡 **Testressourcer**: Brug værktøjer som [accessibility-checker](https://www.npmjs.com/package/accessibility-checker) til automatisk ARIA-validering, men test altid med rigtige skærmlæsere for en komplet oplevelse.
+> 💡 **Testressourcer**: Brug værktøjer som [accessibility-checker](https://www.npmjs.com/package/accessibility-checker) til automatisk ARIA-validering, men test altid med ægte skærmlæsere for den komplette oplevelse.
 
-✅ **Lær af eksperterne**: Undersøg [ARIA Authoring Practices Guide](https://w3c.github.io/aria-practices/) for gennemprøvede mønstre og implementeringer af komplekse interaktive widgets.
+### 🎭 **ARIA Færdighedstest: Klar til komplekse interaktioner?**
 
-## Gør billeder og medier tilgængelige
+**Vurder din ARIA-tillid:**
+- Hvornår ville du vælge ARIA frem for semantisk HTML? (Tip: næsten aldrig!)
+- Kan du forklare, hvorfor `<div role="button">` normalt er dårligere end `<button>`?
+- Hvad er det vigtigste at huske ved ARIA-testning?
 
-Visuelt og auditivt indhold er essentielle dele af moderne weboplevelser, men de kan skabe barrierer, hvis de ikke implementeres med omtanke. Målet er at sikre, at informationen og den følelsesmæssige effekt af dine medier når alle brugere. Når du først har styr på det, bliver det en naturlig del af processen.
+```mermaid
+pie title "Almindelige ARIA-brugsmønstre"
+    "Mærkater & beskrivelser" : 40
+    "Live regioner" : 25
+    "Widget-tilstande" : 20
+    "Komplekse kontroller" : 15
+```
+> **Nøgleindsigt**: Det meste ARIA brug er til mærkning og beskrivelse af elementer. Komplekse widget-mønstre er meget mindre almindelige, end man måske tror!
 
-Forskellige typer medier kræver forskellige tilgængelighedsmetoder. Det er som madlavning—du ville ikke behandle en delikat fisk på samme måde som en solid bøf. At forstå disse forskelle hjælper dig med at vælge den rette løsning til hver situation.
+✅ **Lær fra eksperter**: Studér [ARIA Authoring Practices Guide](https://w3c.github.io/aria-practices/) for gennemtestede mønstre og implementeringer af komplekse interaktive widgets.
+
+## Gøre billeder og medier tilgængelige
+
+Visuelt og lydligt indhold er essentielle dele af moderne weberfaringer, men de kan skabe barrierer, hvis de ikke implementeres omhyggeligt. Målet er at sikre, at informationen og den følelsesmæssige effekt af dine medier når frem til alle brugere. Når du først har styr på det, bliver det en naturlig vane.
+
+Forskellige medietyper kræver forskellige tilgængelighedstilgange. Det er som madlavning—du ville ikke behandle en delikat fisk på samme måde som en kraftig bøf. At forstå disse forskelle hjælper dig med at vælge den rette løsning til hver situation.
 
 ### Strategisk billedtilgængelighed
 
-Hvert billede på din hjemmeside har et formål. At forstå dette formål hjælper dig med at skrive bedre alternativ tekst og skabe mere inkluderende oplevelser.
+Hvert billede på dit websted tjener et formål. At forstå dette formål hjælper dig med at skrive bedre alternativ tekst og skabe mere inkluderende oplevelser.
 
-**De fire typer billeder og deres strategier for alt-tekst:**
+**De fire billedtyper og deres alt-tekst strategier:**
 
-**Informative billeder** - formidler vigtig information:
+**Informationsbilleder** - formidler vigtig information:
 ```html
-<img src="../../../../translated_images/chart.31c7eb0eb5c4450deba10b6f236732dfee8e8a11f6c0d8f31d2c2efb9d4c00ef.da.png" alt="Sales increased 25% from Q1 to Q2 2024">
+<img src="../../../../translated_images/da/chart.31c7eb0eb5c4450d.png" alt="Sales increased 25% from Q1 to Q2 2024">
 ```
 
-**Dekorative billeder** - rent visuelle uden informationsværdi:
+**Dekorative billeder** - rent visuelt uden informationsværdi:
 ```html
-<img src="../../../../translated_images/decorative-border.b2f3c4d6634fb79d57fb6357835906c16938df3d5651c1314c196c3b1c52df98.da.png" alt="" role="presentation">
+<img src="../../../../translated_images/da/decorative-border.b2f3c4d6634fb79d.png" alt="" role="presentation">
 ```
 
-**Funktionelle billeder** - fungerer som knapper eller kontroller:
+**Funktionelle billeder** - tjener som knapper eller styringselementer:
 ```html
 <button>
   <img src="search-icon.svg" alt="Search">
 </button>
 ```
 
-**Komplekse billeder** - grafer, diagrammer, infografik:
+**Komplekse billeder** - diagrammer, grafer, infografikker:
 ```html
-<img src="../../../../translated_images/complex-chart.c831f461a363b446a688be5ccacde20d011221758c902cb082cfd4293534ef17.da.png" alt="Quarterly sales data" aria-describedby="chart-description">
+<img src="../../../../translated_images/da/complex-chart.c831f461a363b446.png" alt="Quarterly sales data" aria-describedby="chart-description">
 <div id="chart-description">
   <p>Detailed description: Sales data shows a steady increase across all quarters...</p>
 </div>
@@ -888,8 +1066,8 @@ Hvert billede på din hjemmeside har et formål. At forstå dette formål hjælp
 ### Video- og lydtilgængelighed
 
 **Videokrav:**
-- **Undertekster**: Tekstversion af talte indhold og lydeffekter
-- **Lydbeskrivelser**: Fortælling af visuelle elementer for blinde brugere
+- **Undertekster**: Tekstversion af talt indhold og lydeffekter
+- **Lydkommentarer**: Beskrivelse af visuelle elementer for blinde brugere
 - **Transskriptioner**: Fuld tekstversion af alt lyd- og visuelt indhold
 
 ```html
@@ -902,7 +1080,7 @@ Hvert billede på din hjemmeside har et formål. At forstå dette formål hjælp
 
 **Lydkrav:**
 - **Transskriptioner**: Tekstversion af alt talt indhold
-- **Visuelle indikatorer**: For lydindhold alene, giv visuelle signaler
+- **Visuelle indikatorer**: For lydindhold uden video, giv visuelle tegn
 
 ### Moderne billedteknikker
 
@@ -919,7 +1097,7 @@ Hvert billede på din hjemmeside har et formål. At forstå dette formål hjælp
 <picture>
   <source media="(min-width: 800px)" srcset="large-chart.png">
   <source media="(min-width: 400px)" srcset="medium-chart.png">
-  <img src="../../../../translated_images/small-chart.c50c7b1bbcce43d8d24fbfbab8f691fe47d8f25fb7c70857c9eae21d5f22862e.da.png" alt="Website traffic increased 40% after accessibility improvements">
+  <img src="../../../../translated_images/da/small-chart.c50c7b1bbcce43d8.png" alt="Website traffic increased 40% after accessibility improvements">
 </picture>
 ```
 
@@ -927,16 +1105,34 @@ Hvert billede på din hjemmeside har et formål. At forstå dette formål hjælp
 
 ## Tastaturnavigation og fokusstyring
 
-Mange brugere navigerer på nettet udelukkende med deres tastatur. Dette inkluderer personer med motoriske handicap, erfarne brugere, der finder tastaturer hurtigere end mus, og alle, hvis mus er holdt op med at fungere. At sikre, at din side fungerer godt med tastaturinput, er essentielt og gør ofte din side mere effektiv for alle.
+Mange brugere navigerer på nettet udelukkende med tastatur. Det inkluderer personer med motoriske handicap, powerbrugere, som finder tastaturer hurtigere end mus, og alle andre, hvis musen er ude af funktion. At sikre at dit site fungerer godt med tastaturinput er essentielt og gør ofte siden mere effektiv for alle.
 
-### Grundlæggende tastaturnavigationsmønstre
+```mermaid
+flowchart LR
+    A[⌨️ Tastaturnavigation] --> B[Tabulatorrækkefølge]
+    A --> C[Focus indikatorer]
+    A --> D[Spring links over]
+    A --> E[Tastaturgenveje]
+    
+    B --> B1[Logisk rækkefølge<br/>Alle interaktive elementer<br/>Ingen tab fælder]
+    C --> C1[Synlige konturer<br/>Høj kontrast<br/>Klare afgrænsninger]
+    D --> D1[Spring til hoved<br/>Spring til navigation<br/>Omgå gentagelser]
+    E --> E1[Esc for at lukke<br/>Enter for at aktivere<br/>Pile i grupper]
+    
+    style A fill:#e3f2fd
+    style B fill:#e8f5e8
+    style C fill:#fff3e0
+    style D fill:#f3e5f5
+    style E fill:#e0f2f1
+```
+### Væsentlige tastaturnavigationsmønstre
 
 **Standard tastaturinteraktioner:**
 - **Tab**: Flyt fokus fremad gennem interaktive elementer
-- **Shift + Tab**: Flyt fokus baglæns
+- **Shift + Tab**: Flyt fokus bagud
 - **Enter**: Aktivér knapper og links
-- **Space**: Aktivér knapper, markér afkrydsningsfelter
-- **Piletaster**: Naviger inden for komponentgrupper (radioknapper, menuer)
+- **Mellemrum**: Aktivér knapper, sæt kryds i checkbokse
+- **Piletaster**: Navigér indenfor komponentgrupper (radioknapper, menuer)
 - **Escape**: Luk modaler, dropdowns eller annuller handlinger
 
 ### Bedste praksis for fokusstyring
@@ -955,7 +1151,7 @@ button:focus-visible {
 }
 ```
 
-**Skip-links for effektiv navigation:**
+**Spring-links for effektiv navigation:**
 ```html
 <a href="#main-content" class="skip-link">Skip to main content</a>
 <a href="#navigation" class="skip-link">Skip to navigation</a>
@@ -982,12 +1178,12 @@ button:focus-visible {
 </form>
 ```
 
-### Fokusfangst i modaler
+### Fokusfængsel i modaler
 
-Når modale dialoger åbnes, bør fokus være fanget inden for modalet:
+Når modaldialoger åbnes, skal fokus være fanget indenfor modalen:
 
 ```javascript
-// Modern focus trap implementation
+// Moderne fokusfældeimplementering
 function trapFocus(element) {
   const focusableElements = element.querySelectorAll(
     'button, [href], input, select, textarea, [tabindex]:not([tabindex="-1"])'
@@ -1012,20 +1208,20 @@ function trapFocus(element) {
     }
   });
   
-  // Focus first element when modal opens
+  // Fokusér på det første element, når modal åbnes
   firstElement.focus();
 }
 ```
 
-✅ **Test tastaturnavigation**: Prøv at navigere på din hjemmeside ved kun at bruge Tab-tasten. Kan du nå alle interaktive elementer? Er fokusrækkefølgen logisk? Er fokusindikatorer tydeligt synlige?
+✅ **Test tastaturnavigation**: Prøv at navigere på dit website kun med Tab-tasten. Kan du nå alle interaktive elementer? Er fokusrækkefølgen logisk? Er fokusindikatorerne tydeligt synlige?
 
-## Formular-tilgængelighed
+## Formularers tilgængelighed
 
-Formularer er afgørende for brugerinteraktion og kræver særlig opmærksomhed på tilgængelighed.
+Formularer er afgørende for brugerinteraktion og kræver særlig opmærksomhed på tilgængeligheden.
 
-### Etiketter og formularkontrol-association
+### Label og formkontrol-tilknytning
 
-**Hver formularkontrol skal have en etiket:**
+**Hver formkontrol skal have en label:**
 ```html
 <!-- Explicit labeling (preferred) -->
 <label for="username">Username:</label>
@@ -1055,14 +1251,14 @@ Formularer er afgørende for brugerinteraktion og kræver særlig opmærksomhed 
 ```
 
 **Bedste praksis for formularvalidering:**
-- Brug `aria-invalid` til at indikere ugyldige felter
+- Brug `aria-invalid` til at angive ugyldige felter
 - Giv klare, specifikke fejlmeddelelser
 - Brug `role="alert"` til vigtige fejlmeddelelser
-- Vis fejl både med det samme og ved formularindsendelse
+- Vis fejl både straks og ved formularindsendelse
 
 ### Fieldsets og gruppering
 
-**Grupper relaterede formularkontroller:**
+**Grupper relaterede formkontroller:**
 ```html
 <fieldset>
   <legend>Shipping Address</legend>
@@ -1083,73 +1279,73 @@ Formularer er afgørende for brugerinteraktion og kræver særlig opmærksomhed 
 </fieldset>
 ```
 
-## Din tilgængelighedsrejse: Vigtige pointer
+## Din tilgængelighedsrejse: Nøglepunkter
 
-Tillykke! Du har netop fået den grundlæggende viden til at skabe virkelig inkluderende weboplevelser. Det er ret spændende! Webtilgængelighed handler ikke kun om at opfylde krav—det handler om at anerkende de mange måder, folk interagerer med digitalt indhold på og designe til den fantastiske kompleksitet.
+Tillykke! Du har netop erhvervet den grundlæggende viden for at skabe virkelig inkluderende weberfaringer. Det er ret spændende! Webtilgængelighed handler ikke bare om at krydse bokse af—det handler om at anerkende de mange måder folk interagerer med digitalt indhold på og designe til den fantastiske kompleksitet.
 
-Du er nu en del af et voksende fællesskab af udviklere, der forstår, at godt design fungerer for alle. Velkommen til klubben!
+Du er nu en del af et voksende fællesskab af udviklere, der forstår, at god design fungerer for alle. Velkommen i klubben!
 
-**🎯 Dit tilgængelighedsværktøjssæt inkluderer nu:**
+**🎯 Dit tilgængelighedsværktøj inkluderer nu:**
 
-| Grundprincip | Implementering | Effekt |
+| Kerneprincip | Implementering | Effekt |
 |--------------|----------------|--------|
-| **Semantisk HTML-grundlag** | Brug korrekte HTML-elementer til deres tilsigtede formål | Skærmlæsere kan navigere effektivt, tastaturer fungerer automatisk |
-| **Inklusivt visuelt design** | Tilstrækkelig kontrast, meningsfuld farvebrug, synlige fokusindikatorer | Tydeligt for alle under alle lysforhold |
+| **Semantisk HTML Fundament** | Brug passende HTML-elementer til deres tiltænkte formål | Skærmlæsere kan navigere effektivt, tastaturer virker automatisk |
+| **Inklusivt visuelt design** | Tilstrækkelig kontrast, meningsfuld farvebrug, synlige fokusindikatorer | Klar for alle under enhver lysforhold |
 | **Beskrivende indhold** | Meningsfuld linktekst, alt-tekst, overskrifter | Brugere forstår indhold uden visuel kontekst |
-| **Tastaturtilgængelighed** | Tab-rækkefølge, tastaturgenveje, fokusstyring | Motorisk tilgængelighed og effektivitet for erfarne brugere |
+| **Tastaturtilgængelighed** | Tab-rækkefølge, tastaturgenveje, fokusstyring | Motorisk tilgængelighed og effektivitet for avancerede brugere |
 | **ARIA-forbedring** | Strategisk brug til at udfylde semantiske huller | Komplekse applikationer fungerer med hjælpemidler |
-| **Omfattende test** | Automatiske værktøjer + manuel verifikation + test med rigtige brugere | Fang problemer, før de påvirker brugerne |
+| **Omfattende testning** | Automatiserede værktøjer + manuel verifikation + ægte brugertest | Opdag problemer før de påvirker brugere |
 
 **🚀 Dine næste skridt:**
 
-1. **Integrer tilgængelighed i din arbejdsgang**: Gør test til en naturlig del af din udviklingsproces
-2. **Lær af rigtige brugere**: Søg feedback fra personer, der bruger hjælpemidler
+1. **Indbyg tilgængelighed i din arbejdsgang**: Gør testning til en naturlig del af din udviklingsproces
+2. **Lær af rigtige brugere**: Opsøg feedback fra personer, der bruger hjælpemidler
 3. **Hold dig opdateret**: Tilgængelighedsteknikker udvikler sig med nye teknologier og standarder
-4. **Advokér for inklusion**: Del din viden og gør tilgængelighed til en prioritet i teamet
+4. **Fortal for inklusion**: Del din viden og gør tilgængelighed til et teamprioritet
 
-> 💡 **Husk**: Tilgængelighedsbegrænsninger fører ofte til innovative, elegante løsninger, der gavner alle. Ramper, undertekster og stemmekontrol startede som tilgængelighedsfunktioner og blev mainstream forbedringer.
+> 💡 **Husk**: Tilgængelighedsbegrænsninger fører ofte til innovative, elegante løsninger, der gavner alle. Kantafskæringer, undertekster og stemmekommandoer startede alle som tilgængelighedsfunktioner og blev mainstream forbedringer.
 
-**Den forretningsmæssige fordel er krystalklar**: Tilgængelige hjemmesider når flere brugere, rangerer bedre på søgemaskiner, har lavere vedligeholdelsesomkostninger og undgår juridiske risici. Men ærligt? Den virkelige grund til at bekymre sig om tilgængelighed går meget dybere. Tilgængelige hjemmesider repræsenterer de bedste værdier på nettet—åbenhed, inklusivitet og ideen om, at alle fortjener lige adgang til information.
+**Forretningscasen er krystalklar**: Tilgængelige websites når flere brugere, rangerer bedre i søgemaskiner, har lavere vedligeholdelsesomkostninger og undgår juridiske risici. Men ærligt? Den egentlige grund til at bekymre sig om tilgængelighed går meget dybere. Tilgængelige websites legemliggør de bedste værdier på nettet—åbenhed, inklusivitet og idéen om, at alle fortjener lige adgang til information.
 
-Du er nu klar til at bygge fremtidens inkluderende web. Hver tilgængelig hjemmeside, du skaber, gør internettet til et mere imødekommende sted for alle. Det er ret fantastisk, når man tænker over det!
+Du er nu rustet til at bygge webtjenester, der er inkluderende for fremtiden. Hvert tilgængeligt site, du skaber, gør internettet til et mere venligt sted for alle. Det er ret fantastisk, når man tænker over det!
 
 ## Yderligere ressourcer
 
-Fortsæt din tilgængelighedslæringsrejse med disse essentielle ressourcer:
+Fortsæt din tilgængelighedsrejse med disse essentielle ressourcer:
 
 **📚 Officielle standarder og retningslinjer:**
 - [WCAG 2.1 Guidelines](https://www.w3.org/WAI/WCAG21/quickref/) - Den officielle tilgængelighedsstandard med hurtig reference
 - [ARIA Authoring Practices Guide](https://w3c.github.io/aria-practices/) - Omfattende mønstre for interaktive widgets
-- [WebAIM Guidelines](https://webaim.org/) - Praktisk, brugervenlig tilgængelighedsvejledning
+- [WebAIM Guidelines](https://webaim.org/) - Praktisk, begyndervenlig tilgængelighedsguide
 
 **🛠️ Værktøjer og testressourcer:**
-- [axe DevTools](https://www.deque.com/axe/devtools/) - Industriens standard for tilgængelighedstest
+- [axe DevTools](https://www.deque.com/axe/devtools/) - Industri-standard til tilgængelighedstest
 - [A11y Project Checklist](https://www.a11yproject.com/checklist/) - Trin-for-trin tilgængelighedsverifikation
-- [Accessibility Insights](https://accessibilityinsights.io/) - Microsofts omfattende testværktøj
-- [Color Oracle](https://colororacle.org/) - Farveblindhedssimulator til design-test
+- [Accessibility Insights](https://accessibilityinsights.io/) - Microsofts omfattende testpakke
+- [Color Oracle](https://colororacle.org/) - Farveblindhedssimulator til design-testning
 
 **🎓 Læring og fællesskab:**
-- [WebAIM Screen Reader Survey](https://webaim.org/projects/screenreadersurvey9/) - Rigtige brugeres præferencer og adfærd
+- [WebAIM Screen Reader Survey](https://webaim.org/projects/screenreadersurvey9/) - Ægte brugerpræferencer og adfærd
 - [Inclusive Components](https://inclusive-components.design/) - Moderne tilgængelige komponentmønstre
 - [A11y Coffee](https://a11y.coffee/) - Hurtige tips og indsigter om tilgængelighed
-- [Web Accessibility Initiative (WAI)](https://www.w3.org/WAI/) - W3C's omfattende tilgængelighedsressourcer
+- [Web Accessibility Initiative (WAI)](https://www.w3.org/WAI/) - W3Cs omfattende tilgængelighedsressourcer
 
 **🎥 Praktisk læring:**
-- [Accessibility Developer Guide](https://www.accessibility-developer-guide.com/) - Praktisk implementeringsvejledning
-- [Deque University](https://dequeuniversity.com/) - Professionelle kurser i tilgængelighed
+- [Accessibility Developer Guide](https://www.accessibility-developer-guide.com/) - Praktiske implementeringsvejledninger
+- [Deque University](https://dequeuniversity.com/) - Professionelle tilgængelighedskurser
 
-## GitHub Copilot Agent Challenge 🚀
+## GitHub Copilot Agent Udfordring 🚀
 
-Brug Agent-tilstand til at fuldføre følgende udfordring:
+Brug Agent-tilstand til at gennemføre følgende udfordring:
 
-**Beskrivelse:** Opret en tilgængelig modal dialogkomponent, der demonstrerer korrekt fokusstyring, ARIA-attributter og tastaturnavigationsmønstre.
+**Beskrivelse:** Skab en tilgængelig modal dialog-komponent, der demonstrerer korrekt fokusstyring, ARIA-attributter og tastaturnavigationsmønstre.
 
-**Prompt:** Byg en komplet modal dialogkomponent med HTML, CSS og JavaScript, der inkluderer: korrekt fokusfangst, ESC-tast til at lukke, klik udenfor for at lukke, ARIA-attributter til skærmlæsere og synlige fokusindikatorer. Modalet skal indeholde en formular med korrekte etiketter og fejlhåndtering. Sørg for, at komponenten opfylder WCAG 2.1 AA-standarder.
+**Prompt:** Byg en komplet modal dialog-komponent med HTML, CSS og JavaScript, der inkluderer: korrekt fokusfængsel, ESC-tast til lukning, klik udenfor til lukning, ARIA-attributter for skærmlæsere og synlige fokusindikatorer. Modal-dialogen skal indeholde en formular med korrekte labels og fejlhåndtering. Sørg for, at komponenten opfylder WCAG 2.1 AA standarder.
 
 
 ## 🚀 Udfordring
 
-Tag denne HTML og omskriv den, så den er så tilgængelig som muligt, baseret på de strategier, du har lært.
+Tag denne HTML og omskriv den, så den bliver så tilgængelig som muligt, i henhold til de strategier du har lært.
 
 ```html
 <!DOCTYPE html>
@@ -1207,29 +1403,90 @@ Tag denne HTML og omskriv den, så den er så tilgængelig som muligt, baseret p
 </html>
 ```
 
-**Vigtige forbedringer foretaget:**
+**Nøglerforbedringer foretaget:**
 - Tilføjet korrekt semantisk HTML-struktur
-- Rettet overskriftsstruktur (en enkelt h1, logisk progression)
+- Rettet overskriftshierarki (én enkelt h1, logisk progression)
 - Tilføjet meningsfuld linktekst i stedet for "klik her"
-- Inkluderet korrekte ARIA-etiketter til navigation
+- Inkluderet korrekte ARIA-labels til navigation
 - Tilføjet lang-attribut og korrekte meta-tags
-- Brugte knapelement til interaktive elementer
-- Struktureret footer-indhold med korrekte landemærker
+- Brugte button-element til interaktive elementer
+- Struktureret fodnoteindhold med korrekte landemærker
 
 ## Quiz efter forelæsning
 [Quiz efter forelæsning](https://ff-quizzes.netlify.app/web/en/)
 
 ## Gennemgang & Selvstudie
 
-Mange lande har love om tilgængelighedskrav. Læs op på dit hjemlands tilgængelighedslove. Hvad er dækket, og hvad er ikke? Et eksempel er [denne regeringshjemmeside](https://accessibility.blog.gov.uk/).
+Mange regeringer har love vedrørende tilgængelighedskrav. Læs op på dit hjemlands tilgængelighedslove. Hvad dækkes, og hvad gør ikke? Et eksempel er [denne regeringshjemmeside](https://accessibility.blog.gov.uk/).
 
 ## Opgave
- 
-[Analyser en ikke-tilgængelig hjemmeside](assignment.md)
+
+[Analyser et ikke-tilgængeligt website](assignment.md)
 
 Credits: [Turtle Ipsum](https://github.com/Instrument/semantic-html-sample) af Instrument
 
 ---
 
-**Ansvarsfraskrivelse**:  
-Dette dokument er blevet oversat ved hjælp af AI-oversættelsestjenesten [Co-op Translator](https://github.com/Azure/co-op-translator). Selvom vi bestræber os på nøjagtighed, skal du være opmærksom på, at automatiserede oversættelser kan indeholde fejl eller unøjagtigheder. Det originale dokument på dets oprindelige sprog bør betragtes som den autoritative kilde. For kritisk information anbefales professionel menneskelig oversættelse. Vi er ikke ansvarlige for eventuelle misforståelser eller fejltolkninger, der opstår som følge af brugen af denne oversættelse.
+## 🚀 Din tidslinje for tilgængelighedsmesterskab
+
+### ⚡ **Hvad du kan gøre i de næste 5 minutter**
+- [ ] Installer axe DevTools-udvidelsen i din browser
+- [ ] Kør en Lighthouse tilgængelighedsaudit på dit yndlingswebsite
+- [ ] Prøv at navigere på et hvilket som helst website kun med Tab-tasten
+- [ ] Test din browsers indbyggede skærmlæser (Narrator/VoiceOver)
+
+### 🎯 **Hvad du kan nå denne time**
+- [ ] Gennemfør quizzen efter lektionen og reflekter over tilgængelighedsindsigter
+- [ ] Øv dig i at skrive meningsfuld alt-tekst til 10 forskellige billeder
+- [ ] Auditér en hjemmesides overskriftsstruktur med HeadingsMap-udvidelsen
+- [ ] Ret tilgængelighedsproblemer fundet i udfordrings-HTML'en
+- [ ] Test farvekontrast på dit nuværende projekt med WebAIMs værktøj
+
+### 📅 **Din ugelange tilgængelighedsrejse**
+- [ ] Gennemfør opgaven med at analysere et ikke-tilgængeligt website
+- [ ] Opsæt dit udviklingsmiljø med værktøjer til tilgængelighedstestning
+- [ ] Øv tastaturnavigation på 5 forskellige komplekse hjemmesider
+- [ ] Byg en simpel formular med korrekte etiketter, fejlhåndtering og ARIA
+- [ ] Deltag i et tilgængelighedsfællesskab (A11y Slack, WebAIM forum)
+- [ ] Se rigtige brugere med handicap navigere på hjemmesider (YouTube har gode eksempler)
+
+### 🌟 **Din månedslange forvandling**
+- [ ] Integrer tilgængelighedstestning i din udviklingsarbejdsgang
+- [ ] Bidrag til et open source-projekt ved at rette tilgængelighedsproblemer
+- [ ] Gennemfør brugervenlighedstest med en, der bruger hjælpemidler
+- [ ] Byg et tilgængeligt komponentbibliotek til dit team
+- [ ] Vær fortalervirksomhed for tilgængelighed på din arbejdsplads eller i dit fællesskab
+- [ ] Mentor en, der er ny i tilgængelighedskoncepter
+
+### 🏆 **Endelig tilgængelighedsmester-gennemgang**
+
+**Fejr din tilgængelighedsrejse:**
+- Hvad er det mest overraskende, du har lært om, hvordan folk bruger nettet?
+- Hvilket tilgængelighedsprincip passer bedst til din udviklingsstil?
+- Hvordan har det ændret dit perspektiv på design at lære om tilgængelighed?
+- Hvad er den første tilgængelighedsforbedring, du vil lave på et rigtigt projekt?
+
+```mermaid
+journey
+    title Din Tilgængelighedstillids Udvikling
+    section I dag
+      Overvældet: 3: You
+      Nysgerrig: 4: You
+      Motiveret: 5: You
+    section Denne uge
+      Øver: 4: You
+      Tester: 5: You
+      Forstår: 5: You
+    section Næste måned
+      Fortaler: 5: You
+      Leder: 5: You
+      Inklusiv som Standard: 5: You
+```
+> 🌍 **Du er nu en tilgængelighedsmester!** Du forstår, at gode weboplevelser fungerer for alle, uanset hvordan de får adgang til nettet. Hver tilgængelig funktion, du bygger, gør internettet mere inkluderende. Webben har brug for udviklere som dig, der ser tilgængelighed ikke som en begrænsning, men som en mulighed for at skabe bedre oplevelser for alle brugere. Velkommen til bevægelsen! 🎉
+
+---
+
+<!-- CO-OP TRANSLATOR DISCLAIMER START -->
+**Ansvarsfraskrivelse**:
+Dette dokument er blevet oversat ved hjælp af AI-oversættelsestjenesten [Co-op Translator](https://github.com/Azure/co-op-translator). Selvom vi bestræber os på nøjagtighed, skal du være opmærksom på, at automatiserede oversættelser kan indeholde fejl eller unøjagtigheder. Det oprindelige dokument på dets modersmål bør betragtes som den autoritative kilde. For kritisk information anbefales professionel menneskelig oversættelse. Vi påtager os ikke ansvar for eventuelle misforståelser eller fejltolkninger, der opstår som følge af brugen af denne oversættelse.
+<!-- CO-OP TRANSLATOR DISCLAIMER END -->

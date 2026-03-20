@@ -1,15 +1,6 @@
-<!--
-CO_OP_TRANSLATOR_METADATA:
-{
-  "original_hash": "1710a50a519a6e4a1b40a5638783018d",
-  "translation_date": "2025-11-04T02:11:42+00:00",
-  "source_file": "2-js-basics/4-arrays-loops/README.md",
-  "language_code": "he"
-}
--->
 # יסודות JavaScript: מערכים ולולאות
 
-![JavaScript Basics - Arrays](../../../../translated_images/webdev101-js-arrays.439d7528b8a294558d0e4302e448d193f8ad7495cc407539cc81f1afe904b470.he.png)
+![JavaScript Basics - Arrays](../../../../translated_images/he/webdev101-js-arrays.439d7528b8a29455.webp)
 > סקיצה מאת [Tomomi Imura](https://twitter.com/girlie_mac)
 
 ```mermaid

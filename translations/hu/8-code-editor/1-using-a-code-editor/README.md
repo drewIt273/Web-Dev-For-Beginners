@@ -1,331 +1,630 @@
-<!--
-CO_OP_TRANSLATOR_METADATA:
-{
-  "original_hash": "cfd4a15974168ca426d50c67682ab9d4",
-  "translation_date": "2025-10-24T19:54:10+00:00",
-  "source_file": "8-code-editor/1-using-a-code-editor/README.md",
-  "language_code": "hu"
-}
--->
 # Kódszerkesztő használata: VSCode.dev mesterfokon
 
-Emlékszel a *Mátrixra*, amikor Neo hatalmas számítógépes terminálhoz csatlakozott, hogy hozzáférjen a digitális világhoz? A mai webfejlesztési eszközök ennek épp az ellenkezőjét képviselik – hihetetlenül erős funkciók, amelyek bárhonnan elérhetők. A VSCode.dev egy böngészőalapú kódszerkesztő, amely professzionális fejlesztési eszközöket hoz el bármely internetkapcsolattal rendelkező eszközre.
+Emlékszel *Mátrix*-ban, amikor Neo-nak egy hatalmas számítógépes terminálhoz kellett csatlakoznia, hogy elérje a digitális világot? A mai webfejlesztő eszközök ennek az ellenkezője – hihetetlenül erőteljes képességek, amik bárhonnan hozzáférhetők. A VSCode.dev egy böngésző alapú kódszerkesztő, amely profi fejlesztői eszközöket hoz bármely internetkapcsolattal rendelkező eszközre.
 
-Ahogy a nyomda mindenki számára elérhetővé tette a könyveket, nem csak a kolostorok írnokainak, úgy a VSCode.dev is demokratizálja a kódolást. Dolgozhatsz projekteken könyvtári számítógépen, iskolai laborban, vagy bárhol, ahol böngészőhöz férsz hozzá. Nincs telepítés, nincs "szükségem a saját beállításaimra" korlátozás.
+Ahogy a nyomda feltalálása lehetővé tette, hogy a könyveket bárki elérhesse, nem csak a kolostorok írnokai, úgy a VSCode.dev demokratizálja a kódolást. Dolgozhatsz projektekben a könyvtár számítógépén, az iskolai laborban, vagy bárhol, ahol böngészőhöz férsz. Nincs telepítés, nincs „csak a saját beállításom kell” korlátozás.
 
-A leckénk végére megérted, hogyan navigálj a VSCode.dev-ben, hogyan nyiss meg GitHub repozitóriumokat közvetlenül a böngésződben, és hogyan használd a Git-et verziókezelésre – mindezek olyan készségek, amelyeket a profi fejlesztők naponta alkalmaznak.
+A tanfolyam végére meg fogod érteni, hogyan navigálj a VSCode.dev-ben, hogyan nyiss közvetlenül GitHub tárházakat a böngésződben, és hogyan használd a Git-et verziókezeléshez – azok a képességek, melyekre a profi fejlesztők nap mint nap támaszkodnak.
+
+## ⚡ Mit tehetsz a következő 5 percben
+
+**Gyors indítás elfoglalt fejlesztőknek**
+
+```mermaid
+flowchart LR
+    A[⚡ 5 perc] --> B[Látogass el a vscode.dev oldalra]
+    B --> C[Csatlakoztasd a GitHub fiókot]
+    C --> D[Nyiss meg egy tetszőleges tárolót]
+    D --> E[Kezdj el azonnal szerkeszteni]
+```
+- **1. perc**: Lépj a [vscode.dev](https://vscode.dev) oldalra – telepítés nem szükséges
+- **2. perc**: Jelentkezz be GitHub-fiókkal, hogy összekapcsold a tárhelyeidet
+- **3. perc**: Próbáld ki az URL trükköt: cseréld le a `github.com`-ot `vscode.dev/github`-re bármelyik repo URL-ben
+- **4. perc**: Hozz létre új fájlt és nézd, ahogy a szintaxiskiemelés automatikusan működik
+- **5. perc**: Tegyél egy módosítást és kövesd el a commit-ot a Forráskezelő panelen
+
+**Gyors teszt URL**:  
+```
+# Transform this:
+github.com/microsoft/Web-Dev-For-Beginners
+
+# Into this:
+vscode.dev/github/microsoft/Web-Dev-For-Beginners
+```
+  
+**Miért fontos ez?**: 5 perc alatt megtapasztalod, milyen szabadságot nyújt a professzionális eszközökből álló, bárhonnan elérhető kódolás. Ez a fejlesztés jövője – elérhető, erőteljes és azonnali.
+
+## 🗺️ Tanulási utad a felhőalapú fejlesztésben
+
+```mermaid
+journey
+    title A helyi beállítástól a felhőfejlesztés mesterségéig
+    section A platform megértése
+      Fedezd fel a webes szerkesztést: 4: You
+      Csatlakozás a GitHub ökoszisztémához: 6: You
+      Navigálj a felületen: 7: You
+    section Fájlkezelési készségek
+      Fájlok létrehozása és rendszerezése: 5: You
+      Szerkesztés szintaxiskiemeléssel: 7: You
+      Projektstruktúrák böngészése: 8: You
+    section Verziókezelés mesterfokon
+      Git-integráció megértése: 6: You
+      Commit munkafolyamatok gyakorlása: 8: You
+      Együttműködési minták elsajátítása: 9: You
+    section Professzionális testreszabás
+      Erőteljes bővítmények telepítése: 7: You
+      Fejlesztési környezet konfigurálása: 8: You
+      Személyes munkafolyamatok építése: 9: You
+```  
+**Úti célod**: A tanfolyam végére profi felhőfejlesztő környezetet sajátítasz el, ami bármilyen eszközön működik, és azt a kódoló eszköztárat használhatod vele, amit a nagy technológiai cégeknél dolgozó fejlesztők is használnak.
 
 ## Amit megtanulsz
 
-Miután végigmentünk ezen, képes leszel:
+A közös végigjárás után képes leszel:
 
-- Úgy navigálni a VSCode.dev-ben, mintha a második otthonod lenne – mindent megtalálsz, anélkül hogy eltévednél
-- Bármely GitHub repozitóriumot megnyitni a böngésződben, és azonnal szerkeszteni (ez tényleg varázslatos!)
-- A Git segítségével nyomon követni a változásokat és profi módon menteni a munkádat
-- Felturbózni a szerkesztőt bővítményekkel, amelyek gyorsabbá és szórakoztatóbbá teszik a kódolást
-- Magabiztosan létrehozni és rendszerezni projektfájlokat
+- Navigálni a VSCode.dev-ben, mintha a második otthonod lenne – mindent megtalálva könnyedén
+- Megnyitni bármely GitHub tárhelyet a böngészőben és azonnal szerkeszteni (ez elég varázslatos!)
+- Használni a Git-et a változások követéséhez és a haladásod mentéséhez profi módon
+- Kiegészítőkkel felturbózni a szerkesztőt, hogy gyorsabb és szórakoztatóbb legyen a kódolás
+- Magabiztosan létrehozni és szervezni projektfájlokat
 
-## Amire szükséged lesz
+## Amit szükséged lesz hozzá
 
-A követelmények egyszerűek:
+Az igények egyszerűek:
 
-- Egy ingyenes [GitHub fiók](https://github.com) (ha szükséges, segítünk létrehozni)
-- Alapvető ismeretek a webböngészőkről
-- A GitHub Alapok lecke hasznos háttérinformációkat nyújt, bár nem elengedhetetlen
+- Egy ingyenes [GitHub-fiók](https://github.com) (ha kell, végigvezetünk a létrehozáson)
+- Alapfokú ismeret a webböngészőkről
+- A GitHub Basics tanfolyam hasznos háttér, de nem elengedhetetlen
 
-> 💡 **Új vagy a GitHub-on?** A fiók létrehozása ingyenes és percek alatt megvan. Ahogy egy könyvtári kártya hozzáférést biztosít a világ könyveihez, úgy egy GitHub fiók megnyitja az ajtót az interneten található kódrepozitóriumokhoz.
+> 💡 **Új vagy GitHubon?** A fiók létrehozása ingyenes és pár percet vesz igénybe. Ahogyan a könyvtári olvasójegy világszinten elérhetővé teszi a könyveket, úgy a GitHub-fiók kaput nyit az internetes kód tárhelyekhez.
 
-## Miért fontosak a webalapú kódszerkesztők?
+## 🧠 Felhőalapú fejlesztési ökoszisztéma áttekintés
 
-Az internet előtt a tudósok különböző egyetemeken nem tudták könnyen megosztani a kutatásaikat. Aztán jött az ARPANET az 1960-as években, amely távolságokon át összekapcsolta a számítógépeket. A webalapú kódszerkesztők ugyanezt az elvet követik – erős eszközöket tesznek elérhetővé, függetlenül a fizikai helytől vagy az eszköztől.
+```mermaid
+mindmap
+  root((VSCode.dev Mesterség))
+    Platform Benefits
+      Accessibility
+        Eszközfüggetlenség
+        Telepítés Nem Szükséges
+        Azonnali Frissítések
+        Univerzális Hozzáférés
+      Integration
+        GitHub Kapcsolat
+        Tároló Szinkronizálás
+        Beállítások Megőrzése
+        Együttműködésre Felkészülve
+    Development Workflow
+      File Management
+        Projekt Struktúra
+        Szintaxis Kiemelés
+        Többfüles Szerkesztés
+        Automatikus Mentés Jellemzők
+      Version Control
+        Git Integráció
+        Commit Munkafolyamatok
+        Ágkezelés
+        Változás Követés
+    Customization Power
+      Extensions Ecosystem
+        Termelékenységi Eszközök
+        Nyelvi Támogatás
+        Témabeállítási Opciók
+        Egyedi Gyorsbillentyűk
+      Environment Setup
+        Személyes Beállítások
+        Munkaterület Konfiguráció
+        Eszköz Integráció
+        Munkafolyamat Optimalizálás
+    Professional Skills
+      Industry Standards
+        Verziókezelés
+        Kódminőség
+        Együttműködés
+        Dokumentáció
+      Career Readiness
+        Távmunkára Felkészülés
+        Felhőfejlesztés
+        Csapat Projektek
+        Nyílt Forráskód
+```  
+**Alapelv**: A felhőalapú fejlesztő környezetek a kódolás jövőjét jelentik – profi eszközök, melyek elérhetők, együttműködőek és platformfüggetlenek.
 
-A kódszerkesztő a fejlesztési munkaterület, ahol kódot írsz, szerkesztesz és rendszerezel. Az egyszerű szövegszerkesztőkkel szemben a professzionális kódszerkesztők szintaxiskiemelést, hibadetektálást és projektmenedzsment funkciókat kínálnak.
+## Miért fontosak a webes kódszerkesztők?
 
-A VSCode.dev ezeket a képességeket hozza el a böngésződbe:
+Az internet előtt a tudósok különböző egyetemeken nehezen tudták megosztani kutatásaikat. A 60-as években érkezett az ARPANET, amely gépeket kötött össze távolságokon át. A webes kódszerkesztők ugyanilyen elven működnek: erőteljes eszközöket tesznek elérhetővé függetlenül a fizikai helyedtől vagy eszközödtől.
 
-**Webalapú szerkesztés előnyei:**
+A kódszerkesztő a fejlesztő munkaterülete, ahol kódot írsz, szerkesztesz és rendszerezel. Az egyszerű szövegszerkesztőkkel ellentétben a profi szerkesztők szintaxiskiemelést, hibafelismerést és projektkezelési funkciókat nyújtanak.
 
-| Funkció | Leírás | Gyakorlati előny |
+A VSCode.dev ezeket hozza el a böngésződbe:
+
+**A webes szerkesztés előnyei:**
+
+| Jellemző | Leírás | Gyakorlati előny |
 |---------|-------------|----------|
-| **Platformfüggetlenség** | Bármely böngészővel rendelkező eszközön fut | Zökkenőmentes munka különböző számítógépeken |
-| **Nincs szükség telepítésre** | Webes URL-en keresztül érhető el | Kikerülheted a szoftvertelepítési korlátozásokat |
-| **Automatikus frissítések** | Mindig a legújabb verzió fut | Új funkciók elérése kézi frissítések nélkül |
-| **Repozitórium integráció** | Közvetlen kapcsolat a GitHub-bal | Kód szerkesztése helyi fájlkezelés nélkül |
+| **Platformfüggetlenség** | Bármely böngészővel rendelkező eszközön fut | Különböző számítógépekről is zökkenőmentes munka |
+| **Nincs szükség telepítésre** | Webes URL-en keresztüli elérés | Megkerülöd a szoftvertelepítési korlátokat |
+| **Automatikus frissítések** | Mindig a legfrissebb verzió fut | Az új funkciók manuális frissítés nélkül elérhetők |
+| **Tárhely integráció** | Közvetlen kapcsolat GitHubbal | Kód szerkesztése helyi fájlkezelés nélkül |
 
-**Gyakorlati következmények:**
-- Folyamatos munka különböző környezetekben
-- Egységes felület operációs rendszertől függetlenül
+**Gyakorlati hatások:**
+- Munkafolyamat folytonosság különböző környezetek között
+- Konzisztens felület operációs rendszertől függetlenül
 - Azonnali együttműködési lehetőségek
-- Csökkentett helyi tárhelyigény
+- Kevesebb lokális tárhelyigény
 
-## A VSCode.dev felfedezése
+## Felfedezzük a VSCode.dev-et
 
-Ahogy Marie Curie laboratóriuma kifinomult eszközöket tartalmazott egy viszonylag egyszerű térben, úgy a VSCode.dev is professzionális fejlesztési eszközöket csomagol egy böngészőfelületbe. Ez a webes alkalmazás ugyanazokat az alapvető funkciókat kínálja, mint az asztali kódszerkesztők.
+Ahogy Marie Curie laborja kifinomult felszereléseket tartalmazott viszonylag egyszerű térben, úgy a VSCode.dev profi fejlesztői eszközöket sűrít egy böngészőalapú felületbe. Ez a webalkalmazás ugyanazt a központi funkcionalitást nyújtja, mint az asztali kódszerkesztők.
 
-Kezdd azzal, hogy megnyitod a [vscode.dev](https://vscode.dev) oldalt a böngésződben. Az interfész letöltések vagy rendszertelepítések nélkül töltődik be – a felhőalapú számítástechnika elveinek közvetlen alkalmazása.
+Kezdj azzal, hogy megnyitod a [vscode.dev](https://vscode.dev) oldalt a böngésződben. A felület letöltés vagy rendszertelepítés nélkül töltődik be – közvetlen megvalósítása a felhőalapú számítástechnika elveinek.
 
 ### GitHub fiók összekapcsolása
 
-Ahogy Alexander Graham Bell telefonja távoli helyeket kötött össze, a GitHub fiókod összekapcsolása hidat képez a VSCode.dev és a kódrepozitóriumaid között. Amikor a rendszer kéri, hogy jelentkezz be a GitHub-ba, érdemes elfogadni ezt a kapcsolatot.
+Ahogyan Alexander Graham Bell telefonja távoli helyeket kötött össze, a GitHub-fiókod összekapcsolása összeköti a VSCode.dev-et a kódtárhelyeiddel. Ha a GitHub bejelentkezésre kér, ajánlott elfogadni a kapcsolatot.
 
-**GitHub integráció előnyei:**
-- Közvetlen hozzáférés a repozitóriumaidhoz a szerkesztőn belül
-- Szinkronizált beállítások és bővítmények eszközök között
-- Egyszerűsített mentési munkafolyamat a GitHub-ra
-- Személyre szabott fejlesztési környezet
+**A GitHub integráció biztosítja:**
+- Közvetlen hozzáférést a tárhelyeidhez a szerkesztőn belül
+- Szinkronizált beállításokat és kiegészítőket eszközök között
+- Egyszerűsített mentési munkafolyamatot a GitHub felé
+- Személyre szabott fejlesztői környezetet
 
-### Az új munkaterület megismerése
+### Megismered az új munkaterületedet
 
-Amikor minden betöltődik, egy gyönyörűen letisztult munkaterületet látsz, amelyet arra terveztek, hogy arra koncentrálj, ami igazán számít – a kódodra!
+Miután minden betöltődött, egy gyönyörűen letisztult munkaterületet látsz, ami úgy van tervezve, hogy a fontos dolgokra – a kódodra! – koncentrálhass!
 
-![Alapértelmezett VSCode.dev felület](../../../../translated_images/default-vscode-dev.5d06881d65c1b3234ce50cd9ed3b0028e6031ad5f5b441bcbed96bfa6311f6d0.hu.png)
+![Alapértelmezett VSCode.dev felület](../../../../translated_images/hu/default-vscode-dev.5d06881d65c1b323.webp)
 
-**Íme a környék bemutatása:**
-- **Tevékenységsáv** (a bal oldali csík): Fő navigációs eszközöd az Explorer 📁, Keresés 🔍, Verziókezelés 🌿, Bővítmények 🧩 és Beállítások ⚙️ között
-- **Oldalsáv** (a mellette lévő panel): Az általad kiválasztott funkcióhoz kapcsolódó információkat mutatja
-- **Szerkesztőterület** (a nagy középső rész): Itt történik a varázslat – ez a fő kódolási terület
+**Íme, a városrész bemutatója:**
+- **Aktivitás sáv** (bal oldali csík): a fő navigációd az Explorer 📁, Keresés 🔍, Forrás vezérlés 🌿, Kiegészítők 🧩 és Beállítások ⚙️ között
+- **Oldalsáv** (mellette lévő panel): a kiválasztott elemhez kapcsolódó releváns információkat mutatja
+- **Szerkesztő terület** (a középső nagy rész): itt zajlik a varázslat – a fő kódolási felület
 
-**Szánj egy pillanatot a felfedezésre:**
-- Kattints a Tevékenységsáv ikonokra, és nézd meg, mit csinálnak
-- Figyeld meg, hogyan frissül az oldalsáv különböző információkkal – elég menő, ugye?
-- Az Explorer nézet (📁) valószínűleg az a hely, ahol a legtöbb időt töltöd, szóval szokj hozzá
+**Szánj egy percet a felfedezésre:**
+- Kattints az Aktivitás sáv ikonokra és nézd meg, mit csinál mindegyik
+- Figyeld, hogyan változik az oldalsáv az információkhoz – elég menő, igaz?
+- Az Explorer nézet (📁) lesz valószínűleg a legtöbb időd helyszíne, ismerkedj meg vele
 
-## GitHub repozitóriumok megnyitása
+```mermaid
+flowchart TB
+    subgraph "VSCode.dev Felület Architektúrája"
+        A[Tevékenységsáv] --> B[Felfedező 📁]
+        A --> C[Keresés 🔍]
+        A --> D[Forrásvezérlés 🌿]
+        A --> E[Kiterjesztések 🧩]
+        A --> F[Beállítások ⚙️]
+        
+        B --> G[Fájlfa]
+        C --> H[Keresés és Csere]
+        D --> I[Git Állapot]
+        E --> J[Kiterjesztés Piactér]
+        F --> K[Konfiguráció]
+        
+        L[Oldalsáv] --> M[Kontekts Panel]
+        N[Szerkesztő Terület] --> O[Kódfájlok]
+        P[Terminál/Kimenet] --> Q[Parancssor]
+    end
+```  
+## GitHub tárhelyek megnyitása
 
-Az internet előtt a kutatóknak fizikailag kellett utazniuk könyvtárakba, hogy hozzáférjenek dokumentumokhoz. A GitHub repozitóriumok hasonlóan működnek – távolról tárolt kódgyűjtemények. A VSCode.dev kiküszöböli a hagyományos lépést, hogy a repozitóriumokat le kell tölteni a helyi gépre szerkesztés előtt.
+Az internet előtt a kutatóknak fizikailag el kellett utazniuk könyvtárakba, hogy hozzáférjenek dokumentumokhoz. A GitHub tárhelyek hasonlóan működnek – kód gyűjtemények távol tárolva. A VSCode.dev megszünteti a hagyományos lépést, mely szerint le kellett tölteni a tárat a helyi gépre szerkesztés előtt.
 
-Ez a funkció lehetővé teszi, hogy bármely nyilvános repozitóriumot azonnal megnyiss, szerkeszd vagy hozzájárulj hozzá. Íme két módszer a repozitóriumok megnyitására:
+Ez a képesség azonnali hozzáférést tesz lehetővé bármely nyilvános tárhelyhez megtekintésre, szerkesztésre vagy hozzájárulásra. Íme két mód a tárhelyek megnyitására:
 
-### 1. módszer: A kattintós megoldás
+### 1. módszer: Kattintgatós megoldás
 
-Ez tökéletes, ha frissen kezded a VSCode.dev használatát, és egy konkrét repozitóriumot szeretnél megnyitni. Egyszerű és kezdőbarát:
+Ez tökéletes, ha frissen indulsz a VSCode.dev-ben és meg akarsz nyitni egy konkrét tárhelyet. Egyszerű és kezdőknek való:
 
 **Így csináld:**
 
 1. Lépj a [vscode.dev](https://vscode.dev) oldalra, ha még nem vagy ott
 2. Keresd meg a "Open Remote Repository" gombot a kezdőképernyőn, és kattints rá
 
-   ![Távoli repozitórium megnyitása](../../../../translated_images/open-remote-repository.bd9c2598b8949e7fc283cdfc8f4050c6205a7c7c6d3f78c4b135115d037d6fa2.hu.png)
+   ![Távoli tárhely megnyitása](../../../../translated_images/hu/open-remote-repository.bd9c2598b8949e7f.webp)
 
-3. Illeszd be bármely GitHub repozitórium URL-jét (próbáld ki ezt: `https://github.com/microsoft/Web-Dev-For-Beginners`)
-4. Nyomj Entert, és figyeld a varázslatot!
+3. Illeszd be bármely GitHub tárhely URL-jét (próbáld ki ezt: `https://github.com/microsoft/Web-Dev-For-Beginners`)
+4. Nyomj Entert és figyeld a varázslatot!
 
-**Profi tipp - A Command Palette gyorsbillentyű:**
+**Pro tipp - Parancspaletta gyorsbillentyű:**
 
-Szeretnél úgy érezni, mint egy kódoló varázsló? Próbáld ki ezt a billentyűkombinációt: Ctrl+Shift+P (vagy Mac-en Cmd+Shift+P), hogy megnyisd a Command Palette-et:
+Szeretnél kódvarázslónak érezni magad? Próbáld ezt a billentyűkombinációt: Ctrl+Shift+P (Macen Cmd+Shift+P), hogy megnyisd a Parancspalettát:
 
-![Command Palette](../../../../translated_images/palette-menu.4946174e07f426226afcdad707d19b8d5150e41591c751c45b5dee213affef91.hu.png)
+![Parancspaletta](../../../../translated_images/hu/palette-menu.4946174e07f42622.webp)
 
-**A Command Palette olyan, mint egy keresőmotor mindenhez, amit csinálhatsz:**
-- Írd be, hogy "open remote", és megtalálja neked a repozitórium megnyitót
-- Emlékszik a nemrég megnyitott repozitóriumokra (szuper hasznos!)
-- Ha megszokod, villámgyorsan tudsz kódolni
-- Ez gyakorlatilag a VSCode.dev "Hey Siri-je, de kódoláshoz"
+**A Parancspaletta olyan, mint egy keresőmotor mindennek, amit csinálhatsz:**
+- Írd be, hogy "open remote", és megtalálja a távoli tárhely megnyitóját
+- Megjegyzi, milyen tárhelyeket nyitottál meg mostanában (nagyon hasznos!)
+- Ha megszokod, úgy fogsz kódolni, mint a villám
+- Ez lényegében a VSCode.dev "Hey Siri-je" kódoláshoz
 
-### 2. módszer: URL módosítási technika
+### 2. módszer: URL módosítási trükk
 
-Ahogy a HTTP és HTTPS különböző protokollokat használ, miközben megtartja ugyanazt a domain struktúrát, úgy a VSCode.dev is egy URL mintát használ, amely tükrözi a GitHub címzési rendszerét. Bármely GitHub repozitórium URL módosítható, hogy közvetlenül megnyíljon a VSCode.dev-ben.
+Ahogy az HTTP és HTTPS külön protokollként működnek ugyanazzal a domain struktúrával, úgy a VSCode.dev egy URL mintát használ, ami a GitHub címezési rendszerét tükrözi. Bármely GitHub tárhely URL-je módosítható, hogy közvetlenül a VSCode.dev-ben nyíljon meg.
 
 **URL átalakítási minta:**
 
-| Repozitórium típusa | GitHub URL | VSCode.dev URL |
+| Tárhely típus | GitHub URL | VSCode.dev URL |
 |----------------|---------------------|----------------|
-| **Nyilvános repozitórium** | `github.com/microsoft/Web-Dev-For-Beginners` | `vscode.dev/github/microsoft/Web-Dev-For-Beginners` |
-| **Személyes projekt** | `github.com/your-username/my-project` | `vscode.dev/github/your-username/my-project` |
-| **Bármely elérhető repo** | `github.com/their-username/awesome-repo` | `vscode.dev/github/their-username/awesome-repo` |
+| **Nyilvános tárhely** | `github.com/microsoft/Web-Dev-For-Beginners` | `vscode.dev/github/microsoft/Web-Dev-For-Beginners` |
+| **Saját projekt** | `github.com/your-username/my-project` | `vscode.dev/github/your-username/my-project` |
+| **Bármi elérhető repo** | `github.com/their-username/awesome-repo` | `vscode.dev/github/their-username/awesome-repo` |
 
 **Megvalósítás:**
-- Cseréld le a `github.com`-ot `vscode.dev/github`-ra
-- Tartsd meg az URL többi elemét változatlanul
-- Bármely nyilvánosan elérhető repozitóriummal működik
+- Cseréld le a `github.com`-ot `vscode.dev/github`-re
+- A többi URL összetevőt változatlanul hagyod
+- Működik bármely nyilvánosan elérhető tárhellyel
 - Azonnali szerkesztési hozzáférést biztosít
 
-> 💡 **Életet megváltoztató tipp**: Könyvjelzőzd a kedvenc repozitóriumaid VSCode.dev verzióit. Nekem vannak olyan könyvjelzőim, mint "Edit My Portfolio" és "Fix Documentation", amelyek közvetlenül szerkesztési módba visznek!
+> 💡 **Életmentő tipp**: Kövesd le könyvjelzőként VSCode.dev változatban kedvenc tárhelyeidet. Nekem vannak olyanok, mint „Szerkessz portfóliót” vagy „Dokumentáció javítása”, amelyek egyből szerkesztési módba visznek!
 
 **Melyik módszert használd?**
-- **Az interfész módszer**: Nagyszerű, ha felfedezel, vagy nem emlékszel pontos repozitórium nevekre
-- **Az URL trükk**: Tökéletes villámgyors hozzáféréshez, ha pontosan tudod, hová tartasz
+- **Felületes út**: Jó, ha felfedezel vagy nem emlékszel pontos tárhelynevekre
+- **URL trükk**: Hibátlanul gyors elérés, amikor tudod, hová akarsz menni
 
-## Fájlok és projektek kezelése
+### 🎯 Pedagógiai visszacsatolás: felhőfejlesztési hozzáférés
 
-Most, hogy megnyitottál egy repozitóriumot, kezdjünk építkezni! A VSCode.dev mindent megad, amire szükséged van a kód fájlok létrehozásához, szerkesztéséhez és rendszerezéséhez. Gondolj rá úgy, mint a digitális műhelyedre – minden eszköz ott van, ahol szükséged van rá.
+**Állj meg és gondolkodj:** Most két módszert tanultál a kódtárhelyek webes böngészőn keresztüli elérésére. Ez alapvető változást jelent a fejlesztésben.
 
-Merüljünk el a mindennapi feladatokban, amelyek a kódolási munkafolyamatod nagy részét alkotják.
+**Gyors önértékelés:**
+- Tudod magyarázni, miért szünteti meg a webes szerkesztés a hagyományos "fejlesztő környezet beállítást"?
+- Milyen előnyei vannak az URL módosítási technikának a helyi git klónozással szemben?
+- Hogyan változtathatja meg ez a megközelítés a nyílt forráskódú projektekhez való hozzájárulást?
+
+**Kapcsolódás a valós világhoz:** Olyan nagy cégek, mint a GitHub, GitLab és Replit a felhő-központú elvekre építették fejlesztői platformjukat. Te ugyanazokat a munkafolyamatokat tanulod, melyeket profi fejlesztő csapatok használnak világszerte.
+
+**Kihívás kérdés:** Hogyan változtathatja meg a felhőalapú fejlesztés az iskolai kódolás tanítását? Gondolj az eszközigényre, szoftverkezelésre és együttműködési lehetőségekre.
+
+## Dolgozás fájlokkal és projektekkel
+
+Most, hogy megnyitottál egy tárhelyet, kezdjünk az építkezéssel! A VSCode.dev mindent megad, ami kell a kód fájlok létrehozásához, szerkesztéséhez és rendszerezéséhez. Gondolj rá úgy, mint a digitális műhelyed – minden eszköz ott van, ahol szükséged van rá.
+
+Nézzük meg a mindennapi feladatokat, amik a kódolási munkafolyamatod nagy részét adják majd.
 
 ### Új fájlok létrehozása
 
-Ahogy egy építész irodájában a tervrajzokat rendszerezik, a fájl létrehozás a VSCode.dev-ben strukturált megközelítést követ. A rendszer támogatja az összes szabványos webfejlesztési fájltípust.
+Ahogy egy építész irodájában a tervrajzok rendszerezettek, úgy a fájl létrehozás a VSCode.dev-ben struktúráltan zajlik. A rendszer támogat minden szabványos webfejlesztői fájltípust.
 
 **Fájl létrehozási folyamat:**
 
-1. Navigálj a célmappához az Explorer oldalsávban
-2. Vidd az egérmutatót a mappanévre, hogy megjelenjen az "Új fájl" ikon (📄+)
-3. Írd be a fájlnevet a megfelelő kiterjesztéssel (`style.css`, `script.js`, `index.html`)
+1. Navigálj a célmappába az Explorer oldalsávban
+2. Mozgasd az egeret a mappa neve fölé, hogy megjelenjen az "Új fájl" ikon (📄+)
+3. Írd be a fájl nevét a megfelelő kiterjesztéssel (`style.css`, `script.js`, `index.html`)
 4. Nyomj Entert a fájl létrehozásához
 
-![Új fájl létrehozása](../../../../translated_images/create-new-file.2814e609c2af9aeb6c6fd53156c503ac91c3d538f9cac63073b2dd4a7631f183.hu.png)
+![Új fájl létrehozása](../../../../translated_images/hu/create-new-file.2814e609c2af9aeb.webp)
 
-**Elnevezési konvenciók:**
-- Használj leíró neveket, amelyek utalnak a fájl céljára
-- Tartalmazd a fájlkiterjesztéseket a megfelelő szintaxiskiemeléshez
-- Kövesd a konzisztens elnevezési mintákat a projektekben
-- Használj kisbetűket és kötőjeleket szóközök helyett
+**Névzési szabályok:**
+- Használj leíró neveket, amelyek jelzik a fájl célját
+- Tartsd meg a fájlkiterjesztést a helyes szintaxiskiemeléshez
+- Kövesd a konzisztens névadási mintákat a projektekben
+- Kisbetűk és kötőjelek használata szóközök helyett
 
 ### Fájlok szerkesztése és mentése
 
-Itt kezdődik az igazi móka! A VSCode.dev szerkesztője tele van hasznos funkciókkal, amelyek gördülékennyé és intuitívvá teszik a kódolást. Olyan, mintha lenne egy nagyon okos írássegéded, de kódhoz.
+Itt kezdődik az igazi móka! A VSCode.dev szerkesztője tele van hasznos funkciókkal, amelyek gördülékennyé és intuitívvá teszik a kód dolgot. Olyan, mintha egy nagyon okos író asszisztensed lenne, csak kódhoz.
 
-**Szerkesztési munkafolyamat:**
+**Szerkesztési munkafolyamatod:**
 
-1. Kattints bármely fájlra az Explorerben, hogy megnyíljon a fő területen
-2. Kezdj el gépelni, és figyeld, ahogy a VSCode.dev segít színekkel, javaslatokkal és hibajelzéssel
-3. Mentsd el a munkádat Ctrl+S (Windows/Linux) vagy Cmd+S (Mac) billentyűkombinációval – bár automatikusan is ment!
+1. Kattints bármely fájlra az Explorerben, hogy megnyisd a fő szerkesztőterületen
+2. Kezdj el gépelni és nézd, hogyan segít a VSCode.dev színekkel, javaslatokkal és hibafelismeréssel
+3. Mentsd el munkád Ctrl+S (Windows/Linux) vagy Cmd+S (Mac) billentyűkkel – de van automatikus mentés is!
 
-![Fájlok szerkesztése a VSCode.dev-ben](../../../../translated_images/edit-a-file.52c0ee665ef19f08119d62d63f395dfefddc0a4deb9268d73bfe791f52c5807a.hu.png)
+![Fájlok szerkesztése a VSCode.dev-ben](../../../../translated_images/hu/edit-a-file.52c0ee665ef19f08.webp)
 
-**A menő dolgok, amelyek kódolás közben történnek:**
-- A kódod gyönyörűen színezett lesz, így könnyen olvasható
-- A VSCode.dev javaslatokat tesz gépelés közben (mint az automatikus javítás, de sokkal okosabb)
-- Elkapja a hibákat és elírásokat, mielőtt mentenéd
-- Több fájlt is megnyithatsz lapokon, akárcsak egy böngészőben
-- Minden automatikusan mentődik a háttérben
+**Ügyes dolgok, amik közben történnek:**
+- Kódod gyönyörűen színezett, hogy könnyen olvasható legyen
+- A VSCode.dev javaslatokat ad gépelés közben (mint az automatikus javítás, csak okosabb)
+- Már mentés előtt felismeri a gépelési hibákat és más problémákat
+- Több fájlt is nyithatsz meg fülönként, mint egy böngészőben
+- Minden háttérben automatikusan mentődik
 
-> ⚠️ **Gyors tipp**: Bár az automatikus mentés vigyáz rád, a Ctrl+S vagy Cmd+S megnyomása még mindig jó szokás. Azonnal ment mindent, és néhány extra hasznos funkciót is aktivál, például a hibakeresést.
+> ⚠️ **Gyors tipp**: Bár az automatikus mentés a hátad mögött működik, a Ctrl+S vagy Cmd+S lenyomása jó szokás. Azonnal ment, és elindít extra hasznos funkciókat, például hibakeresést.
 
-### Verziókezelés a Git segítségével
+### Verziókezelés Git-tel
 
-Ahogy a régészek részletes feljegyzéseket készítenek az ásatási rétegekről, úgy a Git nyomon követi a kódod változásait az idő múlásával. Ez a rendszer megőrzi a projekt történetét, és lehetővé teszi, hogy visszatérj korábbi verziókhoz, ha szükséges. A VSCode.dev beépített Git funkciókat tartalmaz.
+Ahogy a régészek részletes feljegyzéseket készítenek a feltárás rétegeiről, a Git nyomon követi a kódod változásait az időben. Ez a rendszer megőrzi a projekt történetét, és lehetővé teszi a korábbi verziók visszaállítását szükség esetén. A VSCode.dev integrált Git funkcionalitással rendelkezik.
 
-**Verziókezelési felület:**
+**Forráskezelő felület:**
 
-1. Lépj be a Verziókezelés panelbe a 🌿 ikon segítségével a Tevékenységsávban
-2. A módosított fájlok megjelennek a "Változások" szekcióban
-3. A színkódolás jelzi a változások típusát: zöld a hozzáadásokhoz, piros a törlésekhez
+1. Nyisd meg a Forráskezelő panelt a 🌿 ikonra kattintva az Aktivitás sávban
+2. A módosított fájlok megjelennek a "Changes" (Változások) részben
+3. Színkódok jelzik a változtatások típusát: zöld a hozzáadások, piros a törlések
 
-![Változások megtekintése a Verzió
-- Minden bővítmény értékeléseket, letöltési számokat és valódi felhasználói véleményeket mutat
-- Képernyőképeket és egyértelmű leírásokat kapsz arról, hogy mit csinál az adott bővítmény
-- Minden egyértelműen jelölve van kompatibilitási információkkal
-- Hasonló bővítményeket javasolnak, hogy összehasonlíthasd az opciókat
+![Változások megtekintése a Forráskezelőben](../../../../translated_images/hu/working-tree.c58eec08e6335c79.webp)
 
-### Bővítmények telepítése (Szuper egyszerű!)
+**Munkád mentése (commit munkafolyamat):**
 
-Új funkciók hozzáadása a szerkesztődhöz olyan egyszerű, mint egy gomb megnyomása. A bővítmények másodpercek alatt települnek, és azonnal működni kezdenek – nincs újraindítás, nincs várakozás.
+```mermaid
+flowchart TD
+    A[Módosítások végrehajtása a fájlokon] --> B[Változások megtekintése a Forrásvezérlésben]
+    B --> C[Változások színpadra helyezése a + gombra kattintva]
+    C --> D[Írjon leíró commit üzenetet]
+    D --> E[Kattintson a pipa jelre a commit elvégzéséhez]
+    E --> F[Változások feltöltve a GitHub-ra]
+```  
+```mermaid
+stateDiagram-v2
+    [*] --> Modified: Fájlok szerkesztése
+    Modified --> Staged: Kattints a + gombra a szakaszoláshoz
+    Staged --> Modified: Kattints a - gombra a szakasz törléséhez
+    Staged --> Committed: Üzenet hozzáadása és commit
+    Committed --> [*]: Szinkronizálás a GitHub-bal
+    
+    state Committed {
+        [*] --> LocalCommit
+        LocalCommit --> RemotePush: Automatikus szinkronizálás
+    }
+```  
+**Lépésről lépésre:**
+- Kattints a "+" ikonra azok mellett a fájlok mellett, amiket menteni szeretnél (ez a „staging”-et jelenti)
+- Ellenőrizd kétszer, hogy elégedett vagy-e az összes színpadra helyezett módosításoddal
+- Írj egy rövid megjegyzést, amely elmagyarázza, hogy mit csináltál (ez lesz a "commit üzeneted")
+- Kattints a pipára a módosítások mentéséhez a GitHubon
+- Ha meggondolod magad valamivel kapcsolatban, a visszavonás ikon lehetővé teszi a változtatások elvetését
 
-**Csak ennyit kell tenned:**
+**Jó commit üzenetek írása (ez könnyebb, mint gondolnád!):**
+- Egyszerűen írd le, mit csináltál, például "Kapcsolatfelvételi űrlap hozzáadása" vagy "Törött navigáció javítása"
+- Tartsd röviden és lényegre törően – gondolj tweet hosszúságra, ne esszére
+- Kezdd cselekvő igékkel, mint "Hozzáad", "Javít", "Frissít", vagy "Eltávolít"
+- **Jó példák**: "Reszponzív navigációs menü hozzáadása", "Mobil elrendezési hibák javítása", "Színek frissítése jobb hozzáférhetőségért"
 
-1. Keress rá arra, amit szeretnél (próbáld ki például a "live server" vagy "prettier" keresést)
-2. Kattints arra, amelyik jónak tűnik, hogy megnézd a részleteket
+> 💡 **Gyors navigációs tipp**: Használd az ☰ hamburger menüt a bal felső sarokban, hogy visszaugrj a GitHub tárhelyedre, és online megnézhesd az elkötelezett változtatásokat. Ez olyan, mint egy kapu a szerkesztő környezeted és a projekted GitHub-hazája között!
+
+## Funkcionalitás bővítése kiterjesztésekkel
+
+Ahogy egy kézműves műhelyében különféle szerszámok vannak a különböző feladatokhoz, úgy a VSCode.dev is testreszabható olyan kiterjesztésekkel, amelyek speciális képességeket adnak hozzá. Ezek a közösség által fejlesztett pluginek a gyakori fejlesztési igényeket oldják meg, például kódformázást, élő előnézetet és továbbfejlesztett Git-integrációt.
+
+A kiterjesztés piactéren több ezer ingyenes eszköz található, amelyeket fejlesztők világszerte készítettek. Minden kiterjesztés egy adott munkafolyamat kihívásait oldja meg, lehetővé téve, hogy személyre szabott fejlesztői környezetet építs, amely megfelel a saját igényeidnek és preferenciáidnak.
+
+```mermaid
+mindmap
+  root((Bővítmény Ökoszisztéma))
+    Essential Categories
+      Hatékonyság
+        Live Server
+        Auto Rename Tag
+        Bracket Pair Colorizer
+        GitLens
+      Kódminőség
+        Prettier
+        ESLint
+        Spell Checker
+        Error Lens
+      Nyelvi Támogatás
+        HTML CSS Support
+        JavaScript ES6
+        Python Extension
+        Markdown Preview
+      Témák & Felhasználói Felület
+        Dark+ Modern
+        Material Icon Theme
+        Peacock
+        Rainbow Brackets
+    Discovery Methods
+      Névleges Listák
+        Letöltések Száma
+        Felhasználói Értékelések
+        Legutóbbi Frissítések
+        Közösségi Vélemények
+      Ajánlások
+        Munkaterület Javaslatok
+        Nyelv alapú
+        Munkafolyamat-specifikus
+        Csapat Szabványok
+```
+### A tökéletes kiterjesztéseid megtalálása
+
+A kiterjesztés piactér nagyon jól szervezett, így nem fogsz eltévedni, amikor megpróbálod megtalálni, amire szükséged van. Arra tervezték, hogy segítsen felfedezni specifikus eszközöket, és olyan menő dolgokat is, amikről nem is tudtad, hogy léteznek!
+
+**A piactérhez jutás:**
+
+1. Kattints a Kiterjesztések ikonra (🧩) az Activity Bar-on
+2. Böngéssz, vagy keress valami konkrétat
+3. Kattints bármire, ami érdekesnek tűnik, hogy többet megtudj róla
+
+![Extension marketplace interface](../../../../translated_images/hu/extensions.eca0e0c7f59a10b5.webp)
+
+**Mit látsz ott:**
+
+| Szegmens | Mi van benne | Miért hasznos |
+|----------|--------------|---------------|
+| **Telepítve** | A már hozzáadott kiterjesztéseid | A személyes kódolási eszköztárad |
+| **Népszerű** | A közönségkedvencek | Amiben a legtöbb fejlesztő megbízik |
+| **Ajánlott** | Okos ajánlások a projektedhez | A VSCode.dev hasznos javaslatai |
+
+**Mi könnyíti meg a böngészést:**
+- Minden kiterjesztésnél látod az értékeléseket, letöltésszámokat, és valódi felhasználói véleményeket
+- Kapsz képernyőképeket és egyértelmű leírásokat arról, mit csinál
+- Minden egyértelmű kompatibilitási információval van jelölve
+- Hasonló kiterjesztéseket ajánl, hogy össze tudj hasonlítani opciókat
+
+### Kiterjesztések telepítése (nagyon egyszerű!)
+
+Új képességek hozzáadása a szerkesztődhöz olyan egyszerű, mint egy gombra kattintani. A kiterjesztések másodpercek alatt települnek és azonnal működésbe lépnek – nincs újraindítás vagy várakozás.
+
+**Csak ezt kell tenned:**
+
+1. Keresd meg, amit akarsz (próbáld ki a "live server" vagy "prettier" keresést)
+2. Kattints arra, amelyik jónak tűnik, hogy többet megtudj róla
 3. Olvasd el, mit csinál, és nézd meg az értékeléseket
 4. Nyomd meg a kék "Install" gombot, és kész is vagy!
 
-![Bővítmények telepítése](../../../../8-code-editor/images/install-extension.gif)
+![Installing extensions](../../../../8-code-editor/images/install-extension.gif)
 
 **Mi történik a háttérben:**
-- A bővítmény automatikusan letöltődik és beállítja magát
+- A kiterjesztés letöltődik és automatikusan beállítja magát
 - Az új funkciók azonnal megjelennek a felületen
-- Minden azonnal működni kezd (komolyan, ennyire gyors!)
-- Ha be vagy jelentkezve, a bővítmény szinkronizálódik az összes eszközödre
+- Minden azonnal működik (komolyan, ilyen gyors!)
+- Ha be vagy jelentkezve, a kiterjesztés szinkronizál az összes eszközödön
 
-**Néhány bővítmény, amit ajánlok kezdéshez:**
-- **Live Server**: Nézd meg, ahogy a weboldalad valós időben frissül, miközben kódolsz (ez varázslatos!)
-- **Prettier**: Automatikusan tisztává és professzionálissá teszi a kódodat
-- **Auto Rename Tag**: Ha megváltoztatsz egy HTML tag-et, a párja is frissül
-- **Bracket Pair Colorizer**: Színesíti a zárójeleket, hogy soha ne vessz el
-- **GitLens**: Felturbózza a Git funkciókat rengeteg hasznos információval
+**Néhány kiterjesztés, amit érdemes lehet kipróbálni:**
+- **Live Server**: Nézd meg a weboldalad valós idejű frissítését kódolás közben (ez igazi varázslat!)
+- **Prettier**: Automatikusan szépre rendezi és professzionálissá teszi a kódodat
+- **Auto Rename Tag**: Ha egy HTML taget megváltasz, a párja is automatikusan frissül
+- **Bracket Pair Colorizer**: Színezett zárójelekkel segít, hogy sose tévedj el bennük
+- **GitLens**: Felturbózza a Git funkcióidat rengeteg hasznos információval
 
-### Bővítmények testreszabása
+### Kiterjesztéseid testreszabása
 
-A legtöbb bővítmény beállításokkal érkezik, amelyeket módosíthatsz, hogy pontosan úgy működjenek, ahogy szeretnéd. Gondolj rá úgy, mint az autó üléseinek és tükrének beállítására – mindenkinek megvannak a saját preferenciái!
+A legtöbb kiterjesztés beállításokkal rendelkezik, amelyeket módosíthatsz, hogy pontosan úgy működjenek, ahogy szeretnéd. Gondolj rá úgy, mint az ülések és tükrök beállítására egy autóban – mindenkinek megvannak a saját ízlései!
 
-**Bővítmény beállítások módosítása:**
+**Beállítások módosítása:**
 
-1. Keresd meg a telepített bővítményt az Extensions panelen
-2. Keresd meg a kis fogaskerék ikont (⚙️) a neve mellett, és kattints rá
-3. Válaszd az "Extension Settings" opciót a legördülő menüből
-4. Állítsd be a dolgokat úgy, hogy tökéletesen illeszkedjenek a munkafolyamatodhoz
+1. Keresd meg a telepített kiterjesztést a Kiterjesztések panelen
+2. Keresd a kis fogaskerék ikont (⚙️) a neve mellett, és kattints rá
+3. Válaszd az "Extension Settings" menüpontot a legördülőből
+4. Állítsd be, amíg a munkafolyamatodhoz pont megfelelőnek érzed
 
-![Bővítmény beállítások testreszabása](../../../../translated_images/extension-settings.21c752ae4f4cdb78a867f140ccd0680e04619d0c44bb4afb26373e54b829d934.hu.png)
+![Customizing extension settings](../../../../translated_images/hu/extension-settings.21c752ae4f4cdb78.webp)
 
-**Gyakori dolgok, amiket érdemes módosítani:**
-- Hogyan formázza a kódot (tabulátorok vs szóközök, sorhossz, stb.)
-- Melyik billentyűkombináció indít különböző műveleteket
-- Milyen fájltípusokkal működjön a bővítmény
-- Bizonyos funkciók ki- vagy bekapcsolása, hogy tisztább legyen a környezet
+**Gyakori beállítási lehetőségek:**
+- Hogyan formázódjon a kódod (tabulátorok vagy szóközök, sorhossz, stb.)
+- Melyik billentyűparancsok indítsanak különböző műveleteket
+- Milyen fájltípusokon működjön a kiterjesztés
+- Bizonyos funkciók ki- vagy bekapcsolása a tisztaság érdekében
 
-### Bővítmények rendszerezése
+### Kiterjesztéseid rendezése
 
-Ahogy egyre több szuper bővítményt fedezel fel, érdemes rendben tartani a gyűjteményedet, hogy minden zökkenőmentesen működjön. A VSCode.dev ezt nagyon egyszerűvé teszi.
+Ahogy egyre több menő kiterjesztést fedezel fel, szeretnéd, hogy a gyűjteményed rendezett és stabilan működő legyen. A VSCode.dev ezt nagyon könnyen kezeli.
 
-**Bővítménykezelési opciók:**
+**Milyen lehetőségeid vannak a kiterjesztések kezelésekor:**
 
-| Mit tehetsz | Mikor hasznos | Profi tipp |
-|--------|---------|----------|
-| **Letiltás** | Ha tesztelni szeretnéd, hogy egy bővítmény okoz-e problémát | Jobb, mint eltávolítani, ha később még szükséged lehet rá |
-| **Eltávolítás** | Teljesen törölni a nem szükséges bővítményeket | Tisztán és gyorsan tartja a környezetet |
-| **Frissítés** | A legújabb funkciók és hibajavítások beszerzése | Általában automatikusan történik, de érdemes ellenőrizni |
+| Mit tudsz csinálni | Mikor hasznos | Profi tipp |
+|--------------------|---------------|------------|
+| **Letiltás** | Ha teszteled, hogy okoz-e problémát egy kiterjesztés | Jobb, mint eltávolítani, ha később még kellhet |
+| **Eltávolítás** | Ha teljesen törölni akarod a nem használt kiterjesztéseket | Tiszta és gyors környezetet tart fenn |
+| **Frissítés** | Ha az új funkciókat vagy hibajavításokat akarod megkapni | Általában automatikusan történik, de érdemes ellenőrizni |
 
-**Hogyan szoktam kezelni a bővítményeket:**
-- Néhány havonta átnézem, mit telepítettem, és eltávolítom, amit nem használok
-- Frissen tartom a bővítményeket, hogy megkapjam a legújabb fejlesztéseket és biztonsági javításokat
-- Ha valami lassúnak tűnik, ideiglenesen letiltom a bővítményeket, hogy kiderítsem, melyik okozza a problémát
-- Elolvasom a frissítési jegyzeteket, amikor a bővítmények nagyobb frissítést kapnak – néha szuper új funkciók vannak benne!
+**Így szoktam én kezelni a kiterjesztéseimet:**
+- Pár havonta átnézem, miket telepítettem, és eltávolítom, amit nem használok
+- Frissítem őket, hogy mindig meglegyenek a legújabb fejlesztések és biztonsági javítások
+- Ha valami lassú, ideiglenesen letiltom a kiterjesztéseket, hogy megnézzem, melyik a hibás
+- Elolvasom a frissítési jegyzeteket nagyobb verzióváltásoknál – néha remek funkciók jönnek!
 
-> ⚠️ **Teljesítmény tipp**: A bővítmények fantasztikusak, de túl sok lelassíthatja a rendszert. Koncentrálj azokra, amelyek valóban megkönnyítik az életed, és ne félj eltávolítani azokat, amelyeket soha nem használsz.
+> ⚠️ **Teljesítménytipp**: A kiterjesztések fantasztikusak, de a túl sok lelassíthatja a rendszert. Koncentrálj azokra, amelyek valóban megkönnyítik az életed, és ne félj eltávolítani a soha nem használtakat.
 
-## GitHub Copilot Agent Kihívás 🚀
+### 🎯 Pedagógiai állapotfelmérés: Fejlesztői környezet testreszabása
 
-Ahogy a NASA strukturált megközelítést alkalmaz az űrmissziókhoz, ez a kihívás a VSCode.dev készségek szisztematikus alkalmazását igényli egy teljes munkafolyamat-szcenárióban.
+**Architektúra megértése**: Megtanultad, hogyan testre szabj egy professzionális fejlesztői környezetet közösségi fejlesztésű kiterjesztések segítségével. Ez tükrözi, hogyan építenek szabványosított eszközkészleteket vállalati fejlesztői csapatok.
 
-**Cél:** Mutasd be a VSCode.dev használatában való jártasságodat egy átfogó webfejlesztési munkafolyamat létrehozásával.
+**Kulcsfogalmak elsajátítása**:
+- **Kiterjesztés felfedezés**: Eszközök megtalálása, amelyek adott fejlesztési problémákat oldanak meg
+- **Környezet konfigurálás**: Az eszközök személyre szabása személyes vagy csapat preferenciákhoz
+- **Teljesítmény optimalizálás**: Funkcionalitás és rendszer-teljesítmény kiegyensúlyozása
+- **Közösségi együttműködés**: A globális fejlesztői közösség által készített eszközök hasznosítása
 
-**Projekt követelmények:** Az Agent mód segítségével végezd el ezeket a feladatokat:
-1. Forkolj egy meglévő repót vagy hozz létre egy újat
-2. Hozz létre egy működő projektstruktúrát HTML, CSS és JavaScript fájlokkal
-3. Telepíts és konfigurálj három fejlesztést segítő bővítményt
+**Iparági kapcsolat**: A kiterjesztés ökoszisztémák táplálják a fő fejlesztői platformokat, mint a VS Code, Chrome DevTools és modern IDE-k. Az, hogy hogyan értékeled, telepíted és konfigurálod a kiterjesztéseket, alapvető a professzionális fejlesztési munkafolyamatokhoz.
+
+**Reflexiós kérdés**: Hogyan közelítenéd meg egy 10 fejlesztőből álló csapat számára egy szabványosított fejlesztői környezet beállítását? Vegyél figyelembe következetességet, teljesítményt és egyéni preferenciákat.
+
+## 📈 A felhőfejlesztési tudásod idővonala
+
+```mermaid
+timeline
+    title Professzionális felhőfejlesztési út
+    
+    section Platform alapok
+        Cloud Development Understanding
+            : Sajátítsa el a webalapú szerkesztési koncepciókat
+            : Kapcsolja össze a GitHub integrációs mintákat
+            : Navigáljon a professzionális felületeken
+    
+    section Munkafolyamatok elsajátítása
+        File & Project Management
+            : Hozzon létre rendezett projektstruktúrákat
+            : Sajátítsa el a szintaxiskiemelés előnyeit
+            : Kezelje a többfájlós szerkesztési munkafolyamatokat
+        
+        Version Control Integration
+            : Értse meg a Git vizualizációját
+            : Gyakorolja a commit üzenet szabványokat
+            : Sajátítsa el a változáskövetési munkafolyamatokat
+    
+    section Környezet testreszabása
+        Extension Ecosystem
+            : Fedezze fel a termelékenységi bővítményeket
+            : Konfigurálja a fejlesztési beállításokat
+            : Optimalizálja a teljesítmény és funkcionalitás arányát
+        
+        Professional Setup
+            : Építsen konzisztens munkafolyamatokat
+            : Hozzon létre újrahasználható konfigurációkat
+            : Állítson fel csapat szabványokat
+    
+    section Iparági felkészültség
+        Cloud-First Development
+            : Sajátítsa el a távoli fejlesztési gyakorlatokat
+            : Értse meg az együttműködési munkafolyamatokat
+            : Fejlesszen platformfüggetlen készségeket
+        
+        Professional Practices
+            : Kövesse az iparági szabványokat
+            : Hozzon létre karbantartható munkafolyamatokat
+            : Készüljön fel csapat környezetre
+```
+**🎓 Vizsgaforduló**: Sikeresen elsajátítottad a felhőalapú fejlesztést ugyanazokkal az eszközökkel és munkafolyamatokkal, amelyeket a nagy tech cégek profi fejlesztői használnak. Ezek a készségek a jövő szoftverfejlesztését jelentik.
+
+**🔄 Következő szintű képességek**:
+- Készen állsz haladó felhőfejlesztési platformok (Codespaces, GitPod) felfedezésére
+- Felkészült vagy elosztott fejlesztői csapatokban való munkára
+- Képes vagy globálisan hozzájárulni nyílt forráskódú projektekhez
+- Alapot teremtettél a modern DevOps és folyamatos integráció gyakorlataihoz
+
+## GitHub Copilot Agent kihívás 🚀
+
+Ahogy a NASA struktúrált megközelítést alkalmaz az űrmissziókhoz, ez a kihívás a VSCode.dev készségek szisztematikus alkalmazását követeli meg egy teljes fejlesztési munkafolyamatban.
+
+**Cél:** Mutasd be a VSCode.dev ismereteket egy átfogó webfejlesztési munkafolyamat létrehozásával.
+
+**Projekt követelmények:** Az agent mód segítségével hajtsd végre ezeket:
+1. Forkolj egy meglévő repót vagy hozz létre újat
+2. Hozz létre működő projektstruktúrát HTML, CSS és JavaScript fájlokkal
+3. Telepíts és állíts be három fejlesztést segítő kiterjesztést
 4. Gyakorold a verziókezelést leíró commit üzenetekkel
 5. Kísérletezz feature branch létrehozásával és módosításával
 6. Dokumentáld a folyamatot és a tanulságokat egy README.md fájlban
 
-Ez a gyakorlat összefoglalja a VSCode.dev koncepcióit egy gyakorlati munkafolyamatban, amelyet a jövőbeli fejlesztési projektekben is alkalmazhatsz.
+Ez a gyakorlat összefoglalja az összes VSCode.dev koncepciót egy gyakorlati munkafolyamatban, amit későbbi fejlesztési projekteken is alkalmazhatsz.
 
-További információ az [Agent módról](https://code.visualstudio.com/blogs/2025/02/24/introducing-copilot-agent-mode) itt.
+További info az [agent mód](https://code.visualstudio.com/blogs/2025/02/24/introducing-copilot-agent-mode) használatáról.
 
 ## Feladat
 
-Ideje élesben kipróbálni ezeket a készségeket! Van egy gyakorlati projekt, amely lehetővé teszi, hogy mindent gyakorolj, amit eddig tanultunk: [Készíts egy önéletrajz weboldalt a VSCode.dev segítségével](./assignment.md)
+Ideje, hogy ezekkel a képességekkel egy valós projektbe kezdj! Van egy gyakorlati feladat, amelyen mindent kipróbálhatsz, amit tanultunk: [Önéletrajz weboldal készítése VSCode.dev segítségével](./assignment.md)
 
-Ez a feladat végigvezet egy professzionális önéletrajz weboldal elkészítésén, teljes egészében a böngésződben. Használni fogod az összes VSCode.dev funkciót, amit felfedeztünk, és a végére lesz egy nagyszerű kinézetű weboldalad, valamint magabiztosságod az új munkafolyamatodban.
+Ez a feladat végigvezet azon, hogyan készíts profi önéletrajz weboldalt teljesen a böngésződben. Használni fogod az összes VSCode.dev funkciót, amit felfedeztünk, és a végére nemcsak egy nagyszerű weboldalad, hanem magabiztosságod is lesz az új munkafolyamatodban.
 
-## Fedezd fel és fejleszd tovább a készségeidet
+## Folyamatos felfedezés és képességnövelés
 
-Most már szilárd alapjaid vannak, de rengeteg további szuper dolgot fedezhetsz fel! Íme néhány forrás és ötlet, hogy a VSCode.dev készségeidet a következő szintre emeld:
+Most már szilárd alapokkal rendelkezel, de még rengeteg menő dolgot fedezhetsz fel! Itt van néhány forrás és ötlet, hogy a VSCode.dev képességeidet magasabb szintre emeld:
 
-**Hivatalos dokumentációk, amelyeket érdemes könyvjelzőzni:**
-- [VSCode Web Dokumentáció](https://code.visualstudio.com/docs/editor/vscode-web?WT.mc_id=academic-0000-alfredodeza) – A böngészőalapú szerkesztés teljes útmutatója
-- [GitHub Codespaces](https://docs.github.com/en/codespaces) – Ha még több felhőalapú erőre van szükséged
+**Hivatalos dokumentációk, amiket érdemes elmenteni:**
+- [VSCode Web Dokumentáció](https://code.visualstudio.com/docs/editor/vscode-web?WT.mc_id=academic-0000-alfredodeza) – Teljes útmutató böngésző-alapú szerkesztéshez
+- [GitHub Codespaces](https://docs.github.com/en/codespaces) – Ha még több felhőerőt szeretnél
 
-**Szuper funkciók, amiket érdemes kipróbálni:**
-- **Billentyűkombinációk**: Tanuld meg azokat a kombinációkat, amelyekkel igazi kódoló nindzsa lehetsz
-- **Munkaterület beállítások**: Állítsd be különböző környezeteket különböző projekttípusokhoz
-- **Multi-root Workspaces**: Dolgozz egyszerre több repón (nagyon hasznos!)
-- **Terminál integráció**: Használj parancssori eszközöket közvetlenül a böngésződben
+**Menő funkciók, amiket érdemes kipróbálni:**
+- **Billentyűparancsok**: Tanuld meg a kombinációkat, amiktől igazi kódbajnoknak fogod érezni magad
+- **Munkaterület beállítások**: Állíts be különböző környezeteket különböző projekttípusokhoz
+- **Több gyökér munkaterületek**: Több repón dolgozz egyidejűleg (nagyon praktikus!)
+- **Terminál integráció**: Parancssori eszközöket érsz el közvetlenül a böngészőben
 
-**Gyakorlási ötletek:**
-- Ugorj bele néhány nyílt forráskódú projektbe, és járulj hozzá a VSCode.dev használatával – ez egy nagyszerű módja annak, hogy visszaadj!
-- Próbálj ki különböző bővítményeket, hogy megtaláld a tökéletes beállítást
-- Készíts projekt sablonokat azokhoz a weboldalakhoz, amelyeket leggyakrabban építesz
-- Gyakorold a Git munkafolyamatokat, mint például az ágazás és az egyesítés – ezek a készségek aranyat érnek csapatprojektekben
-
----
-
-**Mesterévé váltál a böngészőalapú fejlesztésnek!** 🎉 Ahogy a hordozható műszerek feltalálása lehetővé tette a tudósok számára, hogy távoli helyeken végezzenek kutatásokat, a VSCode.dev lehetővé teszi a professzionális kódolást bármely internetkapcsolattal rendelkező eszközről.
-
-Ezek a készségek tükrözik a jelenlegi iparági gyakorlatokat – sok profi fejlesztő használ felhőalapú fejlesztési környezeteket azok rugalmassága és hozzáférhetősége miatt. Olyan munkafolyamatot tanultál meg, amely az egyéni projektektől a nagy csapatmunkákig skálázható.
-
-Alkalmazd ezeket a technikákat a következő fejlesztési projektedben! 🚀
+**Gyakorlati ötletek:**
+- Vegyél részt nyílt forráskódú projektekben VSCode.dev használatával – remek módja a visszaadásnak!
+- Próbálj ki különböző kiterjesztéseket, hogy megtaláld a tökéletes beállítást
+- Készíts projekt sablonokat a leggyakrabban épített weboldalakhoz
+- Gyakorold a Git munkafolyamatokat, mint a branchelés és merge-elés – ezek aranyat érnek csapatmunkában
 
 ---
 
-**Felelősség kizárása**:  
-Ez a dokumentum az [Co-op Translator](https://github.com/Azure/co-op-translator) AI fordítási szolgáltatás segítségével lett lefordítva. Bár törekszünk a pontosságra, kérjük, vegye figyelembe, hogy az automatikus fordítások hibákat vagy pontatlanságokat tartalmazhatnak. Az eredeti dokumentum az eredeti nyelvén tekintendő hiteles forrásnak. Kritikus információk esetén javasolt professzionális emberi fordítást igénybe venni. Nem vállalunk felelősséget semmilyen félreértésért vagy téves értelmezésért, amely a fordítás használatából eredhet.
+**Mesteri szintre jutottál a böngésző-alapú fejlesztésben!** 🎉 Ahogy a hordozható műszerek feltalálása lehetővé tette a tudósoknak a kutatást messzi helyeken, úgy a VSCode.dev profi kódolást tesz lehetővé bármilyen internetkapcsolattal rendelkező eszközről.
+
+Ezek a készségek tükrözik a jelenlegi iparági gyakorlatokat – sok profi fejlesztő felhőalapú fejlesztői környezeteket használ a rugalmasság és hozzáférhetőség miatt. Olyan munkafolyamatot tanultál meg, amely skálázható az egyéni projektektől a nagy csapatmunkáig.
+
+Alkalmazd ezeket a technikákat a következő fejlesztési projektednél! 🚀
+
+---
+
+<!-- CO-OP TRANSLATOR DISCLAIMER START -->
+**Határidő nélküli felelősségkizárás**:
+Ezt a dokumentumot az AI fordító szolgáltatás, a [Co-op Translator](https://github.com/Azure/co-op-translator) segítségével fordítottuk. Bár törekszünk a pontosságra, kérjük, vegye figyelembe, hogy az automatikus fordítások tartalmazhatnak hibákat vagy pontatlanságokat. Az eredeti, anyanyelvű dokumentum tekintendő a hiteles forrásnak. Fontos információk esetén szakmai, emberi fordítást javaslunk. Nem vállalunk felelősséget semmilyen félreértésért vagy téves értelmezésért, amely ebből a fordításból adódik.
+<!-- CO-OP TRANSLATOR DISCLAIMER END -->

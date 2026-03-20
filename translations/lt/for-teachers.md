@@ -1,12 +1,3 @@
-<!--
-CO_OP_TRANSLATOR_METADATA:
-{
-  "original_hash": "71009af209f81cc01a1f2d324200375f",
-  "translation_date": "2025-10-03T11:08:15+00:00",
-  "source_file": "for-teachers.md",
-  "language_code": "lt"
-}
--->
 ### Mokytojams
 
 Jūs galite naudoti šią mokymo programą savo klasėje. Ji puikiai veikia su GitHub Classroom ir populiariomis LMS platformomis, taip pat gali būti naudojama kaip atskiras repo su jūsų mokiniais.
@@ -42,10 +33,10 @@ Patarimas: Venkite saugyklų laikymo sinchronizuotuose aplankuose (pvz., OneDriv
   - Moodle Cloud turi ribotą Common Cartridge palaikymą. Geriau naudoti aukščiau pateiktą Moodle failą, kurį taip pat galima įkelti į Canvas.
   - Po importavimo peržiūrėkite modulius, terminų datas ir testų nustatymus, kad jie atitiktų jūsų semestro tvarkaraštį.
 
-![Moodle](../../translated_images/moodle.94eb93d714a50cb2c97435b408017dee224348b61bc86203ffd43a4f4e57b95f.lt.png)
+![Moodle](../../translated_images/lt/moodle.94eb93d714a50cb2.webp)
 > Mokymo programa Moodle klasėje
 
-![Canvas](../../translated_images/canvas.fbd605ff8e5b8aff567d398528ce113db304446b90b9cad55c654de3fdfcda34.lt.png)
+![Canvas](../../translated_images/lt/canvas.fbd605ff8e5b8aff.webp)
 > Mokymo programa Canvas platformoje
 
 ### Naudojimas tiesiogiai iš repo (be Classroom)

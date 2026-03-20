@@ -1,12 +1,3 @@
-<!--
-CO_OP_TRANSLATOR_METADATA:
-{
-  "original_hash": "71009af209f81cc01a1f2d324200375f",
-  "translation_date": "2025-10-03T11:00:29+00:00",
-  "source_file": "for-teachers.md",
-  "language_code": "my"
-}
--->
 ### ဆရာ/ဆရာမများအတွက်
 
 ဤသင်ခန်းစာများကို သင်၏အတန်းထဲတွင် အသုံးပြုနိုင်ပါသည်။ GitHub Classroom နှင့် ထိပ်တန်း LMS ပလက်ဖောင်းများနှင့် အလွယ်တကူ လိုက်ဖက်ပြီး၊ သင်၏ကျောင်းသားများနှင့်အတူ standalone repo အဖြစ်လည်း အသုံးပြုနိုင်ပါသည်။
@@ -42,10 +33,10 @@ CO_OP_TRANSLATOR_METADATA:
   - Moodle Cloud တွင် Common Cartridge support အကန့်အသတ်ရှိသည်။ Canvas တွင်လည်း upload လုပ်နိုင်သော Moodle file ကို အသုံးပြုရန် ဦးစားပေးပါ။
   - Import ပြီးနောက် modules, due dates, quiz settings များကို သင်၏ term schedule နှင့် ကိုက်ညီစေရန် ပြန်လည်သုံးသပ်ပါ။
 
-![Moodle](../../translated_images/moodle.94eb93d714a50cb2c97435b408017dee224348b61bc86203ffd43a4f4e57b95f.my.png)
+![Moodle](../../translated_images/my/moodle.94eb93d714a50cb2.webp)
 > Moodle classroom အတွင်းရှိ သင်ခန်းစာများ
 
-![Canvas](../../translated_images/canvas.fbd605ff8e5b8aff567d398528ce113db304446b90b9cad55c654de3fdfcda34.my.png)
+![Canvas](../../translated_images/my/canvas.fbd605ff8e5b8aff.webp)
 > Canvas အတွင်းရှိ သင်ခန်းစာများ
 
 ### Repo ကို တိုက်ရိုက်အသုံးပြုခြင်း (Classroom မပါ)

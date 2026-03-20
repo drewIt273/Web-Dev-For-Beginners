@@ -1,12 +1,3 @@
-<!--
-CO_OP_TRANSLATOR_METADATA:
-{
-  "original_hash": "5c383cc2cc23bb164b06417d1c107a44",
-  "translation_date": "2025-11-25T12:16:52+00:00",
-  "source_file": "1-getting-started-lessons/2-github-basics/README.md",
-  "language_code": "pa"
-}
--->
 # GitHub ਦਾ ਪਰਚੇ
 
 ਹੈਲੋ, ਭਵਿੱਖ ਦੇ ਡਿਵੈਲਪਰ! 👋 ਦੁਨੀਆ ਭਰ ਦੇ ਲੱਖਾਂ ਕੋਡਰਾਂ ਵਿੱਚ ਸ਼ਾਮਲ ਹੋਣ ਲਈ ਤਿਆਰ ਹੋ? ਮੈਂ ਤੁਹਾਨੂੰ GitHub ਨਾਲ ਜਾਣੂ ਕਰਵਾਉਣ ਲਈ ਬਹੁਤ ਉਤਸਾਹਿਤ ਹਾਂ – ਇਸਨੂੰ ਪ੍ਰੋਗਰਾਮਰਾਂ ਲਈ ਸੋਸ਼ਲ ਮੀਡੀਆ ਪਲੇਟਫਾਰਮ ਵਜੋਂ ਸੋਚੋ, ਪਰ ਲੰਚ ਦੀਆਂ ਫੋਟੋਆਂ ਸਾਂਝੀਆਂ ਕਰਨ ਦੀ ਬਜਾਏ, ਅਸੀਂ ਕੋਡ ਸਾਂਝਾ ਕਰ ਰਹੇ ਹਾਂ ਅਤੇ ਇਕੱਠੇ ਸ਼ਾਨਦਾਰ ਚੀਜ਼ਾਂ ਬਣਾਉਣ ਦੀ ਕੋਸ਼ਿਸ਼ ਕਰ ਰਹੇ ਹਾਂ!
@@ -17,7 +8,7 @@ CO_OP_TRANSLATOR_METADATA:
 
 ਅਸੀਂ ਇਹ ਯਾਤਰਾ ਇਕੱਠੇ ਕਰਾਂਗੇ, ਇੱਕ ਕਦਮ ਵਿੱਚ। ਕੋਈ ਜਲਦੀ ਨਹੀਂ, ਕੋਈ ਦਬਾਅ ਨਹੀਂ – ਸਿਰਫ ਤੁਸੀਂ, ਮੈਂ, ਅਤੇ ਕੁਝ ਬਹੁਤ ਹੀ ਸ਼ਾਨਦਾਰ ਟੂਲ ਜੋ ਤੁਹਾਡੇ ਨਵੇਂ ਸਭ ਤੋਂ ਵਧੀਆ ਦੋਸਤ ਬਣਨ ਜਾ ਰਹੇ ਹਨ!
 
-![GitHub ਦਾ ਪਰਚੇ](../../../../translated_images/webdev101-github.8846d7971abef6f947909b4f9d343e2a23778aa716ca6b9d71df7174ee5009ac.pa.png)
+![GitHub ਦਾ ਪਰਚੇ](../../../../translated_images/pa/webdev101-github.8846d7971abef6f9.webp)
 > ਸਕੈਚਨੋਟ [Tomomi Imura](https://twitter.com/girlie_mac) ਦੁਆਰਾ
 
 ## ਪਾਠ ਤੋਂ ਪਹਿਲਾਂ ਕਵਿਜ਼
@@ -337,7 +328,7 @@ flowchart TD
 
 ✅ 'ਸ਼ੁਰੂਆਤੀ-ਦੋਸਤਾਨਾ' ਰਿਪੋਜ਼ਟਰੀ ਲੱਭਣ ਦਾ ਇੱਕ ਵਧੀਆ ਤਰੀਕਾ ਹੈ [ਟੈਗ 'good-first-issue' ਦੁਆਰਾ ਖੋਜ ਕਰਨਾ](https://github.blog/2020-01-22-browse-good-first-issues-to-start-contributing-to-open-source/)।
 
-![ਰਿਪੋ ਨੂੰ ਲੋਕਲ ਤੌਰ 'ਤੇ ਕਾਪੀ ਕਰੋ](../../../../translated_images/clone_repo.5085c48d666ead57664f050d806e325d7f883be6838c821e08bc823ab7c66665.pa.png)
+![ਰਿਪੋ ਨੂੰ ਲੋਕਲ ਤੌਰ 'ਤੇ ਕਾਪੀ ਕਰੋ](../../../../translated_images/pa/clone_repo.5085c48d666ead57.webp)
 
 ਕੋਡ ਕਾਪੀ ਕਰਨ ਦੇ ਕਈ ਤਰੀਕੇ ਹਨ। ਇੱਕ ਤਰੀਕਾ ਹੈ ਰਿਪੋਜ਼ਟਰੀ ਦੀ ਸਮੱਗਰੀ ਨੂੰ "ਕਲੋਨ" ਕਰਨਾ, HTTPS, SSH ਜਾਂ GitHub CLI (ਕਮਾਂਡ ਲਾਈਨ ਇੰਟਰਫੇਸ) ਦੀ ਵਰਤੋਂ ਕਰਕੇ।
 

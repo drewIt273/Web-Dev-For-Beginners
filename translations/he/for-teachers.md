@@ -1,12 +1,3 @@
-<!--
-CO_OP_TRANSLATOR_METADATA:
-{
-  "original_hash": "71009af209f81cc01a1f2d324200375f",
-  "translation_date": "2025-10-03T10:09:20+00:00",
-  "source_file": "for-teachers.md",
-  "language_code": "he"
-}
--->
 ### למורים
 
 אתם מוזמנים להשתמש בתוכנית הלימודים הזו בכיתה שלכם. היא משתלבת בצורה חלקה עם GitHub Classroom ופלטפורמות LMS מובילות, וניתן גם להשתמש בה כמאגר עצמאי עם התלמידים שלכם.
@@ -42,10 +33,10 @@ CO_OP_TRANSLATOR_METADATA:
   - ל-Moodle Cloud יש תמיכה מוגבלת ב-Common Cartridge. העדיפו את קובץ Moodle לעיל, שניתן גם להעלות ל-Canvas.
   - לאחר הייבוא, בדקו מודולים, תאריכי יעד והגדרות מבחנים כדי להתאים ללוח הזמנים של הסמסטר שלכם.
 
-![Moodle](../../translated_images/moodle.94eb93d714a50cb2c97435b408017dee224348b61bc86203ffd43a4f4e57b95f.he.png)
+![Moodle](../../translated_images/he/moodle.94eb93d714a50cb2.webp)
 > תוכנית הלימודים בכיתה של Moodle
 
-![Canvas](../../translated_images/canvas.fbd605ff8e5b8aff567d398528ce113db304446b90b9cad55c654de3fdfcda34.he.png)
+![Canvas](../../translated_images/he/canvas.fbd605ff8e5b8aff.webp)
 > תוכנית הלימודים ב-Canvas
 
 ### שימוש במאגר ישירות (ללא Classroom)

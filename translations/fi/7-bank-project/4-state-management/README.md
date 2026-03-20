@@ -1,12 +1,3 @@
-<!--
-CO_OP_TRANSLATOR_METADATA:
-{
-  "original_hash": "b807b09df716dc48a2b750835bf8e933",
-  "translation_date": "2025-11-04T01:30:38+00:00",
-  "source_file": "7-bank-project/4-state-management/README.md",
-  "language_code": "fi"
-}
--->
 # Rakenna pankkisovellus, osa 4: Tilanhallinnan periaatteet
 
 ## ⚡ Mitä voit tehdä seuraavan viiden minuutin aikana
@@ -190,7 +181,7 @@ Kuten Titanicin osastoitu rakenne, joka vaikutti vankalta, kunnes useat osastot 
 
 Sen sijaan, että juoksisimme ympyrää, luomme **keskitetyn tilanhallintajärjestelmän**. Ajattele sitä kuin yhtä todella järjestelmällistä henkilöä, joka vastaa kaikesta tärkeästä:
 
-![Kaavio, joka näyttää datavirrat HTML:n, käyttäjän toimien ja tilan välillä](../../../../translated_images/data-flow.fa2354e0908fecc89b488010dedf4871418a992edffa17e73441d257add18da4.fi.png)
+![Kaavio, joka näyttää datavirrat HTML:n, käyttäjän toimien ja tilan välillä](../../../../translated_images/fi/data-flow.fa2354e0908fecc8.webp)
 
 ```mermaid
 flowchart TD

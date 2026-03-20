@@ -1,51 +1,87 @@
-<!--
-CO_OP_TRANSLATOR_METADATA:
-{
-  "original_hash": "b24f28fc46dd473aa9080f174182adde",
-  "translation_date": "2025-10-25T00:08:05+00:00",
-  "source_file": "7-bank-project/2-forms/README.md",
-  "language_code": "hr"
-}
--->
-# Izrada aplikacije za bankarstvo, dio 2: Izrada obrasca za prijavu i registraciju
+# Izradite bankarsku aplikaciju, dio 2: Izgradite obrazac za prijavu i registraciju
 
-## Kviz prije predavanja
+```mermaid
+journey
+    title Vaše Putovanje Razvoja Obrasca
+    section Osnove HTML-a
+      Razumjeti elemente obrasca: 3: Student
+      Naučiti vrste unosa: 4: Student
+      Ovladati pristupačnošću: 4: Student
+    section Integracija JavaScripta
+      Rukovati slanjem obrasca: 4: Student
+      Implementirati AJAX komunikaciju: 5: Student
+      Obrađivati odgovore servera: 5: Student
+    section Sustavi Validacije
+      Kreirati višeslojnu validaciju: 5: Student
+      Poboljšati korisničko iskustvo: 5: Student
+      Osigurati integritet podataka: 5: Student
+```
+## Predpredavanje Kviz
 
-[Kviz prije predavanja](https://ff-quizzes.netlify.app/web/quiz/43)
+[Predpredavanje kviz](https://ff-quizzes.netlify.app/web/quiz/43)
 
-Jeste li ikada ispunili obrazac online i doživjeli odbijanje zbog pogrešnog formata e-maila? Ili izgubili sve unesene podatke nakon što ste kliknuli na "Pošalji"? Svi smo se susreli s ovim frustrirajućim situacijama.
+Jeste li ikada ispunili obrazac online i on vam odbije format e-pošte? Ili izgubili sve informacije kad ste kliknuli pošalji? Svi smo se susreli s tim frustrirajućim iskustvima.
 
-Obrasci su most između korisnika i funkcionalnosti vaše aplikacije. Kao što kontrolori zračnog prometa koriste pažljive protokole za sigurno vođenje aviona, dobro dizajnirani obrasci pružaju jasne povratne informacije i sprječavaju skupe pogreške. Loši obrasci, s druge strane, mogu odbiti korisnike brže nego nesporazum u prometnoj zračnoj luci.
+Obrasci su most između vaših korisnika i funkcionalnosti vaše aplikacije. Kao što kontrolori leta koriste pažljive protokole za sigurno usmjeravanje aviona do odredišta, tako dobro dizajnirani obrasci pružaju jasne povratne informacije i sprječavaju skupe pogreške. Loši obrasci, s druge strane, mogu brzo otjerati korisnike, kao što nesporazum na užurbanom aerodromu može izazvati neželjene posljedice.
 
-U ovoj lekciji pretvorit ćemo vašu statičnu aplikaciju za bankarstvo u interaktivnu aplikaciju. Naučit ćete kako izraditi obrasce koji provjeravaju unos korisnika, komuniciraju s poslužiteljima i pružaju korisne povratne informacije. Zamislite to kao izradu kontrolnog sučelja koje omogućuje korisnicima navigaciju kroz značajke vaše aplikacije.
+U ovom ćemo satu pretvoriti vašu statičnu bankarsku aplikaciju u interaktivnu aplikaciju. Naučit ćete kako graditi obrasce koji provjeravaju korisničke unose, komuniciraju sa serverima i pružaju korisne povratne informacije. Zamislite to kao izgradnju kontrolnog sučelja koje korisnicima omogućuje navigaciju funkcijama vaše aplikacije.
 
-Na kraju, imat ćete kompletan sustav za prijavu i registraciju s validacijom koji vodi korisnike prema uspjehu, a ne frustraciji.
+Na kraju ćete imati kompletan sustav za prijavu i registraciju s validacijom koji usmjerava korisnike prema uspjehu umjesto frustraciji.
 
+```mermaid
+mindmap
+  root((Razvoj Obrasca))
+    HTML Temelj
+      Semantički Elementi
+      Tipovi Unosa
+      Pristupačnost
+      Povezanost Oznaka
+    Korisničko Iskustvo
+      Povratne Informacije Validacije
+      Prevencija Grešaka
+      Stanja Učitavanja
+      Poruke o Uspjehu
+    JavaScript Integracija
+      Rukovanje Događajima
+      AJAX Komunikacija
+      Obrada Podataka
+      Upravljanje Pogreškama
+    Slojevi Validacije
+      HTML5 Validacija
+      Logika na Klijentskoj Strani
+      Sigurnost na Serverskoj Strani
+      Progresivno Poboljšanje
+    Moderni Obrasci
+      Fetch API
+      Async/Await
+      Form Data API
+      Rukovanje Promiseima
+```
 ## Preduvjeti
 
-Prije nego što počnemo izrađivati obrasce, provjerimo imate li sve ispravno postavljeno. Ova lekcija nastavlja tamo gdje smo stali u prethodnoj, pa ako ste preskočili, možda ćete se htjeti vratiti i prvo postaviti osnovne stvari.
+Prije nego što počnemo graditi obrasce, provjerimo jeste li sve pravilno postavili. Ova lekcija nastavlja točno tamo gdje smo stali u prethodnoj, pa ako ste preskočili naprijed, možda biste prvo htjeli vratiti se i uspostaviti osnovno funkcioniranje.
 
 ### Potrebna postavka
 
 | Komponenta | Status | Opis |
-|------------|--------|------|
-| [HTML predlošci](../1-template-route/README.md) | ✅ Obavezno | Osnovna struktura aplikacije za bankarstvo |
-| [Node.js](https://nodejs.org) | ✅ Obavezno | JavaScript okruženje za poslužitelj |
-| [Bank API poslužitelj](../api/README.md) | ✅ Obavezno | Pozadinska usluga za pohranu podataka |
+|-----------|--------|-------|
+| [HTML predlošci](../1-template-route/README.md) | ✅ Potrebno | Osnovna struktura vaše bankarske aplikacije |
+| [Node.js](https://nodejs.org) | ✅ Potrebno | JavaScript okruženje za server |
+| [Bankarski API server](../api/README.md) | ✅ Potrebno | Backend servis za pohranu podataka |
 
-> 💡 **Savjet za razvoj**: Pokretat ćete dva odvojena poslužitelja istovremeno – jedan za vašu aplikaciju za bankarstvo na klijentskoj strani i drugi za pozadinski API. Ova postavka odražava stvarni razvoj gdje klijentske i pozadinske usluge rade neovisno.
+> 💡 **Savjet za razvoj**: Istovremeno ćete pokretati dva odvojena servera – jedan za vašu frontend bankarsku aplikaciju i drugi za backend API. Ova postavka odražava stvarni razvojni scenarij gdje frontend i backend servisi rade neovisno.
 
-### Konfiguracija poslužitelja
+### Konfiguracija servera
 
-**Vaše razvojno okruženje uključuje:**
-- **Poslužitelj klijentske strane**: Poslužuje vašu aplikaciju za bankarstvo (obično port `3000`)
-- **Pozadinski API poslužitelj**: Upravlja pohranom i dohvatom podataka (port `5000`)
-- **Oba poslužitelja** mogu raditi istovremeno bez sukoba
+**Vaše razvojno okruženje će uključivati:**
+- **Frontend server**: Servira vašu bankarsku aplikaciju (obično port `3000`)
+- **Backend API server**: Rukuje pohranom i dohvaćanjem podataka (port `5000`)
+- **Oba servera** mogu raditi istovremeno bez sukoba
 
-**Testiranje veze s API-jem:**
+**Testiranje povezivanja s API-jem:**
 ```bash
 curl http://localhost:5000/api
-# Expected response: "Bank API v1.0.0"
+# Očekivani odgovor: "Bank API v1.0.0"
 ```
 
 **Ako vidite odgovor s verzijom API-ja, spremni ste za nastavak!**
@@ -54,13 +90,13 @@ curl http://localhost:5000/api
 
 ## Razumijevanje HTML obrazaca i kontrola
 
-HTML obrasci su način na koji korisnici komuniciraju s vašom web aplikacijom. Zamislite ih kao telegrafski sustav koji je povezivao udaljena mjesta u 19. stoljeću – oni su komunikacijski protokol između namjere korisnika i odgovora aplikacije. Kada su pažljivo dizajnirani, hvataju pogreške, vode formatiranje unosa i pružaju korisne prijedloge.
+HTML obrasci su način na koji korisnici komuniciraju s vašom web aplikacijom. Zamislite ih kao telegrafski sustav koji je u 19. stoljeću povezivao udaljena mjesta – oni su komunikacijski protokol između korisničke namjere i odgovora aplikacije. Kad se dizajniraju s pažnjom, hvataju pogreške, usmjeravaju format unosa i pružaju korisne sugestije.
 
-Moderni obrasci su znatno sofisticiraniji od osnovnih tekstualnih unosa. HTML5 je uveo specijalizirane vrste unosa koje automatski obrađuju validaciju e-maila, formatiranje brojeva i odabir datuma. Ova poboljšanja koriste i pristupačnosti i iskustvu mobilnih korisnika.
+Moderni obrasci su znatno sofisticiraniji od običnih tekstualnih unosa. HTML5 je uveo specijalizirane tipove unosa koji automatski rukuju provjerom valjanosti e-pošte, formatiranjem brojeva i odabirom datuma. Ove su inovacije korisne i za pristupačnost i za iskustvo mobilnih korisnika.
 
-### Osnovni elementi obrazaca
+### Bitni elementi obrasca
 
-**Osnovni elementi koje svaki obrazac treba:**
+**Gradivni blokovi koje svaki obrazac treba:**
 
 ```html
 <!-- Basic form structure -->
@@ -72,25 +108,25 @@ Moderni obrasci su znatno sofisticiraniji od osnovnih tekstualnih unosa. HTML5 j
 </form>
 ```
 
-**Što ovaj kod radi:**
-- **Stvara** spremnik za obrazac s jedinstvenim identifikatorom
-- **Određuje** HTTP metodu za slanje podataka
+**Evo što ovaj kod radi:**
+- **Stvara** kontejner obrasca s jedinstvenim identifikatorom
+- **Navođenjem** HTTP metode za slanje podataka
 - **Povezuje** oznake s unosima radi pristupačnosti
-- **Definira** gumb za slanje obrasca
+- **Definira** gumb za slanje za procesiranje obrasca
 
-### Moderne vrste unosa i atributi
+### Moderni tipovi unosa i atributi
 
-| Vrsta unosa | Namjena | Primjer upotrebe |
-|-------------|---------|------------------|
-| `text` | Opći unos teksta | `<input type="text" name="username">` |
-| `email` | Validacija e-maila | `<input type="email" name="email">` |
-| `password` | Skriveni unos teksta | `<input type="password" name="password">` |
-| `number` | Unos brojeva | `<input type="number" name="balance" min="0">` |
-| `tel` | Brojevi telefona | `<input type="tel" name="phone">` |
+| Tip unosa | Namjena | Primjer korištenja |
+|-----------|---------|-------------------|
+| `text` | Opći tekstualni unos | `<input type="text" name="username">` |
+| `email` | Validacija e-pošte | `<input type="email" name="email">` |
+| `password` | Skriveni tekst | `<input type="password" name="password">` |
+| `number` | Numerički unos | `<input type="number" name="balance" min="0">` |
+| `tel` | Telefonski brojevi | `<input type="tel" name="phone">` |
 
-> 💡 **Prednost modernog HTML5**: Korištenje specifičnih vrsta unosa omogućuje automatsku validaciju, odgovarajuće tipkovnice na mobilnim uređajima i bolju podršku za pristupačnost bez dodatnog JavaScripta!
+> 💡 **Prednost modernog HTML5**: Korištenje specifičnih tipova unosa omogućuje automatsku validaciju, odgovarajuće tipkovnice na mobilnim uređajima i bolju podršku pristupačnosti bez dodatnog JavaScripta!
 
-### Vrste gumba i ponašanje
+### Tipovi gumba i ponašanje
 
 ```html
 <!-- Different button behaviors -->
@@ -99,16 +135,16 @@ Moderni obrasci su znatno sofisticiraniji od osnovnih tekstualnih unosa. HTML5 j
 <button type="button">Custom Action</button> <!-- No default behavior -->
 ```
 
-**Što svaka vrsta gumba radi:**
-- **Gumbi za slanje**: Pokreću slanje obrasca i šalju podatke na određenu adresu
-- **Gumbi za resetiranje**: Vraćaju sva polja obrasca na početno stanje
-- **Obični gumbi**: Nemaju zadano ponašanje, zahtijevaju prilagođeni JavaScript za funkcionalnost
+**Što svaki tip gumba radi:**
+- **Submit gumbi**: Pokreću slanje obrasca i šalju podatke na određenu adresu
+- **Reset gumbi**: Vraćaju sva polja obrasca u početno stanje
+- **Obični gumbi**: Nemaju zadano ponašanje, zahtijevaju prilagođeni JavaScript da bi funkcionirali
 
-> ⚠️ **Važna napomena**: Element `<input>` je samostalno zatvarajući i ne zahtijeva završni tag. Moderna najbolja praksa je pisanje `<input>` bez kosog crte.
+> ⚠️ **Važna napomena**: `<input>` element je samostalno zatvoreni tag i ne treba mu zatvarajući tag. Moderni je običaj pisati `<input>` bez kosa crte.
 
 ### Izrada obrasca za prijavu
 
-Sada ćemo izraditi praktičan obrazac za prijavu koji demonstrira moderne prakse HTML obrazaca. Počet ćemo s osnovnom strukturom i postupno ga poboljšavati značajkama za pristupačnost i validaciju.
+Sad ćemo napraviti praktični obrazac za prijavu koji demonstrira moderne prakse HTML obrazaca. Počet ćemo s osnovnom strukturom i postupno ćemo ga poboljšavati s pristupačnostima i validacijom.
 
 ```html
 <template id="login">
@@ -127,42 +163,41 @@ Sada ćemo izraditi praktičan obrazac za prijavu koji demonstrira moderne praks
 </template>
 ```
 
-**Razrada onoga što se ovdje događa:**
-- **Strukturira** obrazac s semantičkim HTML5 elementima
-- **Grupira** povezane elemente pomoću `div` spremnika s smislenim klasama
-- **Povezuje** oznake s unosima pomoću atributa `for` i `id`
-- **Uključuje** moderne atribute poput `autocomplete` i `placeholder` za bolji UX
-- **Dodaje** `novalidate` za rukovanje validacijom pomoću JavaScripta umjesto zadane validacije preglednika
+**Pregled što se ovdje događa:**
+- **Strukturira** obrazac pomoću semantičkih HTML5 elemenata
+- **Grupira** povezane elemente s `div` kontejnerima s opisnim klasama
+- **Povezuje** oznake i unose pomoću atributa `for` i `id`
+- **Uključuje** moderne atribute poput `autocomplete` i `placeholder` za bolje korisničko iskustvo
+- **Dodaje** `novalidate` za rukovanje validacijom putem JavaScript-a umjesto zadane provjere preglednika
 
-### Snaga pravilnih oznaka
+### Snaga ispravnih oznaka (labela)
 
-**Zašto su oznake važne za moderni web razvoj:**
+**Zašto oznake (label) imaju važnost u modernom web razvoju:**
 
 ```mermaid
 graph TD
-    A[Label Element] --> B[Screen Reader Support]
-    A --> C[Click Target Expansion]
-    A --> D[Form Validation]
-    A --> E[SEO Benefits]
+    A[Oznaka Elementa] --> B[Pomoć za Čitače Ekrana]
+    A --> C[Proširenje Cilja Klikom]
+    A --> D[Validacija Obrasca]
+    A --> E[SEO Prednosti]
     
-    B --> F[Accessible to all users]
-    C --> G[Better mobile experience]
-    D --> H[Clear error messaging]
-    E --> I[Better search ranking]
+    B --> F[Pristupačno svim korisnicima]
+    C --> G[Bolje iskustvo na mobitelu]
+    D --> H[Jasne poruke o pogreškama]
+    E --> I[Bolji rang na pretraživaču]
 ```
-
-**Što pravilne oznake postižu:**
+**Što ispravne oznake omogućuju:**
 - **Omogućuju** čitačima ekrana da jasno najave polja obrasca
-- **Proširuju** područje za klik (klik na oznaku fokusira unos)
-- **Poboljšavaju** upotrebljivost na mobilnim uređajima s većim dodirnim ciljevima
-- **Podržavaju** validaciju obrasca s smislenim porukama o pogrešci
-- **Povećavaju** SEO pružanjem semantičkog značenja elementima obrasca
+- **Povećavaju** područje klikabilnosti (klik na oznaku fokusira unos)
+- **Poboljšavaju** upotrebljivost na mobilnim uređajima većim područjima za dodir
+- **Podržavaju** validaciju obrasca korisnim porukama o pogreškama
+- **Unapređuju** SEO pružajući semantičko značenje poljima obrasca
 
-> 🎯 **Cilj pristupačnosti**: Svaki unos u obrascu trebao bi imati pridruženu oznaku. Ova jednostavna praksa čini vaše obrasce dostupnima svima, uključujući korisnike s invaliditetom, i poboljšava iskustvo za sve korisnike.
+> 🎯 **Cilj pristupačnosti**: Svaki unos u obrascu treba imati pridruženu oznaku. Ova jednostavna praksa čini vaše obrasce dostupnima svima, uključujući korisnike s invaliditetom, i poboljšava iskustvo za sve korisnike.
 
 ### Izrada obrasca za registraciju
 
-Obrazac za registraciju zahtijeva detaljnije informacije za kreiranje kompletnog korisničkog računa. Izradimo ga s modernim značajkama HTML5 i poboljšanom pristupačnošću.
+Obrazac za registraciju zahtijeva detaljnije informacije za stvaranje potpunog korisničkog računa. Izgradimo ga koristeći moderne HTML5 značajke i poboljšanu pristupačnost.
 
 ```html
 <hr/>
@@ -196,109 +231,124 @@ Obrazac za registraciju zahtijeva detaljnije informacije za kreiranje kompletnog
 </form>
 ```
 
-**U gornjem kodu smo:**
-- **Organizirali** svako polje u spremnike div za bolji stil i izgled
-- **Dodali** odgovarajuće atribute `autocomplete` za podršku automatskom popunjavanju preglednika
-- **Uključili** korisni tekst za pomoć pri unosu
-- **Postavili** razumne zadane vrijednosti pomoću atributa `value`
-- **Primijenili** atribute za validaciju poput `required`, `maxlength` i `min`
-- **Koristili** `type="number"` za polje stanja s podrškom za decimalne brojeve
+**U gornjem primjeru smo:**
+- **Organizirali** svako polje unutar `div` kontejnera radi bolje stilizacije i izgleda
+- **Dodali** odgovarajuće atribute `autocomplete` radi podrške automatskom popunjavanju preglednika
+- **Uključili** korisne pomoćne tekstove (placeholder) koji vode korisnika kod unosa
+- **Postavili** razumno zadane vrijednosti koristeći atribut `value`
+- **Koristili** atribute za validaciju poput `required`, `maxlength` i `min`
+- **Primijenili** tip unosa `number` za polje stanja računa s podrškom za decimalne brojeve
 
-### Istraživanje vrsta unosa i ponašanja
+### Istraživanje tipova unosa i ponašanja
 
-**Moderne vrste unosa pružaju poboljšanu funkcionalnost:**
+**Moderni tipovi unosa pružaju dodatne mogućnosti:**
 
-| Značajka | Prednost | Primjer |
-|----------|----------|---------|
-| `type="number"` | Numerička tipkovnica na mobilnim uređajima | Lakši unos stanja |
-| `step="0.01"` | Kontrola preciznosti decimala | Omogućuje unos centi u valuti |
-| `autocomplete` | Automatsko popunjavanje preglednika | Brže ispunjavanje obrasca |
-| `placeholder` | Kontekstualni savjeti | Vodi očekivanja korisnika |
+| Značajka | Korist | Primjer |
+|----------|--------|---------|
+| `type="number"` | Numerička tipkovnica na mobitelima | Lakše unošenje stanja računa |
+| `step="0.01"` | Kontrola decimale | Omogućuje unose s centima u valuti |
+| `autocomplete` | Autofill preglednika | Brže popunjavanje obrasca |
+| `placeholder` | Kontekstualni savjeti | Usmjerava očekivanja korisnika |
 
-> 🎯 **Izazov pristupačnosti**: Pokušajte navigirati kroz obrasce koristeći samo tipkovnicu! Koristite `Tab` za kretanje između polja, `Space` za označavanje okvira i `Enter` za slanje. Ovo iskustvo pomaže razumjeti kako korisnici čitača ekrana komuniciraju s vašim obrascima.
+> 🎯 **Izazov za pristupačnost**: Pokušajte koristiti obrasce samo pomoću tipkovnice! Koristite `Tab` za kretanje između polja, `Space` za označavanje okvira, te `Enter` za slanje obrasca. Ovo će vam pomoći shvatiti kako korisnici s čitačima ekrana koriste vaše obrasce.
 
-## Razumijevanje metoda slanja obrazaca
+### 🔄 **Pedagoški pregled**
+**Razumijevanje osnova obrazaca**: Prije implementacije JavaScripta, provjerite razumijete:
+- ✅ Kako semantički HTML kreira pristupačne strukture obrazaca
+- ✅ Zašto tipovi unosa utječu na tipkovnice na mobitelima i validaciju
+- ✅ Odnos između oznaka i kontrola obrasca
+- ✅ Kako atributi obrasca utječu na zadanom ponašanju preglednika
 
-Kada netko ispuni vaš obrazac i klikne na "Pošalji", ti podaci moraju negdje otići – obično na poslužitelj koji ih može pohraniti. Postoji nekoliko različitih načina na koje se to može dogoditi, a poznavanje pravog može vas spasiti od glavobolje kasnije.
+**Brzi samoprovjera**: Što se dogodi kad pošaljete obrazac bez JavaScript obrade?
+*Odgovor: Preglednik izvršava zadano slanje, obično preusmjeravanje na URL akcije*
 
-Pogledajmo što se zapravo događa kada netko klikne na gumb za slanje.
+**Prednosti HTML5 obrazaca**: Moderni obrasci pružaju:
+- **Ugrađenu validaciju**: Automatska provjera formata e-pošte i brojeva
+- **Mobilnu optimizaciju**: Odgovarajuće tipkovnice za različite tipove unosa
+- **Pristupačnost**: Podrška za čitače ekrana i navigaciju tipkovnicom
+- **Postupno poboljšanje**: Radi čak i kad je JavaScript isključen
+
+## Razumijevanje metoda slanja obrasca
+
+Kad netko ispuni vaš obrazac i klikne pošalji, ti podaci moraju negdje otići – obično na server koji ih može spremiti. Postoji nekoliko načina za to i znati koji koristiti može vam kasnije uštedjeti glavobolju.
+
+Pogledajmo što se zapravo događa kad netko klikne gumb za slanje.
 
 ### Zadano ponašanje obrasca
 
-Prvo, promatrajmo što se događa s osnovnim slanjem obrasca:
+Prvo, promatrat ćemo što se događa s osnovnim slanjem obrasca:
 
 **Testirajte svoje trenutne obrasce:**
-1. Kliknite na gumb *Registriraj se* u svom obrascu
-2. Promatrajte promjene u adresnoj traci preglednika
-3. Primijetite kako se stranica ponovno učitava i podaci se pojavljuju u URL-u
+1. Kliknite gumb *Registriraj* u obrascu
+2. Promatrajte promjene u adresnoj traci vašeg preglednika
+3. Primijetite kako se stranica osvježava i podaci pojavljuju u URL-u
 
-![Snimka zaslona promjene URL-a preglednika nakon klika na gumb Registriraj se](../../../../translated_images/click-register.e89a30bf0d4bc9ca867dc537c4cea679a7c26368bd790969082f524fed2355bc.hr.png)
+![Snimka zaslona promjene URL-a preglednika nakon klika na gumb Registriraj](../../../../translated_images/hr/click-register.e89a30bf0d4bc9ca.webp)
 
 ### Usporedba HTTP metoda
 
 ```mermaid
 graph TD
-    A[Form Submission] --> B{HTTP Method}
-    B -->|GET| C[Data in URL]
-    B -->|POST| D[Data in Request Body]
+    A[Podnošenje obrasca] --> B{HTTP Metoda}
+    B -->|GET| C[Podaci u URL-u]
+    B -->|POST| D[Podaci u tijelu zahtjeva]
     
-    C --> E[Visible in address bar]
-    C --> F[Limited data size]
-    C --> G[Bookmarkable]
+    C --> E[Vidljivo u adresnoj traci]
+    C --> F[Ograničena veličina podataka]
+    C --> G[Moguće označiti]
     
-    D --> H[Hidden from URL]
-    D --> I[Large data capacity]
-    D --> J[More secure]
+    D --> H[Skriveno iz URL-a]
+    D --> I[Veliki kapacitet podataka]
+    D --> J[Sigurnije]
 ```
-
 **Razumijevanje razlika:**
 
 | Metoda | Namjena | Lokacija podataka | Razina sigurnosti | Ograničenje veličine |
 |--------|---------|-------------------|-------------------|----------------------|
-| `GET` | Pretraživanje, filtriranje | Parametri URL-a | Niska (vidljivo) | ~2000 znakova |
-| `POST` | Korisnički računi, osjetljivi podaci | Tijelo zahtjeva | Viša (skriveno) | Nema praktičnog ograničenja |
+| `GET` | Pretraživanje, filteri | URL parametri | Niska (vidljivo) | ~2000 znakova |
+| `POST` | Korisnički računi, osjetljivi podaci | Tijelo zahtjeva | Viša (skriveno) | Nema praktične granice |
 
-**Razumijevanje temeljnih razlika:**
-- **GET**: Dodaje podatke obrasca u URL kao parametre upita (prikladno za pretraživanje)
-- **POST**: Uključuje podatke u tijelo zahtjeva (neophodno za osjetljive informacije)
-- **Ograničenja GET-a**: Ograničenja veličine, vidljivi podaci, trajna povijest preglednika
+**Osnovne razlike koje treba razumjeti:**
+- **GET**: Dodaje podatke obrasca u URL kao parametre upita (pogodno za pretraživanja)
+- **POST**: Uključuje podatke u tijelo zahtjeva (bitno za osjetljive informacije)
+- **Ograničenja GET-a**: Veličina, vidljivi podaci, trajna povijest preglednika
 - **Prednosti POST-a**: Veliki kapacitet podataka, zaštita privatnosti, podrška za prijenos datoteka
 
-> 💡 **Najbolja praksa**: Koristite `GET` za obrasce za pretraživanje i filtriranje (dohvat podataka), koristite `POST` za registraciju korisnika, prijavu i kreiranje podataka.
+> 💡 **Dobra praksa**: Koristite `GET` za obrasce pretraživanja i filtere (dohvat podataka), a `POST` za registraciju korisnika, prijavu i stvaranje podataka.
 
 ### Konfiguriranje slanja obrasca
 
-Konfigurirajmo vaš obrazac za registraciju kako bi ispravno komunicirao s pozadinskim API-jem koristeći metodu POST:
+Konfigurirajmo obrazac za registraciju da pravilno komunicira s backend API-jem koristeći POST metodu:
 
 ```html
 <form id="registerForm" action="//localhost:5000/api/accounts" 
       method="POST" novalidate>
 ```
 
-**Što ova konfiguracija radi:**
-- **Usmjerava** slanje obrasca na adresu vašeg API-ja
-- **Koristi** metodu POST za sigurnu transmisiju podataka
-- **Uključuje** `novalidate` za rukovanje validacijom pomoću JavaScripta
+**Ova konfiguracija radi:**
+- **Usmjerava** slanje obrasca na API endpoint
+- **Koristi** POST metodu za sigurnu transmiziju podataka
+- **Dodaje** `novalidate` kako bi validaciju upravljao JavaScript
 
 ### Testiranje slanja obrasca
 
 **Slijedite ove korake za testiranje obrasca:**
-1. **Ispunite** obrazac za registraciju svojim podacima
-2. **Kliknite** na gumb "Kreiraj račun"
-3. **Promatrajte** odgovor poslužitelja u svom pregledniku
+1. **Ispunite** obrazac za registraciju s vašim informacijama
+2. **Kliknite** gumb "Kreiraj račun"
+3. **Promatrajte** odgovor servera u pregledniku
 
-![Prozor preglednika na adresi localhost:5000/api/accounts, prikazuje JSON string s podacima korisnika](../../../../translated_images/form-post.61de4ca1b964d91a9e338416e19f218504dd0af5f762fbebabfe7ae80edf885f.hr.png)
+![Prozor preglednika na adresi localhost:5000/api/accounts, prikazujući JSON niz s podacima korisnika](../../../../translated_images/hr/form-post.61de4ca1b964d91a.webp)
 
 **Što biste trebali vidjeti:**
-- **Preglednik preusmjerava** na URL API krajnje točke
-- **JSON odgovor** koji sadrži podatke o novokreiranom računu
-- **Potvrda poslužitelja** da je račun uspješno kreiran
+- **Preglednik preusmjerava** na URL API endpointa
+- **JSON odgovor** s podacima vašeg novostvorenog računa
+- **Potvrda servera** da je račun uspješno kreiran
 
-> 🧪 **Vrijeme za eksperiment**: Pokušajte se ponovno registrirati s istim korisničkim imenom. Kakav odgovor dobivate? Ovo vam pomaže razumjeti kako poslužitelj obrađuje duplicirane podatke i uvjete pogreške.
+> 🧪 **Vrijeme za eksperiment**: Pokušajte se ponovno registrirati s istim korisničkim imenom. Koji odgovor dobivate? Ovo vam pomaže razumjeti kako server upravlja dupliranim podacima i uvjetima pogreške.
 
 ### Razumijevanje JSON odgovora
 
-**Kada poslužitelj uspješno obradi vaš obrazac:**
+**Kad server uspješno obradi vaš obrazac:**
 ```json
 {
   "user": "john_doe",
@@ -310,18 +360,18 @@ Konfigurirajmo vaš obrazac za registraciju kako bi ispravno komunicirao s pozad
 ```
 
 **Ovaj odgovor potvrđuje:**
-- **Kreiranje** novog računa s vašim navedenim podacima
-- **Dodjeljivanje** jedinstvenog identifikatora za buduće reference
-- **Vraćanje** svih informacija o računu za provjeru
-- **Indikaciju** uspješne pohrane u bazu podataka
+- **Kreira** novi račun s navedenim podacima
+- **Dodjeljuje** jedinstveni identifikator za buduću upotrebu
+- **Vraća** sve informacije o računu radi provjere
+- **Nagatno** uspješno spremanje u bazu podataka
 
-## Moderno rukovanje obrascima pomoću JavaScripta
+## Moderna obrada obrazaca s JavaScriptom
 
-Tradicionalno slanje obrazaca uzrokuje potpuno ponovno učitavanje stranice, slično kao što su rane svemirske misije zahtijevale potpune sustavne resetove za korekciju kursa. Ovaj pristup narušava korisničko iskustvo i gubi stanje aplikacije.
+Tradicionalno slanje obrasca uzrokuje potpuno osvježavanje stranice, slično kao što su rane svemirske misije zahtijevale potpuni reset sustava radi korekcije putanje. Ovakav pristup prekida korisničko iskustvo i gubi stanje aplikacije.
 
-Rukovanje obrascima pomoću JavaScripta funkcionira poput sustava za kontinuirano navođenje koji koriste moderni svemirski brodovi – omogućuje prilagodbe u stvarnom vremenu bez gubitka navigacijskog konteksta. Možemo presresti slanje obrazaca, pružiti trenutne povratne informacije, elegantno rukovati pogreškama i ažurirati sučelje na temelju odgovora poslužitelja, dok zadržavamo korisnika unutar aplikacije.
+JavaScript obrada obrazaca funkcionira poput kontinuiranih sustava vođenja koje koriste moderni svemirski letjelice – omogućuje podešavanja u realnom vremenu bez gubitka navigacijskog konteksta. Možemo presresti slanje obrasca, pružiti neposredne povratne informacije, elegantno obraditi pogreške i nadograditi sučelje prema odgovorima servera, dok korisnik ostaje u trenutnoj poziciji u aplikaciji.
 
-### Zašto izbjegavati ponovno učitavanje stranice?
+### Zašto izbjegavati osvježavanje stranice?
 
 ```mermaid
 sequenceDiagram
@@ -329,48 +379,47 @@ sequenceDiagram
     participant SPA
     participant Server
     
-    User->>SPA: Submits form
-    SPA->>Server: AJAX request
-    Server-->>SPA: JSON response
-    SPA->>User: Updates interface
+    User->>SPA: Podnosi obrazac
+    SPA->>Server: AJAX zahtjev
+    Server-->>SPA: JSON odgovor
+    SPA->>User: Ažurira sučelje
     
-    Note over User,SPA: No page reload!
+    Note over User,SPA: Nema ponovnog učitavanja stranice!
 ```
-
-**Prednosti rukovanja obrascima pomoću JavaScripta:**
-- **Održava** stanje aplikacije i kontekst korisnika
+**Prednosti JavaScript obrade obrazaca:**
+- **Održava** stanje aplikacije i korisnički kontekst
 - **Pruža** trenutne povratne informacije i indikatore učitavanja
-- **Omogućuje** dinamično rukovanje pogreškama i validaciju
-- **Stvara** glatko korisničko iskustvo slično aplikaciji
-- **Omogućuje** uvjetnu logiku na temelju odgovora poslužitelja
+- **Omogućuje** dinamičko rukovanje pogreškama i validaciju
+- **Stvara** glatka, aplikaciji slična korisnička iskustva
+- **Dopusta** uvjetnu logiku na temelju odgovora servera
 
 ### Prijelaz s tradicionalnih na moderne obrasce
 
 **Izazovi tradicionalnog pristupa:**
 - **Preusmjerava** korisnike izvan vaše aplikacije
 - **Gubi** trenutno stanje aplikacije i kontekst
-- **Zahtijeva** potpuno ponovno učitavanje stranice za jednostavne operacije
-- **Pruža** ograničenu kontrolu nad povratnim informacijama korisnika
+- **Zahtijeva** potpuno osvježavanje stranice za jednostavne operacije
+- **Pruža** ograničenu kontrolu nad korisničkim povratnim informacijama
 
 **Prednosti modernog JavaScript pristupa:**
-- **Zadržava** korisnike unutar vaše aplikacije
+- **Drži** korisnike unutar vaše aplikacije
 - **Održava** sve stanje i podatke aplikacije
-- **Omogućuje** validaciju i povratne informacije u stvarnom vremenu
-- **Podržava** progresivno poboljšanje i pristupačnost
+- **Omogućuje** validaciju i povratne informacije u realnom vremenu
+- **Podržava** postupno poboljšanje i pristupačnost
 
-### Implementacija rukovanja obrascima pomoću JavaScripta
+### Implementacija JavaScript obrade obrasca
 
-Zamijenimo tradicionalno slanje obrazaca modernim rukovanjem događajima pomoću JavaScripta:
+Zamijenimo tradicionalno slanje obrasca modernim JavaScript rukovanjem događajima:
 
 ```html
 <!-- Remove the action attribute and add event handling -->
 <form id="registerForm" method="POST" novalidate>
 ```
 
-**Dodajte logiku registracije u svoju datoteku `app.js`:**
+**Dodajte logiku registracije u vašu datoteku `app.js`:**
 
 ```javascript
-// Modern event-driven form handling
+// Moderno upravljanje obrascima vođenim događajima
 function register() {
   const registerForm = document.getElementById('registerForm');
   const formData = new FormData(registerForm);
@@ -380,70 +429,119 @@ function register() {
   console.log('Form data prepared:', data);
 }
 
-// Attach event listener when the page loads
+// Priloži slušatelja događaja kada se stranica učita
 document.addEventListener('DOMContentLoaded', () => {
   const registerForm = document.getElementById('registerForm');
   registerForm.addEventListener('submit', (event) => {
-    event.preventDefault(); // Prevent default form submission
+    event.preventDefault(); // Spriječi zadanu predaju obrasca
     register();
   });
 });
 ```
 
-**Razrada onoga što se ovdje događa:**
+**Što se ovdje događa:**
 - **Sprječava** zadano slanje obrasca pomoću `event.preventDefault()`
-- **Dohvaća** element obrasca pomoću modernog odabira DOM-a
+- **Dohvaća** element obrasca koristeći modernu selekciju DOM-a
 - **Izvlači** podatke obrasca pomoću moćnog API-ja `FormData`
-- **Pretvara** FormData u običan objekt pomoću `Object.fromEntries()`
-- **Serijalizira** podatke u JSON format za komunikaciju s poslužiteljem
-- **Bilježi** obrađene podatke za debugiranje i provjeru
+- **Pretvara** `FormData` u običan objekt pomoću `Object.fromEntries()`
+- **Serijalizira** podatke u JSON format za komunikaciju sa serverom
+- **Ispisuje** obrađene podatke za ispravljanje pogrešaka i verifikaciju
 
-### Razumijevanje API-ja FormData
+### Razumijevanje FormData API-ja
 
-**API FormData pruža moćno rukovanje obrascima:**
-
+**FormData API pruža moćno rukovanje obrascima:**
 ```javascript
-// Example of what FormData captures
+// Primjer što FormData hvata
 const formData = new FormData(registerForm);
 
-// FormData automatically captures:
+// FormData automatski hvata:
 // {
 //   "user": "john_doe",
-//   "currency": "$", 
-//   "description": "Personal account",
+//   "currency": "$",
+//   "description": "Osobni račun",
 //   "balance": "100"
 // }
 ```
 
-**Prednosti API-ja FormData:**
-- **Sveobuhvatno prikupljanje**: Hvata sve elemente obrasca, uključujući tekst, datoteke i složene unose
-- **Svjesnost tipa**: Automatski obrađuje različite vrste unosa bez prilagođenog kodiranja
-- **Učinkovitost**: Eliminira ručno prikupljanje
-- **Pruža** detaljne poruke o greškama za otklanjanje pogrešaka
-- **Vraća** dosljednu strukturu podataka za uspješne i neuspješne slučajeve
+**Prednosti FormData API-ja:**
+- **Sveobuhvatno prikupljanje**: Hvata sve elemente obrasca uključujući tekst, datoteke i složene unose
+- **Svijest o tipu**: Automatski obrađuje različite vrste unosa bez potrebe za prilagođenim kodiranjem
+- **Učinkovitost**: Uklanja ručno prikupljanje polja jednim pozivom API-ja
+- **Prilagodljivost**: Očuva funkcionalnost dok se struktura obrasca razvija
+
+### Izrada funkcije za komunikaciju sa serverom
+
+Sada izradimo robusnu funkciju za komunikaciju s vašim API serverom koristeći moderne JavaScript obrasce:
+
+```javascript
+async function createAccount(account) {
+  try {
+    const response = await fetch('//localhost:5000/api/accounts', {
+      method: 'POST',
+      headers: { 
+        'Content-Type': 'application/json',
+        'Accept': 'application/json'
+      },
+      body: account
+    });
+    
+    // Provjerite je li odgovor bio uspješan
+    if (!response.ok) {
+      throw new Error(`HTTP error! status: ${response.status}`);
+    }
+    
+    return await response.json();
+  } catch (error) {
+    console.error('Account creation failed:', error);
+    return { error: error.message || 'Network error occurred' };
+  }
+}
+```
+
+**Razumijevanje asinkronog JavaScripta:**
+
+```mermaid
+sequenceDiagram
+    participant JS as JavaScript
+    participant Fetch as Fetch API
+    participant Server as Backend poslužitelj
+    
+    JS->>Fetch: fetch() zahtjev
+    Fetch->>Server: HTTP POST
+    Server-->>Fetch: JSON odgovor
+    Fetch-->>JS: await odgovor
+    JS->>JS: Obradi podatke
+```
+**Što ova moderna implementacija ostvaruje:**
+- **Koristi** `async/await` za čitljiv asinkroni kod
+- **Uključuje** ispravno rukovanje pogreškama sa try/catch blokovima
+- **Provjerava** status odgovora prije obrade podataka
+- **Postavlja** odgovarajuće zaglavlja za JSON komunikaciju
+- **Pruža** detaljne poruke o pogreškama za otklanjanje pogrešaka
+- **Vraća** konzistentnu strukturu podataka za uspješne i pogrešne slučajeve
 
 ### Snaga modernog Fetch API-ja
 
 **Prednosti Fetch API-ja u odnosu na starije metode:**
 
 | Značajka | Prednost | Implementacija |
-|----------|----------|----------------|
-| Temeljeno na obećanjima | Čist asinhroni kod | `await fetch()` |
-| Prilagodba zahtjeva | Potpuna kontrola nad HTTP-om | Zaglavlja, metode, tijelo |
-| Obrada odgovora | Fleksibilno parsiranje podataka | `.json()`, `.text()`, `.blob()` |
-| Rukovanje greškama | Sveobuhvatno hvatanje grešaka | Blokovi try/catch |
+|---------|---------|----------------|
+| Temeljen na Promiseima | Čist asinkroni kod | `await fetch()` |
+| Prilagodba zahtjeva | Potpuna HTTP kontrola | Zaglavlja, metode, tijelo |
+| Obrada odgovora | Fleksibilna parsiranja podataka | `.json()`, `.text()`, `.blob()` |
+| Rukovanje pogreškama | Sveobuhvatno hvatanje pogrešaka | Try/catch blokovi |
 
-> 🎥 **Saznaj više**: [Async/Await Tutorial](https://youtube.com/watch?v=YwmlRkrxvkk) - Razumijevanje asinhronih JavaScript obrazaca za moderni web razvoj.
+> 🎥 **Saznajte više**: [Async/Await Tutorial](https://youtube.com/watch?v=YwmlRkrxvkk) - Razumijevanje asinkronih JavaScript obrazaca za moderni web razvoj.
 
-**Ključni koncepti za komunikaciju s poslužiteljem:**
-- **Asinhrone funkcije** omogućuju pauziranje izvršavanja dok se čeka odgovor poslužitelja
-- **Ključna riječ await** čini da asinhroni kod izgleda kao sinhroni kod
-- **Fetch API** omogućuje moderne, temeljene na obećanjima HTTP zahtjeve
-- **Rukovanje greškama** osigurava da vaša aplikacija reagira na mrežne probleme na primjeren način
+**Ključni pojmovi za komunikaciju sa serverom:**
+- **Async funkcije** omogućuju pauzu u izvršavanju da se čeka odgovor servera
+- **Await ključna riječ** čini asinkroni kod čitljivim kao sinkroni
+- **Fetch API** nudi moderne HTTP zahtjeve temeljene na Promise-ima
+- **Rukovanje pogreškama** osigurava da vaša aplikacija lijepo reagira na mrežne probleme
 
-### Dovršavanje funkcije registracije
+### Dovršavanje funkcije za registraciju
 
-Spojimo sve zajedno s kompletnom, spremnom za produkciju funkcijom registracije:
+Sada spojimo sve s kompletnom, spremnom za produkciju funkcijom za registraciju:
 
 ```javascript
 async function register() {
@@ -451,15 +549,15 @@ async function register() {
   const submitButton = registerForm.querySelector('button[type="submit"]');
   
   try {
-    // Show loading state
+    // Prikaži stanje učitavanja
     submitButton.disabled = true;
     submitButton.textContent = 'Creating Account...';
     
-    // Process form data
+    // Obradi podatke obrasca
     const formData = new FormData(registerForm);
     const jsonData = JSON.stringify(Object.fromEntries(formData));
     
-    // Send to server
+    // Pošalji na poslužitelj
     const result = await createAccount(jsonData);
     
     if (result.error) {
@@ -471,14 +569,14 @@ async function register() {
     console.log('Account created successfully!', result);
     alert(`Welcome, ${result.user}! Your account has been created.`);
     
-    // Reset form after successful registration
+    // Resetiraj obrazac nakon uspješne registracije
     registerForm.reset();
     
   } catch (error) {
     console.error('Unexpected error:', error);
     alert('An unexpected error occurred. Please try again.');
   } finally {
-    // Restore button state
+    // Vrati stanje gumba
     submitButton.disabled = false;
     submitButton.textContent = 'Create Account';
   }
@@ -487,9 +585,9 @@ async function register() {
 
 **Ova poboljšana implementacija uključuje:**
 - **Pruža** vizualne povratne informacije tijekom slanja obrasca
-- **Onemogućuje** gumb za slanje kako bi se spriječilo višestruko slanje
-- **Rukuje** i očekivanim i neočekivanim greškama na primjeren način
-- **Prikazuje** korisnički prihvatljive poruke o uspjehu i greškama
+- **Onemogućava** gumb za slanje da spriječi duplicirane prijave
+- **Rukuje** očekivanim i neočekivanim pogreškama na elegantan način
+- **Prikazuje** razumljive poruke o uspjehu i pogrešci korisniku
 - **Resetira** obrazac nakon uspješne registracije
 - **Vraća** stanje korisničkog sučelja bez obzira na ishod
 
@@ -497,63 +595,82 @@ async function register() {
 
 **Otvorite alate za razvoj u pregledniku i testirajte registraciju:**
 
-1. **Otvorite** konzolu preglednika (F12 → kartica Console)
+1. **Otvorite** konzolu preglednika (F12 → Konzola)
 2. **Ispunite** obrazac za registraciju
-3. **Kliknite** "Kreiraj račun"
-4. **Promatrajte** poruke u konzoli i povratne informacije korisnika
+3. **Kliknite** "Create Account"
+4. **Promatrajte** poruke u konzoli i povratne informacije korisniku
 
-![Snimka zaslona koja prikazuje poruku u konzoli preglednika](../../../../translated_images/browser-console.efaf0b51aaaf67782a29e1a0bb32cc063f189b18e894eb5926e02f1abe864ec2.hr.png)
+![Snimka zaslona koja prikazuje poruku u konzoli preglednika](../../../../translated_images/hr/browser-console.efaf0b51aaaf6778.webp)
 
 **Što biste trebali vidjeti:**
 - **Stanje učitavanja** pojavljuje se na gumbu za slanje
-- **Konzolni zapisi** prikazuju detaljne informacije o procesu
-- **Poruka o uspjehu** pojavljuje se kada je kreiranje računa uspješno
+- **Zapisnici u konzoli** prikazuju detaljne informacije o procesu
+- **Poruka o uspjehu** pojavljuje se kad je izrada računa uspješna
 - **Obrazac se automatski resetira** nakon uspješnog slanja
 
-> 🔒 **Sigurnosna napomena**: Trenutno podaci putuju putem HTTP-a, što nije sigurno za produkciju. U stvarnim aplikacijama uvijek koristite HTTPS za šifriranje prijenosa podataka. Saznajte više o [HTTPS sigurnosti](https://en.wikipedia.org/wiki/HTTPS) i zašto je ključna za zaštitu korisničkih podataka.
+> 🔒 **Sigurnosna napomena**: Trenutno se podaci prenose preko HTTP-a što nije sigurno za produkciju. U stvarnim aplikacijama uvijek koristite HTTPS za šifriranje prijenosa podataka. Saznajte više o [HTTPS sigurnosti](https://en.wikipedia.org/wiki/HTTPS) i zašto je bitna za zaštitu korisničkih podataka.
 
-## Sveobuhvatna validacija obrazaca
+### 🔄 **Pedagoški pregled**
+**Integracija modernog JavaScripta**: Provjerite svoje razumijevanje asinkronog rukovanja obrascima:
+- ✅ Kako `event.preventDefault()` mijenja zadano ponašanje obrasca?
+- ✅ Zašto je FormData API učinkovitiji od ručnog prikupljanja polja?
+- ✅ Kako obrasci async/await poboljšavaju čitljivost koda?
+- ✅ Koju ulogu ima rukovanje pogreškama u korisničkom iskustvu?
 
-Validacija obrazaca sprječava frustrirajuće iskustvo otkrivanja grešaka tek nakon slanja. Kao višestruki sigurnosni sustavi na Međunarodnoj svemirskoj postaji, učinkovita validacija koristi više slojeva sigurnosnih provjera.
+**Arhitektura sustava**: Vaša obrada obrazaca demonstrira:
+- **Programiranje navođeno događajima**: Obrasci reagiraju na korisničke akcije bez ponovnog učitavanja stranice
+- **Asinkrona komunikacija**: Zahtjevi serveru ne blokiraju korisničko sučelje
+- **Rukovanje pogreškama**: Ljubazna degradacija kada mrežni zahtjevi zakažu
+- **Upravljanje stanjem**: Ažuriranja UI-ja odražavaju server odgovore prikladno
+- **Postepeno poboljšanje**: Osnovna funkcionalnost radi, JavaScript ju poboljšava
 
-Optimalan pristup kombinira validaciju na razini preglednika za trenutne povratne informacije, JavaScript validaciju za poboljšano korisničko iskustvo i validaciju na strani poslužitelja za sigurnost i integritet podataka. Ova redundancija osigurava zadovoljstvo korisnika i zaštitu sustava.
+**Profesionalni obrasci**: Implementirali ste:
+- **Jedinstvenu odgovornost**: Funkcije imaju jasne, fokusirane svrhe
+- **Granice pogrešaka**: Try/catch blokovi sprječavaju rušenje aplikacije
+- **Povratnu informaciju korisniku**: Stanja učitavanja i poruke o uspjehu/pogrešci
+- **Transformaciju podataka**: Iz FormData u JSON za komunikaciju sa serverom
+
+## Sveobuhvatna validacija obrasca
+
+Validacija obrasca sprječava frustrirajuće iskustvo otkrivanja pogrešaka tek nakon slanja. Poput više redundantnih sustava na Međunarodnoj svemirskoj stanici, učinkovita validacija koristi višestruke slojeve sigurnosnih provjera.
+
+Optimalan pristup kombinira validaciju na razini preglednika za trenutnu povratnu informaciju, JavaScript validaciju za poboljšano korisničko iskustvo i validaciju na strani servera za sigurnost i integritet podataka. Ova redundancija osigurava zadovoljstvo korisnika i zaštitu sustava.
 
 ### Razumijevanje slojeva validacije
 
 ```mermaid
 graph TD
-    A[User Input] --> B[HTML5 Validation]
-    B --> C[Custom JavaScript Validation]
-    C --> D[Client-Side Complete]
-    D --> E[Server-Side Validation]
-    E --> F[Data Storage]
+    A[Unos Korisnika] --> B[HTML5 Validacija]
+    B --> C[Prilagođena JavaScript Validacija]
+    C --> D[Klijentska Validacija Završena]
+    D --> E[Validacija na Poslužitelju]
+    E --> F[Skladištenje Podataka]
     
-    B -->|Invalid| G[Browser Error Message]
-    C -->|Invalid| H[Custom Error Display]
-    E -->|Invalid| I[Server Error Response]
+    B -->|Nevažeće| G[Poruka o Pogrešci Preglednika]
+    C -->|Nevažeće| H[Prikaz Prilagođene Pogreške]
+    E -->|Nevažeće| I[Odgovor Pogreške Poslužitelja]
 ```
-
 **Strategija višeslojne validacije:**
-- **HTML5 validacija**: Trenutne provjere na razini preglednika
+- **HTML5 validacija**: Trenutne provjere u pregledniku
 - **JavaScript validacija**: Prilagođena logika i korisničko iskustvo
-- **Validacija na poslužitelju**: Konačne provjere sigurnosti i integriteta podataka
-- **Progresivno poboljšanje**: Funkcionira čak i ako je JavaScript onemogućen
+- **Validacija na serveru**: Završne sigurnosne i integritetske provjere
+- **Postepeno poboljšanje**: Radi čak i ako je JavaScript onemogućen
 
 ### HTML5 atributi za validaciju
 
-**Moderni alati za validaciju:**
+**Moderne alate za validaciju na raspolaganju:**
 
 | Atribut | Svrha | Primjer upotrebe | Ponašanje preglednika |
 |---------|-------|------------------|-----------------------|
-| `required` | Obavezna polja | `<input required>` | Sprječava slanje praznog obrasca |
-| `minlength`/`maxlength` | Ograničenja duljine teksta | `<input maxlength="20">` | Ograničava broj znakova |
-| `min`/`max` | Rasponi brojeva | `<input min="0" max="1000">` | Provjerava granice brojeva |
-| `pattern` | Pravila za prilagođene regex izraze | `<input pattern="[A-Za-z]+">` | Provjerava specifične formate |
-| `type` | Validacija tipa podataka | `<input type="email">` | Validacija specifična za format |
+| `required` | Obvezna polja | `<input required>` | Sprječava prazno slanje |
+| `minlength`/`maxlength` | Ograničenja duljine teksta | `<input maxlength="20">` | Provjerava ograničenje znakova |
+| `min`/`max` | Numerički rasponi | `<input min="0" max="1000">` | Validira granice broja |
+| `pattern` | Prilagođena regex pravila | `<input pattern="[A-Za-z]+">` | Usklađuje specifične formate |
+| `type` | Validacija tipa podataka | `<input type="email">` | Validacija specifičnih formata |
 
-### CSS stiliziranje validacije
+### CSS stilizacija validacije
 
-**Stvorite vizualne povratne informacije za stanja validacije:**
+**Kreirajte vizualnu povratnu informaciju za stanja validacije:**
 
 ```css
 /* Valid input styling */
@@ -578,17 +695,17 @@ input:focus:invalid {
 }
 ```
 
-**Što postižu ovi vizualni pokazatelji:**
-- **Zeleni obrubi**: Označavaju uspješnu validaciju, poput zelenih svjetala u kontrolnom centru misije
-- **Crveni obrubi**: Signaliziraju greške u validaciji koje zahtijevaju pažnju
-- **Isticanje fokusa**: Pruža jasnu vizualnu kontekstualizaciju trenutne lokacije unosa
-- **Dosljedno stiliziranje**: Uspostavlja predvidljive obrasce sučelja koje korisnici mogu naučiti
+**Što ove vizualne naznake postižu:**
+- **Zeleni okviri**: Označavaju uspješnu validaciju, poput zelenih svjetala u kontrolnoj sobi
+- **Crveni okviri**: Signaliziraju pogreške validacije koje zahtijevaju pažnju
+- **Isticanje fokusa**: Pruža jasni vizualni kontekst za trenutnu lokaciju unosa
+- **Konzistentno stiliziranje**: Uspostavlja predvidljive obrasce sučelja koje korisnici mogu naučiti
 
-> 💡 **Savjet**: Koristite CSS pseudo-klase `:valid` i `:invalid` za pružanje trenutnih vizualnih povratnih informacija dok korisnici unose podatke, stvarajući responzivno i korisno sučelje.
+> 💡 **Savjet**: Koristite CSS pseudo-klase `:valid` i `:invalid` kako biste pružili trenutačnu vizualnu povratnu informaciju dok korisnici upisuju, stvarajući responzivno i korisno sučelje.
 
 ### Implementacija sveobuhvatne validacije
 
-Poboljšajmo vaš obrazac za registraciju s robusnom validacijom koja pruža izvrsno korisničko iskustvo i kvalitetu podataka:
+Unaprijedimo vaš obrazac za registraciju robustnom validacijom koja pruža izvrsno korisničko iskustvo i kvalitetu podataka:
 
 ```html
 <form id="registerForm" method="POST" novalidate>
@@ -634,19 +751,19 @@ Poboljšajmo vaš obrazac za registraciju s robusnom validacijom koja pruža izv
 **Razumijevanje poboljšane validacije:**
 - **Kombinira** indikatore obaveznih polja s korisnim opisima
 - **Uključuje** `pattern` atribute za validaciju formata
-- **Pruža** `title` atribute za pristupačnost i savjete
-- **Dodaje** pomoćni tekst za vođenje korisničkog unosa
+- **Pruža** `title` atribute radi pristupačnosti i opisa alata
+- **Dodaje** pomoćni tekst za vođenje unosa korisnika
 - **Koristi** semantičku HTML strukturu za bolju pristupačnost
 
 ### Napredna pravila validacije
 
 **Što svako pravilo validacije postiže:**
 
-| Polje | Pravila validacije | Korisnička korist |
-|-------|--------------------|-------------------|
+| Polje | Pravila validacije | Korisnička prednost |
+|-------|--------------------|---------------------|
 | Korisničko ime | `required`, `minlength="3"`, `maxlength="20"`, `pattern="[a-zA-Z0-9_]+"` | Osigurava valjane, jedinstvene identifikatore |
-| Valuta | `required`, `maxlength="3"`, `pattern="[A-Z$€£¥₹]+"` | Prihvaća uobičajene simbole valuta |
-| Stanje | `min="0"`, `step="0.01"`, `type="number"` | Sprječava negativna stanja |
+| Valuta | `required`, `maxlength="3"`, `pattern="[A-Z$€£¥₹]+"` | Prima uobičajene simbole valuta |
+| Stanje računa | `min="0"`, `step="0.01"`, `type="number"` | Sprečava negativne iznose |
 | Opis | `maxlength="100"` | Razumna ograničenja duljine |
 
 ### Testiranje ponašanja validacije
@@ -654,40 +771,147 @@ Poboljšajmo vaš obrazac za registraciju s robusnom validacijom koja pruža izv
 **Isprobajte ove scenarije validacije:**
 1. **Pošaljite** obrazac s praznim obaveznim poljima
 2. **Unesite** korisničko ime kraće od 3 znaka
-3. **Pokušajte** unijeti posebne znakove u polje za korisničko ime
+3. **Pokušajte** s posebnim znakovima u polju korisničkog imena
 4. **Unesite** negativan iznos stanja
 
-![Snimka zaslona koja prikazuje grešku validacije pri pokušaju slanja obrasca](../../../../translated_images/validation-error.8bd23e98d416c22f80076d04829a4bb718e0e550fd622862ef59008ccf0d5dce.hr.png)
+![Snimka zaslona koja prikazuje grešku validacije prilikom pokušaja slanja obrasca](../../../../translated_images/hr/validation-error.8bd23e98d416c22f.webp)
 
 **Što ćete primijetiti:**
-- **Preglednik prikazuje** poruke o greškama u validaciji
-- **Promjene u stiliziranju** na temelju stanja `:valid` i `:invalid`
-- **Slanje obrasca** je onemogućeno dok sve validacije ne prođu
-- **Fokus automatski** prelazi na prvo neispravno polje
+- **Preglednik prikazuje** nativne poruke o grešci validacije
+- **Promjene stilova** temelje se na stanjima `:valid` i `:invalid`
+- **Slanje obrasca** se sprječava dok sve validacije ne prođu
+- **Fokus se automatski** pomjera na prvo polje koje nije valjano
 
-### Validacija na strani klijenta vs. na strani poslužitelja
+### Validacija na klijentovoj i serverskoj strani
 
 ```mermaid
 graph LR
-    A[Client-Side Validation] --> B[Instant Feedback]
-    A --> C[Better UX]
-    A --> D[Reduced Server Load]
+    A[Validacija na strani klijenta] --> B[Trenutna povratna informacija]
+    A --> C[Bolje korisničko iskustvo]
+    A --> D[Smanjeno opterećenje servera]
     
-    E[Server-Side Validation] --> F[Security]
-    E --> G[Data Integrity]
-    E --> H[Business Rules]
+    E[Validacija na strani servera] --> F[Sigurnost]
+    E --> G[Integritet podataka]
+    E --> H[Poslovna pravila]
     
-    A -.-> I[Both Required]
+    A -.-> I[Oboje je potrebno]
     E -.-> I
 ```
-
-**Zašto su potrebna oba sloja:**
-- **Validacija na strani klijenta**: Pruža trenutne povratne informacije i poboljšava korisničko iskustvo
-- **Validacija na strani poslužitelja**: Osigurava sigurnost i obrađuje složena poslovna pravila
+**Zašto vam trebaju oba sloja:**
+- **Validacija na klijentu**: Pruža trenutnu povratnu informaciju i poboljšava iskustvo korisnika
+- **Validacija na serveru**: Osigurava sigurnost i obrađuje složena poslovna pravila
 - **Kombinirani pristup**: Stvara robusne, korisnički prihvatljive i sigurne aplikacije
-- **Progresivno poboljšanje**: Funkcionira čak i kada je JavaScript onemogućen
+- **Postepeno poboljšanje**: Radi čak i kad je JavaScript onemogućen
 
-> 🛡️ **Sigurnosna napomena**: Nikada se ne oslanjajte samo na validaciju na strani klijenta! Zlonamjerni korisnici mogu zaobići provjere na strani klijenta, stoga je validacija na strani poslužitelja ključna za sigurnost i integritet podataka.
+> 🛡️ **Podsjetnik o sigurnosti**: Nikada nemojte vjerovati samo validaciji na klijentu! Zlonamjerni korisnici mogu zaobići provjere na klijentskoj strani, stoga je validacija na serveru ključna za sigurnost i integritet podataka.
+
+### ⚡ **Što možete napraviti u sljedećih 5 minuta**
+- [ ] Testirajte vaš obrazac s nevaljanim podacima i pogledajte poruke validacije
+- [ ] Pokušajte poslati obrazac s onemogućenim JavaScriptom i pogledajte HTML5 validaciju
+- [ ] Otvorite DevTools preglednika i pregledajte podatke obrasca koji se šalju serveru
+- [ ] Eksperimentirajte s različitim tipovima unosa i promatrajte promjene tipkovnice na mobilnom uređaju
+
+### 🎯 **Što možete postići u ovom satu**
+- [ ] Završiti kviz nakon lekcije i razumjeti pojmove rukovanja obrascima
+- [ ] Implementirati izazov sa sveobuhvatnom validacijom i povratnim informacijama u stvarnom vremenu
+- [ ] Dodati CSS stilizaciju za profesionalan izgled obrazaca
+- [ ] Stvoriti rukovanje pogreškama za duplicirane korisničke nazive i pogreške servera
+- [ ] Dodati polja za potvrdu lozinke s odgovarajućom validacijom
+
+### 📅 **Vaše tjedno putovanje do majstorstva obrazaca**
+- [ ] Završiti cijelu bankarsku aplikaciju s naprednim funkcijama obrazaca
+- [ ] Implementirati mogućnosti slanja datoteka za profilne slike ili dokumente
+- [ ] Dodati višekoračne obrasce s indikatorima napretka i upravljanjem stanjima
+- [ ] Kreirati dinamične obrasce koji se prilagođavaju izborima korisnika
+- [ ] Implementirati automatsko spremanje i oporavak forme za bolje korisničko iskustvo
+- [ ] Dodati naprednu validaciju poput verifikacije emaila i formatiranja telefonskih brojeva
+
+### 🌟 **Vaše mjesečno majstorstvo frontend razvoja**
+- [ ] Graditi složene aplikacije s uvjetnom logikom i radnim tokovima
+- [ ] Naučiti biblioteke i okvire za brzi razvoj obrazaca
+- [ ] Savladati smjernice pristupačnosti i principe inkluzivnog dizajna
+- [ ] Implementirati internacionalizaciju i lokalizaciju za globalne obrasce
+- [ ] Kreirati ponovo upotrebljive biblioteke i dizajn sustave za obrasce
+- [ ] Doprinositi otvorenim projektima obrazaca i dijeliti najbolje prakse
+
+## 🎯 Vaš vremenski plan ovladavanja razvojem obrazaca
+
+```mermaid
+timeline
+    title Razvoj obrazaca i napredovanje u učenju korisničkog iskustva
+    
+    section Osnove HTML-a (15 minuta)
+        Semantički obrasci: Elementi obrazaca
+                      : Vrste unosa
+                      : Oznake i pristupačnost
+                      : Postupno poboljšanje
+        
+    section Integracija JavaScripta (25 minuta)
+        Obrada događaja: Slanje obrasca
+                      : Prikupljanje podataka
+                      : AJAX komunikacija
+                      : Async/await obrasci
+        
+    section Sustavi validacije (35 minuta)
+        Višeslojna sigurnost: HTML5 validacija
+                            : Logika na strani klijenta
+                            : Verifikacija na strani poslužitelja
+                            : Rukovanje pogreškama
+        
+    section Korisničko iskustvo (45 minuta)
+        Dorada sučelja: Stanja učitavanja
+                        : Poruke o uspjehu
+                        : Oporavak od pogrešaka
+                        : Značajke pristupačnosti
+        
+    section Napredni obrasci (1 tjedan)
+        Profesionalni obrasci: Dinamična validacija
+                          : Višestepeni tijekovi rada
+                          : Učitavanja datoteka
+                          : Povratne informacije u stvarnom vremenu
+        
+    section Vještine za poduzeća (1 mjesec)
+        Proizvodne aplikacije: Knjižnice obrazaca
+                               : Strategije testiranja
+                               : Optimizacija performansi
+                               : Najbolje prakse sigurnosti
+```
+### 🛠️ Sažetak vašeg alata za razvoj obrazaca
+
+Nakon završetka ove lekcije, sada ste ovladali:
+- **HTML5 obrascima**: Semantička struktura, tipovi unosa i značajke pristupačnosti
+- **JavaScript rukovanjem obrascima**: Upravljanje događajima, prikupljanje podataka i AJAX komunikacija
+- **Arhitekturom validacije**: Višeslojna validacija za sigurnost i korisničko iskustvo
+- **Asinkronim programiranjem**: Moderni fetch API i async/await obrasci
+- **Upravljanjem pogreškama**: Sveobuhvatno rukovanje pogreškama i sustavi povratne informacije korisniku
+- **Dizajnom korisničkog iskustva**: Stanja učitavanja, poruke uspjeha i oporavak od pogrešaka
+- **Postepenim poboljšanjem**: Obrasci koji rade na svim preglednicima i mogućnostima
+
+**Primjena u stvarnom svijetu**: Vaše vještine za razvoj obrazaca primjenjuju se direktno na:
+- **E-trgovinu**: Procesi naplate, registracija računa i obrasci za plaćanje
+- **Poslovni softver**: Sustavi za unos podataka, sučelja izvještavanja i aplikacije za radne tokove
+- **Upravljanje sadržajem**: Platforme za objavljivanje, korisnički generirani sadržaj i administrativna sučelja
+- **Financijske aplikacije**: Bankarska sučelja, investicijske platforme i sustavi transakcija
+- **Zdravstvene sustave**: Portali za pacijente, zakazivanje termina i obrasci medicinskih evidencija
+- **Obrazovne platforme**: Prijave na tečajeve, alati za procjenu i sustavi za upravljanje učenjem
+
+**Stečene profesionalne vještine**: Sada možete:
+- **Dizajnirati** pristupačne obrasce koji rade za sve korisnike uključujući osobe s invaliditetom
+- **Implementirati** sigurnu validaciju obrasca koja sprječava korupciju podataka i sigurnosne propuste
+- **Kreirati** responzivna korisnička sučelja koja pružaju jasne povratne informacije i upute
+- **Otklanjati pogreške** složenih interakcija obrasca koristeći alate za razvoj i analizu mreže
+- **Optimizirati** performanse obrasca putem učinkovitog rukovanja podacima i strategija validacije
+
+**Ovladani koncepti frontend razvoja**:
+- **Arhitektura navođena događajima**: Upravljanje i sustavi odgovora na korisničke interakcije
+- **Asinkrono programiranje**: Ne-blokirajuća komunikacija sa serverom i rukovanje pogreškama
+- **Validacija podataka**: Sigurnosne i integritetske provjere na klijentskoj i serverskoj strani
+- **Dizajn korisničkog iskustva**: Intuitivna sučelja koja vode korisnike prema uspjehu
+- **Inženjering pristupačnosti**: Inkluzivan dizajn koji radi za različite korisničke potrebe
+
+**Sljedeća razina**: Spremni ste za istraživanje naprednih biblioteka obrazaca, implementaciju složenih pravila validacije ili izgradnju sustava za prikupljanje podataka razine poduzeća!
+
+🌟 **Postignuće otključano**: Izgradili ste kompletan sustav rukovanja obrascima s profesionalnom validacijom, rukovanjem pogreškama i obrascima korisničkog iskustva!
 
 ---
 
@@ -695,37 +919,38 @@ graph LR
 
 ---
 
-## Izazov GitHub Copilot Agent 🚀
+## GitHub Copilot Agent Challenge 🚀
 
-Koristite Agent način rada za dovršavanje sljedećeg izazova:
+Koristite način rada Agent za dovršetak sljedećeg izazova:
 
-**Opis:** Poboljšajte obrazac za registraciju sveobuhvatnom validacijom na strani klijenta i povratnim informacijama za korisnika. Ovaj izazov pomoći će vam da vježbate validaciju obrazaca, rukovanje greškama i poboljšanje korisničkog iskustva interaktivnim povratnim informacijama.
+**Opis:** Unaprijedite obrazac za registraciju sveobuhvatnom validacijom na strani klijenta i povratnom informacijom korisniku. Ovaj izazov pomoći će vam u praksi validacije obrazaca, rukovanju pogreškama i poboljšavanju korisničkog iskustva interaktivnim povratnim informacijama.
+**Prompt:** Kreirajte kompletan sustav validacije obrasca za registracijski obrazac koji uključuje: 1) Povratne informacije o validaciji u stvarnom vremenu za svako polje dok korisnik tipka, 2) Prilagođene poruke validacije koje se pojavljuju ispod svakog polja za unos, 3) Polje za potvrdu lozinke s validacijom podudaranja, 4) Vizualne pokazatelje (kao što su zelene kvačice za valjana polja i crvena upozorenja za nevaljana), 5) Gumb za slanje koji se aktivira samo kada sve validacije prođu. Koristite HTML5 atribute za validaciju, CSS za stiliziranje stanja validacije te JavaScript za interaktivno ponašanje.
 
-**Zadatak:** Kreirajte kompletan sustav validacije obrazaca za registraciju koji uključuje: 1) Povratne informacije o validaciji u stvarnom vremenu za svako polje dok korisnik unosi podatke, 2) Prilagođene poruke o greškama koje se pojavljuju ispod svakog polja za unos, 3) Polje za potvrdu lozinke s validacijom podudaranja, 4) Vizualne pokazatelje (poput zelenih kvačica za valjana polja i crvenih upozorenja za nevaljana), 5) Gumb za slanje koji postaje aktivan samo kada sve validacije prođu. Koristite HTML5 atribute za validaciju, CSS za stiliziranje stanja validacije i JavaScript za interaktivno ponašanje.
-
-Saznajte više o [agent načinu rada](https://code.visualstudio.com/blogs/2025/02/24/introducing-copilot-agent-mode) ovdje.
+Saznajte više o [agent mode](https://code.visualstudio.com/blogs/2025/02/24/introducing-copilot-agent-mode) ovdje.
 
 ## 🚀 Izazov
 
-Prikazati poruku o grešci u HTML-u ako korisnik već postoji.
+Prikažite poruku o pogrešci u HTML-u ako korisnik već postoji.
 
-Evo primjera kako bi konačna stranica za prijavu mogla izgledati nakon malo stiliziranja:
+Evo primjera kako završna stranica za prijavu može izgledati nakon malo stiliziranja:
 
-![Snimka zaslona stranice za prijavu nakon dodavanja CSS stilova](../../../../translated_images/result.96ef01f607bf856aa9789078633e94a4f7664d912f235efce2657299becca483.hr.png)
+![Screenshot of the login page after adding CSS styles](../../../../translated_images/hr/result.96ef01f607bf856a.webp)
 
 ## Kviz nakon predavanja
 
 [Kviz nakon predavanja](https://ff-quizzes.netlify.app/web/quiz/44)
 
-## Pregled i samostalno učenje
+## Pregled i samostalan rad
 
-Razvijatelji su postali vrlo kreativni u izradi obrazaca, posebno u vezi strategija validacije. Saznajte više o različitim tokovima obrazaca pregledavajući [CodePen](https://codepen.com); možete li pronaći neke zanimljive i inspirativne primjere obrazaca?
+Programeri su vrlo kreativno pristupili izradi obrazaca, posebno u vezi sa strategijama validacije. Istražite različite tokove obrazaca pregledavajući [CodePen](https://codepen.com); možete li pronaći neke zanimljive i inspirativne obrasce?
 
 ## Zadatak
 
-[Stilizirajte svoju bankovnu aplikaciju](assignment.md)
+[Stilizirajte svoju bankarsku aplikaciju](assignment.md)
 
 ---
 
-**Izjava o odricanju odgovornosti**:  
-Ovaj dokument je preveden pomoću AI usluge za prevođenje [Co-op Translator](https://github.com/Azure/co-op-translator). Iako nastojimo osigurati točnost, imajte na umu da automatski prijevodi mogu sadržavati pogreške ili netočnosti. Izvorni dokument na izvornom jeziku treba smatrati autoritativnim izvorom. Za ključne informacije preporučuje se profesionalni prijevod od strane čovjeka. Ne preuzimamo odgovornost za nesporazume ili pogrešna tumačenja koja proizlaze iz korištenja ovog prijevoda.
+<!-- CO-OP TRANSLATOR DISCLAIMER START -->
+**Odricanje od odgovornosti**:  
+Ovaj dokument preveden je korištenjem AI usluge za prevođenje [Co-op Translator](https://github.com/Azure/co-op-translator). Iako nastojimo postići točnost, imajte na umu da automatizirani prijevodi mogu sadržavati pogreške ili netočnosti. Izvorni dokument na izvornom jeziku treba smatrati autoritativnim izvorom. Za kritične informacije preporučuje se profesionalni ljudski prijevod. Ne snosimo odgovornost za bilo kakve nesporazume ili pogrešna tumačenja koja proizlaze iz korištenja ovog prijevoda.
+<!-- CO-OP TRANSLATOR DISCLAIMER END -->

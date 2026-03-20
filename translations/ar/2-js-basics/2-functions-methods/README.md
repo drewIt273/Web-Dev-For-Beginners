@@ -1,15 +1,6 @@
-<!--
-CO_OP_TRANSLATOR_METADATA:
-{
-  "original_hash": "71f7d7dafa1c7194d79ddac87f669ff9",
-  "translation_date": "2025-11-03T12:26:17+00:00",
-  "source_file": "2-js-basics/2-functions-methods/README.md",
-  "language_code": "ar"
-}
--->
 # أساسيات JavaScript: الطرق والدوال
 
-![أساسيات JavaScript - الدوال](../../../../translated_images/webdev101-js-functions.be049c4726e94f8b7605c36330ac42eeb5cd8ed02bcdd60fdac778174d6cb865.ar.png)
+![أساسيات JavaScript - الدوال](../../../../translated_images/ar/webdev101-js-functions.be049c4726e94f8b.webp)
 > رسم توضيحي بواسطة [Tomomi Imura](https://twitter.com/girlie_mac)
 
 ```mermaid

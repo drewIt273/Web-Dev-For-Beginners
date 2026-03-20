@@ -1,12 +1,3 @@
-<!--
-CO_OP_TRANSLATOR_METADATA:
-{
-  "original_hash": "b275fed2c6fc90d2b9b6661a3225faa2",
-  "translation_date": "2025-11-06T12:22:45+00:00",
-  "source_file": "5-browser-extension/3-background-tasks-and-performance/README.md",
-  "language_code": "ms"
-}
--->
 # Projek Sambungan Pelayar Bahagian 3: Belajar tentang Tugas Latar Belakang dan Prestasi
 
 ```mermaid
@@ -126,7 +117,7 @@ Untuk membuka Alat Pembangun di Edge, klik tiga titik di sudut kanan atas, kemud
 
 Mari cuba ini. Buka laman web (Microsoft.com berfungsi dengan baik untuk ini) dan klik butang 'Rekod'. Sekarang segarkan halaman dan lihat profiler menangkap segala yang berlaku. Apabila anda berhenti merekod, anda akan melihat pecahan terperinci tentang bagaimana pelayar 'menykrip', 'merender', dan 'melukis' laman tersebut. Ia mengingatkan saya bagaimana pusat kawalan misi memantau setiap sistem semasa pelancaran roket - anda mendapat data masa nyata tentang apa yang berlaku dan bila.
 
-![Profiler Edge](../../../../translated_images/profiler.5a4a62479c5df01cfec9aab74173dba13f91d2c968e1a1ae434c26165792df15.ms.png)
+![Profiler Edge](../../../../translated_images/ms/profiler.5a4a62479c5df01c.webp)
 
 ✅ Dokumentasi [Microsoft](https://docs.microsoft.com/microsoft-edge/devtools-guide/performance/?WT.mc_id=academic-77807-sagibbon) mempunyai banyak lagi butiran jika anda ingin mendalami lebih jauh
 
@@ -136,11 +127,11 @@ Pilih elemen garis masa profil untuk memperbesar acara yang berlaku semasa halam
 
 Dapatkan gambaran prestasi halaman anda dengan memilih bahagian garis masa profil dan melihat panel ringkasan:
 
-![Snapshot profiler Edge](../../../../translated_images/snapshot.97750180ebcad73794a3594b36925eb5c8dbaac9e03fec7f9b974188c9ac63c7.ms.png)
+![Snapshot profiler Edge](../../../../translated_images/ms/snapshot.97750180ebcad737.webp)
 
 Periksa panel Log Acara untuk melihat jika ada acara yang mengambil masa lebih daripada 15 ms:
 
-![Log acara Edge](../../../../translated_images/log.804026979f3707e00eebcfa028b2b5a88cec6292f858767bb6703afba65a7d9c.ms.png)
+![Log acara Edge](../../../../translated_images/ms/log.804026979f3707e0.webp)
 
 ✅ Kenali profiler anda! Buka alat pembangun di laman ini dan lihat jika ada halangan. Apakah aset yang paling lambat dimuatkan? Yang paling pantas?
 

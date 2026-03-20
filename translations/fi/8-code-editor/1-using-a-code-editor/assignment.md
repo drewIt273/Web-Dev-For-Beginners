@@ -1,12 +1,3 @@
-<!--
-CO_OP_TRANSLATOR_METADATA:
-{
-  "original_hash": "effe56ba51c38d7bdfad1ea38288666b",
-  "translation_date": "2025-10-23T00:16:03+00:00",
-  "source_file": "8-code-editor/1-using-a-code-editor/assignment.md",
-  "language_code": "fi"
-}
--->
 # Luo ansioluettelosivusto VSCode.dev:llä
 
 Paranna uramahdollisuuksiasi rakentamalla ammattimainen ansioluettelosivusto, joka esittelee taitosi ja kokemuksesi interaktiivisessa, modernissa muodossa. Perinteisten PDF-tiedostojen lähettämisen sijaan voit tarjota rekrytoijille tyylikkään, responsiivisen verkkosivuston, joka osoittaa sekä pätevyytesi että verkkokehitystaitosi.
@@ -78,7 +69,7 @@ Koska VSCode.dev vaatii vähintään yhden tiedoston repositorion avaamiseen, lu
 4. **Kirjoita** commit-viesti: "Lisätty alkuperäinen HTML-rakenne"
 5. **Klikkaa** "Commit new file" tallentaaksesi muutokset
 
-![Luodaan alkuperäinen tiedosto GitHubissa](../../../../translated_images/new-file-github.com.c886796d800e8056561829a181be1382c5303da9d902d8b2dd82b68a4806e21f.fi.png)
+![Luodaan alkuperäinen tiedosto GitHubissa](../../../../translated_images/fi/new-file-github.com.c886796d800e8056.webp)
 
 **Mitä tämä alkuperäinen asetus saavuttaa:**
 - **Luo** asianmukaisen HTML5-dokumenttirakenteen semanttisilla elementeillä
@@ -104,7 +95,7 @@ Nyt kun repositorion perusta on luotu, siirrytään VSCode.dev:iin varsinaista k
 
 ✅ **Onnistumisen merkki**: Näet projektitiedostosi Explorer-sivupalkissa ja `index.html`-tiedoston muokattavissa pääeditorialueella.
 
-![Projekti ladattu VSCode.dev:ssä](../../../../translated_images/project-on-vscode.dev.e79815a9a95ee7feac72ebe5c941c91279716be37c575dbdbf2f43bea2c7d8b6.fi.png)
+![Projekti ladattu VSCode.dev:ssä](../../../../translated_images/fi/project-on-vscode.dev.e79815a9a95ee7fe.webp)
 
 **Mitä näet käyttöliittymässä:**
 - **Explorer-sivupalkki**: **Näyttää** repositorion tiedostot ja kansiorakenteen
@@ -448,7 +439,7 @@ Laajennukset parantavat kehityskokemustasi tarjoamalla reaaliaikaisia esikatselu
 **Välittömät tulokset asennuksen jälkeen:**
 Kun CodeSwing on asennettu, näet ansioluettelosivustosi reaaliaikaisen esikatselun editorissa. Tämä mahdollistaa sen, että näet tarkalleen, miltä sivustosi näyttää tehdessäsi muutoksia.
 
-![CodeSwing-laajennus näyttää reaaliaikaisen esikatselun](../../../../translated_images/after-codeswing-extension-pb.0ebddddcf73b550994947a9084e35e2836c713ae13839d49628e3c764c1cfe83.fi.png)
+![CodeSwing-laajennus näyttää reaaliaikaisen esikatselun](../../../../translated_images/fi/after-codeswing-extension-pb.0ebddddcf73b5509.webp)
 
 **Parannetun käyttöliittymän ymmärtäminen:**
 - **Jaettu näkymä**: **Näyttää** koodisi toisella puolella ja reaaliaikaisen esikatselun toisella

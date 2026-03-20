@@ -1,12 +1,3 @@
-<!--
-CO_OP_TRANSLATOR_METADATA:
-{
-  "original_hash": "2b6203a48c48d8234e0948353b47d84e",
-  "translation_date": "2025-11-06T12:23:29+00:00",
-  "source_file": "5-browser-extension/2-forms-browsers-local-storage/README.md",
-  "language_code": "ms"
-}
--->
 # Projek Sambungan Pelayar Bahagian 2: Panggil API, gunakan Penyimpanan Tempatan
 
 ```mermaid
@@ -268,7 +259,7 @@ stateDiagram-v2
     ClearStorage --> FirstTime: Back to setup
 ```
 
-![Panel penyimpanan tempatan](../../../../translated_images/localstorage.472f8147b6a3f8d141d9551c95a2da610ac9a3c6a73d4a1c224081c98bae09d9.ms.png)
+![Panel penyimpanan tempatan](../../../../translated_images/ms/localstorage.472f8147b6a3f8d1.webp)
 
 > ⚠️ **Pertimbangan Keselamatan**: Dalam aplikasi pengeluaran, menyimpan kunci API dalam LocalStorage menimbulkan risiko keselamatan kerana JavaScript boleh mengakses data ini. Untuk tujuan pembelajaran, pendekatan ini berfungsi dengan baik, tetapi aplikasi sebenar harus menggunakan penyimpanan pelayan yang selamat untuk kelayakan sensitif.
 

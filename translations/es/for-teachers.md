@@ -1,12 +1,3 @@
-<!--
-CO_OP_TRANSLATOR_METADATA:
-{
-  "original_hash": "71009af209f81cc01a1f2d324200375f",
-  "translation_date": "2025-10-03T08:26:01+00:00",
-  "source_file": "for-teachers.md",
-  "language_code": "es"
-}
--->
 ### Para Educadores
 
 Estás invitado a usar este plan de estudios en tu aula. Funciona perfectamente con GitHub Classroom y las principales plataformas LMS, y también puede utilizarse como un repositorio independiente con tus estudiantes.
@@ -42,10 +33,10 @@ Este plan de estudios incluye paquetes importables para flujos de trabajo comune
   - Moodle Cloud tiene soporte limitado para Common Cartridge. Es preferible usar el archivo de Moodle mencionado anteriormente, que también puede cargarse en Canvas.
   - Después de importar, revisa los módulos, fechas de entrega y configuraciones de cuestionarios para ajustarlos al calendario de tu periodo.
 
-![Moodle](../../translated_images/moodle.94eb93d714a50cb2c97435b408017dee224348b61bc86203ffd43a4f4e57b95f.es.png)
+![Moodle](../../translated_images/es/moodle.94eb93d714a50cb2.webp)
 > El plan de estudios en un aula de Moodle
 
-![Canvas](../../translated_images/canvas.fbd605ff8e5b8aff567d398528ce113db304446b90b9cad55c654de3fdfcda34.es.png)
+![Canvas](../../translated_images/es/canvas.fbd605ff8e5b8aff.webp)
 > El plan de estudios en Canvas
 
 ### Uso del repositorio directamente (sin Classroom)

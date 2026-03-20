@@ -1,12 +1,3 @@
-<!--
-CO_OP_TRANSLATOR_METADATA:
-{
-  "original_hash": "50a7783473b39a2e0f133e271a102231",
-  "translation_date": "2025-10-25T00:04:43+00:00",
-  "source_file": "7-bank-project/4-state-management/assignment.md",
-  "language_code": "hr"
-}
--->
 # Implementacija dijaloga "Dodaj transakciju"
 
 ## Pregled
@@ -112,7 +103,7 @@ Pogledajte [dokumentaciju API-ja poslužitelja](../api/README.md) za:
 **Očekivani rezultat:**
 Nakon završetka ovog zadatka, vaša aplikacija za bankarstvo trebala bi imati potpuno funkcionalnu značajku "Dodaj transakciju" koja izgleda i ponaša se profesionalno:
 
-![Snimka zaslona koja prikazuje primjer dijaloga "Dodaj transakciju"](../../../../translated_images/dialog.93bba104afeb79f12f65ebf8f521c5d64e179c40b791c49c242cf15f7e7fab15.hr.png)
+![Snimka zaslona koja prikazuje primjer dijaloga "Dodaj transakciju"](../../../../translated_images/hr/dialog.93bba104afeb79f1.webp)
 
 ## Testiranje implementacije
 

@@ -1,12 +1,3 @@
-<!--
-CO_OP_TRANSLATOR_METADATA:
-{
-  "original_hash": "b807b09df716dc48a2b750835bf8e933",
-  "translation_date": "2025-11-06T14:40:56+00:00",
-  "source_file": "7-bank-project/4-state-management/README.md",
-  "language_code": "my"
-}
--->
 # ဘဏ်အက်ပ်တည်ဆောက်ခြင်း အပိုင်း ၄: အခြေအနေစီမံခန့်ခွဲမှု၏ အယူအဆများ
 
 ## ⚡ နောက် ၅ မိနစ်အတွင်း သင်လုပ်နိုင်သည့်အရာများ
@@ -188,7 +179,7 @@ Titanic ၏ compartmentalized design ကဲ့သို့၊ ပြဿနာမ
 
 ကျွန်ုပ်တို့သည် **centralized state management** system တစ်ခုကို ဖန်တီးမည်။ ၎င်းသည် အရေးကြီးသောအရာအားလုံးကို စီမံခန့်ခွဲသော တစ်ဦးတည်းသော လူတစ်ဦးကဲ့သို့ဖြစ်သည်:
 
-![HTML, user actions နှင့် state အကြား data flows ကို ပြသသော schema](../../../../translated_images/data-flow.fa2354e0908fecc89b488010dedf4871418a992edffa17e73441d257add18da4.my.png)
+![HTML, user actions နှင့် state အကြား data flows ကို ပြသသော schema](../../../../translated_images/my/data-flow.fa2354e0908fecc8.webp)
 
 ```mermaid
 flowchart TD

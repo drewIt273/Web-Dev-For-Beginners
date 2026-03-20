@@ -1,12 +1,3 @@
-<!--
-CO_OP_TRANSLATOR_METADATA:
-{
-  "original_hash": "71009af209f81cc01a1f2d324200375f",
-  "translation_date": "2025-10-03T08:42:38+00:00",
-  "source_file": "for-teachers.md",
-  "language_code": "ur"
-}
--->
 ### اساتذہ کے لیے
 
 آپ اس نصاب کو اپنی کلاس میں استعمال کرنے کے لیے خوش آمدید ہیں۔ یہ GitHub Classroom اور معروف LMS پلیٹ فارمز کے ساتھ بخوبی کام کرتا ہے، اور اسے آپ اپنے طلباء کے ساتھ ایک علیحدہ ریپو کے طور پر بھی استعمال کر سکتے ہیں۔
@@ -42,10 +33,10 @@ CO_OP_TRANSLATOR_METADATA:
   - Moodle Cloud میں Common Cartridge کی محدود حمایت ہے۔ اوپر دی گئی Moodle فائل کو ترجیح دیں، جسے Canvas میں بھی اپلوڈ کیا جا سکتا ہے۔
   - درآمد کے بعد، ماڈیولز، مقررہ تاریخیں، اور کوئز کی ترتیبات کو اپنے ٹرم شیڈول کے مطابق دیکھیں۔
 
-![Moodle](../../translated_images/moodle.94eb93d714a50cb2c97435b408017dee224348b61bc86203ffd43a4f4e57b95f.ur.png)
+![Moodle](../../translated_images/ur/moodle.94eb93d714a50cb2.webp)
 > Moodle کلاس روم میں نصاب
 
-![Canvas](../../translated_images/canvas.fbd605ff8e5b8aff567d398528ce113db304446b90b9cad55c654de3fdfcda34.ur.png)
+![Canvas](../../translated_images/ur/canvas.fbd605ff8e5b8aff.webp)
 > Canvas میں نصاب
 
 ### ریپو کو براہ راست استعمال کریں (بغیر Classroom کے)

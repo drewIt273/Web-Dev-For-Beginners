@@ -1,12 +1,3 @@
-<!--
-CO_OP_TRANSLATOR_METADATA:
-{
-  "original_hash": "7cbdbd132d39a2bb493e85bc2a9387cc",
-  "translation_date": "2025-11-04T01:36:11+00:00",
-  "source_file": "7-bank-project/2-forms/README.md",
-  "language_code": "fi"
-}
--->
 # Rakenna pankkisovellus, osa 2: Luo kirjautumis- ja rekisteröintilomake
 
 ```mermaid
@@ -295,7 +286,7 @@ Ensiksi tarkastellaan, mitä tapahtuu peruslomakkeen lähetyksessä:
 2. Tarkkaile muutoksia selaimesi osoiterivillä
 3. Huomaa, kuinka sivu latautuu uudelleen ja tiedot näkyvät URL-osoitteessa
 
-![Kuvakaappaus selaimen URL-osoitteen muutoksesta Rekisteröidy-painikkeen klikkauksen jälkeen](../../../../translated_images/click-register.e89a30bf0d4bc9ca867dc537c4cea679a7c26368bd790969082f524fed2355bc.fi.png)
+![Kuvakaappaus selaimen URL-osoitteen muutoksesta Rekisteröidy-painikkeen klikkauksen jälkeen](../../../../translated_images/fi/click-register.e89a30bf0d4bc9ca.webp)
 
 ### HTTP-menetelmien vertailu
 
@@ -350,7 +341,7 @@ Konfiguroidaan rekisteröintilomakkeesi kommunikoimaan oikein taustapalvelimen A
 2. **Klikkaa** "Luo tili" -painiketta
 3. **Tarkkaile** palvelimen vastausta selaimessasi
 
-![Selaimen ikkuna osoitteessa localhost:5000/api/accounts, jossa näkyy JSON-merkkijono käyttäjätiedoilla](../../../../translated_images/form-post.61de4ca1b964d91a9e338416e19f218504dd0af5f762fbebabfe7ae80edf885f.fi.png)
+![Selaimen ikkuna osoitteessa localhost:5000/api/accounts, jossa näkyy JSON-merkkijono käyttäjätiedoilla](../../../../translated_images/fi/form-post.61de4ca1b964d91a.webp)
 
 **Mitä sinun pitäisi nähdä:**
 - **Selaimen uudelleenohjaus** API-päätepisteen URL-osoitteeseen
@@ -554,7 +545,7 @@ async function register() {
 3. **Klikkaa** "Luo tili"
 4. **Tarkkaile** konsoliviestejä ja käyttäjäpalautetta
 
-![Näyttökuva, jossa näkyy lokiviesti selaimen konsolissa](../../../../translated_images/browser-console.efaf0b51aaaf67782a29e1a0bb32cc063f189b18e894eb5926e02f1abe864ec2.fi.png)
+![Näyttökuva, jossa näkyy lokiviesti selaimen konsolissa](../../../../translated_images/fi/browser-console.efaf0b51aaaf6778.webp)
 
 **Mitä sinun pitäisi nähdä:**
 - **Lataustila** näkyy lähetyspainikkeessa
@@ -729,7 +720,7 @@ Parannetaan rekisteröintilomakettasi vankalla validoinnilla, joka tarjoaa erino
 3. **Kokeile** erikoismerkkejä käyttäjänimi-kentässä
 4. **Anna** negatiivinen saldo
 
-![Näyttökuva, jossa näkyy validointivirhe lomakkeen lähettämisen yhteydessä](../../../../translated_images/validation-error.8bd23e98d416c22f80076d04829a4bb718e0e550fd622862ef59008ccf0d5dce.fi.png)
+![Näyttökuva, jossa näkyy validointivirhe lomakkeen lähettämisen yhteydessä](../../../../translated_images/fi/validation-error.8bd23e98d416c22f.webp)
 
 **Mitä huomaat:**
 - **Selaimen näyttämät** natiivivalidointiviestit
@@ -859,7 +850,7 @@ Näytä virheilmoitus HTML:ssä, jos käyttäjä on jo olemassa.
 
 Tässä on esimerkki siitä, miltä lopullinen kirjautumissivu voi näyttää pienen tyylittelyn jälkeen:
 
-![Näyttökuva kirjautumissivusta CSS-tyylien lisäämisen jälkeen](../../../../translated_images/result.96ef01f607bf856aa9789078633e94a4f7664d912f235efce2657299becca483.fi.png)
+![Näyttökuva kirjautumissivusta CSS-tyylien lisäämisen jälkeen](../../../../translated_images/fi/result.96ef01f607bf856a.webp)
 
 ## Luentojälkeinen kysely
 

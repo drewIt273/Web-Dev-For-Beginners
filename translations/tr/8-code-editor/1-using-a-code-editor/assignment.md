@@ -1,12 +1,3 @@
-<!--
-CO_OP_TRANSLATOR_METADATA:
-{
-  "original_hash": "effe56ba51c38d7bdfad1ea38288666b",
-  "translation_date": "2025-10-22T23:47:14+00:00",
-  "source_file": "8-code-editor/1-using-a-code-editor/assignment.md",
-  "language_code": "tr"
-}
--->
 # VSCode.dev Kullanarak Özgeçmiş Web Sitesi Oluşturma
 
 Kariyer fırsatlarınızı, becerilerinizi ve deneyimlerinizi interaktif, modern bir formatta sergileyen profesyonel bir özgeçmiş web sitesi oluşturarak dönüştürün. Geleneksel PDF'ler göndermek yerine, niteliklerinizi ve web geliştirme yeteneklerinizi gösteren şık, duyarlı bir web sitesi sunmayı hayal edin.
@@ -78,7 +69,7 @@ VSCode.dev'in bir depoyu açması için en az bir dosya gerektirdiğinden, web d
 4. Bir commit mesajı yazın: "Add initial HTML structure"
 5. Değişikliklerinizi kaydetmek için "Commit new file" düğmesine **tıklayın**
 
-![GitHub'da ilk dosyayı oluşturma](../../../../translated_images/new-file-github.com.c886796d800e8056561829a181be1382c5303da9d902d8b2dd82b68a4806e21f.tr.png)
+![GitHub'da ilk dosyayı oluşturma](../../../../translated_images/tr/new-file-github.com.c886796d800e8056.webp)
 
 **Bu başlangıç kurulumu şunları sağlar:**
 - HTML5 belge yapısını semantik öğelerle **oluşturur**
@@ -104,7 +95,7 @@ Depo temeliniz oluşturulduğuna göre, ana geliştirme çalışmaları için VS
 
 ✅ **Başarı göstergesi**: Proje dosyalarınızı Explorer yan çubuğunda ve `index.html` dosyasını düzenleme için ana düzenleyici alanında görmelisiniz.
 
-![VSCode.dev'de yüklenen proje](../../../../translated_images/project-on-vscode.dev.e79815a9a95ee7feac72ebe5c941c91279716be37c575dbdbf2f43bea2c7d8b6.tr.png)
+![VSCode.dev'de yüklenen proje](../../../../translated_images/tr/project-on-vscode.dev.e79815a9a95ee7fe.webp)
 
 **Arayüzde göreceğiniz şeyler:**
 - **Explorer yan çubuğu**: Depo dosyalarınızı ve klasör yapınızı **gösterir**
@@ -448,7 +439,7 @@ Uzantılar, geliştirme deneyiminizi iyileştirerek canlı önizleme yetenekleri
 **Yükleme sonrası anında sonuçlar:**
 CodeSwing yüklendikten sonra, özgeçmiş web sitenizin canlı önizlemesi düzenleyicide görünür. Bu, siteyi düzenlerken tam olarak nasıl göründüğünü görmenizi sağlar.
 
-![CodeSwing uzantısı canlı önizleme gösteriyor](../../../../translated_images/after-codeswing-extension-pb.0ebddddcf73b550994947a9084e35e2836c713ae13839d49628e3c764c1cfe83.tr.png)
+![CodeSwing uzantısı canlı önizleme gösteriyor](../../../../translated_images/tr/after-codeswing-extension-pb.0ebddddcf73b5509.webp)
 
 **Geliştirilmiş arayüzü anlama:**
 - **Bölünmüş görünüm**: Kodunuzu bir tarafta ve canlı önizlemeyi diğer tarafta **gösterir**

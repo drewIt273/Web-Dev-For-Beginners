@@ -1,12 +1,3 @@
-<!--
-CO_OP_TRANSLATOR_METADATA:
-{
-  "original_hash": "d45ddcc54eb9232a76d08328b09d792e",
-  "translation_date": "2025-11-04T00:46:36+00:00",
-  "source_file": "1-getting-started-lessons/1-intro-to-programming-languages/README.md",
-  "language_code": "tr"
-}
--->
 # Programlama Dillerine ve Modern Geliştirici Araçlarına Giriş
 
 Merhaba, geleceğin geliştiricisi! 👋 Sana her gün beni heyecanlandıran bir şey söyleyebilir miyim? Programlamanın sadece bilgisayarlarla ilgili olmadığını, aynı zamanda en çılgın fikirlerini hayata geçirebilmek için gerçek süper güçlere sahip olmakla ilgili olduğunu keşfetmek üzeresin!
@@ -17,7 +8,7 @@ Bak, şu anda programlama gözünü korkutuyorsa seni tamamen anlıyorum. Ben il
 
 Bugün, modern web geliştirmeyi sadece mümkün kılmakla kalmayıp, aynı zamanda ciddi anlamda bağımlılık yapan inanılmaz araçları keşfedeceğiz. Netflix, Spotify ve en sevdiğin bağımsız uygulama stüdyosundaki geliştiricilerin her gün kullandığı tam olarak aynı editörler, tarayıcılar ve iş akışlarından bahsediyorum. Ve işte seni mutlu dans ettirecek kısım: Bu profesyonel düzeydeki, endüstri standardı araçların çoğu tamamen ücretsiz!
 
-![Programlama Giriş](../../../../translated_images/webdev101-programming.d6e3f98e61ac4bff0b27dcbf1c3f16c8ed46984866f2d29988929678b0058fde.tr.png)
+![Programlama Giriş](../../../../translated_images/tr/webdev101-programming.d6e3f98e61ac4bff.webp)
 > Sketchnote: [Tomomi Imura](https://twitter.com/girlie_mac)
 
 ```mermaid

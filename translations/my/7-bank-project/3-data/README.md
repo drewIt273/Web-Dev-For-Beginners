@@ -1,12 +1,3 @@
-<!--
-CO_OP_TRANSLATOR_METADATA:
-{
-  "original_hash": "86ee5069f27ea3151389d8687c95fac9",
-  "translation_date": "2025-11-06T14:43:41+00:00",
-  "source_file": "7-bank-project/3-data/README.md",
-  "language_code": "my"
-}
--->
 # ဘဏ်အက်ပ်တည်ဆောက်ခြင်း အပိုင်း ၃: ဒေတာကို ရယူခြင်းနှင့် အသုံးပြုခြင်းနည်းလမ်းများ
 
 Star Trek မှ Enterprise ရဲ့ ကွန်ပျူတာကို စဉ်းစားကြည့်ပါ - Captain Picard သင်္ဘောအခြေအနေကို မေးတဲ့အခါမှာ အချက်အလက်တွေ အလျင်အမြန်ပေါ်လာပြီး interface တစ်ခုလုံးကို ပိတ်ပြီး ပြန်တည်ဆောက်ရတာမျိုး မဖြစ်ပါဘူး။ ဒီလို seamless flow of information ကတော့ dynamic data fetching နဲ့ ကျွန်တော်တို့ တည်ဆောက်နေတဲ့အရာပဲ ဖြစ်ပါတယ်။
@@ -160,7 +151,7 @@ sequenceDiagram
     Browser->>User: Displays new page (flash/reload)
 ```
 
-![Update workflow in a multi-page application](../../../../translated_images/mpa.7f7375a1a2d4aa779d3f928a2aaaf9ad76bcdeb05cfce2dc27ab126024050f51.my.png)
+![Update workflow in a multi-page application](../../../../translated_images/my/mpa.7f7375a1a2d4aa77.webp)
 
 **ဒီနည်းလမ်းက ဘာလို့ clunky ဖြစ်ခဲ့သလဲ:**
 - Click တစ်ချက်တိုင်းက page တစ်ခုလုံးကို ပြန်တည်ဆောက်ရတာ
@@ -187,7 +178,7 @@ sequenceDiagram
     Browser->>User: Shows updated content (no reload)
 ```
 
-![Update workflow in a single-page application](../../../../translated_images/spa.268ec73b41f992c2a21ef9294235c6ae597b3c37e2c03f0494c2d8857325cc57.my.png)
+![Update workflow in a single-page application](../../../../translated_images/my/spa.268ec73b41f992c2.webp)
 
 **SPA တွေက ဘာလို့ ပိုကောင်းသလဲ:**
 - တကယ်ပြောင်းလဲလိုတဲ့ အပိုင်းတွေကိုသာ update လုပ်တာ (smart, right?)
@@ -500,7 +491,7 @@ if (data.error) {
 
 Invalid account ဖြင့်စမ်းသပ်ပါက၊ Error message ကို page ပေါ်မှာပေါ်လာတာကိုမြင်ရပါမည်!
 
-![Login အတွင်း error message ပြသထားသော screenshot](../../../../translated_images/login-error.416fe019b36a63276764c2349df5d99e04ebda54fefe60c715ee87a28d5d4ad0.my.png)
+![Login အတွင်း error message ပြသထားသော screenshot](../../../../translated_images/my/login-error.416fe019b36a6327.webp)
 
 #### အဆင့် 4: Accessibility ဖြင့်ပါဝင်မှုရှိစေခြင်း
 
@@ -815,7 +806,7 @@ Agent mode ကို အသုံးပြု၍ အောက်ပါ challenge
 
 ဒီလို polished dashboard တစ်ခုကို ရနိုင်ပါမည်:
 
-![Screenshot of an example result of the dashboard after styling](../../../../translated_images/screen2.123c82a831a1d14ab2061994be2fa5de9cec1ce651047217d326d4773a6348e4.my.png)
+![Screenshot of an example result of the dashboard after styling](../../../../translated_images/my/screen2.123c82a831a1d14a.webp)
 
 ဒီအတိုင်းတိတိမလုပ်ရပါ - အကြံဉာဏ်အဖြစ် အသုံးပြုပြီး သင့်စိတ်ကြိုက် ပြောင်းလဲပါ!
 

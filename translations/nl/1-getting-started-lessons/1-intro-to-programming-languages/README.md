@@ -1,12 +1,3 @@
-<!--
-CO_OP_TRANSLATOR_METADATA:
-{
-  "original_hash": "d45ddcc54eb9232a76d08328b09d792e",
-  "translation_date": "2025-11-04T01:51:13+00:00",
-  "source_file": "1-getting-started-lessons/1-intro-to-programming-languages/README.md",
-  "language_code": "nl"
-}
--->
 # Introductie tot programmeertalen en moderne ontwikkeltools
 
 Hoi daar, toekomstige ontwikkelaar! 👋 Mag ik je iets vertellen dat me elke dag weer kippenvel bezorgt? Je staat op het punt te ontdekken dat programmeren niet alleen over computers gaat – het is alsof je superkrachten krijgt om je wildste ideeën tot leven te brengen!
@@ -17,7 +8,7 @@ Luister, ik snap het helemaal als programmeren nu nog intimiderend lijkt. Toen i
 
 Vandaag gaan we de geweldige tools verkennen die moderne webontwikkeling niet alleen mogelijk maken, maar ook verslavend leuk. Ik heb het over dezelfde editors, browsers en workflows die ontwikkelaars bij Netflix, Spotify en je favoriete indie-appstudio elke dag gebruiken. En hier komt het deel dat je een vreugdedansje laat doen: de meeste van deze professionele, industrienorm-tools zijn helemaal gratis!
 
-![Intro Programmering](../../../../translated_images/webdev101-programming.d6e3f98e61ac4bff0b27dcbf1c3f16c8ed46984866f2d29988929678b0058fde.nl.png)
+![Intro Programmering](../../../../translated_images/nl/webdev101-programming.d6e3f98e61ac4bff.webp)
 > Sketchnote door [Tomomi Imura](https://twitter.com/girlie_mac)
 
 ```mermaid

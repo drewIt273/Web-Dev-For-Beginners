@@ -1,12 +1,3 @@
-<!--
-CO_OP_TRANSLATOR_METADATA:
-{
-  "original_hash": "d45ddcc54eb9232a76d08328b09d792e",
-  "translation_date": "2025-11-06T12:32:35+00:00",
-  "source_file": "1-getting-started-lessons/1-intro-to-programming-languages/README.md",
-  "language_code": "ja"
-}
--->
 # プログラミング言語と現代の開発ツールの紹介
 
 こんにちは、未来の開発者さん！👋 毎日ワクワクすることをお伝えしてもいいですか？プログラミングは単なるコンピューターの操作ではなく、自分のアイデアを形にするための実際のスーパーパワーを手に入れることなんです！
@@ -17,7 +8,7 @@ CO_OP_TRANSLATOR_METADATA:
 
 今日は、現代のウェブ開発を可能にするだけでなく、夢中にさせる素晴らしいツールを探求します。NetflixやSpotify、そしてお気に入りのインディーアプリスタジオの開発者が毎日使っているエディター、ブラウザ、ワークフローについて話します。そして、これがあなたを踊りたくさせる部分です：これらのプロ仕様の業界標準ツールのほとんどが完全に無料なんです！
 
-![Intro Programming](../../../../translated_images/webdev101-programming.d6e3f98e61ac4bff0b27dcbf1c3f16c8ed46984866f2d29988929678b0058fde.ja.png)
+![Intro Programming](../../../../translated_images/ja/webdev101-programming.d6e3f98e61ac4bff.webp)
 > スケッチノート提供：[Tomomi Imura](https://twitter.com/girlie_mac)
 
 ```mermaid

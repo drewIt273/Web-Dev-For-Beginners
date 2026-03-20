@@ -1,12 +1,3 @@
-<!--
-CO_OP_TRANSLATOR_METADATA:
-{
-  "original_hash": "351678bece18f07d9daa987a881fb062",
-  "translation_date": "2025-11-03T14:47:54+00:00",
-  "source_file": "7-bank-project/1-template-route/README.md",
-  "language_code": "mr"
-}
--->
 # बँकिंग अ‍ॅप तयार करा भाग 1: HTML टेम्पलेट्स आणि वेब अ‍ॅपमधील रूट्स
 
 ```mermaid
@@ -575,7 +566,7 @@ sequenceDiagram
 
 `history.pushState` वापरून ब्राउझरच्या नेव्हिगेशन इतिहासात नवीन एंट्री तयार होते. तुम्ही ब्राउझरचा *बॅक बटन* धरून तपासू शकता, ते असे काहीतरी प्रदर्शित करेल:
 
-![नेव्हिगेशन इतिहासाचा स्क्रीनशॉट](../../../../translated_images/history.7fdabbafa521e06455b738d3dafa3ff41d3071deae60ead8c7e0844b9ed987d8.mr.png)
+![नेव्हिगेशन इतिहासाचा स्क्रीनशॉट](../../../../translated_images/mr/history.7fdabbafa521e064.webp)
 
 जर तुम्ही बॅक बटनवर काही वेळा क्लिक केले, तर तुम्ही पाहाल की वर्तमान URL बदलतो आणि इतिहास अपडेट होतो, परंतु समान टेम्पलेट प्रदर्शित होत राहते.
 

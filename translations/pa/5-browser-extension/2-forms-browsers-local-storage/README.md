@@ -1,12 +1,3 @@
-<!--
-CO_OP_TRANSLATOR_METADATA:
-{
-  "original_hash": "2b6203a48c48d8234e0948353b47d84e",
-  "translation_date": "2025-11-03T17:01:27+00:00",
-  "source_file": "5-browser-extension/2-forms-browsers-local-storage/README.md",
-  "language_code": "pa"
-}
--->
 # ਬ੍ਰਾਊਜ਼ਰ ਐਕਸਟੈਂਸ਼ਨ ਪ੍ਰੋਜੈਕਟ ਭਾਗ 2: API ਕਾਲ ਕਰੋ, ਲੋਕਲ ਸਟੋਰੇਜ ਵਰਤੋ
 
 ```mermaid
@@ -268,7 +259,7 @@ stateDiagram-v2
     ClearStorage --> FirstTime: Back to setup
 ```
 
-![ਲੋਕਲ ਸਟੋਰੇਜ ਪੈਨ](../../../../translated_images/localstorage.472f8147b6a3f8d141d9551c95a2da610ac9a3c6a73d4a1c224081c98bae09d9.pa.png)
+![ਲੋਕਲ ਸਟੋਰੇਜ ਪੈਨ](../../../../translated_images/pa/localstorage.472f8147b6a3f8d1.webp)
 
 > ⚠️ **ਸੁਰੱਖਿਆ ਵਿਚਾਰ**: ਉਤਪਾਦਨ ਐਪਲੀਕੇਸ਼ਨਜ਼ ਵਿੱਚ, LocalStorage ਵਿੱਚ API ਕੁੰਜੀਆਂ ਨੂੰ ਸਟੋਰ ਕਰਨਾ ਸੁਰੱਖਿਆ ਖਤਰੇ ਪੈਦਾ ਕਰਦਾ ਹੈ ਕਿਉਂਕਿ ਜਾਵਾਸਕ੍ਰਿਪਟ ਇਸ ਡਾਟਾ ਤੱਕ ਪਹੁੰਚ ਕਰ ਸਕਦਾ ਹੈ। ਸਿੱਖਣ ਦੇ ਉਦੇਸ਼ਾਂ ਲਈ, ਇਹ ਪਹੁੰਚ ਠੀਕ ਹੈ, ਪਰ ਅਸਲ ਐਪਲੀਕੇਸ਼ਨਜ਼ ਨੂੰ ਸੰਵੇਦਨਸ਼ੀਲ ਪ੍ਰਮਾਣਾਂ ਲਈ ਸੁਰੱਖਿਅਤ ਸਰਵਰ-ਸਾਈਡ ਸਟੋਰੇਜ ਦੀ ਵਰਤੋਂ ਕਰਨੀ ਚਾਹੀਦੀ ਹੈ।
 

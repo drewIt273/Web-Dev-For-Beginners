@@ -1,177 +1,270 @@
-<!--
-CO_OP_TRANSLATOR_METADATA:
-{
-  "original_hash": "33a875c522f237a2026e4653240dfc07",
-  "translation_date": "2025-10-25T00:16:11+00:00",
-  "source_file": "5-browser-extension/1-about-browsers/README.md",
-  "language_code": "hr"
-}
--->
-# Projekt proširenja preglednika, 1. dio: Sve o preglednicima
+# Projekt proširenja preglednika Dio 1: Sve o preglednicima
 
-![Skica preglednika](../../../../translated_images/browser.60317c9be8b7f84adce43e30bff8d47a1ae15793beab762317b2bc6b74337c1a.hr.jpg)
-> Skica autora [Wassim Chegham](https://dev.to/wassimchegham/ever-wondered-what-happens-when-you-type-in-a-url-in-an-address-bar-in-a-browser-3dob)
+```mermaid
+journey
+    title Vaše putovanje razvoja proširenja preglednika
+    section Osnove
+      Razumjeti preglednike: 3: Student
+      Naučiti vrste proširenja: 4: Student
+      Postaviti razvojno okruženje: 4: Student
+    section Razvoj
+      Izgraditi sučelje: 4: Student
+      Dodati funkcionalnost: 5: Student
+      Obraditi podatke: 5: Student
+    section Integracija
+      Testirati u pregledniku: 5: Student
+      Otkloniti probleme: 4: Student
+      Usavršiti iskustvo: 5: Student
+```
+![Browser sketchnote](../../../../translated_images/hr/browser.60317c9be8b7f84a.webp)
+> Sketchnote od [Wassim Chegham](https://dev.to/wassimchegham/ever-wondered-what-happens-when-you-type-in-a-url-in-an-address-bar-in-a-browser-3dob)
 
 ## Kviz prije predavanja
 
-[Kviz prije predavanja](https://ff-quizzes.netlify.app/web/quiz/23)
+[Pre-lecture quiz](https://ff-quizzes.netlify.app/web/quiz/23)
 
 ### Uvod
 
-Proširenja za preglednike su mini-aplikacije koje poboljšavaju vaše iskustvo pregledavanja interneta. Poput izvorne vizije Tima Berners-Leeja o interaktivnom webu, proširenja proširuju mogućnosti preglednika izvan jednostavnog prikaza dokumenata. Od upravitelja lozinki koji čuvaju vaše račune do alata za odabir boja koji pomažu dizajnerima da pronađu savršene nijanse, proširenja rješavaju svakodnevne izazove pregledavanja.
+Proširenja preglednika su mini-aplikacije koje poboljšavaju vaše iskustvo pregledavanja weba. Kao što je Tim Berners-Lee zamišljao interaktivni web, proširenja proširuju mogućnosti preglednika izvan jednostavnog prikaza dokumenata. Od upravitelja lozinkama koji štite vaše račune do birača boja koji pomažu dizajnerima da uhvate savršene nijanse, proširenja rješavaju svakodnevne izazove pregledavanja.
 
-Prije nego što izradimo vaše prvo proširenje, razumjet ćemo kako preglednici funkcioniraju. Baš kao što je Alexander Graham Bell morao razumjeti prijenos zvuka prije nego što je izumio telefon, poznavanje osnova preglednika pomoći će vam da stvorite proširenja koja se besprijekorno integriraju s postojećim sustavima preglednika.
+Prije nego što izradimo vaše prvo proširenje, razumimo kako preglednici rade. Baš kao što je Alexander Graham Bell trebao razumjeti prijenos zvuka prije nego što je izumio telefon, poznavanje osnovnih principa preglednika pomoći će vam da izradite proširenja koja se besprijekorno integriraju s postojećim sustavima preglednika.
 
-Na kraju ove lekcije, razumjet ćete arhitekturu preglednika i započeti izradu svog prvog proširenja.
+Na kraju ovog poglavlja razumjet ćete arhitekturu preglednika i započeti gradnju svog prvog proširenja.
 
+```mermaid
+mindmap
+  root((Arhitektura preglednika))
+    Core Components
+      Rendering Engine
+      JavaScript Engine
+      Network Stack
+      Storage APIs
+    User Interface
+      Address Bar
+      Tab Management
+      Bookmarks
+      Extension Icons
+    Extension System
+      Manifest Files
+      Content Scripts
+      Background Pages
+      Popup Windows
+    Security Model
+      Same-Origin Policy
+      Permissions API
+      Content Security
+      Isolated Worlds
+    Development Tools
+      DevTools Integration
+      Debug Console
+      Performance Monitor
+      Extension Inspector
+```
 ## Razumijevanje web preglednika
 
-Web preglednik je u suštini sofisticirani interpretator dokumenata. Kada u adresnu traku upišete "google.com", preglednik izvodi složeni niz operacija - zahtijeva sadržaj sa servera širom svijeta, zatim analizira i prikazuje taj kod u interaktivne web stranice koje vidite.
+Web preglednik je u suštini sofisticirani tumač dokumenata. Kad upišete "google.com" u adresnu traku, preglednik izvodi složeni niz radnji - traži sadržaj s poslužitelja širom svijeta, zatim parsira i prikazuje taj kod u interaktivne web stranice koje vidite.
 
-Ovaj proces odražava način na koji je prvi web preglednik, WorldWideWeb, dizajnirao Tim Berners-Lee 1990. godine kako bi hiperpovezane dokumente učinio dostupnima svima.
+Ovaj proces odražava kako je prvi web preglednik, WorldWideWeb, dizajnirao Tim Berners-Lee 1990. godine kako bi hiperveze učinio dostupnima svima.
 
-✅ **Malo povijesti**: Prvi preglednik zvao se 'WorldWideWeb' i stvorio ga je Sir Timothy Berners-Lee 1990. godine.
+✅ **Malo povijesti**: Prvi preglednik zvao se ‘WorldWideWeb’ i stvorio ga je sir Timothy Berners-Lee 1990. godine.
 
-![rani preglednici](../../../../translated_images/earlybrowsers.d984b711cdf3a42ddac919d46c4b5ca7232f68ccfbd81395e04e5a64c0015277.hr.jpg)
-> Neki od ranih preglednika, prema [Karen McGrane](https://www.slideshare.net/KMcGrane/week-4-ixd-history-personal-computing)
+![early browsers](../../../../translated_images/hr/earlybrowsers.d984b711cdf3a42d.webp)
+> Neki rani preglednici, prema [Karen McGrane](https://www.slideshare.net/KMcGrane/week-4-ixd-history-personal-computing)
 
 ### Kako preglednici obrađuju web sadržaj
 
-Proces između unosa URL-a i prikaza web stranice uključuje nekoliko koordiniranih koraka koji se odvijaju u sekundi:
+Proces između unošenja URL-a i prikaza web stranice uključuje nekoliko koordiniranih koraka koji se odigraju u roku od sekundi:
 
 ```mermaid
 sequenceDiagram
     participant User
     participant Browser
+    participant Extension
     participant DNS
     participant Server
     
-    User->>Browser: Types URL and presses Enter
-    Browser->>DNS: Looks up server IP address
-    DNS->>Browser: Returns IP address
-    Browser->>Server: Requests web page content
-    Server->>Browser: Sends HTML, CSS, and JavaScript
-    Browser->>User: Renders complete web page
+    User->>Browser: Unosi URL i pritiska Enter
+    Browser->>Extension: Pokreće beforeRequest događaj
+    Extension->>Extension: Provjerava treba li mijenjati URL
+    Browser->>DNS: Traži IP adresu servera
+    DNS->>Browser: Vraća IP adresu
+    Browser->>Server: Zahtijeva sadržaj web stranice
+    Server->>Browser: Šalje HTML, CSS i JavaScript
+    Browser->>Extension: Pokreće beforeResponse događaj
+    Extension->>Extension: Mijenja sadržaj ako je potrebno
+    Browser->>User: Prikazuje kompletnu web stranicu
+    Extension->>User: Prikazuje ažuriranja ekstenzije UI
 ```
-
-**Što ovaj proces postiže:**
-- **Prevodi** URL koji je čitljiv ljudima u IP adresu servera putem DNS pretraživanja
-- **Uspostavlja** sigurnu vezu sa web serverom koristeći HTTP ili HTTPS protokole
-- **Zahtijeva** specifičan sadržaj web stranice od servera
-- **Prima** HTML oznake, CSS stilove i JavaScript kod od servera
+**Ovo je što proces postiže:**
+- **Prevede** URL čitljiv ljudima u IP adresu poslužitelja putem DNS upita
+- **Uspostavi** sigurnu vezu s web poslužiteljem koristeći HTTP ili HTTPS protokole
+- **Zatraži** specifični sadržaj web stranice s poslužitelja
+- **Primi** HTML oznake, CSS stilove i JavaScript kod s poslužitelja
 - **Prikazuje** sav sadržaj u interaktivnu web stranicu koju vidite
 
 ### Osnovne značajke preglednika
 
 Moderni preglednici pružaju brojne značajke koje programeri proširenja mogu iskoristiti:
 
-| Značajka | Svrha | Mogućnosti proširenja |
+| Značajka | Svrha | Mogućnosti za proširenja |
 |---------|---------|------------------------|
-| **Motor za prikazivanje** | Prikazuje HTML, CSS i JavaScript | Modifikacija sadržaja, umetanje stilova |
-| **JavaScript motor** | Izvršava JavaScript kod | Prilagođeni skripti, interakcije s API-jem |
-| **Lokalna pohrana** | Sprema podatke lokalno | Korisničke postavke, predmemorirani podaci |
-| **Mrežni sloj** | Upravljanje web zahtjevima | Praćenje zahtjeva, analiza podataka |
-| **Sigurnosni model** | Štiti korisnike od zlonamjernog sadržaja | Filtriranje sadržaja, poboljšanja sigurnosti |
+| **Rendering Engine** | Prikazuje HTML, CSS i JavaScript | Modifikacija sadržaja, umetanje stilova |
+| **JavaScript Engine** | Izvršava JavaScript kod | Prilagođeni skripti, interakcije s API-jem |
+| **Local Storage** | Sprema podatke lokalno | Postavke korisnika, predmemorirani podaci |
+| **Network Stack** | Rukuje web zahtjevima | Praćenje zahtjeva, analiza podataka |
+| **Security Model** | Štiti korisnike od zlonamjernog sadržaja | Filtriranje sadržaja, sigurnosna poboljšanja |
 
-**Razumijevanje ovih značajki pomaže vam:**
-- **Identificirati** gdje vaše proširenje može dodati najviše vrijednosti
-- **Odabrati** prave API-je preglednika za funkcionalnost vašeg proširenja
-- **Dizajnirati** proširenja koja učinkovito rade s sustavima preglednika
-- **Osigurati** da vaše proširenje slijedi najbolje prakse sigurnosti preglednika
+**Razumijevanje ovih značajki pomaže vam da:**
+- **Prepoznate** gdje vaše proširenje može dodati najviše vrijednosti
+- **Odaberete** prave API-je preglednika za funkcionalnost vašeg proširenja
+- **Dizajnirate** proširenja koja učinkovito rade s pregledničkim sustavima
+- **Osigurate** da vaše proširenje slijedi najbolje prakse sigurnosti preglednika
 
-### Razmatranja za razvoj proširenja na više preglednika
+### Razmatranja za razvoj na više preglednika
 
-Različiti preglednici implementiraju standarde s blagim varijacijama, slično kao što različiti programski jezici mogu različito obrađivati isti algoritam. Chrome, Firefox i Safari imaju jedinstvene karakteristike koje programeri moraju uzeti u obzir tijekom razvoja proširenja.
+Različiti preglednici standarde provode s malim varijacijama, slično kao što različiti programski jezici mogu drugačije obraditi isti algoritam. Chrome, Firefox i Safari svaki imaju jedinstvene karakteristike koje developeri moraju uzeti u obzir tijekom izrade proširenja.
 
-> 💡 **Savjet za profesionalce**: Koristite [caniuse.com](https://www.caniuse.com) kako biste provjerili koje web tehnologije podržavaju različiti preglednici. Ovo je neprocjenjivo prilikom planiranja značajki vašeg proširenja!
+> 💡 **Savjet**: Koristite [caniuse.com](https://www.caniuse.com) kako biste provjerili koje web tehnologije podržavaju različiti preglednici. Ovo je neprocjenjivo kod planiranja funkcionalnosti vašeg proširenja!
 
-**Ključna razmatranja za razvoj proširenja:**
+**Ključne stvari za razvoj proširenja:**
 - **Testirajte** svoje proširenje na preglednicima Chrome, Firefox i Edge
-- **Prilagodite** se različitim API-jima proširenja i formatima manifestacija preglednika
-- **Rukujte** različitim karakteristikama performansi i ograničenjima
-- **Osigurajte** rezervne opcije za značajke specifične za preglednik koje možda nisu dostupne
+- **Prilagodite** se različitim API-jima i formatima manifest datoteka
+- **Riješite** varijacije u performansama i ograničenjima
+- **Omogućite** alternative za značajke specifične za određene preglednike koje možda nisu dostupne
 
-✅ **Analitički uvid**: Možete odrediti koje preglednike vaši korisnici preferiraju instaliranjem analitičkih paketa u svoje projekte web razvoja. Ovi podaci pomažu vam da odredite prioritete koje preglednike prvo podržati.
+✅ **Uvid u analitiku**: Možete odrediti koje preglednike vaši korisnici preferiraju instaliranjem analitičkih paketa u vaše web razvojne projekte. Ti podaci pomažu vam prioritetizirati koje preglednike prvo podržavati.
 
-## Razumijevanje proširenja za preglednike
+## Razumijevanje proširenja preglednika
 
-Proširenja za preglednike rješavaju uobičajene izazove pregledavanja weba dodavanjem funkcionalnosti izravno u sučelje preglednika. Umjesto da zahtijevaju zasebne aplikacije ili složene radne procese, proširenja pružaju trenutni pristup alatima i značajkama.
+Proširenja preglednika rješavaju uobičajene izazove pregledavanja dodavanjem funkcionalnosti izravno u sučelje preglednika. Umjesto da korisnici trebaju zasebne aplikacije ili složene procese, proširenja pružaju trenutačan pristup alatima i značajkama.
 
-Ovaj koncept odražava kako su rani pioniri računalstva poput Douglasa Engelbarta zamišljali proširenje ljudskih sposobnosti tehnologijom - proširenja proširuju osnovnu funkcionalnost vašeg preglednika.
+Ovaj koncept podsjeća na način kako su ranih računarskih pionira poput Douglasa Engelbarta zamišljali povećanje ljudskih sposobnosti pomoću tehnologije - proširenja nadograđuju osnovnu funkcionalnost vašeg preglednika.
 
+```mermaid
+quadrantChart
+    title Kategorije proširenja preglednika
+    x-axis Jednostavno --> Složenije
+    y-axis Privatna upotreba --> Profesionalni alati
+    quadrant-1 Alati za razvoj
+    quadrant-2 Rješenja za poduzeća
+    quadrant-3 Privatni alati
+    quadrant-4 Aplikacije za produktivnost
+    
+    Ad Blockers: [0.3, 0.2]
+    Password Managers: [0.7, 0.3]
+    Color Pickers: [0.4, 0.8]
+    Code Formatters: [0.8, 0.9]
+    Note Taking: [0.6, 0.5]
+    Video Downloaders: [0.5, 0.2]
+    Time Trackers: [0.7, 0.6]
+    Screenshot Tools: [0.4, 0.4]
+```
 **Popularne kategorije proširenja i njihove prednosti:**
-- **Alati za produktivnost**: Upravljanje zadacima, aplikacije za bilježenje i praćenje vremena koje pomažu u organizaciji
-- **Poboljšanja sigurnosti**: Upravitelji lozinki, blokatori oglasa i alati za privatnost koji štite vaše podatke
-- **Alati za programere**: Formatiranje koda, odabir boja i alati za otklanjanje pogrešaka koji olakšavaju razvoj
-- **Poboljšanje sadržaja**: Načini čitanja, preuzimanje videozapisa i alati za snimanje zaslona koji poboljšavaju vaše iskustvo na webu
+- **Alati za produktivnost**: Upravljanje zadacima, aplikacije za bilješke i vremensko praćenje koje pomažu u organizaciji
+- **Sigurnosna poboljšanja**: Upravitelji lozinkama, blokatori reklama i alati za privatnost koji štite vaše podatke
+- **Alati za developere**: Formatere koda, biranje boja i alati za otklanjanje pogrešaka koji ubrzavaju razvoj
+- **Poboljšanje sadržaja**: Načini čitanja, preuzimatelji videa i alati za snimanje zaslona koji poboljšavaju vaše web iskustvo
 
-✅ **Pitanje za razmišljanje**: Koja su vaša omiljena proširenja za preglednik? Koje specifične zadatke obavljaju i kako poboljšavaju vaše iskustvo pregledavanja?
+✅ **Pitanje za razmišljanje**: Koja su vaša omiljena proširenja preglednika? Koje specifične zadatke obavljaju i kako poboljšavaju vaše iskustvo pregledavanja?
+
+### 🔄 **Pedagoški pregled**
+**Razumijevanje arhitekture preglednika**: Prije prelaska na razvoj proširenja, pobrinite se da možete:
+- ✅ Objasniti kako preglednici obrađuju web zahtjeve i prikazuju sadržaj
+- ✅ Prepoznati glavne komponente arhitekture preglednika
+- ✅ Razumjeti kako se proširenja integriraju s funkcionalnošću preglednika
+- ✅ Prepoznati sigurnosni model koji štiti korisnike
+
+**Brzi samoprovjera**: Možete li pratiti put od upisivanja URL-a do prikaza web stranice?
+1. **DNS upit** pretvara URL u IP adresu
+2. **HTTP zahtjev** dohvaća sadržaj s poslužitelja
+3. **Parsiranje** obrađuje HTML, CSS i JavaScript
+4. **Prikazivanje** prikazuje konačnu web stranicu
+5. **Proširenja** mogu modificirati sadržaj u više koraka
 
 ## Instalacija i upravljanje proširenjima
 
-Razumijevanje procesa instalacije proširenja pomaže vam predvidjeti korisničko iskustvo kada ljudi instaliraju vaše proširenje. Proces instalacije standardiziran je u modernim preglednicima, s manjim varijacijama u dizajnu sučelja.
+Razumijevanje procesa instalacije proširenja pomaže vam predvidjeti iskustvo korisnika kad ljudi instaliraju vaše proširenje. Proces instalacije standardiziran je kod modernih preglednika, s manjim varijacijama u dizajnu sučelja.
 
-![screenshot preglednika Edge koji prikazuje otvorenu stranicu edge://extensions i otvoreni izbornik postavki](../../../../translated_images/install-on-edge.d68781acaf0b3d3dada8b7507cde7a64bf74b7040d9818baaa9070668e819f90.hr.png)
+![screenshot of the Edge browser showing the open edge://extensions page and open settings menu](../../../../translated_images/hr/install-on-edge.d68781acaf0b3d3d.webp)
 
-> **Važno**: Obavezno uključite način rada za razvojne programere i omogućite proširenja iz drugih trgovina prilikom testiranja vlastitih proširenja.
+> **Važno**: Provjerite jeste li uključili način za developere te dozvolili instalaciju proširenja iz drugih trgovina prilikom testiranja svojih proširenja.
 
-### Proces instalacije proširenja za razvoj
+### Proces instalacije proširenja tijekom razvoja
 
-Kada razvijate i testirate vlastita proširenja, slijedite ovaj tijek rada:
+Kad razvijate i testirate vlastita proširenja, slijedite ovaj tijek rada:
 
+```mermaid
+flowchart TD
+    A[Napiši kod] --> B[Sastavi proširenje]
+    B --> C{Prva instalacija?}
+    C -->|Da| D[Učitaj nepakovano]
+    C -->|Ne| E[Ponovno učitaj proširenje]
+    D --> F[Testiraj funkcionalnost]
+    E --> F
+    F --> G{Radi ispravno?}
+    G -->|Ne| H[Riješi probleme]
+    G -->|Da| I[Spremljeno za korisnike]
+    H --> A
+    I --> J[Objavi u trgovini]
+    
+    style A fill:#e1f5fe
+    style F fill:#e8f5e8
+    style I fill:#f3e5f5
+    style J fill:#fff3e0
+```
 ```bash
-# Step 1: Build your extension
+# Korak 1: Izgradite svoje proširenje
 npm run build
 ```
 
 **Što ova naredba postiže:**
 - **Kompilira** vaš izvorni kod u datoteke spremne za preglednik
-- **Pakira** JavaScript module u optimizirane pakete
+- **Spaja** JavaScript module u optimizirane pakete
 - **Generira** konačne datoteke proširenja u mapi `/dist`
 - **Priprema** vaše proširenje za instalaciju i testiranje
 
-**Korak 2: Otvorite upravljanje proširenjima u pregledniku**
-1. **Otvorite** stranicu za upravljanje proširenjima u vašem pregledniku
-2. **Kliknite** gumb "Postavke i više" (ikona `...`) u gornjem desnom kutu
+**Korak 2: Otiđite na Proširenja preglednika**
+1. **Otvorite** stranicu za upravljanje proširenjima preglednika
+2. **Kliknite** gumb "Postavke i još" (ikona `...`) u gornjem desnom kutu
 3. **Odaberite** "Proširenja" iz padajućeg izbornika
 
 **Korak 3: Učitajte svoje proširenje**
-- **Za nove instalacije**: Odaberite `load unpacked` i odaberite svoju mapu `/dist`
+- **Za nove instalacije**: Izaberite `load unpacked` i odaberite vašu `/dist` mapu
 - **Za ažuriranja**: Kliknite `reload` pored već instaliranog proširenja
-- **Za testiranje**: Omogućite "Način rada za razvojne programere" za pristup dodatnim značajkama za otklanjanje pogrešaka
+- **Za testiranje**: Uključite "Način za developere" za dodatne mogućnosti otklanjanja pogrešaka
 
 ### Instalacija proširenja za produkciju
 
-> ✅ **Napomena**: Ove upute za razvoj specifične su za proširenja koja sami izrađujete. Za instalaciju objavljenih proširenja posjetite službene trgovine proširenja preglednika poput [Microsoft Edge Add-ons trgovine](https://microsoftedge.microsoft.com/addons/Microsoft-Edge-Extensions-Home).
+> ✅ **Napomena**: Ove upute za razvoj posebno su za proširenja koja sami gradite. Za instalaciju objavljenih proširenja posjetite službene trgovine proširenja preglednika poput [Microsoft Edge Add-ons store](https://microsoftedge.microsoft.com/addons/Microsoft-Edge-Extensions-Home).
 
-**Razumijevanje razlike:**
-- **Instalacije za razvoj** omogućuju testiranje neobjavljenih proširenja tijekom razvoja
-- **Instalacije iz trgovine** pružaju provjerena, objavljena proširenja s automatskim ažuriranjima
-- **Ručno instaliranje** omogućuje instalaciju proširenja izvan službenih trgovina (zahtijeva način rada za razvojne programere)
+**Razumijevanje razlika:**
+- **Razvojne instalacije** omogućuju testiranje neobjavljenih proširenja tijekom razvoja
+- **Trgovačke instalacije** nude pregledana, objavljena proširenja s automatskim ažuriranjima
+- **Sideloading** omogućuje instalaciju proširenja izvan službenih trgovina (zahtijeva način za developere)
 
-## Izrada proširenja za ugljični otisak
+## Izrada vašeg proširenja za ugljični otisak
 
-Izradit ćemo proširenje za preglednik koje prikazuje ugljični otisak potrošnje energije u vašoj regiji. Ovaj projekt demonstrira osnovne koncepte razvoja proširenja dok stvara praktičan alat za podizanje svijesti o okolišu.
+Izradit ćemo proširenje preglednika koje prikazuje ugljični otisak potrošnje energije u vašoj regiji. Ovaj projekt demonstrira osnovne koncepte razvoja proširenja dok stvara koristan alat za okolišnu svijest.
 
-Ovaj pristup slijedi princip "učenje kroz rad" koji se pokazao učinkovitim još od obrazovnih teorija Johna Deweya - kombinirajući tehničke vještine s značajnim stvarnim aplikacijama.
+Ovaj pristup slijedi načelo "učenja kroz rad" koje je djelotvorno od vremena John Deweyjevih pedagoških teorija - kombinirajući tehničke vještine s korisnim stvarnim primjenama.
 
 ### Zahtjevi projekta
 
-Prije početka razvoja, prikupimo potrebne resurse i ovisnosti:
+Prije početka razvoja skupimo potrebne resurse i ovisnosti:
 
 **Potrebni pristup API-ju:**
-- **[CO2 Signal API ključ](https://www.co2signal.com/)**: Unesite svoju email adresu kako biste dobili besplatni API ključ
+- **[CO2 Signal API ključ](https://www.co2signal.com/)**: Unesite svoju email adresu kako biste dobili besplatan API ključ
 - **[Kod regije](http://api.electricitymap.org/v3/zones)**: Pronađite kod svoje regije koristeći [Electricity Map](https://www.electricitymap.org/map) (na primjer, Boston koristi 'US-NEISO')
 
-**Alati za razvoj:**
+**Razvojni alati:**
 - **[Node.js i NPM](https://www.npmjs.com)**: Alat za upravljanje paketima za instalaciju ovisnosti projekta
 - **[Početni kod](../../../../5-browser-extension/start)**: Preuzmite mapu `start` za početak razvoja
 
-✅ **Saznajte više**: Poboljšajte svoje vještine upravljanja paketima s ovim [sveobuhvatnim modulom za učenje](https://docs.microsoft.com/learn/modules/create-nodejs-project-dependencies/?WT.mc_id=academic-77807-sagibbon)
+✅ **Saznajte više**: Poboljšajte svoje vještine upravljanja paketima kroz ovaj [detaljni Learn modul](https://docs.microsoft.com/learn/modules/create-nodejs-project-dependencies/?WT.mc_id=academic-77807-sagibbon)
 
 ### Razumijevanje strukture projekta
 
-Razumijevanje strukture projekta pomaže u učinkovitom organiziranju razvojnih zadataka. Kao što je Aleksandrijska knjižnica bila organizirana za jednostavno pronalaženje znanja, dobro strukturirana baza koda čini razvoj učinkovitijim:
+Razumijevanje strukture projekta pomaže učinkovito organizirati razvojni rad. Kao što je knjižnica Aleksandrije bila organizirana za lakši pristup znanju, dobro strukturirana baza koda čini razvoj efikasnijim:
 
 ```
 project-root/
@@ -180,40 +273,42 @@ project-root/
 │   ├── index.html           # User interface markup
 │   ├── background.js        # Background script functionality
 │   └── main.js              # Compiled JavaScript bundle
-└── src/                     # Source development files
-    └── index.js             # Your main JavaScript code
+├── src/                     # Source development files
+│   └── index.js             # Your main JavaScript code
+├── package.json             # Project dependencies and scripts
+└── webpack.config.js        # Build configuration
 ```
 
-**Razlaganje onoga što svaka datoteka postiže:**
-- **`manifest.json`**: **Definira** metapodatke proširenja, dozvole i ulazne točke
-- **`index.html`**: **Stvara** korisničko sučelje koje se pojavljuje kada korisnici kliknu na vaše proširenje
-- **`background.js`**: **Upravlja** pozadinskim zadacima i slušateljima događaja preglednika
-- **`main.js`**: **Sadrži** konačni JavaScript nakon procesa izgradnje
+**Što svaka datoteka radi:**
+- **`manifest.json`**: **Definira** metapodatke proširenja, dopuštenja i početne točke
+- **`index.html`**: **Kreira** korisničko sučelje koje se prikazuje kad korisnici kliknu na proširenje
+- **`background.js`**: **Rukuje** pozadinskim zadacima i slušateljima događaja preglednika
+- **`main.js`**: **Sadrži** konačni objedinjeni JavaScript nakon procesa izgradnje
 - **`src/index.js`**: **Sadrži** vaš glavni razvojni kod koji se kompajlira u `main.js`
 
-> 💡 **Savjet za organizaciju**: Spremite svoj API ključ i kod regije u sigurnu bilješku za jednostavno referenciranje tijekom razvoja. Trebat ćete te vrijednosti za testiranje funkcionalnosti vašeg proširenja.
+> 💡 **Savjet za organizaciju**: Spremite svoj API ključ i kod regije u sigurnu bilješku radi lakšeg pristupa tijekom razvoja. Trebat će vam te vrijednosti za testiranje funkcionalnosti vašeg proširenja.
 
-✅ **Sigurnosna napomena**: Nikada ne pohranjujte API ključeve ili osjetljive vjerodajnice u svoj repozitorij koda. Pokazat ćemo vam kako ih sigurno upravljati u sljedećim koracima.
+✅ **Sigurnosna napomena**: Nikada ne spremite API ključeve ili osjetljive pristupne podatke u svoj repozitorij koda. Pokazat ćemo vam kako ih sigurno rukovati u sljedećim koracima.
 
 ## Izrada sučelja proširenja
 
-Sada ćemo izraditi komponente korisničkog sučelja. Proširenje koristi pristup s dva ekrana: ekran za konfiguraciju za početno postavljanje i ekran za prikaz rezultata.
+Sada ćemo izgraditi komponente korisničkog sučelja. Proširenje koristi pristup s dva zaslona: zaslon konfiguracije za početno postavljanje i zaslon rezultata za prikaz podataka.
 
-Ovo slijedi princip progresivnog otkrivanja koji se koristi u dizajnu sučelja od ranih dana računalstva - otkrivanje informacija i opcija u logičnom slijedu kako bi se izbjeglo preopterećenje korisnika.
+Ovo slijedi princip progresivnog otkrivanja koji se koristi u dizajnu sučelja još od ranih računarskih dana - otkrivajući informacije i opcije logičnim redoslijedom kako se korisnici ne bi preopteretili.
 
 ### Pregled prikaza proširenja
 
-**Prikaz postavki** - Konfiguracija za prvi put:
-![screenshot dovršenog proširenja otvorenog u pregledniku, prikazuje obrazac s unosima za naziv regije i API ključ.](../../../../translated_images/1.b6da8c1394b07491afeb6b2a8e5aca73ebd3cf478e27bcc9aeabb187e722648e.hr.png)
+**Zaslon postavljanja** - konfiguracija za prvi put korisnika:
+![screenshot of the completed extension open in a browser, displaying a form with inputs for region name and API key.](../../../../translated_images/hr/1.b6da8c1394b07491.webp)
 
-**Prikaz rezultata** - Prikaz podataka o ugljičnom otisku:
-![screenshot dovršenog proširenja koje prikazuje vrijednosti za potrošnju ugljika i postotak fosilnih goriva za regiju US-NEISO.](../../../../translated_images/2.1dae52ff0804224692cd648afbf2342955d7afe3b0101b617268130dfb427f55.hr.png)
+**Zaslon rezultata** - prikaz podataka o ugljičnom otisku:
+![screenshot of the completed extension displaying values for carbon usage and fossil fuel percentage for the US-NEISO region.](../../../../translated_images/hr/2.1dae52ff08042246.webp)
 
 ### Izrada obrasca za konfiguraciju
 
-Obrazac za postavljanje prikuplja podatke o konfiguraciji korisnika tijekom prve upotrebe. Jednom konfigurirani, ovi podaci ostaju pohranjeni u memoriji preglednika za buduće sesije.
+Obrazac za postavljanje prikuplja konfiguracijske podatke korisnika prilikom prvog korištenja. Nakon konfiguracije, ove informacije ostaju spremljene u pregledničku pohranu za buduće sesije.
 
-U datoteku `/dist/index.html` dodajte ovu strukturu obrasca:
+U datoteci `/dist/index.html` dodajte ovu strukturu obrasca:
 
 ```html
 <form class="form-data" autocomplete="on">
@@ -232,16 +327,16 @@ U datoteku `/dist/index.html` dodajte ovu strukturu obrasca:
 </form>
 ```
 
-**Što ovaj obrazac postiže:**
-- **Stvara** semantičku strukturu obrasca s odgovarajućim oznakama i poveznicama za unos
-- **Omogućuje** funkcionalnost automatskog popunjavanja preglednika za poboljšano korisničko iskustvo
-- **Zahtijeva** da oba polja budu ispunjena prije slanja koristeći atribut `required`
-- **Organizira** unose s opisnim nazivima klasa za jednostavno stiliziranje i ciljanje JavaScriptom
+**Što ovaj obrazac omogućuje:**
+- **Kreira** semantičku strukturu obrasca s odgovarajućim oznakama i povezivanjem unosa
+- **Omogućuje** automatsko dovršavanje preglednika za bolje korisničko iskustvo
+- **Zahtijeva** ispunjavanje oba polja prije slanja putem atributa `required`
+- **Organizira** ulaze s opisnim imenima klasa radi lakšeg stiliziranja i ciljanog JavaScript pristupa
 - **Pruža** jasne upute korisnicima koji prvi put postavljaju proširenje
 
 ### Izrada prikaza rezultata
 
-Zatim, stvorite područje rezultata koje će prikazivati podatke o ugljičnom otisku. Dodajte ovaj HTML ispod obrasca:
+Zatim kreirajte područje rezultata koje će prikazivati podatke o ugljičnom otisku. Dodajte ovaj HTML ispod obrasca:
 
 ```html
 <div class="result">
@@ -257,12 +352,12 @@ Zatim, stvorite područje rezultata koje će prikazivati podatke o ugljičnom ot
 </div>
 ```
 
-**Razlaganje onoga što ova struktura pruža:**
-- **`loading`**: **Prikazuje** poruku učitavanja dok se dohvaćaju podaci iz API-ja
-- **`errors`**: **Prikazuje** poruke o pogreškama ako API pozivi ne uspiju ili su podaci nevažeći
-- **`data`**: **Sadrži** sirove podatke za otklanjanje pogrešaka tijekom razvoja
-- **`result-container`**: **Prikazuje** formatirane informacije o ugljičnom otisku korisnicima
-- **`clear-btn`**: **Omogućuje** korisnicima promjenu regije i ponovno postavljanje proširenja
+**Što ova struktura pruža:**
+- **`loading`**: **Prikazuje** poruku učitavanja dok se podaci s API-ja dohvaćaju
+- **`errors`**: **Prikazuje** poruke o pogreškama ako pozivi API-ja zakažu ili su podaci nevažeći
+- **`data`**: **Drži** sirove podatke radi otklanjanja pogrešaka tijekom razvoja
+- **`result-container`**: **Prikazuje** oblikovane informacije o ugljičnom otisku korisnicima
+- **`clear-btn`**: **Dopusti** korisnicima promjenu regije i ponovnu konfiguraciju proširenja
 
 ### Postavljanje procesa izgradnje
 
@@ -274,53 +369,178 @@ npm install
 
 **Što ovaj proces instalacije postiže:**
 - **Preuzima** Webpack i druge razvojne ovisnosti navedene u `package.json`
-- **Konfigurira** alat za izgradnju za kompajliranje modernog JavaScripta
+- **Konfigurira** alat za izgradnju za kompilaciju modernog JavaScript koda
 - **Priprema** razvojno okruženje za izradu i testiranje proširenja
-- **Omogućuje** pakiranje koda, optimizaciju i značajke kompatibilnosti s različitim preglednicima
+- **Omogućuje** objedinjavanje, optimizaciju i značajke međupregledničke kompatibilnosti
 
-> 💡 **Uvid u proces izgradnje**: Webpack pakira vaš izvorni kod iz `/src/index.js` u `/dist/main.js`. Ovaj proces optimizira vaš kod za produkciju i osigurava kompatibilnost s preglednicima.
+> 💡 **Uvid u proces izgradnje**: Webpack spaja vaš izvorni kod iz `/src/index.js` u `/dist/main.js`. Ovaj proces optimizira kod za produkciju i osigurava kompatibilnost s preglednicima.
 
 ### Testiranje vašeg napretka
 
 U ovom trenutku možete testirati svoje proširenje:
+1. **Pokreni** naredbu za izgradnju kako bi kompajlirao svoj kod
+2. **Učitaj** dodatak u svoj preglednik koristeći način za razvojne programere
+3. **Provjeri** prikazuje li se obrazac ispravno i izgleda profesionalno
+4. **Provjeri** jesu li svi elementi obrasca ispravno poravnati i funkcionalni
 
-1. **Pokrenite** naredbu za izgradnju kako biste kompajlirali svoj kod
-2. **Učitajte** proširenje u svoj preglednik koristeći način rada za razvojne programere
-3. **Provjerite** da se obrazac ispravno prikazuje i izgleda profesionalno
-4. **Provjerite** da su svi elementi obrasca pravilno poravnati i funkcionalni
+**Što si postigao:**
+- **Izgradio** temeljnu HTML strukturu za svoj dodatak
+- **Kreirao** sučelja za konfiguraciju i rezultate s pravilnom semantičkom oznakom
+- **Postavio** moderan razvojni tijek koristeći industrijski standardne alate
+- **Pripremio** temelj za dodavanje interaktivnih JavaScript funkcionalnosti
 
-**Što ste postigli:**
-- **Izradili** osnovnu HTML strukturu za svoje proširenje
-- **Stvorili
-**Opis:** Poboljšajte proširenje za preglednik dodavanjem validacije obrazaca i značajki povratnih informacija korisnicima kako biste unaprijedili korisničko iskustvo prilikom unosa API ključeva i kodova regije.
+### 🔄 **Pedagoška provjera**
+**Napredak u razvoju dodatka**: Provjeri svoje razumijevanje prije nastavka:
+- ✅ Možeš li objasniti svrhu svake datoteke u strukturi projekta?
+- ✅ Razumiješ li kako proces izgradnje transformira tvoj izvorni kod?
+- ✅ Zašto odvajamo konfiguraciju i rezultate u različite dijelove sučelja?
+- ✅ Kako struktura obrasca podržava i upotrebljivost i pristupačnost?
 
-**Zadatak:** Kreirajte JavaScript funkcije za validaciju koje provjeravaju sadrži li polje za API ključ najmanje 20 znakova i slijedi li kod regije ispravan format (poput 'US-NEISO'). Dodajte vizualne povratne informacije mijenjanjem boje obruba polja za unos u zeleno za ispravne unose i crveno za neispravne. Također dodajte značajku za uključivanje/isključivanje prikaza API ključa radi sigurnosti.
+**Razumijevanje razvojog tijeka**: Sada bi trebao moći:
+1. **Izmijeniti** HTML i CSS za sučelje svog dodatka
+2. **Pokrenuti** naredbu za izgradnju kako bi kompajlirao svoje izmjene
+3. **Ponovno učitati** dodatak u pregledniku kako bi testirao ažuriranja
+4. **Otkloniti pogreške** koristeći alate za razvojne programere u pregledniku
 
-Saznajte više o [agent modu](https://code.visualstudio.com/blogs/2025/02/24/introducing-copilot-agent-mode) ovdje.
+Završio si prvu fazu razvoja dodataka za preglednike. Kao što su braća Wright prvo trebala razumjeti aerodinamiku prije nego što su ostvarili let, razumijevanje ovih temeljnih pojmova priprema te za izgradnju složenijih interaktivnih značajki u sljedećoj lekciji.
+
+## Izazov GitHub Copilot Agenta 🚀
+
+Iskoristi Agent način za dovršetak sljedećeg izazova:
+
+**Opis:** Poboljšaj dodatak za preglednik dodavanjem validacije obrasca i značajki za povratnu informaciju korisniku radi poboljšanja korisničkog iskustva pri unosu API ključeva i kodova regija.
+
+**Zadatak:** Kreiraj funkcije za validaciju u JavaScriptu koje provjeravaju sadrži li polje API ključa barem 20 znakova i slijedi li kod regije ispravan format (npr. 'US-NEISO'). Dodaj vizualnu povratnu informaciju promjenom boje okvira unosa u zeleno za valjane unose i crveno za nevaljane. Također dodaj značajku preklapanja za prikaz/sakrivanje API ključa radi sigurnosti.
+
+Više o [agent modu](https://code.visualstudio.com/blogs/2025/02/24/introducing-copilot-agent-mode) pročitaj ovdje.
 
 ## 🚀 Izazov
 
-Pogledajte trgovinu proširenja za preglednik i instalirajte jedno na svoj preglednik. Možete na zanimljive načine proučiti njegove datoteke. Što ste otkrili?
+Pogledaj trgovinu dodataka za preglednik i instaliraj jedan u svoj preglednik. Možeš proučiti njegove datoteke na zanimljive načine. Što otkrivaš?
 
-## Kviz nakon predavanja
+## Kviz nakon lekcije
 
-[Kviz nakon predavanja](https://ff-quizzes.netlify.app/web/quiz/24)
+[Kviz nakon lekcije](https://ff-quizzes.netlify.app/web/quiz/24)
 
 ## Pregled i samostalno učenje
 
-U ovoj lekciji ste naučili nešto o povijesti web preglednika; iskoristite ovu priliku da saznate kako su izumitelji World Wide Weba zamislili njegovu upotrebu čitajući više o njegovoj povijesti. Neke korisne stranice uključuju:
+U ovoj si lekciji naučio malo o povijesti web preglednika; iskoristi priliku da saznaš kako su izumitelji World Wide Weba zamišljali njegovu uporabu čitajući više o njegovoj povijesti. Korisne stranice uključuju:
 
 [Povijest web preglednika](https://www.mozilla.org/firefox/browsers/browser-history/)
 
 [Povijest weba](https://webfoundation.org/about/vision/history-of-the-web/)
 
-[Intervju s Timom Berners-Leeom](https://www.theguardian.com/technology/2019/mar/12/tim-berners-lee-on-30-years-of-the-web-if-we-dream-a-little-we-can-get-the-web-we-want)
+[Intervju s Timom Berners-Leejem](https://www.theguardian.com/technology/2019/mar/12/tim-berners-lee-on-30-years-of-the-web-if-we-dream-a-little-we-can-get-the-web-we-want)
 
-## Zadatak 
+### ⚡ **Što možeš napraviti u sljedećih 5 minuta**
+- [ ] Otvori stranicu za dodatke Chrome/Edge preglednika (chrome://extensions) i istraži što si instalirao
+- [ ] Pogledaj karticu Mreža u alatima za razvojne programere dok učitavaš web stranicu
+- [ ] Pokušaj pogledati izvor stranice (Ctrl+U) da vidiš HTML strukturu
+- [ ] Istraži bilo koji element web stranice i izmijeni njegov CSS u alatima za razvojne programere
 
-[Promijenite stil vašeg proširenja](assignment.md)
+### 🎯 **Što možeš postići u ovom satu**
+- [ ] Završiti kviz nakon lekcije i razumjeti osnove preglednika
+- [ ] Kreirati osnovnu datoteku manifest.json za dodatak preglednika
+- [ ] Izgraditi jednostavni dodatak "Hello World" koji prikazuje skočni prozor
+- [ ] Testirati učitavanje dodatka u načinu za razvojne programere
+- [ ] Istražiti dokumentaciju dodataka za ciljanu vrstu preglednika
+
+### 📅 **Tvoj tjedni put razvoja dodatka**
+- [ ] Dovršiti funkcionalni dodatak za preglednik s pravom korisnom funkcionalnošću
+- [ ] Naučiti o sadržajnim skriptama, pozadinskim skriptama i interakcijama skočnih prozora
+- [ ] Ovladati API-jima preglednika kao što su spremište, kartice i slanje poruka
+- [ ] Dizajnirati korisnički pristupačna sučelja za svoj dodatak
+- [ ] Testirati dodatak na različitim web stranicama i u različitim scenarijima
+- [ ] Objaviti dodatak u trgovini dodataka za preglednike
+
+### 🌟 **Tvoj mjesečni razvoj pregledničkih dodataka**
+- [ ] Izgraditi više dodataka koji rješavaju različite korisničke probleme
+- [ ] Naučiti napredne API-je preglednika i najbolje prakse za sigurnost
+- [ ] Doprinijeti otvorenim izvorima projekata dodataka za preglednike
+- [ ] Ovladati kompatibilnošću među preglednicima i progresivnim poboljšanjem
+- [ ] Kreirati alate i predloške za razvoj dodataka za druge
+- [ ] Postati stručnjak za pregledničke dodatke koji pomaže drugim programerima
+
+## 🎯 Tvoj vremenski plan za usavršavanje u razvoju dodataka
+
+```mermaid
+timeline
+    title Napredak u razvoju proširenja za preglednik
+    
+    section Osnove (15 minuta)
+        Razumijevanje preglednika: Osnovna arhitektura
+                              : Proces prikaza
+                              : Točke integracije proširenja
+        
+    section Postavljanje (20 minuta)
+        Razvojno okruženje: Struktura projekta
+                         : Konfiguracija alata za izgradnju
+                         : Način rada za programere preglednika
+                         : Proces učitavanja proširenja
+        
+    section Dizajn sučelja (25 minuta)
+        Korisničko iskustvo: HTML struktura
+                         : CSS stilizacija
+                         : Validacija obrazaca
+                         : Responsivni dizajn
+        
+    section Osnovna funkcionalnost (35 minuta)
+        Integracija JavaScripta: Obrada događaja
+                              : API interakcije
+                              : Pohrana podataka
+                              : Obrada pogrešaka
+        
+    section Browser API-ji (45 minuta)
+        Integracija platforme: Sustav dozvola
+                            : Storage API-ji
+                            : Upravljanje karticama
+                            : Kontekstni izbornici
+        
+    section Napredne značajke (1 tjedan)
+        Profesionalna proširenja: Skripte u pozadini
+                               : Skripte sadržaja
+                               : Kompatibilnost između preglednika
+                               : Optimizacija performansi
+        
+    section Objavljivanje (2 tjedna)
+        Distribucija: Slanje u trgovinu
+                   : Proces recenzije
+                   : Povratne informacije korisnika
+                   : Upravljanje ažuriranjima
+        
+    section Razina stručnjaka (1 mjesec)
+        Ekosustav proširenja: Napredni API-ji
+                           : Najbolje sigurnosne prakse
+                           : Značajke u poduzeću
+                           : Integracija okvira
+```
+### 🛠️ Sažetak skupa alata za razvoj dodataka
+
+Nakon završetka ove lekcije, sada imaš:
+- **Znanje o arhitekturi preglednika**: Razumijevanje renderiranja, sigurnosnih modela i integracije dodataka
+- **Razvojno okruženje**: Moderan alatni lanac s Webpackom, NPM-om i mogućnostima debugiranja
+- **Temelj UI/UX-a**: Semantička HTML struktura s obrascima progresivnog otkrivanja
+- **Sigurnosnu osviještenost**: Razumijevanje dozvola preglednika i sigurnih razvojnih praksi
+- **Koncepte kompatibilnosti među preglednicima**: Znanje o razmatranjima kompatibilnosti i pristupima testiranju
+- **Integraciju API-ja**: Temelj za rad s vanjskim izvorima podataka
+- **Profesionalni tijek rada**: Industrijski standardni postupci razvoja i testiranja
+
+**Primjena u stvarnom svijetu**: Ove vještine direktno se primjenjuju na:
+- **Web razvoj**: Jednostanične aplikacije i progresivne web aplikacije
+- **Desktop aplikacije**: Electron i softver temeljen na webu za stolna računala
+- **Mobilni razvoj**: Hibridne aplikacije i mobilna web rješenja
+- **Alate za poduzeća**: Interni alati za produktivnost i automatizaciju tijeka rada
+- **Open Source**: Doprinose projektima dodataka za preglednike i web standardima
+
+**Sljedeća razina**: Spreman si za dodavanje interaktivnih funkcionalnosti, rad s API-jima preglednika i kreiranje dodataka koji rješavaju stvarne korisničke probleme!
+
+## Zadatak
+
+[Prilagodi svoj dodatak](assignment.md)
 
 ---
 
-**Odricanje od odgovornosti**:  
-Ovaj dokument je preveden pomoću AI usluge za prevođenje [Co-op Translator](https://github.com/Azure/co-op-translator). Iako nastojimo osigurati točnost, imajte na umu da automatski prijevodi mogu sadržavati pogreške ili netočnosti. Izvorni dokument na izvornom jeziku treba smatrati autoritativnim izvorom. Za ključne informacije preporučuje se profesionalni prijevod od strane čovjeka. Ne preuzimamo odgovornost za nesporazume ili pogrešna tumačenja koja proizlaze iz korištenja ovog prijevoda.
+<!-- CO-OP TRANSLATOR DISCLAIMER START -->
+**Odricanje od odgovornosti**:
+Ovaj je dokument preveden pomoću AI prevodilačke usluge [Co-op Translator](https://github.com/Azure/co-op-translator). Iako nastojimo postići točnost, imajte na umu da automatizirani prijevodi mogu sadržavati pogreške ili netočnosti. Izvorni dokument na izvornom jeziku treba se smatrati službenim i autoritativnim izvorom. Za važne informacije preporučujemo profesionalni prijevod od strane ljudskog prevoditelja. Nismo odgovorni za bilo kakve nesporazume ili pogrešne interpretacije koje proizlaze iz korištenja ovog prijevoda.
+<!-- CO-OP TRANSLATOR DISCLAIMER END -->

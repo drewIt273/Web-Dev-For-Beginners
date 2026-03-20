@@ -1,12 +1,3 @@
-<!--
-CO_OP_TRANSLATOR_METADATA:
-{
-  "original_hash": "50a7783473b39a2e0f133e271a102231",
-  "translation_date": "2025-10-23T01:28:16+00:00",
-  "source_file": "7-bank-project/4-state-management/assignment.md",
-  "language_code": "he"
-}
--->
 # יישום דיאלוג "הוספת עסקה"
 
 ## סקירה כללית
@@ -112,7 +103,7 @@ CO_OP_TRANSLATOR_METADATA:
 **תוצאה צפויה:**
 לאחר השלמת המשימה, אפליקציית הבנקאות שלכם צריכה לכלול תכונת "הוספת עסקה" פונקציונלית לחלוטין שנראית ומתנהגת באופן מקצועי:
 
-![צילום מסך המציג דוגמה לדיאלוג "הוספת עסקה"](../../../../translated_images/dialog.93bba104afeb79f12f65ebf8f521c5d64e179c40b791c49c242cf15f7e7fab15.he.png)
+![צילום מסך המציג דוגמה לדיאלוג "הוספת עסקה"](../../../../translated_images/he/dialog.93bba104afeb79f1.webp)
 
 ## בדיקת היישום שלכם
 

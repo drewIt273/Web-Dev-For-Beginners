@@ -1,176 +1,1347 @@
-<!--
-CO_OP_TRANSLATOR_METADATA:
-{
-  "original_hash": "f0c88c3e2cefa8952d356f802b1e47ca",
-  "translation_date": "2025-10-11T11:51:31+00:00",
-  "source_file": "1-getting-started-lessons/3-accessibility/README.md",
-  "language_code": "et"
-}
--->
-# Ligipääsetavate veebilehtede loomine
+# Ligipääsetavate Veebilehtede Loomine
 
-![Kõik ligipääsetavusest](../../../../translated_images/webdev101-a11y.8ef3025c858d897a403a1a42c0897c76e11b724d9a8a0c0578dd4316f7507622.et.png)
+![Kõigest Ligipääsetavusest](../../../../translated_images/et/webdev101-a11y.8ef3025c858d897a.webp)
 > Sketchnote autor [Tomomi Imura](https://twitter.com/girlie_mac)
 
-## Loengu-eelne viktoriin
-[Loengu-eelne viktoriin](https://ff-quizzes.netlify.app/web/)
+```mermaid
+journey
+    title Teie ligipääsetavuse õppe seiklus
+    section Alus
+      Kasutajate mõistmine: 5: You
+      Testimisvahendid: 4: You
+      POUR põhimõtted: 5: You
+    section Oskuste arendamine
+      Semantiline HTML: 4: You
+      Visuaalne disain: 5: You
+      ARIA tehnikaid: 4: You
+    section Meistriks saamine
+      Klaviatuuri navigeerimine: 5: You
+      Vormide ligipääsetavus: 4: You
+      Reaalse maailma testimine: 5: You
+```
+## Eelloengu Test
+[Eelloengu test](https://ff-quizzes.netlify.app/web/)
 
-> Veebi jõud peitub selle universaalsuses. Ligipääs kõigile, olenemata puudest, on oluline aspekt.
+> Veebi jõud peitub selle universaalsuses. Ligipääs kõigile, sõltumata puuetest, on oluline aspekt.
 >
-> \- Sir Timothy Berners-Lee, W3C direktor ja veebi leiutaja
+> \- Sir Timothy Berners-Lee, W3C direktor ja Maailma Liiduveebi leiutaja
 
-See tsitaat rõhutab suurepäraselt ligipääsetavate veebilehtede loomise tähtsust. Rakendus, millele kõik ei pääse ligi, on oma olemuselt välistav. Veebiarendajatena peaksime alati ligipääsetavust silmas pidama. Kui keskendume sellele juba algusest peale, oleme õigel teel, et tagada kõigile juurdepääs meie loodud lehtedele. Selles õppetükis õpid tundma tööriistu, mis aitavad tagada, et sinu veebivarad oleksid ligipääsetavad, ja kuidas ehitada neid ligipääsetavust silmas pidades.
+Siin on midagi, mis võib sind üllatada: kui ehitad ligipääsetavaid veebisaite, siis sa ei aita mitte ainult puuetega inimesi — sa teed veebist tegelikult parema paiga kõigile!
 
-> Selle õppetüki saad läbida [Microsoft Learnis](https://docs.microsoft.com/learn/modules/web-development-101/accessibility/?WT.mc_id=academic-77807-sagibbon)!
+Oled märganud neid äärekivide lõike tänavanurkadel? Need olid algselt mõeldud ratastoolidele, aga nüüd aitavad nad lapsevankritega inimesi, kullerite platside kandjaid, rändureid veerelkohvriga ja rattureid. Täpselt nii toimib ligipääsetav veebidisain — lahendused, mis aitavad ühte gruppi, kasu toovad lõpuks kõigile. Lahe, eks?
 
-## Kasutatavad tööriistad
+Selles õppetükis uurime, kuidas luua veebisaite, mis tõeliselt toimivad kõigile, ükskõik kuidas nad veebi sirvivad. Sa avastad praktilisi tehnikaid, mis on juba veebistandarditesse sisse ehitatud, saad käed külge testimisvahenditega ja näed, kuidas ligipääsetavus muudab su saidid lihtsamini kasutatavaks kõigile kasutajatele.
+
+Pärast seda õppetundi on sul kindlustunne teha ligipääsetavus oma arendustöövoo loomulikuks osaks. Kas oled valmis uurima, kuidas läbimõeldud disainiotsused võivad veebile ligipääsu avada miljarditele kasutajatele? Sukeldume!
+
+```mermaid
+mindmap
+  root((Veebi juurdepääsetavus))
+    Kasutajad
+      Ekraanilugerid
+      Klaviatuuri navigeerimine
+      Häälekontroll
+      Suurendus
+    Tehnoloogiad
+      HTML semantika
+      ARIA atribuudid
+      CSS fookusindikaatorid
+      Klaviatuuri sündmused
+    Kasud
+      Laiem sihtrühm
+      Parem SEO
+      Õiguslik vastavus
+      Universaalne disain
+    Testimine
+      Automaatseadmed
+      Käsitsi testimine
+      Kasutajate tagasiside
+      Tõeline abitehnoloogia
+```
+> Selle õppetunni saad teha [Microsoft Learnis](https://docs.microsoft.com/learn/modules/web-development-101/accessibility/?WT.mc_id=academic-77807-sagibbon)!
+
+## Puuetega Inimeste Abitehnoloogiate Mõistmine
+
+Enne kui koodimisele tormame, võtame hetke, et mõista, kuidas inimesed erinevate võimetega tegelikult veebi kogevad. See pole pelgalt teooria — nende reaalses maailmas toimuvate navigeerimisviiside mõistmine teeb sinust palju parema arendaja!
+
+Abitehnoloogiad on päris võimsad tööriistad, mis aitavad puuetega inimestel veebis suhelda viisil, mis võib sind üllatada. Kui saad aru, kuidas need tehnikad töötavad, muutub ligipääsetavate veebikogemuste loomine palju intuitiivsemaks. Nagu õpiksid nägema oma koodi kellegi teise pilgu läbi.
 
 ### Ekraanilugejad
 
-Üks tuntumaid ligipääsetavuse tööriistu on ekraanilugejad.
+[Ekraanilugejad](https://en.wikipedia.org/wiki/Screen_reader) on päris keerukad tehnoloogiad, mis muudavad digitaalse teksti kõneks või brailles väljundiks. Kuigi neid kasutavad peamiselt nägemispuudega inimesed, on need väga kasulikud ka õppimisraskustega kasutajatele, näiteks düsleksiaga inimestele.
 
-[Ekraanilugejad](https://en.wikipedia.org/wiki/Screen_reader) on tavaliselt kasutatavad kliendid nägemispuudega inimestele. Kui me kulutame aega, et tagada brauseri korrektne teabe edastamine, peame samuti tagama, et ekraanilugeja teeks seda sama.
+Mulle meeldib mõelda ekraanilugejat nagu väga nutikat jutustajat, kes raamatut sulle ette loeb. Ta loeb sisu loogilises järjekorras, teatab interaktiivsetest elementidest nagu "nupp" või "link" ja pakub klaviatuurilööke, et lehel kiiresti liikuda. Aga siin on asi – ekraanilugejad saavad imet teha ainult siis, kui ehitame veebilehed korraliku struktuuri ja tähendusliku sisuga. Siin tuleb mängu sinu roll arendajana!
 
-Ekraanilugeja loeb lehe kõige lihtsamal kujul ülevalt alla kuuldavalt. Kui sinu leht on ainult tekst, edastab lugeja teabe sarnaselt brauserile. Loomulikult on veebilehed harva ainult tekst; need sisaldavad linke, graafikat, värve ja muid visuaalseid komponente. Tuleb hoolitseda selle eest, et ekraanilugeja loeks seda teavet õigesti.
+**Populaarsemad ekraanilugejad platvormide lõikes:**
+- **Windows**: [NVDA](https://www.nvaccess.org/about-nvda/) (tasuta ja kõige populaarsem), [JAWS](https://webaim.org/articles/jaws/), [Narrator](https://support.microsoft.com/windows/complete-guide-to-narrator-e4397a0d-ef4f-b386-d8ae-c172f109bdb1/?WT.mc_id=academic-77807-sagibbon) (sisseehitatud)
+- **macOS/iOS**: [VoiceOver](https://support.apple.com/guide/voiceover/welcome/10) (sisseehitatud ja väga võimas)
+- **Android**: [TalkBack](https://support.google.com/accessibility/android/answer/6283677) (sisseehitatud)
+- **Linux**: [Orca](https://wiki.gnome.org/Projects/Orca) (tasuta ja avatud lähtekoodiga)
 
-Iga veebiarendaja peaks tutvuma ekraanilugejaga. Nagu eespool rõhutatud, on see klient, mida sinu kasutajad kasutavad. Samamoodi nagu oled tuttav brauseri toimimisega, peaksid õppima, kuidas ekraanilugeja töötab. Õnneks on ekraanilugejad enamikus operatsioonisüsteemides sisse ehitatud.
+**Kuidas ekraanilugejad veebisisu navigeerivad:**
 
-Mõned brauserid sisaldavad ka sisseehitatud tööriistu ja laiendusi, mis suudavad teksti ette lugeda või pakkuda mõningaid põhilisi navigeerimisfunktsioone, näiteks [Edge'i brauseri ligipääsetavuse tööriistad](https://support.microsoft.com/help/4000734/microsoft-edge-accessibility-features). Need on samuti olulised ligipääsetavuse tööriistad, kuid toimivad väga erinevalt ekraanilugejatest ja neid ei tohiks segamini ajada ekraanilugeja testimise tööriistadega.
+Ekraanilugejad pakuvad mitmeid navigeerimismeetodeid, mis muudavad sirvimise kogenud kasutajatele tõhusaks:
+- **Järjekohane lugemine**: Loeb sisu ülesvalt alla, nagu raamatu järgimine
+- **Maamärkide navigeerimine**: Hüppa lehe sektsioonide vahel (päis, navigeerimine, põhiosa, jalus)
+- **Pealkirjade navigeerimine**: Vaheta pealkirjade vahel, et mõista lehe ülesehitust
+- **Lingiloendid**: Koosta loend kõigist linkidest kiireks ligipääsuks
+- **Vormikontrollid**: Navigeeri otse sisendväljade ja nuppude vahel
 
-✅ Proovi ekraanilugejat ja brauseri tekstilugejat. Windowsis on vaikimisi kaasas [Narrator](https://support.microsoft.com/windows/complete-guide-to-narrator-e4397a0d-ef4f-b386-d8ae-c172f109bdb1/?WT.mc_id=academic-77807-sagibbon), samuti saab paigaldada [JAWS](https://webaim.org/articles/jaws/) ja [NVDA](https://www.nvaccess.org/about-nvda/). macOS-is ja iOS-is on vaikimisi paigaldatud [VoiceOver](https://support.apple.com/guide/voiceover/welcome/10).
+> 💡 **Siin on midagi, mis pani mind imestama**: 68% ekraanilugejate kasutajatest navigeerib peamiselt pealkirjade abil ([WebAIM uuring](https://webaim.org/projects/screenreadersurvey9/#finding)). See tähendab, et sinu pealkirjastruktuur on kasutajatele nagu maakaart — kui sa selle õigesti teed, aitad inimestel su sisu kiiremini leida!
 
-### Suumimine
+### Testimisprotsessi ülesseadmine
 
-Teine tööriist, mida nägemispuudega inimesed sageli kasutavad, on suumimine. Kõige lihtsam suumimise tüüp on staatiline suum, mida juhitakse `Control + plussmärk (+)` või ekraani eraldusvõime vähendamisega. See suumimise tüüp muudab kogu lehe suurust, seega on [responsiivne disain](https://developer.mozilla.org/docs/Learn/CSS/CSS_layout/Responsive_Design) oluline, et pakkuda head kasutajakogemust suurendatud suumitasemetel.
+Siin on häid uudiseid — tõhus ligipääsetavuse testimine ei pea olema üle jõu käiv! Sooviksid ühendada automatiseeritud tööriistad (need tabavad suurepäraselt silmatorkavaid vigu) mõningase praktilise testimisega. Siin on meetod, mis minu kogemuse põhjal haarab kõige rohkem vigu ilma terve päeva ära söömata:
 
-Teine suumimise tüüp tugineb spetsiaalsele tarkvarale, mis suurendab ekraani ühte ala ja liigutab seda, sarnaselt päris suurendusklaasi kasutamisele. Windowsis on sisseehitatud [Magnifier](https://support.microsoft.com/windows/use-magnifier-to-make-things-on-the-screen-easier-to-see-414948ba-8b1c-d3bd-8615-0e5e32204198), ja [ZoomText](https://www.freedomscientific.com/training/zoomtext/getting-started/) on kolmanda osapoole suurendustarkvara, millel on rohkem funktsioone ja suurem kasutajaskond. Nii macOS-is kui iOS-is on sisseehitatud suurendustarkvara nimega [Zoom](https://www.apple.com/accessibility/mac/vision/).
+**Oluline käsitsi testimise töövoog:**
 
-### Kontrasti kontrollijad
+```mermaid
+flowchart TD
+    A[🚀 Alusta testimist] --> B{⌨️ Klaviatuuri navigeerimine}
+    B --> C[Suru kõik interaktiivsed elemendid läbi Tabiga]
+    C --> D{🎧 Ekraani lugeja testimine}
+    D --> E[Testi NVDA/VoiceOver'iga]
+    E --> F{🔍 Suumimise testimine}
+    F --> G[Suum 200%-ni ja testi funktsionaalsust]
+    G --> H{🎨 Värvi/kontrasti kontroll}
+    H --> I[Kinnita, et kogu tekst vastab kontrastisuhetele]
+    I --> J{👁️ Fookuse haldamine}
+    J --> K[Veendu, et fookuse indikaatorid on nähtavad]
+    K --> L[✅ Testimine lõpetatud]
+    
+    style A fill:#e3f2fd
+    style L fill:#e8f5e8
+    style B fill:#fff3e0
+    style D fill:#f3e5f5
+    style F fill:#e0f2f1
+    style H fill:#fce4ec
+    style J fill:#e8eaf6
+```
+**Testimise samm-sammult kontrollnimekiri:**
+1. **Klaviatuuri navigeerimine**: Kasuta ainult Tab, Shift+Tab, Enter, Space ja nooleklahve
+2. **Ekraanilugeja testimine**: Lülita sisse NVDA, VoiceOver või Narrator ja navigeeri silmad kinni
+3. **Suumimise testimine**: Testi 200% ja 400% suumitasemel
+4. **Värvikontrastsuse kontroll**: Kontrolli kogu teksti ja kasutajaliidese komponente
+5. **Fookuse indikaatori testimine**: Veendu, et kõigil interaktiivsetel elementidel on nähtavad fookuse seisundid
 
-Veebilehtede värvid tuleb hoolikalt valida, et vastata värvipimedate kasutajate või madala kontrastsusega värve raskesti nägevate inimeste vajadustele.
+✅ **Alusta Lighthouse'iga**: Ava oma brauseri arendustööriistad, tee Lighthouse'i ligipääsetavuse audit, siis kasuta tulemusi, et suunata oma käsitsi testimise fookust.
 
-✅ Testi mõnda veebilehte, mida naudid, värvikasutuse osas brauserilaiendiga, näiteks [WCAG-i värvikontrollija](https://microsoftedge.microsoft.com/addons/detail/wcag-color-contrast-check/idahaggnlnekelhgplklhfpchbfdmkjp?hl=en-US&WT.mc_id=academic-77807-sagibbon). Mida sa õpid?
+### Suumimise ja suurendamise tööriistad
 
-### Lighthouse
+Sa tead, kuidas vahel sõrmede kokkusurumisega telefoni teksti suumid, kui see liiga väike on, või kuidas päiksevalguses arvutiekraani pigistad? Paljud kasutajad toetuvad suurendamisse, et muuta sisu iga päev loetavaks. See hõlmab nägemispuudega inimesi, vanemaid täiskasvanuid ja kõiki, kes on proovinud veebi lugeda väljas.
 
-Sinu brauseri arendustööriistade alal leiad Lighthouse'i tööriista. See tööriist on oluline, et saada esmane ülevaade veebilehe ligipääsetavusest (samuti muudest analüüsidest). Kuigi on oluline mitte tugineda ainult Lighthouse'ile, on 100% skoor väga kasulik lähtepunkt.
+Kaasaegsed suumitehnoloogiad on arenenud kaugemale ainult suurendamast. Mõistmine, kuidas need tööriistad toimivad, aitab sul luua reageerivaid disaine, mis on funktsionaalsed ja atraktiivsed ka suumitasemel.
 
-✅ Leia Lighthouse oma brauseri arendustööriistade paneelilt ja tee analüüs mõnel veebilehel. Mida sa avastad?
+**Kaasaegsed brauseri suumivõimalused:**
+- **Lehe suum**: Skaalab kogu sisu proportsionaalselt (tekst, pildid, paigutus) - see on eelistatud meetod
+- **Ainult teksti suum**: Suurendab fonti, säilitades originaalse paigutuse
+- **Sõrmede kokkusurumisel suumimine ("pinch-to-zoom")**: Mobiilne žest ajutiseks suumiks
+- **Brauseri tugi**: Kõik moodsad brauserid toetavad kuni 500% suurendust ilma funktsionaalsust rikkumata
 
-## Ligipääsetavuse disainimine
+**Spetsiaalsed suurendustarkvarad:**
+- **Windows**: [Magnifier](https://support.microsoft.com/windows/use-magnifier-to-make-things-on-the-screen-easier-to-see-414948ba-8b1c-d3bd-8615-0e5e32204198) (sisseehitatud), [ZoomText](https://www.freedomscientific.com/training/zoomtext/getting-started/)
+- **macOS/iOS**: [Zoom](https://www.apple.com/accessibility/mac/vision/) (sisseehitatud koos täiustatud funktsioonidega)
 
-Ligipääsetavus on suhteliselt suur teema. Et sind aidata, on saadaval palju ressursse.
+> ⚠️ **Disaini kaalutlus**: WCAG nõuab, et sisu jääks funktsionaalseks 200% suumimisel. Sellel tasemel peaks horisontaalne kerimine olema minimaalne ja kõik interaktiivsed elemendid peaksid jääma ligipääsetavaks.
 
-- [Accessible U - Minnesota Ülikool](https://accessibility.umn.edu/your-role/web-developers)
+✅ **Testeeri oma reageerivat disaini**: Suumiprograami oma brauser 200% ja 400% peale. Kas paigutus kohaneb sujuvalt? Kas saad ligipääsu kõigile funktsioonidele ilma liigse kerimiseta?
 
-Kuigi me ei suuda katta kõiki ligipääsetavate lehtede loomise aspekte, on allpool mõned põhialused, mida soovid rakendada. Ligipääsetava lehe disainimine algusest peale on **alati** lihtsam kui olemasoleva lehe tagasiulatuv ligipääsetavaks muutmine.
+## Kaasaegsed Ligipääsetavuse Testimisriistad
 
-## Head kuvamisprintsiibid
+Nüüd kui sul on aru saada, kuidas inimesed abitehnoloogiatega veebis navigeerivad, uurime tööriistu, mis aitavad sul luua ja testida ligipääsetavaid veebisaite.
 
-### Värvikindlad paletid
+Mõtle nii: automatiseeritud tööriistad tabavad hästi silmatorkavaid vigu (nagu puuduva alt-teksti), samas praktiline testimine tagab, et su sait on päriselus hästi kasutatav. Koos annavad need kindlustunde, et su saidid töötavad kõigi jaoks.
 
-Inimesed näevad maailma erinevalt, sealhulgas värve. Kui valid oma lehe jaoks värviskeemi, peaksid tagama, et see oleks kõigile ligipääsetav. Üks suurepärane [tööriist värvipalettide genereerimiseks on Color Safe](http://colorsafe.co/).
+### Värvikontrasti testimine
 
-✅ Tuvasta veebileht, mille värvikasutus on väga problemaatiline. Miks?
+Siin on häid uudiseid: värvikontrastsus on üks levinumaid ligipääsetavusprobleeme, aga ka üks lihtsamaid parandada. Hea kontrastsus aitab kõiki — nägemispuudega kasutajaid ja inimesi, kes püüavad lugeda telefoni rannas.
 
-### Kasuta õiget HTML-i
+**WCAG kontrasti nõuded:**
 
-CSS-i ja JavaScripti abil on võimalik muuta iga element mis tahes tüüpi juhtnupuks. `<span>` võiks kasutada `<button>` loomiseks ja `<b>` võiks muutuda hüperlingiks. Kuigi seda võib pidada lihtsamaks stiilimiseks, ei edasta see ekraanilugejale midagi. Kasuta lehe juhtnuppude loomisel sobivat HTML-i. Kui soovid hüperlinki, kasuta `<a>`. Õige HTML-i kasutamist õige juhtnupu jaoks nimetatakse semantilise HTML-i kasutamiseks.
+| Teksti tüüp | WCAG AA (minimaalne) | WCAG AAA (täiustatud) |
+|-------------|----------------------|----------------------|
+| **Tavaline tekst** (alla 18pt) | 4.5:1 kontrastisuhe | 7:1 kontrastisuhe |
+| **Suur tekst** (18pt+ või 14pt+ paks) | 3:1 kontrastisuhe | 4.5:1 kontrastisuhe |
+| **Kasutajaliidese komponendid** (nupud, vormide ääred) | 3:1 kontrastisuhe | 3:1 kontrastisuhe |
 
-✅ Mine mõnele veebilehele ja vaata, kas disainerid ja arendajad kasutavad HTML-i õigesti. Kas leiad nupu, mis peaks olema link? Vihje: klõpsa parema hiireklahviga ja vali 'Vaata lehe allikat' oma brauseris, et näha aluseks olevat koodi.
+**Olulised testimise tööriistad:**
+- [Colour Contrast Analyser](https://www.tpgi.com/color-contrast-checker/) - lauaarvuti rakendus koos värvipipetiga
+- [WebAIM Contrast Checker](https://webaim.org/resources/contrastchecker/) - veebipõhine kohe tagasisidega
+- [Stark](https://www.getstark.co/) - disainitööriistade plugin Figma, Sketch, Adobe XD jaoks
+- [Accessible Colors](https://accessible-colors.com/) - Leia ligipääsetavad värvipaletid
 
-### Loo kirjeldav pealkirjade hierarhia
+✅ **Loo paremaid värvikombinatsioone**: Alusta oma brändi värvidest ja kasuta kontrastikontrollereid, et luua ligipääsetavad variandid. Dokumenteeri need oma disainisüsteemi ligipääsetavate värviont tokenitena.
 
-Ekraanilugeja kasutajad [tuginevad tugevalt pealkirjadele](https://webaim.org/projects/screenreadersurvey8/#finding), et leida teavet ja navigeerida lehel. Kirjeldava pealkirja sisu kirjutamine ja semantiliste pealkirjasiltide kasutamine on oluline, et luua ekraanilugeja kasutajatele kergesti navigeeritav leht.
+### Ulatuslik ligipääsetavuse audit
 
-### Kasuta häid visuaalseid vihjeid
+Kõige tõhusam ligipääsetavuse testimine ühendab mitmeid lähenemisi. Ükski tööriist ei kata kõike, seega mitmekesine testimisrutiin tagab põhjaliku katvuse.
 
-CSS pakub täielikku kontrolli mis tahes elemendi välimuse üle lehel. Sa võid luua tekstikaste ilma kontuurita või hüperlinke ilma allajooneta. Kahjuks nende vihjete eemaldamine võib muuta keerulisemaks nende äratundmise neile, kes sõltuvad neist.
+**Brauseripõhine testimine (arendustööriistades):**
+- **Chrome/Edge**: Lighthouse'i ligipääsetavuse audit + Ligipääsetavuse paneel
+- **Firefox**: Ligipääsetavuse inspekteerija koos detailse puuvaatega
+- **Safari**: Web Inspectori auditivahekaart koos VoiceOver simulatsiooniga
 
-## Linkide teksti tähtsus
+**Professionaalsed testimislaiendid:**
+- [axe DevTools](https://www.deque.com/axe/devtools/) - tööstusharu standard automatiseeritud testimiseks
+- [WAVE](https://wave.webaim.org/extension/) - visuaalne tagasiside veaparandustega
+- [Accessibility Insights](https://accessibilityinsights.io/) - Microsofti ulatuslik testimiskomplekt
 
-Hüperlingid on veebi navigeerimise tuum. Seetõttu tagades, et ekraanilugeja suudab linke korralikult lugeda, võimaldab kõigil kasutajatel sinu lehel navigeerida.
+**Käsurea ja CI/CD integreerimine:**
+- [axe-core](https://github.com/dequelabs/axe-core) - JavaScripti teek automatiseeritud testimiseks
+- [Pa11y](https://pa11y.org/) - käsurea ligipääsetavuse testimise tööriist
+- [Lighthouse CI](https://github.com/GoogleChrome/lighthouse-ci) - Automatiseeritud ligipääsetavuse skoor
 
-### Ekraanilugejad ja lingid
+> 🎯 **Testimise eesmärk**: Seadke Lighthouse'i ligipääsetavuse skooriks vähemalt 95+. Pea meeles, et automatiseeritud tööriistad tabavad ligikaudu 30-40% ligipääsetavusprobleemidest — käsitsi testimine on ikkagi hädavajalik!
 
-Nagu arvata võib, loevad ekraanilugejad linkide teksti samamoodi nagu mis tahes muud teksti lehel. Seda silmas pidades võib allpool näidatud tekst tunduda täiesti vastuvõetav.
+### 🧠 **Testimisoskuste Kontroll: Kas oled valmis probleemide leidmiseks?**
 
-> Väike pingviin, keda mõnikord tuntakse haldja pingviinina, on maailma väikseim pingviin. [Klõpsa siia](https://en.wikipedia.org/wiki/Little_penguin), et saada rohkem teavet.
+**Vaatame, kuidas sa tunned end ligipääsetavuse testimisega:**
+- Milline testimismeetod tundub sulle praegu kõige ligipääsetavam?
+- Kas suudad ette kujutada terve päeva ainult klaviatuuriga navigeerimist?
+- Mis on üks ligipääsetavustakistus, millega oled isiklikult veebis kokku puutunud?
 
-> Väike pingviin, keda mõnikord tuntakse haldja pingviinina, on maailma väikseim pingviin. Külastage https://en.wikipedia.org/wiki/Little_penguin, et saada rohkem teavet.
+```mermaid
+pie title "Juurdepääsetavuse probleemid, mida tabatakse erinevate meetoditega"
+    "Automaatsed tööriistad" : 35
+    "Käsitsi testimine" : 40
+    "Kasutajate tagasiside" : 25
+```
+> **Enesekindluse tõstja**: Professionaalsed ligipääsetavuse testijad kasutavad seda täpset meetodite kombinatsiooni. Sa õpid tööstusharu parimaid tavasid!
 
-> **NOTE** Nagu sa kohe loed, ei tohiks sa **kunagi** luua linke, mis näevad välja nagu ülaltoodud näited.
+## Ligipääsetavuse Loomine Algusest Lõpuni
 
-Pea meeles, et ekraanilugejad on erinev liides brauseritest, millel on erinev funktsioonide komplekt.
+Edu võti ligipääsetavuses on see sisse ehitada juba algusest peale. Ma tean, et on ahvatlev mõelda "ma lisan ligipääsetavuse hiljem", aga see on nagu üritada lisada trepipakett majale, mis on juba valmis ehitatud. Võimalik? Jah. Lihtne? Mitte päris.
 
-### Probleem URL-i kasutamisega
+Mõtle ligipääsetavusele nagu majaplaanimisele — palju lihtsam on arvestada ratastooliga ligipääsuga oma esialgsetes arhitektuuriplaanides kui hiljem kõike ümber kohandada.
 
-Ekraanilugejad loevad teksti. Kui tekstis ilmub URL, loeb ekraanilugeja URL-i. Üldiselt ei edasta URL tähenduslikku teavet ja võib kõlada tüütult. Sa võid seda kogeda, kui su telefon on kunagi kuuldavalt lugenud tekstisõnumit, mis sisaldab URL-i.
+### POUR põhimõtted: Sinu ligipääsetavuse alus
 
-### Probleem "klõpsa siia" kasutamisega
+Veebisisu ligipääsetavuse juhised (WCAG) põhinevad neljal põhimõttel, mis moodustavad akronüümi POUR. Ära muretse — need pole kuivlikud akadeemilised mõisted! Tegelikult on need praktilised juhendid, kuidas luua sisu, mis töötab kõigile.
 
-Ekraanilugejatel on ka võime lugeda ainult hüperlinke lehel, sarnaselt sellele, kuidas nägijad skaneerivad lehte linkide otsimiseks. Kui lingitekst on alati "klõpsa siia", kuuleb kasutaja ainult "klõpsa siia, klõpsa siia, klõpsa siia, klõpsa siia, klõpsa siia, ..." Kõik lingid on nüüd üksteisest eristamatud.
+Kui oled POUR põhimõtted selgeks saanud, muutub ligipääsetavuse otsuste tegemine palju loomulikumaks. Nagu oleks sul vaimne kontrollnimekiri, mis juhib sinu disainivalikuid. Vaatame üle:
 
-### Hea lingitekst
+```mermaid
+flowchart LR
+    A[🔍 TUNNETAV<br/>Kas kasutajad saavad seda tajuda?] --> B[🎮 KASUTATAV<br/>Kas kasutajad saavad seda kasutada?]
+    B --> C[📖 MÕISTETAV<br/>Kas kasutajad saavad sellest aru?]
+    C --> D[💪 TÜHENDLIK<br/>Kas see töötab kõikjal?]
+    
+    A1[Alternatiivtekst<br/>Alapealkirjad<br/>Kontrast] --> A
+    B1[Klaviatuuriga ligipääs<br/>Puuduvad krambid<br/>Ajapiirangud] --> B
+    C1[Selge keel<br/>Ettetähtav<br/>Veavigaabi] --> C
+    D1[Kehtiv kood<br/>Ühilduv<br/>Tulevikukindel] --> D
+    
+    style A fill:#e1f5fe
+    style B fill:#e8f5e8
+    style C fill:#fff3e0
+    style D fill:#f3e5f5
+```
+**🔍 Tajutav**: Info peab olema esitatav viisil, mida kasutajad saavad tajuda oma olemasolevate meelte kaudu
 
-Hea lingitekst kirjeldab lühidalt, mis on lingi teisel poolel. Ülaltoodud näites, mis räägib väikestest pingviinidest, viitab link Wikipedia lehele selle liigi kohta. Fraas *väike pingviin* oleks ideaalne lingitekst, kuna see teeb selgeks, mida keegi lingile klõpsates teada saab - väikesed pingviinid.
+- Paku tekstialternatiive mitte-tekstuaalsele sisule (pildid, videod, heli)
+- Tagada piisav värvikontrastsus kogu teksti ja kasutajaliidese komponentide puhul
+- Paku subtiitreid ja transkriptsioone multimeediale
+- Disaini sisu, mis jääb funktsionaalseks suumides kuni 200%
+- Kasuta mitmeid meelelisi omadusi (mitte ainult värvi), et edastada infot
 
-> [Väike pingviin](https://en.wikipedia.org/wiki/Little_penguin), keda mõnikord tuntakse haldja pingviinina, on maailma väikseim pingviin.
+**🎮 Juhtitav**: Kõik liidese komponendid peavad olema juhitavad olemasolevate sisendmeetodite kaudu
 
-✅ Sirvi veebi mõne minuti jooksul, et leida lehti, mis kasutavad ebaselgeid linkimisstrateegiaid. Võrdle neid teiste, paremini lingitud lehtedega. Mida sa õpid?
+- Tee kogu funktsionaalsus ligipääsetav klaviatuuriga navigeerides
+- Anna kasutajatele piisavalt aega sisu lugemiseks ja suhtlemiseks
+- Väldi sisu, mis võib põhjustada krampe või vestibulaarseid häireid
+- Aita kasutajatel navigeerida tõhusalt selge struktuuri ja maamärkidega
+- Tagada interaktiivsetel elementidel piisavalt suured sihtmärgid (vähemalt 44px)
 
-#### Märkused otsingumootorite kohta
+**📖 Mõistetav**: Info ja liidese toimimine peavad olema arusaadavad ja selged
 
-Lisaboonusena, tagades, et sinu leht on kõigile ligipääsetav, aitad otsingumootoritel sinu lehel navigeerida. Otsingumootorid kasutavad lingiteksti, et õppida lehtede teemasid. Seega aitab hea lingiteksti kasutamine kõiki!
+- Kasuta selget, lihtsat keelt, mis sobib sinu sihtgrupile
+- Tagada, et sisu ilmub ja toimib etteaimatavalt ja järjepidevalt
+- Paku selgeid juhiseid ja veateateid kasutaja sisendi jaoks
+- Aita kasutajatel mõista ja parandada vormides tehtud vigu
+- Korralda sisu loogilise lugemiskorra ja infosõltuvusega
 
-### ARIA
+**💪 Tugev**: Sisu peab töötama usaldusväärselt erinevate tehnoloogiate ja abiseadmetega
 
-Kujuta ette järgmist lehte:
+- **Kasuta valide ja semantilist HTML-i oma aluseks**
+- **Tagada ühilduvus praeguste ja tulevaste abitehnoloogiatega**
+- **Järgi veebistandardeid ja parimaid tavasid märgistamisel**
+- **Testi erinevates brauserites, seadmetes ja abivahenditega**
+- **Struktureeri sisu nii, et keerukate funktsioonide puudumisel see siiski ladusalt toimiks**
 
-| Toode         | Kirjeldus          | Tellimus      |
-| ------------- | ------------------ | ------------- |
-| Vidin         | [Kirjeldus](../../../../1-getting-started-lessons/3-accessibility/')   | [Tellimus](../../../../1-getting-started-lessons/3-accessibility/') |
-| Supervidin    | [Kirjeldus](../../../../1-getting-started-lessons/3-accessibility/')   | [Tellimus](../../../../1-getting-started-lessons/3-accessibility/') |
+### 🎯 **POUR põhimõtete kontroll: Kinnitus**
 
-Selles näites on mõistlik, et brauserit kasutav inimene näeb korduvat teksti "kirjeldus" ja "tellimus". Kuid ekraanilugejat kasutav inimene kuuleks ainult sõnu *kirjeldus* ja *tellimus* ilma kontekstita.
+**Kiire ülevaade alustaladest:**
+- Kas suudad meenutada mõnda veebisaidi funktsiooni, mis rikub iga POUR põhimõtte?
+- Milline põhimõte tundub sulle arendajana kõige loomulikum?
+- Kuidas võiksid need põhimõtted parandada disaini kõigile, mitte ainult puuetega kasutajatele?
 
-Selliste olukordade toetamiseks toetab HTML atribuute, mida tuntakse kui [Ligipääsetavad rikkad internetirakendused (ARIA)](https://developer.mozilla.org/docs/Web/Accessibility/ARIA). Need atribuudid võimaldavad ekraanilugejatele lisateavet anda.
+```mermaid
+quadrantChart
+    title POUR põhimõtete mõju maatriks
+    x-axis Väike pingutus --> Suur pingutus
+    y-axis Väike mõju --> Suur mõju
+    quadrant-1 Kiired võidud
+    quadrant-2 Suured projektid
+    quadrant-3 Hinda hiljem
+    quadrant-4 Strateegiline fookus
+    
+    Alt Text: [0.2, 0.9]
+    Color Contrast: [0.3, 0.8]
+    Semantic HTML: [0.4, 0.9]
+    Keyboard Nav: [0.6, 0.8]
+    ARIA Complex: [0.8, 0.7]
+    Screen Reader Testing: [0.7, 0.6]
+```
+> **Pea meeles**: Alusta suurima mõjuga ja vähese pingutusega parendustest. Semantiline HTML ja alternatiivtekst annavad suurima ligipääsetavuse tõusu vähima vaevaga!
 
-> **NOTE**: Nagu paljude HTML-i aspektide puhul, võib brauseri ja ekraanilugeja tugi varieeruda. Kuid enamik peamisi kliente toetab ARIA atribuute.
+## Ligipääsetava visuaalse disaini loomine
 
-Sa saad kasutada `aria-label`, et kirjeldada linki, kui lehe formaat seda ei võimalda. Vidina kirjeldus võiks olla määratud järgmiselt:
+Hea visuaalne disain ja ligipääsetavus käivad käsikäes. Kui kujundad mõttega ligipääsetavusest, avastad sageli, et need piirangud viivad puhtamate ja elegantsemate lahendusteni, mis kasuks tulevad kõigile kasutajatele.
 
-``` html
-<a href="#" aria-label="Widget description">description</a>
+Vaatame, kuidas luua visuaalselt atraktiivseid kujundusi, mis töötavad kõigi jaoks sõltumata nende nägemisvõimest või tingimustest, milles nad su sisu vaatavad.
+
+### Värvi- ja visuaalse ligipääsetavuse strateegiad
+
+Värv on võimas suhtlusvahend, kuid see ei tohiks kunagi olla ainus viis olulise info edastamiseks. Kujundamine, mis ei tugine üksnes värvile, loob vastupidavamaid ja kaasavamaid kogemusi, mis toimivad rohkemates olukordades.
+
+**Kujunda värvinägemise erinevusi arvestades:**
+
+Umbes 8% meestest ja 0,5% naistest on mingisugune värvinägemise erinevus (sage nimetus "värvipimedus"). Kõige tavalisemad tüübid on:
+- **Deuteranoopia**: raskusi punase ja rohelise eristamisel
+- **Protanoopia**: punane tundub tuhmim
+- **Tritanoopia**: raskused sinise ja kollasega (harva esinev)
+
+**Kaasaegsed värvistrateegiad:**
+
+```css
+/* ❌ Bad: Using only color to indicate status */
+.error { color: red; }
+.success { color: green; }
+
+/* ✅ Good: Color plus icons and context */
+.error {
+  color: #d32f2f;
+  border-left: 4px solid #d32f2f;
+}
+.error::before {
+  content: "⚠️";
+  margin-right: 8px;
+}
+
+.success {
+  color: #2e7d32;
+  border-left: 4px solid #2e7d32;
+}
+.success::before {
+  content: "✅";
+  margin-right: 8px;
+}
 ```
 
-✅ Üldiselt ületab semantilise märgistuse kasutamine eespool kirjeldatud ARIA kasutamise, kuid mõnikord pole erinevate HTML-i vidinate jaoks semantilist ekvivalenti. Hea näide on puu. HTML-is pole puu ekvivalenti, seega identifitseerid selle elemendi üldise `<div>` abil, määrates sellele sobiva rolli ja ARIA väärtused. [MDN-i dokumentatsioon ARIA kohta](https://developer.mozilla.org/docs/Web/Accessibility/ARIA) sisaldab rohkem kasulikku teavet.
+**Üle põhiliste kontrastinõuete:**
+- Testi värvivalikuid värvipimeduse simulaatoritega
+- Kasuta värvi kõrval mustreid, tekstuure või kujundeid
+- Veendu, et interaktiivsed olekud oleksid ilma värvita eristatavad
+- Mõtle, kuidas sinu disain näeb välja kõrge kontrasti režiimis
+
+✅ **Testi oma värvide ligipääsetavust**: Kasuta tööriistu nagu [Coblis](https://www.color-blindness.com/coblis-color-blindness-simulator/), et näha, kuidas su leht erinevate värvinägemise tüüpi kasutajatele paistab.
+
+### Fookuse indikaatorid ja interaktsioonidisain
+
+Fookuse indikaatorid on digitaalne vastendus kursorile – nad näitavad klaviatuuri kasutajatele, kus nad lehel asuvad. Hästi disainitud fookuse indikaatorid parandavad kogemust kõigile, muutes interaktsioonid selgeteks ja etteaimatavaks.
+
+**Kaasaegsed fookuse indikaatori parimad tavad:**
+
+```css
+/* Enhanced focus styles that work across browsers */
+button:focus-visible {
+  outline: 2px solid #0066cc;
+  outline-offset: 2px;
+  box-shadow: 0 0 0 4px rgba(0, 102, 204, 0.25);
+}
+
+/* Remove focus outline for mouse users, preserve for keyboard users */
+button:focus:not(:focus-visible) {
+  outline: none;
+}
+
+/* Focus-within for complex components */
+.card:focus-within {
+  box-shadow: 0 0 0 3px rgba(74, 144, 164, 0.5);
+  border-color: #4A90A4;
+}
+
+/* Ensure focus indicators meet contrast requirements */
+.custom-focus:focus-visible {
+  outline: 3px solid #ffffff;
+  outline-offset: 2px;
+  box-shadow: 0 0 0 6px #000000;
+}
+```
+
+**Fookuse indikaatori nõuded:**
+- **Nähtavus**: vähemalt 3:1 kontrast ümbritsevate elementidega
+- **Laius**: vähemalt 2px paksune kogu elemendi ümber
+- **Püsivus**: peab jääma nähtavaks kuni fookus liigub mujale
+- **Erinevus**: peab visuaalselt eristuma teistest UI olekutest
+
+> 💡 **Disaininipp**: Heledad fookuse indikaatorid kasutavad sageli ühisena joonist, varjutust ja värvimuutusi, et tagada nähtavus erinevatel taustadel ja kontekstides.
+
+✅ **Audit fookuse indikaatorid**: Liigu oma veebilehel Tab-klahviga ja märgi ära, millistel elementidel on selged fookuse indikaatorid. Kas mõni on raske märgata või puudub täielikult?
+
+### Semantiline HTML: Ligipääsetavuse alus
+
+Semantiline HTML on nagu GPS süsteem abitehnoloogiatele sinu veebisaidil. Kui kasutad HTML elemente nende otstarbe järgi, annad ekraanilugeritele, klaviatuuridele ja teistele tööriistadele detailse kaardi kasutajate tõhusaks navigeerimiseks.
+
+Siin on analoogia, mis mulle hästi sobis: semantiline HTML on nagu hästi organiseeritud raamatukogu selgete kategooriate ja abimärkidega, vastandina laoplatsile, kus raamatud on suvaliselt laiali. Mõlemas kohas on samad raamatud, aga kumma juures oleks sul kergem midagi leida? Just nii!
+
+```mermaid
+flowchart TD
+    A[🏠 HTML Dokument] --> B[📰 päis]
+    A --> C[🧭 nav]
+    A --> D[📄 peamine]
+    A --> E[📋 jalus]
+    
+    B --> B1[h1: Saidi nimi<br/>Logo & bränding]
+    C --> C1[ul: Navigatsioon<br/>Põhilingid]
+    D --> D1[artikkel: Sisu<br/>jaotis: Alajaotused]
+    D --> D2[aside: Küljeriba<br/>Seotud sisu]
+    E --> E1[nav: Jaluse lingid<br/>Autoriõiguse info]
+    
+    D1 --> D1a[h1: Lehe pealkiri<br/>h2: Peamised jaotised<br/>h3: Alajaotused]
+    
+    style A fill:#e3f2fd
+    style B fill:#e8f5e8
+    style C fill:#fff3e0
+    style D fill:#f3e5f5
+    style E fill:#e0f2f1
+```
+**Ligipääsetava lehekülje struktuuri ehituskivid:**
 
 ```html
-<h2 id="tree-label">File Viewer</h2>
-<div role="tree" aria-labelledby="tree-label">
-  <div role="treeitem" aria-expanded="false" tabindex="0">Uploads</div>
+<!-- Landmark elements provide page navigation structure -->
+<header>
+  <h1>Your Site Name</h1>
+  <nav aria-label="Main navigation">
+    <ul>
+      <li><a href="/home">Home</a></li>
+      <li><a href="/about">About</a></li>
+      <li><a href="/services">Services</a></li>
+    </ul>
+  </nav>
+</header>
+
+<main>
+  <article>
+    <header>
+      <h1>Article Title</h1>
+      <p>Published on <time datetime="2024-10-14">October 14, 2024</time></p>
+    </header>
+    
+    <section>
+      <h2>First Section</h2>
+      <p>Content that relates to this section...</p>
+    </section>
+    
+    <section>
+      <h2>Second Section</h2>
+      <p>More related content...</p>
+    </section>
+  </article>
+  
+  <aside>
+    <h2>Related Links</h2>
+    <nav aria-label="Related articles">
+      <ul>
+        <li><a href="/related-1">First related article</a></li>
+        <li><a href="/related-2">Second related article</a></li>
+      </ul>
+    </nav>
+  </aside>
+</main>
+
+<footer>
+  <p>&copy; 2024 Your Site Name. All rights reserved.</p>
+  <nav aria-label="Footer links">
+    <ul>
+      <li><a href="/privacy">Privacy Policy</a></li>
+      <li><a href="/contact">Contact Us</a></li>
+    </ul>
+  </nav>
+</footer>
+```
+
+**Miks semantiline HTML muudab ligipääsetavust:**
+
+| Semantiline element | Otstarve | Ekraanilugeja kasu |
+|---------------------|----------|--------------------|
+| `<header>` | Lehe või sektsiooni päis | "Banner landmark" - kiire navigeerimine ülesse |
+| `<nav>` | Navigeerimislingid | "Navigation landmark" - navigeerimisosade nimekiri |
+| `<main>` | Peamine lehe sisu | "Main landmark" - otse sisu juurde liikumine |
+| `<article>` | Iseteemaline sisu | Märgistab artikli piirid |
+| `<section>` | Teemaarendused | Annab sisustruktuuri |
+| `<aside>` | Seotud külginfo | "Complementary landmark" |
+| `<footer>` | Lehe või sektsiooni jalus | "Contentinfo landmark" |
+
+**Ekraanilugerite supervõimed semantilise HTML-ga:**
+- **Maamärkide kasutamine**: hüppa kiirelt lehe suuremate sektsioonide vahel
+- **Pealkirjade skeemid**: loo sisukord pealkirjastruktuurist
+- **Elementide nimekirjad**: genereeri nimekiri kõigist linkidest, nuppudest või vormikontrollidest
+- **Kontekstitundlikkus**: mõista sisusektsioonide omavahelisi suhteid
+
+> 🎯 **Kiire test**: Proovi oma veebilehel ekraanilugeriga navigeerida maamärkide otseteede (D maamärkide puhul, H pealkirjade puhul, K linkide puhul NVDA/JAWS-is) abil. Kas navigeerimine on arusaadav?
+
+### 🏗️ **Semantilise HTML meistrikontroll: tugeva aluse ehitamine**
+
+**Hindame sinu semantilist mõistmist:**
+- Kas suudad HTML-i vaadates määrata lehekülje maamärgid?
+- Kuidas seletaksid sõbrale vahet `<section>` ja `<div>` vahel?
+- Mis on esimene asi, mida kontrollid, kui ekraaniluger kasutaja teatab navigeerimisraskustest?
+
+```mermaid
+stateDiagram-v2
+    [*] --> UnsementicHTML: div supp
+    UnsementicHTML --> SemanticHTML: Lisa maamärgid
+    SemanticHTML --> AccessibleHTML: Testi AT-ga
+    AccessibleHTML --> [*]: Kasutaja edukas!
+    
+    note right of UnsementicHTML
+        Ekraanilugerid kaotsi
+        Klaviatuurinavigatsioon katki
+    end note
+    
+    note right of AccessibleHTML
+        Selge navigeerimine
+        Tõhus sirvimine
+    end note
+```
+> **Profi tip**: Hea semantiline HTML lahendab umbes 70% ligipääsetavuse probleemidest automaatselt. Valda see alus ja oled õigel teel!
+
+✅ **Audit oma semantilist struktuuri**: Kasuta brauseri DevToolsi Accessibility paneeli, et vaadata ligipääsetavuse puud ja veendu, et sinu märgend loob loogilise ülesehituse.
+
+### Pealkirjade hierarhia: loogilise sisukorra loomine
+
+Pealkirjad on ligipääsetavas sisus üliolulised — nagu selgroog, mis hoiab kõike koos. Ekraanilugerite kasutajad loodavad tugevalt pealkirjadele, et sisu mõista ja navigeerida. Mõtle sellele kui sisukorra pakkumisele oma lehele.
+
+**Pealkirjade reegel on kuldne:**
+Ära vahele jäta tasemeid. Liigu alati loogiliselt `<h1>`-st `<h2>`-le ja seejärel `<h3>`-le jne. Mäletad koolis jooniste tegemist? Täpselt sama põhimõte — sa ei hüppaks otseselt "I. Peapunkt" alt "C. Alam-alam-punkti" juurde ilma vahepealse "A. Alampunktita", eks?
+
+**Täiuslik pealkirjastruktuur näide:**
+
+```html
+<!-- ✅ Excellent: Logical, hierarchical progression -->
+<main>
+  <h1>Complete Guide to Web Accessibility</h1>
+  
+  <section>
+    <h2>Understanding Screen Readers</h2>
+    <p>Introduction to screen reader technology...</p>
+    
+    <h3>Popular Screen Reader Software</h3>
+    <p>NVDA, JAWS, and VoiceOver comparison...</p>
+    
+    <h3>Testing with Screen Readers</h3>
+    <p>Step-by-step testing instructions...</p>
+  </section>
+  
+  <section>
+    <h2>Color and Contrast Guidelines</h2>
+    <p>Designing with sufficient contrast...</p>
+    
+    <h3>WCAG Contrast Requirements</h3>
+    <p>Understanding the different contrast levels...</p>
+    
+    <h3>Testing Tools and Techniques</h3>
+    <p>Tools for verifying contrast ratios...</p>
+  </section>
+</main>
+```
+
+```html
+<!-- ❌ Problematic: Skipping levels, inconsistent structure -->
+<h1>Page Title</h1>
+<h3>Subsection</h3> <!-- Skipped h2 -->
+<h2>This should come before h3</h2>
+<h1>Another main heading?</h1> <!-- Multiple h1s -->
+```
+
+**Pealkirjade parimad tavad:**
+- **Üks `<h1>` lehe kohta**: tavaliselt peamine lehe pealkiri või peamine sisuteema
+- **Loogiline järjepidevus**: kunagi ära jäta tasandeid vahele (h1 → h2 → h3, mitte h1 → h3)
+- **Kirjeldav sisu**: tee pealkirjad mõistetavaks ka kontekstist eraldatult loetuna
+- **Visuaalne kujundus CSS-iga**: kasuta CSS-i välimuse jaoks, HTML tasemeid struktuuri jaoks
+
+**Ekraanilugerite navigeerimise statistika:**
+- 68% ekraanilugerite kasutajatest navigeerib pealkirjade järgi ([WebAIM Survey](https://webaim.org/projects/screenreadersurvey9/#finding))
+- Kasutajad ootavad loogilist pealkirjaskeemi
+- Pealkirjad on kiireim viis lehe struktuuri mõistmiseks
+
+> 💡 **Profi nõuanne**: Kasuta brauserilaiendit nagu "HeadingsMap", et visualiseerida oma pealkirjastruktuuri. See peaks lugema nagu hästi organiseeritud sisukord.
+
+✅ **Testi oma pealkirjastruktuuri**: Kasuta ekraanilugeri pealkirjade navigeerimist (H-klahv NVDA-s), et hüpata pealkirjade vahel. Kas struktuur jutustab sisu loogilise loo?
+
+### Täiustatud visuaalse ligipääsetavuse tehnikad
+
+Lisaks põhilisele kontrastile ja värvile on olemas keerukamaid võtteid, mis aitavad luua tõeliselt kaasavaid visuaalseid kogemusi. Need meetodid tagavad, et su sisu töötab erinevates vaatamistingimustes ja abitehnoloogiates.
+
+**Olulised visuaalse suhtluse strateegiad:**
+
+- **Mitme-meediumiline tagasiside**: ühenda visuaalsed, tekstilised ja vahel helilised märguanded
+- **Progressiivne info tutvustus**: esita info seeditavate tükkidena
+- **Järjepidevad interaktsioonimustrid**: kasuta tuttavaid kasutajaliidese konventsioone
+- **Reageeriv tüpograafia**: skaala teksti sobivalt erinevatel seadmetel
+- **Laadimise ja vigade olekud**: anna selget tagasisidet kasutaja toimingute kohta
+
+**Ligipääsetavust parandavad CSS utiliidid:**
+
+```css
+/* Screen reader only text - visually hidden but accessible */
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}
+
+/* Skip link for keyboard navigation */
+.skip-link {
+  position: absolute;
+  top: -40px;
+  left: 6px;
+  background: #000000;
+  color: #ffffff;
+  padding: 8px 16px;
+  text-decoration: none;
+  border-radius: 4px;
+  font-weight: bold;
+  transition: top 0.3s ease;
+  z-index: 1000;
+}
+
+.skip-link:focus {
+  top: 6px;
+}
+
+/* Reduced motion respect */
+@media (prefers-reduced-motion: reduce) {
+  .skip-link {
+    transition: none;
+  }
+  
+  * {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}
+
+/* High contrast mode support */
+@media (prefers-contrast: high) {
+  .button {
+    border: 2px solid;
+  }
+}
+```
+
+> 🎯 **Ligipääsetavuse muster**: "Vahelejäämise link" on ülioluline klaviatuuri kasutajatele. See peaks olema lehel esimene fookusvõimeline element ja viivitamatult hüppama peamise sisu juurde.
+
+✅ **Lisa vahelejäämise navigeerimine**: lisa lehtedele skip lingid ja testi neid Tab-klahvi vajutades kohe lehe laadimisel. Need peaksid ilmuma ja võimaldama hüpata peamise sisu juurde.
+
+## Sisukate lingitekstide loomine
+
+Lingid on veebimaailma põhitähtsad ühendusteejuhid, kuid halvasti kirjutatud lingitekst on nagu tänavamärgi asemel vaid "Koht". Ei ole eriti kasulik, eks?
+
+Asi, mis mind esimesel kuulamisel vapustas: ekraanilugerid suudavad kõik lehe lingid eraldi välja võtta ja kuvada need üheks suureks nimekirjaks. Kujuta ette, kui keegi annaks sulle kõigi oma lehe linkide kataloogi. Kas iga link annaks üksi mõistliku tähenduse? Sellest peab su lingitekst läbi saama!
+
+### Linginavigationi mustrite mõistmine
+
+Ekraanilugeritel on võimsad linginavigatsiooni võimalused, mis tuginevad hästi kirjutatud lingitekstile:
+
+**Linginavigatsiooni meetodid:**
+- **Järjestikune lugemine**: lingid loetakse kontekstis koos muu sisuga
+- **Linkide nimekirja genereerimine**: kõik lehe lingid koondatakse otsitavasse kataloogi
+- **Kiirnavigeerimine**: hüppa linkide vahel klaviatuuri otseteedega (K NVDA-s)
+- **Otsingufunktsioon**: leia konkreetsed lingid osalise teksti järgi
+
+**Miks kontekst on oluline:**
+Kui ekraanilugeri kasutaja genereerib linginimekirja, näeb ta midagi sellist:
+- "Laadi aruanne"
+- "Loe edasi"
+- "Vajuta siia"
+- "Privaatsuspoliitika"
+- "Vajuta siia"
+
+Ainult kaks neist linkidest annavad kasulikku infot väljaspool konteksti!
+
+> 📊 **Kasutajakogemuse mõju**: Ekraanilugerite kasutajad skaneerivad linkide nimekirju, et kiiresti mõista lehe sisu. Üldised lingitekstid sunnivad neid navigeerima tagasi iga lingi algse konteksti juurde, mis aeglustab oluliselt sirvimist.
+
+### Levinud lingiteksti vead, mida vältida
+
+Mõistmine, mis ei toimi, aitab sul ligipääsetavusprobleeme olemasolevas sisus märgata ja parandada.
+
+**❌ Üldised lingitekstid, mis konteksti ei anna:**
+
+```html
+<!-- Meaningless when read from a link list -->
+<p>Our sustainability efforts are detailed in our recent report. 
+   <a href="/sustainability-2024.pdf">Click here</a> to view it.</p>
+
+<!-- Repeated generic text throughout the page -->
+<div class="article-card">
+  <h3>Web Accessibility Guide</h3>
+  <p>Learn the fundamentals...</p>
+  <a href="/accessibility-guide">Read more</a>
+</div>
+<div class="article-card">
+  <h3>Color Contrast Tips</h3>
+  <p>Improve your design...</p>
+  <a href="/color-contrast">Read more</a>
+</div>
+
+<!-- URLs as link text (difficult for screen readers to announce) -->
+<p>Visit https://www.w3.org/WAI/WCAG21/quickref/ for WCAG guidelines.</p>
+
+<!-- Vague action words -->
+<a href="/contact">Go</a> | <a href="/about">See</a> | <a href="/help">View</a>
+```
+
+**Miks need mustrid ebaõnnestuvad:**
+- **"Vajuta siia"** ei ütle midagi sihtkoha kohta
+- **"Loe edasi"** kordamine tekitab segadust
+- **Raw URL-id** on ekraanilugeritele raskesti hääldatavad
+- **Ühesõnalised lingid** nagu "Mine" või "Vaata" on kirjelduseta
+
+### Hea lingiteksti kirjutamine
+
+Kirjeldavad lingitekstid on kasulikud kõigile – nägijad saavad lingid kiiresti läbi vaadata ja ekraanilugerite kasutajad mõistavad sihtkohta kohe.
+
+**✅ Selged ja kirjeldavad lingitekstinäited:**
+
+```html
+<!-- Descriptive text that explains the destination -->
+<p>Our comprehensive <a href="/sustainability-2024.pdf">2024 sustainability report (PDF, 2.1MB)</a> details our environmental initiatives.</p>
+
+<!-- Specific, unique link text for each card -->
+<div class="article-card">
+  <h3>Web Accessibility Guide</h3>
+  <p>Learn the fundamentals of inclusive design...</p>
+  <a href="/accessibility-guide">Read our complete web accessibility guide</a>
+</div>
+<div class="article-card">
+  <h3>Color Contrast Tips</h3>
+  <p>Improve your design with better color choices...</p>
+  <a href="/color-contrast">Explore color contrast best practices</a>
+</div>
+
+<!-- Meaningful text instead of raw URLs -->
+<p>The <a href="https://www.w3.org/WAI/WCAG21/quickref/">WCAG 2.1 Quick Reference guide</a> provides comprehensive accessibility guidelines.</p>
+
+<!-- Descriptive action links -->
+<a href="/contact">Contact our support team</a> | 
+<a href="/about">About our company</a> | 
+<a href="/help">Get help with your account</a>
+```
+
+**Lingiteksti parimad tavad:**
+- **Ole konkreetne**: "Laadi kvartali finantsaruanne" vs "Laadi"
+- **Lisa failitüüp ja suurus**: "(PDF, 1.2MB)" allalaaditavate failide juures
+- **Tõmba tähelepanu, kui link avab uue akna**: "(avab uues aknas)" vajadusel
+- **Kasuta aktiivset keelt**: "Võta ühendust" vs "Kontaktleht"
+- **Hoia lühidalt**: võimalusel 2-8 sõna
+
+### Täiustatud ligipääsetavad lingimustrid
+
+Mõnikord nõuavad visuaalsed piirangud või tehnilised tingimused erilahendusi. Siin on keerukamad meetodid tavapäraste väljakutsete jaoks:
+
+**ARIA kasutamine paremaks kontekstiks:**
+
+```html
+<!-- When button text must be short but needs more context -->
+<a href="/report.pdf" 
+   aria-label="Download 2024 annual financial report, PDF format, 2.3MB">
+  Download Report
+</a>
+
+<!-- When the full context comes from surrounding content -->
+<h3 id="sustainability-heading">Sustainability Initiative</h3>
+<p>Our efforts to reduce environmental impact...</p>
+<a href="/sustainability-details" 
+   aria-labelledby="sustainability-heading"
+   aria-describedby="sustainability-summary">
+  Learn more
+</a>
+<p id="sustainability-summary">Detailed breakdown of our 2024 environmental goals and achievements</p>
+```
+
+**Failitüüpide ja välistesse kohtadesse viitamise märkimine:**
+
+```html
+<!-- Method 1: Include information in visible link text -->
+<a href="/annual-report.pdf">
+  Download our 2024 annual report (PDF, 2.3MB)
+</a>
+
+<!-- Method 2: Use screen reader-only text for file details -->
+<a href="/annual-report.pdf">
+  Download our 2024 annual report
+  <span class="sr-only">(PDF format, 2.3MB)</span>
+</a>
+
+<!-- Method 3: External link indication -->
+<a href="https://example.com" 
+   target="_blank" 
+   aria-describedby="external-link-warning">
+  Visit external resource
+</a>
+<span id="external-link-warning" class="sr-only">
+  (opens in new window)
+</span>
+
+<!-- Method 4: Using CSS for visual indicators -->
+<a href="https://example.com" class="external-link">
+  External resource
+</a>
+```
+
+```css
+/* Visual indicator for external links */
+.external-link::after {
+  content: " ↗";
+  font-size: 0.8em;
+  color: #666;
+}
+
+/* Screen reader announcement for external links */
+.external-link::before {
+  content: "External link: ";
+  position: absolute;
+  left: -10000px;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+}
+```
+
+> ⚠️ **Oluline**: Kui kasutad `target="_blank"`, teavita alati kasutajat, et link avaneb uues aknas või vahelehel. Ootamatu navigeerimise muutus võib kasutajat segadusse ajada.
+
+✅ **Testi oma linkide konteksti**: Kasuta brauseri arendustööriistu, et genereerida nimekiri kõigist lehe linkidest. Kas mõistad iga lingi eesmärki ilma ümbritseva kontekstita?
+
+## ARIA: HTML ligipääsetavuse täiendamine
+
+[Accessible Rich Internet Applications (ARIA)](https://developer.mozilla.org/docs/Web/Accessibility/ARIA) on nagu universaalne tõlk sinu keerukate veebirakenduste ja abitehnoloogiate vahel. Kui HTML üksi ei suuda väljendada kõike, mida su interaktiivsed komponendid teevad, täidab ARIA selle lünga.
+
+Mulle meeldib mõelda, et ARIA on nagu abimärkmed sinu HTML-is – nagu näidisskeem teatris, mis aitab näitlejatel rolli ja suhteid paremini mõista.
+
+**Kõige olulisem reegel ARIA kohta on see:** Kasuta alati kõigepealt semantilist HTML-i ja lisa ARIA vaid täienduseks. Mõtle ARIA-le kui maitseainele, mitte pearoale. See peaks sinu HTML struktuuri selgitama ja rikastama, mitte asendama. Alustuseks saa see alus selgeks!
+
+### Strateegiline ARIA rakendamine
+
+ARIA on võimas, kuid suure jõuga kaasneb ka vastutus. Vale ARIA kasutamine võib teha ligipääsetavuse halvemaks kui ARIA puudumine. Siin on, millal ja kuidas seda tõhusalt kasutada:
+
+**✅ Kasuta ARIA-d, kui:**
+- Loote kohandatud interaktiivseid vidinaid (akordionid, vahekaardid, karussellid)
+- Loote dünaamilist sisu, mis muutub ilma lehe uuesti laadimiseta
+- Pakute täiendavat konteksti keerukate UI suhete jaoks
+- Märgistate laadimise olekuid või live-sisu uuendusi
+- Loote rakenduse-laadseid liideseid kohandatud juhtnuppudega
+
+**❌ Väldi ARIA kasutamist, kui:**
+- Tavalised HTML elemendid juba annavad vajaliku semantika
+- Sa pole kindel, kuidas seda õigesti rakendada
+- See dubleerib semantilise HTML-i poolt juba antud infot
+- Sa pole seda reaalselt abitehnoloogiaga katsetanud
+
+> 🎯 **ARIA kuldreegel**: "Ära muuda semantikat, kui pole kõige hädavajalikum; tagada alati klaviatuuri ligipääsetavus; testi alati päris abitehnoloogiaga."
+**Viis ARIA kategooriat:**
+
+1. **Rollid**: Mis see element on? (`button`, `tab`, `dialog`)
+2. **Omadused**: Millised on selle omadused? (`aria-required`, `aria-haspopup`)
+3. **Seisundid**: Milline on selle hetkene olek? (`aria-expanded`, `aria-checked`)
+4. **Tähtsad piirkonnad**: Kus see paikneb lehe struktuuris? (`banner`, `navigation`, `main`)
+5. **Reaalajas piirkonnad**: Kuidas peaks muutusi teadustama? (`aria-live`, `aria-atomic`)
+
+### Olulised ARIA mustrid kaasaegsetele veebirakendustele
+
+Need mustrid lahendavad kõige levinumad ligipääsetavuse väljakutsed interaktiivsetes veebirakendustes:
+
+**Elementide nimetamine ja kirjeldamine:**
+
+```html
+<!-- aria-label: Provides accessible name when visible text isn't sufficient -->
+<button aria-label="Close newsletter subscription dialog">×</button>
+
+<!-- aria-labelledby: References existing text as the accessible name -->
+<section aria-labelledby="news-heading">
+  <h2 id="news-heading">Latest News</h2>
+  <!-- news content -->
+</section>
+
+<!-- aria-describedby: Links to additional descriptive text -->
+<input type="password" 
+       aria-describedby="pwd-requirements pwd-strength"
+       required>
+<div id="pwd-requirements">
+  Password must contain at least 8 characters, including uppercase, lowercase, and numbers.
+</div>
+<div id="pwd-strength" aria-live="polite">
+  <!-- Dynamic password strength indicator -->
 </div>
 ```
 
-## Pildid
+**Dünaamilise sisu jaoks mõeldud reaalajas piirkonnad:**
 
-On iseenesestmõistetav, et ekraanilugejad ei suuda automaatselt lugeda, mis on pildil. Piltide ligipääsetavaks muutmine ei nõua palju tööd - selleks ongi `alt` atribuut. Kõigil tähenduslikel piltidel peaks olema `alt`, mis kirjeldab, mis need on.
-Puhtalt dekoratiivsetel piltidel peaks `alt` atribuut olema määratud tühjaks stringiks: `alt=""`. See takistab ekraanilugejatel dekoratiivset pilti tarbetult teatamast.
+```html
+<!-- Polite announcements (don't interrupt current speech) -->
+<div aria-live="polite" id="status-updates">
+  <!-- Status messages appear here -->
+</div>
 
-✅ Nagu arvata võib, ei suuda otsingumootorid samuti aru saada, mis on pildil. Nad kasutavad samuti alt-teksti. Seega, tagades, et sinu leht on ligipääsetav, saad täiendavaid eeliseid!
+<!-- Assertive announcements (interrupt and announce immediately) -->
+<div aria-live="assertive" id="urgent-alerts">
+  <!-- Error messages and critical alerts -->
+</div>
 
-## Klaviatuur
+<!-- Loading states with live regions -->
+<button id="submit-btn" aria-describedby="loading-status">
+  Submit Application
+</button>
+<div id="loading-status" aria-live="polite" aria-atomic="true">
+  <!-- "Processing your application..." appears here -->
+</div>
+```
 
-Mõned kasutajad ei saa kasutada hiirt või puuteplaati, vaid tuginevad klaviatuuri interaktsioonidele, et liikuda ühelt elemendilt teisele. On oluline, et sinu veebileht esitaks sisu loogilises järjekorras, et klaviatuuri kasutaja saaks liikuda iga interaktiivse elemendi juurde, kui ta liigub dokumendis alla. Kui ehitad oma veebilehed semantilise märgistusega ja kasutad CSS-i nende visuaalse paigutuse kujundamiseks, peaks sinu leht olema klaviatuuriga navigeeritav, kuid on oluline seda aspekti käsitsi testida. Loe rohkem [klaviatuuri navigeerimise strateegiate kohta](https://webaim.org/techniques/keyboard/).
+**Interaktiivne vidina näide (akordion):**
 
-✅ Mine mõnele veebilehele ja proovi navigeerida ainult klaviatuuri abil. Mis töötab, mis ei tööta? Miks?
+```html
+<div class="accordion">
+  <h3>
+    <button aria-expanded="false" 
+            aria-controls="panel-1" 
+            id="accordion-trigger-1"
+            class="accordion-trigger">
+      Accessibility Guidelines
+    </button>
+  </h3>
+  <div id="panel-1" 
+       role="region"
+       aria-labelledby="accordion-trigger-1" 
+       hidden>
+    <p>WCAG 2.1 provides comprehensive guidelines...</p>
+  </div>
+</div>
+```
 
-## Kokkuvõte
+```javascript
+// JavaScript akordioni oleku haldamiseks
+function toggleAccordion(trigger) {
+  const panel = document.getElementById(trigger.getAttribute('aria-controls'));
+  const isExpanded = trigger.getAttribute('aria-expanded') === 'true';
+  
+  // Oleku vahetamine
+  trigger.setAttribute('aria-expanded', !isExpanded);
+  panel.hidden = isExpanded;
+  
+  // Teavitada ekraanilugejaid muudatustest
+  const status = document.getElementById('status-updates');
+  status.textContent = isExpanded ? 'Section collapsed' : 'Section expanded';
+}
+```
 
-Veeb, mis on ligipääsetav ainult osadele, ei ole tõeliselt 'maailma-võrk'. Parim viis tagada, et sinu loodud lehed on ligipääsetavad, on rakendada ligipääsetavuse parimaid tavasid algusest peale. Kuigi see nõuab lisasamme, tähendab nende oskuste integreerimine sinu töövoogu nüüd, et kõik lehed, mida sa lood, on ligipääsetavad.
+### ARIA rakendamise parimad tavad
 
----
+ARIA on võimas, kuid nõuab hoolikat rakendamist. Nende juhiste järgimine aitab tagada, et sinu ARIA parandab, mitte ei takista ligipääsetavust:
+
+**🛡️ Põhiprintsiibid:**
+
+```mermaid
+flowchart TD
+    A[🚀 Alustage semantilise HTML-iga] --> B{Kas HTML annab vajaliku semantika?}
+    B -->|Jah| C[✅ Kasuta ainult HTML-i]
+    B -->|Ei| D[Kaalu ARIA täiustust]
+    D --> E{Kas saad seda saavutada lihtsamate vahenditega?}
+    E -->|Jah| F[🔄 Lihtsusta lähenemist]
+    E -->|Ei| G[📝 Rakenda ARIA-d hoolikalt]
+    G --> H[🧪 Testi tegeliku AT-ga]
+    H --> I{Kas töötab ootuspäraselt?}
+    I -->|Ei| J[🔧 Silu ja paranda]
+    I -->|Jah| K[✅ Edu!]
+    J --> H
+    F --> C
+    
+    style A fill:#e3f2fd
+    style C fill:#e8f5e8
+    style K fill:#e8f5e8
+    style G fill:#fff3e0
+    style H fill:#f3e5f5
+```
+1. **Semantiline HTML esimesena**: Eelista alati `<button>` üle `<div role="button">`
+2. **Ära riku semantikat**: Ära muuda olemasoleva HTML tähendust (väldi `<h1 role="button">`)
+3. **Hoolitse klaviatuuri ligipääsetavuse eest**: Kõik interaktiivsed ARIA elemendid peavad olema täielikult klaviatuuriga juhitavad
+4. **Testi päris kasutajatega**: ARIA tugi varieerub oluliselt abitehnoloogiate vahel
+5. **Alusta lihtsast**: Keerulised ARIA rakendused on tõenäolisemalt vigased
+
+**🔍 Testimisprotsess:**
+
+```mermaid
+graph TD
+    A[Kirjuta ARIA kood] --> B[HTML valideerimine]
+    B --> C[Testi ainult klaviatuuri abil]
+    C --> D[Testi ekraanilugejaga]
+    D --> E[Testi erinevates brauserites]
+    E --> F{Leitud probleemid?}
+    F -->|Jah| G[Paranda ja testi uuesti]
+    F -->|Ei| H[Rakendamine lõpetatud]
+    G --> B
+```
+**🚫 Levinud ARIA vead, mida vältida:**
+
+- **Vastuoluline info**: Ära ütle otseselt vastuolus olevat HTML semantikaga
+- **Liigne märgistamine**: Liigne ARIA info võib kasutajaid üle koormata
+- **Staatiline ARIA**: Unusta ARIA seisundite uuendamine sisumuutuste korral
+- **Katsetamata rakendused**: ARIA, mis teoorias töötab, aga praktikas mitte
+- **Puuduv klaviatuuri tugi**: ARIA rollid ilma vastavate klaviatuuri interaktsioonideta
+
+> 💡 **Testimisvahendid**: Kasuta automaatseks ARIA valideerimiseks näiteks [accessibility-checker](https://www.npmjs.com/package/accessibility-checker), kuid testi alati päris ekraanilugejatega parima kogemuse saamiseks.
+
+### 🎭 **ARIA oskuste kontroll: Kas oled valmis keerukateks interaktsioonideks?**
+
+**Hinda oma ARIA usaldust:**
+- Millal eelistaksid ARIA-d semantilisele HTML-ile? (Vihje: peaaegu kunagi!)
+- Kas oskad selgitada, miks `<div role="button">` on tavaliselt halvem kui `<button>`?
+- Mis on ARIA testimise juures kõige olulisem meeles pidada?
+
+```mermaid
+pie title "Tavalised ARIA kasutusmustrid"
+    "Sildid & Kirjeldused" : 40
+    "Reaalajas alad" : 25
+    "Vidina olekud" : 20
+    "Keerukad juhtnupud" : 15
+```
+> **Oluline tähelepanek**: Suurem osa ARIA kasutusest on elementide märgistamiseks ja kirjeldamiseks. Keerukad vidinate mustrid on oluliselt harvemad kui võid arvata!
+
+✅ **Õpi ekspertidelt**: Uuri [ARIA Authoring Practices Guide](https://w3c.github.io/aria-practices/), kus on läbi katsetatud mustrid ja keerukate interaktiivsete vidinate rakendused.
+
+## Piltide ja meedia ligipääsetavuse tagamine
+
+Visuaalne ja helisisu on kaasaegsete veebikogemuste olulised osad, kuid need võivad tekitada tõkkeid, kui neid ei tehta hoolikalt. Eesmärk on tagada, et sinu meedia info ja emotsionaalne mõju jõuaks iga kasutajani. Kui selgeks saada, muutub see teiseks loomuseks.
+
+Erinevat tüüpi meedia vajab erinevaid ligipääsetavusmeetodeid. See on nagu kokkamine — sa ei kohtle õrnat kala samamoodi nagu jõulist steiki. Nende erinevuste mõistmine aitab sobiva lahenduse valida igas olukorras.
+
+### Strateegiline piltide ligipääsetavus
+
+Iga pilt sinu veebilehel täidab eesmärki. Selle eesmärgi mõistmine aitab paremini kirjutada alternatiivteksti ja luua kaasavamaid kogemusi.
+
+**Neli pilditüüpi ja nende alt-teksti strateegiad:**
+
+**Informatiivsed pildid** – edastavad olulist infot:
+```html
+<img src="../../../../translated_images/et/chart.31c7eb0eb5c4450d.png" alt="Sales increased 25% from Q1 to Q2 2024">
+```
+
+**Dekoratiivsed pildid** – puhtalt visuaalsed, informatsioonivabad:
+```html
+<img src="../../../../translated_images/et/decorative-border.b2f3c4d6634fb79d.png" alt="" role="presentation">
+```
+
+**Funktsionaalsed pildid** – toimivad nuppude või kontrolleritena:
+```html
+<button>
+  <img src="search-icon.svg" alt="Search">
+</button>
+```
+
+**Keerukad pildid** – graafikud, diagrammid, infograafikud:
+```html
+<img src="../../../../translated_images/et/complex-chart.c831f461a363b446.png" alt="Quarterly sales data" aria-describedby="chart-description">
+<div id="chart-description">
+  <p>Detailed description: Sales data shows a steady increase across all quarters...</p>
+</div>
+```
+
+### Video ja heli ligipääsetavus
+
+**Video nõuded:**
+- **Subtiitrid**: Tekstiversioon räägitavast sisust ja heliefektidest
+- **Audio kirjeldused**: Visuaalsete elementide kirjeldus pimedatele kasutajatele
+- **Transkriptsioonid**: Kõigi heliliste ja visuaalsete elementide täielik tekstiversioon
+
+```html
+<video controls>
+  <source src="video.mp4" type="video/mp4">
+  <track kind="captions" src="captions.vtt" srclang="en" label="English">
+  <track kind="descriptions" src="descriptions.vtt" srclang="en" label="Audio descriptions">
+</video>
+```
+
+**Heli nõuded:**
+- **Transkriptsioonid**: Kõne sisu tekstiversioon
+- **Visuaalsed indikaatorid**: Ainult helisisu puhul visuaalsed vihjed
+
+### Kaasaegsed pilditehnikad
+
+**CSS-iga dekoratiivsete piltide kasutamine:**
+```css
+.hero-section {
+  background-image: url('decorative-hero.jpg');
+  /* Decorative images in CSS don't need alt text */
+}
+```
+
+**Ligipääsetavad responsiivsed pildid:**
+```html
+<picture>
+  <source media="(min-width: 800px)" srcset="large-chart.png">
+  <source media="(min-width: 400px)" srcset="medium-chart.png">
+  <img src="../../../../translated_images/et/small-chart.c50c7b1bbcce43d8.png" alt="Website traffic increased 40% after accessibility improvements">
+</picture>
+```
+
+✅ **Testi piltide ligipääsetavust**: Kasuta ekraanilugejat ja navigeeri lehel piltidega. Kas saad piisavalt infot, et sisu mõista?
+
+## Klaviatuuriga navigeerimine ja fookuse haldamine
+
+Paljud kasutajad kasutavad veebis navigeerimiseks ainult klaviatuuri. See hõlmab motoorsete puudega inimesi, jõukasutajaid, kes leiavad klaviatuuri hiirest kiiremaks ja kõiki, kelle hiir lakkab töötamast. Veendumine, et sinu sait toimib hästi klaviatuuri kaudu, on oluline ning muudab tihti saidi efektiivsemaks kõigile.
+
+```mermaid
+flowchart LR
+    A[⌨️ Klaviatuuri navigeerimine] --> B[Tabi järjekord]
+    A --> C[Fookuse indikaatorid]
+    A --> D[Vahelejätmise lingid]
+    A --> E[Klaviatuuri otseteed]
+    
+    B --> B1[Loogiline järjestus<br/>Kõik interaktiivsed elemendid<br/>Ilma tabi lõksudeta]
+    C --> C1[Nähtavad piirjooned<br/>Kõrge kontrastsus<br/>Selged piirid]
+    D --> D1[Vahele põhi<br/>Vahele navigeerimine<br/>Vältida korduvat]
+    E --> E1[Vajuta Esc sulgemiseks<br/>Enter aktiveerimiseks<br/>Nooled rühmades]
+    
+    style A fill:#e3f2fd
+    style B fill:#e8f5e8
+    style C fill:#fff3e0
+    style D fill:#f3e5f5
+    style E fill:#e0f2f1
+```
+### Olulised klaviatuuri navigeerimise mustrid
+
+**Standardsed klaviatuuri interaktsioonid:**
+- **Tab**: Fookuse liigutamine edasi interaktiivsete elementide vahel
+- **Shift + Tab**: Fookuse liigutamine tagasi
+- **Enter**: Nuppude ja linkide aktiveerimine
+- **Space**: Nuppude aktiveerimine, märkeruutude märkimine
+- **Nooleklahvid**: Navigeerimine komponendirühmas (raadio nupud, menüüd)
+- **Escape**: Modaalide, rippmenüüde sulgemine või operatsioonide tühistamine
+
+### Fookuse haldamise parimad tavad
+
+**Nähtavad fookuse indikaatorid:**
+```css
+/* Ensure focus is always visible */
+button:focus-visible {
+  outline: 2px solid #4A90A4;
+  outline-offset: 2px;
+}
+
+/* Custom focus styles for different components */
+.card:focus-within {
+  box-shadow: 0 0 0 3px rgba(74, 144, 164, 0.5);
+}
+```
+
+**Vahelejätmise lingid mugavaks navigeerimiseks:**
+```html
+<a href="#main-content" class="skip-link">Skip to main content</a>
+<a href="#navigation" class="skip-link">Skip to navigation</a>
+
+<nav id="navigation">
+  <!-- navigation content -->
+</nav>
+<main id="main-content">
+  <!-- main content -->
+</main>
+```
+
+**Õige tab järjestus:**
+```html
+<!-- Use semantic HTML for natural tab order -->
+<form>
+  <label for="name">Name:</label>
+  <input type="text" id="name" tabindex="0">
+  
+  <label for="email">Email:</label>
+  <input type="email" id="email" tabindex="0">
+  
+  <button type="submit" tabindex="0">Submit</button>
+</form>
+```
+
+### Fookuse lõks modaalides
+
+Modaalakende avamisel tuleb fookus lõksu võtta modaalis:
+
+```javascript
+// Moodne fookuse püünise rakendus
+function trapFocus(element) {
+  const focusableElements = element.querySelectorAll(
+    'button, [href], input, select, textarea, [tabindex]:not([tabindex="-1"])'
+  );
+  
+  const firstElement = focusableElements[0];
+  const lastElement = focusableElements[focusableElements.length - 1];
+
+  element.addEventListener('keydown', (e) => {
+    if (e.key === 'Tab') {
+      if (e.shiftKey && document.activeElement === firstElement) {
+        e.preventDefault();
+        lastElement.focus();
+      } else if (!e.shiftKey && document.activeElement === lastElement) {
+        e.preventDefault();
+        firstElement.focus();
+      }
+    }
+    
+    if (e.key === 'Escape') {
+      closeModal();
+    }
+  });
+  
+  // Fokusseeri esimene element, kui moodal avaneb
+  firstElement.focus();
+}
+```
+
+✅ **Testi klaviatuuri navigeerimist**: Proovi navigeerida oma veebilehte ainult Tab-klahviga. Kas suudad jõuda kõigi interaktiivsete elementideni? Kas fookuse järjekord on loogiline? Kas fookuse indikaatorid on selgelt nähtavad?
+
+## Vormide ligipääsetavus
+
+Vormid on kriitilised kasutajate interaktsiooniks ning vajavad eritähelepanu ligipääsetavuse osas.
+
+### Sildid ja vormikontrolli seos
+
+**Igal vormikontrollil peab olema silt:**
+```html
+<!-- Explicit labeling (preferred) -->
+<label for="username">Username:</label>
+<input type="text" id="username" name="username" required>
+
+<!-- Implicit labeling -->
+<label>
+  Password:
+  <input type="password" name="password" required>
+</label>
+
+<!-- Using aria-label when visual label isn't desired -->
+<input type="search" aria-label="Search products" placeholder="Search...">
+```
+
+### Vigade käsitlemine ja valideerimine
+
+**Ligipääsetavad veateated:**
+```html
+<label for="email">Email Address:</label>
+<input type="email" id="email" name="email" 
+       aria-describedby="email-error" 
+       aria-invalid="true" required>
+<div id="email-error" role="alert">
+  Please enter a valid email address
+</div>
+```
+
+**Vormide valideerimise parimad tavad:**
+- Kasuta `aria-invalid`, et näidata vigaseid välju
+- Paku selged, spetsiifilised veateated
+- Kasuta `role="alert"` tähtsate veateadete teatamiseks
+- Kuva vead koheselt ning vormi esitamisel
+
+### Väljade rühmitamine
+
+**Rühmita seotud vormikontrollid:**
+```html
+<fieldset>
+  <legend>Shipping Address</legend>
+  <label for="street">Street Address:</label>
+  <input type="text" id="street" name="street">
+  
+  <label for="city">City:</label>
+  <input type="text" id="city" name="city">
+</fieldset>
+
+<fieldset>
+  <legend>Preferred Contact Method</legend>
+  <input type="radio" id="contact-email" name="contact" value="email">
+  <label for="contact-email">Email</label>
+  
+  <input type="radio" id="contact-phone" name="contact" value="phone">
+  <label for="contact-phone">Phone</label>
+</fieldset>
+```
+
+## Sinu ligipääsetavuse teekond: Peamised võtmed
+
+Palju õnne! Sa oled just omandanud alused tõeliselt kaasavate veebikogemuste loomiseks. See on päris põnev! Veebi ligipääsetavus ei seisne ainult nõuetele vastamise kontrollimises — see on selle mõistmine, kuidas inimesed digitaalse sisuga mitmekesiselt suhtlevad ja selle imelise keerukusega arvestamine.
+
+Sa oled nüüd osa kasvavast arendajate kogukonnast, kes mõistavad, et suurepärane disain töötab kõigi jaoks. Tere tulemast klubisse!
+
+**🎯 Sinu ligipääsetavusvahendite komplekt sisaldab nüüd:**
+
+| Põhiprintsiip | Rakendamine | Mõju |
+|----------------|----------------|---------|
+| **Semantiline HTML alus** | Kasuta õigesti mõeldud HTML elemente | Ekraanilugejad suudavad efektiivselt navigeerida, klaviatuurid töötavad automaatselt |
+| **Kaasaegne visuaalne disain** | Piisav kontrastsus, tähenduslik värvide kasutus, nähtavad fookuse indikaatorid | Selge kõigile mis tahes valgustingimustes |
+| **Kirjeldav sisu** | Mõtestatud linkide tekstid, alt tekstid, pealkirjad | Kasutajad saavad sisu mõista ilma visuaalse kontekstita |
+| **Klaviatuuri ligipääsetavus** | Tab järjekord, kiirklahvid, fookuse haldamine | Motoorne ligipääsetavus ja jõukasutajate efektiivsus |
+| **ARIA täiendused** | Strateegiline kasutus semantiliste puudujääkide täitmiseks | Keerulised rakendused töötavad abitehnoloogiatega |
+| **Üleüldine testimine** | Automaatilised tööriistad + käsitsi kontroll + päriskasutajate testid | Veatuvastus enne kasutajate mõjutamist |
+
+**🚀 Sinu järgmised sammud:**
+
+1. **Lisa ligipääsetavus oma tööprotsessi**: Tee testimine loomulikuks osaks arendusprotsessist
+2. **Õpi päris kasutajatelt**: Kogu tagasisidet abivahendeid kasutavatelt inimestelt
+3. **Ole kursis uuendustega**: Ligipääsetavuse tehnikad arenevad koos uute tehnoloogiate ja standarditega
+4. **Eesti kaasavuse eest**: Jaga oma teadmisi ja muuda ligipääsetavus meeskonna prioriteediks
+
+> 💡 **Pea meeles:** Ligipääsetavuse piirangud viivad sageli innovaatiliste ja elegantsete lahendusteni, mis aitavad kõigil. Kõnniteede kaldteed, subtiitrid ja hääljuhtimine algasid ligipääsetavuse funktsioonidena ja said tavakasutuseks.
+
+**Äriline põhjus on selge:** Ligipääsetavad veebisaidid jõuavad rohkemate kasutajateni, on otsingumootorites paremini leitavad, hoolduskulud on madalamad ja juriidilisi riske vähem. Aga ausalt? Tõeline põhjus ligipääsetavuse eest hoolida on palju sügavam. Ligipääsetavad saidid kehastavad veebipõhiseid parimaid väärtusi — avatust, kaasavust ja ideed, et kõigil peab olema võrdne ligipääs infole.
+
+Sa oled nüüd varustatud tuleviku kaasava veebiloome oskustega. Iga ligipääsetav sait, mida lood, teeb internetti kõigile sõbralikumaks paigaks. See on päris hämmastav, kui sellele mõelda!
+
+## Lisamaterjalid
+
+Jätka oma ligipääsetavuse õpiteekonda nende oluliste ressurssidega:
+
+**📚 Ametlikud standardid ja juhendid:**
+- [WCAG 2.1 juhendid](https://www.w3.org/WAI/WCAG21/quickref/) – ametlik ligipääsetavuse standard, kiirviited
+- [ARIA Authoring Practices Guide](https://w3c.github.io/aria-practices/) – põhjalikud interaktiivsete vidinate mustrid
+- [WebAIM juhendid](https://webaim.org/) – praktilised, algajale sõbralikud ligipääsetavuse soovitused
+
+**🛠️ Tööriistad ja testimisvahendid:**
+- [axe DevTools](https://www.deque.com/axe/devtools/) – tööstusharu standard ligipääsetavuse testimiseks
+- [A11y Project Checklist](https://www.a11yproject.com/checklist/) – samm-sammult ligipääsetavuse kontroll
+- [Accessibility Insights](https://accessibilityinsights.io/) – Microsofti põhjalik testimisplatvorm
+- [Color Oracle](https://colororacle.org/) – värvipimeduse simulaator disainikontrolliks
+
+**🎓 Õpe ja kogukond:**
+- [WebAIM ekraanilugejate uuring](https://webaim.org/projects/screenreadersurvey9/) – päriskasutajate eelistused ja käitumine
+- [Inclusive Components](https://inclusive-components.design/) – kaasaegsed ligipääsetavad komponendi mustrid
+- [A11y Coffee](https://a11y.coffee/) – kiired ligipääsetavuse näpunäited ja teadmised
+- [Web Accessibility Initiative (WAI)](https://www.w3.org/WAI/) – W3C põhjalikud ligipääsetavuse ressursid
+
+**🎥 Praktiline õpe:**
+- [Accessibility Developer Guide](https://www.accessibility-developer-guide.com/) – praktilised rakendamisjuhised
+- [Deque University](https://dequeuniversity.com/) – professionaalsed ligipääsetavuse koolituskursused
+
+## GitHub Copilot Agendi väljakutse 🚀
+
+Kasuta Agent režiimi, et täita järgmine väljakutse:
+
+**Kirjeldus:** Loo ligipääsetav modaalakna komponent, mis demonstreerib õiget fookuse haldust, ARIA atribuute ja klaviatuuriga navigeerimise mustreid.
+
+**Ülesanne:** Ehita täielik modaalakna komponent HTML, CSS ja JavaScriptiga, mis sisaldab õiget fookuse lõksu, ESC klahviga sulgemist, välisklikiga sulgemist, ARIA atribuute ekraanilugejatele ja nähtavaid fookuse indikaatoreid. Modaal sisaldab vormi koos korrektsete siltide ja veakäsitlusega. Veendu, et komponent vastab WCAG 2.1 AA standarditele.
+
 
 ## 🚀 Väljakutse
 
@@ -178,68 +1349,144 @@ Võta see HTML ja kirjuta see ümber nii ligipääsetavaks kui võimalik, kasuta
 
 ```html
 <!DOCTYPE html>
-<html>
+<html lang="en">
   <head>
-    <title>
-      Example
-    </title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Turtle Ipsum - The World's Premier Turtle Fan Club</title>
     <link href='../assets/style.css' rel='stylesheet' type='text/css'>
   </head>
   <body>
-    <div class="site-header">
-      <p class="site-title">Turtle Ipsum</p>
+    <header class="site-header">
+      <h1 class="site-title">Turtle Ipsum</h1>
       <p class="site-subtitle">The World's Premier Turtle Fan Club</p>
-    </div>
-    <div class="main-nav">
-      <p class="nav-header">Resources</p>
-      <div class="nav-list">
-        <p class="nav-item nav-item-bull"><a href="https://www.youtube.com/watch?v=CMNry4PE93Y">"I like turtles"</a></p>
-        <p class="nav-item nav-item-bull"><a href="https://en.wikipedia.org/wiki/Turtle">Basic Turtle Info</a></p>
-        <p class="nav-item nav-item-bull"><a href="https://en.wikipedia.org/wiki/Turtles_(chocolate)">Chocolate Turtles</a></p>
-      </div>
-    </div>
-    <div class="main-content">
-      <div>
-        <p class="page-title">Welcome to Turtle Ipsum. 
-            <a href="">Click here</a> to learn more.
+    </header>
+    
+    <nav class="main-nav" aria-label="Main navigation">
+      <h2 class="nav-header">Resources</h2>
+      <ul class="nav-list">
+        <li><a href="https://www.youtube.com/watch?v=CMNry4PE93Y">"I like turtles" video</a></li>
+        <li><a href="https://en.wikipedia.org/wiki/Turtle">Basic turtle information</a></li>
+        <li><a href="https://en.wikipedia.org/wiki/Turtles_(chocolate)">Chocolate turtles candy</a></li>
+      </ul>
+    </nav>
+    
+    <main class="main-content">
+      <article>
+        <h1>Welcome to Turtle Ipsum</h1>
+        <p class="intro">
+          <a href="/about">Learn more about our turtle community</a> and discover fascinating facts about these amazing creatures.
         </p>
         <p class="article-text">
-          Turtle ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum
+          Turtle ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
         </p>
-      </div>
-    </div>
-    <div class="footer">
-      <div class="footer-section">
-        <span class="button">Sign up for turtle news</span>
-      </div><div class="footer-section">
-        <p class="nav-header footer-title">
-          Internal Pages
-        </p>
-        <div class="nav-list">
-          <p class="nav-item nav-item-bull"><a href="../">Index</a></p>
-          <p class="nav-item nav-item-bull"><a href="../semantic">Semantic Example</a></p>
-        </div>
-      </div>
-      <p class="footer-copyright">&copy; 2016 Instrument</p>
-    </div>
+      </article>
+    </main>
+    
+    <footer class="footer">
+      <section class="newsletter-signup">
+        <h2>Stay Updated</h2>
+        <button type="button" onclick="showNewsletterForm()">Sign up for turtle news</button>
+      </section>
+      
+      <nav class="footer-nav" aria-label="Footer navigation">
+        <h2>Site Pages</h2>
+        <ul>
+          <li><a href="../">Home</a></li>
+          <li><a href="../semantic">Semantic HTML example</a></li>
+        </ul>
+      </nav>
+      
+      <p class="footer-copyright">&copy; 2024 Instrument. All rights reserved.</p>
+    </footer>
   </body>
 </html>
 ```
 
-## Loengu-järgne viktoriin
-[Loengujärgne viktoriin](https://ff-quizzes.netlify.app/web/en/)
+**Peamised tehtud parandused:**
+- Lisatud korrektne semantiline HTML struktuur
+- Parandatud pealkirjade hierarhia (üksnes üks h1, loogiline järjekord)
+- Lisatud tähenduslik linkide tekst "kliki siia" asemel
+- Lisatud navigeerimise jaoks korrektne ARIA sildistus
+- Lisatud lang atribuudi ja korrektsed meta märgendid
+- Interaktiivsete elementidena kasutatud button-elementi
+- Jaluse sisu korraldatud korrektselt tähtsate piirkondadega
 
-## Ülevaade ja iseseisev õpe
+## Lektuuri järeltest
+[Lektuuri järeltest](https://ff-quizzes.netlify.app/web/en/)
 
-Paljudel valitsustel on seadused, mis käsitlevad ligipääsetavuse nõudeid. Uuri oma koduriigi ligipääsetavuse seadusi. Mis on kaetud ja mis mitte? Näiteks [see valitsuse veebisait](https://accessibility.blog.gov.uk/).
+## Ülevaade & Iseteemaks õppimine
 
-## Ülesanne
+Paljudel valitsustel on seadused ligipääsetavuse nõuete kohta. Loe oma kodumaa ligipääsetavusseadustest. Mis on kaetud ja mis mitte? Näiteks [see valitsuse veebisait](https://accessibility.blog.gov.uk/).
+
+## Kodune ülesanne
 
 [Analüüsi mitte-ligipääsetavat veebisaiti](assignment.md)
 
-Autorid: [Turtle Ipsum](https://github.com/Instrument/semantic-html-sample) by Instrument
+Tänud: [Turtle Ipsum](https://github.com/Instrument/semantic-html-sample) autor Instrument
 
 ---
 
-**Lahtiütlus**:  
-See dokument on tõlgitud AI tõlketeenuse [Co-op Translator](https://github.com/Azure/co-op-translator) abil. Kuigi püüame tagada täpsust, palume arvestada, et automaatsed tõlked võivad sisaldada vigu või ebatäpsusi. Algne dokument selle algses keeles tuleks pidada autoriteetseks allikaks. Olulise teabe puhul soovitame kasutada professionaalset inimtõlget. Me ei vastuta selle tõlke kasutamisest tulenevate arusaamatuste või valesti tõlgenduste eest.
+## 🚀 Sinu ligipääsetavuse meisterlikkuse ajakava
+
+### ⚡ **Mida saad teha järgmise 5 minutiga**
+- [ ] Paigalda brauserisse axe DevTools laiendus
+- [ ] Käivita Lighthouse ligipääsetavuse audit oma lemmik veebisaidil
+- [ ] Proovi navigeerida mõnel veebisaidil ainult Tab-klahvi abil
+- [ ] Testi oma brauseri sisseehitatud ekraanilugejat (Narrator/VoiceOver)
+
+### 🎯 **Mida saad saavutada selle tunni jooksul**
+- [ ] Tsemini lektuurijärgne test ja mõtiskle ligipääsetavuse teemadel
+- [ ] Harjuta tähendusliku alt-teksti kirjutamist 10 erineva pildi kohta
+- [ ] Audit eelnimetatud veebisaidi pealkirjastruktuur HeadingsMap laiendiga
+- [ ] Paranda väljakutse HTML-is leitud ligipääsetavusprobleeme
+- [ ] Testi oma praeguse projekti värvikontrasti WebAIM vahendiga
+
+### 📅 **Sinu nädala pikkune ligipääsetavuse teekond**
+- [ ] Täida ülesanne mitte-ligipääsetava veebisaidi analüüsiks
+- [ ] Sea üles oma arenduskeskkond ligipääsetavuse testimise tööriistadega
+- [ ] Harjuta klaviatuuriga navigeerimist 5 erineval keerukal veebisaidil
+- [ ] Loo lihtne vorm õige märgistuse, veahalduse ja ARIAGA
+- [ ] Liitu ligipääsetavuse kogukonnaga (A11y Slack, WebAIM foorum)
+- [ ] Vaata, kuidas tõelised puudega kasutajad veebis navigeerivad (YouTube'is on suurepäraseid näiteid)
+
+### 🌟 **Sinu kuuajaline muutumine**
+- [ ] Integreeri ligipääsetavuse testimine arendusvoogu
+- [ ] Panusta avatud lähtekoodi projekti ligipääsetavusprobleemide parandamisega
+- [ ] Viige läbi kasutatavuse testimine koos kellelegi, kes kasutab abitehnoloogiat
+- [ ] Loo oma meeskonnale ligipääsetav komponentide teek
+- [ ] Too ligipääsetavuse eest seismine oma töökohal või kogukonnas
+- [ ] Ole mentor kellelegi, kes on ligipääsetavuse mõistete uus õppija
+
+### 🏆 **Lõplik ligipääsetavuse meistri tagasiside**
+
+**Tähista oma ligipääsetavuse teekonda:**
+- Mis on kõige üllatavam asi, mida õppisid inimeste veebikasutuse kohta?
+- Milline ligipääsetavuse põhimõte kõnetab sind enim sinu arendusstiilis?
+- Kuidas on ligipääsetavuse õppimine muutnud sinu disainivaadet?
+- Millise esimese ligipääsetavuse paranduse soovid teha reaalsel projektil?
+
+```mermaid
+journey
+    title Sinu ligipääsetavuse enesekindluse areng
+    section Täna
+      Ülekoormatud: 3: You
+      Uudishimulik: 4: You
+      Motiveeritud: 5: You
+    section Selle nädal
+      Harjutamine: 4: You
+      Testimine: 5: You
+      Mõistmine: 5: You
+    section Järgmine kuu
+      Pooldaja: 5: You
+      Juhtimine: 5: You
+      Vaikimisi kaasav: 5: You
+```
+> 🌍 **Sa oled nüüd ligipääsetavuse meister!** Sa mõistad, et suurepärased veebikogemused toimivad kõigi jaoks, sõltumata sellest, kuidas nad veebi kasutavad. Iga ligipääsetav funktsioon, mida ehitad, teeb interneti kaasavamaks. Veeb vajab arendajaid nagu sina, kes näevad ligipääsetavust mitte piiranguna, vaid võimalusena luua paremaid kogemusi kõigile kasutajatele. Tere tulemast liikumisse! 🎉
+
+---
+
+<!-- CO-OP TRANSLATOR DISCLAIMER START -->
+**Hoiatus**:  
+See dokument on tõlgitud kasutades tehisintellekti tõlketeenust [Co-op Translator](https://github.com/Azure/co-op-translator). Kuigi püüame täpsust, palun arvestage, et automatiseeritud tõlked võivad sisaldada vigu või ebatäpsusi. Originaaldokument selle algkeeles peaks olema autoriteetne allikas. Olulise info puhul soovitatakse kasutada professionaalset inimtõlget. Me ei vastuta ühegi arusaamatuse või valesti mõistmise eest, mis võib tekkida selle tõlke kasutamisest.
+<!-- CO-OP TRANSLATOR DISCLAIMER END -->

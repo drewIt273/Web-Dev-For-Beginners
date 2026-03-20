@@ -1,12 +1,3 @@
-<!--
-CO_OP_TRANSLATOR_METADATA:
-{
-  "original_hash": "973e48ad87d67bf5bb819746c9f8e302",
-  "translation_date": "2025-11-03T23:21:09+00:00",
-  "source_file": "3-terrarium/3-intro-to-DOM-and-closures/README.md",
-  "language_code": "ru"
-}
--->
 # Проект "Террариум", часть 3: Манипуляции с DOM и замыкания в JavaScript
 
 ```mermaid
@@ -26,7 +17,7 @@ journey
       Complete terrarium: 5: Student
 ```
 
-![DOM и замыкание](../../../../translated_images/webdev101-js.10280393044d7eaaec7e847574946add7ddae6be2b2194567d848b61d849334a.ru.png)
+![DOM и замыкание](../../../../translated_images/ru/webdev101-js.10280393044d7eaa.webp)
 > Скетчноут от [Tomomi Imura](https://twitter.com/girlie_mac)
 
 Добро пожаловать в одну из самых увлекательных частей веб-разработки — создание интерактивности! Document Object Model (DOM) — это мост между вашим HTML и JavaScript, и сегодня мы используем его, чтобы оживить ваш террариум. Когда Тим Бернерс-Ли создал первый веб-браузер, он представлял себе веб, где документы могли быть динамичными и интерактивными — DOM делает эту мечту реальностью.
@@ -105,7 +96,7 @@ flowchart TD
     style Q fill:#ffebee
 ```
 
-![Представление дерева DOM](../../../../translated_images/dom-tree.7daf0e763cbbba9273f9a66fe04c98276d7d23932309b195cb273a9cf1819b42.ru.png)
+![Представление дерева DOM](../../../../translated_images/ru/dom-tree.7daf0e763cbbba92.webp)
 
 > Представление DOM и HTML-разметки, которая на него ссылается. Автор [Olfa Nasraoui](https://www.researchgate.net/publication/221417012_Profile-Based_Focused_Crawler_for_Social_Media-Sharing_Websites)
 
@@ -150,7 +141,7 @@ flowchart LR
 
 > 💡 **Понимание замыканий**: Замыкания — это значимая тема в JavaScript, и многие разработчики используют их годами, прежде чем полностью понять все теоретические аспекты. Сегодня мы сосредоточимся на практическом применении — вы увидите, как замыкания естественным образом возникают при создании наших интерактивных функций. Понимание будет развиваться по мере того, как вы увидите, как они решают реальные задачи.
 
-![Представление дерева DOM](../../../../translated_images/dom-tree.7daf0e763cbbba9273f9a66fe04c98276d7d23932309b195cb273a9cf1819b42.ru.png)
+![Представление дерева DOM](../../../../translated_images/ru/dom-tree.7daf0e763cbbba92.webp)
 
 > Представление DOM и HTML-разметки, которая на него ссылается. Автор [Olfa Nasraoui](https://www.researchgate.net/publication/221417012_Profile-Based_Focused_Crawler_for_Social_Media-Sharing_Websites)
 
@@ -598,7 +589,7 @@ function stopElementDrag() {
 - **Поддержка разных устройств**: Работает на компьютерах и мобильных устройствах
 - **Забота о производительности**: Нет утечек памяти или лишних расчетов
 
-![готовый террариум](../../../../translated_images/terrarium-final.0920f16e87c13a84cd2b553a5af9a3ad1cffbd41fbf8ce715d9e9c43809a5e2c.ru.png)
+![готовый террариум](../../../../translated_images/ru/terrarium-final.0920f16e87c13a84.webp)
 
 ---
 

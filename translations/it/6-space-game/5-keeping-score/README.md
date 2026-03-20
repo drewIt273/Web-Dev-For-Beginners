@@ -1,12 +1,3 @@
-<!--
-CO_OP_TRANSLATOR_METADATA:
-{
-  "original_hash": "2ed9145a16cf576faa2a973dff84d099",
-  "translation_date": "2025-11-04T00:38:00+00:00",
-  "source_file": "6-space-game/5-keeping-score/README.md",
-  "language_code": "it"
-}
--->
 # Costruisci un Gioco Spaziale Parte 5: Punteggio e Vite
 
 ```mermaid
@@ -160,7 +151,7 @@ sequenceDiagram
 ```
 
 - **Sistema di punteggio**: Ogni nave nemica distrutta assegna 100 punti (i numeri tondi sono più facili da calcolare mentalmente per i giocatori). Il punteggio viene mostrato nell'angolo in basso a sinistra.
-- **Contatore delle vite**: Il tuo eroe parte con tre vite - uno standard stabilito dai primi giochi arcade per bilanciare la sfida con la giocabilità. Ogni collisione con un nemico costa una vita. Mostreremo le vite rimanenti nell'angolo in basso a destra usando icone di navi ![immagine vita](../../../../translated_images/life.6fb9f50d53ee0413cd91aa411f7c296e10a1a6de5c4a4197c718b49bf7d63ebf.it.png).
+- **Contatore delle vite**: Il tuo eroe parte con tre vite - uno standard stabilito dai primi giochi arcade per bilanciare la sfida con la giocabilità. Ogni collisione con un nemico costa una vita. Mostreremo le vite rimanenti nell'angolo in basso a destra usando icone di navi ![immagine vita](../../../../translated_images/it/life.6fb9f50d53ee0413.webp).
 
 ## Cominciamo a Costruire!
 

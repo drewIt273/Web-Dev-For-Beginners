@@ -1,12 +1,3 @@
-<!--
-CO_OP_TRANSLATOR_METADATA:
-{
-  "original_hash": "00aa85715e1efd4930c17a23e3012e69",
-  "translation_date": "2025-11-03T23:09:43+00:00",
-  "source_file": "5-browser-extension/1-about-browsers/README.md",
-  "language_code": "bn"
-}
--->
 # ব্রাউজার এক্সটেনশন প্রকল্প পার্ট ১: ব্রাউজার সম্পর্কে সবকিছু
 
 ```mermaid
@@ -26,7 +17,7 @@ journey
       Polish experience: 5: Student
 ```
 
-![ব্রাউজার স্কেচনোট](../../../../translated_images/browser.60317c9be8b7f84adce43e30bff8d47a1ae15793beab762317b2bc6b74337c1a.bn.jpg)
+![ব্রাউজার স্কেচনোট](../../../../translated_images/bn/browser.60317c9be8b7f84a.webp)
 > স্কেচনোট করেছেন [ওয়াসিম চেগাম](https://dev.to/wassimchegham/ever-wondered-what-happens-when-you-type-in-a-url-in-an-address-bar-in-a-browser-3dob)
 
 ## প্রি-লেকচার কুইজ
@@ -79,7 +70,7 @@ mindmap
 
 ✅ **একটু ইতিহাস**: প্রথম ব্রাউজারের নাম ছিল 'ওয়ার্ল্ডওয়াইডওয়েব' এবং এটি ১৯৯০ সালে স্যার টিমোথি বার্নার্স-লির দ্বারা তৈরি করা হয়েছিল।
 
-![প্রথম দিকের ব্রাউজার](../../../../translated_images/earlybrowsers.d984b711cdf3a42ddac919d46c4b5ca7232f68ccfbd81395e04e5a64c0015277.bn.jpg)
+![প্রথম দিকের ব্রাউজার](../../../../translated_images/bn/earlybrowsers.d984b711cdf3a42d.webp)
 > কিছু প্রথম দিকের ব্রাউজার, [ক্যারেন ম্যাকগ্রেন](https://www.slideshare.net/KMcGrane/week-4-ixd-history-personal-computing) এর মাধ্যমে
 
 ### ব্রাউজার কীভাবে ওয়েব কন্টেন্ট প্রক্রিয়াকরণ করে
@@ -198,7 +189,7 @@ quadrantChart
 
 এক্সটেনশন ইনস্টলেশন প্রক্রিয়া বোঝা আপনাকে ব্যবহারকারীদের অভিজ্ঞতা সম্পর্কে পূর্বাভাস দিতে সাহায্য করবে যখন তারা আপনার এক্সটেনশন ইনস্টল করবে। ইনস্টলেশন প্রক্রিয়া আধুনিক ব্রাউজারগুলোতে মানসম্মত, যদিও ইন্টারফেস ডিজাইনে কিছু পার্থক্য রয়েছে।
 
-![Edge ব্রাউজারের স্ক্রিনশট যেখানে edge://extensions পেজ এবং সেটিংস মেনু খোলা রয়েছে](../../../../translated_images/install-on-edge.d68781acaf0b3d3dada8b7507cde7a64bf74b7040d9818baaa9070668e819f90.bn.png)
+![Edge ব্রাউজারের স্ক্রিনশট যেখানে edge://extensions পেজ এবং সেটিংস মেনু খোলা রয়েছে](../../../../translated_images/bn/install-on-edge.d68781acaf0b3d3d.webp)
 
 > **গুরুত্বপূর্ণ**: আপনার নিজের এক্সটেনশন পরীক্ষা করার সময় ডেভেলপার মোড চালু করুন এবং অন্যান্য স্টোর থেকে এক্সটেনশন অনুমোদন করুন।
 

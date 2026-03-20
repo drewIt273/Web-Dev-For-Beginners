@@ -1,12 +1,3 @@
-<!--
-CO_OP_TRANSLATOR_METADATA:
-{
-  "original_hash": "effe56ba51c38d7bdfad1ea38288666b",
-  "translation_date": "2025-10-22T15:20:11+00:00",
-  "source_file": "8-code-editor/1-using-a-code-editor/assignment.md",
-  "language_code": "tl"
-}
--->
 # Gumawa ng Website ng Resume Gamit ang VSCode.dev
 
 Palawakin ang iyong mga oportunidad sa karera sa pamamagitan ng paggawa ng isang propesyonal na website ng resume na nagpapakita ng iyong mga kakayahan at karanasan sa isang interaktibo at modernong format. Sa halip na magpadala ng tradisyunal na PDF, isipin ang pagbibigay sa mga recruiter ng isang makinis at responsive na website na nagpapakita ng iyong mga kwalipikasyon at kakayahan sa web development.
@@ -78,7 +69,7 @@ Dahil ang VSCode.dev ay nangangailangan ng kahit isang file upang buksan ang rep
 4. **Maglagay** ng commit message: "Magdagdag ng initial HTML structure"
 5. **I-click** ang "Commit new file" upang i-save ang iyong mga pagbabago
 
-![Paglikha ng initial file sa GitHub](../../../../translated_images/new-file-github.com.c886796d800e8056561829a181be1382c5303da9d902d8b2dd82b68a4806e21f.tl.png)
+![Paglikha ng initial file sa GitHub](../../../../translated_images/tl/new-file-github.com.c886796d800e8056.webp)
 
 **Narito ang nagagawa ng initial setup na ito:**
 - **Nag-eestablish** ng tamang HTML5 document structure gamit ang semantic elements
@@ -104,7 +95,7 @@ Ngayon na ang pundasyon ng iyong repository ay na-set up, lumipat tayo sa VSCode
 
 ✅ **Indicator ng Tagumpay**: Makikita mo ang mga file ng iyong proyekto sa Explorer sidebar at ang `index.html` na available para i-edit sa pangunahing editor area.
 
-![Proyekto na naka-load sa VSCode.dev](../../../../translated_images/project-on-vscode.dev.e79815a9a95ee7feac72ebe5c941c91279716be37c575dbdbf2f43bea2c7d8b6.tl.png)
+![Proyekto na naka-load sa VSCode.dev](../../../../translated_images/tl/project-on-vscode.dev.e79815a9a95ee7fe.webp)
 
 **Ano ang makikita mo sa interface:**
 - **Explorer sidebar**: **Ipinapakita** ang mga file ng iyong repository at istruktura ng folder
@@ -448,7 +439,7 @@ Ang mga extension ay nagpapahusay sa iyong development experience sa pamamagitan
 **Mga agarang resulta pagkatapos ng pag-install:**
 Kapag na-install ang CodeSwing, makikita mo ang live preview ng iyong resume website na lumalabas sa editor. Pinapayagan ka nitong makita kung paano eksaktong magmumukha ang iyong site habang gumagawa ng mga pagbabago.
 
-![CodeSwing extension na nagpapakita ng live preview](../../../../translated_images/after-codeswing-extension-pb.0ebddddcf73b550994947a9084e35e2836c713ae13839d49628e3c764c1cfe83.tl.png)
+![CodeSwing extension na nagpapakita ng live preview](../../../../translated_images/tl/after-codeswing-extension-pb.0ebddddcf73b5509.webp)
 
 **Pag-unawa sa pinahusay na interface:**
 - **Split view**: **Ipinapakita** ang iyong code sa isang bahagi at ang live preview sa kabila

@@ -1,12 +1,3 @@
-<!--
-CO_OP_TRANSLATOR_METADATA:
-{
-  "original_hash": "5c383cc2cc23bb164b06417d1c107a44",
-  "translation_date": "2025-11-25T18:00:57+00:00",
-  "source_file": "1-getting-started-lessons/2-github-basics/README.md",
-  "language_code": "nl"
-}
--->
 # Introductie tot GitHub
 
 Hallo daar, toekomstige ontwikkelaar! 👋 Klaar om je aan te sluiten bij miljoenen programmeurs over de hele wereld? Ik ben echt enthousiast om je kennis te laten maken met GitHub – zie het als een soort social media platform voor programmeurs, maar in plaats van foto's van je lunch te delen, delen we code en bouwen we samen geweldige dingen!
@@ -17,7 +8,7 @@ Ik weet dat dit in het begin misschien wat overweldigend lijkt – ik herinner m
 
 We gaan deze reis samen maken, stap voor stap. Geen haast, geen druk – alleen jij, ik, en een paar echt coole tools die je nieuwe beste vrienden gaan worden!
 
-![Intro tot GitHub](../../../../translated_images/webdev101-github.8846d7971abef6f947909b4f9d343e2a23778aa716ca6b9d71df7174ee5009ac.nl.png)
+![Intro tot GitHub](../../../../translated_images/nl/webdev101-github.8846d7971abef6f9.webp)
 > Sketchnote door [Tomomi Imura](https://twitter.com/girlie_mac)
 
 ```mermaid
@@ -604,7 +595,7 @@ Laten we eerst een repository (of **repo**) op GitHub vinden die je interesseert
 
 ✅ Een goede manier om 'beginner-vriendelijke' repos te vinden is door [te zoeken op de tag 'good-first-issue'](https://github.blog/2020-01-22-browse-good-first-issues-to-start-contributing-to-open-source/).
 
-![Een repo lokaal kopiëren](../../../../translated_images/clone_repo.5085c48d666ead57664f050d806e325d7f883be6838c821e08bc823ab7c66665.nl.png)
+![Een repo lokaal kopiëren](../../../../translated_images/nl/clone_repo.5085c48d666ead57.webp)
 
 Er zijn verschillende manieren om code te kopiëren. Een manier is om de inhoud van de repository te "clonen", met behulp van HTTPS, SSH, of de GitHub CLI (Command Line Interface).
 

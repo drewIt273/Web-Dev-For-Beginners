@@ -1,12 +1,3 @@
-<!--
-CO_OP_TRANSLATOR_METADATA:
-{
-  "original_hash": "50a7783473b39a2e0f133e271a102231",
-  "translation_date": "2025-10-22T16:17:19+00:00",
-  "source_file": "7-bank-project/4-state-management/assignment.md",
-  "language_code": "mr"
-}
--->
 # "ट्रान्झॅक्शन जोडा" संवाद लागू करा
 
 ## आढावा
@@ -112,7 +103,7 @@ CO_OP_TRANSLATOR_METADATA:
 **अपेक्षित परिणाम:**
 ही असाइनमेंट पूर्ण केल्यानंतर, तुमच्या बँकिंग अ‍ॅपमध्ये एक पूर्ण कार्यक्षम "ट्रान्झॅक्शन जोडा" सुविधा असावी जी व्यावसायिकपणे दिसते आणि वागते:
 
-![उदाहरण "ट्रान्झॅक्शन जोडा" संवाद दर्शविणारा स्क्रीनशॉट](../../../../translated_images/dialog.93bba104afeb79f12f65ebf8f521c5d64e179c40b791c49c242cf15f7e7fab15.mr.png)
+![उदाहरण "ट्रान्झॅक्शन जोडा" संवाद दर्शविणारा स्क्रीनशॉट](../../../../translated_images/mr/dialog.93bba104afeb79f1.webp)
 
 ## तुमची अंमलबजावणी चाचणी करणे
 

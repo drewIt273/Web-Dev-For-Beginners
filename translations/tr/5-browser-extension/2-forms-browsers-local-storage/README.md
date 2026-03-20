@@ -1,12 +1,3 @@
-<!--
-CO_OP_TRANSLATOR_METADATA:
-{
-  "original_hash": "2b6203a48c48d8234e0948353b47d84e",
-  "translation_date": "2025-11-04T01:07:28+00:00",
-  "source_file": "5-browser-extension/2-forms-browsers-local-storage/README.md",
-  "language_code": "tr"
-}
--->
 # Tarayıcı Uzantısı Projesi Bölüm 2: Bir API Çağırma, Yerel Depolama Kullanma
 
 ```mermaid
@@ -268,7 +259,7 @@ stateDiagram-v2
     ClearStorage --> FirstTime: Back to setup
 ```
 
-![Yerel depolama paneli](../../../../translated_images/localstorage.472f8147b6a3f8d141d9551c95a2da610ac9a3c6a73d4a1c224081c98bae09d9.tr.png)
+![Yerel depolama paneli](../../../../translated_images/tr/localstorage.472f8147b6a3f8d1.webp)
 
 > ⚠️ **Güvenlik Düşüncesi**: Üretim uygulamalarında, API anahtarlarını Yerel Depolama'da saklamak güvenlik riskleri taşır çünkü JavaScript bu verilere erişebilir. Öğrenme amacıyla bu yaklaşım uygundur, ancak gerçek uygulamalar hassas kimlik bilgileri için güvenli sunucu tarafı depolama kullanmalıdır.
 

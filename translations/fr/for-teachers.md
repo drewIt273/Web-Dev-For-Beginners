@@ -1,12 +1,3 @@
-<!--
-CO_OP_TRANSLATOR_METADATA:
-{
-  "original_hash": "71009af209f81cc01a1f2d324200375f",
-  "translation_date": "2025-10-03T08:22:54+00:00",
-  "source_file": "for-teachers.md",
-  "language_code": "fr"
-}
--->
 ### Pour les enseignants
 
 Vous êtes invités à utiliser ce programme dans votre classe. Il fonctionne parfaitement avec GitHub Classroom et les principales plateformes LMS, et peut également être utilisé comme un dépôt autonome avec vos élèves.
@@ -42,10 +33,10 @@ Ce programme inclut des packages importables pour les flux de travail LMS couran
   - Moodle Cloud a un support limité pour Common Cartridge. Préférez le fichier Moodle ci-dessus, qui peut également être importé dans Canvas.
   - Après l'importation, vérifiez les modules, les dates d'échéance et les paramètres des quiz pour les adapter à votre calendrier.
 
-![Moodle](../../translated_images/moodle.94eb93d714a50cb2c97435b408017dee224348b61bc86203ffd43a4f4e57b95f.fr.png)
+![Moodle](../../translated_images/fr/moodle.94eb93d714a50cb2.webp)
 > Le programme dans une classe Moodle
 
-![Canvas](../../translated_images/canvas.fbd605ff8e5b8aff567d398528ce113db304446b90b9cad55c654de3fdfcda34.fr.png)
+![Canvas](../../translated_images/fr/canvas.fbd605ff8e5b8aff.webp)
 > Le programme dans Canvas
 
 ### Utilisation directe du dépôt (sans Classroom)

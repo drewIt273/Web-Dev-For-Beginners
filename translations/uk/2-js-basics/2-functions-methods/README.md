@@ -1,15 +1,6 @@
-<!--
-CO_OP_TRANSLATOR_METADATA:
-{
-  "original_hash": "71f7d7dafa1c7194d79ddac87f669ff9",
-  "translation_date": "2025-11-06T13:13:56+00:00",
-  "source_file": "2-js-basics/2-functions-methods/README.md",
-  "language_code": "uk"
-}
--->
 # Основи JavaScript: Методи та функції
 
-![Основи JavaScript - Функції](../../../../translated_images/webdev101-js-functions.be049c4726e94f8b7605c36330ac42eeb5cd8ed02bcdd60fdac778174d6cb865.uk.png)
+![Основи JavaScript - Функції](../../../../translated_images/uk/webdev101-js-functions.be049c4726e94f8b.webp)
 > Скетчноут від [Tomomi Imura](https://twitter.com/girlie_mac)
 
 ```mermaid

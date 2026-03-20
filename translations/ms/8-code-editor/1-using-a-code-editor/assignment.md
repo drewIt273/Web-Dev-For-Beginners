@@ -1,12 +1,3 @@
-<!--
-CO_OP_TRANSLATOR_METADATA:
-{
-  "original_hash": "effe56ba51c38d7bdfad1ea38288666b",
-  "translation_date": "2025-10-24T14:23:31+00:00",
-  "source_file": "8-code-editor/1-using-a-code-editor/assignment.md",
-  "language_code": "ms"
-}
--->
 # Buat Laman Web Resume Menggunakan VSCode.dev
 
 Tingkatkan peluang kerjaya anda dengan membina laman web resume profesional yang mempamerkan kemahiran dan pengalaman anda dalam format interaktif dan moden. Daripada menghantar PDF tradisional, bayangkan memberikan kepada perekrut laman web yang responsif dan bergaya yang menunjukkan kelayakan anda serta keupayaan pembangunan web anda.
@@ -78,7 +69,7 @@ Oleh kerana VSCode.dev memerlukan sekurang-kurangnya satu fail untuk membuka rep
 4. **Tulis** mesej komit: "Tambah struktur HTML awal"
 5. **Klik** "Commit new file" untuk menyimpan perubahan anda
 
-![Mencipta fail awal di GitHub](../../../../translated_images/new-file-github.com.c886796d800e8056561829a181be1382c5303da9d902d8b2dd82b68a4806e21f.ms.png)
+![Mencipta fail awal di GitHub](../../../../translated_images/ms/new-file-github.com.c886796d800e8056.webp)
 
 **Apa yang dicapai oleh persediaan awal ini:**
 - **Menetapkan** struktur dokumen HTML5 yang betul dengan elemen semantik
@@ -104,7 +95,7 @@ Sekarang repositori anda telah disediakan, mari beralih ke VSCode.dev untuk kerj
 
 ✅ **Petunjuk kejayaan**: Anda sepatutnya melihat fail projek anda di bar sisi Explorer dan `index.html` tersedia untuk diedit di kawasan editor utama.
 
-![Projek dimuatkan di VSCode.dev](../../../../translated_images/project-on-vscode.dev.e79815a9a95ee7feac72ebe5c941c91279716be37c575dbdbf2f43bea2c7d8b6.ms.png)
+![Projek dimuatkan di VSCode.dev](../../../../translated_images/ms/project-on-vscode.dev.e79815a9a95ee7fe.webp)
 
 **Apa yang anda akan lihat dalam antara muka:**
 - **Bar sisi Explorer**: **Memaparkan** fail dan struktur folder repositori anda
@@ -448,7 +439,7 @@ Sambungan meningkatkan pengalaman pembangunan anda dengan menyediakan keupayaan 
 **Hasil segera selepas pemasangan:**
 Sebaik sahaja CodeSwing dipasang, anda akan melihat pratonton langsung laman web resume anda muncul dalam editor. Ini membolehkan anda melihat dengan tepat bagaimana laman web anda kelihatan semasa anda membuat perubahan.
 
-![Sambungan CodeSwing menunjukkan pratonton langsung](../../../../translated_images/after-codeswing-extension-pb.0ebddddcf73b550994947a9084e35e2836c713ae13839d49628e3c764c1cfe83.ms.png)
+![Sambungan CodeSwing menunjukkan pratonton langsung](../../../../translated_images/ms/after-codeswing-extension-pb.0ebddddcf73b5509.webp)
 
 **Memahami antara muka yang dipertingkatkan:**
 - **Paparan berpecah**: **Memaparkan** kod anda di satu sisi dan pratonton langsung di sisi lain

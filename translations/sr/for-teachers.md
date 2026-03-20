@@ -1,12 +1,3 @@
-<!--
-CO_OP_TRANSLATOR_METADATA:
-{
-  "original_hash": "71009af209f81cc01a1f2d324200375f",
-  "translation_date": "2025-10-03T10:50:25+00:00",
-  "source_file": "for-teachers.md",
-  "language_code": "sr"
-}
--->
 ### За наставнике
 
 Добродошли сте да користите овај наставни план у вашој учионици. Савршено функционише са GitHub Classroom и водећим платформама за управљање учењем (LMS), а може се користити и као самостални репозиторијум са вашим ученицима.
@@ -42,10 +33,10 @@ CO_OP_TRANSLATOR_METADATA:
   - Moodle Cloud има ограничену подршку за Common Cartridge. Преферирајте горњу Moodle датотеку, која се такође може учитати у Canvas.
   - Након увоза, прегледајте модуле, датуме предаје и подешавања квизова како би одговарали вашем распореду термина.
 
-![Moodle](../../translated_images/moodle.94eb93d714a50cb2c97435b408017dee224348b61bc86203ffd43a4f4e57b95f.sr.png)
+![Moodle](../../translated_images/sr/moodle.94eb93d714a50cb2.webp)
 > Наставни план у Moodle учионици
 
-![Canvas](../../translated_images/canvas.fbd605ff8e5b8aff567d398528ce113db304446b90b9cad55c654de3fdfcda34.sr.png)
+![Canvas](../../translated_images/sr/canvas.fbd605ff8e5b8aff.webp)
 > Наставни план у Canvas-у
 
 ### Коришћење репозиторијума директно (без Classroom-а)

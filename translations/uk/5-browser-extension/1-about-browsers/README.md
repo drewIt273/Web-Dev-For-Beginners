@@ -1,12 +1,3 @@
-<!--
-CO_OP_TRANSLATOR_METADATA:
-{
-  "original_hash": "00aa85715e1efd4930c17a23e3012e69",
-  "translation_date": "2025-11-06T14:00:19+00:00",
-  "source_file": "5-browser-extension/1-about-browsers/README.md",
-  "language_code": "uk"
-}
--->
 # Проєкт розширення для браузера Частина 1: Все про браузери
 
 ```mermaid
@@ -26,7 +17,7 @@ journey
       Polish experience: 5: Student
 ```
 
-![Скетчноут браузера](../../../../translated_images/browser.60317c9be8b7f84adce43e30bff8d47a1ae15793beab762317b2bc6b74337c1a.uk.jpg)
+![Скетчноут браузера](../../../../translated_images/uk/browser.60317c9be8b7f84a.webp)
 > Скетчноут від [Wassim Chegham](https://dev.to/wassimchegham/ever-wondered-what-happens-when-you-type-in-a-url-in-an-address-bar-in-a-browser-3dob)
 
 ## Тест перед лекцією
@@ -79,7 +70,7 @@ mindmap
 
 ✅ **Трохи історії**: Перший браузер називався 'WorldWideWeb' і був створений сером Тімоті Бернерсом-Лі у 1990 році.
 
-![ранні браузери](../../../../translated_images/earlybrowsers.d984b711cdf3a42ddac919d46c4b5ca7232f68ccfbd81395e04e5a64c0015277.uk.jpg)
+![ранні браузери](../../../../translated_images/uk/earlybrowsers.d984b711cdf3a42d.webp)
 > Деякі ранні браузери, через [Karen McGrane](https://www.slideshare.net/KMcGrane/week-4-ixd-history-personal-computing)
 
 ### Як браузери обробляють веб-контент
@@ -198,7 +189,7 @@ quadrantChart
 
 Розуміння процесу встановлення розширень допомагає передбачити досвід користувача під час встановлення вашого розширення. Процес встановлення стандартизований у сучасних браузерах, з невеликими варіаціями в дизайні інтерфейсу.
 
-![скріншот браузера Edge, що показує відкриту сторінку edge://extensions і меню налаштувань](../../../../translated_images/install-on-edge.d68781acaf0b3d3dada8b7507cde7a64bf74b7040d9818baaa9070668e819f90.uk.png)
+![скріншот браузера Edge, що показує відкриту сторінку edge://extensions і меню налаштувань](../../../../translated_images/uk/install-on-edge.d68781acaf0b3d3d.webp)
 
 > **Важливо**: Переконайтеся, що ви увімкнули режим розробника та дозволили розширення з інших магазинів під час тестування власних розширень.
 
@@ -313,10 +304,10 @@ project-root/
 ### Огляд вигляду розширення
 
 **Екран налаштувань** - Конфігурація для першого використання:
-![скріншот завершеного розширення, відкритого в браузері, що показує форму з полями для введення назви регіону та ключа API.](../../../../translated_images/1.b6da8c1394b07491afeb6b2a8e5aca73ebd3cf478e27bcc9aeabb187e722648e.uk.png)
+![скріншот завершеного розширення, відкритого в браузері, що показує форму з полями для введення назви регіону та ключа API.](../../../../translated_images/uk/1.b6da8c1394b07491.webp)
 
 **Екран результатів** - Відображення даних про вуглецевий слід:
-![скріншот завершеного розширення, що показує значення використання вуглецю та відсоток викопного палива для регіону US-NEISO.](../../../../translated_images/2.1dae52ff0804224692cd648afbf2342955d7afe3b0101b617268130dfb427f55.uk.png)
+![скріншот завершеного розширення, що показує значення використання вуглецю та відсоток викопного палива для регіону US-NEISO.](../../../../translated_images/uk/2.1dae52ff08042246.webp)
 
 ### Створення форми конфігурації
 

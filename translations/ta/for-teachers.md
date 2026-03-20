@@ -1,12 +1,3 @@
-<!--
-CO_OP_TRANSLATOR_METADATA:
-{
-  "original_hash": "71009af209f81cc01a1f2d324200375f",
-  "translation_date": "2025-10-11T11:35:57+00:00",
-  "source_file": "for-teachers.md",
-  "language_code": "ta"
-}
--->
 ### ஆசிரியர்களுக்காக
 
 இந்த பாடத்திட்டத்தை உங்கள் வகுப்பறையில் பயன்படுத்த வரவேற்கிறோம். இது GitHub Classroom மற்றும் முன்னணி LMS தளங்களுடன் எளிதாக வேலை செய்கிறது, மேலும் உங்கள் மாணவர்களுடன் தனிப்பட்ட repo ஆகவும் பயன்படுத்தலாம்.
@@ -42,10 +33,10 @@ CO_OP_TRANSLATOR_METADATA:
   - Moodle Cloud-க்கு வரையறுக்கப்பட்ட Common Cartridge ஆதரவு உள்ளது. மேலே உள்ள Moodle கோப்பை விரும்பவும், இது Canvas-ல் கூட ஏற்றப்படலாம்.
   - இறக்குமதி செய்த பிறகு, உங்கள் கால அட்டவணைக்கு பொருந்த மாட்யூல்கள், கடைசித் தேதிகள் மற்றும் வினா அமைப்புகளை மதிப்பாய்வு செய்யவும்.
 
-![Moodle](../../translated_images/moodle.94eb93d714a50cb2c97435b408017dee224348b61bc86203ffd43a4f4e57b95f.ta.png)
+![Moodle](../../translated_images/ta/moodle.94eb93d714a50cb2.webp)
 > Moodle வகுப்பறையில் உள்ள பாடத்திட்டம்
 
-![Canvas](../../translated_images/canvas.fbd605ff8e5b8aff567d398528ce113db304446b90b9cad55c654de3fdfcda34.ta.png)
+![Canvas](../../translated_images/ta/canvas.fbd605ff8e5b8aff.webp)
 > Canvas-ல் உள்ள பாடத்திட்டம்
 
 ### Repo-வை நேரடியாக பயன்படுத்துதல் (Classroom இல்லாமல்)

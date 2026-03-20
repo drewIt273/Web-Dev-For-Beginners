@@ -1,12 +1,3 @@
-<!--
-CO_OP_TRANSLATOR_METADATA:
-{
-  "original_hash": "71009af209f81cc01a1f2d324200375f",
-  "translation_date": "2025-10-03T09:41:56+00:00",
-  "source_file": "for-teachers.md",
-  "language_code": "tr"
-}
--->
 ### Eğitimciler İçin
 
 Bu müfredatı sınıfınızda kullanabilirsiniz. GitHub Classroom ve önde gelen LMS platformlarıyla sorunsuz bir şekilde çalışır ve öğrencilerinizle bağımsız bir depo olarak da kullanılabilir.
@@ -42,10 +33,10 @@ Bu müfredat, yaygın LMS iş akışları için içe aktarılabilir paketler iç
   - Moodle Cloud, Common Cartridge desteği sınırlıdır. Yukarıdaki Moodle dosyasını tercih edin; bu dosya ayrıca Canvas'a da yüklenebilir.
   - İçe aktarma işleminden sonra modülleri, teslim tarihlerini ve quiz ayarlarını dönem programınıza uygun şekilde gözden geçirin.
 
-![Moodle](../../translated_images/moodle.94eb93d714a50cb2c97435b408017dee224348b61bc86203ffd43a4f4e57b95f.tr.png)
+![Moodle](../../translated_images/tr/moodle.94eb93d714a50cb2.webp)
 > Moodle sınıfında müfredat
 
-![Canvas](../../translated_images/canvas.fbd605ff8e5b8aff567d398528ce113db304446b90b9cad55c654de3fdfcda34.tr.png)
+![Canvas](../../translated_images/tr/canvas.fbd605ff8e5b8aff.webp)
 > Canvas'ta müfredat
 
 ### Depoyu Doğrudan Kullanma (Classroom Olmadan)

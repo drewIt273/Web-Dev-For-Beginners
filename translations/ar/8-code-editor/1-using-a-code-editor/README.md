@@ -1,12 +1,3 @@
-<!--
-CO_OP_TRANSLATOR_METADATA:
-{
-  "original_hash": "a9a3bcc037a447e2d8994d99e871cd9f",
-  "translation_date": "2025-11-03T12:27:54+00:00",
-  "source_file": "8-code-editor/1-using-a-code-editor/README.md",
-  "language_code": "ar"
-}
--->
 # استخدام محرر الأكواد: إتقان VSCode.dev
 
 تذكر في *The Matrix* عندما كان على نيو الاتصال بجهاز كمبيوتر ضخم للوصول إلى العالم الرقمي؟ أدوات تطوير الويب اليوم هي القصة المعاكسة - قدرات قوية للغاية يمكن الوصول إليها من أي مكان. VSCode.dev هو محرر أكواد يعمل عبر المتصفح ويقدم أدوات تطوير احترافية لأي جهاز متصل بالإنترنت.
@@ -185,7 +176,7 @@ VSCode.dev يجلب هذه القدرات إلى متصفحك:
 
 بمجرد تحميل كل شيء، سترى مساحة عمل نظيفة مصممة لتبقيك مركزًا على ما يهم - الأكواد الخاصة بك!
 
-![واجهة VSCode.dev الافتراضية](../../../../translated_images/default-vscode-dev.5d06881d65c1b3234ce50cd9ed3b0028e6031ad5f5b441bcbed96bfa6311f6d0.ar.png)
+![واجهة VSCode.dev الافتراضية](../../../../translated_images/ar/default-vscode-dev.5d06881d65c1b323.webp)
 
 **إليك جولة في الحي:**
 - **شريط النشاط** (الشريط الموجود على اليسار): التنقل الرئيسي الخاص بك مع المستكشف 📁، البحث 🔍، التحكم في المصدر 🌿، الإضافات 🧩، والإعدادات ⚙️
@@ -233,7 +224,7 @@ flowchart TB
 1. توجه إلى [vscode.dev](https://vscode.dev) إذا لم تكن هناك بالفعل
 2. ابحث عن زر "فتح مستودع عن بُعد" على شاشة الترحيب وانقر عليه
 
-   ![فتح مستودع عن بُعد](../../../../translated_images/open-remote-repository.bd9c2598b8949e7fc283cdfc8f4050c6205a7c7c6d3f78c4b135115d037d6fa2.ar.png)
+   ![فتح مستودع عن بُعد](../../../../translated_images/ar/open-remote-repository.bd9c2598b8949e7f.webp)
 
 3. قم بلصق أي رابط مستودع GitHub (جرب هذا: `https://github.com/microsoft/Web-Dev-For-Beginners`)
 4. اضغط على Enter وشاهد السحر يحدث!
@@ -242,7 +233,7 @@ flowchart TB
 
 هل تريد أن تشعر وكأنك ساحر برمجة؟ جرب هذا الاختصار: Ctrl+Shift+P (أو Cmd+Shift+P على Mac) لفتح لوحة الأوامر:
 
-![لوحة الأوامر](../../../../translated_images/palette-menu.4946174e07f426226afcdad707d19b8d5150e41591c751c45b5dee213affef91.ar.png)
+![لوحة الأوامر](../../../../translated_images/ar/palette-menu.4946174e07f42622.webp)
 
 **لوحة الأوامر تشبه وجود محرك بحث لكل ما يمكنك القيام به:**
 - اكتب "فتح عن بُعد" وستجد أداة فتح المستودعات
@@ -304,7 +295,7 @@ flowchart TB
 3. أدخل اسم الملف بما في ذلك الامتداد المناسب (`style.css`, `script.js`, `index.html`)
 4. اضغط على Enter لإنشاء الملف
 
-![إنشاء ملف جديد](../../../../translated_images/create-new-file.2814e609c2af9aeb6c6fd53156c503ac91c3d538f9cac63073b2dd4a7631f183.ar.png)
+![إنشاء ملف جديد](../../../../translated_images/ar/create-new-file.2814e609c2af9aeb.webp)
 
 **اتفاقيات التسمية:**
 - استخدم أسماء وصفية تشير إلى غرض الملف
@@ -322,7 +313,7 @@ flowchart TB
 2. ابدأ الكتابة وشاهد VSCode.dev يساعدك بالألوان، الاقتراحات، واكتشاف الأخطاء
 3. احفظ عملك باستخدام Ctrl+S (Windows/Linux) أو Cmd+S (Mac) - رغم أنه يحفظ تلقائيًا أيضًا!
 
-![تحرير الملفات في VSCode.dev](../../../../translated_images/edit-a-file.52c0ee665ef19f08119d62d63f395dfefddc0a4deb9268d73bfe791f52c5807a.ar.png)
+![تحرير الملفات في VSCode.dev](../../../../translated_images/ar/edit-a-file.52c0ee665ef19f08.webp)
 
 **الأشياء الرائعة التي تحدث أثناء البرمجة:**
 - يتم تلوين الأكواد بشكل جميل بحيث يسهل قراءتها
@@ -343,7 +334,7 @@ flowchart TB
 2. تظهر الملفات المعدلة في قسم "التغييرات"
 3. يشير الترميز اللوني إلى أنواع التغييرات: الأخضر للإضافات، الأحمر للحذف
 
-![عرض التغييرات في التحكم في المصدر](../../../../translated_images/working-tree.c58eec08e6335c79cc708c0c220c0b7fea61514bd3c7fb7471905a864aceac7c.ar.png)
+![عرض التغييرات في التحكم في المصدر](../../../../translated_images/ar/working-tree.c58eec08e6335c79.webp)
 
 **حفظ عملك (سير عمل التثبيت):**
 
@@ -438,7 +429,7 @@ mindmap
 2. تصفح أو ابحث عن شيء محدد
 3. انقر على أي شيء يبدو مثيرًا للاهتمام لمعرفة المزيد عنه
 
-![واجهة سوق الإضافات](../../../../translated_images/extensions.eca0e0c7f59a10b5c88be7fe24b3e32cca6b6058b35a49026c3a9d80b1813b7c.ar.png)
+![واجهة سوق الإضافات](../../../../translated_images/ar/extensions.eca0e0c7f59a10b5.webp)
 
 **ما ستراه هناك:**
 
@@ -491,7 +482,7 @@ mindmap
 3. اختر "إعدادات الإضافة" من القائمة المنسدلة
 4. قم بتعديل الأمور حتى تشعر أنها مناسبة لسير عملك
 
-![تخصيص إعدادات الإضافات](../../../../translated_images/extension-settings.21c752ae4f4cdb78a867f140ccd0680e04619d0c44bb4afb26373e54b829d934.ar.png)
+![تخصيص إعدادات الإضافات](../../../../translated_images/ar/extension-settings.21c752ae4f4cdb78.webp)
 
 **الأشياء الشائعة التي قد ترغب في تعديلها:**
 - كيفية تنسيق الكود الخاص بك (علامات التبويب مقابل المسافات، طول السطر، إلخ)

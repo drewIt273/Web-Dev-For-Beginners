@@ -1,221 +1,317 @@
-<!--
-CO_OP_TRANSLATOR_METADATA:
-{
-  "original_hash": "90b19cde5b79b29e91babd3138cd8035",
-  "translation_date": "2025-10-24T23:54:08+00:00",
-  "source_file": "1-getting-started-lessons/3-accessibility/README.md",
-  "language_code": "hr"
-}
--->
-# Izrada dostupnih web stranica
+# Izrada pristupačnih web stranica
 
-![Sve o dostupnosti](../../../../translated_images/webdev101-a11y.8ef3025c858d897a403a1a42c0897c76e11b724d9a8a0c0578dd4316f7507622.hr.png)
-> Sketchnote autorice [Tomomi Imura](https://twitter.com/girlie_mac)
+![Sve o pristupačnosti](../../../../translated_images/hr/webdev101-a11y.8ef3025c858d897a.webp)
+> Sketchnote autora [Tomomi Imura](https://twitter.com/girlie_mac)
 
-## Kviz prije predavanja
-[Kviz prije predavanja](https://ff-quizzes.netlify.app/web/)
+```mermaid
+journey
+    title Vaša avantura učenja pristupačnosti
+    section Osnove
+      Razumijevanje korisnika: 5: You
+      Alati za testiranje: 4: You
+      PRINCIPI POUR-a: 5: You
+    section Razvijanje vještina
+      Semantički HTML: 4: You
+      Vizualni dizajn: 5: You
+      ARIA tehnike: 4: You
+    section Usavršavanje prakse
+      Navigacija tipkovnicom: 5: You
+      Pristupačnost obrazaca: 4: You
+      Testiranje u stvarnom svijetu: 5: You
+```
+## Predpredavanje kviz
+[Predpredavanje kviz](https://ff-quizzes.netlify.app/web/)
 
-> Snaga weba leži u njegovoj univerzalnosti. Pristup svima, bez obzira na invaliditet, ključni je aspekt.
+> Moć weba leži u njegovoj univerzalnosti. Pristup svima bez obzira na invaliditet je ključan aspekt.
 >
 > \- Sir Timothy Berners-Lee, direktor W3C-a i izumitelj World Wide Weba
 
-Evo nečega što bi vas moglo iznenaditi: kada gradite dostupne web stranice, ne pomažete samo osobama s invaliditetom—zapravo činite web boljim za sve!
+Evo nečega što bi vas moglo iznenaditi: kada izrađujete pristupačne web stranice, ne pomažete samo osobama s invaliditetom—već zapravo poboljšavate web za svakoga!
 
-Jeste li ikada primijetili one spuštene rubove na ulicama? Izvorno su dizajnirani za invalidska kolica, ali sada pomažu ljudima s dječjim kolicima, dostavljačima s kolicima, putnicima s prtljagom na kotačima, pa čak i biciklistima. Upravo tako funkcionira dizajn dostupnih web stranica—rješenja koja pomažu jednoj skupini često na kraju koriste svima. Prilično cool, zar ne?
+Jeste li ikada primijetili one prilaze na rubnicima ulica? Izvorno su izrađeni za invalidska kolica, ali sada pomažu ljudima s dječjim kolicima, dostavljačima s kolica, putnicima s koferima na kotačićima i biciklistima. Upravo tako funkcionira pristupačni dizajn weba—rješenja koja pomažu jednoj skupini često u konačnici pomažu svima. Lijepo, zar ne?
 
-U ovoj lekciji istražit ćemo kako stvoriti web stranice koje zaista funkcioniraju za sve, bez obzira na način na koji pregledavaju web. Otkrit ćete praktične tehnike koje su već ugrađene u web standarde, isprobati alate za testiranje i vidjeti kako dostupnost čini vaše stranice korisnijima za sve korisnike.
+U ovom ćemo satu istražiti kako stvoriti web stranice koje doista funkcioniraju za svakoga, bez obzira na način kojime pregledavaju web. Otkrit ćete praktične tehnike koje su već ugrađene u web standarde, isprobati alate za testiranje i vidjeti kako pristupačnost čini vaše stranice upotrebljivijima za sve korisnike.
 
-Na kraju ove lekcije, imat ćete samopouzdanje da dostupnost učinite prirodnim dijelom vašeg razvojnog procesa. Spremni za istraživanje kako promišljeni dizajnerski izbori mogu otvoriti web za milijarde korisnika? Krenimo!
+Na kraju ovog sata steći ćete samopouzdanje da pristupačnost postane prirodan dio vašeg razvojneg tijeka rada. Spremni za istraživanje kako promišljene odluke u dizajnu mogu otvoriti web milijardama korisnika? Krenimo!
 
-> Ovu lekciju možete pronaći na [Microsoft Learn](https://docs.microsoft.com/learn/modules/web-development-101/accessibility/?WT.mc_id=academic-77807-sagibbon)!
+```mermaid
+mindmap
+  root((Pristupačnost weba))
+    Users
+      Čitači zaslona
+      Navigacija tipkovnicom
+      Glasovna kontrola
+      Uvećanje
+    Technologies
+      HTML semantika
+      ARIA atributi
+      CSS indikatori fokusa
+      Tipkovnički događaji
+    Benefits
+      Šira publika
+      Bolji SEO
+      Pravna usklađenost
+      Univerzalni dizajn
+    Testing
+      Automatizirani alati
+      Ručno testiranje
+      Povratne informacije korisnika
+      Prava pomoćna tehnologija
+```
+> Ovaj sat možete pohađati na [Microsoft Learn](https://docs.microsoft.com/learn/modules/web-development-101/accessibility/?WT.mc_id=academic-77807-sagibbon)!
 
 ## Razumijevanje asistivnih tehnologija
 
-Prije nego što krenemo s kodiranjem, odvojimo trenutak da razumijemo kako osobe s različitim sposobnostima zapravo doživljavaju web. Ovo nije samo teorija—razumijevanje ovih stvarnih obrazaca navigacije učinit će vas puno boljim programerom!
+Prije nego što se bacimo na kodiranje, odvojimo trenutak da shvatimo kako osobe s različitim sposobnostima zapravo doživljavaju web. Ovo nije samo teorija—razumijevanje ovih stvarnih obrazaca navigacije učinit će vas znatno boljim programerom!
 
-Asistivne tehnologije su nevjerojatni alati koji pomažu osobama s invaliditetom da komuniciraju s web stranicama na načine koji bi vas mogli iznenaditi. Kada shvatite kako te tehnologije funkcioniraju, stvaranje dostupnih web iskustava postaje puno intuitivnije. To je kao da učite gledati svoj kod kroz oči nekog drugog.
+Asistivne tehnologije su prilično nevjerojatni alati koji pomažu ljudima s invaliditetom da na načine koji bi vas mogli iznenaditi koriste web stranice. Jednom kada ovladate time kako ove tehnologije funkcioniraju, stvaranje pristupačnih web iskustava postaje znatno intuitivnije. To je kao da učite gledati svoj kod očima nekoga drugog.
 
-### Čitači ekrana
+### Čitači zaslona
 
-[Čitači ekrana](https://en.wikipedia.org/wiki/Screen_reader) su prilično sofisticirani komadi tehnologije koji digitalni tekst pretvaraju u govor ili brajevo pismo. Iako ih prvenstveno koriste osobe s oštećenjem vida, također su vrlo korisni za korisnike s poteškoćama u učenju, poput disleksije.
+[Čitači zaslona](https://en.wikipedia.org/wiki/Screen_reader) su prilično sofisticirani tehnologijski alati koji pretvaraju digitalni tekst u govor ili brajicu. Iako ih primarno koriste osobe s oštećenjima vida, također su izuzetno korisni za korisnike s poteškoćama u učenju poput disleksije.
 
-Volim razmišljati o čitaču ekrana kao o vrlo pametnom pripovjedaču koji vam čita knjigu. Čita sadržaj naglas logičnim redoslijedom, najavljuje interaktivne elemente poput "gumb" ili "link" i pruža prečace na tipkovnici za navigaciju po stranici. Ali evo u čemu je stvar—čitači ekrana mogu raditi svoj posao samo ako izgradimo web stranice s pravilnom strukturom i smislenim sadržajem. Tu vi kao programer dolazite na scenu!
+Volim razmišljati o čitaču zaslona kao o jako pametnom naratoru koji vam čita knjigu. Čita sadržaj naglas u logičkom redoslijedu, najavljuje interaktivne elemente poput "gumb" ili "poveznica" te omogućuje prečace na tipkovnici za brzo preskakanje po stranici. Ali evo bitnog dijela—čitači zaslona mogu čarobno raditi samo ako izgradimo web stranice s pravilnom strukturom i smislom sadržaja. Tu nastupate vi kao programer!
 
-**Popularni čitači ekrana na različitim platformama:**
-- **Windows**: [NVDA](https://www.nvaccess.org/about-nvda/) (besplatan i najpopularniji), [JAWS](https://webaim.org/articles/jaws/), [Narrator](https://support.microsoft.com/windows/complete-guide-to-narrator-e4397a0d-ef4f-b386-d8ae-c172f109bdb1/?WT.mc_id=academic-77807-sagibbon) (ugrađen)
-- **macOS/iOS**: [VoiceOver](https://support.apple.com/guide/voiceover/welcome/10) (ugrađen i vrlo sposoban)
-- **Android**: [TalkBack](https://support.google.com/accessibility/android/answer/6283677) (ugrađen)
-- **Linux**: [Orca](https://wiki.gnome.org/Projects/Orca) (besplatan i otvorenog koda)
+**Popularni čitači zaslona na platformama:**
+- **Windows**: [NVDA](https://www.nvaccess.org/about-nvda/) (besplatan i najpopularniji), [JAWS](https://webaim.org/articles/jaws/), [Narrator](https://support.microsoft.com/windows/complete-guide-to-narrator-e4397a0d-ef4f-b386-d8ae-c172f109bdb1/?WT.mc_id=academic-77807-sagibbon) (ugrađeni)
+- **macOS/iOS**: [VoiceOver](https://support.apple.com/guide/voiceover/welcome/10) (ugrađeni i vrlo sposoban)
+- **Android**: [TalkBack](https://support.google.com/accessibility/android/answer/6283677) (ugrađeni)
+- **Linux**: [Orca](https://wiki.gnome.org/Projects/Orca) (besplatan i open-source)
 
-**Kako čitači ekrana navigiraju web sadržajem:**
+**Kako čitači zaslona navigiraju web sadržaj:**
 
-Čitači ekrana pružaju više metoda navigacije koje čine pregledavanje učinkovitijim za iskusne korisnike:
-- **Sekvencijalno čitanje**: Čita sadržaj od vrha prema dnu, kao da slijedi knjigu
-- **Navigacija po oznakama**: Skakanje između dijelova stranice (zaglavlje, navigacija, glavni dio, podnožje)
-- **Navigacija po naslovima**: Preskakanje između naslova za razumijevanje strukture stranice
-- **Popisi linkova**: Generiranje popisa svih linkova za brzi pristup
-- **Kontrole obrazaca**: Izravna navigacija između polja za unos i gumba
+Čitači zaslona nude više metoda navigacije koje olakšavaju pregledavanje iskusnim korisnicima:
+- **Sekvencijalno čitanje**: Čita sadržaj od vrha prema dnu, kao čitanje knjige
+- **Navigacija po oznakama**: Preskače između dijelova stranice (zaglavlje, navigacija, glavni dio, podnožje)
+- **Navigacija po naslovima**: Preskače između naslova radi razumijevanja strukture stranice
+- **Liste poveznica**: Generira listu svih poveznica za brzi pristup
+- **Kontrole obrasca**: Izravna navigacija između polja unosa i gumba
 
-> 💡 **Evo nečega što me oduševilo**: 68% korisnika čitača ekrana prvenstveno navigira pomoću naslova ([WebAIM Survey](https://webaim.org/projects/screenreadersurvey9/#finding)). To znači da je vaša struktura naslova poput karte za korisnike—kada je pravilno postavite, doslovno pomažete ljudima da brže pronađu svoj put kroz vaš sadržaj!
+> 💡 **Evo nečega što me zadivilo**: 68% korisnika čitača zaslona primarno navigira pomoću naslova ([WebAIM Survey](https://webaim.org/projects/screenreadersurvey9/#finding)). To znači da vaša struktura naslova služi kao karta korisnicima—kada je dobro postavljena, uistinu pomažete ljudima da brže pronađu sadržaj!
 
-### Izgradnja vašeg testnog procesa
+### Izgradnja tijeka rada za testiranje
 
-Evo dobrih vijesti—učinkovito testiranje dostupnosti ne mora biti preplavljujuće! Trebat ćete kombinirati automatizirane alate (sjajni su za otkrivanje očitih problema) s nekim ručnim testiranjem. Evo sustavnog pristupa koji, prema mom iskustvu, otkriva najviše problema bez da vam oduzme cijeli dan:
+Evo dobre vijesti—učinkovito testiranje pristupačnosti ne mora biti neodoljivo! Trebali biste kombinirati automatizirane alate (koji su sjajni za hvatanje očitih problema) sa nekim praktičnim testiranjem. Evo sustavnog pristupa koji sam otkrio da hvata najviše problema bez da vam oduzme cijeli dan:
 
-**Osnovni proces ručnog testiranja:**
+**Osnovni tijek rada ručnog testiranja:**
 
 ```mermaid
-graph TD
-    A[Start Testing] --> B{Keyboard Navigation}
-    B --> C[Tab through all interactive elements]
-    C --> D{Screen Reader Testing}
-    D --> E[Test with NVDA/VoiceOver]
-    E --> F{Zoom Testing}
-    F --> G[Zoom to 200% and test functionality]
-    G --> H{Color/Contrast Check}
-    H --> I[Verify all text meets contrast ratios]
-    I --> J{Focus Management}
-    J --> K[Ensure focus indicators are visible]
-    K --> L[Testing Complete]
+flowchart TD
+    A[🚀 Započni testiranje] --> B{⌨️ Navigacija tipkovnicom}
+    B --> C[Tabiranje kroz sve interaktivne elemente]
+    C --> D{🎧 Testiranje čitača zaslona}
+    D --> E[Testiranje s NVDA/VoiceOver]
+    E --> F{🔍 Testiranje zumiranja}
+    F --> G[Zumiraj na 200% i testiraj funkcionalnost]
+    G --> H{🎨 Provjera boje/kontrasta}
+    H --> I[Provjeri ispunjava li sav tekst omjere kontrasta]
+    I --> J{👁️ Upravljanje fokusom}
+    J --> K[Osiguraj da su indikatori fokusa vidljivi]
+    K --> L[✅ Testiranje završeno]
+    
+    style A fill:#e3f2fd
+    style L fill:#e8f5e8
+    style B fill:#fff3e0
+    style D fill:#f3e5f5
+    style F fill:#e0f2f1
+    style H fill:#fce4ec
+    style J fill:#e8eaf6
 ```
-
-**Kontrolni popis za testiranje korak po korak:**
-1. **Navigacija tipkovnicom**: Koristite samo Tab, Shift+Tab, Enter, Space i strelice
-2. **Testiranje čitača ekrana**: Omogućite NVDA, VoiceOver ili Narrator i navigirajte zatvorenih očiju
-3. **Testiranje zumiranja**: Testirajte na razinama zumiranja od 200% i 400%
+**Korak-po-korak kontrolni popis za testiranje:**
+1. **Navigacija samo tipkovnicom**: Koristite samo Tab, Shift+Tab, Enter, Space i strelice
+2. **Testiranje čitačem zaslona**: Omogućite NVDA, VoiceOver ili Narratora i navigirajte s zatvorenim očima
+3. **Testiranje zumiranja**: Testirajte na razinama povećanja 200% i 400%
 4. **Provjera kontrasta boja**: Provjerite sav tekst i UI komponente
-5. **Testiranje indikatora fokusa**: Osigurajte da svi interaktivni elementi imaju vidljive stanja fokusa
+5. **Testiranje indikatora fokusa**: Osigurajte da svi interaktivni elementi imaju vidljivo stanje fokusa
 
-✅ **Započnite s Lighthouseom**: Otvorite DevTools u pregledniku, pokrenite Lighthouse analizu dostupnosti, a zatim koristite rezultate za usmjeravanje vašeg fokusa na ručno testiranje.
+✅ **Počnite s Lighthouseom**: Otvorite DevTools u pregledniku, pokrenite Lighthouse reviziju pristupačnosti i koristite rezultate da usmjerite svoja ručna testiranja.
 
 ### Alati za zumiranje i povećanje
 
-Znate kako ponekad širite prste na telefonu kad je tekst premalen ili škiljite na zaslonu laptopa na jakom suncu? Mnogi korisnici svakodnevno se oslanjaju na alate za povećanje kako bi sadržaj bio čitljiv. To uključuje osobe s slabim vidom, starije osobe i svakoga tko je ikada pokušao čitati web stranicu na otvorenom.
+Znate onaj osjećaj kada prstima štipate zaslon telefona da povećate tekst jer je premalen ili kada se mrštite na zaslon prijenosnog računala na jakom suncu? Mnogi korisnici svakodnevno koriste alate za povećanje kako bi sadržaj bio čitljiv. To uključuje osobe s oštećenim vidom, starije osobe i svakoga tko je ikada pokušao čitati web vani.
 
-Moderne tehnologije za zumiranje evoluirale su izvan pukog povećanja. Razumijevanje kako ti alati funkcioniraju pomoći će vam da stvorite responzivne dizajne koji ostaju funkcionalni i privlačni na bilo kojoj razini povećanja.
+Moderne tehnologije zumiranja nadilaze samo povećavanje predmeta. Razumijevanje kako ovi alati funkcioniraju pomoći će vam da stvorite responzivne dizajne koji ostaju funkcionalni i privlačni na bilo kojoj razini povećanja.
 
-**Suvremene mogućnosti zumiranja preglednika:**
-- **Zumiranje stranice**: Proporcionalno povećava sav sadržaj (tekst, slike, izgled) - ovo je preferirana metoda
-- **Samo zumiranje teksta**: Povećava veličinu fonta uz održavanje izvornog izgleda
-- **Zumiranje širenjem prstiju**: Podrška za mobilne geste za privremeno povećanje
-- **Podrška preglednika**: Svi moderni preglednici podržavaju zumiranje do 500% bez narušavanja funkcionalnosti
+**Sposobnosti modernog povećanja u preglednicima:**
+- **Zumiranje stranice**: Proporcionalno se povećava sav sadržaj (tekst, slike, raspored) - to je preferirana metoda
+- **Zumiranje samo teksta**: Povećava veličinu fonta zadržavajući izvorni raspored
+- **Zumiranje štipanjem**: Pokreti za mobilne uređaje za privremeno povećanje
+- **Podrška preglednika**: Svi moderni preglednici podržavaju zumiranje do 500% bez prekida funkcionalnosti
 
 **Specijalizirani softver za povećanje:**
-- **Windows**: [Magnifier](https://support.microsoft.com/windows/use-magnifier-to-make-things-on-the-screen-easier-to-see-414948ba-8b1c-d3bd-8615-0e5e32204198) (ugrađen), [ZoomText](https://www.freedomscientific.com/training/zoomtext/getting-started/)
-- **macOS/iOS**: [Zoom](https://www.apple.com/accessibility/mac/vision/) (ugrađen s naprednim značajkama)
+- **Windows**: [Povećalo](https://support.microsoft.com/windows/use-magnifier-to-make-things-on-the-screen-easier-to-see-414948ba-8b1c-d3bd-8615-0e5e32204198) (ugrađeni), [ZoomText](https://www.freedomscientific.com/training/zoomtext/getting-started/)
+- **macOS/iOS**: [Zoom](https://www.apple.com/accessibility/mac/vision/) (ugrađeni s naprednim značajkama)
 
-> ⚠️ **Dizajnerska razmatranja**: WCAG zahtijeva da sadržaj ostane funkcionalan kada je zumiran do 200%. Na ovoj razini, horizontalno pomicanje treba biti minimalno, a svi interaktivni elementi trebaju ostati dostupni.
+> ⚠️ **Dizajnerska napomena**: WCAG zahtijeva da sadržaj ostane funkcionalan pri zumiranju do 200%. Na toj razini horizontalno pomicanje trebalo bi biti minimalno, a svi interaktivni elementi trebaju ostati dostupni.
 
-✅ **Testirajte svoj responzivni dizajn**: Zumirajte svoj preglednik na 200% i 400%. Prilagođava li se vaš izgled skladno? Možete li i dalje pristupiti svim funkcijama bez prekomjernog pomicanja?
+✅ **Testirajte svoj responzivni dizajn**: Zumirajte preglednik na 200% i 400%. Prilagođava li se vaš raspored uredno? Možete li još uvijek pristupiti svim funkcionalnostima bez prevelikog pomicanja?
 
-## Suvremeni alati za testiranje dostupnosti
+## Moderni alati za testiranje pristupačnosti
 
-Sada kada razumijete kako ljudi navigiraju webom pomoću asistivnih tehnologija, istražimo alate koji vam pomažu u izgradnji i testiranju dostupnih web stranica.
+Sada kada razumijete kako ljudi navigiraju webom koristeći asistivne tehnologije, istražimo alate koji vam pomažu graditi i testirati pristupačne web stranice.
 
-Razmislite o tome ovako: automatizirani alati su izvrsni za otkrivanje očitih problema (poput nedostatka alt teksta), dok ručno testiranje pomaže osigurati da vaša stranica bude ugodna za korištenje u stvarnom svijetu. Zajedno vam pružaju sigurnost da vaše stranice funkcioniraju za sve.
+Razmislite o tome ovako: automatizirani alati su izvrsni u hvatanju očitih problema (poput nedostajućeg alt teksta), dok vam ručno testiranje pomaže osigurati da se vaša stranica stvarno dobro koristi u stvarnom svijetu. Zajedno vam daju povjerenje da vaše stranice funkcioniraju za svakoga.
 
 ### Testiranje kontrasta boja
 
-Evo dobrih vijesti: kontrast boja jedan je od najčešćih problema s dostupnošću, ali je također jedan od najlakših za popraviti. Dobar kontrast koristi svima—od korisnika s oštećenjem vida do ljudi koji pokušavaju čitati svoje telefone na plaži.
+Evo dobre vijesti: kontrast boja je jedan od najčešćih problema pristupačnosti, ali i jedan od najlakših za ispraviti. Dobar kontrast koristi svima—od korisnika s oštećenjem vida do ljudi koji pokušavaju čitati s telefona na plaži.
 
 **WCAG zahtjevi za kontrast:**
 
 | Vrsta teksta | WCAG AA (Minimalno) | WCAG AAA (Poboljšano) |
 |--------------|---------------------|-----------------------|
-| **Normalan tekst** (manje od 18pt) | Omjer kontrasta 4.5:1 | Omjer kontrasta 7:1 |
+| **Obični tekst** (ispod 18pt) | Omjer kontrasta 4.5:1 | Omjer kontrasta 7:1 |
 | **Veliki tekst** (18pt+ ili 14pt+ podebljano) | Omjer kontrasta 3:1 | Omjer kontrasta 4.5:1 |
 | **UI komponente** (gumbi, obrubi obrazaca) | Omjer kontrasta 3:1 | Omjer kontrasta 3:1 |
 
 **Osnovni alati za testiranje:**
-- [Colour Contrast Analyser](https://www.tpgi.com/color-contrast-checker/) - Desktop aplikacija s odabirom boja
+- [Colour Contrast Analyser](https://www.tpgi.com/color-contrast-checker/) - Desktop aplikacija s odabiračem boja
 - [WebAIM Contrast Checker](https://webaim.org/resources/contrastchecker/) - Web alat s trenutnim povratnim informacijama
-- [Stark](https://www.getstark.co/) - Plugin za dizajnerske alate poput Figma, Sketch, Adobe XD
-- [Accessible Colors](https://accessible-colors.com/) - Pronađite dostupne palete boja
+- [Stark](https://www.getstark.co/) - dodatak za dizajnerske alate kao Figma, Sketch, Adobe XD
+- [Accessible Colors](https://accessible-colors.com/) - Pronađite pristupačne palete boja
 
-✅ **Izgradite bolje palete boja**: Započnite s bojama vašeg brenda i koristite alate za provjeru kontrasta kako biste stvorili dostupne varijacije. Dokumentirajte ih kao dostupne boje u vašem dizajnerskom sustavu.
+✅ **Izgradite bolje palete boja**: Počnite s bojama svojeg brenda i koristite alate za provjeru kontrasta kako biste stvorili pristupačne varijacije. Dokumentirajte ih kao pristupačne boje u svom sustavu dizajna.
 
-### Sveobuhvatna provjera dostupnosti
+### Sveobuhvatni audit pristupačnosti
 
-Najbolje testiranje dostupnosti kombinira više pristupa. Nijedan alat ne može otkriti sve, pa izgradnja rutine testiranja s različitim metodama osigurava temeljitu pokrivenost.
+Najdjelotvornije testiranje pristupačnosti kombinira više pristupa. Nijedan alat sam ne može uhvatiti sve, pa izgradnja rutine testiranja s različitim metodama osigurava temeljitu pokrivenost.
 
 **Testiranje u pregledniku (ugrađeno u DevTools):**
-- **Chrome/Edge**: Lighthouse analiza dostupnosti + panel za dostupnost
-- **Firefox**: Inspektor dostupnosti s detaljnim prikazom stabla
-- **Safari**: Kartica za provjeru u Web Inspectoru s simulacijom VoiceOvera
+- **Chrome/Edge**: Lighthouse revizija pristupačnosti + pristupačni panel
+- **Firefox**: Accessibility Inspector s detaljnim prikazom stabla
+- **Safari**: Kartica revizije u Web Inspectoru s simulacijom VoiceOvera
 
 **Profesionalni dodaci za testiranje:**
-- [axe DevTools](https://www.deque.com/axe/devtools/) - Industrijski standard za automatizirano testiranje
-- [WAVE](https://wave.webaim.org/extension/) - Vizualne povratne informacije s isticanjem grešaka
-- [Accessibility Insights](https://accessibilityinsights.io/) - Microsoftov sveobuhvatni alat za testiranje
+- [axe DevTools](https://www.deque.com/axe/devtools/) - industrijski standard za automatizirano testiranje
+- [WAVE](https://wave.webaim.org/extension/) - vizualna povratna informacija s označavanjem grešaka
+- [Accessibility Insights](https://accessibilityinsights.io/) - Microsoftov sveobuhvatni paket za testiranje
 
-**Alati za naredbeni redak i integraciju CI/CD:**
-- [axe-core](https://github.com/dequelabs/axe-core) - JavaScript biblioteka za automatizirano testiranje
-- [Pa11y](https://pa11y.org/) - Alat za testiranje dostupnosti putem naredbenog retka
-- [Lighthouse CI](https://github.com/GoogleChrome/lighthouse-ci) - Automatizirano ocjenjivanje dostupnosti
+**Alati naredbenog retka i integracija CI/CD:**
+- [axe-core](https://github.com/dequelabs/axe-core) - JavaScript knjižnica za automatizirano testiranje
+- [Pa11y](https://pa11y.org/) - alat za testiranje pristupačnosti s naredbenog retka
+- [Lighthouse CI](https://github.com/GoogleChrome/lighthouse-ci) - automatizirano bodovanje pristupačnosti
 
-> 🎯 **Cilj testiranja**: Ciljajte na Lighthouse ocjenu dostupnosti od 95+ kao osnovni standard. Zapamtite, automatizirani alati otkrivaju samo oko 30-40% problema s dostupnošću—ručno testiranje i dalje je ključno!
+> 🎯 **Cilj testiranja**: Ciljajte na Lighthouse rezultat pristupačnosti od 95+ kao osnovnu vrijednost. Zapamtite, automatizirani alati hvataju samo oko 30-40% problema—ručno testiranje je i dalje nužno!
 
-## Izgradnja dostupnosti od samog početka
+### 🧠 **Provjera vještina testiranja: Spremni za pronalazak problema?**
 
-Ključ uspjeha u dostupnosti je uključiti je u temelje od samog početka. Znam da je primamljivo misliti "dodat ću dostupnost kasnije", ali to je kao da pokušavate dodati rampu kući nakon što je već izgrađena. Moguće? Da. Lako? Ne baš.
+**Pogledajmo kako se osjećate u vezi testiranja pristupačnosti:**
+- Koja vam se metoda testiranja sada čini najpristupačnijom?
+- Možete li zamisliti korištenje samo tipkovnice za cijeli dan?
+- Koja je jedna prepreka pristupačnosti koju ste osobno iskusili na internetu?
 
-Razmislite o dostupnosti kao o planiranju kuće—mnogo je lakše uključiti pristup za invalidska kolica u početne arhitektonske planove nego sve naknadno prilagođavati.
+```mermaid
+pie title "Problemi pristupačnosti otkriveni različitim metodama"
+    "Automatizirani alati" : 35
+    "Ručno testiranje" : 40
+    "Povratne informacije korisnika" : 25
+```
+> **Poticaj samopouzdanja**: Profesionalni testeri pristupačnosti koriste upravo ovu kombinaciju metoda. Učite industrijski standard!
 
-### Načela POUR: Temelj vaše dostupnosti
+## Izgradnja pristupačnosti od temelja
 
-Smjernice za dostupnost web sadržaja (WCAG) temelje se na četiri osnovna načela koja čine akronim POUR. Ne brinite—ovo nisu suhoparni akademski koncepti! Zapravo su to praktične smjernice za stvaranje sadržaja koji funkcionira za sve.
+Ključ uspjeha u pristupačnosti je izgraditi je u temelje od prvog dana. Znam da je primamljivo misliti "Dodam pristupačnost kasnije," ali to je kao pokušavati dodati rampu kući nakon što je već izgrađena. Moguće? Da. Jednostavno? Ne baš.
 
-Kada se naviknete na POUR, donošenje odluka o dostupnosti postaje puno intuitivnije. To je kao da imate mentalni kontrolni popis koji vodi vaše dizajnerske odluke. Razložimo to:
+Razmislite o pristupačnosti kao o planiranju kuće—mnogo je lakše uključiti pristupačnost za invalidska kolica u početne arhitektonske planove nego kasnije sve retrofittingom prilagođavati.
 
-**🔍 Perceptivno**: Informacije moraju biti predstavljene na način koji korisnici mogu percipirati svojim dostupnim osjetilima
+### Principi POUR: Vaši temelji pristupačnosti
 
-- Pružite tekstualne alternative za sadržaj koji nije tekst (slike, videozapisi, audio)
+Smjernice za pristupačnost web sadržaja (WCAG) temelje se na četiri osnovna principa koja čine akronim POUR. Ne brinite—ovo nisu dosadni akademski koncepti! Oni su zapravo praktične smjernice za stvaranje sadržaja koji funkcionira za svakoga.
+
+Nakon što ovladate POUR-om, donošenje odluka o pristupačnosti postaje znatno intuitivnije. To je kao da imate mentalni kontrolni popis koji vodi vaše dizajnerske izbore. Razložimo ih:
+
+```mermaid
+flowchart LR
+    A[🔍 PERCEPCIJSKO<br/>Mogu li korisnici to osjetiti?] --> B[🎮 OPERABILNO<br/>Mogu li korisnici to koristiti?]
+    B --> C[📖 RAZUMLJIVO<br/>Razumiju li to korisnici?]
+    C --> D[💪 ROBUSTNO<br/>Radi li to posvuda?]
+    
+    A1[Alternativni tekst<br/>Natpisi<br/>Kontrast] --> A
+    B1[Pristup preko tipkovnice<br/>Bez napadaja<br/>Vremenska ograničenja] --> B
+    C1[Jasan jezik<br/>Predvidljivo<br/>Pomoć pri pogreškama] --> C
+    D1[Valjan kod<br/>Kompatibilno<br/>Otporno na budućnost] --> D
+    
+    style A fill:#e1f5fe
+    style B fill:#e8f5e8
+    style C fill:#fff3e0
+    style D fill:#f3e5f5
+```
+**🔍 Percepcijsko**: Informacije moraju biti prikazane na način na koji ih korisnici mogu percipirati svojim dostupnim osjetilima
+
+- Osigurajte tekstualne alternative za ne-tekstualni sadržaj (slike, video, zvuk)
 - Osigurajte dovoljan kontrast boja za sav tekst i UI komponente
-- Ponudite titlove i transkripte za multimedijski sadržaj
-- Dizajnirajte sadržaj koji ostaje funkcionalan kada se poveća do 200%
+- Nudite titlove i transkripte za multimedijski sadržaj
+- Dizajnirajte sadržaj koji ostaje funkcionalan pri uvećanju do 200%
 - Koristite višestruke senzorne karakteristike (ne samo boju) za prenošenje informacija
 
-**🎮 Operativno**: Sve komponente sučelja moraju biti operativne putem dostupnih metoda unosa
+**🎮 Operativno**: Sve komponente sučelja moraju biti upravljive dostupnim metodama unosa
 
-- Omogućite pristup svim funkcijama putem navigacije tipkovnicom
-- Pružite korisnicima dovoljno vremena za čitanje i interakciju sa sadržajem
-- Izbjegavajte sadržaj koji uzrokuje napade ili vestibularne poremećaje
-- Pomozite korisnicima da učinkovito navigiraju jasnom strukturom i oznakama
-- Osigurajte da interaktivni elementi imaju odgovarajuće veličine ciljeva (minimalno 44px)
+- Omogućite svu funkcionalnost putem navigacije tipkovnicom
+- Korisnicima omogućite dovoljno vremena za čitanje i interakciju sa sadržajem
+- Izbjegavajte sadržaj koji može izazvati napadaje ili vestibularne poremećaje
+- Pomognite korisnicima u efikasnoj navigaciji jasnom strukturom i oznakama
+- Osigurajte da interaktivni elementi imaju adekvatne veličine ciljeva (najmanje 44px)
 
-**📖 Razumljivo**: Informacije i operacija UI-a moraju biti jasne i razumljive
+**📖 Razumljivo**: Informacije i način rada sučelja moraju biti jasni i razumljivi
 
-- Koristite jasan, jednostavan jezik prilagođen vašoj publici
-- Osigurajte da se sadržaj pojavljuje i funkcionira na predvidljiv, dosljedan način
-- Pružite jasne upute i poruke o greškama za unos korisnika
-- Pomozite korisnicima da razumiju i isprave pogreške u obrascima
+- Koristite jasan, jednostavan jezik prikladan vašoj publici
+- Osigurajte da sadržaj izgleda i radi predvidljivo i dosljedno
+- Pružite jasne upute i poruke o pogreškama za unos korisnika
+- Pomognite korisnicima razumjeti i ispraviti pogreške u obrascima
 - Organizirajte sadržaj logičnim redoslijedom čitanja i hijerarhijom informacija
 
 **💪 Robusno**: Sadržaj mora pouzdano funkcionirati na različitim tehnologijama i asistivnim uređajima
 
-- Koristite valjani, semantički HTML kao temelj
-- Osigurajte kompatibilnost s trenutnim i budućim asistivnim tehnologijama
-- Slijedite web standarde i najbolje prakse za označavanje
-- Testirajte na različitim preglednicima, uređajima i asistivnim alatima
-- Strukturirajte sadržaj tako da se dostojanstveno degradira kada napredne značajke nisu podržane
+- **Koristite valjani, semantički HTML kao temelj**
+- **Osigurajte kompatibilnost s postojećim i budućim asistivnim tehnologijama**
+- **Slijedite web standarde i najbolje prakse za označavanje**
+- **Testirajte u različitim preglednicima, na različitim uređajima i s pomoćnim alatima**
+- **Strukturirajte sadržaj tako da se postupno prilagođava kad napredne značajke nisu podržane**
 
-## Stvaranje dostupnog vizualnog dizajna
+### 🎯 **Provjera POUR principa: Kako ga učvrstiti**
 
-Dobar vizualni dizajn i dostupnost idu ruku pod ruku. Kada dizajnirate s dostupnošću na umu, često otkrivate da ti zahtjevi vode do čišćih, elegantnijih rješenja koja koriste svim korisnicima.
+**Brza refleksija na temelje:**
+- Možete li se sjetiti značajke web stranice koja krši svaki od POUR principa?
+- Koji vam princip kao programeru djeluje najprirodnije?
+- Kako bi ti principi mogli poboljšati dizajn za sve, a ne samo za osobe s invaliditetom?
 
-Istražimo kako stvoriti vizualno privlačne dizajne koji funkcioniraju za sve, bez obzira na njihove vizualne sposobnosti ili uvjete u kojima pregledavaju vaš sadržaj.
+```mermaid
+quadrantChart
+    title MATRICA UTJECAJA POUR PRINCIPA
+    x-axis Mali napor --> Veliki napor
+    y-axis Mali utjecaj --> Veliki utjecaj
+    quadrant-1 Brzi Pobjednici
+    quadrant-2 Veliki Projekti
+    quadrant-3 Razmotriti Kasnije
+    quadrant-4 Strateški Fokus
+    
+    Alt Text: [0.2, 0.9]
+    Color Contrast: [0.3, 0.8]
+    Semantic HTML: [0.4, 0.9]
+    Keyboard Nav: [0.6, 0.8]
+    ARIA Complex: [0.8, 0.7]
+    Screen Reader Testing: [0.7, 0.6]
+```
+> **Zapamtite**: Počnite s poboljšanjima koja imaju velik utjecaj i malu potrošnju truda. Semantički HTML i alt tekst daju vam najveći pristupačni napredak uz najmanji napor!
 
-### Strategije za boje i vizual
-Boja je moćan alat za komunikaciju, ali nikada ne bi trebala biti jedini način prenošenja važnih informacija. Dizajniranje izvan boja stvara robusnija, inkluzivnija iskustva koja funkcioniraju u različitim situacijama.
+## Izrada pristupačnog vizualnog dizajna
+
+Dobar vizualni dizajn i pristupačnost idu ruku pod ruku. Kad dizajnirate imajući pristupačnost na umu, često otkrijete da ti ograničenja vode do čišćih, elegantnijih rješenja koja koriste svim korisnicima.
+
+Istražimo kako stvoriti vizualno privlačne dizajne koji funkcioniraju za sve, bez obzira na njihove vizualne sposobnosti ili uvjete pod kojima gledaju vaš sadržaj.
+
+### Strategije boja i vizualne pristupačnosti
+
+Boja je snažan komunikacijski alat, ali nikad ne bi trebala biti jedini način na koji prenosite važne informacije. Dizajniranje izvan boje stvara robusnije, inkluzivnije iskustvo koje djeluje u više situacija.
 
 **Dizajnirajte za razlike u percepciji boja:**
 
-Otprilike 8% muškaraca i 0,5% žena ima neki oblik razlike u percepciji boja (često nazvano "sljepoća za boje"). Najčešći tipovi su:
-- **Deuteranopija**: Teškoće u razlikovanju crvene i zelene boje
-- **Protanopija**: Crvena boja izgleda tamnije
-- **Tritanopija**: Teškoće s plavom i žutom bojom (rijetko)
+Otprilike 8% muškaraca i 0,5% žena ima neki oblik teškoće u percepciji boja (često nazvan "sljepoćom za boje"). Najčešći tipovi su:
+- **Deuteranopija**: Teškoće u razlikovanju crvene i zelene
+- **Protanopija**: Crvena se čini tamnijom
+- **Tritanopija**: Teškoće s plavom i žutom (rijetko)
 
-**Strategije za inkluzivnu upotrebu boja:**
+**Inkluzivne strategije boja:**
 
 ```css
 /* ❌ Bad: Using only color to indicate status */
@@ -242,19 +338,19 @@ Otprilike 8% muškaraca i 0,5% žena ima neki oblik razlike u percepciji boja (�
 }
 ```
 
-**Izvan osnovnih zahtjeva za kontrast:**
+**Iza osnovnih zahtjeva kontrasta:**
 - Testirajte svoje odabire boja pomoću simulatora za sljepoću na boje
-- Koristite uzorke, teksture ili oblike uz kodiranje bojama
+- Koristite uzorke, teksture ili oblike uz boje
 - Osigurajte da interaktivna stanja ostanu prepoznatljiva bez boje
-- Razmislite kako vaš dizajn izgleda u načinu visokog kontrasta
+- Razmotrite kako vaš dizajn izgleda u načinu visokog kontrasta
 
-✅ **Testirajte pristupačnost boja**: Koristite alate poput [Coblis](https://www.color-blindness.com/coblis-color-blindness-simulator/) kako biste vidjeli kako vaša stranica izgleda korisnicima s različitim vrstama percepcije boja.
+✅ **Testirajte pristupačnost vaših boja**: Koristite alate poput [Coblis](https://www.color-blindness.com/coblis-color-blindness-simulator/) da vidite kako vaša stranica izgleda korisnicima s različitim vrstama teškoća u percepciji boja.
 
-### Indikatori fokusa i dizajn interakcije
+### Pokazivači fokusa i dizajn interakcije
 
-Indikatori fokusa digitalni su ekvivalent pokazivaču miša—pokazuju korisnicima tipkovnice gdje se nalaze na stranici. Dobro dizajnirani indikatori fokusa poboljšavaju iskustvo za sve, čineći interakcije jasnim i predvidljivim.
+Pokazivači fokusa su digitalni ekvivalent pokazivača miša — pokazuju korisnicima tipkovnice gdje se nalaze na stranici. Dobro dizajnirani pokazivači fokusa poboljšavaju iskustvo za sve tako da čine interakcije jasnima i predvidivima.
 
-**Najbolje prakse za moderne indikatore fokusa:**
+**Najbolje prakse modernih pokazivača fokusa:**
 
 ```css
 /* Enhanced focus styles that work across browsers */
@@ -283,23 +379,44 @@ button:focus:not(:focus-visible) {
 }
 ```
 
-**Zahtjevi za indikatore fokusa:**
-- **Vidljivost**: Mora imati omjer kontrasta od najmanje 3:1 u odnosu na okolne elemente
+**Zahtjevi za pokazivače fokusa:**
+- **Vidljivost**: Mora imati omjer kontrasta barem 3:1 s okolinom
 - **Širina**: Minimalna debljina od 2px oko cijelog elementa
-- **Postojanost**: Treba ostati vidljiv dok se fokus ne premjesti na drugo mjesto
-- **Razlikovanje**: Mora biti vizualno različit od drugih stanja korisničkog sučelja
+- **Upornost**: Treba ostati vidljiv dok se fokus ne premjesti negdje drugdje
+- **Razlikovanje**: Mora biti vizualno različit od drugih stanja sučelja
 
-> 💡 **Savjet za dizajn**: Odlični indikatori fokusa često koriste kombinaciju obruba, sjene okvira i promjena boje kako bi osigurali vidljivost na različitim pozadinama i u različitim kontekstima.
+> 💡 **Savjet za dizajn**: Odlični pokazivači fokusa često koriste kombinaciju obruba, sjene okvira i promjena boje kako bi osigurali vidljivost na različitim pozadinama i okolnostima.
 
-✅ **Provjerite indikatore fokusa**: Prođite kroz svoju web stranicu pomoću tipke Tab i zabilježite koji elementi imaju jasne indikatore fokusa. Jesu li neki teško vidljivi ili potpuno nedostaju?
+✅ **Provjerite pokazivače fokusa**: Tabirajte kroz vašu web stranicu i zabilježite koji elementi imaju jasne pokazivače fokusa. Ima li koji koji je teško vidjeti ili potpuno nedostaje?
 
 ### Semantički HTML: Temelj pristupačnosti
 
-Semantički HTML je poput GPS sustava za asistivne tehnologije na vašoj web stranici. Kada koristite prave HTML elemente za njihovu namjenu, zapravo pružate čitačima ekrana, tipkovnicama i drugim alatima detaljnu kartu koja pomaže korisnicima da se učinkovito kreću.
+Semantički HTML je poput davanja GPS sustava pomoćnim tehnologijama za vašu web stranicu. Kad koristite ispravne HTML elemente za njihovu namjenu, zapravo dajete čitačima zaslona, tipkovnicama i drugim alatima detaljnu kartu za učinkovitu navigaciju korisnika.
 
-Evo analogije koja mi je stvarno pomogla: semantički HTML je razlika između dobro organizirane knjižnice s jasnim kategorijama i korisnim oznakama naspram skladišta gdje su knjige nasumično razbacane. Oba mjesta imaju iste knjige, ali u kojem biste radije pokušali nešto pronaći? Upravo tako!
+Evo analogije koja mi je stvarno pala na pamet: semantički HTML je razlika između dobro organizirane knjižnice s jasnim kategorijama i korisnim oznakama naspram skladišta gdje su knjige nasumično razbacane. Oba mjesta imaju iste knjige, ali u kojem biste radije pokušali nešto pronaći? Upravo tako!
 
-**Temeljni elementi pristupačne strukture stranice:**
+```mermaid
+flowchart TD
+    A[🏠 HTML Dokument] --> B[📰 zaglavlje]
+    A --> C[🧭 navigacija]
+    A --> D[📄 glavni dio]
+    A --> E[📋 podnožje]
+    
+    B --> B1[h1: Ime stranice<br/>Logo & brendiranje]
+    C --> C1[ul: Navigacija<br/>Primarni linkovi]
+    D --> D1[članak: Sadržaj<br/>odjeljak: Pododjeljci]
+    D --> D2[prilozi: Bočna traka<br/>Povezani sadržaj]
+    E --> E1[navigacija: Linkovi u podnožju<br/>Informacije o autorskim pravima]
+    
+    D1 --> D1a[h1: Naslov stranice<br/>h2: Glavni odjeljci<br/>h3: Pododjeljci]
+    
+    style A fill:#e3f2fd
+    style B fill:#e8f5e8
+    style C fill:#fff3e0
+    style D fill:#f3e5f5
+    style E fill:#e0f2f1
+```
+**Građevni blokovi pristupačne strukture stranice:**
 
 ```html
 <!-- Landmark elements provide page navigation structure -->
@@ -354,34 +471,60 @@ Evo analogije koja mi je stvarno pomogla: semantički HTML je razlika između do
 </footer>
 ```
 
-**Zašto semantički HTML transformira pristupačnost:**
+**Zašto semantički HTML mijenja pristupačnost:**
 
-| Semantički element | Namjena | Prednost za čitače ekrana |
-|--------------------|---------|--------------------------|
-| `<header>` | Zaglavlje stranice ili sekcije | "Banner landmark" - brzo navigiranje na vrh |
-| `<nav>` | Navigacijski linkovi | "Navigation landmark" - popis navigacijskih sekcija |
-| `<main>` | Primarni sadržaj stranice | "Main landmark" - direktan skok na sadržaj |
+| Semantički Element | Svrha | Prednost za čitače zaslona |
+|--------------------|-------|----------------------------|
+| `<header>` | Zaglavlje stranice ili sekcije | "Banner landmark" - brza navigacija na vrh |
+| `<nav>` | Navigacijski linkovi | "Navigation landmark" - popis odjeljaka navigacije |
+| `<main>` | Primarni sadržaj stranice | "Main landmark" - skok izravno na sadržaj |
 | `<article>` | Samostalni sadržaj | Označava granice članka |
-| `<section>` | Tematske grupe sadržaja | Pruža strukturu sadržaja |
-| `<aside>` | Povezani sadržaj sa strane | "Complementary landmark" |
+| `<section>` | Tematske skupine sadržaja | Pruža strukturu sadržaja |
+| `<aside>` | Povezani sadržaj u bočnoj traci | "Complementary landmark" |
 | `<footer>` | Podnožje stranice ili sekcije | "Contentinfo landmark" |
 
-**Supermoći čitača ekrana sa semantičkim HTML-om:**
-- **Navigacija po landmarkovima**: Trenutni skok između glavnih sekcija stranice
-- **Pregled naslova**: Generiranje sadržaja stranice iz strukture naslova
-- **Popisi elemenata**: Stvaranje popisa svih linkova, gumba ili kontrola obrazaca
-- **Svijest o kontekstu**: Razumijevanje odnosa između sekcija sadržaja
+**Supermoći čitača zaslona sa semantičkim HTML-om:**
+- **Navigacija po orijentirima**: Skočite između glavnih dijelova stranice trenutno
+- **Nacrt naslova**: Generira sadržaj po strukturi naslova
+- **Popisi elemenata**: Stvara popise svih linkova, gumba ili kontrola obrazaca
+- **Svijest o kontekstu**: Razumije veze između odjeljaka sadržaja
 
-> 🎯 **Brzi test**: Pokušajte navigirati svojom stranicom pomoću čitača ekrana koristeći prečace za landmarkove (D za landmark, H za naslov, K za link u NVDA/JAWS). Ima li navigacija smisla?
+> 🎯 **Brzi test**: Pokušajte navigirati vašom stranicom pomoću čitača zaslona koristeći prečace za orijentire (D za landmark, H za naslov, K za link u NVDA/JAWS). Ima li navigacija smisla?
 
-✅ **Provjerite svoju semantičku strukturu**: Koristite panel za pristupačnost u DevTools vašeg preglednika kako biste vidjeli stablo pristupačnosti i osigurali da vaš markup stvara logičnu strukturu.
+### 🏗️ **Provjera majstorstva semantičkog HTML-a: Izgradnja snažnih temelja**
 
-### Hijerarhija naslova: Stvaranje logičnog sadržajnog okvira
+**Procijenimo vaše semantičko razumijevanje:**
+- Možete li prepoznati orijentire na web stranici samo gledajući HTML?
+- Kako biste prijatelju objasnili razliku između `<section>` i `<div>`?
+- Što biste prvo provjerili ako korisnik čitača zaslona prijavi probleme s navigacijom?
 
-Naslovi su apsolutno ključni za pristupačan sadržaj—oni su poput kralježnice koja sve drži zajedno. Korisnici čitača ekrana uvelike se oslanjaju na naslove kako bi razumjeli i navigirali vašim sadržajem. Zamislite to kao pružanje sadržaja stranice u obliku tablice.
+```mermaid
+stateDiagram-v2
+    [*] --> UnsementicHTML: div juha
+    UnsementicHTML --> SemanticHTML: Dodaj oznake
+    SemanticHTML --> AccessibleHTML: Testiraj s pomagalom za pristupačnost
+    AccessibleHTML --> [*]: Uspjeh korisnika!
+    
+    note right of UnsementicHTML
+        Čitači zaslona izgubljeni
+        Navigacija tipkovnicom pokvarena
+    end note
+    
+    note right of AccessibleHTML
+        Jasna navigacija
+        Učinkovito pregledavanje
+    end note
+```
+> **Profinski savjet**: Dobar semantički HTML automatski rješava oko 70% problema pristupačnosti. Savladajte taj temelj i na dobrom ste putu!
 
-**Zlatno pravilo za naslove:**
-Nikada ne preskačite razine. Uvijek napredujte logično od `<h1>` do `<h2>` do `<h3>` i tako dalje. Sjećate se kako ste radili skice u školi? To je isti princip—ne biste preskočili s "I. Glavna točka" direktno na "C. Pod-podtočka" bez "A. Podtočke" između, zar ne?
+✅ **Provjerite svoju semantičku strukturu**: Upotrijebite panel Pristupačnosti u alatima za razvijanje preglednika da vidite stablo pristupačnosti i osigurajte da vaš markup stvara logičku strukturu.
+
+### Hijerarhija naslova: Izrada logičnog sadržajnog pregleda
+
+Naslovi su apsolutno ključni za pristupačan sadržaj — oni su poput kralježnice koja sve drži zajedno. Korisnici čitača zaslona jako se oslanjaju na naslove da razumiju i navigiraju vašim sadržajem. Razmislite o tome kao o davanju sadržaja za vašu stranicu.
+
+**Evo zlatnog pravila za naslove:**
+Nikad nemojte preskakati razine. Uvijek idite logičnim redoslijedom od `<h1>` do `<h2>` do `<h3>`, i tako dalje. Sjećate li se pravljenja skica u školi? To je isti princip — ne biste skočili s „I. Glavna misao“ pravo na „C. Pod-pod-misao“ bez „A. Pod-misli“ između, zar ne?
 
 **Primjer savršene strukture naslova:**
 
@@ -422,32 +565,32 @@ Nikada ne preskačite razine. Uvijek napredujte logično od `<h1>` do `<h2>` do 
 <h1>Another main heading?</h1> <!-- Multiple h1s -->
 ```
 
-**Najbolje prakse za naslove:**
-- **Jedan `<h1>` po stranici**: Obično glavni naslov stranice ili primarni sadržaj
-- **Logičan napredak**: Nikada ne preskačite razine (h1 → h2 → h3, ne h1 → h3)
-- **Opisni sadržaj**: Neka naslovi budu smisleni kada se čitaju izvan konteksta
-- **Vizualno oblikovanje pomoću CSS-a**: Koristite CSS za izgled, HTML razine za strukturu
+**Najbolje prakse naslova:**
+- **Jedan `<h1>` po stranici**: Obično je to glavni naslov stranice ili primarni naslov sadržaja
+- **Logičan napredak**: Nikad nemojte preskakati razine (h1 → h2 → h3, ne h1 → h3)
+- **Opisni sadržaj**: Naslovi neka budu smisleni i van konteksta
+- **Vizualno stiliziranje s CSS-om**: Koristite CSS za izgled, HTML razine za strukturu
 
-**Statistika navigacije čitača ekrana:**
-- 68% korisnika čitača ekrana navigira pomoću naslova ([WebAIM Survey](https://webaim.org/projects/screenreadersurvey9/#finding))
-- Korisnici očekuju logičan okvir naslova
-- Naslovi pružaju najbrži način za razumijevanje strukture stranice
+**Statistika navigacije po naslovima za čitače zaslona:**
+- 68% korisnika čitača zaslona koristi naslove za navigaciju ([WebAIM Survey](https://webaim.org/projects/screenreadersurvey9/#finding))
+- Korisnici očekuju pronalazak logičnog sadržajnog pregleda
+- Naslovi su najbrži način da se razumije struktura stranice
 
-> 💡 **Profesionalni savjet**: Koristite ekstenzije preglednika poput "HeadingsMap" za vizualizaciju strukture naslova. Trebala bi izgledati kao dobro organizirana tablica sadržaja.
+> 💡 **Profinski savjet**: Koristite proširenja preglednika poput "HeadingsMap" za vizualizaciju strukture naslova. Trebalo bi se čitati kao dobro organizirani sadržaj.
 
-✅ **Testirajte strukturu naslova**: Koristite navigaciju po naslovima čitača ekrana (tipka H u NVDA) za skakanje kroz naslove. Je li napredak logičan i jasno prenosi priču vašeg sadržaja?
+✅ **Testirajte strukturu naslova**: Koristite navigaciju po naslovima čitača zaslona (tipka H u NVDA) da preskačete kroz naslove. Priča li progresija logično priču vašeg sadržaja?
 
 ### Napredne tehnike vizualne pristupačnosti
 
-Osim osnovnih kontrasta i boja, postoje sofisticirane tehnike koje pomažu u stvaranju zaista inkluzivnih vizualnih iskustava. Ove metode osiguravaju da vaš sadržaj funkcionira u različitim uvjetima gledanja i s asistivnim tehnologijama.
+Iza osnovnih kontrasta i boja postoje sofisticirane tehnike koje pomažu stvarati stvarno inkluzivna vizualna iskustva. Ove metode osiguravaju da vaš sadržaj funkcionira u različitim uvjetima gledanja i s pomoćnim tehnologijama.
 
-**Osnovne strategije vizualne komunikacije:**
+**Ključne strategije vizualne komunikacije:**
 
-- **Multimodalna povratna informacija**: Kombinirajte vizualne, tekstualne, a ponekad i zvučne znakove
-- **Progresivno otkrivanje**: Prikazujte informacije u probavljivim dijelovima
-- **Dosljedni obrasci interakcije**: Koristite poznate konvencije korisničkog sučelja
-- **Responzivna tipografija**: Prilagodite veličinu teksta različitim uređajima
-- **Stanja učitavanja i grešaka**: Pružite jasnu povratnu informaciju za sve korisničke radnje
+- **Višestruki modaliteti povratne informacije**: Kombinirajte vizualne, tekstualne i povremeno audio znakove
+- **Postupno otkrivanje**: Prikazujte informacije u probavljivim dijelovima
+- **Konzistentni obrasci interakcije**: Koristite poznate UI konvencije
+- **Responzivna tipografija**: Prilagodite veličinu teksta na uređajima
+- **Stanja učitavanja i pogrešaka**: Pružite jasnu povratnu informaciju za sve korisničke radnje
 
 **CSS alati za poboljšanu pristupačnost:**
 
@@ -505,43 +648,43 @@ Osim osnovnih kontrasta i boja, postoje sofisticirane tehnike koje pomažu u stv
 }
 ```
 
-> 🎯 **Obrazac pristupačnosti**: "Skip link" je ključan za korisnike tipkovnice. Trebao bi biti prvi element na koji se može fokusirati na vašoj stranici i omogućiti skok direktno na glavni sadržaj.
+> 🎯 **Pristupačni uzorak**: "Skip link" (link za preskakanje) je ključan za korisnike tipkovnice. Trebao bi biti prvi fokusabilni element na vašoj stranici i odmah skočiti na glavni sadržaj.
 
-✅ **Implementirajte preskakanje navigacije**: Dodajte skip linkove na svoje stranice i testirajte ih pritiskom na Tab čim se stranica učita. Trebali bi se pojaviti i omogućiti skok na glavni sadržaj.
+✅ **Implementirajte preskakanje navigacije**: Dodajte skip linkove na svoje stranice i testirajte ih pritiskanjem Tab čim se stranica učita. Trebali bi se pojaviti i omogućiti vam skok na glavni sadržaj.
 
-## Stvaranje smislenog teksta za linkove
+## Izrada smislenog teksta linka
 
-Linkovi su poput autocesta na internetu, ali loše napisani tekstovi linkova su poput prometnih znakova koji samo kažu "Mjesto" umjesto "Centar Chicaga". Nije baš korisno, zar ne?
+Linkovi su doista autoceste weba, ali loše napisan tekst linka poput prometnih znakova koji samo pišu "Mjesto" umjesto "Centar Chicaga". Nije baš korisno, zar ne?
 
-Evo nečega što me oduševilo kad sam to prvi put saznao: čitači ekrana mogu izvući sve linkove sa stranice i prikazati ih kao jedan veliki popis. Zamislite da vam netko preda direktorij svih linkova na vašoj stranici. Bi li svaki od njih imao smisla sam po sebi? To je test koji vaš tekst linka mora proći!
+Evo nečega što mi je promijenilo pogled kad sam prvi put naučio: čitači zaslona mogu izvući sve linkove sa stranice i prikazati ih kao jedan veliki popis. Zamislite da vam netko preda imenik svakog linka na vašoj stranici. Bi li svaki link imao smisla sam za sebe? To je test koji vaš tekst linka mora proći!
 
-### Razumijevanje obrazaca navigacije linkova
+### Razumijevanje obrazaca navigacije linkovima
 
-Čitači ekrana nude moćne značajke navigacije linkovima koje se oslanjaju na dobro napisane tekstove linkova:
+Čitači zaslona nude snažne funkcije navigacije linkovima koje se oslanjaju na dobro napisane tekstove linkova:
 
 **Metode navigacije linkovima:**
 - **Sekvencijalno čitanje**: Linkovi se čitaju u kontekstu kao dio toka sadržaja
-- **Generiranje popisa linkova**: Svi linkovi na stranici sastavljeni u pretraživi direktorij
-- **Brza navigacija**: Skakanje između linkova pomoću prečaca na tipkovnici (K u NVDA)
-- **Funkcija pretraživanja**: Pronalaženje specifičnih linkova unosom dijela teksta
+- **Generiranje popisa linkova**: Svi linkovi na stranici sastavljeni u pretraživi imenik
+- **Brza navigacija**: Skakanje između linkova pomoću tipkovničkih prečaca (K u NVDA)
+- **Funkcija pretraživanja**: Pronalaženje određenih linkova tipkanjem dijela teksta
 
 **Zašto je kontekst važan:**
-Kada korisnici čitača ekrana generiraju popis linkova, vide nešto poput ovoga:
+Kada korisnici čitača zaslona generiraju popis linkova, vide nešto poput ovoga:
 - "Preuzmi izvještaj"
 - "Saznaj više"
 - "Klikni ovdje"
-- "Politika privatnosti"
+- "Pravila privatnosti"
 - "Klikni ovdje"
 
-Samo dva od ovih linkova pružaju korisne informacije kada se čitaju izvan konteksta!
+Samo dva od tih linkova pružaju korisnu informaciju kad se čitaju izvan konteksta!
 
-> 📊 **Utjecaj na korisnike**: Korisnici čitača ekrana pregledavaju popise linkova kako bi brzo razumjeli sadržaj stranice. Generički tekst linkova prisiljava ih da se vrate na kontekst svakog linka, značajno usporavajući njihovo pregledavanje.
+> 📊 **Utjecaj na korisnike**: Korisnici čitača zaslona pregledavaju popise linkova da brzo razumiju sadržaj stranice. Generički tekst linka prisiljava ih da se vraćaju u kontekst svakog linka, značajno usporavajući njihovo pretraživanje.
 
-### Uobičajene greške u tekstu linkova koje treba izbjegavati
+### Uobičajene pogreške u tekstu linka koje treba izbjegavati
 
-Razumijevanje onoga što ne funkcionira pomaže vam prepoznati i ispraviti probleme pristupačnosti u postojećem sadržaju.
+Razumijevanje što ne funkcionira pomaže vam u prepoznavanju i ispravljanju problema pristupačnosti u postojećem sadržaju.
 
-**❌ Generički tekst linkova koji ne pruža kontekst:**
+**❌ Generički tekst linka koji ne daje kontekst:**
 
 ```html
 <!-- Meaningless when read from a link list -->
@@ -567,17 +710,17 @@ Razumijevanje onoga što ne funkcionira pomaže vam prepoznati i ispraviti probl
 <a href="/contact">Go</a> | <a href="/about">See</a> | <a href="/help">View</a>
 ```
 
-**Zašto ovi obrasci ne funkcioniraju:**
+**Zašto ti obrasci ne uspijevaju:**
 - **"Klikni ovdje"** ne govori korisnicima ništa o odredištu
-- **"Saznaj više"** ponovljeno više puta stvara zbrku
-- **Sirovi URL-ovi** su teški za čitače ekrana da ih jasno izgovore
-- **Jedna riječ** poput "Idi" ili "Vidi" nema opisni kontekst
+- **"Pročitaj više"** ponovljeno više puta stvara zbunjenost
+- **Sirove URL adrese** teško izgovaraju čitači zaslona
+- **Pojedine riječi** poput "Idi" ili "Vidi" nemaju opisni kontekst
 
-### Pisanje izvrsnog teksta za linkove
+### Pisanje izvrsnog teksta linka
 
-Opisni tekst linkova koristi svima—korisnici koji vide mogu brzo pregledati linkove, a korisnici čitača ekrana odmah razumiju odredišta.
+Opisni tekst linka koristi svima — korisnici koji vide mogu brzo skenirati linkove, a korisnici čitača zaslona odmah razumiju odredište.
 
-**✅ Primjeri jasnog, opisnog teksta za linkove:**
+**✅ Primjeri jasnog i opisnog teksta linka:**
 
 ```html
 <!-- Descriptive text that explains the destination -->
@@ -604,18 +747,18 @@ Opisni tekst linkova koristi svima—korisnici koji vide mogu brzo pregledati li
 <a href="/help">Get help with your account</a>
 ```
 
-**Najbolje prakse za tekst linkova:**
-- **Budite specifični**: "Preuzmi kvartalni financijski izvještaj" naspram "Preuzmi"
-- **Uključite vrstu datoteke i veličinu**: "(PDF, 1.2MB)" za datoteke za preuzimanje
-- **Napomenite ako se linkovi otvaraju eksterno**: "(otvara se u novom prozoru)" kada je primjenjivo
-- **Koristite aktivan jezik**: "Kontaktirajte nas" naspram "Kontakt stranica"
-- **Budite sažeti**: Ciljajte na 2-8 riječi kad je to moguće
+**Najbolje prakse za tekst linka:**
+- **Budite specifični**: "Preuzmite kvartalni financijski izvještaj" nasuprot "Preuzmi"
+- **Uključite tip i veličinu datoteke**: "(PDF, 1.2MB)" za datoteke za preuzimanje
+- **Navedite ako link otvara novu stranicu**: "(otvara se u novom prozoru)" kad je prikladno
+- **Koristite aktivan jezik**: "Kontaktirajte nas" nasuprot "Kontakt stranica"
+- **Budite sažeti**: Ciljajte 2-8 riječi kad je moguće
 
 ### Napredni obrasci pristupačnosti linkova
 
-Ponekad vizualna ograničenja dizajna ili tehnički zahtjevi zahtijevaju posebna rješenja. Evo sofisticiranih tehnika za uobičajene izazovne scenarije:
+Ponekad ograničenja vizualnog dizajna ili tehnički zahtjevi traže posebna rješenja. Evo sofisticiranih tehnika za uobičajene izazovne scenarije:
 
-**Korištenje ARIA za poboljšani kontekst:**
+**Korištenje ARIA za bogatiji kontekst:**
 
 ```html
 <!-- When button text must be short but needs more context -->
@@ -635,7 +778,7 @@ Ponekad vizualna ograničenja dizajna ili tehnički zahtjevi zahtijevaju posebna
 <p id="sustainability-summary">Detailed breakdown of our 2024 environmental goals and achievements</p>
 ```
 
-**Naznačavanje vrsta datoteka i vanjskih odredišta:**
+**Navođenje tipova datoteka i vanjskih odredišta:**
 
 ```html
 <!-- Method 1: Include information in visible link text -->
@@ -684,50 +827,49 @@ Ponekad vizualna ograničenja dizajna ili tehnički zahtjevi zahtijevaju posebna
 }
 ```
 
-> ⚠️ **Važno**: Kada koristite `target="_blank"`, uvijek obavijestite korisnike da se link otvara u novom prozoru ili kartici. Neočekivane promjene navigacije mogu biti zbunjujuće.
+> ⚠️ **Važno**: Kad koristite `target="_blank"`, uvijek obavijestite korisnike da se link otvara u novom prozoru ili kartici. Neočekivane promjene navigacije mogu izazvati zbunjenost.
 
-✅ **Testirajte kontekst linkova**: Koristite alate za razvoj preglednika kako biste generirali popis svih linkova na vašoj stranici. Možete li razumjeti svrhu svakog linka bez ikakvog okolnog konteksta?
+✅ **Testirajte kontekst vašeg linka**: Koristite alate za razvijanje preglednika da generirate popis svih linkova na stranici. Možete li razumjeti svrhu svakog linka bez ikakvog konstruktivnog konteksta?
 
-## ARIA: Poboljšanje pristupačnosti HTML-a
+## ARIA: Pojačavanje pristupačnosti HTML-a
 
-[Accessible Rich Internet Applications (ARIA)](https://developer.mozilla.org/docs/Web/Accessibility/ARIA) je poput univerzalnog prevoditelja između vaših složenih web aplikacija i asistivnih tehnologija. Kada sam HTML ne može izraziti sve što vaši interaktivni elementi rade, ARIA uskače kako bi popunila te praznine.
+[Accessible Rich Internet Applications (ARIA)](https://developer.mozilla.org/docs/Web/Accessibility/ARIA) je poput univerzalnog prevoditelja između vaših složenih web aplikacija i pomoćnih tehnologija. Kad HTML sam po sebi ne može izraziti sve što vaše interaktivne komponente rade, ARIA preuzima zadatak da popuni te praznine.
 
-Volim razmišljati o ARIA-i kao o dodavanju korisnih bilješki vašem HTML-u—nešto poput režijskih uputa u scenariju koje pomažu glumcima da razumiju svoje uloge i odnose.
+Volim ARIA zamišljati kao dodavanje korisnih bilješki vašem HTML-u — poput uputa za glumce u kazališnoj predstavi koje im pomažu razumjeti njihove uloge i odnose.
 
-**Najvažnije pravilo o ARIA-i**: Uvijek prvo koristite semantički HTML, a zatim dodajte ARIA-u kako biste ga poboljšali. Zamislite ARIA-u kao začin, a ne glavno jelo. Trebala bi pojasniti i poboljšati strukturu vašeg HTML-a, nikada je zamijeniti. Prvo postavite temelje kako treba!
+**Najvažnije pravilo o ARIA-i**: Uvijek koristite semantički HTML prvo, zatim dodajte ARIA-u za poboljšanje. Razmišljajte o ARIA-i kao o začinu, a ne glavnom jelu. Trebala bi pojasniti i unaprijediti vašu HTML strukturu, nikad je ne zamijeniti. Najprije dobro savladajte temelj!
 
-### Strateška implementacija ARIA-e
+### Strateška primjena ARIA-e
 
-ARIA je moćna, ali s moći dolazi i odgovornost. Neispravna implementacija ARIA-e može pogoršati pristupačnost više nego da je uopće nema. Evo kada i kako je koristiti učinkovito:
+ARIA je moćan, no s moći dolazi i odgovornost. Nepravilna upotreba ARIA-e može učiniti pristupačnost gorom nego bez nje. Evo kada i kako je koristiti učinkovito:
 
-**✅ Koristite ARIA kada:**
-- Stvarate prilagođene interaktivne widgete (harmonike, kartice, karusele)
-- Gradite dinamičan sadržaj koji se mijenja bez ponovnog učitavanja stranice
-- Pružate dodatni kontekst za složene odnose korisničkog sučelja
-- Označavate stanja učitavanja ili ažuriranja sadržaja uživo
-- Stvarate aplikacije s prilagođenim kontrolama
+**✅ Koristite ARIA-u kad:**
+- stvarate prilagođene interaktivne widgete (akordeoni, kartice, karuseli)
+- gradite dinamični sadržaj koji se mijenja bez ponovnog učitavanja stranice
+- pružate dodatni kontekst za složene odnose UI-a
+- označavate stanja učitavanja ili ažuriranja uživo
+- stvarate aplikacijska sučelja s prilagođenim kontrolama
 
-**❌ Izbjegavajte ARIA-u kada:**
-- Standardni HTML elementi već pružaju potrebne semantike
-- Niste sigurni kako je pravilno implementirati
-- Duplira informacije koje već pruža semantički HTML
-- Niste testirali s stvarnim asistivnim tehnologijama
+**❌ Izbjegavajte ARIA-u kad:**
+- standardni HTML elementi već pružaju potrebnu semantiku
+- niste sigurni kako to ispravno implementirati
+- duplicira informacije koje već pruža semantički HTML
+- niste testirali s pravom pomoćnom tehnologijom
 
-> 🎯 **Zlatno pravilo ARIA-e**: "Nemojte mijenjati semantiku osim ako to apsolutno morate, uvijek osigurajte pristupačnost tipkovnicom i testirajte sa stvarnim asistivnim tehnologijama."
-
+> 🎯 **Zlatno pravilo ARIA-e**: "Nemojte mijenjati semantiku osim ako je zaista neophodno, uvijek osigurajte pristupačnost tipkovnice i testirajte s pravom pomoćnom tehnologijom."
 **Pet kategorija ARIA-e:**
 
 1. **Uloge**: Što je ovaj element? (`button`, `tab`, `dialog`)
 2. **Svojstva**: Koje su njegove značajke? (`aria-required`, `aria-haspopup`)
-3. **Stanja**: Koje je njegovo trenutno stanje? (`aria-expanded`, `aria-checked`)
-4. **Landmarkovi**: Gdje se nalazi u strukturi stranice? (`banner`, `navigation`, `main`)
-5. **Regije uživo**: Kako bi se promjene trebale najaviti? (`aria-live`, `aria-atomic`)
+3. **Stanja**: Koje je trenutno stanje? (`aria-expanded`, `aria-checked`)
+4. **Orijentiri**: Gdje se nalazi u strukturi stranice? (`banner`, `navigation`, `main`)
+5. **Regioni uživo**: Kako treba najaviti promjene? (`aria-live`, `aria-atomic`)
 
 ### Osnovni ARIA obrasci za moderne web aplikacije
 
 Ovi obrasci rješavaju najčešće izazove pristupačnosti u interaktivnim web aplikacijama:
 
-**Imenovanje i opisivanje elemenata:**
+**Imenovanje i opis elemenata:**
 
 ```html
 <!-- aria-label: Provides accessible name when visible text isn't sufficient -->
@@ -750,8 +892,8 @@ Ovi obrasci rješavaju najčešće izazove pristupačnosti u interaktivnim web a
   <!-- Dynamic password strength indicator -->
 </div>
 ```
-
-**Regije uživo za dinamičan sadržaj:**
+  
+**Regioni uživo za dinamički sadržaj:**
 
 ```html
 <!-- Polite announcements (don't interrupt current speech) -->
@@ -772,8 +914,8 @@ Ovi obrasci rješavaju najčešće izazove pristupačnosti u interaktivnim web a
   <!-- "Processing your application..." appears here -->
 </div>
 ```
-
-**Primjer interaktivnog widgeta (harmonika):**
+  
+**Primjer interaktivnog widgeta (akordeon):**
 
 ```html
 <div class="accordion">
@@ -793,79 +935,140 @@ Ovi obrasci rješavaju najčešće izazove pristupačnosti u interaktivnim web a
   </div>
 </div>
 ```
+  
+```javascript
+// JavaScript za upravljanje stanjem akordeona
+function toggleAccordion(trigger) {
+  const panel = document.getElementById(trigger.getAttribute('aria-controls'));
+  const isExpanded = trigger.getAttribute('aria-expanded') === 'true';
+  
+  // Prebaci stanja
+  trigger.setAttribute('aria-expanded', !isExpanded);
+  panel.hidden = isExpanded;
+  
+  // Najavi promjenu čitačima zaslona
+  const status = document.getElementById('status-updates');
+  status.textContent = isExpanded ? 'Section collapsed' : 'Section expanded';
+}
+```
+  
+### Najbolje prakse implementacije ARIA-e
 
-@@CODE
-5. **Započnite jednostavno**: Složenije ARIA implementacije češće sadrže pogreške
+ARIA je moćna, ali zahtijeva pažljivu implementaciju. Slijeđenje ovih smjernica pomaže osigurati da ARIA unapređuje, a ne ometa pristupačnost:
+
+**🛡️ Temeljna načela:**
+
+```mermaid
+flowchart TD
+    A[🚀 Započni sa semantičkim HTML-om] --> B{Pruža li HTML potrebnu semantiku?}
+    B -->|Da| C[✅ Koristi samo HTML]
+    B -->|Ne| D[Razmotri ARIA poboljšanje]
+    D --> E{Možeš li to postići jednostavnijim načinima?}
+    E -->|Da| F[🔄 Pojednostavi pristup]
+    E -->|Ne| G[📝 Pažljivo implementiraj ARIA-u]
+    G --> H[🧪 Testiraj s pravim AT-om]
+    H --> I{Radi li kako se očekuje?}
+    I -->|Ne| J[🔧 Otkloni greške i popravi]
+    I -->|Da| K[✅ Uspjeh!]
+    J --> H
+    F --> C
+    
+    style A fill:#e3f2fd
+    style C fill:#e8f5e8
+    style K fill:#e8f5e8
+    style G fill:#fff3e0
+    style H fill:#f3e5f5
+```  
+1. **Prvo semantički HTML**: Uvijek preferirajte `<button>` umjesto `<div role="button">`  
+2. **Ne narušavajte semantiku**: Nikada ne nadjačavajte postojeće značenje HTML-a (izbjegavajte `<h1 role="button">`)  
+3. **Održavajte pristupačnost s tipkovnicom**: Svi interaktivni ARIA elementi moraju biti u potpunosti pristupačni putem tipkovnice  
+4. **Testirajte s pravim korisnicima**: Podrška za ARIA-u znatno varira između pomoćnih tehnologija  
+5. **Započnite jednostavno**: Kompleksne ARIA implementacije imaju veću vjerojatnost pogrešaka
 
 **🔍 Radni tijek testiranja:**
 
 ```mermaid
 graph TD
-    A[Write ARIA code] --> B[Validate HTML]
-    B --> C[Test with keyboard only]
-    C --> D[Test with screen reader]
-    D --> E[Test across browsers]
-    E --> F{Issues found?}
-    F -->|Yes| G[Fix and re-test]
-    F -->|No| H[Implementation complete]
+    A[Napiši ARIA kod] --> B[Provjeri HTML]
+    B --> C[Testiraj samo s tipkovnicom]
+    C --> D[Testiraj sa screen readerom]
+    D --> E[Testiraj kroz preglednike]
+    E --> F{Pronađeni problemi?}
+    F -->|Da| G[Ispravi i ponovno testiraj]
+    F -->|Ne| H[Implementacija završena]
     G --> B
-```
+```  
+**🚫 Uobičajene ARIA pogreške koje treba izbjegavati:**
 
-**🚫 Uobičajene pogreške s ARIA-om koje treba izbjegavati:**
+- **Protuslovne informacije**: Ne proturječite HTML semantici  
+- **Pretjerano označavanje**: Previše ARIA informacija zbunjuje korisnike  
+- **Statistička ARIA**: Zaboravljanje ažuriranja ARIA stanja prilikom promjena sadržaja  
+- **Netestirane implementacije**: ARIA koja u teoriji radi, ali ne i u praksi  
+- **Nedostatak podrške za tipkovnicu**: ARIA uloge bez pripadajućih interakcija na tipkovnici
 
-- **Konfliktne informacije**: Nemojte proturječiti HTML semantici
-- **Prekomjerno označavanje**: Previše ARIA informacija može zbuniti korisnike
-- **Statistička ARIA**: Zaboravljanje ažuriranja ARIA stanja kada se sadržaj mijenja
-- **Neprovjerene implementacije**: ARIA koja teoretski funkcionira, ali ne uspijeva u praksi
-- **Nedostatak podrške za tipkovnicu**: ARIA uloge bez odgovarajućih interakcija putem tipkovnice
+> 💡 **Resursi za testiranje**: Koristite alate poput [accessibility-checker](https://www.npmjs.com/package/accessibility-checker) za automatiziranu ARIA validaciju, ali uvijek testirajte s pravim čitačima ekrana za potpun doživljaj.
 
-> 💡 **Resursi za testiranje**: Koristite alate poput [accessibility-checker](https://www.npmjs.com/package/accessibility-checker) za automatiziranu validaciju ARIA-e, ali uvijek testirajte s pravim čitačima ekrana za cjelovito iskustvo.
+### 🎭 **Provjera ARIA vještina: Spremni za složene interakcije?**
 
-✅ **Učite od stručnjaka**: Proučite [ARIA Authoring Practices Guide](https://w3c.github.io/aria-practices/) za provjerene uzorke i implementacije složenih interaktivnih widgeta.
+**Procijenite svoje ARIA samopouzdanje:**  
+- Kada biste izabrali ARIA-u umjesto semantičkog HTML-a? (Nagovještaj: gotovo nikada!)  
+- Možete li objasniti zašto je `<div role="button">` obično lošije od `<button>`?  
+- Koja je najvažnija stvar za zapamtiti pri testiranju ARIA-e?
 
-## Pristupačnost slika i medija
+```mermaid
+pie title "Uobičajeni obrasci korištenja ARIA-e"
+    "Oznake i opisi" : 40
+    "Žive regije" : 25
+    "Stanja widgeta" : 20
+    "Složene kontrole" : 15
+```  
+> **Ključni uvid**: Većina korištenja ARIA-e odnosi se na označavanje i opisivanje elemenata. Kompleksni obrasci widgeta su mnogo rjeđi nego što biste pomislili!
 
-Vizualni i audio sadržaji ključni su dijelovi modernog web iskustva, ali mogu stvoriti prepreke ako nisu pažljivo implementirani. Cilj je osigurati da informacije i emocionalni utjecaj vaših medija dopru do svakog korisnika. Kad se naviknete, postaje prirodno.
+✅ **Učite od stručnjaka**: Proučite [ARIA Authoring Practices Guide](https://w3c.github.io/aria-practices/) za dokazane obrasce i implementacije složenih interaktivnih widgeta.
 
-Različite vrste medija zahtijevaju različite pristupe pristupačnosti. To je poput kuhanja—ne biste tretirali nježnu ribu na isti način kao sočan odrezak. Razumijevanje ovih razlika pomaže vam odabrati pravo rješenje za svaku situaciju.
+## Omogućavanje pristupačnosti slika i medija
+
+Vizualni i audio sadržaj su ključni dijelovi modernog web doživljaja, no mogu stvarati prepreke ako nisu pažljivo realizirani. Cilj je osigurati da informacije i emocionalni utjecaj vaših medija dosegnu svakog korisnika. Kad se uhvatite u koštac, to postaje druga priroda.
+
+Različite vrste medija zahtijevaju različite pristupe pristupačnosti. To je kao kuhanje — ne biste tretirali delikatnu ribu isto kao robusni odrezak. Razumijevanje tih razlika pomaže vam izabrati pravo rješenje za svaku situaciju.
 
 ### Strateška pristupačnost slika
 
-Svaka slika na vašoj web stranici ima svoju svrhu. Razumijevanje te svrhe pomaže vam napisati bolji alternativni tekst i stvoriti inkluzivnija iskustva.
+Svaka slika na vašoj web stranici ima svrhu. Razumijevanje te svrhe pomaže vam napisati bolje alternativne tekstove i stvarati inkluzivnija iskustva.
 
-**Četiri vrste slika i njihove strategije za alt tekst:**
+**Četiri tipa slika i njihove strategije alt teksta:**  
 
-**Informativne slike** - prenose važne informacije:
+**Informativne slike** - prenose važne informacije:  
 ```html
-<img src="../../../../translated_images/chart.31c7eb0eb5c4450deba10b6f236732dfee8e8a11f6c0d8f31d2c2efb9d4c00ef.hr.png" alt="Sales increased 25% from Q1 to Q2 2024">
+<img src="../../../../translated_images/hr/chart.31c7eb0eb5c4450d.png" alt="Sales increased 25% from Q1 to Q2 2024">
 ```
-
-**Dekorativne slike** - isključivo vizualne, bez informativne vrijednosti:
+  
+**Dekorativne slike** - samo vizualne, bez informativne vrijednosti:  
 ```html
-<img src="../../../../translated_images/decorative-border.b2f3c4d6634fb79d57fb6357835906c16938df3d5651c1314c196c3b1c52df98.hr.png" alt="" role="presentation">
+<img src="../../../../translated_images/hr/decorative-border.b2f3c4d6634fb79d.png" alt="" role="presentation">
 ```
-
-**Funkcionalne slike** - služe kao gumbi ili kontrole:
+  
+**Funkcionalne slike** - služe kao gumbi ili kontrole:  
 ```html
 <button>
   <img src="search-icon.svg" alt="Search">
 </button>
 ```
-
-**Složene slike** - grafikoni, dijagrami, infografike:
+  
+**Složene slike** - grafikoni, dijagrami, infografike:  
 ```html
-<img src="../../../../translated_images/complex-chart.c831f461a363b446a688be5ccacde20d011221758c902cb082cfd4293534ef17.hr.png" alt="Quarterly sales data" aria-describedby="chart-description">
+<img src="../../../../translated_images/hr/complex-chart.c831f461a363b446.png" alt="Quarterly sales data" aria-describedby="chart-description">
 <div id="chart-description">
   <p>Detailed description: Sales data shows a steady increase across all quarters...</p>
 </div>
 ```
+  
+### Pristupačnost videa i zvuka
 
-### Pristupačnost videozapisa i zvuka
-
-**Zahtjevi za videozapise:**
-- **Titlovi**: Tekstualna verzija govornog sadržaja i zvučnih efekata
-- **Audio opisi**: Naracija vizualnih elemenata za slijepe korisnike
-- **Transkripti**: Potpuna tekstualna verzija svih audio i vizualnih sadržaja
+**Zahtjevi za video:**  
+- **Titlovi**: Tekstualna verzija govornog sadržaja i zvučnih efekata  
+- **Audio opisi**: Naracija vizualnih elemenata za slabovidne korisnike  
+- **Transkripti**: Potpuni tekst svih audio i vizualnih sadržaja  
 
 ```html
 <video controls>
@@ -874,49 +1077,67 @@ Svaka slika na vašoj web stranici ima svoju svrhu. Razumijevanje te svrhe poma�
   <track kind="descriptions" src="descriptions.vtt" srclang="en" label="Audio descriptions">
 </video>
 ```
-
-**Zahtjevi za zvuk:**
-- **Transkripti**: Tekstualna verzija svih govorenih sadržaja
-- **Vizualni indikatori**: Za sadržaj koji je samo audio, osigurajte vizualne znakove
+  
+**Zahtjevi za audio:**  
+- **Transkripti**: Tekstualna verzija cijelog govornog sadržaja  
+- **Vizualni indikatori**: Za sadržaj samo s audio zapisom, pružite vizualne znakove
 
 ### Moderne tehnike za slike
 
-**Korištenje CSS-a za dekorativne slike:**
+**Korištenje CSS-a za dekorativne slike:**  
 ```css
 .hero-section {
   background-image: url('decorative-hero.jpg');
   /* Decorative images in CSS don't need alt text */
 }
 ```
-
-**Pristupačne responzivne slike:**
+  
+**Prilagodljive slike s pristupačnošću:**  
 ```html
 <picture>
   <source media="(min-width: 800px)" srcset="large-chart.png">
   <source media="(min-width: 400px)" srcset="medium-chart.png">
-  <img src="../../../../translated_images/small-chart.c50c7b1bbcce43d8d24fbfbab8f691fe47d8f25fb7c70857c9eae21d5f22862e.hr.png" alt="Website traffic increased 40% after accessibility improvements">
+  <img src="../../../../translated_images/hr/small-chart.c50c7b1bbcce43d8.png" alt="Website traffic increased 40% after accessibility improvements">
 </picture>
 ```
-
+  
 ✅ **Testirajte pristupačnost slika**: Koristite čitač ekrana za navigaciju stranicom sa slikama. Dobivate li dovoljno informacija za razumijevanje sadržaja?
 
-## Navigacija tipkovnicom i upravljanje fokusom
+## Tipkovnična navigacija i upravljanje fokusom
 
-Mnogi korisnici navigiraju webom isključivo pomoću tipkovnice. To uključuje osobe s motoričkim poteškoćama, napredne korisnike koji smatraju tipkovnicu bržom od miša i svakoga kome miš prestane raditi. Osiguravanje da vaša stranica dobro funkcionira s unosom putem tipkovnice ključno je i često čini vašu stranicu učinkovitijom za sve.
+Mnogi korisnici koriste web isključivo preko tipkovnice. To uključuje osobe s motoričkim poteškoćama, iskusne korisnike kojima je tipkovnica brža od miša te sve kojima je miš prestao raditi. Osigurati da vaša stranica dobro radi s unosima s tipkovnice ključno je i često čini vašu stranicu učinkovitijom za sve.
 
-### Osnovni obrasci navigacije tipkovnicom
+```mermaid
+flowchart LR
+    A[⌨️ Navigacija tipkovnicom] --> B[Redoslijed tipki Tab]
+    A --> C[Indikatori fokusa]
+    A --> D[Preskoči poveznice]
+    A --> E[Prečaci na tipkovnici]
+    
+    B --> B1[Logičan slijed<br/>Svi interaktivni elementi<br/>Nema tab zamki]
+    C --> C1[Vidljivi obrubi<br/>Visoki kontrast<br/>Jasne granice]
+    D --> D1[Preskoči na glavno<br/>Preskoči na navigaciju<br/>Zaobiđi ponavljanje]
+    E --> E1[Escape za zatvaranje<br/>Enter za aktivaciju<br/>Strelice u grupama]
+    
+    style A fill:#e3f2fd
+    style B fill:#e8f5e8
+    style C fill:#fff3e0
+    style D fill:#f3e5f5
+    style E fill:#e0f2f1
+```  
+### Osnovni obrasci tipkovničke navigacije
 
-**Standardne interakcije tipkovnicom:**
-- **Tab**: Pomicanje fokusa naprijed kroz interaktivne elemente
-- **Shift + Tab**: Pomicanje fokusa unatrag
-- **Enter**: Aktivacija gumba i poveznica
-- **Space**: Aktivacija gumba, označavanje okvira za potvrdu
-- **Strelice**: Navigacija unutar grupa komponenti (radio gumbi, izbornici)
-- **Escape**: Zatvaranje modala, padajućih izbornika ili otkazivanje operacija
+**Standardne tipkovničke interakcije:**  
+- **Tab**: Pomicanje fokusa unaprijed kroz interaktivne elemente  
+- **Shift + Tab**: Pomicanje fokusa unatrag  
+- **Enter**: Aktivacija gumba i poveznica  
+- **Space**: Aktivacija gumba, označavanje potvrdnih okvira  
+- **Tipke sa strelicama**: Navigacija unutar grupa komponenti (radio gumbi, izbornici)  
+- **Escape**: Zatvaranje modalnih dijaloga, padajućih izbornika ili prekid operacija
 
-### Najbolje prakse za upravljanje fokusom
+### Najbolje prakse upravljanja fokusom
 
-**Vidljivi indikatori fokusa:**
+**Vidljivi indikatori fokusa:**  
 ```css
 /* Ensure focus is always visible */
 button:focus-visible {
@@ -929,8 +1150,8 @@ button:focus-visible {
   box-shadow: 0 0 0 3px rgba(74, 144, 164, 0.5);
 }
 ```
-
-**Poveznice za preskakanje za učinkovitu navigaciju:**
+  
+**Linkovi za preskakanje radi učinkovite navigacije:**  
 ```html
 <a href="#main-content" class="skip-link">Skip to main content</a>
 <a href="#navigation" class="skip-link">Skip to navigation</a>
@@ -942,8 +1163,8 @@ button:focus-visible {
   <!-- main content -->
 </main>
 ```
-
-**Pravilni redoslijed tabova:**
+  
+**Ispravan redoslijed tabulatora:**  
 ```html
 <!-- Use semantic HTML for natural tab order -->
 <form>
@@ -956,13 +1177,13 @@ button:focus-visible {
   <button type="submit" tabindex="0">Submit</button>
 </form>
 ```
+  
+### Zatvaranje fokusa u modalima
 
-### Zadržavanje fokusa u modalima
-
-Prilikom otvaranja modalnih dijaloga, fokus treba biti zadržan unutar modala:
+Pri otvaranju modalnih dijaloga fokus treba biti zarobljen unutar modala:
 
 ```javascript
-// Modern focus trap implementation
+// Moderna implementacija zamke za fokus
 function trapFocus(element) {
   const focusableElements = element.querySelectorAll(
     'button, [href], input, select, textarea, [tabindex]:not([tabindex="-1"])'
@@ -987,20 +1208,20 @@ function trapFocus(element) {
     }
   });
   
-  // Focus first element when modal opens
+  // Fokusiraj prvi element kada se modal otvori
   firstElement.focus();
 }
 ```
-
-✅ **Testirajte navigaciju tipkovnicom**: Pokušajte navigirati svojom web stranicom koristeći samo tipku Tab. Možete li doći do svih interaktivnih elemenata? Je li redoslijed fokusa logičan? Jesu li indikatori fokusa jasno vidljivi?
+  
+✅ **Testirajte tipkovničku navigaciju**: Pokušajte navigirati vašom web stranicom koristeći samo tipku Tab. Možete li dosegnuti sve interaktivne elemente? Je li redoslijed fokusa logičan? Jesu li indikatori fokusa jasno vidljivi?
 
 ## Pristupačnost obrazaca
 
-Obrasci su ključni za interakciju korisnika i zahtijevaju posebnu pažnju prema pristupačnosti.
+Obrasci su ključni za korisničku interakciju i zahtijevaju posebnu pažnju u pogledu pristupačnosti.
 
-### Povezivanje oznaka i kontrola obrazaca
+### Povezivanje oznaka i kontrola u obrazcima
 
-**Svaka kontrola obrasca treba oznaku:**
+**Svakoj kontroli obrasca treba oznaka:**  
 ```html
 <!-- Explicit labeling (preferred) -->
 <label for="username">Username:</label>
@@ -1015,10 +1236,10 @@ Obrasci su ključni za interakciju korisnika i zahtijevaju posebnu pažnju prema
 <!-- Using aria-label when visual label isn't desired -->
 <input type="search" aria-label="Search products" placeholder="Search...">
 ```
+  
+### Obrada pogrešaka i validacija
 
-### Rukovanje pogreškama i validacija
-
-**Pristupačne poruke o pogreškama:**
+**Pristupačne poruke o pogreškama:**  
 ```html
 <label for="email">Email Address:</label>
 <input type="email" id="email" name="email" 
@@ -1028,16 +1249,16 @@ Obrasci su ključni za interakciju korisnika i zahtijevaju posebnu pažnju prema
   Please enter a valid email address
 </div>
 ```
+  
+**Najbolje prakse validacije obrazaca:**  
+- Koristite `aria-invalid` za označavanje neispravnih polja  
+- Pružite jasne, specifične poruke o pogreškama  
+- Koristite `role="alert"` za važne najave o pogreškama  
+- Prikazujte pogreške odmah i pri slanju obrasca
 
-**Najbolje prakse za validaciju obrazaca:**
-- Koristite `aria-invalid` za označavanje nevažećih polja
-- Osigurajte jasne, specifične poruke o pogreškama
-- Koristite `role="alert"` za važne obavijesti o pogreškama
-- Prikazujte pogreške odmah i prilikom slanja obrasca
+### Grupiranje putem fieldsetova
 
-### Polja i grupiranje
-
-**Grupirajte povezane kontrole obrazaca:**
+**Grupirajte povezane kontrole u obrascima:**  
 ```html
 <fieldset>
   <legend>Shipping Address</legend>
@@ -1057,74 +1278,74 @@ Obrasci su ključni za interakciju korisnika i zahtijevaju posebnu pažnju prema
   <label for="contact-phone">Phone</label>
 </fieldset>
 ```
+  
+## Vaše putovanje pristupačnosti: Glavni zaključci
 
-## Vaše putovanje prema pristupačnosti: Ključni zaključci
+Čestitamo! Upravo ste stekli temeljno znanje za stvaranje zaista inkluzivnih web iskustava. Ovo je zaista uzbudljivo! Pristupačnost weba nije samo ispunjavanje zakonskih okvira - riječ je o prepoznavanju različitih načina na koje ljudi koriste digitalni sadržaj i dizajnu koji prati tu zadivljujuću složenost.
 
-Čestitamo! Upravo ste stekli osnovno znanje za stvaranje istinski inkluzivnih web iskustava. Ovo je zaista uzbudljivo! Pristupačnost weba nije samo ispunjavanje zahtjeva za usklađenost—radi se o prepoznavanju raznolikih načina na koje ljudi komuniciraju s digitalnim sadržajem i dizajniranju za tu nevjerojatnu složenost.
+Sada ste dio rastuće zajednice programera koji razumiju da dobar dizajn funkcionira za svakoga. Dobrodošli u klub!
 
-Sada ste dio rastuće zajednice programera koji razumiju da dobar dizajn funkcionira za sve. Dobrodošli u klub!
+**🎯 Vaš set alata za pristupačnost sada uključuje:**
 
-**🎯 Vaš alat za pristupačnost sada uključuje:**
+| Temeljno načelo           | Implementacija                          | Utjecaj                                               |
+|---------------------------|---------------------------------------|------------------------------------------------------|
+| **Semantička HTML osnova** | Koristite odgovarajuće HTML elemente  | Čitači ekrana lako navigiraju, tipkovnice rade automatski |
+| **Inkluzivan vizualni dizajn** | Dovoljni kontrast, smislenost boja, vidljivi indikatori fokusa | Jasno svima u svim uvjetima osvjetljenja             |
+| **Opisni sadržaj**         | Smisleni tekst poveznica, alt tekst, naslovi | Korisnici razumiju sadržaj bez vizualnog konteksta   |
+| **Pristupačnost na tipkovnici** | Redoslijed tabulatora, prečaci na tipkovnici, upravljanje fokusom | Motorička pristupačnost i učinkovitost iskusnih korisnika |
+| **Unapređenje ARIA-om**    | Strateška uporaba za ispunjavanje semantičkih praznina | Složene aplikacije funkcioniraju s pomoćnim tehnologijama |
+| **Sveobuhvatno testiranje** | Automatizirani alati + ručna provjera + testiranje s pravim korisnicima | Otkriva probleme prije nego što utječu na korisnike  |
 
-| Osnovno načelo | Implementacija | Utjecaj |
-|----------------|----------------|---------|
-| **Temelj semantičkog HTML-a** | Koristite odgovarajuće HTML elemente za njihovu namjenu | Čitači ekrana mogu učinkovito navigirati, tipkovnice automatski funkcioniraju |
-| **Inkluzivni vizualni dizajn** | Dovoljan kontrast, smisleno korištenje boja, vidljivi indikatori fokusa | Jasno za sve u bilo kojim uvjetima osvjetljenja |
-| **Opisni sadržaj** | Smisleni tekst poveznica, alt tekst, naslovi | Korisnici razumiju sadržaj bez vizualnog konteksta |
-| **Pristupačnost tipkovnice** | Redoslijed tabova, prečaci na tipkovnici, upravljanje fokusom | Pristupačnost za motoričke poteškoće i učinkovitost za napredne korisnike |
-| **Poboljšanje ARIA-e** | Strateško korištenje za popunjavanje semantičkih praznina | Složene aplikacije funkcioniraju s pomoćnim tehnologijama |
-| **Sveobuhvatno testiranje** | Automatizirani alati + ručna provjera + testiranje stvarnih korisnika | Otkrivanje problema prije nego što utječu na korisnike |
+**🚀 Sljedeći koraci:**
 
-**🚀 Vaši sljedeći koraci:**
+1. **Ugradite pristupačnost u svoj radni tijek**: Učinite testiranje prirodnim dijelom procesa razvoja  
+2. **Učite od stvarnih korisnika**: Prikupljajte povratne informacije od ljudi koji koriste pomoćne tehnologije  
+3. **Budite u tijeku**: Tehnike pristupačnosti razvijaju se s novim tehnologijama i standardima  
+4. **Zagovarajte inkluzivnost**: Dijelite svoje znanje i učinite pristupačnost timskim prioritetom
 
-1. **Ugradite pristupačnost u svoj radni proces**: Učinite testiranje prirodnim dijelom vašeg razvojnog procesa
-2. **Učite od stvarnih korisnika**: Tražite povratne informacije od osoba koje koriste pomoćne tehnologije
-3. **Ostanite u toku**: Tehnike pristupačnosti razvijaju se s novim tehnologijama i standardima
-4. **Zagovarajte inkluzivnost**: Podijelite svoje znanje i učinite pristupačnost prioritetom tima
+> 💡 **Zapamtite**: Ograničenja pristupačnosti često vode do inovativnih, elegantnih rješenja koja koriste svima. Prilazi na nogostupu, titlovi i glasovne kontrole započeli su kao funkcije pristupačnosti, a postali su mainstream poboljšanja.
 
-> 💡 **Zapamtite**: Ograničenja pristupačnosti često dovode do inovativnih, elegantnih rješenja koja koriste svima. Rampice, titlovi i glasovne kontrole započeli su kao značajke pristupačnosti i postali mainstream poboljšanja.
+**Poslovni razlog je kristalno jasan**: Pristupačne web stranice dosežu više korisnika, bolje se rangiraju u tražilicama, imaju niže troškove održavanja i izbjegavaju pravne rizike. No iskreno? Pravi razlog brige o pristupačnosti ide puno dublje. Pristupačne web stranice utjelovljuju najbolje vrijednosti weba—otvorenost, inkluzivnost i ideju da svatko zaslužuje jednak pristup informacijama.
 
-**Poslovni slučaj je kristalno jasan**: Pristupačne web stranice dosežu više korisnika, bolje se rangiraju na tražilicama, imaju niže troškove održavanja i izbjegavaju pravne rizike. Ali iskreno? Pravi razlog za brigu o pristupačnosti ide mnogo dublje. Pristupačne web stranice utjelovljuju najbolje vrijednosti weba—otvorenost, inkluzivnost i ideju da svi zaslužuju jednak pristup informacijama.
-
-Sada ste opremljeni za izgradnju inkluzivnog weba budućnosti. Svaka pristupačna stranica koju stvorite čini internet gostoljubivijim mjestom za sve. To je prilično nevjerojatno kad razmislite o tome!
+Sada ste opremljeni za izgradnju inkluzivnog weba budućnosti. Svaka pristupačna stranica koju napravite čini internet gostoljubivijim mjestom za sve. To je prilično nevjerojatno kad o tome razmislite!
 
 ## Dodatni resursi
 
-Nastavite svoje putovanje učenja o pristupačnosti s ovim ključnim resursima:
+Nastavite svoje učenje o pristupačnosti s ovim ključnim resursima:
 
-**📚 Službeni standardi i smjernice:**
-- [WCAG 2.1 Guidelines](https://www.w3.org/WAI/WCAG21/quickref/) - Službeni standard pristupačnosti s brzim referencama
-- [ARIA Authoring Practices Guide](https://w3c.github.io/aria-practices/) - Sveobuhvatni uzorci za interaktivne widgete
-- [WebAIM Guidelines](https://webaim.org/) - Praktične, pristupačne smjernice za početnike
+**📚 Službeni standardi i smjernice:**  
+- [WCAG 2.1 Guidelines](https://www.w3.org/WAI/WCAG21/quickref/) - Službeni standard pristupačnosti s brzom referencom  
+- [ARIA Authoring Practices Guide](https://w3c.github.io/aria-practices/) - Sveobuhvatni obrasci za interaktivne widgete  
+- [WebAIM Guidelines](https://webaim.org/) - Praktični, početnički prijateljski vodič za pristupačnost
 
-**🛠️ Alati i resursi za testiranje:**
-- [axe DevTools](https://www.deque.com/axe/devtools/) - Industrijski standard za testiranje pristupačnosti
-- [A11y Project Checklist](https://www.a11yproject.com/checklist/) - Korak-po-korak provjera pristupačnosti
-- [Accessibility Insights](https://accessibilityinsights.io/) - Microsoftov sveobuhvatni alat za testiranje
-- [Color Oracle](https://colororacle.org/) - Simulator za testiranje dizajna za osobe s daltonizmom
+**🛠️ Alati i resursi za testiranje:**  
+- [axe DevTools](https://www.deque.com/axe/devtools/) - Standard industrije za testiranje pristupačnosti  
+- [A11y Project Checklist](https://www.a11yproject.com/checklist/) - Provjera pristupačnosti korak po korak  
+- [Accessibility Insights](https://accessibilityinsights.io/) - Sveobuhvatni Microsoftov alat za testiranje  
+- [Color Oracle](https://colororacle.org/) - Simulator daltonizma za testiranje dizajna
 
-**🎓 Učenje i zajednica:**
-- [WebAIM Screen Reader Survey](https://webaim.org/projects/screenreadersurvey9/) - Preferencije i ponašanja stvarnih korisnika
-- [Inclusive Components](https://inclusive-components.design/) - Moderni uzorci pristupačnih komponenti
-- [A11y Coffee](https://a11y.coffee/) - Brzi savjeti i uvidi o pristupačnosti
-- [Web Accessibility Initiative (WAI)](https://www.w3.org/WAI/) - Sveobuhvatni resursi za pristupačnost od strane W3C-a
+**🎓 Učenje i zajednica:**  
+- [WebAIM Screen Reader Survey](https://webaim.org/projects/screenreadersurvey9/) - Preferencije i ponašanja stvarnih korisnika  
+- [Inclusive Components](https://inclusive-components.design/) - Moderni obrasci pristupačnih komponenti  
+- [A11y Coffee](https://a11y.coffee/) - Kratki savjeti i uvidi o pristupačnosti  
+- [Web Accessibility Initiative (WAI)](https://www.w3.org/WAI/) - Sveobuhvatni W3C-ovi resursi o pristupačnosti
 
-**🎥 Praktično učenje:**
-- [Accessibility Developer Guide](https://www.accessibility-developer-guide.com/) - Praktične smjernice za implementaciju
-- [Deque University](https://dequeuniversity.com/) - Profesionalni tečajevi za pristupačnost
+**🎥 Praktično učenje:**  
+- [Accessibility Developer Guide](https://www.accessibility-developer-guide.com/) - Praktični vodiči za implementaciju  
+- [Deque University](https://dequeuniversity.com/) - Profesionalni tečajevi pristupačnosti
 
-## GitHub Copilot Agent Challenge 🚀
+## Izazov GitHub Copilot agenta 🚀
 
-Koristite Agent način rada za dovršavanje sljedećeg izazova:
+Iskoristite Agent način rada za dovršetak sljedećeg izazova:
 
-**Opis:** Izradite pristupačnu komponentu modalnog dijaloga koja demonstrira pravilno upravljanje fokusom, ARIA atribute i obrasce navigacije tipkovnicom.
+**Opis:** Izradite pristupačnu komponentu modalnog dijaloga koja demonstrira pravilno upravljanje fokusom, ARIA atribute i obrasce tipkovničke navigacije.
 
-**Zadatak:** Izradite kompletnu komponentu modalnog dijaloga s HTML-om, CSS-om i JavaScriptom koja uključuje: pravilno zadržavanje fokusa, ESC tipku za zatvaranje, klik izvan za zatvaranje, ARIA atribute za čitače ekrana i vidljive indikatore fokusa. Modal bi trebao sadržavati obrazac s pravilnim oznakama i rukovanjem pogreškama. Osigurajte da komponenta zadovoljava WCAG 2.1 AA standarde.
+**Zadatak:** Izradite kompletnu komponentu modalnog dijaloga koristeći HTML, CSS i JavaScript koja uključuje: pravilno zatvaranje fokusa, ESC tipku za zatvaranje, klik izvan modala za zatvaranje, ARIA atribute za čitače ekrana i vidljive indikatore fokusa. Modal treba sadržavati obrazac s odgovarajućim oznakama i obradom pogrešaka. Osigurajte da komponenta zadovoljava WCAG 2.1 AA standarde.
 
 
 ## 🚀 Izazov
 
-Uzmite ovaj HTML i prepišite ga kako bi bio što pristupačniji, koristeći strategije koje ste naučili.
+Uz ovu HTML strukturu napišite što je moguće pristupačniju verziju, koristeći naučene strategije.
 
 ```html
 <!DOCTYPE html>
@@ -1181,30 +1402,91 @@ Uzmite ovaj HTML i prepišite ga kako bi bio što pristupačniji, koristeći str
   </body>
 </html>
 ```
+  
+**Ključna poboljšanja koja su napravljena:**  
+- Dodana odgovarajuća semantička HTML struktura  
+- Ispravljena hijerarhija naslova (jedan h1, logičan tijek)  
+- Dodan smisleni tekst poveznica umjesto "klikni ovdje"  
+- Uključene odgovarajuće ARIA oznake za navigaciju  
+- Dodana atribut lang i pravilni meta tagovi  
+- Korišten element button za interaktivne elemente  
+- Struktuiran sadržaj podnožja s pravilnim orijentirima
 
-**Ključna poboljšanja:**
-- Dodana pravilna semantička struktura HTML-a
-- Ispravljena hijerarhija naslova (jedan h1, logičan slijed)
-- Dodan smislen tekst poveznica umjesto "kliknite ovdje"
-- Uključeni pravilni ARIA atributi za navigaciju
-- Dodan atribut lang i odgovarajući meta tagovi
-- Korišten element button za interaktivne elemente
-- Strukturiran sadržaj podnožja s odgovarajućim oznakama
-
-## Kviz nakon predavanja
-[Kviz nakon predavanja](https://ff-quizzes.netlify.app/web/en/)
+## Kviz nakon predavanja  
+[Post-lecture quiz](https://ff-quizzes.netlify.app/web/en/)
 
 ## Pregled i samostalno učenje
 
-Mnoge države imaju zakone koji se odnose na zahtjeve za pristupačnost. Informirajte se o zakonima o pristupačnosti u svojoj zemlji. Što je obuhvaćeno, a što nije? Primjer je [ova web stranica vlade](https://accessibility.blog.gov.uk/).
+Mnoge vlade imaju zakone o zahtjevima za pristupačnost. Informirajte se o zakonima o pristupačnosti u vašoj zemlji. Što je pokriveno, a što nije? Na primjer, [ova državna stranica](https://accessibility.blog.gov.uk/).
 
 ## Zadatak
- 
-[Analizirajte web stranicu koja nije pristupačna](assignment.md)
 
-Zasluge: [Turtle Ipsum](https://github.com/Instrument/semantic-html-sample) od Instrument
+[Analizirajte nepristupačnu web stranicu](assignment.md)
+
+Zasluge: [Turtle Ipsum](https://github.com/Instrument/semantic-html-sample) by Instrument
 
 ---
 
-**Izjava o odricanju odgovornosti**:  
-Ovaj dokument je preveden pomoću AI usluge za prevođenje [Co-op Translator](https://github.com/Azure/co-op-translator). Iako nastojimo osigurati točnost, imajte na umu da automatski prijevodi mogu sadržavati pogreške ili netočnosti. Izvorni dokument na izvornom jeziku treba smatrati autoritativnim izvorom. Za ključne informacije preporučuje se profesionalni prijevod od strane ljudskog prevoditelja. Ne preuzimamo odgovornost za nesporazume ili pogrešne interpretacije nastale korištenjem ovog prijevoda.
+## 🚀 Vaš vremenski plan usavršavanja pristupačnosti
+
+### ⚡ **Što možete učiniti u sljedećih 5 minuta**  
+- [ ] Instalirati ekstenziju axe DevTools u svoj preglednik  
+- [ ] Pokrenuti Lighthouse audit pristupačnosti na omiljenoj web stranici  
+- [ ] Pokušati navigirati bilo kojom web stranicom koristeći samo tipku Tab  
+- [ ] Isprobati ugrađeni čitač ekrana u svom pregledniku (Narrator/VoiceOver)
+
+### 🎯 **Što možete postići u sljedećem satu**  
+- [ ] Završiti kviz nakon lekcije i razmisliti o uvidima u pristupačnost  
+- [ ] Vježbati pisanje smislenog alt teksta za 10 različitih slika  
+- [ ] Provjeriti hijerarhiju naslova na web stranici pomoću HeadingsMap ekstenzije  
+- [ ] Popraviti probleme pristupačnosti pronađene u HTML izazovu  
+- [ ] Testirati kontrast boja na aktualnom projektu pomoću alata WebAIM
+
+### 📅 **Vaše tjedno putovanje pristupačnosti**  
+- [ ] Završiti zadatak analizirajući nepristupačnu web stranicu  
+- [ ] Postaviti razvojno okruženje s alatima za testiranje pristupačnosti
+- [ ] Vježbajte navigaciju tipkovnicom na 5 različitih složenih web stranica
+- [ ] Izradite jednostavan obrazac s prikladnim oznakama, upravljanjem pogreškama i ARIA-om
+- [ ] Pridružite se zajednici za pristupačnost (A11y Slack, WebAIM forum)
+- [ ] Promatrajte stvarne korisnike s invaliditetom dok navigiraju web stranicama (YouTube ima odlične primjere)
+
+### 🌟 **Vaša mjesečna transformacija**
+- [ ] Integrirajte testiranje pristupačnosti u svoj razvojni tijek rada
+- [ ] Doprinijeti open source projektu popravljajući probleme s pristupačnošću
+- [ ] Provedite testiranje upotrebljivosti s nekim tko koristi pomoćnu tehnologiju
+- [ ] Izradite pristupačnu biblioteku komponenti za svoj tim
+- [ ] Zalagajte se za pristupačnost u svom radnom okruženju ili zajednici
+- [ ] Mentorirajte nekoga novog u konceptima pristupačnosti
+
+### 🏆 **Završna provjera šampiona pristupačnosti**
+
+**Proslavite svoje putovanje pristupačnosti:**
+- Što vas je najviše iznenadilo u načinu na koji ljudi koriste web?
+- Koji vam princip pristupačnosti najviše odgovara u vašem stilu razvoja?
+- Kako vam je učenje o pristupačnosti promijenilo pogled na dizajn?
+- Koje je prvo poboljšanje pristupačnosti koje želite napraviti na stvarnom projektu?
+
+```mermaid
+journey
+    title Evolucija Vašeg Povjerenja u Pristupačnost
+    section Danas
+      Preplavljen: 3: You
+      Znatiželjan: 4: You
+      Motiviran: 5: You
+    section Ovaj Tjedan
+      Vježbanje: 4: You
+      Testiranje: 5: You
+      Razumijevanje: 5: You
+    section Sljedeći Mjesec
+      Zalažući se: 5: You
+      Vodeći: 5: You
+      Uključivo po Zadanoj Postavci: 5: You
+```
+> 🌍 **Sada ste šampion pristupačnosti!** Razumijete da izvrsna web iskustva funkcioniraju za svakoga, bez obzira na način pristupa webu. Svaka pristupačna značajka koju izgradite čini internet inkluzivnijim. Web treba programere poput vas koji pristupačnost ne vide kao ograničenje, već kao priliku za stvaranje boljih iskustava za sve korisnike. Dobrodošli u pokret! 🎉
+
+---
+
+<!-- CO-OP TRANSLATOR DISCLAIMER START -->
+**Odricanje od odgovornosti**:
+Ovaj je dokument preveden korištenjem AI prevoditeljske usluge [Co-op Translator](https://github.com/Azure/co-op-translator). Iako težimo točnosti, imajte na umu da automatski prijevodi mogu sadržavati pogreške ili netočnosti. Izvorni dokument na izvornom jeziku treba se smatrati službenim i vjerodostojnim izvorom. Za ključne informacije preporučuje se profesionalni ljudski prijevod. Ne snosimo odgovornost za bilo kakve nesporazume ili pogrešna tumačenja nastala korištenjem ovog prijevoda.
+<!-- CO-OP TRANSLATOR DISCLAIMER END -->
